@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { useapi } from '@/helpers/apiContext'
-const driveResults = () => {
+import { Useapi } from '@/helpers/apiContext'
+const DriveResults = () => {
     const [Data, setData] = useState<any>(); // Initial state should be null
-    const { apidata } = useapi(); // Destructure apidata from the context
+    const { apidata } = Useapi(); // Destructure apidata from the context
     useEffect(() => {
         if (apidata && apidata?.drive_result
         ) {
@@ -41,8 +41,8 @@ const driveResults = () => {
 
             <div className="flex mt-10 flex-wrap lg:flex-nowrap justify-center gap-5  items-center px-4 w-full xl:w-[75%] mx-auto">
 
-                {Data?.map((elem: any) => (
-                    <div className='rounded-xl p-8 w-[347px] sm:w-[300px] md:w-[347px] min-h-[350px] flex flex-col gap-2 justify-between bg-white hover:shadow-xl'>
+                {Data?.map((elem: any, i:number) => (
+                    <div key={i} className='rounded-xl p-8 w-[347px] sm:w-[300px] md:w-[347px] min-h-[350px] flex flex-col gap-2 justify-between bg-white hover:shadow-xl'>
                         <div className='p-4 size-[72px] flex justify-center items-center rounded-lg bg-lightblue'>
                             <Image
                                 src={elem.icon}
@@ -65,4 +65,4 @@ const driveResults = () => {
         </div>
     );
 };
-export default driveResults;
+export default DriveResults;

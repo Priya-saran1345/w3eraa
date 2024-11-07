@@ -103,7 +103,7 @@ const Index = () => {
                                             </div>
                                         </div>
                                         <div className='bg-lightblue p-5 rounded-lg text-homegrey'>
-                                            <p>"{review.review}"</p>
+                                            <p>&quot;{review.review}&quot;</p>
                                         </div>
                                         <div className='flex items-center gap-3'>
                                             <div className='flex justify-center items-center bg-lightblue rounded-full min-w-[49px] h-[49px]'>

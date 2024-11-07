@@ -8,7 +8,7 @@ import { BASE_URL } from '@/util/api'
 import styled from 'styled-components'
 import { Loader } from 'lucide-react'
 
-const page = () => {
+const Page = () => {
   const [termsdata, settermsdata] = useState<any>()
   const fetch=async()=>{
     try {
@@ -54,7 +54,7 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
 const StyledWrapper = styled.div`
   menu, ol, ul {
     list-style: disc !important;

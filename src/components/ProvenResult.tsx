@@ -4,11 +4,11 @@ import Image from 'next/image';
 import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
 import Slider from "react-slick";
 import { useRouter } from "next/navigation";
-import { useapi } from '@/helpers/apiContext';
+import { Useapi } from '@/helpers/apiContext';
 import Button from '@/components/button';
 
 const CaseStudy: React.FC = () => {
-    const { apidata } = useapi();
+    const { apidata } = Useapi();
     const [provenResult, setProvenResult] = useState<any>();
     const [activeIndex, setActiveIndex] = useState(0); // Track the active slide index
     const Router = useRouter();

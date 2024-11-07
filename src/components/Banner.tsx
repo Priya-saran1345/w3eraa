@@ -2,14 +2,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { GoArrowLeft, GoArrowRight, GoArrowUpRight } from 'react-icons/go';
-import { useapi } from '@/helpers/apiContext';
+import { Useapi } from '@/helpers/apiContext';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from 'next/link';
 const Banner = () => {
   const [bannerData, setBannerData] = useState<any>();
-  const { apidata } = useapi();
+  const { apidata } = Useapi();
   const [data, setData] = useState({ first: '', second: '' });
   const sliderRef = useRef<Slider>(null); // Ref for the slider
 

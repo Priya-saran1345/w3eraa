@@ -43,8 +43,8 @@ useEffect(() => {
 
             <div className='text-homeblack leading-[30px]'
             >
-             {data?.map((elem:any)=>(
-              <div dangerouslySetInnerHTML={{ __html: elem?.body || '' }} className='h-fit'></div>
+             {data?.map((elem:any, i:number)=>(
+              <div key={i} dangerouslySetInnerHTML={{ __html: elem?.body || '' }} className='h-fit'></div>
              ))}
             </div>
          

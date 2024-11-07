@@ -5,7 +5,7 @@ import Navbar from '@/components/navbar'
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { useRef } from "react";
-import { useapi } from '@/helpers/apiContext';
+import { Useapi } from '@/helpers/apiContext';
 import { IoCall } from "react-icons/io5";
 import { IoMdMail } from "react-icons/io";
 import { FaArrowLeftLong } from "react-icons/fa6";
@@ -18,8 +18,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Loader from '@/components/loader'
 
-const contact = () => {
-  const { basic_details } = useapi();
+const Contact = () => {
+  const { basic_details } = Useapi();
   const [data, setdata] = useState<any>()
   const [message, setMessage] = useState({
     first_name: "",
@@ -213,4 +213,4 @@ data&& basic_details&&
   )
 }
 
-export default contact
+export default Contact

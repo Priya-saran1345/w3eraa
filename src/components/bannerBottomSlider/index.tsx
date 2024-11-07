@@ -2,11 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick'; // Import Slider from react-slick
-import { useapi } from '@/helpers/apiContext'
+import { Useapi } from '@/helpers/apiContext'
 
   const BannerBottomSlider: React.FC = () => {
   const [Data, setData] = useState<any>([]); // Initial state should be null
-  const { apidata } = useapi(); // Destructure apidata from the context
+  const { apidata } = Useapi(); // Destructure apidata from the context
 
   useEffect(() => {
       if (apidata && apidata?.brand) {
@@ -30,9 +30,9 @@ import { useapi } from '@/helpers/apiContext'
           <Image src="/images/stripe1.png" height={71} width={108} alt="Stripe 1" />
         </div> */}
         {
-          Data?.map((elem:any)=>{
+          Data?.map((elem:any, i:number)=>{
             return(
-            <div className='w-[108px]'>
+            <div key={i} className='w-[108px]'>
               <Image src={`${elem?.image}`} height={71} width={108} alt="Stripe 1" />
             </div>
             )

@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { useapi } from '@/helpers/apiContext'
+import { Useapi } from '@/helpers/apiContext'
 import Button from '@/components/button';
 
 const Packages = ({props}:any) => {
@@ -37,8 +37,8 @@ const Packages = ({props}:any) => {
 
             <div className="flex flex-wrap lg:flex-nowrap mt-10 justify-center gap-5  items-center px-4 w-full xl:w-[75%] mx-auto">
 
-                {props?.map((elem: any) => (
-                    <div className='rounded-xl p-8 w-[347px] min-h-[357px] flex flex-col gap-2 justify-between bg-white hover:shadow-xl'>
+                {props?.map((elem: any, i:number) => (
+                    <div key={i} className='rounded-xl p-8 w-[347px] min-h-[357px] flex flex-col gap-2 justify-between bg-white hover:shadow-xl'>
                         <div className='p-4 size-[72px] flex justify-center items-center rounded-lg bg-lightblue'>
                             <Image
                                 src={elem.icon}

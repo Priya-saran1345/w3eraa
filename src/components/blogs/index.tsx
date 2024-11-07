@@ -2,10 +2,10 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
-import { useapi } from '@/helpers/apiContext'
+import { Useapi } from '@/helpers/apiContext'
 import Button from '@/components/button';
 const Blogs = () => {
-    const { blogs } = useapi();
+    const { blogs } = Useapi();
     const [selectedBlog, setselectedBlog] = useState<any>([])
     const [data, setdata] = useState({first:'',second:''})
 
@@ -49,9 +49,9 @@ const Blogs = () => {
             <p className='text-homegrey text-[18px] text-center'>Dive into our latest blogs to keep up with the newest trends, insights, and tips in the digital marketing world.</p>
             <div className='flex justify-center  flex-wrap lg:flex-nowrap mt-12 gap-7'>
                 {
-                    selectedBlog?.slice(0,3).map((elem: any) =>     
+                    selectedBlog?.slice(0,3).map((elem: any, i:number) =>     
                     (
-                        <div className='relative  border-[2px]  border-lightblue hover:shadow-xl   duration-300 w-[461px] pb-2 rounded-lg '>
+                        <div key={i} className='relative  border-[2px]  border-lightblue hover:shadow-xl   duration-300 w-[461px] pb-2 rounded-lg '>
                             <div className='bg-pink absolute top-3 left-3 text-white text-[17px] font-medium rounded-lg py-1 px-4'>
                                 {elem?.blog_date||'16 Oct,2024'}
                             </div>

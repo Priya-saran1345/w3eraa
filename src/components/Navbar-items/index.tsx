@@ -1,4 +1,4 @@
-import { useapi } from '@/helpers/apiContext'
+import { Useapi } from '@/helpers/apiContext'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
@@ -6,9 +6,9 @@ import { MdOutlineRocketLaunch } from 'react-icons/md'
 import Image from 'next/image'
 import Button from '@/components/button'
 
-const index = ({show}:any) => {
+const Index = ({show}:any) => {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const { basic_details } = useapi();
+  const { basic_details } = Useapi();
   const toggleDropdown = (menu: string) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
   };
@@ -626,4 +626,4 @@ const index = ({show}:any) => {
   )
 }
 
-export default index
+export default Index

@@ -1,13 +1,13 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { useapi } from '@/helpers/apiContext'
+import { Useapi } from '@/helpers/apiContext'
 import { GoArrowUpRight } from "react-icons/go";
 import Button from '@/components/button';
 import Link from 'next/link';
-const marketing = () => {
+const Marketing = () => {
   const [marketingData, setmarketingData] = useState<any>(); // Initial state should be null
-  const { apidata } = useapi(); // Destructure apidata from the context
+  const { apidata } = Useapi(); // Destructure apidata from the context
   const [data, setdata] = useState({first:'',second:''})
 
   function splitStringByLastWords(text:any, numOfWords:number) {
@@ -78,4 +78,4 @@ const marketing = () => {
   )
 }
 
-export default marketing
+export default Marketing

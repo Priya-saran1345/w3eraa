@@ -4,12 +4,12 @@ import Navbar from '@/components/navbar';
 import React, { useEffect, useState } from 'react';
 import Footer from '@/components/footer';
 import Image from 'next/image';
-import { useapi } from '@/helpers/apiContext';
+import { Useapi } from '@/helpers/apiContext';
 import Link from 'next/link';
 import Loader from '@/components/loader';
 
 const Blogs = () => {
-    const { blogs } = useapi();
+    const { blogs } = Useapi();
     const [allblogs, setallblogs] = useState<any>();
     useEffect(() => {
         setallblogs(blogs);
@@ -72,7 +72,9 @@ const Blogs = () => {
                                     <div className='flex flex-col gap-3'>
                                         <p className='text-[#3152B2] font-semibold text-[28px] md:text-[38px]'>Top 5 Best Blogs</p>
                                         <p className='text-black text-[20px] font-medium'>Content Management System (CMS) for SEO in 2024</p>
-                                        <p className='text-textGrey text-[18px] xl:w-[65%]'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
+                                        <p className='text-textGrey text-[18px] xl:w-[65%]'>Lorem Ipsum is simply dummy text of
+                                             the printing and typesetting industry.
+                                             Lorem Ipsum has been the industry &apos; s standard.</p>
                                     </div>
                                 </div>
                                 <div className='bg-white p-3 md:p-8 mt-5 block lg:hidden  rounded-lg text-textGrey text-[18px] '>

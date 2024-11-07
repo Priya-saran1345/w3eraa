@@ -2,11 +2,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Slider from "react-slick";
-import { useapi } from '@/helpers/apiContext';
+import { Useapi } from '@/helpers/apiContext';
 import Button from '@/components/button';
 
 const Provide = () => {
-  const { apidata } = useapi();
+  const { apidata } = Useapi();
   const [icons, setIcons] = useState<string[]>([]);
   const sliderRef = useRef<Slider | null>(null);
   const [data, setdata] = useState({ first: '', second: '' });

@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import { useapi } from '@/helpers/apiContext';
+import { Useapi } from '@/helpers/apiContext';
 import Header from "@/components/header";
 import Navbar from "@/components/navbar";
 import ClientSays from "@/components/clientSays";
@@ -22,7 +22,7 @@ import { BASE_URL } from '@/util/api';
 import axios from 'axios';
 
 const Main = () => {
-    const { apidata } = useapi();
+    const { apidata } = Useapi();
     const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(null);
 const [data, setdata] = useState<any>()
     const fetchTools = async () => {

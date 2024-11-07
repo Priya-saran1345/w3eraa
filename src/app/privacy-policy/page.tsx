@@ -8,7 +8,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-const page = () => {
+const Page = () => {
   const [privacycontent, setprivacycontent] = useState<any>()
   const fetch=async()=>{
     try {
@@ -57,7 +57,7 @@ privacycontent&&
   )
 }
 
-export default page
+export default Page
 const StyledWrapper = styled.div`
   menu, ol, ul {
     list-style: disc !important;

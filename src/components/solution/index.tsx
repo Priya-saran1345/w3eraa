@@ -3,12 +3,12 @@
 import React, { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import Slider from "react-slick"
-import { useapi } from "@/helpers/apiContext"
+import { Useapi } from "@/helpers/apiContext"
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react"
 import Button from '@/components/button'
 const Solution = () => {
   const [solutionData, setSolutionData] = useState<any>(null)
-  const { apidata } = useapi()
+  const { apidata } = Useapi()
 
   const [data, setData] = useState({ first: "", second: "" })
 

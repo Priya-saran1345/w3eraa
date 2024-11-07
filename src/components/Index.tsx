@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { useapi } from '@/helpers/apiContext';
+import { Useapi } from '@/helpers/apiContext';
 import Header from "@/components/header"
 import Navbar from "@/components/navbar";
 import Banner from "@/components/Banner";
@@ -21,10 +21,10 @@ import MarketingGrowth from "@/components/marketingGrowth";
 import WebsiteReport from '@/components/websiteReport'
 import Loader from '@/components/loader';
 const Main = () => {
-    const { basic_details } = useapi();
-    const { apidata } = useapi();
-    const {blogs  } = useapi();
-    const {  faq} = useapi();
+    const { basic_details } = Useapi();
+    const { apidata } = Useapi();
+    const {blogs  } = Useapi();
+    const {  faq} = Useapi();
     return (
     <div>
         { !basic_details&&!apidata&&!blogs&& !faq &&

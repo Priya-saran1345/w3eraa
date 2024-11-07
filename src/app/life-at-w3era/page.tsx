@@ -4,14 +4,14 @@ import Header from '@/components/header'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer';
 import Image from 'next/image';
-import { useapi } from '@/helpers/apiContext'
+import { Useapi } from '@/helpers/apiContext'
 import Link from 'next/link';
 import FooterBanner from '@/components/footer-banner'
 import Loader from '@/components/loader';
 
 const Life = () => {
-    const { life } = useapi();
-    const { basic_details } = useapi();
+    const { life } = Useapi();
+    const { basic_details } = Useapi();
 
     return (
         <div>
@@ -74,9 +74,10 @@ const Life = () => {
                             </div>
                             <div className='w-full flex  mt-8 gap-4 flex-wrap justify-center'>
                                 {
-                                    life?.event[0].cards.map((event: any) => {
+                                    life?.event[0].cards.map((event: any ,index:any) => {
                                         return (
-                                            <div className='border-[1px] min-w-[340px]  max-w-[438px] bg-white  border-slate-200 shadow-lg flex px-3 rounded-md py-3 flex-col gap-3'>
+                                            <div className='border-[1px] min-w-[340px]  max-w-[438px] bg-white  border-slate-200 shadow-lg flex px-3 rounded-md py-3
+                                             flex-col gap-3' key={index}>
                                                 <Image src={event?.image} height={300} width={413} alt='' className=''></Image>
                                                 <p className='text-[24px] font-medium'>{event?.title}</p>
                                                 <p className='text-textGrey'>
@@ -100,8 +101,8 @@ const Life = () => {
 
 
                                 {
-                                    life?.fly_high[0].cards.map((elem: any) => (
-                                        <div className='flex justify-end gap-5'>
+                                    life?.fly_high[0].cards.map((elem: any, i:number) => (
+                                        <div key={i} className='flex justify-end gap-5'>
                                             <div className='bg-white sm:w-[230px] lg:w-[272px] min-h-[252px] py-5 rounded-lg flex items-center  flex-col justify-center gap-4 px-4 text-center'>
                                                 <Image src={elem.icon} height={62} width={62} alt=''></Image>
                                                 <p className='text-[20px] font-medium'>{elem.title}</p>

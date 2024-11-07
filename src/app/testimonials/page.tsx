@@ -11,11 +11,11 @@ import TestimonialCard from '@/components/testimonialCard'
 import axios from 'axios'
 import { BASE_URL } from '@/util/api'
 import Loader from '@/components/loader'
-import { useapi } from '@/helpers/apiContext';
+import { Useapi } from '@/helpers/apiContext';
 
 
-const page = () => {
-  const { basic_details } = useapi(); // Get blog data from context
+const Page = () => {
+  const { basic_details } = Useapi(); // Get blog data from context
 
 const [apidata, setapidata] = useState<any>()
 const [testimonial, settestimonial] = useState<any>()
@@ -69,4 +69,4 @@ apidata&&
   )
 }
 
-export default page
+export default Page

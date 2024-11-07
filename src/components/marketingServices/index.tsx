@@ -10,8 +10,8 @@ const index = ({props}:any) => {
         <p className=' text-[32px] text-center lg:text-[38px] font-bold text-homeblack leading-[45px]'>{props?.title}</p>
         <div className='flex justify-center gap-5 flex-wrap'>
             {
-                props?.card.map((elem: any) => (
-                    <div className='rounded-xl p-8  sm:w-[45%] lg:w-[31%] min-h-[397px] flex flex-col gap-2 justify-between bg-white hover:shadow-xl'>
+                props?.card.map((elem: any, i:number) => (
+                    <div key={i} className='rounded-xl p-8  sm:w-[45%] lg:w-[31%] min-h-[397px] flex flex-col gap-2 justify-between bg-white hover:shadow-xl'>
                         {
                             elem.icon&&
                         <div className='p-4 size-[72px] flex justify-center items-center rounded-lg bg-lightblue'>

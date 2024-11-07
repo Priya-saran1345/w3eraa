@@ -8,12 +8,12 @@ import Stories from '@/components/stories'
 import CommonBanner from '@/components/Common-Banner'
 import axios from 'axios'
 import { BASE_URL } from '@/util/api'
-import { useapi } from '@/helpers/apiContext';
+import { Useapi } from '@/helpers/apiContext';
 import Loader from '@/components/loader'
 
 const WebStories = () => {
 
-  const { basic_details } = useapi();
+  const { basic_details } = Useapi();
   const [data, setdata] = useState<any>()
   const [data_others, setdata_others] = useState<any>()
   const fetch = async () => {

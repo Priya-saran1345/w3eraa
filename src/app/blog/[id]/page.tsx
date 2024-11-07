@@ -3,7 +3,7 @@ import Header from '@/components/header';
 import Navbar from '@/components/navbar';
 import React, { useEffect, useState } from 'react';
 import Footer from '@/components/footer';
-import { useapi } from '@/helpers/apiContext';
+import { Useapi } from '@/helpers/apiContext';
 import axios from 'axios';
 import { BASE_URL } from '@/util/api';
 import { usePathname } from 'next/navigation';
@@ -12,7 +12,7 @@ import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import styled from 'styled-components'
 import Loader from '@/components/loader';
 const Blogs = () => {
-    const { blogs } = useapi();
+    const { blogs } = Useapi();
     const [apidata, setapidata] = useState<any>(null);
     const pathname = usePathname();
     const segments = pathname.replace(/\/$/, '').split('/');

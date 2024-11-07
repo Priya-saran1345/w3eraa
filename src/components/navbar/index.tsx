@@ -2,13 +2,13 @@
 import React, { useState } from 'react';
 import { IoMdMenu } from "react-icons/io";
 import Link from 'next/link';
-import { useapi } from '@/helpers/apiContext';
+import { Useapi } from '@/helpers/apiContext';
 import Image from 'next/image';
 import NavbarItems from '@/components/Navbar-items';
 import { RxCross2 } from 'react-icons/rx';
 
 const Navbar = () => {
-  const { basic_details } = useapi();
+  const { basic_details } = Useapi();
   const [showmenu, setshowmenu] = useState(false);
 
   return (

@@ -11,9 +11,9 @@ const Index = ({props}:any) => {
                 </div>
                 <div className='mt-12 flex flex-wrap justify-center gap-4'>
                {
-               props?.card?.map((elem:any)=>(
+               props?.card?.map((elem:any, i:number)=>(
 
-                           <div className='sm:w-[47%] lg:w-[32%] bg-lightblue min-h-[583px] rounded-xl p-3'>
+                           <div key={i} className='sm:w-[47%] lg:w-[32%] bg-lightblue min-h-[583px] rounded-xl p-3'>
                             <div className='min-w-full bg-white h-[244px] flex justify-center items-center rounded-xl'>
                             <Image src={elem?.image} alt='' height={167} width={249} className='rounded-lg' />
                             </div>

@@ -170,8 +170,8 @@ data&&
                 <div >
                     <div className='md:w-[40%] mt-10 mx-auto flex flex-col gap-4 text-center'>
 
-                    <p className=' text-[32px] lg:text-[48px] font-bold'>Lorem Ipsum is simply</p>
-                    <p className='text-[18px] font-medium'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+                    <p className=' text-[32px] lg:text-[48px] font-bold'>Lorem Ipsum is simply</p>
+                    <p className='text-[18px] font-medium'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, </p>
                     <div>
 
                     <button className='bg-pink rounded-md py-3 px-8  text-white text-[18px] font-medium'>Explore Our Packages</button>

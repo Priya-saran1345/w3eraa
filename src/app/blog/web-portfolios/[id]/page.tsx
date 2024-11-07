@@ -6,13 +6,13 @@ import Loader from '@/components/loader'
 import Navbar from '@/components/navbar'
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { useapi } from '@/helpers/apiContext';
+import { Useapi } from '@/helpers/apiContext';
 import { usePathname } from 'next/navigation'
 import axios from 'axios'
 import { BASE_URL } from '@/util/api'
 
 const PortfolioInner = () => {
-  const { apidata } = useapi();
+  const { apidata } = Useapi();
 
 
   const pathname = usePathname();

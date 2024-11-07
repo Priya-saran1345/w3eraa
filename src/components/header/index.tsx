@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { IoCall, IoLocationOutline } from "react-icons/io5";
 import Link from 'next/link';
-import { useapi } from '@/helpers/apiContext';
+import { Useapi } from '@/helpers/apiContext';
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { IoIosArrowUp } from "react-icons/io";
 import { useState } from 'react';
@@ -10,7 +10,7 @@ import { FaFacebook, FaInstagram, FaLinkedinIn, FaPinterest, FaSkype, FaYoutube 
 import { BsTwitterX } from 'react-icons/bs';
 
 const Header = () => {
-  const { basic_details } = useapi();
+  const { basic_details } = Useapi();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const handleToggle = (menu: string) => {

@@ -5,7 +5,7 @@ import React, { use, useEffect, useState } from 'react'
 import { FaArrowRightLong } from "react-icons/fa6";
 import Image from 'next/image';
 import Footer from '@/components/footer';
-import { useapi } from '@/helpers/apiContext'
+import { Useapi } from '@/helpers/apiContext'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
@@ -14,8 +14,8 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import Loader from '@/components/loader'
 import Link from 'next/link';
 const AboutUS = () => {
-    const { about } = useapi();
-    const { basic_details } = useapi();
+    const { about } = Useapi();
+    const { basic_details } = Useapi();
 
     const [aboutContent, setaboutContent] = useState<any>()
     const [show, setshow] = useState(false)
@@ -188,9 +188,9 @@ basic_details && about&&
                     <div className='w-full xl:w-[75%] py-12 flex flex-wrap gap-5 justify-between mx-auto px-4'>
 
                         {
-                            about?.who_youare[0].cards.map((elem: any) => {
+                            about?.who_youare[0].cards.map((elem: any ,index:any) => {
                                 return (
-                                    <div className='bg-white rounded-md p-8 mt-6 group  md:w-[48%]'>
+                                    <div className='bg-white rounded-md p-8 mt-6 group  md:w-[48%]' key={index}>
                                         <div className='bg-pink flex size-[60px] lg:size-[94px] justify-center items-center'>
                                             <div className=' size-[30px] lg:size-[40px] rounded-full border-2 border-white flex justify-center items-center'>
                                                 <Image
@@ -260,7 +260,7 @@ basic_details && about&&
                                                 <div>
                                                  <Link href="/contact-us">
                                                     <button className='text-[18px] font-medium py-2 px-10 text-pink border-pink border-2 rounded-lg'>
-                                                        Let's Connect
+                                                        Let `&apos;` s Connect
                                                     </button>
                                                  </Link>
                                                 </div>

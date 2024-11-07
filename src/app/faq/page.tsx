@@ -2,14 +2,14 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaArrowUpLong, FaArrowDownLong } from "react-icons/fa6"
-import { useapi } from '@/helpers/apiContext'
+import { Useapi } from '@/helpers/apiContext'
 import Header from '@/components/header'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import Loader from '@/components/loader'
 
 export default function AnimatedFaqs() {
-  const { faq } = useapi()
+  const { faq } = Useapi()
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   const handleToggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)

@@ -5,12 +5,12 @@ import React from 'react'
 import Footer from '@/components/footer';
 import Image from 'next/image';
 import Revenue from '@/components/revenue';
-import { useapi } from '@/helpers/apiContext'
+import { Useapi } from '@/helpers/apiContext'
 import Loader from '@/components/loader';
 
 const Client = () => {
-    const { client } = useapi(); 
-    const { apidata } = useapi(); 
+    const { client } = Useapi(); 
+    const { apidata } = Useapi(); 
     const arr = [1, 2, 3, 3, 3, 3, 3, 3, 3, 3];
     return (
         <>
@@ -31,7 +31,7 @@ client&& apidata&&
             </div>
             <div className='w-full bg-grey'>
                 <div className='w-full xl:w-[75%] px-4 mx-auto py-12 lg:py-20'>
-                    <p className='lg:text-[48px] text-[32px] font-bold text-black text-center'>We've helped 5000+ customers worldwide</p>
+                    <p className='lg:text-[48px] text-[32px] font-bold text-black text-center'>We &apos;ve helped 5000+ customers worldwide</p>
                     <div className='flex justify-center flex-wrap mt-10 items-center gap-2'>
                         {
                             apidata?.brand.map((elem:any, index:number) => {

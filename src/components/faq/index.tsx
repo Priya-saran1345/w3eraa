@@ -4,11 +4,11 @@ import { useState, useEffect } from "react"
 import { FaMinus } from "react-icons/fa"
 import { RxCross2 } from "react-icons/rx"
 import { motion, AnimatePresence } from "framer-motion"
-import { useapi } from "@/helpers/apiContext"
+import { Useapi } from "@/helpers/apiContext"
 
 export default function Component({ props = [] }: { props?: any[] }) {
   const [faqdata, setFaqdata] = useState<any[]>([])
-  const { apidata } = useapi()
+  const { apidata } = Useapi()
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   const [data, setData] = useState({ first: "", second: "" })
 

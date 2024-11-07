@@ -40,7 +40,7 @@ const Choose = ({props}:any) => {
       </div>
       <div className='w-full px-4 xl:w-[75%] mx-auto flex justify-center gap-5 flex-wrap '>
         {props?.cards &&props?.cards.map((card: any, index: number) => (
-          <div className='min-h-[284px] lg:w-[30%]'>
+          <div key={index} className='min-h-[284px] lg:w-[30%]'>
 
             <div key={index} className='max-w-[404px] hover:shadow-xl border-[2px] relative border-lightblue min-h-[219px] bg-white rounded-xl group leading-[29px] p-10 flex flex-col gap-3'>
               <div className='bg-lightblue absolute -top-14 rounded-xl p-4 w-[110px] h-[90px] flex justify-center items-center'>

@@ -1,13 +1,13 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { useapi } from '@/helpers/apiContext'
+import { Useapi } from '@/helpers/apiContext'
 import Button from '@/components/button';
 import Link from 'next/link';
 
-const driveResults = () => {
+const DriveResults = () => {
     const [Data, setData] = useState<any>(); // Initial state should be null
-    const { apidata } = useapi(); // Destructure apidata from the context
+    const { apidata } = Useapi(); // Destructure apidata from the context
     const [data, setdata] = useState({first:'',second:''})
 
     useEffect(() => {
@@ -48,9 +48,9 @@ const driveResults = () => {
                 </div>
                 <div className='mx-auto mt-7 flex justify-center flex-wrap  lg:w-[80%]'>
                     {
-                        Data?.cards?.map((elem: any) => {
+                        Data?.cards?.map((elem: any, i:number) => {
                             return (
-                                <div className="flex size-[150] p-2 group md:size-[181px] justify-center items-center border-[1px] border-slate-100 rounded-sm">
+                                <div key={i} className="flex size-[150] p-2 group md:size-[181px] justify-center items-center border-[1px] border-slate-100 rounded-sm">
     <Image
         src={elem.image}
         alt=""
@@ -74,4 +74,4 @@ const driveResults = () => {
         </div>
     );
 };
-export default driveResults;
+export default DriveResults;

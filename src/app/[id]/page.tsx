@@ -33,14 +33,14 @@ import Visiblity from '@/components/visiblity'
 import { IoMdStar } from 'react-icons/io';
 import CommonBanner from '@/components/Common-Banner'
 import Loader from '@/components/loader'
-import { useapi } from '@/helpers/apiContext';
+import { Useapi } from '@/helpers/apiContext';
 import { IoCheckmark } from 'react-icons/io5'
 import styled from 'styled-components'
 import { motion, AnimatePresence } from 'framer-motion'
 import Packages from '@/components/Packages/index'
 
 const Service_Pkackages = () => {
-    const { basic_details } = useapi();
+    const { basic_details } = Useapi();
     const [data, setdata] = useState<any>()
     const pathname = usePathname();
     const segments = pathname.replace(/\/$/, '').split('/');

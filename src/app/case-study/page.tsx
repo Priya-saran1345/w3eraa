@@ -14,12 +14,12 @@ import Casestudycontent from '@/components/Casestudycontent'
 import CommonBanner from '@/components/Common-Banner'
 import axios from 'axios'
 import { BASE_URL } from '@/util/api'
-import { useapi } from '@/helpers/apiContext';
+import { Useapi } from '@/helpers/apiContext';
 import Loader from '@/components/loader'
 
-const page = () => {
-    const { apidata } = useapi();
-    const { basic_details } = useapi();
+const Page = () => {
+    const { apidata } = Useapi();
+    const { basic_details } = Useapi();
 
     const [caseStudydata, setcaseStudydata] = useState<any>()
     const [data, setdata] = useState<any>()
@@ -91,4 +91,4 @@ data&&caseStudydata&&
     )
 }
 
-export default page
+export default Page

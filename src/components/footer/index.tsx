@@ -14,11 +14,11 @@ import { IoIosStarHalf } from "react-icons/io";
 import { FaMinus } from "react-icons/fa";
 import Image from 'next/image';
 import Link from 'next/link';
-import { useapi } from '@/helpers/apiContext'
+import { Useapi } from '@/helpers/apiContext'
 import { useState } from "react";
 
 const Footer = () => {
-    const { basic_details } = useapi();
+    const { basic_details } = Useapi();
     const [openDropdown, setOpenDropdown] = useState(null); 
     
     

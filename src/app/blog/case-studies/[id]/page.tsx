@@ -14,7 +14,7 @@ import {usePathname} from 'next/navigation'
 import Loader from '@/components/loader'
 import styled from 'styled-components'
 
-const page = () => {
+const Page = () => {
   const pathname = usePathname();
   const segments = pathname.replace(/\/$/, '').split('/');
   const lastsegment= segments.pop(); 
@@ -62,7 +62,7 @@ data&&
   )
 }
 
-export default page
+export default Page
 const StyledWrapper = styled.div`
   menu, ol, ul {
     list-style: disc !important;

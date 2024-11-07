@@ -6,12 +6,12 @@ import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS CSS
 import { FaArrowRightLong } from "react-icons/fa6";
-import { useapi } from '@/helpers/apiContext';
+import { Useapi } from '@/helpers/apiContext';
 import Link from 'next/link';
 import Loader from '@/components/loader';
 
 const CaseStudy = () => {
-  const { portfolio } = useapi();
+  const { portfolio } = Useapi();
   const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>('All'); // Track active category
 

@@ -12,8 +12,8 @@ const index = () => {
         <div className='flex justify-center mt-7 gap-7  flex-wrap'>
 
 {
-    [1,2,3,4,5,6,7,8].map((elem,index)=>(
-        <div className='bg-white w-[459px] md:w-[45%] lg:w-[31%] rounded-2xl p-8 flex flex-col gap-4'>
+    [1,2,3,4,5,6,7,8].map((elem:any,index:any)=>(
+        <div key={index} className='bg-white w-[459px] md:w-[45%] lg:w-[31%] rounded-2xl p-8 flex flex-col gap-4'>
             <div className='flex justify-start  items-center gap-3'>
                  <div className='bg-lightblue flex justify-center items-center rounded-2xl size-[131px]'>
                        <p className=' text-[54px] xl:text-[75px] font-semibold text-blue'>0{index+1}</p>

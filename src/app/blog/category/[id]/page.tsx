@@ -7,13 +7,13 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Button from '@/components/button';
 import Image from 'next/image';
-import { useapi } from '@/helpers/apiContext';
+import { Useapi } from '@/helpers/apiContext';
 import axios from 'axios';
 import { BASE_URL } from '@/util/api';
 import Loader from '@/components/loader';
 
 const Category = () => {
-  // const { blogs } = useapi(); // Get blog data from context
+  // const { blogs } = Useapi(); // Get blog data from context
   const pathname = usePathname();
     const segments = pathname.replace(/\/$/, '').split('/');
     const lastsegment= segments.pop();  

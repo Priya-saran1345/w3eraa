@@ -1,14 +1,14 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { useapi } from '@/helpers/apiContext'
+import { Useapi } from '@/helpers/apiContext'
 import { IoMdStar } from "react-icons/io";
 import Button from '@/components/button';
 import Link from 'next/link';
 
-const growth = () => {
+const Growth = () => {
     const [Data, setData] = useState<any>(); // Initial state should be null
-    const { apidata } = useapi(); // Destructure apidata from the context
+    const { apidata } = Useapi(); // Destructure apidata from the context
 
     const [data, setdata] = useState({ first: '', second: '' })
 
@@ -153,4 +153,4 @@ const growth = () => {
         </div>
     );
 };
-export default growth;
+export default Growth;
