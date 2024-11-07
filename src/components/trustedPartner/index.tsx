@@ -1,0 +1,56 @@
+import React, { useState } from 'react';
+import Button from '@/components/button';
+import Image from 'next/image';
+
+const Index = ({ props }: any) => {
+    const [selectedServiceIndex, setSelectedServiceIndex] = useState(0);
+
+    // Function to handle service click
+    const handleServiceClick = (index: number) => {
+        setSelectedServiceIndex(index);
+    };
+
+    return (
+   
+    
+        <div className='bg-white xl:w-[75%] mx-auto px-6 py-12 lg:py-16'>
+            <p className='text-homeblack font-bold text-[28px] lg:text-[38px]'>{props?.title}</p>
+            <p className='text-homegrey text-[18px] mt-3'>{props?.subtitle}</p>
+
+            <div className='my-8 flex md:flex-nowrap flex-wrap justify-between gap-10'>
+                {/* Left Side: List of Services */}
+                <div className='flex flex-wrap justify-center md:flex-col gap-4'>
+                    {props?.card.map((elem: any, index: number) => (
+                        <div
+                            key={index}
+                            onClick={() => handleServiceClick(index)}
+                            className={`font-medium text-[20px] w-[326px] text-center text-homeblack py-4 border-[1px] border-lightblue rounded-xl hover:shadow-lg cursor-pointer ${
+                                selectedServiceIndex === index ? 'bg-lightblue' : ''
+                            }`}
+                        >
+                            <p>{elem.service_name}</p>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Right Side: Display Selected Service Details */}
+                <div className='bg-lightblue w-[1079px] p-8 rounded-lg min-h-full'>
+                    <div className='bg-white rounded-lg flex justify-center items-center w-[104px] h-[104px]'>
+                        <Image src={props?.card[selectedServiceIndex]?.icon||''} height={71} width={53} alt={''} />
+                    </div>
+                    <p className='text-[18px] leading-[24px] mt-6 text-homegrey'  dangerouslySetInnerHTML={{ __html:props?.card[selectedServiceIndex]?.description || 
+                        "Select a service to see details." }}/>
+
+                 
+                </div>
+            </div>
+
+            <div className='flex justify-center'>
+                <Button content={'Join Our Growing List of Partners'} />
+            </div>
+        </div>
+   
+    );
+};
+
+export default Index;

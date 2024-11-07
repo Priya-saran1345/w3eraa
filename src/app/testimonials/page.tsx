@@ -1,0 +1,72 @@
+"use client"
+import Footer from '@/components/footer'
+import Header from '@/components/header'
+import React, { useEffect, useState } from 'react'
+import Navigation from '@/components/navbar'
+import CommonBanner from '@/components/Common-Banner'
+import FooterBanner from '@/components/footer-banner'
+import QuickLinks from '@/components/quickLinks'
+import TestimonialVideo from '@/components/testimonial-video'
+import TestimonialCard from '@/components/testimonialCard'
+import axios from 'axios'
+import { BASE_URL } from '@/util/api'
+import Loader from '@/components/loader'
+import { useapi } from '@/helpers/apiContext';
+
+
+const page = () => {
+  const { basic_details } = useapi(); // Get blog data from context
+
+const [apidata, setapidata] = useState<any>()
+const [testimonial, settestimonial] = useState<any>()
+  const fetch = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}other/testimonials/`);
+      setapidata(response.data);
+    } catch (error: any) {
+      console.log('testimonial error from other',error.message);
+
+    }
+  }
+  const fetch1 = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}testimonial/`);
+      settestimonial(response.data);
+    } catch (error: any) {
+      console.log('testimonial error',error.message);
+
+    }
+  }
+
+  useEffect(()=>{
+    fetch();
+    fetch1()
+  },[])
+
+  return (
+    <div> 
+      {
+        !apidata&&<Loader/>
+      }
+      {
+apidata&&
+        <div>
+
+    <Header />
+    <Navigation />
+    <CommonBanner title={apidata?.title} description={apidata?.body}  image={apidata?.image} btnlink={apidata?.button_url} btntext={apidata?.button_text} image_alt={apidata?.image_alt} />
+    <TestimonialCard props={testimonial?.review}/>
+    <TestimonialVideo props={testimonial?.clients_say_card} />
+    <QuickLinks/>
+    <FooterBanner content={basic_details?.footer_card[0]?.title}
+     image={basic_details?.footer_card[0].image||'/images/life-footer.png'} description= {basic_details?.footer_card[0]?.description}
+     btncontent={'contact us'}
+     />
+    <Footer />
+     </div>
+    }
+    </div>
+  )
+}
+
+export default page

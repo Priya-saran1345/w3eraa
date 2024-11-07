@@ -1,0 +1,114 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap'); */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --pink: #EF1649;
+  --purple: #151337;
+  --grey:#F5F5F5;
+  --textGrey:#7E8287;
+  --blue:#1090d0
+  ;
+--textPurple: #292751;
+--lightblue: #F1F8FC;
+--lightpink: '#FEF1F4';
+--homegrey:'#535353';
+--homeblack: '#333333';
+
+
+
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Inter ", 
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+.meeting-btn {
+  position: relative;
+  overflow: hidden;
+  color: var(--pink);
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 2px solid var(--pink);
+  border-radius: 9999px; /* Full rounded */
+  z-index: 1; /* Ensure the button is on top */
+}
+
+.meeting-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: var(--pink);
+  transition: width 0.3s ease;
+  z-index: -1; /* Ensure the background is behind the text */
+}
+
+.meeting-btn:hover::after {
+  width: 100%; /* Expand background to full width */
+}
+
+.meeting-btn .meeting-text {
+  position: relative;
+  z-index: 2; /* Make sure text stays on top of the background */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.meeting-btn:hover .meeting-text {
+  transform: translateX(10px);
+  color: white !important;
+}
+
+.slick-slide {
+  display: flex !important;
+  flex-direction: row!important;
+  justify-content: center;
+  align-items: center;
+}
+.slick-list {
+  overflow: hidden;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important; 
+  box-shadow: 0 0 0 1000px white inset !important; 
+  background-color: white !important; 
+}
+
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: 
+    radial-gradient(farthest-side,#2da9da 94%,#0000) top/8px 8px no-repeat,
+    conic-gradient(#0000 30%,#2da9da);
+  -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+  animation: l13 1s infinite linear;
+}
+@keyframes l13{ 
+  100%{transform: rotate(1turn)}
+}
+
+
+.sticky-wrapper {
+  overflow: visible; /* Ensure parent does not interfere */
+}
+
+.fixed-video-size {
+  max-height: 500px;
+  /* Full width responsiveness */
+}

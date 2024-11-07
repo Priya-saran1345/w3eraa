@@ -1,0 +1,60 @@
+"use client"
+import React from 'react'
+import { useapi } from '@/helpers/apiContext';
+import Header from "@/components/header"
+import Navbar from "@/components/navbar";
+import Banner from "@/components/Banner";
+import DriveResults from "@/components/driveResults"
+import ClientSays from "@/components/clientSays"
+import Provide from "@/components/provide"
+import Choose from "@/components/Choose"
+import Packages from '@/components/Packages'
+import Revenue from "@/components/revenue"
+import Blogs from "@/components/blogs"
+import Solution from "@/components/solution";
+import Faq from '@/components/faq'
+import ProvenResult from "@/components/ProvenResult";
+import Footer from "@/components/footer";
+import Marketing from "@/components/Marketing"
+import ValuedClients from '@/components/ValuedClients'
+import MarketingGrowth from "@/components/marketingGrowth";
+import WebsiteReport from '@/components/websiteReport'
+import Loader from '@/components/loader';
+const Main = () => {
+    const { basic_details } = useapi();
+    const { apidata } = useapi();
+    const {blogs  } = useapi();
+    const {  faq} = useapi();
+    return (
+    <div>
+        { !basic_details&&!apidata&&!blogs&& !faq &&
+       <Loader/>
+        }
+         {
+           basic_details&&apidata&&blogs&& faq &&
+      <div>
+      <Header />
+      <Navbar />
+      <Banner />
+      <Marketing />
+      <DriveResults />
+      <ValuedClients />
+      <Packages props={apidata?.our_package} />
+      <ProvenResult />
+      <MarketingGrowth />
+      <WebsiteReport/>
+      <Provide />
+      <Solution />
+      <ClientSays props={apidata?.clients_say[0]}  />
+      <Choose props={apidata?.why_choose[0]}  />
+      <Faq props={apidata?.marketing_agency} />
+      <Revenue/>
+      <Blogs />
+      <Footer />
+</div>
+}
+    </div>
+  )
+}
+
+export default Main
