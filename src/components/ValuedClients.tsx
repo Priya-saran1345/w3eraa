@@ -8,7 +8,7 @@ import Link from 'next/link';
 const DriveResults = () => {
     const [Data, setData] = useState<any>(); // Initial state should be null
     const { apidata } = Useapi(); // Destructure apidata from the context
-    const [data, setdata] = useState({first:'',second:''})
+    const [data, setdata] = useState({ first: '', second: '' })
 
     useEffect(() => {
         if (apidata && apidata?.valued_client[0]
@@ -16,23 +16,21 @@ const DriveResults = () => {
             setData(apidata?.valued_client[0]);
         }
     }, [apidata]);
-
-    function splitStringByLastWords(text:any, numOfWords:number) {
+    
+    function splitStringByLastWords(text: any, numOfWords: number) {
         const words = text.split(' '); // Split the string by spaces to get individual words
-        
+
         if (numOfWords >= words.length) {
             return { first: '', second: text };
         }
-        
         const splitIndex = words.length - numOfWords;
         const firstPart = words.slice(0, splitIndex).join(' ');
         const secondPart = words.slice(splitIndex).join(' ');
-        
         return { first: firstPart, second: secondPart };
     }
-      
-      useEffect(() => {
-        const result = splitStringByLastWords(Data?.title||'', 3);
+
+    useEffect(() => {
+        const result = splitStringByLastWords(Data?.title || '', 3);
         setdata(result);
     }, [Data]);
 
@@ -40,7 +38,7 @@ const DriveResults = () => {
         <div className='w-full py-12 lg:py-20'>
             <div className="  px-4 w-full xl:w-[75%] mx-auto">
                 <div className=' w-full sm:w-[75%] lg:w-[50%] text-center mx-auto flex flex-col gap-3'>
-                    <p className=' text-[32px] leading-tight lg:text-[48px] font-bold text-black'>{data.first} <span className='text-pink'>{data.second}</span></p>
+                    <p className=' text-[32px] leading-tight lg:text-[42px] font-bold text-black'>{data.first} <span className='text-pink'>{data.second}</span></p>
                     <p
                         className='text-[18px] leading-[22px] text-homegrey'
                         dangerouslySetInnerHTML={{ __html: Data?.description }}
@@ -48,24 +46,24 @@ const DriveResults = () => {
                 </div>
                 <div className='mx-auto mt-7 flex justify-center flex-wrap  lg:w-[80%]'>
                     {
-                        Data?.cards?.map((elem: any, i:number) => {
+                        Data?.cards?.map((elem: any, i: number) => {
                             return (
-                                <div key={i} className="flex size-[150] p-2 group md:size-[181px] justify-center items-center border-[1px] border-slate-100 rounded-sm">
-    <Image
-        src={elem.image}
-        alt=""
-        height={81}
-        width={165}
-        className="grayscale w-[145px] lg:w-[165px] group-hover:grayscale-0 transition duration-150 ease-in-out"
-    />
-</div>
+                                <div key={i} className="flex min-w-[190] max-h-[120px] p-5 group md:size-[181px] justify-center items-center border-[1px] border-slate-100 rounded-sm">
+                                    <Image
+                                        src={elem.image}
+                                        alt=""
+                                        height={71}
+                                        width={165}
+                                        className="grayscale w-[145px] lg:max-w-[155px] group-hover:grayscale-0 transition duration-100 ease-in-out"
+                                    />
+                                </div>
                             )
                         })
                     }
                 </div>
                 <div className='flex justify-center mt-5'>
                     <Link href={'/our-client-list'}>
-                    <Button content={'Join Our Growing List of Partners'} />
+                        <Button content={'Join Our Growing List of Partners'} />
                     </Link>
 
                 </div>

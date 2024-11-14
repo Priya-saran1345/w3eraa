@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const CaseStudy = ({ props }: { props: any }) => {
   // Step 1: Set up state for selected category
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState('All'); // Default to 'All'
 
   // Step 2: Create an array of unique categories
   const categories = ['All', ...props?.case_study.map((item: any) => item.title) || []];
@@ -20,13 +20,18 @@ const CaseStudy = ({ props }: { props: any }) => {
       <div className='px-6 xl:px-0 xl:w-[75%] mx-auto'>
         <p className='text-[38px] font-bold text-center'>Case Study</p>
 
-        {/* Step 4: Render category buttons */}
+        {/* Step 4: Render category buttons with active state */}
         <div className='flex gap-2 text-homeblack justify-center items-center my-4 mb-10'>
           {categories.map((category) => (
             <button
               key={category}
-              className='px-5 hover:text-pink border-b-[2px] text-[20px] font-semibold border-white py-1 hover:border-pink'
-              onClick={() => setSelectedCategory(category)}
+              className={`px-5 text-[20px] font-semibold py-1 border-b-[2px] 
+                ${selectedCategory === category 
+                  ? 'text-pink border-pink' // Active category
+                  : 'text-homeblack border-white' // Inactive category
+                } 
+                hover:text-pink hover:border-pink`}
+              onClick={() => setSelectedCategory(category)} // Set selected category
             >
               {category}
             </button>
@@ -58,7 +63,7 @@ const CaseStudy = ({ props }: { props: any }) => {
                 </div>
               </div>
               <div>
-                <p className='text-center text-[22px] mt-3 font-semibold'>{study.title}</p>
+                <p className='text-center text-[22px] mt-3 uppercase font-semibold'>{study.title}</p>
               </div>
             </div>
           ))}

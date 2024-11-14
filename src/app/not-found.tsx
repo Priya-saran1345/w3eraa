@@ -8,7 +8,9 @@ const Page = () => {
     <div className='w-full h-screen flex justify-center items-center bg-lightblue'>
       <div className='flex flex-col justify-center items-center max-h-[500px] xl:w-[75%] px-6 mx-auto'>
         {/* Ensure the image path is correct */}
+        <Link href={'/'}>
         <Image src='/images/loader.gif' height={500} width={500} alt='Loading Animation' />
+        </Link>
         
         <p className='text-[48px] font-extrabold  text-center mt-6 drop-shadow-lg'>
           Page Not Found

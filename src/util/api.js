@@ -1,1 +1,1 @@
-export const BASE_URL = "http://192.168.211.39:8000/api/";
+export const BASE_URL = "https://w3era.vefogix.com/api/";

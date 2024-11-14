@@ -12,7 +12,7 @@ import Packages from '@/components/Packages'
 import Revenue from "@/components/revenue"
 import Blogs from "@/components/blogs"
 import Solution from "@/components/solution";
-import Faq from '@/components/faq'
+import Faq1 from '@/components/faqComp'
 import ProvenResult from "@/components/ProvenResult";
 import Footer from "@/components/footer";
 import Marketing from "@/components/Marketing"
@@ -24,20 +24,20 @@ const Main = () => {
     const { basic_details } = Useapi();
     const { apidata } = Useapi();
     const {blogs  } = Useapi();
-    const {  faq} = Useapi();
+    // const {  faq} = Useapi();
     return (
     <div>
-        { !basic_details&&!apidata&&!blogs&& !faq &&
+        { !basic_details&&!apidata&&!blogs&&  
        <Loader/>
         }
          {
-           basic_details&&apidata&&blogs&& faq &&
+           basic_details&&apidata&&blogs&& 
       <div>
       <Header />
       <Navbar />
       <Banner />
       <Marketing />
-      <DriveResults />
+      <DriveResults/>
       <ValuedClients />
       <Packages props={apidata?.our_package} />
       <ProvenResult />
@@ -47,9 +47,9 @@ const Main = () => {
       <Solution />
       <ClientSays props={apidata?.clients_say[0]}  />
       <Choose props={apidata?.why_choose[0]}  />
-      <Faq props={apidata?.marketing_agency} />
+      <Faq1 props={apidata?.marketing_agency} />
       <Revenue/>
-      <Blogs />
+      <Blogs props={apidata?.blog} />
       <Footer />
 </div>
 }

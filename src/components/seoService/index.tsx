@@ -9,7 +9,8 @@ const index = ({ props }: any) => {
                 <div className='md:w-[80%] flex flex-col gap-4 mx-auto'>
 
                     <p className=' text-[32px] text-center lg:text-[38px] font-bold text-homeblack leading-[45px]'>{props?.title || ''}</p>
-                    <p className=' text-center text-[18px]  text-homegrey '>{props?.description || '  Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, fuga sequi? Eligendi veniam consequatur ratione necessitatibus nulla similique sint cupiditate alias, deleniti accusamus rem, voluptates officia porro. Autem, alias consequatur.'}</p>
+                    <p className=' text-center text-[18px]  text-homegrey '>{props?.description ||
+                     '  '}</p>
                 </div>
 
                 <div className='flex justify-center gap-5 flex-wrap'>
@@ -31,8 +32,8 @@ const index = ({ props }: any) => {
                                 }
                                 <p className='text-[26px] font-medium text-homeblack leading-[31px]'>{elem?.title}</p>
                                 <p
-                                    className='text-[18px] text-homegrey leading-[22px]'
-                                    dangerouslySetInnerHTML={{ __html: elem?.description || "No Content Available" }}
+                                    className='text-[16px] text-homegrey leading-[22px]'
+                                    dangerouslySetInnerHTML={{ __html: elem?.description   }}
                                 />
                                 <div>
                                     {/* <Link href=''>

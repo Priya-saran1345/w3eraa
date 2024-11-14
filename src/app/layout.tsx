@@ -5,6 +5,8 @@ import "./globals.css";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { ApiProvider } from "@/helpers/apiContext"; // Capitalized for standard convention
+import Canonical from "@/components/Canonical";
+import { Toaster } from 'react-hot-toast';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,9 +29,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+          <Canonical/>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+                  <Toaster />
+
         <ApiProvider> {/* Wrap the provider around children */}
+
           {children}
         </ApiProvider>
       </body>

@@ -7,9 +7,13 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from 'next/link';
+import ClientsCount from './ClientsCount';
+
 const Banner = () => {
   const [bannerData, setBannerData] = useState<any>();
   const { apidata } = Useapi();
+  const { basic_details } = Useapi();
+
   const [data, setData] = useState({ first: '', second: '' });
   const sliderRef = useRef<Slider>(null); // Ref for the slider
 
@@ -90,6 +94,14 @@ const Banner = () => {
                     {bannerData?.description}
                   </p>
                   <div className="flex mt-3 flex-wrap gap-4 justify-center md:justify-start items-center">
+                  <a href={`tel:${basic_details?.basic_details[0].phonenumber}`}>
+                    <button className="flex items-center h-[55px] justify-center px-8 bg-white text-pink font-medium hover:text-white text-[18px] rounded-md  group hover:bg-pink transition duration-300">
+                      <span  className="transition-transform duration-300 group-hover:-translate-x-2 text-[20px]">
+                       Call For Sales
+                      </span>
+                      <GoArrowRight className="text-[20px] opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-x-2" />
+                    </button>
+                    </a>
                     <Link href={'/contact-us'}>
                     <button className="flex items-center hover:bg-white hover:text-pink font-medium justify-center px-8 text-[18px]
                      text-white rounded-md h-[55px] group bg-pink transition duration-300">
@@ -99,47 +111,8 @@ const Banner = () => {
                       <GoArrowRight className="text-[20px] opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-x-2" />
                     </button>
                        </Link>
-                       <a href={`tel:7073197281`}>
-                    <button className="flex items-center h-[55px] justify-center px-8 bg-white text-pink font-medium hover:text-white text-[18px] rounded-md  group hover:bg-pink transition duration-300">
-                      <span  className="transition-transform duration-300 group-hover:-translate-x-2 text-[20px]">
-                       Call Us
-                      </span>
-                      <GoArrowRight className="text-[20px] opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-x-2" />
-                    </button>
-                    </a>
-                    <div className="flex -ml-3">
-                      <Image
-                        src={'/images/banner-circle.png'}
-                        alt={''}
-                        height={34}
-                        width={34}
-                        className="ml-3"
-                      />
-                      <Image
-                        src={'/images/banner-circle.png'}
-                        alt={''}
-                        height={34}
-                        width={34}
-                        className="-ml-3"
-                      />
-                      <Image
-                        src={'/images/banner-circle.png'}
-                        alt={''}
-                        height={34}
-                        width={34}
-                        className="-ml-3"
-                      />
-                      <Image
-                        src={'/images/banner-circle.png'}
-                        alt={''}
-                        height={34}
-                        width={34}
-                        className="-ml-3"
-                      />
-                      <div className="w-[34px] h-[34px] rounded-full border-[2px] flex justify-center items-center text-[14px] -ml-3 border-white bg-pink text-white">
-                        <p>6K+</p>
-                      </div>
-                    </div>
+                      < ClientsCount/>
+                   
                   </div>
                 </div>
 
@@ -153,8 +126,10 @@ const Banner = () => {
                   </div>
                   <Slider ref={sliderRef} {...settings} className="mt-5">
                     {bannerData?.card.map((service:any, index:any) => (
+                      <Link href={`${service?.slug}`}  key={index}>
+                    
                       <div
-                        key={index}
+                       
                         className='rounded-2xl border-[1px] max-w-[297px] hover:bg-white h-[180px] hover:text-homeblack group flex justify-between items-start gap-4 p-5'
                       >
                         <div className='flex gap-4'>
@@ -167,6 +142,7 @@ const Banner = () => {
                           </div>
                         </div>
                       </div>
+                      </Link>
                     ))}
                   </Slider>
                 </div>
@@ -177,23 +153,27 @@ const Banner = () => {
       </div>
       <div className='w-full border-b-2 border-lightblue mx-auto'>
         <div className="w-full px-6 xl:w-[75%] mx-auto ">
-          <p className="text-[28px] text-homeback font-bold mt-8 mb-3">
+          <p className=" text-[38px] lg:text-[48px] text-homeback font-bold mt-8 mb-3">
             {data.first} <span className='text-pink'>{data.second}</span>
           </p>
           <div className="bg-white flex flex-wrap xl:flex-nowrap justify-center gap-4 items-center rounded-xl py-5 md:py-10">
             {apidata?.brand.map((elem: any, index: number) => (
               <React.Fragment key={index}>
+             
+               
                 <div className='h-[140px] min-w-[100px] md:size-[140px] w-[140px] rounded-full flex justify-center items-center border-[1px] border-lightblue'>
                   <div>
                     <Image
                       src={elem.image}
                       alt={''}
-                      height={84}
-                      width={80}
+                      height={114}
+                      width={
+                        100}
                       
                     />
                   </div>
                 </div>
+                
                 {index < 7 && (
                   <div className="h-[90px] hidden md:block w-[1px] bg-slate-200" />
                 )}

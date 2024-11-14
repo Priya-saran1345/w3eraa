@@ -5,6 +5,7 @@ import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 import { MdOutlineRocketLaunch } from 'react-icons/md'
 import Image from 'next/image'
 import Button from '@/components/button'
+import ClientsCount from '../ClientsCount'
 
 const Index = ({show}:any) => {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -15,7 +16,6 @@ const Index = ({show}:any) => {
   return (
     <div  className=' lg:flex gap-1 2xl:gap-3 py-3 items-center text-[17px] lg:text-[14px] 2xl:text-[17px] '>
           <div className={`lg:items-center font-medium ${show ? "flex flex-col" : "flex"} gap-2 2xl:gap-4`}>
-
               {/* SEO Dropdown */}
               <Link href={'/blog'}>
               <li  className='flex  lg:hidden gap-1 items-center mb-2 cursor-pointer'>
@@ -36,7 +36,7 @@ const Index = ({show}:any) => {
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
-                          src={'/images/header11.svg'}
+                          src={'/images/h1.svg'}
                           alt={''}
                           height={54}
                           width={41}
@@ -64,7 +64,7 @@ const Index = ({show}:any) => {
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
-                          src={'/images/header12.svg'}
+                          src={'/images/h2.svg'}
                           alt={''}
                           height={54}
                           width={41}
@@ -88,13 +88,14 @@ const Index = ({show}:any) => {
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
-                          src={'/images/header13.svg'}
+                          src={'/images/h3.svg'}
                           alt={''}
                           height={54}
                           width={41}
                           className="ml-3"
                         />
                       </div>
+                      
                       <p className='text-[22px] text-homeblack font-semibold'>Our Free SEO Tools</p>
                     </div>
                     <ul className='  flex flex-col gap-2 mt-5 '>
@@ -114,39 +115,8 @@ const Index = ({show}:any) => {
                       <Link href={'/contact-us'}>
                       <Button content={'Contact Us'} />
                       </Link>
-                      <div className="flex -ml-3">
-                        <Image
-                          src={'/images/banner-circle.png'}
-                          alt={''}
-                          height={34}
-                          width={34}
-                          className="ml-3"
-                        />
-                        <Image
-                          src={'/images/banner-circle.png'}
-                          alt={''}
-                          height={34}
-                          width={34}
-                          className="-ml-3"
-                        />
-                        <Image
-                          src={'/images/banner-circle.png'}
-                          alt={''}
-                          height={34}
-                          width={34}
-                          className="-ml-3"
-                        />
-                        <Image
-                          src={'/images/banner-circle.png'}
-                          alt={''}
-                          height={34}
-                          width={34}
-                          className="-ml-3"
-                        />
-                        <div className="w-[34px] h-[34px] rounded-full border-[2px] flex justify-center items-center text-[14px] -ml-3 border-white bg-pink text-white">
-                          <p>6K+</p>
-                        </div>
-                      </div>
+                     
+                      <ClientsCount/>
                     </div>
                   </div>
                 </div>
@@ -164,7 +134,7 @@ const Index = ({show}:any) => {
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
-                          src={'/images/header11.svg'}
+                          src={'/images/h6.svg'}
                           alt={''}
                           height={54}
                           width={41}
@@ -186,7 +156,7 @@ const Index = ({show}:any) => {
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
-                          src={'/images/header11.svg'}
+                          src={'/images/h5.svg'}
                           alt={''}
                           height={54}
                           width={41}
@@ -207,7 +177,7 @@ const Index = ({show}:any) => {
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
-                          src={'/images/header11.svg'}
+                          src={'/images/h4.svg'}
                           alt={''}
                           height={54}
                           width={41}
@@ -230,40 +200,9 @@ const Index = ({show}:any) => {
                       <Link href={'/contact-us'}>
                       <Button content={'Contact Us'} />
                       </Link>
-                      <div className="flex -ml-3">
-                        <Image
-                          src={'/images/banner-circle.png'}
-                          alt={''}
-                          height={34}
-                          width={34}
-                          className="ml-3"
-                        />
-                        <Image
-                          src={'/images/banner-circle.png'}
-                          alt={''}
-                          height={34}
-                          width={34}
-                          className="-ml-3"
-                        />
-                        <Image
-                          src={'/images/banner-circle.png'}
-                          alt={''}
-                          height={34}
-                          width={34}
-                          className="-ml-3"
-                        />
-                        <Image
-                          src={'/images/banner-circle.png'}
-                          alt={''}
-                          height={34}
-                          width={34}
-                          className="-ml-3"
-                        />
-                        <div className="w-[34px] h-[34px] rounded-full border-[2px] flex justify-center items-center text-[14px] -ml-3 border-white bg-pink
-                         text-white">
-                          <p>6K+</p>
-                        </div>
-                      </div>
+                     
+                      <ClientsCount/>
+
                     </div>
                   </div>
                 </div>
@@ -281,7 +220,7 @@ const Index = ({show}:any) => {
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
-                          src={'/images/header11.svg'}
+                          src={'/images/h7.svg'}
                           alt={''}
                           height={54}
                           width={41}
@@ -301,7 +240,7 @@ const Index = ({show}:any) => {
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
-                          src={'/images/header11.svg'}
+                          src={'/images/h8.svg'}
                           alt={''}
                           height={54}
                           width={41}
@@ -325,7 +264,7 @@ const Index = ({show}:any) => {
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
-                          src={'/images/header11.svg'}
+                          src={'/images/h9.svg'}
                           alt={''}
                           height={54}
                           width={41}
@@ -350,44 +289,11 @@ const Index = ({show}:any) => {
 
                       <Button content={'Contact Us'} />
                       </Link>
-                      <div className="flex -ml-3">
-                        <Image
-                          src={'/images/banner-circle.png'}
-                          alt={''}
-                          height={34}
-                          width={34}
-                          className="ml-3"
-                        />
-                        <Image
-                          src={'/images/banner-circle.png'}
-                          alt={''}
-                          height={34}
-                          width={34}
-                          className="-ml-3"
-                        />
-                        <Image
-                          src={'/images/banner-circle.png'}
-                          alt={''}
-                          height={34}
-                          width={34}
-                          className="-ml-3"
-                        />
-                        <Image
-                          src={'/images/banner-circle.png'}
-                          alt={''}
-                          height={34}
-                          width={34}
-                          className="-ml-3"
-                        />
-                        <div className="w-[34px] h-[34px] rounded-full border-[2px] flex justify-center items-center text-[14px] -ml-3 border-white bg-pink text-white">
-                          <p>6K+</p>
-                        </div>
-                      </div>
+                      <ClientsCount/>
                     </div>
                   </div>
                 </div>
               )}
-
               {/* Our Packages Dropdown */}
               <li onClick={() => toggleDropdown('packages')} className='flex gap-1 items-center cursor-pointer'>
                 Our Packages {openDropdown === 'packages' ? <IoIosArrowUp /> : <IoIosArrowDown />}
@@ -399,7 +305,7 @@ const Index = ({show}:any) => {
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
-                          src={'/images/header11.svg'}
+                          src={'/images/h10.svg'}
                           alt={''}
                           height={54}
                           width={41}
@@ -425,7 +331,7 @@ const Index = ({show}:any) => {
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
-                          src={'/images/header11.svg'}
+                          src={'/images/h11.svg'}
                           alt={''}
                           height={54}
                           width={41}
@@ -444,7 +350,7 @@ const Index = ({show}:any) => {
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
-                          src={'/images/header11.svg'}
+                          src={'/images/h12.svg'}
                           alt={''}
                           height={54}
                           width={41}
@@ -468,7 +374,7 @@ const Index = ({show}:any) => {
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
-                          src={'/images/header11.svg'}
+                          src={'/images/h13.svg'}
                           alt={''}
                           height={54}
                           width={41}
@@ -498,7 +404,7 @@ const Index = ({show}:any) => {
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
-                          src={'/images/header11.svg'}
+                          src={'/images/h14.svg'}
                           alt={''}
                           height={54}
                           width={41}
@@ -522,7 +428,7 @@ const Index = ({show}:any) => {
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
-                          src={'/images/header11.svg'}
+                          src={'/images/h15.svg'}
                           alt={''}
                           height={54}
                           width={41}
@@ -545,7 +451,7 @@ const Index = ({show}:any) => {
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
-                          src={'/images/header11.svg'}
+                          src={'/images/h16.svg'}
                           alt={''}
                           height={54}
                           width={41}
@@ -568,39 +474,8 @@ const Index = ({show}:any) => {
                       <Link href={'/contact-us'}>
                       <Button content={'Contact Us'} />
                       </Link>
-                      <div className="flex -ml-3">
-                        <Image
-                          src={'/images/banner-circle.png'}
-                          alt={''}
-                          height={34}
-                          width={34}
-                          className="ml-3"
-                        />
-                        <Image
-                          src={'/images/banner-circle.png'}
-                          alt={''}
-                          height={34}
-                          width={34}
-                          className="-ml-3"
-                        />
-                        <Image
-                          src={'/images/banner-circle.png'}
-                          alt={''}
-                          height={34}
-                          width={34}
-                          className="-ml-3"
-                        />
-                        <Image
-                          src={'/images/banner-circle.png'}
-                          alt={''}
-                          height={34}
-                          width={34}
-                          className="-ml-3"
-                        />
-                        <div className="w-[34px] h-[34px] rounded-full border-[2px] flex justify-center items-center text-[14px] -ml-3 border-white bg-pink text-white">
-                          <p>6K+</p>
-                        </div>
-                      </div>
+                      <ClientsCount/>
+
                     </div>
                   </div>
                 </div>
@@ -609,10 +484,11 @@ const Index = ({show}:any) => {
             {/* Buttons */}
             <div className='flex gap-2 lg:gap-1 mt-2 lg:mt-0 flex-col lg:flex-row'>
 
-           
+           <Link href={'https://meetings.hubspot.com/sakshi-jass?uuid=ae684c90-b22d-4aed-a972-4de20bef7f87'}>
             <button className='px-1 max-w-[180px] py-3 border-2 border-pink rounded-full meeting-btn'>
               <span className="meeting-text">Book a Meeting</span>
             </button>
+           </Link>
 
             <Link href={'/get-a-free-quote'}>
               <button

@@ -98,7 +98,7 @@ const Solution = () => {
   return (
     <div className="w-full border-t border-slate-100">
       <div className="mx-auto w-full px-4 py-10 md:py-16 xl:w-[75%]">
-        <h2 className="mb-4 text-[30px] font-bold leading-tight text-black lg:text-[48px]">
+        <h2 className="mb-4 text-[30px] font-bold leading-tight text-black lg:text-[37px]">
           {data.first} <span className="text-pink">{data.second}</span>
         </h2>
         <p className="mb-8 text-[18px] leading-tight text-muted-foreground">
@@ -107,7 +107,7 @@ const Solution = () => {
         <Slider ref={sliderRef} {...settings} className="flex justify-between  pb-4 gap-7 overflow-x-hidden">
         {solutionData?.cards.map((elem: any, index: number) => (
             <div key={index} className="px-2">
-              <div className="flex h-[317px]   max-w-[401px] flex-col justify-between rounded-xl border border-slate-100
+              <div className="flex h-[270px]   max-w-[401px] flex-col justify-between rounded-xl border border-slate-100
                bg-white p-8 transition-all duration-300 hover:shadow-xl">
                 <div className="flex justify-between  flex-col">
                   <div  className="mb-6 flex h-[72px] w-[72px] items-center justify-center rounded-xl bg-lightblue">
@@ -125,9 +125,9 @@ const Solution = () => {
                   <p className="text-[18px] leading-[22px] text-muted-foreground">
                     {elem?.description}
                   </p>
-                  <div className="mt-4">
+                  {/* <div className="mt-4">
                   <Button content={'  Learn more'}/>
-                  </div>
+                  </div> */}
                   </div>
               </div>
             </div>

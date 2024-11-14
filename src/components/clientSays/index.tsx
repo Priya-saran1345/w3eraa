@@ -32,7 +32,7 @@ export default function Data({ props }: any) {
       <div className="w-full px-4 xl:w-[75%] mx-auto">
         <div className="md:w-[60%] mx-auto text-center">
           {/* Title */}
-          <p className=" text-[32px] lg:text-[48px] font-bold text-homeblack mt-4 text-center leading-tight">
+          <p className=" text-[32px] lg:text-[42px] font-bold text-homeblack mt-4 text-center leading-tight">
             {heading.first} <span className="text-pink">{heading.second}</span>
           </p>
           {/* Description */}
@@ -47,20 +47,21 @@ export default function Data({ props }: any) {
           {props?.cards?.map((cardprops: any, index: number) => (
             <div
               key={index}
-              className="h-[565px] rounded-xl w-[404px] bg-white overflow-hidden"
+              className="h-[535px] rounded-xl w-[350px] sm:w-[404px] bg-white overflow-hidden"
             >
               {/* Toggle YouTube Video or Image */}
               {active === index && cardprops.video ? (
-              <div
-                  className="max-h-[317px] w-full">
-                <ReactPlayer
-                  url={cardprops?.video}
-                  controls
-                  className="w-full max-h-[317px]"
-                  // Set height to match the image
-                  onClick={() => setActive(null)}
-                />
-                </div>
+              <div className="max-h-[317px] w-full">
+              <ReactPlayer
+                url={cardprops?.video}
+                controls
+                playing={true} // This will automatically start playing when the video is loaded
+                autoplay={true} // Ensures the video starts automatically
+                className="w-full max-h-[317px]"
+                onClick={() => setActive(null)}
+              />
+            </div>
+            
               ) : (
                 <div
                   className="h-[317px] w-full relative cursor-pointer"
@@ -87,25 +88,40 @@ export default function Data({ props }: any) {
               )}
 
               {/* Content */}
-              <div className="m-4 flex flex-col gap-4">
+              <div>
+              <div className=" m-2 flex flex-col -gap-2">
                 <Image
-                  src={"/images/uppercoma.svg"}
-                  height={22}
-                  width={22}
+                  src={'/images/uppercoma.svg'}
+                  height={18}
+                  width={18}
                   alt="Upper Coma"
                 />
                 <p className="text-[26px] text-center font-semibold text-homeblack">
-                  {cardprops.description ||
-                    "Professionals at W3Era are incredible. Simply dummy text of the printing."}
+                  {cardprops.description || "Professionals at W3Era are incredible. Simply dummy text of the printing."}
                 </p>
                 <div className="flex w-full justify-end">
                   <Image
-                    src={"/images/lovercoma.svg"}
-                    height={22}
-                    width={22}
+                    src={'/images/lovercoma.svg'}
+                    height={18}
+                    width={18}
                     alt="Lower Coma"
                   />
                 </div>
+              </div>
+              <div className='flex  justify-center w-full'>
+                 <div>
+                  <p className='text-[30px] font-semibold text-blue text-center'>{cardprops?.card1_title}</p>
+                  <p className='text-center text-homegrey text-[16px]'>{cardprops?.card1_content}</p>
+                 </div>
+                 <div className='w-[2px] min-h-full mx-2 bg-pink'>
+
+                 </div>
+                 <div>
+                  <p className='text-[30px] font-semibold text-blue text-center'>{cardprops?.card2_title}</p>
+                  <p className='text-center text-homegrey text-[16px]'>{cardprops?.card2_content}</p>
+                 </div>
+              </div>
+
               </div>
             </div>
           ))}

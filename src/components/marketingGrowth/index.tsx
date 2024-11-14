@@ -5,7 +5,6 @@ import { Useapi } from '@/helpers/apiContext'
 import { IoMdStar } from "react-icons/io";
 import Button from '@/components/button';
 import Link from 'next/link';
-
 const Growth = () => {
     const [Data, setData] = useState<any>(); // Initial state should be null
     const { apidata } = Useapi(); // Destructure apidata from the context
@@ -78,14 +77,14 @@ const Growth = () => {
                 <div className='flex items-center flex-col gap-2'>
                     <div className=' md:w-[80%] lg:w-full text-center lg:text-left'>
 
-                        <p className=' text-[32px] lg:text-[48px]  font-bold lg:leading-[58px]'><span className='text-pink'>{data.first}</span>{data.second}</p>
+                        <p className=' text-[32px] lg:text-[42px]  font-bold lg:leading-[58px]'><span className='text-pink'>{data.first}</span>{data.second}</p>
                         <p
                             className="text-homegrey mt-3 text-[18px] leading-[21px]"
                             dangerouslySetInnerHTML={{ __html: Data?.description }}
                         ></p>
 
                     </div>
-                    <div className='flex flex-wrap justify-center md:justify-start sm:flex-nowrap mt-5  gap-2'>
+                    <div className='flex flex-wrap justify-center md:justify-start sm:flex-nowrap mt-5 gap-2'>
                         <div className='bg-white p-3 flex gap-3 rounded-xl'>
                             <div className='rounded-full flex justify-center items-center size-[63px]'>
                                 <Image
@@ -112,7 +111,6 @@ const Growth = () => {
                             <div className='rounded-full flex justify-center items-center size-[63px]'>
                                 <Image
                                     src={'/images/growth-person.png'}
-
                                     alt={''}
                                     height={60}
                                     width={163}
@@ -120,7 +118,6 @@ const Growth = () => {
                                 />
                             </div>
                             <div>
-
                                 <p className='text-homeblack text-[18px]'>Rajat Sharma</p>
                                 <div className='flex gap-1 text-[20px] text-blue'>
                                     <IoMdStar />
@@ -136,11 +133,8 @@ const Growth = () => {
                             <p className='text-blue text-[20px]'>5k+</p>
                         </div>
                     </div>
-
-
-
                     <div className='flex  mt-2'>
-                        <Link href={'/'}>
+                        <Link href={'/get-a-free-quote'}>
                             <Button content={'Learn More'} />
                         </Link>
 

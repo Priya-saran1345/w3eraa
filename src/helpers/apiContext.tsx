@@ -14,7 +14,7 @@ interface ApiContextType {
   portfolio:any;
   life:any;
   loading:any;
- 
+  cluth:any;
   career:any;
 }
 const ApiContext = createContext<ApiContextType | undefined>(undefined);
@@ -31,6 +31,7 @@ export const ApiProvider = ({ children }: { children: React.ReactNode }) => {
   const [life, setlife] = useState<any>()
   const [loading, setloading] = useState<any>(true)
   const [career, setcareer] = useState<any>()
+  const [cluth, setcluth] = useState<any>()
   const fetch = async () => {
     try {
       const response = await axios.get(`${BASE_URL}home/`);
@@ -53,7 +54,7 @@ export const ApiProvider = ({ children }: { children: React.ReactNode }) => {
     //   console.log("blogs error", error.message);
     // }
     try {
-      const response = await axios.get(`${BASE_URL}blogs/`);
+      const response = await axios.get(`${BASE_URL}blogs/?page=1`);
       setblogs(response.data);
     } catch (error: any) {
       console.log("blogs error", error.message);
@@ -75,6 +76,13 @@ export const ApiProvider = ({ children }: { children: React.ReactNode }) => {
       setabout(response.data);
     } catch (error: any) {
       console.log("about error", error.message);
+    }
+    try {
+      const response = await axios.get(`${BASE_URL}clutch/`);
+      setcluth(response.data);
+    } catch (error: any) {
+      console.log(error.message);
+
     }
     try {
       const response = await axios.get(`${BASE_URL}basic-details/`);
@@ -103,7 +111,7 @@ export const ApiProvider = ({ children }: { children: React.ReactNode }) => {
  
  
   return (
-    <ApiContext.Provider value={{ apidata, faq,blog,blogs ,service,client,about,basic_details,portfolio,life,loading,career}}>
+    <ApiContext.Provider value={{ apidata, faq,blog,blogs ,service,client,about,basic_details,portfolio,life,loading,career,cluth}}>
       {children}
     </ApiContext.Provider>
   );

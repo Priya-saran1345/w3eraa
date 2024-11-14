@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import Button from '@/components/button'
 import Link from 'next/link';
-
+import ClientsCount from '@/components/ClientsCount'
 const Choose = ({props}:any) => {
   
   const [data, setdata] = useState({ first: '', second: '' })
@@ -60,39 +60,9 @@ const Choose = ({props}:any) => {
             <Button content={'Contact Us'}/>
               </Link>
             </div>
-            <div className="flex -ml-3">
-              <Image
-                src={'/images/banner-circle.png'}
-                alt={''}
-                height={34}
-                width={34}
-                className="ml-3"
-              />
-              <Image
-                src={'/images/banner-circle.png'}
-                alt={''}
-                height={34}
-                width={34}
-                className="-ml-3"
-              />
-              <Image
-                src={'/images/banner-circle.png'}
-                alt={''}
-                height={34}
-                width={34}
-                className="-ml-3"
-              />
-              <Image
-                src={'/images/banner-circle.png'}
-                alt={''}
-                height={34}
-                width={34}
-                className="-ml-3"
-              />
-              <div className="w-[34px] h-[34px] rounded-full border-[2px] flex justify-center items-center text-[14px] -ml-3 border-white bg-pink text-white">
-                <p>6K+</p>
-              </div>
-            </div>
+            <ClientsCount/>
+
+           
           </div>
         </div>
       </div >

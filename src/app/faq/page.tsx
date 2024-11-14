@@ -1,88 +1,70 @@
-'use client'
-import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { FaArrowUpLong, FaArrowDownLong } from "react-icons/fa6"
-import { Useapi } from '@/helpers/apiContext'
-import Header from '@/components/header'
-import Navbar from '@/components/navbar'
-import Footer from '@/components/footer'
-import Loader from '@/components/loader'
 
-export default function AnimatedFaqs() {
-  const { faq } = Useapi()
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
-  const handleToggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
+import React from 'react'
+import FaqPage from '@/components/FaqPage'
+import { fetchMeta } from "@/app/action";
+
+const Page = () => {
   return (
     <div>
-      {!faq && <Loader />}
-      {
-
-    faq &&
-      <div className='w-full'>
-        <Header />
-        <Navbar />
-        <div className='flex h-[45vh] w-full items-center justify-center bg-[url("/images/blog-bg.png")] px-4'>
-          <p className='text-center text-[32px] font-bold text-white lg:text-[48px]'>Frequently Asked Questions</p>
-        </div>
-        <div className='mx-auto mb-8 flex w-full flex-wrap bg-lightblue mt-20 rounded-lg justify-between gap-5 px-4 lg:px-10 pt-10 text-white lg:mb-32 md:py-10 xl:w-[75%]'>
-          {faq?.map((item: any, index: number) => (
-            <motion.div
-              key={index}
-              className='h-fit w-full rounded-lg bg-white p-7  sm:w-[48%]'
-              initial={false}
-              // animate={{ backgroundColor: openIndex === index ? "#f0f0f0" : "#e0e0e0" }}
-              transition={{ duration: 0.3 }}
-            >
-              <div
-                className='flex cursor-pointer  justify-between'
-                onClick={() => handleToggle(index)}
-              >
-                <p className='text-[20px] text-homeblack font-medium'>{item?.title}</p>
-                <motion.div
-                  animate={{ rotate: openIndex === index ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {openIndex === index ? (
-                    <FaArrowUpLong className='transition-transform text-homeblack duration-200' />
-                  ) : (
-                    <FaArrowDownLong className='transition-transform text-homeblack duration-200' />
-                  )}
-                </motion.div>
-              </div>
-              <AnimatePresence initial={false}>
-                {openIndex === index && (
-                  <motion.div
-                    initial="collapsed"
-                    animate="open"
-                    exit="collapsed"
-                    variants={{
-                      open: { opacity: 1, height: "auto" },
-                      collapsed: { opacity: 0, height: 0 }
-                    }}
-                    transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
-                  >
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.2, delay: 0.1 }}
-                      className='py-6 text-[18px]  text-homegrey'
-                    >
-<p
-    className='!text-homegrey'
-    dangerouslySetInnerHTML={{ __html: item?.description }}
-  />                    </motion.div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
-        </div>
-        <Footer />
-      </div>
-       }
+      <FaqPage/>
     </div>
   )
+}
+
+export default Page
+
+export async function generateMetadata() {
+  try {
+    const metaData = await fetchMeta("faq");
+    console.log('metadata of about us',metaData)
+    return {
+      title: metaData?.title || '',
+      description: metaData?.description || '',
+      openGraph: metaData?.openGraph
+        ? {
+            type: metaData.openGraph.type || '',
+            title: metaData.openGraph.title || '',
+            description: metaData.openGraph.description || '',
+            url: metaData.openGraph.url || '',
+            siteName: metaData.openGraph.siteName || '',
+            images: metaData.openGraph.images?.map((image:any) => ({
+              url: image?.url || '',
+              width: parseInt(image?.width) || '',
+              height: parseInt(image?.height) || '',
+              alt: image?.alt || '',
+            })) || [],
+            locale: metaData.openGraph.locale || '',
+          }
+        : undefined,
+      robots: {
+        index: metaData?.robots?.index ?? false, // Default to true if not provided
+        follow: metaData?.robots?.follow ?? false,
+      },
+      icons: metaData?.icons
+        ? {
+            icon: metaData.icons.icon || '',
+            shortcut: metaData.icons.shortcut || '',
+            apple: metaData.icons.apple || '',
+          }
+        : undefined,
+      twitter: metaData?.twitter
+        ? {
+            card: metaData.twitter.card || '',
+            title: metaData.twitter.title || '',
+            description: metaData.twitter.description || '',
+            creator: metaData.twitter.creator || '',
+            images: metaData.twitter.images || '',
+          }
+        : undefined,
+      alternates: {
+        canonical: metaData?.openGraph?.url || '',
+      },
+    };
+  } catch (error) {
+    console.error('Error fetching meta data:', error);
+    return {
+      title: 'W3era® | Performance Driven Digital Marketing Company',
+      description: 'A premier Digital Marketing Company, W3era® offer comprehensive services like SEO, PPC, and Web development. Schedule a free marketing consultation today.',
+    };
+  }
 }

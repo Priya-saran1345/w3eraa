@@ -32,7 +32,7 @@ const Header = () => {
               <Link target='_blank' href={`${basic_details?.basic_details[0].pinterest_url}`}><FaPinterest /></Link>
               <Link target='_blank' href={`${basic_details?.basic_details[0].gmb_url}`}><IoLocationOutline /></Link>
             </div>
-            <a href="mailto:sales@W3era.com">
+            <a href={`mailto:${basic_details?.basic_details[0].email}`}>
             <p className='text-[15px] text-white mt-1'>{basic_details?.basic_details[0].email} </p>
             </a>
           </div>
@@ -83,17 +83,20 @@ const Header = () => {
               <Link href={'/web-stories'}>
               <div>Web Story</div>
               </Link>
+              <Link href={'https://onpageinsights.com/'} target='_blank'>
+
               <div>Free Website Audit</div>
+              </Link>
               <Link href='/contact-us'>
                 <div>Contact Us</div>
               </Link>
             </div>
             {/* Proposal Button */}
-            <a href={`tel:7073197281`}>
+            <a href={`tel:${basic_details?.basic_details[0].contact_job}`}>
 
             <button
               className='flex items-center justify-center px-4 md:px-6 text-white rounded-md py-2 group bg-pink transition duration-300'>
-              <span className='transition-transform duration-300 group-hover:-translate-x-2'>Get a Proposal</span>
+              <span className='transition-transform duration-300 group-hover:-translate-x-2'>Apply for Job</span>
               <IoCall className='text-[20px] opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-x-2' />
             </button>
             </a>

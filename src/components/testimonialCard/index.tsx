@@ -6,14 +6,13 @@ import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 const TestimonialCard = ({ props }: any) => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 3;
-  const totalPages = Math.ceil(props.length / itemsPerPage);
+  const totalPages = Math.ceil(props?.length / itemsPerPage);
 
   const handlePrevious = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
   };
-
   const handleNext = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
@@ -57,9 +56,8 @@ const TestimonialCard = ({ props }: any) => {
                 width={13}
                 alt="Upper Coma"
               />
-              <p className='text-[18px] my-2 text-homegrey'>
-                {item.description}
-              </p>
+                <p className='text-[18px] my-2 text-homegrey' dangerouslySetInnerHTML={{ __html: item.description }} />
+
               <div className='w-full flex justify-end'>
                 <Image
                   src={'/images/lovercoma.svg'}

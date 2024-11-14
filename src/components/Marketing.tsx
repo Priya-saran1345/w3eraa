@@ -38,7 +38,7 @@ const Marketing = () => {
         <div className="lg:w-1/2 text-center flex flex-col gap-3 md:text-left">
           <p className='text-homeblack text-[20px] font-semibold  uppercase'>{marketingData?.subtitle}</p>
           
-          <p className=' text-[32px] font-bold lg:text-[48px] lg:leading-[58px]'>{data.first} <span className='text-pink'>{data.second}</span></p>
+          <p className=' text-[32px] font-bold lg:text-[42px] lg:leading-[58px]'>{data.first} <span className='text-pink'>{data.second}</span></p>
           <p className='text-homegrey text-[18px]'>{marketingData?.summary}</p>
           <div className='flex gap-4 mt-5 flex-wrap sm:flex-nowrap justify-between'>
             <div className="bg-lightblue p-5 rounded-lg items-start flex gap-4 group hover:bg-white duration-300 hover:shadow-lg transition-all">

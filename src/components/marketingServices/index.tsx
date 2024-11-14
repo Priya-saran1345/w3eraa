@@ -8,6 +8,7 @@ const index = ({props}:any) => {
     <div className='w-full bg-lightblue py-10 text-white  lg:py-16'>
     <div className='xl:w-[75%] px-4 mx-auto flex flex-col gap-10'>
         <p className=' text-[32px] text-center lg:text-[38px] font-bold text-homeblack leading-[45px]'>{props?.title}</p>
+        <p className=' text-[18px] px-3 lg:px-16 text-center  text-homegrey ' dangerouslySetInnerHTML={{__html:props?.description}}/>
         <div className='flex justify-center gap-5 flex-wrap'>
             {
                 props?.card.map((elem: any, i:number) => (
@@ -25,18 +26,18 @@ const index = ({props}:any) => {
                         </div>
                         }
                         <p className='text-[26px] font-medium text-homeblack leading-[31px]'>{elem?.title}</p>
-                        <p className='text-[18px] text-homegrey leading-[22px]'  dangerouslySetInnerHTML={{ __html:elem?.description }}/>
-                       
-                           
+                        <p className='text-[20px]  text-homeblack leading-[31px]'>{elem?.subtitle}</p>
+
+                        <p className='text-[16px] text-homegrey leading-[22px]'  dangerouslySetInnerHTML={{ __html:elem?.description }}/>
                         <div>
                             <div className='mt-4'>
-
                             <Link href='' className=''>
                              <Button content={'Learn More'}/>
                                 </Link>
                             </div>
                         </div>
                     </div>
+                
 
                 ))
             }
@@ -44,6 +45,7 @@ const index = ({props}:any) => {
         <div className='flex justify-center'>
             <Button content={'Get a Quote Now!'} />
         </div>
+       
     </div>
 </div>
   )

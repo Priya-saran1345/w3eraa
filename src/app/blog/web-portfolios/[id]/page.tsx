@@ -1,71 +1,73 @@
-'use client'
-import Choose from '@/components/Choose'
-import Footer from '@/components/footer'
-import Header from '@/components/header'
-import Loader from '@/components/loader'
-import Navbar from '@/components/navbar'
-import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
-import { Useapi } from '@/helpers/apiContext';
-import { usePathname } from 'next/navigation'
-import axios from 'axios'
-import { BASE_URL } from '@/util/api'
 
-const PortfolioInner = () => {
-  const { apidata } = Useapi();
+import React from 'react'
+import WebPortfolio from '@/components/WebPortfolioInner'
+import { fetchMeta } from "@/app/action";
 
-
-  const pathname = usePathname();
-  const segments = pathname.replace(/\/$/, '').split('/');
-  const lastsegment = segments.pop();
-  const [data, setdata] = useState<any>()
-  const fetch = async () => {
-    try {
-      const response = await axios.get(`${BASE_URL}portfolio/${lastsegment}/`);
-      setdata(response.data[0]);
-    } catch (error: any) {
-      console.log("service error", error.message);
-    }
-  }
-  useEffect(() => {
-    fetch()
-  }, [])
-
-  console.log('portfolio data', data)
+const Page = ({ params }: any) => {
   return (
     <div>
-      {!apidata &&
-        <Loader />
-      }
-      {apidata &&
-        <div>
-          <Header></Header>
-          <Navbar />
-          <div className='border-b-2 border-lightblue'>
-          <div className=' py-12 xl:w-[70%]  px-6 mx-auto items-center lg:py-16 flex-col gap-12'>
-            <div className='flex justify-center items-center'>
-              <Image src={data?.image || ''} height={550} width={550} alt={'finding'}></Image>
-            </div>
-            <div className=' mx-auto mt-8 lg:mt-16 text-center'>
-              <p className='text-homeblack text-[38px] font-bold'>{data?.title || ''}</p>
-              <p className='text-[18px] text-homegrey mt-3 text-left leading-[30px]'>
-                {data?.description || ''}
-              </p>
-            </div>
-            <div>
-            </div>
-          </div>
-          </div>
-          <Choose props={apidata?.why_choose[0] || ''} />
-          <Footer />
-        </div>
-      }
-
-
-
-
+      <WebPortfolio/>
     </div>
   )
 }
 
-export default PortfolioInner
+export default Page
+
+
+export async function generateMetadata({ params }: any) {
+  const  slug  = params?.id;
+
+  try {
+    const metaData = await fetchMeta(`blog/web-portfolios/${slug}`);
+    console.log('metadata of about us',metaData)
+    return {
+      title: metaData?.title || '',
+      description: metaData?.description || '',
+      openGraph: metaData?.openGraph
+        ? {
+            type: metaData.openGraph.type || '',
+            title: metaData.openGraph.title || '',
+            description: metaData.openGraph.description || '',
+            url: metaData.openGraph.url || '',
+            siteName: metaData.openGraph.siteName || '',
+            images: metaData.openGraph.images?.map((image:any) => ({
+              url: image?.url || '',
+              width: parseInt(image?.width) || '',
+              height: parseInt(image?.height) || '',
+              alt: image?.alt || '',
+            })) || [],
+            locale: metaData.openGraph.locale || '',
+          }
+        : undefined,
+      robots: {
+        index: metaData?.robots?.index ?? false, // Default to true if not provided
+        follow: metaData?.robots?.follow ?? false,
+      },
+      icons: metaData?.icons
+        ? {
+            icon: metaData.icons.icon || '',
+            shortcut: metaData.icons.shortcut || '',
+            apple: metaData.icons.apple || '',
+          }
+        : undefined,
+      twitter: metaData?.twitter
+        ? {
+            card: metaData.twitter.card || '',
+            title: metaData.twitter.title || '',
+            description: metaData.twitter.description || '',
+            creator: metaData.twitter.creator || '',
+            images: metaData.twitter.images || '',
+          }
+        : undefined,
+      alternates: {
+        canonical: metaData?.openGraph?.url || '',
+      },
+    };
+  } catch (error) {
+    console.error('Error fetching meta data:', error);
+    return {
+      title: 'W3era® | Performance Driven Digital Marketing Company',
+      description: 'A premier Digital Marketing Company, W3era® offer comprehensive services like SEO, PPC, and Web development. Schedule a free marketing consultation today.',
+    };
+  }
+}

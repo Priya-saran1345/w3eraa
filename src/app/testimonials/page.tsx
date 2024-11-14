@@ -1,72 +1,71 @@
-"use client"
-import Footer from '@/components/footer'
-import Header from '@/components/header'
-import React, { useEffect, useState } from 'react'
-import Navigation from '@/components/navbar'
-import CommonBanner from '@/components/Common-Banner'
-import FooterBanner from '@/components/footer-banner'
-import QuickLinks from '@/components/quickLinks'
-import TestimonialVideo from '@/components/testimonial-video'
-import TestimonialCard from '@/components/testimonialCard'
-import axios from 'axios'
-import { BASE_URL } from '@/util/api'
-import Loader from '@/components/loader'
-import { Useapi } from '@/helpers/apiContext';
 
+import React from 'react'
+ import TestimonialPage from '@/components/TestimonialPage'
+ import { fetchMeta } from "@/app/action";
 
 const Page = () => {
-  const { basic_details } = Useapi(); // Get blog data from context
-
-const [apidata, setapidata] = useState<any>()
-const [testimonial, settestimonial] = useState<any>()
-  const fetch = async () => {
-    try {
-      const response = await axios.get(`${BASE_URL}other/testimonials/`);
-      setapidata(response.data);
-    } catch (error: any) {
-      console.log('testimonial error from other',error.message);
-
-    }
-  }
-  const fetch1 = async () => {
-    try {
-      const response = await axios.get(`${BASE_URL}testimonial/`);
-      settestimonial(response.data);
-    } catch (error: any) {
-      console.log('testimonial error',error.message);
-
-    }
-  }
-
-  useEffect(()=>{
-    fetch();
-    fetch1()
-  },[])
-
   return (
-    <div> 
-      {
-        !apidata&&<Loader/>
-      }
-      {
-apidata&&
-        <div>
-
-    <Header />
-    <Navigation />
-    <CommonBanner title={apidata?.title} description={apidata?.body}  image={apidata?.image} btnlink={apidata?.button_url} btntext={apidata?.button_text} image_alt={apidata?.image_alt} />
-    <TestimonialCard props={testimonial?.review}/>
-    <TestimonialVideo props={testimonial?.clients_say_card} />
-    <QuickLinks/>
-    <FooterBanner content={basic_details?.footer_card[0]?.title}
-     image={basic_details?.footer_card[0].image||'/images/life-footer.png'} description= {basic_details?.footer_card[0]?.description}
-     btncontent={'contact us'}
-     />
-    <Footer />
-     </div>
-    }
+    <div>
+      <TestimonialPage/>
     </div>
   )
 }
 
+
 export default Page
+
+export async function generateMetadata() {
+  try {
+    const metaData = await fetchMeta("testimonials");
+    console.log('metadata of about us',metaData)
+    return {
+      title: metaData?.title || '',
+      description: metaData?.description || '',
+      openGraph: metaData?.openGraph
+        ? {
+            type: metaData.openGraph.type || '',
+            title: metaData.openGraph.title || '',
+            description: metaData.openGraph.description || '',
+            url: metaData.openGraph.url || '',
+            siteName: metaData.openGraph.siteName || '',
+            images: metaData.openGraph.images?.map((image:any) => ({
+              url: image?.url || '',
+              width: parseInt(image?.width) || '',
+              height: parseInt(image?.height) || '',
+              alt: image?.alt || '',
+            })) || [],
+            locale: metaData.openGraph.locale || '',
+          }
+        : undefined,
+      robots: {
+        index: metaData?.robots?.index ?? false, // Default to true if not provided
+        follow: metaData?.robots?.follow ?? false,
+      },
+      icons: metaData?.icons
+        ? {
+            icon: metaData.icons.icon || '',
+            shortcut: metaData.icons.shortcut || '',
+            apple: metaData.icons.apple || '',
+          }
+        : undefined,
+      twitter: metaData?.twitter
+        ? {
+            card: metaData.twitter.card || '',
+            title: metaData.twitter.title || '',
+            description: metaData.twitter.description || '',
+            creator: metaData.twitter.creator || '',
+            images: metaData.twitter.images || '',
+          }
+        : undefined,
+      alternates: {
+        canonical: metaData?.openGraph?.url || '',
+      },
+    };
+  } catch (error) {
+    console.error('Error fetching meta data:', error);
+    return {
+      title: 'W3era® | Performance Driven Digital Marketing Company',
+      description: 'A premier Digital Marketing Company, W3era® offer comprehensive services like SEO, PPC, and Web development. Schedule a free marketing consultation today.',
+    };
+  }
+}

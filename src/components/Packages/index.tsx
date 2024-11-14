@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Useapi } from '@/helpers/apiContext'
 import Button from '@/components/button';
+import Link from 'next/link';
 
 const Packages = ({props}:any) => {
 // Destructure apidata from the context
@@ -32,7 +33,7 @@ const Packages = ({props}:any) => {
     return (
         <div className='w-full bg-lightblue  py-12 lg:py-16'>
             <div className='w-full xl:w-[75%] mx-auto px-4'>
-                <p className=' text-[32px] lg:text-[48px] capitalize text-center lg:text-left font-bold'>{data.first} <span className='text-pink'> {data.second}</span></p>
+                <p className=' text-[32px] lg:text-[42px] capitalize text-center lg:text-left font-bold'>{data.first} <span className='text-pink'> {data.second}</span></p>
             </div>
 
             <div className="flex flex-wrap lg:flex-nowrap mt-10 justify-center gap-5  items-center px-4 w-full xl:w-[75%] mx-auto">
@@ -52,7 +53,9 @@ const Packages = ({props}:any) => {
                         <p className='text-[18px] text-homegrey leading-[22px]'>
                             {elem?.description}</p>
                         <div>
-                        {/* <Button content={'Learn More'}/> */}
+                            <Link href={elem?.slug}>
+                        <Button content={'Learn More'}/>
+                            </Link>
                         </div>
                     </div>
                 ))}

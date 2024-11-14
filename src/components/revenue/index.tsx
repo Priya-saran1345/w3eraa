@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { GoArrowUpRight } from 'react-icons/go';
 import Link from 'next/link';
+import ClientsCount from '../ClientsCount';
 
 const Revenue = () => {
   return (
@@ -57,39 +58,8 @@ const Revenue = () => {
                                 </span>
                             </button>
                  </Link>
-                            <div className="flex -ml-3">
-                    <Image
-                      src={'/images/banner-circle.png'} 
-                      alt={''}
-                      height={34}
-                      width={34}
-                      className="ml-3"
-                    />
-                    <Image
-                      src={'/images/banner-circle.png'}
-                      alt={''}
-                      height={34}
-                      width={34}
-                      className="-ml-3"
-                    />
-                    <Image
-                      src={'/images/banner-circle.png'}
-                      alt={''}
-                      height={34}
-                      width={34}
-                      className="-ml-3"
-                    />
-                    <Image
-                      src={'/images/banner-circle.png'}
-                      alt={''}
-                      height={34}
-                      width={34}
-                      className="-ml-3"
-                    />
-                    <div className="w-[34px] h-[34px] rounded-full border-[2px] flex justify-center items-center text-[14px] -ml-3 border-white bg-pink text-white">
-                      <p>6K+</p>
-                    </div>
-                  </div>
+                       
+                  <ClientsCount/>
 
         </div>
       </div>

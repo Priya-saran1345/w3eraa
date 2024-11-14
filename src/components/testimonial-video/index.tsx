@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { CiPlay1 } from 'react-icons/ci';
 import Image from 'next/image';
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+import ReactPlayer from 'react-player';
 
 const Index = ({ props }: any) => {
   const [active, setActive] = useState<number | null>(null);
@@ -9,14 +10,28 @@ const Index = ({ props }: any) => {
   const itemsPerPage = 6;
   const totalPages = Math.ceil(props.length / itemsPerPage);
 
+  // UseRef should be inside the component function
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
   const handlePrevious = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
+      // Scroll to the section
+      sectionRef.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start', // Align to the start of the section
+      });
     }
   };
+  
   const handleNext = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
+      // Scroll to the section
+      sectionRef.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start', // Align to the start of the section
+      });
     }
   };
 
@@ -29,24 +44,24 @@ const Index = ({ props }: any) => {
   const currentItems = props.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   return (
-    <div className="w-full bg-lightblue py-12">
+    <div className="w-full bg-lightblue py-12 " ref={sectionRef}>
       <div className="w-full px-4 xl:w-[70%] mx-auto">
-        <div className="flex flex-wrap justify-center gap-8 items-center mt-12">
+        <div  className="flex flex-wrap justify-center gap-8 items-center mt-12">
           {currentItems.map((cardData: any, index: number) => (
             <div
               key={cardData.id}
-              className="h-[565px] rounded-xl sm:w-[45%] lg:w-[31%] bg-white overflow-hidden"
+              className="h-[535px] rounded-xl sm:w-[45%] lg:w-[31%] bg-white overflow-hidden"
             >
               {/* Toggle Video or Image */}
               {active === index && cardData.video ? (
                 <div className="w-full h-[317px]">
-                  <iframe
-                    src={getEmbedUrl(cardData.video)}
-                    frameBorder="0"
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen
-                    className="w-full h-full"
-                    onClick={() => setActive(null)}
+                  <ReactPlayer
+                    url={cardData?.video} // URL for the video
+                    controls={true} // Enables video controls (play, pause, etc.)
+                    playing={true} // Starts playing automatically when loaded
+                    autoplay={true} // Ensures the video plays as soon as it is ready
+                    className="w-full max-h-[317px]" // Apply styles for responsive width and max height
+                    onClick={() => setActive(null)} // Handle click event (same behavior as before)
                   />
                 </div>
               ) : (
@@ -77,29 +92,43 @@ const Index = ({ props }: any) => {
               )}
 
               {/* Content */}
-              <div className="m-4 flex flex-col gap-4">
-                <Image
-                  src={'/images/uppercoma.svg'}
-                  height={22}
-                  width={22}
-                  alt="Upper Coma"
-                />
-                <p className="text-[26px] text-center font-semibold text-homeblack">
-                  {cardData.description || "Professionals at W3Era are incredible. Simply dummy text of the printing."}
-                </p>
-                <div className="flex w-full justify-end">
+              <div >
+                <div className="m-2  flex flex-col -gap-2">
                   <Image
-                    src={'/images/lovercoma.svg'}
-                    height={22}
-                    width={22}
-                    alt="Lower Coma"
+                    src={'/images/uppercoma.svg'}
+                    height={18}
+                    width={18}
+                    alt="Upper Coma"
                   />
+                  <p className="text-[26px] text-center font-semibold text-homeblack">
+                    {cardData.description || "Professionals at W3Era are incredible. Simply dummy text of the printing."}
+                  </p>
+                  <div className="flex w-full justify-end">
+                    <Image
+                      src={'/images/lovercoma.svg'}
+                      height={18}
+                      width={18}
+                      alt="Lower Coma"
+                    />
+                  </div>
+                </div>
+                <div className='flex justify-center  w-full'>
+                  <div>
+                    <p className='text-[30px] font-semibold text-blue text-center'>{cardData?.card1_title}</p>
+                    <p className='text-center text-homegrey text-[16px]'>{cardData?.card1_content}</p>
+                  </div>
+                  <div className='w-[2px] min-h-full mx-2 bg-pink'>
+                  </div>
+                  <div>
+                    <p className='text-[30px] font-semibold text-blue text-center'>{cardData?.card2_title}</p>
+                    <p className='text-center text-homegrey text-[16px]'>{cardData?.card2_content}</p>
+                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        
+
         {/* Pagination Controls */}
         <div className='flex justify-center'>
           <div className='flex justify-center mt-12 items-center gap-3'>

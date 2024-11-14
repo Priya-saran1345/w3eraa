@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import { useRouter } from "next/navigation";
 import { Useapi } from '@/helpers/apiContext';
 import Button from '@/components/button';
+import Link from 'next/link';
 
 const CaseStudy: React.FC = () => {
     const { apidata } = Useapi();
@@ -60,12 +61,12 @@ const CaseStudy: React.FC = () => {
         sliderTextRef.current?.slickNext();
         sliderImageRef.current?.slickNext();
     };
-
+    
     return (
         <div className='w-full bg-white py-8 md:py-20'>
             <div className='w-full mx-auto p-4 md:p-16 border-[2px] border-slate-100 rounded-3xl xl:w-[82%]'>
                 <div>
-                    <p className=' text-[32px] lg:text-[48px] text-homeblack font-bold'>{data.first} <span className='text-pink'>{data.second}</span></p>
+                    <p className=' text-[32px] lg:text-[42px] text-homeblack font-bold'>{data.first} <span className='text-pink'>{data.second}</span></p>
                 </div>
                 <div className='flex flex-col md:flex-row mt-5 justify-between items-center w-full md:gap-16'>
                     <div className='md:w-[40%]'>
@@ -105,11 +106,10 @@ const CaseStudy: React.FC = () => {
                                         <div dangerouslySetInnerHTML={{ __html: provenResult[activeIndex].new_users }} />
                                     </div>
                                 </div>
-                                <div
-                                    onClick={() => {
-                                        Router.push('/case-study');
-                                    }}>
+                                <div>
+                                    <Link href={`${provenResult[activeIndex].slug}`}>
                                     <Button content={'Learn More'}/>
+                                    </Link>
 
                                 </div>
                             </div>

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Slider from "react-slick";
 import { Useapi } from '@/helpers/apiContext';
 import Button from '@/components/button';
+import Link from 'next/link';
 
 const Provide = () => {
   const { apidata } = Useapi();
@@ -107,7 +108,9 @@ const Provide = () => {
         </div>
 
         <div className='mt-6'>
+          <Link href={'/get-a-free-quote'}>
           <Button content={'Get your Free Trial'} />
+          </Link>
         </div>
       </div>
     </div>

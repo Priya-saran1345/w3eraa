@@ -39,7 +39,7 @@ const Index = ({ props }: any) => {
                         <Image src={props?.card[selectedServiceIndex]?.icon||''} height={71} width={53} alt={''} />
                     </div>
                     <p className='text-[18px] leading-[24px] mt-6 text-homegrey'  dangerouslySetInnerHTML={{ __html:props?.card[selectedServiceIndex]?.description || 
-                        "Select a service to see details." }}/>
+                        " " }}/>
 
                  
                 </div>
