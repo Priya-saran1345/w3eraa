@@ -1,7 +1,8 @@
 import React from 'react'
 import Button from '@/components/button'
 import Image from 'next/image'
-import Link  from 'next/link'
+import Link from 'next/link'
+
 const index = ({props}:any) => {
     return (
         <div className='w-full py-12 lg:py-16'>
@@ -27,9 +28,9 @@ const index = ({props}:any) => {
                     }
                 </div>
                 <div className='flex  justify-center'>
-                    <Link href='/get-a-free-quote'>
-                    <Button content={'Get a Quote Now!'} />
-                    </Link>
+                <Link href={`/get-a-free-quote`}>
+                        <Button content={'Learn More'}/>
+                            </Link>
                 </div>
             </div>
 

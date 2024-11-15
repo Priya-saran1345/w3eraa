@@ -143,7 +143,8 @@ const [quicklinks, setquicklinks] = useState<any>()
                                                     className=''
                                                 />
                                         </div>
-                                            )}
+                                    )}
+                                        </div>
                                         <StyledWrapper>
                                         <div className='w-full '>
                                             <p className='text-homeblack text-[24px] font-semibold leading-[29px]'>
@@ -156,7 +157,7 @@ const [quicklinks, setquicklinks] = useState<any>()
                                         </div>
                                             </StyledWrapper>
                                     </div>
-                                </div>
+                                // </div>
                             ) : null
                             }
 
@@ -395,6 +396,8 @@ const [quicklinks, setquicklinks] = useState<any>()
                                     <div className='flex flex-wrap mt-8 justify-center gap-4'>
                                         <Link href='/get-a-free-quote'>
                                         <Button content={'Get a Quote Now!'} />
+                                        </Link>
+                                        <Link href='/get-a-free-strategy-review'>
                                         </Link>
                                         <Link href='/get-a-free-strategy-review'>
                                         <Button content={'Analyse my Website for Free!'} />
