@@ -13,7 +13,6 @@ const Page = ({ params }: any) => {
 export default Page
   export async function generateMetadata({ params }: any) {
     const  slug  = params?.id;
-
     try {
       const metaData = await fetchMeta(`${slug}`);
       // console.log('metadata of about us',metaData)

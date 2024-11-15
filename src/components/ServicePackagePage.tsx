@@ -266,9 +266,8 @@ const [quicklinks, setquicklinks] = useState<any>()
                                                 <div className='w-full min-w-[800px] flex justify-around '>
                                                     {['Basic', 'Advanced', 'Professional', 'Premium'].map((plan, index) => (
                                                         <div key={index} className='flex flex-col items-center'>
-                                                            <p className='text-[20px] font-medium mb-3 lg:text-[24px]'>{plan}</p>
                                                             <div className='w-fit ' onClick={() => handleSelectPlan(plan)}>
-                                                                < Button content={'Select Plan'} />
+                                                                < Button content={`${plan}`} />
                                                             </div>
                                                         </div>
                                                     ))}

@@ -263,7 +263,7 @@ basic_details && about&&
                                                 <div>
                                                  <Link href="/contact-us">
                                                     <button className='text-[18px] font-medium py-2 px-10 text-pink border-pink border-2 rounded-lg'>
-                                                        Let &apos; s Connect
+                                                        Let&apos;s Connect
                                                     </button>
                                                  </Link>
                                                 </div>
