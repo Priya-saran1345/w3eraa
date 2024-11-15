@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Button from '@/components/button';
 import { CiUser } from 'react-icons/ci';
 import { RiVerifiedBadgeLine } from "react-icons/ri";
+import  Link from 'next/link';
 
 // Slider component
 const Index = ({ props }: any) => {
@@ -88,7 +89,9 @@ const Index = ({ props }: any) => {
             />
           </div>
           <div className='flex items-center mt-3 mx-8'>
+            <Link href={'/testimonials'}>
             <Button content={'W3era Web Technology Pvt Ltd Reviews'}></Button>
+            </Link>
           </div>
         </div>
 

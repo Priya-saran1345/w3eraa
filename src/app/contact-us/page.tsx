@@ -1,7 +1,7 @@
 
 import React from 'react'
- import Contact from '@/components/Contact'
- import { fetchMeta } from "@/app/action";
+import Contact from '@/components/Contact'
+import { fetchMeta } from "@/app/action";
 
 const Page = () => {
   return (

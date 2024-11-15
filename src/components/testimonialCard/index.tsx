@@ -19,7 +19,7 @@ const TestimonialCard = ({ props }: any) => {
     }
   };
 
-  const currentItems = props.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+  const currentItems = props?.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   return (
     <div className='w-full bg-white py-12'>

@@ -267,7 +267,7 @@ data&& basic_details&&
           <div className='mb-5 md:mb-0'>
             <p className=' text-[24px] lg:text-[32px] font-semibold mb-6'>Milestones Unboxed With Our Expertise
             </p>
-            <Link href={'/'}>
+            <Link href={'/get-a-free-quote'}>
             <button className='bg-pink rounded-lg py-3 px-3 lg:px-6 text-white text-[18px] font-medium'>Talk To Our Expert</button>
             </Link>
           </div>

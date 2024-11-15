@@ -16,7 +16,7 @@ export default Page
 
     try {
       const metaData = await fetchMeta(`${slug}`);
-      console.log('metadata of about us',metaData)
+      // console.log('metadata of about us',metaData)
       return {
         title: metaData?.title || '',
         description: metaData?.description || '',
