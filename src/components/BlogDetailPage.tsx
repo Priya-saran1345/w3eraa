@@ -188,4 +188,7 @@ const StyledWrapper = styled.div`
     td{
     padding-x:10px;
     border:1px solid black;}
+      a{
+    color:red;
+    font-weight:500;}
 `

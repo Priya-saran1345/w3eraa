@@ -157,13 +157,7 @@ const Page = () => {
                                     <textarea required className='my-2 w-full p-3 rounded-lg border-[2px] border-grey outline-none' />
                                     <button className='bg-pink text-white text-[14px] w-[133px] h-[44px] flex justify-center items-center rounded-lg'>SUBMIT NOW</button>
                                 </form>
-{/* 
-                                <div className='py-12 flex gap-1'>
-                                    <Image height={24} width={24} alt='' src={'/images/tool-icon.svg'} />
-                                    <p className='text-homegrey'>
-                                        <span className='text-pink font-medium underline'>Create your own free forms</span> to generate leads from your website.
-                                    </p>
-                                </div> */}
+
 
                                 <div className='border-b-[1px] border-slate-200 mt-5 mb-3'>
                                     <p className='text-[24px] font-medium text-homeblack mb-3'>Trendy SEO Tools</p>
@@ -245,4 +239,7 @@ font-weight:600 !important;}
     td{
     padding-x:10px;
     border:1px solid black;}
+      a{
+    color:red;
+    font-weight:500;}
 `

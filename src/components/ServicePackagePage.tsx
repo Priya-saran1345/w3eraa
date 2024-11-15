@@ -126,14 +126,15 @@ const [quicklinks, setquicklinks] = useState<any>()
                             <Header />
                             <Navbar />
                             <CommonBanner status={'true'} title={data?.title} description={data?.description} image={data?.image} btntext={data?.link_text} btnlink={data?.link_url} />
-                            {data?.aboutservice?.title || data?.aboutservice?.subtitle || data?.aboutservice?.description ? (
+                            {
+                            data?.aboutservice?.title || data?.aboutservice?.subtitle || data?.aboutservice?.description ? (
                                 <div className='bg-white mt-12 mb-8 xl:w-[75%] px-4 xl:px-0 mx-auto'>
                                     <p className='text-homeblack text-[28px] text-center font-bold lg:text-[38px]'>
                                         {data?.aboutservice?.title || ''}
                                     </p>
                                     <div className='flex justify-between items-center  lg:gap-16'>
-                                        <div className=' hidden lg:block min-w-[377px]'>
                                             {data?.aboutservice?.image && (
+                                        <div className=' hidden lg:block min-w-[377px]'>
                                                 <Image
                                                     src={data?.aboutservice?.image || ''}
                                                     height={377}
@@ -141,8 +142,8 @@ const [quicklinks, setquicklinks] = useState<any>()
                                                     alt=''
                                                     className=''
                                                 />
-                                            )}
                                         </div>
+                                            )}
                                         <StyledWrapper>
                                         <div className='w-full '>
                                             <p className='text-homeblack text-[24px] font-semibold leading-[29px]'>
@@ -156,7 +157,8 @@ const [quicklinks, setquicklinks] = useState<any>()
                                             </StyledWrapper>
                                     </div>
                                 </div>
-                            ) : null}
+                            ) : null
+                            }
 
                             {
                                 data?.clients_say &&
@@ -391,9 +393,14 @@ const [quicklinks, setquicklinks] = useState<any>()
                                         Qualified Leads and Increased Sales
                                     </p>
                                     <div className='flex flex-wrap mt-8 justify-center gap-4'>
+                                        <Link href='/get-a-free-quote'>
                                         <Button content={'Get a Quote Now!'} />
+                                        </Link>
+                                        <Link href='/get-a-free-strategy-review'>
                                         <Button content={'Analyse my Website for Free!'} />
+                                        </Link>
                                     </div>
+                                   
                                 </div>
                             </div>
                             {
@@ -434,7 +441,9 @@ const [quicklinks, setquicklinks] = useState<any>()
                                     <p className='text-[18px] text-center leading-[21px]'>Try our free Website Analyzer Tool that will show you the SEO report. In this report, you will discover
                                         whether your website is optimized for the keywords you have used.</p>
                                     <div className='flex justify-center items-center mt-9'>
+                                        <Link href={'/get-a-free-quote'}>
                                         <Button content={'Get a Free SEO Report'} />
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -512,5 +521,8 @@ const StyledWrapper = styled.div`
     td{
     padding-x:10px;
     border:1px solid black;}
+    a{
+    color:red;
+    font-weight:500;}
 `
 

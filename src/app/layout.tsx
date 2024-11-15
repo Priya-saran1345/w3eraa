@@ -29,9 +29,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} `}>
                   <Toaster />
-
         <ApiProvider> {/* Wrap the provider around children */}
-
           {children}
         </ApiProvider>
       </body>

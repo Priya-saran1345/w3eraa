@@ -53,7 +53,7 @@ const Packages = ({props}:any) => {
                         <p className='text-[18px] text-homegrey leading-[22px]'>
                             {elem?.description}</p>
                         <div>
-                            <Link href={elem?.slug}>
+                            <Link href={`/${elem?.slug}`}>
                         <Button content={'Learn More'}/>
                             </Link>
                         </div>

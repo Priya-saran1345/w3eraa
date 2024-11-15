@@ -96,4 +96,7 @@ const StyledWrapper = styled.div`
   ol, ul {
     padding-left: 1.5rem;
   }
+      a{
+    color:red;
+    font-weight:500;}
 `
