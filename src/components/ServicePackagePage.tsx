@@ -71,7 +71,7 @@ const [quicklinks, setquicklinks] = useState<any>()
     }, []);
     // Effect to filter and set package cards
     useEffect(() => {
-        setPackageCards(data?.packagecategory?.filter((elem: any, index: number) => index > 0));
+        setPackageCards(result?.data?.packagecategory?.filter((elem: any, index: number) => index > 0));
     }, [result]);
     // Toggle expand/collapse for cards
     const [expandedIndices, setExpandedIndices] = useState<number[]>([]);
