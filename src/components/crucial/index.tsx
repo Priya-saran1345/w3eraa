@@ -30,7 +30,10 @@ const Index = ({props}:any) => {
                }
                 </div>
                 <div className='flex justify-center mt-12'>
+                  
+                     <Link href='/get-a-free-quote'>
                      <Button content={'Get a Quote Now!'}/>
+                  </Link>
                 </div>
              </div>
            </div>
