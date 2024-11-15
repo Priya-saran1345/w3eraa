@@ -321,7 +321,7 @@ const Index = ({show}:any) => {
                       <Link className='hover:text-pink' href='/local-seo-packages'><li>Local SEO Packages</li></Link>
                       <Link className='hover:text-pink' href='/guest-posting-service-packages'><li>Guest Posting Service Packages</li></Link>
                       <Link className='hover:text-pink' href='/app-store-aso-packages'><li>App Store ASO Packages</li></Link>
-                      <Link className='hover:text-pink' href='/ink-building-packages'><li>Link Building Packages</li></Link>
+                      <Link className='hover:text-pink' href='/link-building-packages'><li>Link Building Packages</li></Link>
 
                     </ul>
                   </div>

@@ -175,14 +175,6 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <button
-                  className={`rounded-md bg-pink text-white mt-3 py-2 px-16 text-[18px] font-semibold ${isFormValid ? '' : 'opacity-50 cursor-not-allowed'}`}
-                  onClick={handleSubmit}
-                  disabled={!isFormValid} // Disable button if the form is not valid
-                >
-                  Submit
-                </button>
-              </div>
               <p className="text-textGrey">Your idea is 100% protected by our non-disclosure agreement.</p>
               <div className="flex gap-3 items-center text-textGrey">
                 <input
@@ -191,6 +183,14 @@ const Contact = () => {
                   onChange={handleCheckboxChange}
                 />
                 <p>Keep me updated on the upcoming technology trends</p>
+              </div>
+                <button
+                  className={`rounded-md bg-pink text-white mt-4 py-2 px-16 text-[18px] font-semibold ${isFormValid ? '' : 'opacity-50 cursor-not-allowed'}`}
+                  onClick={handleSubmit}
+                  disabled={!isFormValid} // Disable button if the form is not valid
+                >
+                  Submit
+                </button>
               </div>
             </div>
           </div>

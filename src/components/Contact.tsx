@@ -19,6 +19,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Loader from '@/components/loader'
 import index from '@/components/Navbar-items'
 import toast from 'react-hot-toast'
+import Link from 'next/link'
 const Contact = () => {
   const { basic_details } = Useapi();
   const [data, setdata] = useState<any>()
@@ -134,8 +135,12 @@ data&& basic_details&&
             {data?.contact_page[0]?.banner_subtitle}
             </p>
             <div className="flex mt-5 gap-2">
-              <button className="text-[18px] font-medium py-3  px-9 xl:w-[211px] bg-pink text-white rounded-lg">Lorem</button>
-              <button className="text-[18px] font-medium py-3  px-9 xl:w-[211px] bg-white text-pink rounded-lg">Lorem</button>
+            <Link href={`tel:${ basic_details?.basic_details[0]?.phonenumber}`}>
+  <button className="text-[18px] font-medium py-3 px-9 xl:w-[211px] bg-pink text-white rounded-lg">
+  Get a free Quote
+  </button>
+</Link>
+              {/* <button className="text-[18px] font-medium py-3  px-9 xl:w-[211px] bg-white text-pink rounded-lg">Lorem</button> */}
             </div>
             </div>
             <div className='absolute hidden md:flex gap-3 bottom-0 '>
@@ -232,15 +237,6 @@ data&& basic_details&&
                   onChange={handleChange}
                 />
               </div>
-              <div>
-                <button
-                  className={`rounded-md bg-pink text-white mt-3 py-2 px-16 text-[18px] font-semibold ${isFormValid ? '' : 'opacity-50 cursor-not-allowed'}`}
-                  onClick={handleSubmit}
-                  disabled={!isFormValid} // Disable button if the form is not valid
-                >
-                  Submit
-                </button>
-              </div>
               <p className="text-textGrey">Your idea is 100% protected by our non-disclosure agreement.</p>
               <div className="flex gap-3 items-center text-textGrey">
                 <input
@@ -249,6 +245,15 @@ data&& basic_details&&
                   onChange={handleCheckboxChange}
                 />
                 <p>Keep me updated on the upcoming technology trends</p>
+              </div>
+              <div>
+                <button
+                  className={`rounded-md bg-pink text-white mt-3 py-2 px-16 text-[18px] font-semibold ${isFormValid ? '' : 'opacity-50 cursor-not-allowed'}`}
+                  onClick={handleSubmit}
+                  disabled={!isFormValid} // Disable button if the form is not valid
+                >
+                  Submit
+                </button>
               </div>
             </div>
           </div>
