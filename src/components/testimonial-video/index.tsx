@@ -8,7 +8,7 @@ const Index = ({ props }: any) => {
   const [active, setActive] = useState<number | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
-  const totalPages = Math.ceil(props.length / itemsPerPage);
+  const totalPages = Math.ceil(props?.length / itemsPerPage);
 
   // UseRef should be inside the component function
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -41,13 +41,13 @@ const Index = ({ props }: any) => {
     return urlParts.length > 1 ? `https://www.youtube.com/embed/${urlParts[1]}` : url;
   };
 
-  const currentItems = props.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+  const currentItems = props?.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   return (
     <div className="w-full bg-lightblue py-12 " ref={sectionRef}>
       <div className="w-full px-4 xl:w-[70%] mx-auto">
         <div  className="flex flex-wrap justify-center gap-8 items-center mt-12">
-          {currentItems.map((cardData: any, index: number) => (
+          {currentItems?.map((cardData: any, index: number) => (
             <div
               key={cardData.id}
               className="h-[535px] rounded-xl sm:w-[45%] lg:w-[31%] bg-white overflow-hidden"
