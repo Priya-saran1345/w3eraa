@@ -25,7 +25,7 @@ const TestimonialCard = ({ props }: any) => {
     <div className='w-full bg-white py-12'>
       <p className='text-[38px] font-bold text-homeblack text-center'>Testimonials</p>
       <div className='xl:w-[75%] mx-auto flex-wrap justify-center mt-8 flex gap-6'>
-        {currentItems.map((item: any, index: number) => (
+        {currentItems?.map((item: any, index: number) => (
           <div key={index} className='md:w-[45%] lg:w-[32%] rounded-lg border-[2px] border-lightblue p-6'>
             <div className='flex justify-between mb-4 items-center'>
               <div className='flex gap-2 items-center'>
