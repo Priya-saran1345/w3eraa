@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from '@/components/button';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Index = ({ props }: any) => {
     const [selectedServiceIndex, setSelectedServiceIndex] = useState(0);
@@ -46,7 +47,10 @@ const Index = ({ props }: any) => {
             </div>
 
             <div className='flex justify-center'>
+            <Link href={'/our-client-list'}>
+
                 <Button content={'Join Our Growing List of Partners'} />
+                </Link>
             </div>
         </div>
    

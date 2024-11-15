@@ -12,7 +12,7 @@ const index = ({props}:any) => {
         <div className='flex justify-center gap-5 flex-wrap'>
             {
                 props?.card.map((elem: any, i:number) => (
-                    <div key={i} className='rounded-xl p-8  sm:w-[45%] lg:w-[31%] min-h-[397px] flex flex-col gap-2 justify-between bg-white hover:shadow-xl'>
+                    <div key={i} className='rounded-xl p-8  sm:w-[45%] lg:w-[31%]  flex flex-col gap-2 justify-between bg-white hover:shadow-xl'>
                         {
                             elem.icon&&
                         <div className='p-4 size-[72px] flex justify-center items-center rounded-lg bg-lightblue'>
@@ -30,11 +30,7 @@ const index = ({props}:any) => {
 
                         <p className='text-[16px] text-homegrey leading-[22px]'  dangerouslySetInnerHTML={{ __html:elem?.description }}/>
                         <div>
-                            <div className='mt-4'>
-                            <Link href='' className=''>
-                             <Button content={'Learn More'}/>
-                                </Link>
-                            </div>
+                         
                         </div>
                     </div>
                 
@@ -43,7 +39,9 @@ const index = ({props}:any) => {
             }
         </div>
         <div className='flex justify-center'>
+        <Link href={'/get-a-free-quote'}>
             <Button content={'Get a Quote Now!'} />
+            </Link>
         </div>
        
     </div>

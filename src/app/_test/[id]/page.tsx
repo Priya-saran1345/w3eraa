@@ -1,66 +1,35 @@
 'use client'
-
 import Image from 'next/image'
-import { BASE_URL } from "@/util/api"
-import { useState, useEffect } from 'react'
+import { BASE_URL } from "@/util/api";
+import { useEffect, useState } from 'react';
 
-// Function to fetch story data
 async function getStoryData() {
-  const response = await fetch(`${BASE_URL}web-story/7-ai-tools-to-boost-your-productivity-in-2024/`)
+  const response = await fetch(`${BASE_URL}web-story/7-ai-tools-to-boost-your-productivity-in-2024/`);
   if (!response.ok) {
-    throw new Error('Failed to fetch story data')
+    throw new Error('Failed to fetch story data');
   }
-  return response.json()
+  return response.json();
 }
 
 export default function Stories() {
-  const [story, setStory] = useState<any>(null)  // Story data
-  const [loading, setLoading] = useState(true)  // Loading state
-  const [currentIndex, setCurrentIndex] = useState(0)  // To track current page index
+  const [story, setStory] = useState<any>(null);
 
-  // Fetch story data when the component mounts
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await getStoryData()
-        setStory(data)  // Set fetched story data
-        setLoading(false)  // Set loading state to false
-      } catch (error) {
-        console.error('Error fetching story data:', error)
-        setLoading(false)
-      }
+    async function fetchStory() {
+      const fetchedStory = await getStoryData();
+      setStory(fetchedStory);
     }
-    fetchData()
-  }, [])  // Run only once when the component mounts
-
-  // Automatically change pages every 5 seconds
-  useEffect(() => {
-    if (!story || story.card.length === 0) return  // If no story data, return early
-
-    const intervalId = setInterval(() => {
-      setCurrentIndex(prevIndex => {
-        const nextIndex = (prevIndex + 1) % story.card.length  // Loop back to the first card
-        return nextIndex
-      })
-    }, 5000)  // Change page every 5 seconds
-
-    // Clean up the interval when the component unmounts
-    return () => clearInterval(intervalId)
-  }, [story])
-
-  // Render loading state while fetching data
-  if (loading) {
-    return <div className="p-4 text-center text-red-500">Loading...</div>
-  }
+    fetchStory();
+  }, []);
 
   if (!story) {
-    return <div className="p-4 text-center text-red-500">No data available</div>
+    return <div className="p-4 text-center text-red-500">No data available</div>;
   }
 
-  const { title, image, card } = story
+  const { title, image, card } = story;
 
   return (
-    <main className="min-h-screen bg-black">
+    <main className="max-h-screen bg-black">
       <amp-story
         standalone=""
         title={title}
@@ -69,13 +38,10 @@ export default function Stories() {
         poster-portrait-src={image}
         background-color="#000"
       >
+        {/* Loop through the card data */}
         {card && card.length > 0 ? (
-          card.map((cardItem: any, index: number) => (
-            <amp-story-page
-              key={cardItem.id}
-              id={`page${index + 1}`}
-              style={{ display: currentIndex === index ? 'block' : 'none' }} // Only show the current page
-            >
+          card?.map((cardItem: any, index: number) => (
+            <amp-story-page key={cardItem.id} id={`page${index + 1}`}>
               <amp-story-grid-layer template="fill">
                 <Image
                   src={cardItem.image}
@@ -83,8 +49,10 @@ export default function Stories() {
                   layout="fill"
                   objectFit="cover"
                   priority={index === 0}
+                  className='max-w-[300px] min-h-[300px]'
                 />
               </amp-story-grid-layer>
+
               <amp-story-grid-layer template="vertical" className="p-4">
                 <div className="bg-black bg-opacity-50 p-4 rounded-lg">
                   <h1 className="text-2xl font-bold text-white mb-2">{cardItem.title}</h1>
@@ -104,5 +72,5 @@ export default function Stories() {
         )}
       </amp-story>
     </main>
-  )
+  );
 }
