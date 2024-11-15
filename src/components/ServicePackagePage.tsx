@@ -132,8 +132,8 @@ const [quicklinks, setquicklinks] = useState<any>()
                                         {data?.aboutservice?.title || ''}
                                     </p>
                                     <div className='flex justify-between items-center  lg:gap-16'>
-                                        <div className=' hidden lg:block min-w-[377px]'>
                                             {data?.aboutservice?.image && (
+                                        <div className=' hidden lg:block min-w-[377px]'>
                                                 <Image
                                                     src={data?.aboutservice?.image || ''}
                                                     height={377}
@@ -141,8 +141,8 @@ const [quicklinks, setquicklinks] = useState<any>()
                                                     alt=''
                                                     className=''
                                                 />
-                                            )}
                                         </div>
+                                            )}
                                         <StyledWrapper>
                                         <div className='w-full '>
                                             <p className='text-homeblack text-[24px] font-semibold leading-[29px]'>
@@ -390,9 +390,13 @@ const [quicklinks, setquicklinks] = useState<any>()
                                     <p className=' text-[28px] font-bold text-center lg:leading-[46px] lg:text-[38px]'>Get A Top Rank on Google Search Results,
                                         Qualified Leads and Increased Sales
                                     </p>
-                                    <div className='flex flex-wrap mt-8 justify-center gap-4'>
+                                   <div className='flex flex-wrap mt-8 justify-center gap-4'>
+                                        <Link href='/get-a-free-quote'>
                                         <Button content={'Get a Quote Now!'} />
+                                        </Link>
+                                        <Link href='/get-a-free-strategy-review'>
                                         <Button content={'Analyse my Website for Free!'} />
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
