@@ -1,6 +1,8 @@
 import React from 'react'
 import Button from '@/components/button'
 import Image from 'next/image'
+import Link from 'next/link'
+
 const index = ({props}:any) => {
     return (
         <div className='w-full py-12 lg:py-16'>
