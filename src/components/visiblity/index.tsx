@@ -26,7 +26,9 @@ const index = ({props}:any) => {
                     }
                 </div>
                 <div className='flex  justify-center'>
-                    <Button content={'Get a Quote Now!'} />
+                 <Link href='/get-a-free-quote'>
+                     <Button content={'Get a Quote Now!'}/>
+                  </Link>
                 </div>
             </div>
 
