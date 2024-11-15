@@ -267,7 +267,9 @@ data&& basic_details&&
           <div className='mb-5 md:mb-0'>
             <p className=' text-[24px] lg:text-[32px] font-semibold mb-6'>Milestones Unboxed With Our Expertise
             </p>
+            <Link href={'/'}>
             <button className='bg-pink rounded-lg py-3 px-3 lg:px-6 text-white text-[18px] font-medium'>Talk To Our Expert</button>
+            </Link>
           </div>
           <div className="w-full lg:w-[892px] p-6 rounded-md bg-white relative overflow-hidden">
             <Slider ref={sliderRef} {...settings}>

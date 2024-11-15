@@ -304,7 +304,9 @@ basic_details && about&&
                              <div className='flex-col flex gap-3 w-fit items-center mt-4'>
                             
                        <ClientsCount/>
+                       <Link href={'/work'}>
                              <Button content={'Learn How We Work'}/>   
+                       </Link>
                                  
                              </div>
                          </div>

@@ -76,6 +76,7 @@ const [quicklinks, setquicklinks] = useState<any>()
     // Toggle expand/collapse for cards
     const [expandedIndices, setExpandedIndices] = useState<number[]>([]);
 
+    console.log('packages data-------------------',packageCards)
     // Function to toggle a particular card's expanded state
     const toggleExpand = (index: number) => {
         if (expandedIndices.includes(index)) {
@@ -352,7 +353,7 @@ const [quicklinks, setquicklinks] = useState<any>()
                                                             >
                                                                 <table className="w-full min-w-[900px]">
                                                                     <tbody className="flex flex-col  gap-3 text-[18px] text-textGrey">
-                                                                        {elem.card.map((item: any, cardIndex: number) => (
+                                                                        {elem?.card?.map((item: any, cardIndex: number) => (
                                                                             <tr key={cardIndex} className="flex border-b-2 border-slate-200">
                                                                                 <td className="w-[30%] p-2 font-medium">{item.title}</td>
                                                                                 {/* Apply renderCell with plan type */}
