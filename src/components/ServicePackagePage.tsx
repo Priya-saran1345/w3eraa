@@ -238,8 +238,8 @@ const Service_Pkackages = () => {
                             }
                             <CluthRating props={cluth} />
                             {
-                                data?.service_faq?.title && data?.service_faq?.card.length > 0 &&
-                                <Faq props={data?.service_faq?.card} title={data?.service_faq.title} />
+                                data?.service_packages_faq?.title && data?.service_packages_faq?.card  &&
+                                <Faq props={data?.service_packages_faq?.card ||[] } title={data?.service_packages_faq.title} />
                             }
                             {quicklinks &&
                                 <QuickLinks props={quicklinks} />
@@ -421,8 +421,8 @@ const Service_Pkackages = () => {
                             }
                             <Revenue />
                             {
-                                data?.service_faq?.title && data?.service_faq?.card?.length > 0 &&
-                                <Faq props={data?.service_faq?.card} title={data?.service_faq?.title} />
+                                data?.service_packages_faq?.title && data?.service_packages_faq?.card?.length > 0 &&
+                                <Faq props={data?.service_packages_faq?.card} title={data?.service_packages_faq?.title} />
                             }
                             <WebsiteReport />
                             {

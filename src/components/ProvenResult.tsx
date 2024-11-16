@@ -91,11 +91,11 @@ const CaseStudy: React.FC = () => {
                                         <FaArrowRightLong />
                                     </div>
                                 </div>
-                                <p className='text-[24px] mt-4 font-medium text-homegrey'>
+                                <p className='text-[18px] lg:text-[24px] mt-4 font-medium text-homegrey'>
                                     {provenResult[activeIndex].subtitle}
                                 </p>
                                 <p 
-                                    className=' text-[16px] lg:text-[18px] mt-4 leading-tight text-homegrey'
+                                    className='text-[18px] mt-4 leading-tight text-homegrey'
                                     dangerouslySetInnerHTML={{ __html: provenResult[activeIndex].description }} 
                                   />
 
