@@ -19,6 +19,8 @@ export default Page
       return {
         title: metaData?.title || '',
         description: metaData?.description || '',
+        keywords: metaData?.keywords ||'',
+
         openGraph: metaData?.openGraph
           ? {
               type: metaData.openGraph.type || '',

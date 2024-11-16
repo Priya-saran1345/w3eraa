@@ -42,8 +42,8 @@ client&& apidata&&
                             return (
                                 <div key={i} className="flex min-w-[190] max-h-[120px] p-1 group md:size-[181px] justify-center items-center border-[1px] border-slate-100 rounded-sm">
                                     <Image
-                                        src={elem}
-                                        alt=""
+                                        src={elem?.image}
+                                        alt={elem?.image_alt}
                                         height={101}
                                         width={200}
                                         className="grayscale w-[145px] lg:max-w-[175px] group-hover:grayscale-0 transition duration-100 ease-in-out"

@@ -23,6 +23,8 @@ export async function generateMetadata() {
         ? {
             type: metaData.openGraph.type || '',
             title: metaData.openGraph.title || '',
+            keywords: metaData?.keywords ||'',
+
             description: metaData.openGraph.description || '',
             url: metaData.openGraph.url || '',
             siteName: metaData.openGraph.siteName || '',

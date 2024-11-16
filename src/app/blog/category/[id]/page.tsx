@@ -21,6 +21,8 @@ export async function generateMetadata({ params }: any) {
     return {
       title: metaData?.title || '',
       description: metaData?.description || '',
+      keywords: metaData?.keywords ||'',
+
       openGraph: metaData?.openGraph
         ? {
             type: metaData.openGraph.type || '',

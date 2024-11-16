@@ -20,11 +20,13 @@ export default Page
       console.log('metadata of about us',metaData)
       return {
         title: metaData?.title || '',
-        description: metaData?.description || 'D',
+        keywords: metaData?.keywords ||'',
+        description: metaData?.description || '',
         openGraph: metaData?.openGraph
           ? {
               type: metaData.openGraph.type || '',
               title: metaData.openGraph.title || '',
+              
               description: metaData.openGraph.description || '',
               url: metaData.openGraph.url || '',
               siteName: metaData.openGraph.siteName || '',
