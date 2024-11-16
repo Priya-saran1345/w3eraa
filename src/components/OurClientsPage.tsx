@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Revenue from '@/components/revenue';
 import { Useapi } from '@/helpers/apiContext'
 import Loader from '@/components/loader';
+import Link from 'next/link';
 
 const Client = () => {
     const { client } = Useapi(); 
@@ -63,16 +64,20 @@ client&& apidata&&
                            {client?.client[0]?.reputation_description}
                             </p>
                             <div className='flex justify-center md:justify-start flex-wrap gap-6 items-center'>
+                                <Link href={'/get-a-free-quote'}>
                                 <button className='px-10 mt-6 py-4 text-[18px] text-white rounded-lg bg-pink'>
                                     Get a Free Quote
                                 </button>
+                                </Link>
+                                <Link href={'/get-a-free-strategy-review'}>
                                 <button className='text-pink flex items-center hover:underline text-[20px] font-medium'>
                                     Analyse My Website for Free!
                                 </button>
+                                </Link>
                             </div>
                         </div>
                         <div>
-                            <Image src={ client?.client[0]?.reputation_image||'/images/pana.png'} height={512} width={588} alt='' className='hidden md:block'/>
+                            <Image src={ client?.client[0]?.reputation_image||'/images/pana.png'} height={512} width={588} alt={client?.client[0]?.image_alt} className='hidden md:block'/>
                         </div>
                     </div>
                 </div>

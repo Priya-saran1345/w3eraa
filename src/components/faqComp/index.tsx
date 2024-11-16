@@ -6,7 +6,7 @@ import { RxCross2 } from "react-icons/rx"
 import { motion, AnimatePresence } from "framer-motion"
 import { Useapi } from "@/helpers/apiContext"
 
-export default function Component({ props = [] }: { props?: any[] }) {
+export default function Component({ props ,title }: any) {
   const [faqdata, setFaqdata] = useState<any[]>([])
   const { apidata } = Useapi()
   const [openIndex, setOpenIndex] = useState<number | null>(null)
@@ -25,7 +25,7 @@ export default function Component({ props = [] }: { props?: any[] }) {
 
   useEffect(() => {
     const result = splitStringByLastWords(
-      "What to look for when choosing a digital marketing agency?",6
+      title,3
     )
     setData(result)
   }, [])
@@ -43,7 +43,7 @@ export default function Component({ props = [] }: { props?: any[] }) {
   return (
     <div className="w-full bg-lightblue py-10 lg:py-16">
       <div className="mx-auto w-full px-4 md:w-[80%] xl:w-[70%]">
-        <p className="my-3 text-center  text-[28px] lg:text-[38px] xl:text-[48px] font-bold lg:leading-[46px] text-textPurple ">
+        <p className="my-3 text-center  text-[28px] lg:text-[38px] xl:text-[48px] font-bold lg:leading-[54px] text-textPurple ">
           {data.first} <br />
           <span className="text-pink">{data.second}</span>
         </p>

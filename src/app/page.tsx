@@ -1,22 +1,34 @@
-import Head from 'next/head';
-import Index from '@/components/Index';
-import { fetchMeta } from '@/app/action';
+import Index from "@/components/Index";
+import { fetchMeta } from "@/app/action";
 import { Metadata } from 'next';
+import { Suspense } from 'react'
 
-export default function Home({ schemaData }:any) {
+
+
+
+
+
+async function SchemaScript() {
+  const metaData = await fetchMeta("/")
+  const schemaData = metaData?.schema_json
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+    />
+  )
+}
+
+export default function Home() {
   return (
     <>
-      {/* <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(schemaData),
-          }}
-        />
-      </Head> */}
+      <Suspense fallback={null}>
+        <SchemaScript />
+      </Suspense>
       <Index />
     </>
-  );
+  )
 }
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -65,7 +77,8 @@ export async function generateMetadata(): Promise<Metadata> {
         canonical: metaData?.openGraph?.url,
       },
     };
-  } catch (error) {
+  } 
+  catch (error) {
     console.error('Error fetching meta data:', error);
     return {
       title: 'W3era® | Performance Driven Digital Marketing Company',
@@ -73,10 +86,3 @@ export async function generateMetadata(): Promise<Metadata> {
     };
   }
 }
-
-// export async function generateStaticParams() {
-//   const metaData = await fetchMeta("/");
-//   return {
-//     schemaData: metaData?.schema_json || [],
-//   };
-// }

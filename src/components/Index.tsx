@@ -46,7 +46,7 @@ const Main = () => {
       <Solution />
       <ClientSays props={apidata?.clients_say[0]}  />
       <Choose props={apidata?.why_choose[0]}  />
-      <Faq1 props={apidata?.marketing_agency} />
+      <Faq1 props={apidata?.marketing_agency} title={"What to look for when choosing a digital marketing agency?"} />
       <Revenue/>
       <Blogs props={apidata?.blog} />
       <Footer />

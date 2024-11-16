@@ -66,7 +66,7 @@ data&&caseStudydata&&
                         <Link href={'/get-a-free-quote'}>
                         <Button content={'Get a Quote Now!'} />
                         </Link>
-                        <Link href={''}>
+                        <Link href={'/get-a-free-strategy-review'}>
                         <Button content={'Analyse my Website for Free!'} />
                         </Link>
                     </div>

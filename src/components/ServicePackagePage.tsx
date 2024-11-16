@@ -109,7 +109,7 @@ const [quicklinks, setquicklinks] = useState<any>()
         <Button content='Get a quote'/>
         </Link>}</div>;
     };
-    
+    console.log('-------service faq--------------------', data?.service_faq)
     return (
         <div >
             {
@@ -237,8 +237,8 @@ const [quicklinks, setquicklinks] = useState<any>()
                             }
                             <CluthRating props={cluth} />
                             {
-                                data?.marketing_agency.length > 0 &&
-                                <Faq props={data?.marketing_agency} />
+                                data?.service_faq &&
+                                <Faq props={data?.service_faq?.card} title={ data?.service_faq.title}/>
                             }
                             { quicklinks&&
                                 <QuickLinks props={quicklinks } />
@@ -419,9 +419,9 @@ const [quicklinks, setquicklinks] = useState<any>()
                                 <Visiblity props={data?.packagecard1} />
                             }
                             <Revenue />
-                            {data?.marketing_agency.length > 0 &&
-
-                                <Faq props={data?.marketing_agency} />
+                            {
+                                data?.service_faq &&
+                                <Faq props={data?.service_faq?.card} title={ data?.service_faq.title}/>
                             }
                             <WebsiteReport />
                             {
