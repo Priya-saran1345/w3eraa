@@ -10,18 +10,14 @@ const Growth = () => {
     const { apidata } = Useapi(); // Destructure apidata from the context
 
     const [data, setdata] = useState({ first: '', second: '' })
-
     function splitStringByLastWords(text: any, numOfWords: number) {
         const words = text.split(' '); // Split the string by spaces to get individual words
-
         if (numOfWords >= words.length) {
             return { first: '', second: text };
         }
-
         const splitIndex = words.length - numOfWords;
         const firstPart = words.slice(0, splitIndex).join(' ');
         const secondPart = words.slice(splitIndex).join(' ');
-
         return { first: firstPart, second: secondPart };
     }
 
@@ -29,7 +25,6 @@ const Growth = () => {
         const result = splitStringByLastWords(Data?.title || '', 3);
         setdata(result);
     }, [Data]);
-
     useEffect(() => {
         if (apidata && apidata?.marketing_growth[0]
         ) {

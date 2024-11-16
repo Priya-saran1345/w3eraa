@@ -3,11 +3,6 @@ import { fetchMeta } from "@/app/action";
 import { Metadata } from 'next';
 import { Suspense } from 'react'
 
-
-
-
-
-
 async function SchemaScript() {
   const metaData = await fetchMeta("/")
   const schemaData = metaData?.schema_json
@@ -30,13 +25,13 @@ export default function Home() {
     </>
   )
 }
-
 export async function generateMetadata(): Promise<Metadata> {
   try {
     const metaData = await fetchMeta("/");
     return {
       title: metaData?.title || 'W3era® | Performance Driven Digital Marketing Company',
       description: metaData?.description || 'A premier Digital Marketing Company, W3era® offer comprehensive services like SEO, PPC, and Web development. Schedule a free marketing consultation today.',
+      keywords: metaData?.keywords ||'',
       openGraph: metaData?.openGraph
         ? {
             type: metaData.openGraph.type,

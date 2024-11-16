@@ -120,8 +120,8 @@ const Banner = () => {
                   <div className='flex justify-between'>
                     <p className=' text-[24px] lg:text-[28px] font-medium'>  {bannerData?.our_core_services}</p>
                     <div className='flex gap-2 text-[24px]'>
-                         <div className="arrow left  hover:text-pink text-[24px]" onClick={() => sliderRef.current?.slickPrev()}><GoArrowLeft /></div>
-                         <div className="arrow right hover:text-pink text-[24px]" onClick={() => sliderRef.current?.slickNext()}><GoArrowRight /></div>
+                         <div className="arrow left  hover:text-pink  cursor-pointer text-[24px]" onClick={() => sliderRef.current?.slickPrev()}><GoArrowLeft /></div>
+                         <div className="arrow right hover:text-pink cursor-pointer text-[24px]" onClick={() => sliderRef.current?.slickNext()}><GoArrowRight /></div>
                     </div>
                   </div>
                   <Slider ref={sliderRef} {...settings} className="mt-5">
