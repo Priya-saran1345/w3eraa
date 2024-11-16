@@ -84,7 +84,7 @@ const Banner = () => {
               <div>
                 <div className='2xl:w-[80%]'>
                 <h1
-            className="font-bold text-center  sm:text-left text-[28px] lg:text-[32px] xl:text-[48px] 2xl:text-[55px] leading-tight lg:leading-[70px]"
+            className="font-bold text-center  sm:text-left text-[28px] lg:text-[32px] xl:text-[48px] 2xl:text-[55px] leading-tight xl:leading-[70px]"
             dangerouslySetInnerHTML={{ __html: bannerData?.title || "Default Title" }}
         />
                   <p className="text-[22px] lg:text-[28px] text-center sm:text-left font-semibold mt-3">
