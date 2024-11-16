@@ -13,13 +13,13 @@ export default function Component({ props ,title }: any) {
   const [data, setData] = useState({ first: "", second: "" })
 
   function splitStringByLastWords(text: string, numOfWords: number) {
-    const words = text.split(" ")
-    if (numOfWords >= words.length) {
+    const words = text?.split(" ")
+    if (numOfWords >= words?.length) {
       return { first: "", second: text }
     }
-    const splitIndex = words.length - numOfWords
-    const firstPart = words.slice(0, splitIndex).join(" ")
-    const secondPart = words.slice(splitIndex).join(" ")
+    const splitIndex = words?.length - numOfWords
+    const firstPart = words?.slice(0, splitIndex).join(" ")
+    const secondPart = words?.slice(splitIndex).join(" ")
     return { first: firstPart, second: secondPart }
   }
 
