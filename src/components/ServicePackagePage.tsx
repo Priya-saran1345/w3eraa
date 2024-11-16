@@ -237,7 +237,7 @@ const [quicklinks, setquicklinks] = useState<any>()
                             }
                             <CluthRating props={cluth} />
                             {
-                                data?.service_faq.title &&  data?.service_faq.card.length>0 &&
+                                data?.service_faq?.title &&  data?.service_faq?.card.length>0 &&
                                 <Faq props={data?.service_faq?.card} title={ data?.service_faq.title}/>
                             }
                             { quicklinks&&
@@ -420,8 +420,8 @@ const [quicklinks, setquicklinks] = useState<any>()
                             }
                             <Revenue />
                             {
-                                data?.service_faq.title &&  data?.service_faq.card.length>0 &&
-                                <Faq props={data?.service_faq?.card} title={ data?.service_faq.title}/>
+                                data?.service_faq?.title &&  data?.service_faq?.card?.length>0 &&
+                                <Faq props={data?.service_faq?.card} title={ data?.service_faq?.title}/>
                             }
                             <WebsiteReport />
                             {
