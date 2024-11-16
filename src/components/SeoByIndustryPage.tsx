@@ -20,7 +20,7 @@ import styled from 'styled-components'
 import CommonBanner from '@/components/Common-Banner'
 import { BASE_URL } from '@/util/api';
 import axios from 'axios';
-
+import Image from 'next/image';
 const Main = () => {
     const { apidata } = Useapi();
     const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(null);
@@ -74,27 +74,37 @@ const [data, setdata] = useState<any>()
                 <div className='w-full my-4 flex flex-wrap gap-4 justify-center'>
                     {data?.seo_industry[0]?.card?.map((elem:any, index:any) => (
                         <div
-                            key={elem.id}
-                            className="rounded-lg w-full sm:w-[45%] lg:w-[31%] h-[319px] flex group justify-center items-center bg-center bg-no-repeat"
-                            style={{ backgroundImage: `url(${elem?.image||'/images/casephoto.png'})` }}
-                            onMouseEnter={() => setHoveredCardIndex(index)}
-                            onMouseLeave={() => setHoveredCardIndex(null)} // Reset on mouse leave
-                        >
-                            {hoveredCardIndex === index && (
-                                <div className='bg-white/80 rounded-md px-6 py-6 w-[380px] h-[180px]' data-aos="zoom-in" data-aos-duration="1000">
-                                    <p className='font-medium text-[20px]'>
-                                       {elem?.title}
-                                    </p>
-                                    <div className='flex justify-between mt-4 gap-5 items-center'>
-                                        <Link href={`/seo-by-industry/${elem?.slug}`}>
-                                            <div className='w-[55px] h-[40px] rounded-md bg-pink text-[20px] text-white flex justify-center items-center font-bold'>
-                                                <FaArrowRightLong />
-                                            </div>
-                                        </Link>
-                                    </div>
+                        key={elem.id}
+                        className="relative rounded-lg w-full sm:w-[45%] lg:w-[31%] h-[319px] flex group justify-center items-center overflow-hidden"
+                        onMouseEnter={() => setHoveredCardIndex(index)}
+                        onMouseLeave={() => setHoveredCardIndex(null)}
+                      >
+                        {/* Use the Next.js Image component */}
+                        <Image
+                          src={elem.image || '/images/casephoto.png'}
+                          alt={elem?.image_alt}
+                          layout="fill"
+                          objectFit="cover"
+                          className="rounded-lg"
+                        />
+              
+                        {hoveredCardIndex === index && (
+                          <div
+                            className="absolute bg-white/80 rounded-md px-6 py-6 w-[380px] h-[180px]"
+                            data-aos="zoom-in"
+                            data-aos-duration="1000"
+                          >
+                            <p className="font-medium text-[20px]">{elem.title}</p>
+                            <div className="flex justify-between mt-4 gap-5 items-center">
+                              <Link href={`/seo-by-industry/${elem.slug}`}>
+                                <div className="w-[55px] h-[40px] rounded-md bg-pink text-[20px] text-white flex justify-center items-center font-bold">
+                                  <FaArrowRightLong />
                                 </div>
-                            )}
-                        </div>
+                              </Link>
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     ))}
                 </div>
             </div>

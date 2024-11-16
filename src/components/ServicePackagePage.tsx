@@ -143,7 +143,7 @@ const [quicklinks, setquicklinks] = useState<any>()
                                                 />
                                         </div>
                                     )}
-                                        </div>
+                                       
                                         <StyledWrapper>
                                         <div className='w-full '>
                                             <p className='text-homeblack text-[24px] font-semibold leading-[29px]'>
@@ -155,6 +155,7 @@ const [quicklinks, setquicklinks] = useState<any>()
                                             />
                                         </div>
                                             </StyledWrapper>
+                                            </div>
                                     </div>
                             ) : null
                             }
