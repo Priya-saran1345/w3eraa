@@ -43,23 +43,16 @@ data&&
     <div>
       <Header />
       <Navbar />
-      {/* <CommonBanner title={'Resources for Your Industry'} description={'Need helpful tips and ideas for your website or business? We have compiled a collection of industry-specific resources written by our certified professionals with many years of experience'}
-      //  image={data?.image} btntext={data?.link_text} btnlink={data?.link_url}
-      /> */}
+      
       <div className='py-12 xl:w-[75%] px-6 mx-auto'>
-        {/* <StyledWrapper> */}
-
-       
-
+        <StyledWrapper>
             <div className='text-homeblack leading-[30px]'
             >
              {data?.map((elem:any, i:number)=>(
               <div key={i} dangerouslySetInnerHTML={{ __html: elem?.body || '' }} className='h-fit'></div>
              ))}
             </div>
-         
-
-        {/* </StyledWrapper> */}
+        </StyledWrapper>
       </div>
       <Footer />
 

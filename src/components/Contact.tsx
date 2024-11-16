@@ -147,7 +147,7 @@ data&& basic_details&&
               {
                data?. contact_image?.map((elem:any ,index:any)=>(
 
-                  <Image src={elem?.image||'/images/mirchi.png'} height={71} width={108} alt='' key={index}></Image>
+                  <Image src={elem?.image||'/images/mirchi.png'} height={71} width={108} alt={elem?.image_alt} key={index}></Image>
                 ))
               }
             </div>
@@ -279,7 +279,7 @@ data&& basic_details&&
                     src={slide.image}
                     height={71}
                     width={108}
-                    alt=""
+                    alt={slide?.image_alt}
                     className="transition-all duration-200"
                   />
                   <p className="text-[24px] text-homeblack font-medium mb-2">{slide.title}</p>

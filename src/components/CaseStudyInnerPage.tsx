@@ -43,7 +43,7 @@ data&&
     <div>
     <Header/>
     <Navbar/>
-    <CommonBanner title={data?.title||''} description={data?.description||''} image={data?.image||''} btnlink={''}btntext={''} />
+    <CommonBanner title={data?.title||''} image_alt={data?.image_alt} description={data?.description||''} image={data?.image||''} btnlink={''}btntext={''} />
 <div className='w-full '>
 <StyledWrapper>
 <div

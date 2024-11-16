@@ -74,6 +74,7 @@ const Main = () => {
             <Navbar />
          <CommonBanner title={data?.banner_title ||''} description={data?.banner_description||''} 
          image={data?.image} 
+         image_alt={data?.image_alt}
          btntext={data?.link_text} btnlink={data?.link_url}
           />
           {

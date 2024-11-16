@@ -37,7 +37,8 @@ const Life = () => {
                             </Link>
                         </div>
                         <div className='lg:min-w-[627px] '>
-                            <Image src={life?.Revolutionize[0].image} height={380} width={627} alt='' className='lg:w-[627px] w-[450px] '></Image>
+                            <Image src={life?.Revolutionize[0].image} 
+                            height={380} width={627} alt={life?.Revolutionize[0]?.image_alt} className='lg:w-[627px] w-[450px] '></Image>
                         </div>
                     </div>
                     <div className='w-full bg-blue py-12 lg:py-24'>
@@ -77,7 +78,7 @@ const Life = () => {
                                         return (
                                             <div className='border-[1px] min-w-[320px]  max-w-[438px] bg-white  border-slate-200 shadow-lg flex px-3 rounded-md py-3
                                              flex-col gap-3' key={index}>
-                                                <Image src={event?.image} height={300} width={413} alt='' className=''></Image>
+                                                <Image src={event?.image} height={300} width={413} alt={event?.image_alt} className=''></Image>
                                                 <p className='text-[24px] text-homeblack font-medium'>{event?.title}</p>
                                                 <p className='text-textGrey'>
                                                     {event?.description}                                 </p>
@@ -122,8 +123,8 @@ const Life = () => {
                             </div>
                         </div>
                         <div className='flex w-full xl:w-[75%] mx-auto md:flex-nowrap flex-wrap justify-between mt-7 gap-4 '>
-                            <Image src={life?.grow_withus[0].image1} height={350} width={711} alt='' className=' min-w-[320px] max-w-[711px] max-h-[350px]'></Image>
-                            <Image src={life?.grow_withus[0].image2} height={350} width={711} alt='' className=' min-w-[320px] max-w-[711px] max-h-[350px]'></Image>
+                            <Image src={life?.grow_withus[0].image1} height={350} width={711} alt={life?.grow_withus[0].image_alt1} className=' min-w-[320px] max-w-[711px] max-h-[350px]'></Image>
+                            <Image src={life?.grow_withus[0].image2} height={350} width={711} alt={life?.grow_withus[0].image_alt2} className=' min-w-[320px] max-w-[711px] max-h-[350px]'></Image>
                         </div>
                     </div>
                     <Footer />

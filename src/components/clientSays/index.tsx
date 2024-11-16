@@ -69,7 +69,7 @@ export default function Data({ props }: any) {
                 >
                   <div className='relative min-h-[317px] w-[404px]  bg-cover'>
                     <div className="h-full w-full">
-                      <Image src={cardprops?.thumbnail || '/images/slient-says-card.png'} height={317} width={404} alt="" />
+                      <Image src={cardprops?.thumbnail || '/images/slient-says-card.png'} height={317} width={404} alt={cardprops?.thumbnail_alt} />
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black flex flex-col justify-between h-full p-4">
                       <div className="flex flex-col justify-center items-center py-20">

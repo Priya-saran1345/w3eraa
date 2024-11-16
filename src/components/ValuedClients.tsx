@@ -51,7 +51,7 @@ const DriveResults = () => {
                                 <div key={i} className="flex min-w-[190] max-h-[120px] p-5 group md:size-[181px] justify-center items-center border-[1px] border-slate-100 rounded-sm">
                                     <Image
                                         src={elem.image}
-                                        alt=""
+                                        alt={elem?.image_alt}
                                         height={71}
                                         width={165}
                                         className="grayscale w-[145px] lg:max-w-[155px] group-hover:grayscale-0 transition duration-100 ease-in-out"

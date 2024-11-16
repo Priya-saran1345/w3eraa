@@ -57,12 +57,12 @@ const PortfolioInner = () => {
                     src={matchedCard.image || ''}
                     height={550}
                     width={550}
-                    alt={matchedCard.title}
+                    alt={matchedCard.image_alt}
                   />
                 )}
               </div>
               <div className="mx-auto mt-8 lg:mt-16 text-center">
-                {/* Display the matched card's title */}
+               
                 <p className="text-homeblack text-[38px] font-bold">
                   {matchedCard?.title || 'Title Not Found'}
                 </p>

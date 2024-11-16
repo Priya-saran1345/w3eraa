@@ -84,18 +84,18 @@ const Banner = () => {
               <div>
                 <div className='2xl:w-[80%]'>
                 <h1
-            className="font-bold text-center  sm:text-left text-[32px] lg:text-[48px] 2xl:text-[55px] leading-tight lg:leading-[70px]"
+            className="font-bold text-center  sm:text-left text-[28px] lg:text-[32px] xl:text-[48px] 2xl:text-[55px] leading-tight lg:leading-[70px]"
             dangerouslySetInnerHTML={{ __html: bannerData?.title || "Default Title" }}
         />
-                  <p className="text-[24px] text-center sm:text-left font-semibold mt-3">
+                  <p className="text-[22px] lg:text-[28px] text-center sm:text-left font-semibold mt-3">
                     {bannerData?.subtitle}
                   </p>
-                  <p className="text-[17px] text-center sm:text-left mt-2 ">
+                  <p className=" text-[16px] lg:text-[17px] text-center sm:text-left mt-2 ">
                     {bannerData?.description}
                   </p>
                   <div className="flex mt-3 flex-wrap gap-4 justify-center md:justify-start items-center">
                   <a href={`tel:${basic_details?.basic_details[0].phonenumber}`}>
-                    <button className="flex items-center h-[55px] justify-center px-8 bg-white text-pink font-medium hover:text-white text-[18px] rounded-md  group hover:bg-pink transition duration-300">
+                    <button className="flex items-center h-[55px] justify-center px-4 md:px-8 bg-white text-pink font-medium hover:text-white text-[18px] rounded-md  group hover:bg-pink transition duration-300">
                       <span  className="transition-transform duration-300 group-hover:-translate-x-2 text-[20px]">
                        Call For Sales
                       </span>
@@ -103,7 +103,7 @@ const Banner = () => {
                     </button>
                     </a>
                     <Link href={'/contact-us'}>
-                    <button className="flex items-center hover:bg-white hover:text-pink font-medium justify-center px-8 text-[18px]
+                    <button className="flex items-center hover:bg-white hover:text-pink font-medium justify-center  px-4 md:px-8 text-[18px]
                      text-white rounded-md h-[55px] group bg-pink transition duration-300">
                       <span className="transition-transform duration-300 group-hover:-translate-x-2 text-[20px]">
                         Contact Us
@@ -116,9 +116,9 @@ const Banner = () => {
                   </div>
                 </div>
 
-                <div className='mt-5 w-full max-w-[90vw] px-6 lg:px-1 xl:max-w-[70vw]'>
+                <div className='mt-5 w-full max-w-[90vw] px-3 lg:px-1 xl:max-w-[70vw]'>
                   <div className='flex justify-between'>
-                    <p className='text-[28px] font-medium'>  {bannerData?.our_core_services}</p>
+                    <p className=' text-[24px] lg:text-[28px] font-medium'>  {bannerData?.our_core_services}</p>
                     <div className='flex gap-2 text-[24px]'>
                          <div className="arrow left  hover:text-pink text-[24px]" onClick={() => sliderRef.current?.slickPrev()}><GoArrowLeft /></div>
                          <div className="arrow right hover:text-pink text-[24px]" onClick={() => sliderRef.current?.slickNext()}><GoArrowRight /></div>
@@ -153,19 +153,18 @@ const Banner = () => {
       </div>
       <div className='w-full border-b-2 border-lightblue mx-auto'>
         <div className="w-full px-6 xl:w-[75%] mx-auto ">
-          <p className=" text-[38px] lg:text-[48px] text-homeback font-bold mt-8 mb-3">
+          <p className=" text-[28px] lg:text-[38px] xl:text-[48px] text-homeback font-bold mt-8 mb-3">
             {data.first} <span className='text-pink'>{data.second}</span>
           </p>
           <div className="bg-white flex flex-wrap xl:flex-nowrap justify-center gap-4 items-center rounded-xl py-5 md:py-10">
             {apidata?.brand.map((elem: any, index: number) => (
               <React.Fragment key={index}>
              
-               
                 <div className='h-[140px] min-w-[100px] md:size-[140px] w-[140px] rounded-full flex justify-center items-center border-[1px] border-lightblue'>
                   <div>
                     <Image
                       src={elem.image}
-                      alt={''}
+                      alt={`${elem?.image_alt}`}
                       height={114}
                       width={
                         100}

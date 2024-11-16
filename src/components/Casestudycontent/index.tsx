@@ -50,7 +50,7 @@ const CaseStudy = ({ props }: { props: any }) => {
                   src={study.image} // Use the actual image URL from the study data
                   height={301}
                   width={455}
-                  alt={`Case Study ${study.title}`} // Adding alt text for accessibility
+                  alt={study?.image_alt} // Adding alt text for accessibility
                   className='rounded-xl w-full h-full'
                 />
                 {/* Overlay with button */}

@@ -67,6 +67,7 @@ const [data, setdata] = useState<any>()
             <Navbar />
            <CommonBanner title={data?.seo_industry[0].title||''} description={data?.seo_industry[0].description|| ''} 
          image={data?.image}
+         image_alt={data?.seo_industry[0]?.image_alt}
         //  btntext={data?.link_text} btnlink={data?.link_url}
           />
             <div className='w-full xl:w-[75%] mx-auto px-6 py-8'>
@@ -97,7 +98,6 @@ const [data, setdata] = useState<any>()
                     ))}
                 </div>
             </div>
-
             <ClientSays props={apidata?.clients_say[0]} />
             <div className='w-full bg-blue py-10 text-white  lg:py-16'>
                 <div className=' md:w-[75%] mx-auto xl:w-[50%]'>

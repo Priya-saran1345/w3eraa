@@ -3,15 +3,16 @@
 import React from 'react'
 import ServicePackage from '@/components/ServicePackagePage'
 import { fetchMeta } from "@/app/action";
-const Page = ({ params }: any) => {
+const Page = ({ params  }: any) => {
   return (
     <div>
+      
         <ServicePackage/>
     </div>
   )
 }
 export default Page
-  export async function generateMetadata({ params }: any) {
+  export async function generateMetadata({ params  }: any) {
     const  slug  = params?.id;
     try {
       const metaData = await fetchMeta(`${slug}`);

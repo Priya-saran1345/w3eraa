@@ -103,7 +103,7 @@ const Page = () => {
                                                 src={elem?.image}
                                                 height={90}
                                                 width={90}
-                                                alt=""
+                                                alt={elem?.image_alt}
                                                 className="transition-all duration-200"
                                             />
                                             <p className='text-[20px] text-center font-medium'>{elem?.title}</p>

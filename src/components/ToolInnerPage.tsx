@@ -69,7 +69,7 @@ const Tool = () => {
 
         try {
             const response = await axios.post(`${BASE_URL}tools/${lastSegment}`, {
-                url, keywords, MetaTitle, description, pageno, depth, useragent, disallowpath, allowpath ,sitemapUrl,crawlDelay
+                url, keywords, MetaTitle, description, pageno, depth, useragent, disallowpath, allowpath, sitemapUrl, crawlDelay
             }); // Send URL in payload
             setResult(response.data); // Save result in state
             setinnerloading(true)
@@ -148,15 +148,7 @@ const Tool = () => {
                     <div className='w-full'>
                         <div className='w-full bg-no-repeat bg-center bg-[url("/images/tool-bg.png")] py-9 flex flex-col justify-center items-center'>
                             <p className='text-[32px] lg:text-[44px] font-bold text-white'>{currentTool[0]?.title || 'This is'}</p>
-                            {/* <div className='rounded-full w-1/3 flex justify-between items-center p-3 px-6 mt-4 bg-white'>
-                        <input
-                            type="text"
-                            className='text-textGrey w-full border-none outline-none text-[18px]'
-                            placeholder='Type any word to search SEO tools'
-                            onChange={handleChange}
-                            value={url} // Control input value
-                        />
-                    </div> */}
+
                         </div>
                     </div>
                     <div className='mt-4 w-full px-4 xl:px-0 xl:w-[75%] mx-auto'>
@@ -174,11 +166,10 @@ const Tool = () => {
                         <div className='rounded-xl p-7 shadow-xl border-slate-100 border-[1px]'>
                             <div className='bg-grey p-4 rounded-lg w-full flex items-center gap-3'>
                                 <div className='size-[53px] rounded-full flex justify-center items-center'>
-                                    <Image src={currentTool?.[0]?.image || ''} height={53} width={53} alt='' />
+                                    <Image src={currentTool?.[0]?.image || ''} height={53} width={53} alt={currentTool?.[0]?.image_alt} />
                                 </div>
                                 <div>
                                     <p className='text-homeblack text-[20px]'>{currentTool?.[0]?.title}</p>
-                                    {/* <p className='text-homegrey'>Paste (Ctrl + V) your article below then click Check for Plagiarism!</p> */}
                                 </div>
                             </div>
                             {
@@ -258,20 +249,20 @@ const Tool = () => {
                                     <input type="text" placeholder='   Enter allow paths Seprated By Coma(,)' className='w-full  border-none outline-none' onChange={handleallowpaths} />
                                 </div>)
                             }
-                                 {
+                            {
 
-(currentTool[0]?.slug_link === 'robots-txt-generator') &&
-(<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
-    <input type="text" placeholder='   Enter Crawler Delay' className='w-full  border-none outline-none' onChange={handleCrawldelay} />
-</div>)
-}
-{
+                                (currentTool[0]?.slug_link === 'robots-txt-generator') &&
+                                (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
+                                    <input type="text" placeholder='   Enter Crawler Delay' className='w-full  border-none outline-none' onChange={handleCrawldelay} />
+                                </div>)
+                            }
+                            {
 
-(currentTool[0]?.slug_link === 'robots-txt-generator') &&
-(<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
-    <input type="text" placeholder='    Enter sitemap URL' className='w-full  border-none outline-none' onChange={handleSitemapurl} />
-</div>)
-}
+                                (currentTool[0]?.slug_link === 'robots-txt-generator') &&
+                                (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
+                                    <input type="text" placeholder='    Enter sitemap URL' className='w-full  border-none outline-none' onChange={handleSitemapurl} />
+                                </div>)
+                            }
                             {showresult && <div className=' rounded-xl p-7  mt-5 border-slate-100 border-[1px]'>
                                 {loading && <p className="text-center text-gray-700">Loading...</p>}
                                 {error && <p className="text-center text-red-500">{error}</p>}

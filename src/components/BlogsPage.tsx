@@ -129,7 +129,7 @@ const Blogs = () => {
                     <p className="text-[28px] text-homeblack font-semibold mb-1">Latest Blogs</p>
                   </div>
 
-                  {filteredBlogs.length > 0 ? (
+                  {filteredBlogs.length>0? (
                     filteredBlogs.map((elem: any, index: number) => (
                      <Link href={`/blog/${elem?.slug_link}`} key={index}>
 
@@ -139,7 +139,7 @@ const Blogs = () => {
                           src={elem?.image || ''}
                           height={175}
                           width={328}
-                          alt=""
+                          alt={elem?.image_alt}
                           className="w-full sm:w-[300px] max-h-[175px] xl:min-w-[328px]"
                         />
                         <div className="flex flex-col ml-4 items-start gap-2">
@@ -155,7 +155,6 @@ const Blogs = () => {
                               ? `${elem?.summary.substring(0, 100)}...`
                               : elem?.summary}
                           </p>
-
                           <button className="text-pink text-[18px] mt-3 font-medium">Read More</button>
                         </div>
                       </div>

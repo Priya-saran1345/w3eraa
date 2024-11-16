@@ -31,10 +31,10 @@ const TestimonialCard = ({ props }: any) => {
               <div className='flex gap-2 items-center'>
                 <div className='flex justify-center items-center w-[63px] h-[63px] rounded-full'>
                   <Image
-                    src={'/images/testimonial-user.png'}
+                    src={item?.image||'/images/testimonial-user.png'}
                     height={63}
                     width={63}
-                    alt="Upper Coma"
+                    alt={item?.image_alt}
                     className='rounded-full'
                   />
                 </div>

@@ -41,7 +41,6 @@ const Page = () => {
     useEffect(() => {
         fetch();
     }, [])
-    // console.log('case study data from others', caseStudydata)
 
     return (
         <>

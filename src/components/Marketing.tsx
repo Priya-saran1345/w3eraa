@@ -68,7 +68,7 @@ const Marketing = () => {
         <div className="mt-7 md:hidden lg:block md:mt-0">
           <Image
             src={marketingData?.image}
-            alt=''
+            alt={marketingData?.image_alt}
             height={580}
             width={588}
           />

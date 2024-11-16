@@ -122,7 +122,7 @@ const CaseStudy: React.FC = () => {
                                 <div key={index} className='overflow-hidden min-h-[507px]'>
                                     <Image
                                         src={elem?.image}
-                                        alt={`Case Study ${index + 1}`}
+                                        alt={elem?.image_alt}
                                         height={507}
                                         width={829}
                                         className='w-[500px] xl:w-[829px] h-full rounded-lg'

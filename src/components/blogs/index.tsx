@@ -34,7 +34,6 @@ export default function Component({props}:any) {
     const result = splitStringByLastWords('Our Latest Blogs', 2)
     setData(result)
   }, [])
-console.log('blogs',props)
   
   return (
     <div className="w-full px-4 mx-auto py-10 lg:py-16 xl:w-[75%]">
@@ -57,7 +56,8 @@ console.log('blogs',props)
                 {/* | &nbsp;<span>Latest</span> */}
               </div>
             <div>
-              <Image src={elem?.image || '/images/blog1.png'} alt="" height={218} width={461} className="rounded-lg max-h-[218px]" />
+              <Image src={elem?.image || '/images/blog1.png'} alt={elem?.image_alt}
+               height={218} width={461} className="rounded-lg max-h-[218px]" />
             </div>
             <div className="p-4 flex flex-col  gap-3 justify-between">
               

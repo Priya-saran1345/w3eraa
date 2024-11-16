@@ -100,11 +100,7 @@ basic_details && about&&
             <Header />
             <Navbar />
             <div className='w-full px-4 bg-[url("/images/aboutbg.png")] h-[388px] flex justify-center items-center'>
-            {/* <div className='xl:w-[75%] px-5 text-white'>
-                        <p className=' text-[28px] lg:text-[32px] font-medium'>About</p>
-                        <p className=' text-[32px] lg:text-[38px] font-bold mb-2'>{about?.aboutus[0]?.title}</p>
-                        <p className='text-[18px]' dangerouslySetInnerHTML={{ __html:about?.aboutus[0]?.description }} />
-                    </div> */}
+            
             </div>
             <div className='full'>
                 <div className='w-full pt-12 lg:pt-16 xl:w-[75%] mx-auto px-4' >
@@ -229,7 +225,7 @@ basic_details && about&&
                     <div className='flex justify-center  items-center mt-16'>
                         <Image
                             src={about?.ourvalue[0].image}// Ensure this path is correct
-                            alt={''}
+                            alt={about?.ourvalue[0]?.image_alt}
                             height={646}
                             width={700}
                         />
@@ -251,7 +247,7 @@ basic_details && about&&
                                         <div className=' w-full max-w-[940px] h-[300px] flex  justify-between rounded-sm  bg-white'>
                                             <Image
                                                 src={value?.image} // Ensure this path is correct
-                                                alt={''}
+                                                alt={value?.image_alt}
                                                 height={400}
                                                 width={290}
                                             />
@@ -284,7 +280,7 @@ basic_details && about&&
                     <div>
                         <Image
                             src={about?.milestone[0]?.image||'/images/road.png'} // Ensure this path is correct
-                            alt={''}
+                            alt={about?.milestone[0]?.image_alt}
                             height={600}
                             width={1109}
                             className='max-h-[700px]'
@@ -311,7 +307,8 @@ basic_details && about&&
                              </div>
                          </div>
                          <div className='rounded-2xl '>
-                             <Image src={about?.ourapproach[0].image} height={312} width={488} alt='' className='hidden md:block  rounded-r-2xl '/>
+                             <Image src={about?.ourapproach[0].image} height={312} width={488}
+                              alt={about?.ourapproach[0]?.image_alt} className='hidden md:block  rounded-r-2xl '/>
                          </div>
                      </div>
                  </div>

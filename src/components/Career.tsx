@@ -35,7 +35,8 @@ const Page = () => {
         <div>
           <Header />
           <Navbar />
-          <CommonBanner title={apidata?.title} description={apidata?.body} image={apidata?.image} image_alt={apidata?.image_alt} btnlink={apidata?.button_url} btntext={apidata?.button_text} />
+          <CommonBanner title={apidata?.title} description={apidata?.body} image={apidata?.image} image_alt={apidata?.image_alt} btnlink={apidata?.button_url}
+           btntext={apidata?.button_text} />
           <div className=' px-6 xl:px-0 xl:w-[75%] py-12 mx-auto'>
             <p className='text-homeblack text-[38px] font-bold text-center'>Current Job Openings in Jaipur
             </p>

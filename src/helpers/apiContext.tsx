@@ -38,7 +38,6 @@ export const ApiProvider = ({ children }: { children: React.ReactNode }) => {
       setapidata(response.data);
     } catch (error: any) {
       console.log(error.message);
-
     }
     try {
       const response = await axios.get(`${BASE_URL}faq/`);
@@ -46,13 +45,6 @@ export const ApiProvider = ({ children }: { children: React.ReactNode }) => {
     } catch (error: any) {
       console.log("faq error", error.message);
     }
-    // try {
-    //   const response = await axios.get(`${BASE_URL}blog/`);
-    //   setblog(response.data);
-      
-    // } catch (error: any) {
-    //   console.log("blogs error", error.message);
-    // }
     try {
       const response = await axios.get(`${BASE_URL}blogs/?page=1`);
       setblogs(response.data);
@@ -102,14 +94,11 @@ export const ApiProvider = ({ children }: { children: React.ReactNode }) => {
     } catch (error: any) {
     console.log("w3era-life study error", error.message);
     }
-    
     setloading(false)
   };
   useEffect(() => {
     fetch();
   }, []);
- 
- 
   return (
     <ApiContext.Provider value={{ apidata, faq,blog,blogs ,service,client,about,basic_details,portfolio,life,loading,career,cluth}}>
       {children}

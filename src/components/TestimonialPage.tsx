@@ -54,7 +54,8 @@ const Page = () => {
         <div>
           <Header />
           <Navigation />
-          <CommonBanner title={apidata?.title} description={apidata?.body} image={apidata?.image} btnlink={apidata?.button_url} btntext={apidata?.button_text} image_alt={apidata?.image_alt} />
+          <CommonBanner title={apidata?.title} description={apidata?.body}  image={apidata?.image} btnlink={apidata?.button_url} btntext={apidata?.button_text}
+           image_alt={apidata?.image_alt} />
           <TestimonialCard props={testimonial?.review} />
           <TestimonialVideo props={testimonial?.clients_say_card} />
           <Footer />

@@ -27,11 +27,11 @@ const Main = () => {
     // const {  faq} = Useapi();
     return (
     <div>
-        { !basic_details&&!apidata&&!blogs&&  
+        {/* { !basic_details&&!apidata&&!blogs&&  
        <Loader/>
-        }
+        } */}
          {
-           basic_details&&apidata&&blogs&& 
+          //  basic_details&&apidata&&blogs&& 
       <div>
       <Header />
       <Navbar />

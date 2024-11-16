@@ -75,8 +75,6 @@ const [quicklinks, setquicklinks] = useState<any>()
     }, [result]);
     // Toggle expand/collapse for cards
     const [expandedIndices, setExpandedIndices] = useState<number[]>([]);
-
-    console.log('packages data-------------------',packageCards)
     // Function to toggle a particular card's expanded state
     const toggleExpand = (index: number) => {
         if (expandedIndices.includes(index)) {
@@ -125,7 +123,8 @@ const [quicklinks, setquicklinks] = useState<any>()
                         <div className=''>
                             <Header />
                             <Navbar />
-                            <CommonBanner status={'true'} title={data?.title} description={data?.description} image={data?.image} btntext={data?.link_text} btnlink={data?.link_url} />
+                            <CommonBanner status={'true'} title={data?.title} description={data?.description} image={data?.image}
+                             btntext={data?.link_text} btnlink={data?.link_url} image_alt={data?.image_alt} />
                             {
                             data?.aboutservice?.title || data?.aboutservice?.subtitle || data?.aboutservice?.description ? (
                                 <div className='bg-white mt-12 mb-8 xl:w-[75%] px-4 xl:px-0 mx-auto'>
@@ -139,7 +138,7 @@ const [quicklinks, setquicklinks] = useState<any>()
                                                     src={data?.aboutservice?.image || ''}
                                                     height={377}
                                                     width={545}
-                                                    alt=''
+                                                    alt={data?.aboutservice?.image_alt}
                                                     className=''
                                                 />
                                         </div>
@@ -157,7 +156,6 @@ const [quicklinks, setquicklinks] = useState<any>()
                                         </div>
                                             </StyledWrapper>
                                     </div>
-                                // </div>
                             ) : null
                             }
 
@@ -259,7 +257,7 @@ const [quicklinks, setquicklinks] = useState<any>()
                             <Navbar />
                             <CommonBanner title={data?.title}
                              status={'true'}
-                                description={data?.description} image={data?.image} btntext={data?.link_text} btnlink={data?.link_url} />
+                                description={data?.description} image={data?.image} image_alt={data?.image_alt} btntext={data?.link_text} btnlink={data?.link_url} />
                             <div className='bg-white  w-full px-4 xl:w-[75%] mx-auto py-10 lg:py-16'>
                                 <div className='mt-16'>
                                     <div className='shadow-lg  p-5 border-slate-200 border-[1px]  rounded-2xl mb-4'>
@@ -409,7 +407,6 @@ const [quicklinks, setquicklinks] = useState<any>()
                             {
                                 data?.contentsection1?.description &&
                                 <div className='w-full mx-auto xl:w-[75%] flex flex-col gap-4 px-6  py-12'>
-                                    {/* <p className='text-[ 28px] text-homeblack font-semibold lg:text-[38px]'>Affordable SEO Pricing Packages</p> */}
                                     <p
                                         className='text-homegrey text-[18px]'
                                         dangerouslySetInnerHTML={{ __html: data?.contentsection1?.description }}

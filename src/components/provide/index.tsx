@@ -89,7 +89,7 @@ const Provide = () => {
                 <div className='flex flex-col md:flex-row gap-7 md:gap-20 items-center'>
                   <Image
                     src={elem?.image}
-                    alt={`Slider Image ${index}`}
+                    alt={elem?.image_alt}
                     height={426}
                     width={515}
                     className='w-[80%] h-[326px] lg:h-[426px] lg:w-[515px] hidden sm:flex'
