@@ -56,7 +56,7 @@ const Provide = () => {
   return (
     <div className='w-full bg-white py-8 lg:py-20'>
       <div className='w-full xl:w-[75%] px-4 flex flex-col justify-center items-center mx-auto'>
-        <h2 className='text-[32px] md:text-[40px] font-bold text-homeblack'>
+        <h2 className=' text-[28px] lg:text-[38px] xl:text-[48px] font-bold text-homeblack'>
           {data.first} <span className='text-pink'>{data.second}</span>
         </h2>
         <div className='flex justify-center flex-wrap gap-6 mt-8'>
@@ -95,9 +95,9 @@ const Provide = () => {
                     className='w-[80%] h-[326px] lg:h-[426px] lg:w-[515px] hidden sm:flex'
                   />
                   <div className='text-center md:text-left'>
-                    <p className='text-[28px] text-homeblack font-semibold mb-4'>{elem?.title}</p>
+                    <p className=' text-[24px] lg:text-[28px] text-homeblack font-semibold mb-4'>{elem?.title}</p>
                     <p
-                      className="text-homegrey text-[18px]"
+                      className="text-homegrey text-[16px] lg:text-[18px]"
                       dangerouslySetInnerHTML={{ __html: elem?.description }}
                     />
                   </div>

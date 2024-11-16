@@ -43,7 +43,7 @@ export default function Component({ props = [] }: { props?: any[] }) {
   return (
     <div className="w-full bg-lightblue py-10 lg:py-16">
       <div className="mx-auto w-full px-4 md:w-[80%] xl:w-[70%]">
-        <p className="my-3 text-center text-[32px] font-bold leading-[46px] text-textPurple md:text-[40px]">
+        <p className="my-3 text-center  text-[28px] lg:text-[38px] xl:text-[48px] font-bold lg:leading-[46px] text-textPurple ">
           {data.first} <br />
           <span className="text-pink">{data.second}</span>
         </p>
@@ -51,12 +51,12 @@ export default function Component({ props = [] }: { props?: any[] }) {
         <div className="mt-14 rounded-2xl bg-white p-4 md:p-16">
           {props?.map((item: any, index: number) => (
             <div key={index} className="flex items-start">
-              <span className="mr-10 text-[48px] font-bold text-blue">
+              <span className="mr-10 text-[28px] lg:text-[48px] font-bold text-blue">
                 0{index + 1}
               </span>
               <div className="w-full border-b-[1px] border-slate-200 py-4">
                 <motion.div
-                  className="flex cursor-pointer items-start justify-between rounded-lg bg-white py-3 text-[20px] font-medium text-purple"
+                  className="flex cursor-pointer items-start justify-between rounded-lg bg-white py-3 text-[16px] lg:text-[20px] font-medium text-purple"
                   onClick={() => toggleItem(index)}
                   initial={false}
                 >

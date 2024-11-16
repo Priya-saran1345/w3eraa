@@ -98,10 +98,10 @@ const Solution = () => {
   return (
     <div className="w-full border-t border-slate-100">
       <div className="mx-auto w-full px-4 py-10 md:py-16 xl:w-[75%]">
-        <h2 className="mb-4 text-[30px] font-bold leading-tight text-black lg:text-[37px]">
+        <h2 className="mb-4 text-[24px] lg:text-[30px] font-bold leading-tight text-black xl:text-[37px]">
           {data.first} <span className="text-pink">{data.second}</span>
         </h2>
-        <p className="mb-8 text-[18px] leading-tight text-muted-foreground">
+        <p className="mb-8 text-[16px] lg:text-[18px] leading-tight text-muted-foreground">
           {solutionData?.description}
         </p>
         <Slider ref={sliderRef} {...settings} className="flex justify-between  pb-4 gap-7 overflow-x-hidden">
@@ -119,10 +119,10 @@ const Solution = () => {
                       className="text-primary"
                     />
                   </div>
-                  <h3 className="mb-3 text-[26px] font-medium leading-[31px] text-foreground">
+                  <h3 className="mb-3 text-[22px] lg:text-[26px] font-medium leading-[31px] text-foreground">
                     {elem.title}
                   </h3>
-                  <p className="text-[18px] leading-[22px] text-muted-foreground">
+                  <p className="text-[16px] lg:text-[18px] leading-[22px] text-muted-foreground">
                     {elem?.description}
                   </p>
                   {/* <div className="mt-4">

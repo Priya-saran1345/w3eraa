@@ -32,9 +32,9 @@ const Choose = ({props}:any) => {
   return (
     <div className='w-full bg-white py-10 lg:py-20'>
       <div  className=' h-[236px] leading-[29px] md:w-[80%] px-4 lg:w-[40%] text-center mx-auto  md:text-left pt-4  flex flex-col gap-3'>
-        <p className='text-[32px] text-center md:text-[40px] font-bold'>{data.first} <span className='text-pink'>{data.second}</span></p>
+        <p className=' text-[28px] lg:text-[38px] xl:text-[48px] text-center  font-bold'>{data.first} <span className='text-pink'>{data.second}</span></p>
         {/* <p className='text-[24px] font-medium'>{props?.subtitle}</p> */}
-        <p className='text-[18px] text-center text-homegrey font-normal leading-tight'>
+        <p className='text-[16px] lg:text-[18px] text-center text-homegrey font-normal leading-tight'>
           {props?.description}
         </p>
       </div>
@@ -46,7 +46,7 @@ const Choose = ({props}:any) => {
               <div className='bg-lightblue absolute -top-14 rounded-xl p-4 w-[110px] h-[90px] flex justify-center items-center'>
                 <Image src={card.icon} alt={card.title} height={62} width={62} />
               </div>
-              <p className='text-[24px] font-bold '>{card.title}</p>
+              <p className=' text-[22px] lg:text-[24px] font-bold '>{card.title}</p>
               <p className='text-[16px] text-homegrey leading-tight'>
                 {card.description}
               </p>

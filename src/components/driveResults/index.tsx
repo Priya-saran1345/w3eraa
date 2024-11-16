@@ -36,13 +36,13 @@ const DriveResults = () => {
     return (
         <div className='w-full bg-lightblue  py-12 lg:py-16'>
             <div className='w-full xl:w-[75%] mx-auto px-4'>
-                <p className=' text-[32px] lg:text-[42px] text-center lg:text-left capitalize font-bold'>{data.first} <span className='text-pink'>{data.second}</span></p>
+                <p className='  text-[28px] lg:text-[38px] xl:text-[48px] text-center lg:text-left capitalize font-bold'>{data.first} <span className='text-pink'>{data.second}</span></p>
             </div>
 
-            <div className="flex mt-10 flex-wrap lg:flex-nowrap justify-center gap-5  items-center px-4 w-full xl:w-[75%] mx-auto">
+            <div className="flex mt-10 flex-wrap lg:flex-nowrap justify-center gap-5  items-center px-4 xl:px-0 w-full xl:w-[75%] mx-auto">
 
                 {Data?.map((elem: any, i:number) => (
-                    <div key={i} className='rounded-xl p-8 w-[347px] sm:w-[300px] md:w-[347px] min-h-[350px] flex flex-col gap-2 justify-between bg-white hover:shadow-xl'>
+                    <div key={i} className='rounded-xl px-4 2xl:px-8 py-8 w-[347px] sm:w-[300px] md:w-[347px] min-h-[350px] flex flex-col gap-2 justify-between bg-white hover:shadow-xl'>
                         <div className='p-4 size-[72px] flex justify-center items-center rounded-lg bg-lightblue'>
                             <Image
                                 src={elem.icon}
@@ -52,8 +52,8 @@ const DriveResults = () => {
                                 className={''}
                             />
                         </div>
-                        <p className='text-[26px] font-medium text-homeblack leading-[31px]'>{elem.title}</p>
-                        <p className='text-[18px] text-homegrey leading-[22px]'>
+                        <p className=' text-[22px] lg:text-[26px] font-medium text-homeblack leading-[31px]'>{elem.title}</p>
+                        <p className='text-[16px] lg:text-[18px] text-homegrey leading-[22px]'>
                             {elem?.description}</p>
                         <div>
                            

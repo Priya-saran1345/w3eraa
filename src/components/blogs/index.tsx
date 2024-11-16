@@ -37,10 +37,10 @@ export default function Component({props}:any) {
   
   return (
     <div className="w-full px-4 mx-auto py-10 lg:py-16 xl:w-[75%]">
-      <p className="text-[32px] lg:text-[48px] text-homeblack font-bold text-center my-4">
+      <p className=" text-[28px] lg:text-[38px] xl:text-[48px] text-homeblack font-bold text-center my-4">
         {data.first} <span className="text-pink">{data.second}</span>
       </p>
-      <p className="text-homegrey text-[18px] text-center">
+      <p className="text-homegrey text-[16px] lg:text-[18px] text-center">
         Dive into our latest blogs to keep up with the newest trends, insights, and tips in the digital marketing world.
       </p>
       <div className="flex justify-center flex-wrap lg:flex-nowrap mt-12 gap-7">
@@ -61,10 +61,10 @@ export default function Component({props}:any) {
             </div>
             <div className="p-4 flex flex-col  gap-3 justify-between">
               
-              <p className="font-bold text-homeblack text-[24px] leading-tight cursor-pointer" onClick={() => setExpandedTitle(expandedTitle === i ? null : i)}>
+              <p className="font-bold text-homeblack text-[20px] lg:text-[24px] leading-tight cursor-pointer" onClick={() => setExpandedTitle(expandedTitle === i ? null : i)}>
                 {expandedTitle === i ? elem?.title : truncateText(elem?.title, 30)} {/* Truncate title to 30 characters */}
               </p>
-              <p className="text-homegrey leading-[21px] text-[18px] cursor-pointer" onClick={() => setExpandedSummary(expandedSummary === i ? null : i)}>
+              <p className="text-homegrey leading-[21px] text-[16px] lg:text-[18px] cursor-pointer" onClick={() => setExpandedSummary(expandedSummary === i ? null : i)}>
                 {expandedSummary === i ? elem?.summary : truncateText(elem?.summary, 60)} {/* Truncate summary to 60 characters */}
               </p>
               <div>

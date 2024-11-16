@@ -36,13 +36,13 @@ const Marketing = () => {
     <div className='w-full bg-white py-8'>
       <div className=" flex justify-between flex-col md:flex-row items-center  px-4 w-full xl:w-[75%] mx-auto">
         <div className="lg:w-1/2 text-center flex flex-col gap-3 md:text-left">
-          <p className='text-homeblack text-[20px] font-semibold  uppercase'>{marketingData?.subtitle}</p>
+          <p className='text-homeblack text-[18px] lg:text-[20px] font-semibold  uppercase'>{marketingData?.subtitle}</p>
           
-          <p className=' text-[32px] font-bold lg:text-[42px] lg:leading-[58px]'>{data.first} <span className='text-pink'>{data.second}</span></p>
-          <p className='text-homegrey text-[18px]'>{marketingData?.summary}</p>
+          <p className='  font-bold  text-[28px] lg:text-[38px] xl:text-[48px] lg:leading-[58px]'>{data.first} <span className='text-pink'>{data.second}</span></p>
+          <p className='text-homegrey text-[16px] lg:text-[18px]'>{marketingData?.summary}</p>
           <div className='flex gap-4 mt-5 flex-wrap sm:flex-nowrap justify-between'>
             <div className="bg-lightblue p-5 rounded-lg items-start flex gap-4 group hover:bg-white duration-300 hover:shadow-lg transition-all">
-              <p className="text-homeblack text-[18px]">
+              <p className="text-homeblack text-[16px] lg:text-[18px]">
               {marketingData?.box1}
               </p>
               <div className="rounded-full bg-white flex justify-center items-center min-w-[45px] h-[45px] group-hover:bg-lightpink transition-colors duration-300">
@@ -51,7 +51,7 @@ const Marketing = () => {
             </div>
 
             <div className="bg-lightblue p-5 rounded-lg items-start flex gap-4 group hover:bg-white duration-300 hover:shadow-lg transition-all">
-              <p className="text-homeblack text-[18px]">
+              <p className="text-homeblack text-[16px] lg:text-[18px]">
               {marketingData?.box2}
               </p>
               <div className="rounded-full bg-white flex justify-center items-center min-w-[45px] h-[45px] group-hover:bg-lightpink transition-colors duration-300">

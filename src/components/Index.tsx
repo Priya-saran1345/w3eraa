@@ -24,14 +24,13 @@ const Main = () => {
     const { basic_details } = Useapi();
     const { apidata } = Useapi();
     const {blogs  } = Useapi();
-    // const {  faq} = Useapi();
     return (
     <div>
-        {/* { !basic_details&&!apidata&&!blogs&&  
+        { !basic_details&&!apidata&&!blogs&&  
        <Loader/>
-        } */}
+        }
          {
-          //  basic_details&&apidata&&blogs&& 
+           basic_details&&apidata&&blogs&& 
       <div>
       <Header />
       <Navbar />

@@ -32,12 +32,12 @@ export default function Data({ props }: any) {
       <div className="w-full px-4 xl:w-[75%] mx-auto">
         <div className="md:w-[60%] mx-auto text-center">
           {/* Title */}
-          <p className=" text-[32px] lg:text-[42px] font-bold text-homeblack mt-4 text-center leading-tight">
+          <p className="  text-[28px] lg:text-[38px] xl:text-[48px] font-bold text-homeblack mt-4 text-center leading-tight">
             {heading.first} <span className="text-pink">{heading.second}</span>
           </p>
           {/* Description */}
           <p
-            className="text-[18px] text-homegrey mt-4 text-center leading-tight"
+            className="text-[16px] lg:text-[18px] text-homegrey mt-4 text-center lg:leading-tight"
             dangerouslySetInnerHTML={{ __html: props?.description || '' }}
           >
           </p>
@@ -96,7 +96,7 @@ export default function Data({ props }: any) {
                   width={18}
                   alt="Upper Coma"
                 />
-                <p className="text-[26px] text-center font-semibold text-homeblack">
+                <p className=" text-[24px] lg:text-[26px] text-center font-semibold text-homeblack">
                   {cardprops.description || "Professionals at W3Era are incredible. Simply dummy text of the printing."}
                 </p>
                 <div className="flex w-full justify-end">
@@ -110,14 +110,14 @@ export default function Data({ props }: any) {
               </div>
               <div className='flex  justify-center w-full'>
                  <div>
-                  <p className='text-[30px] font-semibold text-blue text-center'>{cardprops?.card1_title}</p>
+                  <p className=' text-[26px] lg:text-[30px] font-semibold text-blue text-center'>{cardprops?.card1_title}</p>
                   <p className='text-center text-homegrey text-[16px]'>{cardprops?.card1_content}</p>
                  </div>
                  <div className='w-[2px] min-h-full mx-2 bg-pink'>
 
                  </div>
                  <div>
-                  <p className='text-[30px] font-semibold text-blue text-center'>{cardprops?.card2_title}</p>
+                  <p className=' text-[26px] lg:text-[30px] font-semibold text-blue text-center'>{cardprops?.card2_title}</p>
                   <p className='text-center text-homegrey text-[16px]'>{cardprops?.card2_content}</p>
                  </div>
               </div>

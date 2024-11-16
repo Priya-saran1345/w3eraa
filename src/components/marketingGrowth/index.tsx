@@ -49,11 +49,11 @@ const Growth = () => {
                         {/* {
                         [ 1, 4].map((elem: any) => ( */}
                         <div className='bg-white flex flex-col gap-3 justify-center items-center w-[150px] h-[150px] md:w-[345px] min-h-[201px] text-homeblack text-center hover:bg-blue hover:text-white rounded-xl'>
-                            <p className='text-[38px] font-medium'>10,000+</p>
+                            <p className=' text-[28px] md:text-[38px] font-medium'>10,000+</p>
                             <p>Happy Clients</p>
                         </div>
                         <div className='bg-white flex flex-col gap-3 justify-center items-center w-[150px] h-[150px] md:w-[345px] min-h-[201px] text-homeblack text-center hover:bg-blue hover:text-white rounded-xl'>
-                            <p className='text-[38px] font-medium'>87%</p>
+                            <p className=' text-[28px] md:text-[38px] font-medium'>87%</p>
                             <p>Retention Rate</p>
                         </div>
                         {/* ))
@@ -63,11 +63,11 @@ const Growth = () => {
                         {/* {
                         [ 3, 4].map((elem: any) => ( */}
                         <div className='bg-white flex flex-col gap-3 justify-center items-center w-[150px] h-[150px] md:w-[345px] min-h-[201px] text-homeblack text-center hover:bg-blue hover:text-white rounded-xl'>
-                            <p className='text-[38px] font-medium'>$1B+</p>
+                            <p className=' text-[28px] md:text-[38px] font-medium'>$1B+</p>
                             <p>Revenue Generated</p>
                         </div>
                         <div className='bg-white flex flex-col gap-3 justify-center items-center w-[150px] h-[150px] md:w-[345px] min-h-[201px] text-homeblack text-center hover:bg-blue hover:text-white rounded-xl'>
-                            <p className='text-[38px] font-medium'>3M+</p>
+                            <p className=' text-[28px] md:text-[38px] font-medium'>3M+</p>
                             <p>Leads Generated</p>
                         </div>
                         {/* ))
@@ -77,9 +77,9 @@ const Growth = () => {
                 <div className='flex items-center flex-col gap-2'>
                     <div className=' md:w-[80%] lg:w-full text-center lg:text-left'>
 
-                        <p className=' text-[32px] lg:text-[42px]  font-bold lg:leading-[58px]'><span className='text-pink'>{data.first}</span>{data.second}</p>
+                        <p className='  text-[28px] lg:text-[38px] xl:text-[48px]  font-bold lg:leading-[58px]'><span className='text-pink'>{data.first}</span>{data.second}</p>
                         <p
-                            className="text-homegrey mt-3 text-[18px] leading-[21px]"
+                            className="text-homegrey mt-3 text-[16px] lg:text-[18px] leading-[21px]"
                             dangerouslySetInnerHTML={{ __html: Data?.description }}
                         ></p>
 

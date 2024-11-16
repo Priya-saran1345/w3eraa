@@ -9,8 +9,8 @@ const Revenue = () => {
     <div className='w-full py-10 md:py-16 bg-[url("/images/revenue-bg.png")] text-white'>
       <div className='w-full xl:w-[75%] text-center lg:text-left text-white mx-auto px-4'>
        
-        <p className=' mt-4 font-bold text-[32px] md:text-[40px]'>Need Revenue? We Can Help!</p>
-        <p className='   text-[18px]'>Experience the competence of our digital marketing services as we amplify brand visibility,
+        <p className=' mt-4 font-bold  text-[28px] lg:text-[38px] xl:text-[48px]'>Need Revenue? We Can Help!</p>
+        <p className='  text-[16px] lg:text-[18px]'>Experience the competence of our digital marketing services as we amplify brand visibility,
            cultivate high-quality leads, and yield result-driven results. </p>
 
         <div className='w-full mt-12 flex justify-center lg:justify-start gap-4 lg:flex-nowrap flex-wrap  '>
@@ -19,8 +19,8 @@ const Revenue = () => {
               <Image src={'/images/revenue1.svg'} alt=' ' height={55} width={57} />
             </div>
             <div className=' leading-[29px]'>
-              <p className=' text-[32px] lg:text-[45px] font-bold'>1M+</p>
-              <p className=' mt-3 font-medium text-[22px]'>Ecommerce Transactions</p>
+              <p className='  text-[28px] lg:text-[38px] xl:text-[48px] font-bold'>1M+</p>
+              <p className=' mt-3 font-medium text-[18px] lg:text-[22px]'>Ecommerce Transactions</p>
             </div>
           </div>
          
@@ -29,8 +29,8 @@ const Revenue = () => {
               <Image src={'/images/revenue2.svg'} alt=' ' height={55} width={57} />
             </div>
             <div className=' leading-[29px]'>
-              <p className=' text-[32px] lg:text-[45px] font-bold'>3M+</p>
-              <p className=' mt-3 font-medium text-[22px]'>Qualified Leads</p>
+              <p className='  text-[28px] lg:text-[38px] xl:text-[48px] font-bold'>3M+</p>
+              <p className=' mt-3 font-medium text-[18px] lg:text-[22px]'>Qualified Leads</p>
             </div>
           </div>
           <div className='w-[307px] h-[164px] flex text-white  gap-3 bg-white/10 px-6 rounded-md items-center '>
@@ -38,8 +38,8 @@ const Revenue = () => {
               <Image src={'/images/revenue3.svg'} alt=' ' height={55} width={57} />
             </div>
             <div className=' leading-[29px]'>
-              <p className=' text-[32px] lg:text-[45px] font-bold'>10K+</p>
-              <p className=' mt-3 font-medium text-[22px]'>Happy <br /> Clients</p>
+              <p className='  text-[28px] lg:text-[38px] xl:text-[48px] font-bold'>10K+</p>
+              <p className=' mt-3 font-medium text-[18px] lg:text-[22px]'>Happy <br /> Clients</p>
             </div>
           </div>
 
