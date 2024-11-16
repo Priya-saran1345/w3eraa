@@ -63,7 +63,7 @@ const Blogs = () => {
           </div>
 
           <div className="bg-lightblue py-5">
-            <div className="w-full flex gap-5 relative h-full justify-between lg:flex-nowrap flex-wrap mx-auto xl:w-[75%] px-4 text-white mb-8 lg:mb-32">
+            <div className="w-full flex gap-5 relative h-full justify-between lg:flex-nowrap flex-wrap mx-auto xl:w-[95%] 2xl:w-[75%] px-4 text-white mb-8 lg:mb-32">
               <aside>
                 <div className="xl:min-w-[414px] w-[314px] sticky top-32 flex flex-col gap-6">
                   <div className="bg-white w-full flex text-[18px] font-medium justify-between rounded-lg p-3">
@@ -134,13 +134,13 @@ const Blogs = () => {
                      <Link href={`/blog/${elem?.slug_link}`} key={index}>
 
                       <div key={index} className="bg-white rounded-lg my-4 w-full p-4 flex sm:flex-row flex-col
-                       sm:text-left items-start gap-2 sm:justify-between">
+                       sm:text-left items-start gap-2 ">
                         <Image
                           src={elem?.image || ''}
                           height={175}
                           width={328}
                           alt={elem?.image_alt}
-                          className="w-full sm:w-[300px] max-h-[175px] xl:min-w-[328px]"
+                          className="w-full sm:w-[300px] min-h-[175px] xl:min-w-[328px]"
                         />
                         <div className="flex flex-col ml-4 items-start gap-2">
                           <p className="text-[20px] text-homeblack font-medium">{elem?.title}</p>

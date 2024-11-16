@@ -46,7 +46,7 @@ const Service_Pkackages = () => {
     const [expanded, setExpanded] = useState<number | null>(0); // To track which card is expanded
     const [activePlan, setActivePlan] = useState<string | null>('Professional'); // Default to "Professional"
     const router = useRouter();
-const [quicklinks, setquicklinks] = useState<any>()
+    const [quicklinks, setquicklinks] = useState<any>()
     const fetchPackages = async () => {
         try {
             const response = await axios.get(`${BASE_URL}service-packages/${lastsegment}/`);
@@ -55,14 +55,15 @@ const [quicklinks, setquicklinks] = useState<any>()
             console.log('service ,package error', error);
             if (error?.response?.status === 404) {
                 router.push('/not/found')
-            }}
+            }
+        }
         try {
             const response = await axios.get(`${BASE_URL}quick-link/${lastsegment}/`);
-            console.log('quick links',(response.data.link_category
+            console.log('quick links', (response.data.link_category
             ))
             setquicklinks(response.data.link_category);
         } catch (error: any) {
-            console.log('quicklinks error', error);  
+            console.log('quicklinks error', error);
         }
     };
     // Effect to fetch data
@@ -99,17 +100,17 @@ const [quicklinks, setquicklinks] = useState<any>()
         const cellClasses = `flex flex-1 items-center justify-center p-2 font-medium ${isActive ? 'bg-lightblue' : ''
             }`;
         if (lowerValue === 'true') {
-            return <div className={cellClasses}><IoCheckmark className="text-[24px] text-blue"/></div>;
+            return <div className={cellClasses}><IoCheckmark className="text-[24px] text-blue" /></div>;
         }
-         else if (lowerValue === 'false') {
-            return <div className={cellClasses}><RxCross2 className="text-[24px] font-semibold text-homegrey"/></div>;
+        else if (lowerValue === 'false') {
+            return <div className={cellClasses}><RxCross2 className="text-[24px] font-semibold text-homegrey" /></div>;
         }
-        return <div className={cellClasses}>{value?value:
+        return <div className={cellClasses}>{value ? value :
             <Link href={'/get-a-free-quote'}>
-        <Button content='Get a quote'/>
-        </Link>}</div>;
+                <Button content='Get a quote' />
+            </Link>}</div>;
     };
-    console.log('-------service faq--------------------', data?.service_faq)
+    // console.log('-------service faq--------------------', data?.service_faq)
     return (
         <div >
             {
@@ -124,40 +125,40 @@ const [quicklinks, setquicklinks] = useState<any>()
                             <Header />
                             <Navbar />
                             <CommonBanner status={'true'} title={data?.title} description={data?.description} image={data?.image}
-                             btntext={data?.link_text} btnlink={data?.link_url} image_alt={data?.image_alt} />
+                                btntext={data?.link_text} btnlink={data?.link_url} image_alt={data?.image_alt} />
                             {
-                            data?.aboutservice?.title || data?.aboutservice?.subtitle || data?.aboutservice?.description ? (
-                                <div className='bg-white mt-12 mb-8 xl:w-[75%] px-4 xl:px-0 mx-auto'>
-                                    <p className='text-homeblack text-[28px] text-center font-bold lg:text-[38px]'>
-                                        {data?.aboutservice?.title || ''}
-                                    </p>
-                                    <div className='flex justify-between items-center  lg:gap-16'>
+                                data?.aboutservice?.title || data?.aboutservice?.subtitle || data?.aboutservice?.description ? (
+                                    <div className='bg-white mt-12 mb-8 xl:w-[75%] px-4 xl:px-0 mx-auto'>
+                                        <p className='text-homeblack text-[28px] text-center font-bold lg:text-[38px]'>
+                                            {data?.aboutservice?.title || ''}
+                                        </p>
+                                        <div className='flex justify-between items-center  lg:gap-16'>
                                             {data?.aboutservice?.image && (
-                                        <div className=' hidden lg:block min-w-[377px]'>
-                                                <Image
-                                                    src={data?.aboutservice?.image || ''}
-                                                    height={377}
-                                                    width={545}
-                                                    alt={data?.aboutservice?.image_alt}
-                                                    className=''
-                                                />
-                                        </div>
-                                    )}
-                                       
-                                        <StyledWrapper>
-                                        <div className='w-full '>
-                                            <p className='text-homeblack text-[24px] font-semibold leading-[29px]'>
-                                                {data?.aboutservice?.subtitle || ''}
-                                            </p>
-                                            <p
-                                                className='text-homegrey text-[18px] mt-4'
-                                                dangerouslySetInnerHTML={{ __html: data?.aboutservice?.description || '' }}
-                                            />
-                                        </div>
+                                                <div className=' hidden lg:block min-w-[377px]'>
+                                                    <Image
+                                                        src={data?.aboutservice?.image || ''}
+                                                        height={377}
+                                                        width={545}
+                                                        alt={data?.aboutservice?.image_alt}
+                                                        className=''
+                                                    />
+                                                </div>
+                                            )}
+
+                                            <StyledWrapper>
+                                                <div className='w-full '>
+                                                    <p className='text-homeblack text-[24px] font-semibold leading-[29px]'>
+                                                        {data?.aboutservice?.subtitle || ''}
+                                                    </p>
+                                                    <p
+                                                        className='text-homegrey text-[18px] mt-4'
+                                                        dangerouslySetInnerHTML={{ __html: data?.aboutservice?.description || '' }}
+                                                    />
+                                                </div>
                                             </StyledWrapper>
-                                            </div>
+                                        </div>
                                     </div>
-                            ) : null
+                                ) : null
                             }
 
                             {
@@ -201,10 +202,10 @@ const [quicklinks, setquicklinks] = useState<any>()
                                     </p>
                                     <div className='flex flex-wrap mt-8 justify-center gap-4'>
                                         <Link href='/get-a-free-quote'>
-                                        <Button content={'Get a Quote Now!'} />
+                                            <Button content={'Get a Quote Now!'} />
                                         </Link>
                                         <Link href='/get-a-free-strategy-review'>
-                                        <Button content={'Analyse my Website for Free!'} />
+                                            <Button content={'Analyse my Website for Free!'} />
                                         </Link>
                                     </div>
                                 </div>
@@ -228,7 +229,7 @@ const [quicklinks, setquicklinks] = useState<any>()
                                 <TrustedPartner props={data?.service_type[0]} />
                             )}
                             <Revenue />
-                            {data?.why_choose  &&
+                            {data?.why_choose &&
                                 <Choose props={data?.why_choose} />
                             }
                             {
@@ -237,11 +238,11 @@ const [quicklinks, setquicklinks] = useState<any>()
                             }
                             <CluthRating props={cluth} />
                             {
-                                data?.service_faq?.title &&  data?.service_faq?.card.length>0 &&
-                                <Faq props={data?.service_faq?.card} title={ data?.service_faq.title}/>
+                                data?.service_faq?.title && data?.service_faq?.card.length > 0 &&
+                                <Faq props={data?.service_faq?.card} title={data?.service_faq.title} />
                             }
-                            { quicklinks&&
-                                <QuickLinks props={quicklinks } />
+                            {quicklinks &&
+                                <QuickLinks props={quicklinks} />
                             }
                             {
                                 data?.service_card3.length > 0 &&
@@ -257,7 +258,7 @@ const [quicklinks, setquicklinks] = useState<any>()
                             <Header />
                             <Navbar />
                             <CommonBanner title={data?.title}
-                             status={'true'}
+                                status={'true'}
                                 description={data?.description} image={data?.image} image_alt={data?.image_alt} btntext={data?.link_text} btnlink={data?.link_url} />
                             <div className='bg-white  w-full px-4 xl:w-[75%] mx-auto py-10 lg:py-16'>
                                 <div className='mt-16'>
@@ -394,15 +395,15 @@ const [quicklinks, setquicklinks] = useState<any>()
                                     </p>
                                     <div className='flex flex-wrap mt-8 justify-center gap-4'>
                                         <Link href='/get-a-free-quote'>
-                                        <Button content={'Get a Quote Now!'} />
+                                            <Button content={'Get a Quote Now!'} />
                                         </Link>
                                         <Link href='/get-a-free-strategy-review'>
                                         </Link>
                                         <Link href='/get-a-free-strategy-review'>
-                                        <Button content={'Analyse my Website for Free!'} />
+                                            <Button content={'Analyse my Website for Free!'} />
                                         </Link>
                                     </div>
-                                   
+
                                 </div>
                             </div>
                             {
@@ -420,8 +421,8 @@ const [quicklinks, setquicklinks] = useState<any>()
                             }
                             <Revenue />
                             {
-                                data?.service_faq?.title &&  data?.service_faq?.card?.length>0 &&
-                                <Faq props={data?.service_faq?.card} title={ data?.service_faq?.title}/>
+                                data?.service_faq?.title && data?.service_faq?.card?.length > 0 &&
+                                <Faq props={data?.service_faq?.card} title={data?.service_faq?.title} />
                             }
                             <WebsiteReport />
                             {
@@ -443,23 +444,23 @@ const [quicklinks, setquicklinks] = useState<any>()
                                         whether your website is optimized for the keywords you have used.</p>
                                     <div className='flex justify-center items-center mt-9'>
                                         <Link href={'/get-a-free-quote'}>
-                                        <Button content={'Get a Free SEO Report'} />
+                                            <Button content={'Get a Free SEO Report'} />
                                         </Link>
                                     </div>
                                 </div>
                             </div>
                             {
-quicklinks&&
-                            <QuickLinks props={quicklinks} />
+                                quicklinks &&
+                                <QuickLinks props={quicklinks} />
                             }
                             <Blogs props={data?.blog} />
-                          
+
                             <Footer />
                         </div>
                     }
                     {
                         result?.pagetype == 'other_pages' &&
-                        <Other props={result}/>
+                        <Other props={result} />
 
                     }
                 </div>

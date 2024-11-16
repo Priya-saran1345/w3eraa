@@ -57,7 +57,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className=' mt-12 lg:mt-28  flex-wrap  lg:flex-nowrap flex justify-around gap-8 px-7'>
+                <div className=' mt-12 lg:mt-28  flex-wrap  lg:flex-nowrap flex lg:justify-around gap-8 px-7'>
                     <div className=' w-full sm:w-1/4'>
                         <div className=''>
                             <p className='text-[21px] flex  font-medium w-full  sm:border-b-2'>About Company <FaMinus className='sm:hidden' />

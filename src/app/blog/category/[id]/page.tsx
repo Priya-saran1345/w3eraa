@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: any) {
     const metaData = await fetchMeta(`blog/category/${slug}`);
     return {
       title: metaData?.title || '',
-      description: metaData?.description || '',
+      description: metaData?.description ,
       keywords: metaData?.keywords ||'',
 
       openGraph: metaData?.openGraph
