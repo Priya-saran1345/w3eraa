@@ -10,7 +10,7 @@ const index = ({title,description,image,btnlink,btntext,image_alt ,status='false
         <div className='flex justify-between items-center py-4 md:py-10 gap-7'>
             <div className={`lg:w-1/2 flex flex-col  gap-6`}>
                 <p className=' text-[32px] leading-[45px] font-bold lg:text-[38px] '>{title}</p>
-                <p className="text-[18px] text-homegrey "  dangerouslySetInnerHTML={{ __html:description }}
+                <p className="text-[18px] text-homegrey text-justify "  dangerouslySetInnerHTML={{ __html:description }}
                                     >
                                         </p>
 
