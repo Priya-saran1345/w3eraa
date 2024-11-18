@@ -12,16 +12,16 @@ const Certificate = () => {
 
             </p>
             <div className="flex flex-wrap lg:flex-nowrap mt-10 justify-center gap-5  items-center px-4 lg:px-3 w-full xl:w-[75%] mx-auto">
-                <div className=' hidden lg:block w-full lg:w-1/2'>
+                <div className=' hidden lg:block '>
                     <Image
                         src={'/images/Certificate.jpg'}
                         width={500}
                         height={300}
                         alt='Awards'
-                        className="cursor-pointer "
+                        className="cursor-pointer lg:min-w-[300px] "
                     />
                 </div>
-                <div className='lg:w-1/2'>
+                <div className=''>
                     <div className='text-[16px] gap-2 mt-2 flex items-center text-homegrey lg:text-[18px]'>
                         We are thrilled to announce that W3era, the best digital marketing company, has been awarded the Certification
                          of Recognition in India 5000 Best MSME Award for Quality Excellence.
