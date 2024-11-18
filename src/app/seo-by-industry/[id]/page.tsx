@@ -2,9 +2,26 @@
 import React from 'react'
 import SeoIndustryInner from '@/components/SeoIndustryInnerPage'
 import { fetchMeta } from "@/app/action";
+import { Suspense } from 'react'
+
+async function SchemaScript({ params}:any) {
+  const  slug  = params?.id;
+  const metaData = await fetchMeta(`seo-by-industry/${slug}`);
+  const schemaData = metaData?.scripts[0].content
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+    />
+  )
+}
 const Page = ({ params }: any) => {
   return (
     <div>
+        <Suspense fallback={null}>
+        <SchemaScript />
+      </Suspense>
         <SeoIndustryInner/>
     </div>
   )

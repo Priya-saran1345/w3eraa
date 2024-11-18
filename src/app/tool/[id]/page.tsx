@@ -1,12 +1,28 @@
 import React from 'react';
 import ToolInnerPage from '@/components/ToolInnerPage';
 import { fetchMeta } from "@/app/action";
-// Page Component
+import { Suspense } from 'react'
+
+async function SchemaScript({ params}:any) {
+  const  slug  = params?.id;
+  const metaData = await fetchMeta(`tool/${slug}`);
+  const schemaData = metaData?.scripts[0].content
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+    />
+  )
+}
 const Page = ({ params }: any) => {
   console.log('Slug from URL:', params.slug);  // Check the dynamic slug passed
 
   return (
     <div>
+        <Suspense fallback={null}>
+        <SchemaScript />
+      </Suspense>
       <ToolInnerPage />
     </div>
   );
@@ -61,9 +77,9 @@ export async function generateMetadata({ params }: any) {
             images: metaData.twitter.images || '',
           }
         : undefined,
-      alternates: {
-        canonical: metaData?.openGraph?.url || '',
-      },
+      // alternates: {
+      //   canonical: metaData?.openGraph?.url || '',
+      // },
     };
   } catch (error) {
     console.error('Error fetching meta data:', error);

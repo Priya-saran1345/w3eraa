@@ -1,11 +1,27 @@
 import React from 'react';
 import BlogDetailPage from '@/components/BlogDetailPage';
 import { fetchMeta } from "@/app/action";
+import { Suspense } from 'react'
 
+async function SchemaScript({ params}:any) {
+  const  slug  = params?.id;
+  const metaData = await fetchMeta(`blog/${slug}`);
+  const schemaData = metaData?.scripts[0].content
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+    />
+  )
+}
 // Page Component (Default Export)
 const Page = ({ params }: any) => {
   return (
     <div>
+          <Suspense fallback={null}>
+        <SchemaScript />
+      </Suspense>
       <BlogDetailPage />
     </div>
   );
@@ -58,9 +74,9 @@ export async function generateMetadata({ params }: any) {
             images: metaData.twitter.images || '',
           }
         : undefined,
-      alternates: {
-        canonical: metaData?.openGraph?.url || '',
-      },
+      // alternates: {
+      //   canonical: metaData?.openGraph?.url || '',
+      // },
     };
   } catch (error) {
     console.error('Error fetching meta data:', error);

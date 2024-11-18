@@ -2,17 +2,31 @@
 import React from 'react'
 import SeoByIndustryDetail from '@/components/SeoByIndustryDetailPage'
 import { fetchMeta } from "@/app/action";
+import { Suspense } from 'react'
 
+async function SchemaScript({ params}:any) {
+  const  slug  = params?.id;
+  const metaData = await fetchMeta(`seo-by-industry/${params?.id}/${params?.nonId}`);
+  const schemaData = metaData?.scripts[0].content
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+    />
+  )
+}
 const Page = ({ params }: any) => {
   return (
     <div>
+        <Suspense fallback={null}>
+        <SchemaScript />
+      </Suspense>
       <SeoByIndustryDetail/>
     </div>
   )
 }
 export default Page
-
-
 
 export async function generateMetadata({ params }: any) {
   const  slug  = params?.id;
@@ -61,9 +75,9 @@ export async function generateMetadata({ params }: any) {
             images: metaData.twitter.images || '',
           }
         : undefined,
-      alternates: {
-        canonical: metaData?.openGraph?.url || '',
-      },
+      // alternates: {
+      //   canonical: metaData?.openGraph?.url || '',
+      // },
     };
   } catch (error) {
     console.error('Error fetching meta data:', error);

@@ -2,18 +2,30 @@
 import React from 'react'
  import About from '@/components/About'
  import { fetchMeta } from "@/app/action";
-import { title } from 'process';
+ import { Suspense } from 'react'
 
+async function SchemaScript() {
+  const metaData = await fetchMeta("about-us")
+  const schemaData = metaData?.scripts[0].content
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+    />
+  )
+}
 const AboutUS = () => {
   return (
     <>
+       <Suspense fallback={null}>
+        <SchemaScript />
+      </Suspense>
     <About/>
     </>
   )
 }
-
 export default AboutUS
-
 export async function generateMetadata() {
   try {
     const metaData = await fetchMeta("about-us");
@@ -59,9 +71,9 @@ export async function generateMetadata() {
             images: metaData.twitter.images || '',
           }
         : undefined,
-      alternates: {
-        canonical: metaData?.openGraph?.url || '',
-      },
+      // alternates: {
+      //   canonical: metaData?.openGraph?.url || '',
+      // },
     };
   } catch (error) {
     console.error('Error fetching meta data:', error);

@@ -268,8 +268,48 @@ const Tool = () => {
                                 {error && <p className="text-center text-red-500">{error}</p>}
                                 {result && (
                                     <div className="p-4 overflow-auto">
+                                        {
+lastSegment == 'backlink-maker' && 
+    <div className='w-full'>
+      <table className='table-auto w-full border-collapse border border-gray-300'>
+        <thead>
+          <tr className='bg-gray-100 border-b'>
+            <th className='p-2 border-r'>#</th>
+            <th className='p-2 border-r'>Pages contain backlink</th>
+            <th className='p-2'>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {result.map((elem: any, index: number) => {
+            return (
+              <tr key={index} className='border-b'>
+                <td className='p-2 text-center border-r'>{index + 1}</td>
+                <td className='p-2 border-r'>
+                  <a href={elem?.page} target='_blank' rel='noopener noreferrer' className='text-blue-500 text-homegrey  hover:text-blue duration-75 hover:underline'>
+                    {elem?.Page}
+                  </a>
+                </td>
+                <td className={`p-2 ${elem?.Status === 'Success' ? 'text-green-600' : 'text-red-600'}`}>
+                  {elem?.Status}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+                                        }
+                                        
+                                        {
+                                            
+                                          !(  lastSegment=='backlink-maker' ) && 
+                                             <div>
+
                                         <p className='text-homeblack text-[24px] font-medium'>Results:</p>
                                         <pre className="text-gray-700">{JSON.stringify(result, null, 2)}</pre>
+                                        </div>
+                                        }
+                                      
                                     </div>
                                 )}
                             </div>}

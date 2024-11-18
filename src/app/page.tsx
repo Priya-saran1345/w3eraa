@@ -5,7 +5,7 @@ import { Suspense } from 'react'
 
 async function SchemaScript() {
   const metaData = await fetchMeta("/")
-  const schemaData = metaData?.schema_json
+  const schemaData = metaData?.scripts[0].content
 
   return (
     <script
