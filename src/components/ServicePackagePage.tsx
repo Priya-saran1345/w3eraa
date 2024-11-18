@@ -128,9 +128,9 @@ const Service_Pkackages = () => {
                             {
                                 data?.aboutservice?.title || data?.aboutservice?.subtitle || data?.aboutservice?.description ? (
                                     <div className='bg-white mt-12 mb-8 xl:w-[75%] px-4 xl:px-0 mx-auto'>
-                                        <p className='text-homeblack text-[28px] text-center font-bold lg:text-[38px]'>
+                                        <h2 className='text-homeblack text-[28px] text-center font-bold lg:text-[38px]'>
                                             {data?.aboutservice?.title || ''}
-                                        </p>
+                                        </h2>
                                         <div className='flex justify-between items-center  lg:gap-16'>
                                             {data?.aboutservice?.image && (
                                                 <div className=' hidden lg:block min-w-[377px]'>
@@ -146,9 +146,9 @@ const Service_Pkackages = () => {
 
                                             <StyledWrapper>
                                                 <div className='w-full '>
-                                                    <p className='text-homeblack text-[24px] font-semibold leading-[29px]'>
+                                                    <h3 className='text-homeblack text-[24h3x] font-semibold leading-[29px]'>
                                                         {data?.aboutservice?.subtitle || ''}
-                                                    </p>
+                                                    </h3>
                                                     <div
                                                         className='text-homegrey text-[18px] mt-4'
                                                         dangerouslySetInnerHTML={{ __html: data?.aboutservice?.description || '' }}

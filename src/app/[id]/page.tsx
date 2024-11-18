@@ -6,7 +6,6 @@ import { fetchMeta } from "@/app/action";
 const Page = ({ params  }: any) => {
   return (
     <div>
-      
         <ServicePackage/>
     </div>
   )
