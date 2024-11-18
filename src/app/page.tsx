@@ -14,7 +14,6 @@ async function SchemaScript() {
     />
   )
 }
-
 export default function Home() {
   return (
     <>

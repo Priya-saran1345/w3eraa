@@ -248,7 +248,11 @@ const Tool = () => {
                                 </div>)
                             }
                             {showresult && <div className=' rounded-xl p-7  mt-5 border-slate-100 border-[1px]'>
-                                {loading && <p className="text-center text-gray-700">Loading...</p>}
+                                {loading &&  <div className=" flex justify-center items-center">
+
+                                    <div className=" loader"></div>
+                                </div>
+                                }
                                 {error && <p className="text-center text-red-500">{error}</p>}
                                 {result && (
                                     <div className=" p-2 overflow-auto">
