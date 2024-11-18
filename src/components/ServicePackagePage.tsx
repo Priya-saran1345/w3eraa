@@ -545,30 +545,29 @@ const StyledWrapper = styled.div`
    h1{
 
     font-size: 32px !important;
-    font-weight:700 /* 36px */
+    font-weight:700 !important /* 36px */
    
   }
 h2{
-  font-size: 28px  !important; /*
+  font-size: 26px  !important; /*
      font-weight: 600 !important; /* Semi-Bold */
 
 }
   h3 {
 
-    font-size: 1.5rem; /* 24px */
-    font-weight: 500; /* Semi-Bold */
+    font-size: 22 !important; /* 24px */
+    font-weight: 500; !important /* Semi-Bold */
   }
 
   h4 {
-
-    font-size: 1.25rem; /* 20px */
-    font-weight: 500; /* Semi-Bold */
+    font-size: 18;    !important /* 20px */
+    font-weight: 500; !important /* Semi-Bold */
   }
 
   h5 {
 
-    font-size: 5rem; /* 16px */
-    font-weight: 500; /* Medium */
+    font-size: 5rem;  !important /* 16px */
+    font-weight: 500; !important /* Medium */
   }
 
   h6 {

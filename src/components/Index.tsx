@@ -20,6 +20,9 @@ import ValuedClients from '@/components/ValuedClients'
 import MarketingGrowth from "@/components/marketingGrowth";
 import WebsiteReport from '@/components/websiteReport'
 import Loader from '@/components/loader';
+import ChooseAgency from "@/components/ChooseAgency"
+import Certificate from '@/components/Certificate'
+
 const Main = () => {
     const { basic_details } = Useapi();
     const { apidata } = Useapi();
@@ -42,12 +45,15 @@ const Main = () => {
       <ProvenResult />
       <MarketingGrowth />
       <WebsiteReport/>
-      <Provide />
-      <Solution />
+      <Provide/>
+      <Solution/>
       <ClientSays props={apidata?.clients_say[0]}  />
       <Choose props={apidata?.why_choose[0]}  />
       <Faq1 props={apidata?.marketing_agency} title={"What to look for when choosing a digital marketing agency?"} />
+     <ChooseAgency/>
       <Revenue/>
+      <Certificate/>
+
       <Blogs props={apidata?.blog} />
       <Footer />
 </div>

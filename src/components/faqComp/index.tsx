@@ -52,7 +52,7 @@ export default function Component({ props ,title }: any) {
           {props?.map((item: any, index: number) => (
             <div key={index} className="flex items-start">
               <span className="mr-10 text-[28px] lg:text-[48px] font-bold text-blue">
-                0{index + 1}
+                {index + 1}.
               </span>
               <div className="w-full border-b-[1px] border-slate-200 py-4">
                 <motion.div

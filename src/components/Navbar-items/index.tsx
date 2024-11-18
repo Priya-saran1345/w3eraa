@@ -418,7 +418,7 @@ const Index = ({show}:any) => {
                       <Link target='_blank' className='hover:text-pink' href='/magento-web-development-services'><li>Magento Web Development</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/laravel-development-services'><li>Laravel Development Services</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/custom-php-development-services-company'><li>PHP Development Services</li></Link>
-                      <Link target='_blank' className='hover:text-pink' href='/asp-dot-net-development-services'><li>ASp Dot net Development Services</li></Link>
+                      <Link target='_blank' className='hover:text-pink' href='/asp-dot-net-development-services'><li>ASP Dot net Development Services</li></Link>
 
                     </ul>
                   </div>
