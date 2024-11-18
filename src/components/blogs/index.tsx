@@ -47,8 +47,13 @@ export default function Component({props}:any) {
         {props?.slice(0, 3).map((elem: any, i: number) => (
           <div key={i} className="relative border-[2px] border-lightblue hover:shadow-xl duration-300 w-[461px] pb-2 rounded-lg">
             <div className="bg-pink absolute top-3 left-3 text-white text-[17px] font-medium rounded-lg py-1 px-4">
-              {elem?.blog_date || '16 Oct,2024'}
-            </div>
+            {elem?.blog_date ? (() => {
+    const date = new Date(elem.blog_date);
+    const day = String(date.getDate()).padStart(2, '0'); // Get day with leading zero
+    const month = date.toLocaleString('en-US', { month: 'short' }); // Get abbreviated month
+    const year = date.getFullYear(); // Get year
+    return `${day} ${month}, ${year}`; // Format as "06 Nov, 2024"
+  })() : ''}            </div>
             <div className="text-blue font-medium px-3 py-1 w-fit absolute top-3 right-3 rounded-md bg-lightblue">
                 <Link href={`/blog/category/${elem?.category?.category_slug}`}>
                   <span>{elem?.category?.name || 'Uncategorized'}</span>

@@ -12,6 +12,7 @@ import { BASE_URL } from '@/util/api'
 const Page = () => {
   const { career } = Useapi();
   const [apidata, setapidata] = useState<any>()
+  const {basic_details} = Useapi();
 
   const fetch = async () => {
     try {
@@ -24,6 +25,7 @@ const Page = () => {
   useEffect(() => {
     fetch();
   }, [])
+  console.log('basic detail-------',basic_details)
   return (
     <div>
       {
@@ -43,17 +45,21 @@ const Page = () => {
             {
               career?.map((elem: any, index: any) => (
                 <div className='mt-7' key={index}>
-                  <p className='text-[24px] font-semibold mb-4 text-black px-2'>{index + 1} &nbsp;{elem?.title}</p>
-                  <div className='flex justify-between gap-8  flex-wrap'>
+                  <div className='bg-lightblue rounded-lg p-5'>
+                  <p className='text-[24px] font-semibold  text-homeblack px-2'>{index + 1}. &nbsp;{elem?.title}</p>
+                  </div>
+                  <div className='flex justify-between mt-5 gap-8  flex-wrap'>
                     {
                       elem?.card?.map((card: any ,index:any) => (
                         <div className='rounded-xl p-4 flex flex-col w-full sm:w-[46%]  lg:w-[48%]  justify-center lg:justify-between gap-3
                          border-lightblue hover:shadow-lg border-[2px]' key={index}>
-                          <p className='text-[20px] font-homeblack font-medium'>{card?.title}</p>
-                          <p className='text-[18px] text-homegrey leading-[21px]'>{card?.description}</p>
+                          <p className='text-[20px] text-homeblack font-medium'>{card?.title}</p>
+                          <p className=' text-[16px] lg:text-[18px] text-homegrey leading-[21px]'>{card?.description}</p>
                           <div className='mt-3'>
+                           <a href={`tel:${basic_details?.basic_details[0].contact_job}`}>
 
                             <Button content={'Apply Now'} />
+                           </a>
                           </div>
                         </div>
                       ))

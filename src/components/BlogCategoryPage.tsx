@@ -46,7 +46,6 @@ const Category = () => {
     }
     return text
   }
-
   useEffect(() => {
     fetch(currentPage); // Fetch data when component mounts
   }, [currentPage]); // Add `currentPage` as a dependency so it re-fetches on page change
@@ -55,7 +54,6 @@ const Category = () => {
   const handlePageChange = (page: number) => {
     setCurrentPage(page); // Update current page state
   };
-
   // Effect to scroll to the top after fetching data
   useEffect(() => {
     // Wait for a slight delay (100ms) to ensure data is fully rendered
@@ -65,12 +63,9 @@ const Category = () => {
         behavior: 'smooth', // Smooth scroll to the top
       });
     }, 100); // Adjust the delay if necessary
-
     // Cleanup timeout if the component unmounts before the timeout triggers
     return () => clearTimeout(scrollTimeout);
   }, [blog]); // Trigger the scroll effect when the `blog` data changes
-
-
   return (
     <div>
       {!blog && <Loader />}
@@ -104,15 +99,15 @@ const Category = () => {
                   <div key={i} className="relative border-[2px] border-lightblue hover:shadow-xl duration-300 sm:w-[45%] w-[9] lg:w-[32%] pb-2 rounded-lg">
 
 
-<div className="bg-pink absolute top-3 left-3 text-white text-[17px] font-medium rounded-lg py-1 px-4">
-  {elem?.blog_date ? (() => {
-    const date = new Date(elem.blog_date);
-    const day = String(date.getDate()).padStart(2, '0'); // Get day with leading zero
-    const month = date.toLocaleString('en-US', { month: 'short' }); // Get abbreviated month
-    const year = date.getFullYear(); // Get year
-    return `${day} ${month}, ${year}`; // Format as "06 Nov, 2024"
-  })() : ''}
-</div>
+                    <div className="bg-pink absolute top-3 left-3 text-white text-[17px] font-medium rounded-lg py-1 px-4">
+                      {elem?.blog_date ? (() => {
+                        const date = new Date(elem.blog_date);
+                        const day = String(date.getDate()).padStart(2, '0'); // Get day with leading zero
+                        const month = date.toLocaleString('en-US', { month: 'short' }); // Get abbreviated month
+                        const year = date.getFullYear(); // Get year
+                        return `${day} ${month}, ${year}`; // Format as "06 Nov, 2024"
+                      })() : ''}
+                    </div>
 
 
                     <div className="text-blue font-medium px-3 py-1 w-fit absolute top-3 right-3 rounded-md bg-lightblue">
