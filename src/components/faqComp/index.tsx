@@ -51,7 +51,7 @@ export default function Component({ props ,title }: any) {
         <div className="mt-14 rounded-2xl bg-white p-4 md:p-16">
           {props?.map((item: any, index: number) => (
             <div key={index} className="flex items-start">
-              <span className="mr-10 text-[28px] lg:text-[48px] font-bold text-blue">
+              <span className="mr-10 text-[32px]  mt-5 font-bold text-blue">
                 {index + 1}.
               </span>
               <div className="w-full border-b-[1px] border-slate-200 py-4">
