@@ -16,7 +16,7 @@ import { Pagination } from 'antd';
 const Category = () => {
   const pathname = usePathname();
   const segments = pathname.replace(/\/$/, '').split('/');
-  const lastsegment = segments.pop();  
+  const lastsegment = segments.pop();
   const [descripton, setdescriton] = useState<any>('');
   const [blog, setBlogs] = useState<any>(); // Initialize as an empty array
   const [totalBlogs, setTotalBlogs] = useState<number>(0); // Track total number of blogs
@@ -100,37 +100,45 @@ const Category = () => {
               </div>
               <div className="flex mt-4 mb-16 justify-center flex-wrap gap-5">
                 {blog?.map((elem: any, i: number) => (
-                  
+
                   <div key={i} className="relative border-[2px] border-lightblue hover:shadow-xl duration-300 sm:w-[45%] w-[9] lg:w-[32%] pb-2 rounded-lg">
 
-                    
-                  <div className="bg-pink absolute top-3 left-3 text-white text-[17px] font-medium rounded-lg py-1 px-4">
-                    {elem?.blog_date || ''}
-                  </div>
-                  <div className="text-blue font-medium px-3 py-1 w-fit absolute top-3 right-3 rounded-md bg-lightblue">
+
+<div className="bg-pink absolute top-3 left-3 text-white text-[17px] font-medium rounded-lg py-1 px-4">
+  {elem?.blog_date ? (() => {
+    const date = new Date(elem.blog_date);
+    const day = String(date.getDate()).padStart(2, '0'); // Get day with leading zero
+    const month = date.toLocaleString('en-US', { month: 'short' }); // Get abbreviated month
+    const year = date.getFullYear(); // Get year
+    return `${day} ${month}, ${year}`; // Format as "06 Nov, 2024"
+  })() : ''}
+</div>
+
+
+                    <div className="text-blue font-medium px-3 py-1 w-fit absolute top-3 right-3 rounded-md bg-lightblue">
                       <Link href={`/blog/category/${elem?.category?.category_slug}`}>
                         <span>{elem?.category?.name || 'Uncategorized'}</span>
                       </Link>{' '}
                       {/* | &nbsp;<span>Latest</span> */}
                     </div>
-                  <div>
-                    <Image src={elem?.image || '/images/blog1.png'} alt={elem?.image_alt} height={218} width={461} className="rounded-lg max-h-[218px]" />
-                  </div>
-                  <div className="p-4 flex flex-col  gap-3 justify-between">
-                    
-                    <p className="font-bold text-homeblack text-[24px] leading-tight cursor-pointer" onClick={() => setExpandedTitle(expandedTitle === i ? null : i)}>
-                      {expandedTitle === i ? elem?.title : truncateText(elem?.title, 30)} {/* Truncate title to 30 characters */}
-                    </p>
-                    <p className="text-homegrey leading-[21px] text-[18px] cursor-pointer" onClick={() => setExpandedSummary(expandedSummary === i ? null : i)}>
-                      {expandedSummary === i ? elem?.summary : truncateText(elem?.summary, 60)} {/* Truncate summary to 60 characters */}
-                    </p>
                     <div>
-                    <Link href={`/blog/${elem?.slug_link}`}>
-                    <Button content={'View'}></Button>
-                    </Link>
+                      <Image src={elem?.image || '/images/blog1.png'} alt={elem?.image_alt} height={218} width={461} className="rounded-lg max-h-[218px]" />
+                    </div>
+                    <div className="p-4 flex flex-col  gap-3 justify-between">
+
+                      <p className="font-bold text-homeblack text-[24px] leading-tight cursor-pointer" onClick={() => setExpandedTitle(expandedTitle === i ? null : i)}>
+                        {expandedTitle === i ? elem?.title : truncateText(elem?.title, 30)} {/* Truncate title to 30 characters */}
+                      </p>
+                      <p className="text-homegrey leading-[21px] text-[18px] cursor-pointer" onClick={() => setExpandedSummary(expandedSummary === i ? null : i)}>
+                        {expandedSummary === i ? elem?.summary : truncateText(elem?.summary, 60)} {/* Truncate summary to 60 characters */}
+                      </p>
+                      <div>
+                        <Link href={`/blog/${elem?.slug_link}`}>
+                          <Button content={'View'}></Button>
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
                 ))}
               </div>
             </div>

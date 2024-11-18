@@ -34,7 +34,7 @@ const Choose = ({props}:any) => {
       <div  className=' h-[236px] leading-[29px] md:w-[80%] px-4 lg:w-[40%] text-center mx-auto  md:text-left pt-4  flex flex-col gap-3'>
         <h2 className=' text-[28px] lg:text-[38px] xl:text-[48px] text-center  font-bold'>{data.first} <span className='text-pink'>{data.second}</span></h2>
         {/* <p className='text-[24px] font-medium'>{props?.subtitle}</p> */}
-        <p className='text-[16px] lg:text-[18px] text-center text-homegrey font-normal leading-tight'>
+        <p className='text-[16px] lg:text-[18px] text-center text-homegrey mt-4 font-normal leading-tight'>
           {props?.description}
         </p>
       </div>

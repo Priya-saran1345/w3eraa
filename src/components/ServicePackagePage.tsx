@@ -131,12 +131,12 @@ const Service_Pkackages = () => {
                                         <h2 className='text-homeblack text-[24px] lg:text-[32px] text-center font-bold '>
                                             {data?.aboutservice?.title || ''}
                                         </h2>
-                                        <div className='flex justify-between items-center  lg:gap-16'>
+                                        <div className='flex justify-between mt-6 items-start  lg:gap-16'>
                                             {data?.aboutservice?.image && (
-                                                <div className=' hidden lg:block min-w-[377px]'>
+                                                <div className=' hidden bg-blue rounded-xl lg:block min-w-[477px]'>
                                                     <Image
                                                         src={data?.aboutservice?.image || ''}
-                                                        height={377}
+                                                        height={300}
                                                         width={545}
                                                         alt={data?.aboutservice?.image_alt}
                                                         className=''
@@ -540,12 +540,16 @@ const StyledWrapper = styled.div`
   }
 
  
-    h2 ,h1{
+   h1{
 
-    font-size: 28px !important; /* 36px */
-    font-weight: 700; /* Bold */
+    font-size: 32px !important; /* 36px */
+   
   }
+h2{
+ font-size: 28px  !important; /*
+     font-weight: 500 !important; /* Semi-Bold */
 
+}
   h3 {
 
     font-size: 1.5rem; /* 24px */
