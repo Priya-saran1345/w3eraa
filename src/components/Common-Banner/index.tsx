@@ -20,13 +20,20 @@ const index = ({title,description,image,btnlink,btntext,image_alt ,status='false
                 <div className='flex flex-wrap justify-center md:justify-start sm:gap-5'>
                 <Link href={'/get-a-free-quote'}>
                     <Button content={'Get a Free Quote'}></Button>
-                    </Link>
+                </Link>
                     {
-                     btntext&&btnlink&&
-                        <Link href={`/${btnlink}`}>
-                        <Button content={btntext}></Button>
-                    </Link>
-                    }
+  btntext && btnlink && (
+    btnlink.includes('tel:') ? (
+      <a href={btnlink}>
+        <Button content={btntext}></Button>
+      </a>
+    ) : (
+      <Link href={`/${btnlink}`}>
+        <Button content={btntext}></Button>
+      </Link>
+    )
+  )
+}
                 </div>
             </div>
             <div className='hidden lg:block'>

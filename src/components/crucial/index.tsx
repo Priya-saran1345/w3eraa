@@ -20,7 +20,7 @@ const Index = ({props}:any) => {
                             </div>
                              <div className='p-3 flex text-center flex-col '>
                                 <p className='text-homeblack text-[26px] font-semibold'>{elem?.title}</p>
-                                <p className='text-homegrey text-[18px] mt-4'>
+                                <p className='text-homegrey text-justify text-[18px] mt-4'>
                         {
                           elem?.description
                         }

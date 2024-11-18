@@ -32,7 +32,7 @@ const index = ({ props }: any) => {
                                 }
                                 <p className='text-[26px] font-medium text-homeblack leading-[31px]'>{elem?.title}</p>
                                 <p
-                                    className='text-[16px] text-homegrey leading-[22px]'
+                                    className='text-[16px] text-homegrey text-justify leading-[22px]'
                                     dangerouslySetInnerHTML={{ __html: elem?.description   }}
                                 />
                                 <div>

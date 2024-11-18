@@ -14,7 +14,7 @@ import { IoReturnUpBackOutline } from 'react-icons/io5';
 import Button from '@/components/button';
 import { BsBoxArrowUpRight } from 'react-icons/bs';
 import Loader from '@/components/loader';
-import { div } from 'framer-motion/client';
+import styled from 'styled-components'
 
 const Tool = () => {
     const [innerloading, setinnerloading] = useState<any>(false)
@@ -133,7 +133,6 @@ const Tool = () => {
         setResult(null);
         setshowresult(false);
     };
-
     return (
         <>
             {
@@ -185,9 +184,7 @@ const Tool = () => {
                                     </div>
                                 )
                             }
-
                             {
-
                                 (currentTool[0]?.slug_link === 'keyword-position-checker' || currentTool[0]?.slug_link === 'keywords-suggestion-tool' || currentTool[0]?.slug_link ===
                                     'meta-tag-generator') &&
                                 (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
@@ -199,16 +196,12 @@ const Tool = () => {
                                 (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
                                     <input type="text" placeholder='Enter Meta Title' className='w-full  border-none outline-none' onChange={handleMetatitle} />
                                 </div>)
-
-
                             }
                             {
                                 (currentTool[0]?.slug_link === 'meta-tag-generator') &&
                                 (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
                                     <input type="text" placeholder='Enter Meta Description' className='w-full  border-none outline-none' onChange={handleDescription} />
                                 </div>)
-
-
                             }
                             {
                                 (currentTool[0]?.slug_link === 'spider-simulator') &&
@@ -216,8 +209,6 @@ const Tool = () => {
                                     <input type="number" placeholder='Enter Crawler Depth' className='w-full  border-none outline-none' onChange={handleDepth} />
 
                                 </div>)
-
-
                             }
                             {
                                 (currentTool[0]?.slug_link === 'spider-simulator') &&
@@ -225,39 +216,32 @@ const Tool = () => {
                                     <input type="number" placeholder='Enter Number of Pages' className='w-full  border-none outline-none' onChange={handlePageno} />
 
                                 </div>)
-
-
                             }
                             {
-
                                 (currentTool[0]?.slug_link === 'robots-txt-generator') &&
                                 (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
                                     <input type="text" placeholder=' Enter user agents Seprated By Coma(,)' className='w-full  border-none outline-none' onChange={handleuseragent} />
                                 </div>)
                             }
                             {
-
                                 (currentTool[0]?.slug_link === 'robots-txt-generator') &&
                                 (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
                                     <input type="text" placeholder='   Enter disallow paths Seprated By Coma(,)' className='w-full  border-none outline-none' onChange={handleDisallowpaths} />
                                 </div>)
                             }
                             {
-
                                 (currentTool[0]?.slug_link === 'robots-txt-generator') &&
                                 (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
                                     <input type="text" placeholder='   Enter allow paths Seprated By Coma(,)' className='w-full  border-none outline-none' onChange={handleallowpaths} />
                                 </div>)
                             }
                             {
-
                                 (currentTool[0]?.slug_link === 'robots-txt-generator') &&
                                 (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
                                     <input type="text" placeholder='   Enter Crawler Delay' className='w-full  border-none outline-none' onChange={handleCrawldelay} />
                                 </div>)
                             }
                             {
-
                                 (currentTool[0]?.slug_link === 'robots-txt-generator') &&
                                 (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
                                     <input type="text" placeholder='    Enter sitemap URL' className='w-full  border-none outline-none' onChange={handleSitemapurl} />
@@ -267,49 +251,46 @@ const Tool = () => {
                                 {loading && <p className="text-center text-gray-700">Loading...</p>}
                                 {error && <p className="text-center text-red-500">{error}</p>}
                                 {result && (
-                                    <div className="p-4 overflow-auto">
+                                    <div className=" p-2 overflow-auto">
                                         {
-lastSegment == 'backlink-maker' && 
-    <div className='w-full'>
-      <table className='table-auto w-full border-collapse border border-gray-300'>
-        <thead>
-          <tr className='bg-gray-100 border-b'>
-            <th className='p-2 border-r'>#</th>
-            <th className='p-2 border-r'>Pages contain backlink</th>
-            <th className='p-2'>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {result.map((elem: any, index: number) => {
-            return (
-              <tr key={index} className='border-b'>
-                <td className='p-2 text-center border-r'>{index + 1}</td>
-                <td className='p-2 border-r'>
-                  <a href={elem?.page} target='_blank' rel='noopener noreferrer' className='text-blue-500 text-homegrey  hover:text-blue duration-75 hover:underline'>
-                    {elem?.Page}
-                  </a>
-                </td>
-                <td className={`p-2 ${elem?.Status === 'Success' ? 'text-green-600' : 'text-red-600'}`}>
-                  {elem?.Status}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
-                                        }
-                                        
-                                        {
-                                            
-                                          !(  lastSegment=='backlink-maker' ) && 
-                                             <div>
+                                            lastSegment == 'backlink-maker' &&
+                                            <div className='w-full overflow-x-auto'>
+                                                <table className='table-auto w-full min-w-[500px] border-collapse border border-gray-300'>
 
-                                        <p className='text-homeblack text-[24px] font-medium'>Results:</p>
-                                        <pre className="text-gray-700">{JSON.stringify(result, null, 2)}</pre>
-                                        </div>
+                                                    <thead>
+                                                        <tr className='bg-gray-100 border-b'>
+                                                            <th className='p-2 border-r'>#</th>
+                                                            <th className='p-2 border-r'>Pages contain backlink</th>
+                                                            <th className='p-2'>Status</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {result.map((elem: any, index: number) => {
+                                                            return (
+                                                                <tr key={index} className='border-b'>
+                                                                    <td className='p-2 text-center border-r'>{index + 1}</td>
+                                                                    <td className='p-2 border-r'>
+                                                                        <a href={elem?.page} target='_blank' rel='noopener noreferrer' className='text-blue-500 text-homegrey  hover:text-blue duration-75 hover:underline'>
+                                                                            {elem?.Page}
+                                                                        </a>
+                                                                    </td>
+                                                                    <td className={`p-2 ${elem?.Status === 'Success' ? 'text-green-600' : 'text-red-600'}`}>
+                                                                        {elem?.Status}
+                                                                    </td>
+                                                                </tr>
+                                                            );
+                                                        })}
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         }
-                                      
+                                        {
+                                            !(lastSegment == 'backlink-maker') &&
+                                            <div>
+                                                <p className='text-homeblack text-[24px] font-medium'>Results:</p>
+                                                <pre className="text-gray-700">{JSON.stringify(result, null, 2)}</pre>
+                                            </div>
+                                        }
                                     </div>
                                 )}
                             </div>}
@@ -336,7 +317,9 @@ lastSegment == 'backlink-maker' &&
                                     <p className='text-[24px] font-medium text-homeblack mb-3'>About SEO Tools</p>
                                 </div>
                                 <div className='my-8 px-4'>
+                                    <StyledWrapper>
                                     <div dangerouslySetInnerHTML={{ __html: tools_body?.body || 'body is null' }} />
+                                    </StyledWrapper>
                                 </div>
                             </div>
 
@@ -422,3 +405,64 @@ lastSegment == 'backlink-maker' &&
 }
 
 export default Tool;
+const StyledWrapper = styled.div`
+  ul {
+    list-style: disc;
+  }
+
+ 
+   h1{
+
+    font-size: 32px !important; /* 36px */
+   
+  }
+h2{
+ font-size: 28px  !important; /*
+     font-weight: 500 !important; /* Semi-Bold */
+
+}
+  h3 {
+
+    font-size: 1.5rem; /* 24px */
+    font-weight: 600; /* Semi-Bold */
+  }
+
+  h4 {
+
+    font-size: 1.25rem; /* 20px */
+    font-weight: 600; /* Semi-Bold */
+  }
+
+  h5 {
+
+    font-size: 5rem; /* 16px */
+    font-weight: 500; /* Medium */
+  }
+
+  h6 {
+
+    font-size: 0.875rem; /* 14px */
+    font-weight: 400; /* Medium */
+  }
+ p {
+  font-size: 1rem; /* 16px */
+  font-weight: 400; /* Regular */
+  color: #535353; /* Replace with your color */
+}
+  ol, ul {
+    padding-left: 1.5rem;
+    list-style-type:disc;
+  }
+    table{
+    border:1px solid black;
+    margin-top:26px ;
+    margin-bottom:26px
+    width:100% ;
+    }
+    td{
+    padding-x:10px;
+    border:1px solid black;}
+    a{
+    color:red;
+    font-weight:500;}
+`

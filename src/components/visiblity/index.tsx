@@ -18,7 +18,7 @@ const index = ({props}:any) => {
                                      <Image src={elem?.image} height={107} width={132} alt={elem?.image_alt}/>
                                      <p className='text-[26px] pr-4 text-homeblack leading-[31px] font-semibold '>{elem?.title}</p>
                                 </div>
-                                <div className='px-7'>
+                                <div className='px-7 text-justify'>
                                     <p className='text-[18px] text-homegrey'>
                                       {elem?.description}
                                          </p>
