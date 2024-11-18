@@ -5,7 +5,6 @@ import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 import { MdOutlineRocketLaunch } from 'react-icons/md'
 import Image from 'next/image'
 import Button from '@/components/button'
-
 import ClientsCount from '../ClientsCount'
 
 const Index = ({show}:any) => {
@@ -30,17 +29,14 @@ const Index = ({show}:any) => {
                 SEO {openDropdown === 'seo' ? <IoIosArrowUp /> : <IoIosArrowDown />}
               </li>
               {openDropdown === 'seo' && (
-                <div
-                 className=' absolute text-homegrey shadow-md text-[17px] w-[85%] lg:w-[95%] overflow-y-scroll lg:overflow-auto  max-h-[70vh] lg:h-fit
+                <div className=' absolute text-homegrey shadow-md text-[17px] w-[85%] lg:w-[95%] overflow-y-scroll lg:overflow-auto  max-h-[70vh] lg:h-fit
                   flex-wrap lg:flex-nowrap px-12 py-14 z-[99999] top-20 left-10 bg-white justify-start lg:justify-around flex 
-                   gap-5  p-7 rounded-lg' onMouseLeave={() => toggleDropdown('')}>
+                   gap-5  p-7 rounded-xl' onMouseLeave={() => toggleDropdown('')}>
                   <div>
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
                           src={'/images/h1.svg'}
-                          loading='eager'
-
                           alt={''}
                           height={54}
                           width={41}
@@ -70,8 +66,6 @@ const Index = ({show}:any) => {
                         <Image
                           src={'/images/h2.svg'}
                           alt={''}
-                          loading='eager'
-
                           height={54}
                           width={41}
                           className="ml-3"
@@ -96,8 +90,6 @@ const Index = ({show}:any) => {
                         <Image
                           src={'/images/h3.svg'}
                           alt={''}
-                          loading='eager'
-
                           height={54}
                           width={41}
                           className="ml-3"
@@ -137,15 +129,13 @@ const Index = ({show}:any) => {
               {openDropdown === 'ppc' && (
                 <div className='shadow-md absolute text-homegrey text-[17px]
                 w-[85%] lg:w-[95%] overflow-y-scroll lg:overflow-auto max-h-[70vh] lg:h-fit flex-wrap lg:flex-nowrap 
-                  px-12 py-14 z-[99999] top-20 left-10 bg-white  justify-start lg:justify-around flex gap-5  p-7 rounded-lg' onMouseLeave={() => toggleDropdown('')}>
+                  px-12 py-14 z-[99999] top-20 left-10 bg-white  justify-start lg:justify-around flex gap-5  p-7 rounded-xl' onMouseLeave={() => toggleDropdown('')}>
                   <div>
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
                           src={'/images/h6.svg'}
                           alt={''}
-                          loading='eager'
-
                           height={54}
                           width={41}
                           className="ml-3"
@@ -168,8 +158,6 @@ const Index = ({show}:any) => {
                         <Image
                           src={'/images/h5.svg'}
                           alt={''}
-                          loading='eager'
-
                           height={54}
                           width={41}
                           className="ml-3"
@@ -191,8 +179,6 @@ const Index = ({show}:any) => {
                         <Image
                           src={'/images/h4.svg'}
                           alt={''}
-                          loading='eager'
-
                           height={54}
                           width={41}
                           className="ml-3"
@@ -229,15 +215,13 @@ const Index = ({show}:any) => {
               {openDropdown === 'smm' && (
                 <div className='shadow-md absolute text-homegrey 
                 w-[85%] lg:w-[95%] overflow-y-scroll lg:overflow-auto max-h-[70vh] lg:h-fit flex-wrap lg:flex-nowrap text-[17px]  px-12 py-14 z-[99999] 
-                top-20 left-10 bg-white justify-start  lg:justify-around flex gap-5 p-7 rounded-lg' onMouseLeave={() => toggleDropdown('')}>
+                top-20 left-10 bg-white justify-start  lg:justify-around flex gap-5 p-7 rounded-xl' onMouseLeave={() => toggleDropdown('')}>
                   <div>
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
                           src={'/images/h7.svg'}
                           alt={''}
-                          loading='eager'
-
                           height={54}
                           width={41}
                           className="ml-3"
@@ -258,8 +242,6 @@ const Index = ({show}:any) => {
                         <Image
                           src={'/images/h8.svg'}
                           alt={''}
-                          loading='eager'
-
                           height={54}
                           width={41}
                           className="ml-3"
@@ -284,8 +266,6 @@ const Index = ({show}:any) => {
                         <Image
                           src={'/images/h9.svg'}
                           alt={''}
-                          loading='eager'
-
                           height={54}
                           width={41}
                           className="ml-3"
@@ -320,15 +300,13 @@ const Index = ({show}:any) => {
               </li>
               {openDropdown === 'packages' && (
                 <div className='shadow-md absolute text-homegrey text-[17px]  w-[85%] lg:w-[95%] lg:h-fit overflow-y-scroll lg:overflow-auto max-h-[70vh]
-                  flex-wrap lg:flex-nowrap px-12 py-14 z-[99999] top-20 left-10 bg-white  justify-start lg:justify-around flex gap-5  p-7 rounded-lg' onMouseLeave={() => toggleDropdown('')}>
+                  flex-wrap lg:flex-nowrap px-12 py-14 z-[99999] top-20 left-10 bg-white  justify-start lg:justify-around flex gap-5  p-7 rounded-xl' onMouseLeave={() => toggleDropdown('')}>
                   <div>
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
                           src={'/images/h10.svg'}
                           alt={''}
-                          loading='eager'
-
                           height={54}
                           width={41}
                           className="ml-3"
@@ -354,7 +332,6 @@ const Index = ({show}:any) => {
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
                           src={'/images/h11.svg'}
-                          loading='eager'
                           alt={''}
                           height={54}
                           width={41}
@@ -374,7 +351,6 @@ const Index = ({show}:any) => {
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
                           src={'/images/h12.svg'}
-                          loading='eager'
                           alt={''}
                           height={54}
                           width={41}
@@ -400,8 +376,6 @@ const Index = ({show}:any) => {
                         <Image
                           src={'/images/h13.svg'}
                           alt={''}
-                          loading='eager'
-
                           height={54}
                           width={41}
                           className="ml-3"
@@ -425,7 +399,7 @@ const Index = ({show}:any) => {
               </li>
               {openDropdown === 'web-dev' && (
                 <div className='shadow-md absolute text-homegrey text-[17px]  w-[85%] lg:w-[95%] lg:h-fit overflow-y-scroll lg:overflow-auto 
-               max-h-[70vh]  flex-wrap lg:flex-nowrap px-12 py-14 z-[99999] top-20 left-10 bg-white  justify-start lg:justify-around flex gap-5  p-7 rounded-lg' onMouseLeave={() => toggleDropdown('')}>
+               max-h-[70vh]  flex-wrap lg:flex-nowrap px-12 py-14 z-[99999] top-20 left-10 bg-white  justify-start lg:justify-around flex gap-5  p-7 rounded-xl' onMouseLeave={() => toggleDropdown('')}>
                   <div>
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
@@ -433,8 +407,6 @@ const Index = ({show}:any) => {
                           src={'/images/h14.svg'}
                           alt={''}
                           height={54}
-                          loading='eager'
-
                           width={41}
                           className="ml-3"
                         />
@@ -458,8 +430,6 @@ const Index = ({show}:any) => {
                         <Image
                           src={'/images/h15.svg'}
                           alt={''}
-                          loading='eager'
-
                           height={54}
                           width={41}
                           className="ml-3"
@@ -483,8 +453,6 @@ const Index = ({show}:any) => {
                         <Image
                           src={'/images/h16.svg'}
                           alt={''}
-                          loading='eager'
-
                           height={54}
                           width={41}
                           className="ml-3"

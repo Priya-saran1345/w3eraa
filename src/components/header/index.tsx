@@ -94,7 +94,7 @@ const Header = () => {
               {/* Proposal Button */}
               <a  href={`tel:${basic_details?.basic_details[0].contact_job}`}>
                 <button
-                  className='flex items-center justify-center px-4 md:px-6 text-white rounded-md py-2 group bg-pink transition duration-300'>
+                  className='flex items-center justify-center px-4  md:px-6 text-white rounded-lg py-2 group bg-pink transition duration-300'>
                   <span className='transition-transform duration-300 group-hover:-translate-x-2'>Apply for Job</span>
                   <IoCall className='text-[20px] opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-x-2' />
                 </button>
