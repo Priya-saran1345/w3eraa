@@ -29,7 +29,7 @@ const Life = () => {
                     </div>
                     <div className='w-full mx-auto 2xl:w-[75%] px-6 items-center bg-white flex flex-col-reverse  md:flex-row justify-between gap-10  py-12 lg:py-28'>
                         <div className=' md:w-[70%] lg:w-[40%] text-center md:text-left'>
-                            <p className=' text-[32px] xl:text-[48px] leading-[] text-homeblack xl:leading-[58px] font-bold'>{life?.Revolutionize[0].title}</p>
+                            <p className='  text-[28px] lg:text-[38px] 2xl:text-[48px] leading-[] text-homeblack xl:leading-[58px] font-bold'>{life?.Revolutionize[0].title}</p>
                             <p className='text-[19px]  mt-3 text-textGrey'>
                                 {life?.Revolutionize[0].description}</p>
                             <Link href="/about-us">
@@ -76,7 +76,7 @@ const Life = () => {
                                 {
                                     life?.event[0].cards.map((event: any ,index:any) => {
                                         return (
-                                            <div className='border-[1px] min-w-[320px]  max-w-[438px] bg-white  border-slate-200 shadow-lg flex px-3 rounded-md py-3
+                                            <div className='border-[1px] w-[95%] md:w-[45%] lg:w-[32%] bg-white  border-slate-200 shadow-lg flex px-3 rounded-md py-3
                                              flex-col gap-3' key={index}>
                                                 <Image src={event?.image} height={300} width={413} alt={event?.image_alt} className=''></Image>
                                                 <p className='text-[24px] text-homeblack font-medium'>{event?.title}</p>
@@ -92,18 +92,18 @@ const Life = () => {
                     <div className='w-full bg-blue py-12 lg:py-16'>
                         <div className='w-full 2xl:w-[75%] mx-auto flex flex-wrap xl:flex-nowrap justify-center gap-10 px-4'>
                             <div className='text-white md:w-[60%] text-center mx-auto '>
-                                <p className=' text-[32px] lg:text-[48px] font-semibold leading-[58px]'>{life?.fly_high[0].title}</p>
-                                <p className='text-[18px] mt-2' dangerouslySetInnerHTML={{ __html: life?.fly_high[0].description }} >
+                                <p className='  text-[28px] lg:text-[38px] 2xl:text-[48px] font-semibold leading-[58px]'>{life?.fly_high[0].title}</p>
+                                <p className=' text-[16px] lg:text-[18px] mt-2' dangerouslySetInnerHTML={{ __html: life?.fly_high[0].description }} >
                                 </p>
                             </div>
-                            <div className='flex justify-center lg:flex-nowrap flex-wrap gap-5'>
+                            <div className='flex justify-center  lg:flex-nowrap flex-wrap gap-5'>
 
 
 
                                 {
                                     life?.fly_high[0].cards.map((elem: any, i:number) => (
                                         <div key={i} className='flex justify-end gap-5'>
-                                            <div className='bg-white sm:w-[230px] lg:w-[272px] min-h-[252px] py-5 rounded-lg flex items-center  flex-col justify-center gap-4 px-4 text-center'>
+                                            <div className='bg-white sm:w-[230px] lg:w-[272px] min-h-[252px] max-h-[330px] py-5 rounded-lg flex items-center  flex-col justify-center gap-4 px-4 text-center'>
                                                 <Image src={elem.icon} height={62} width={62} alt=''></Image>
                                                 <p className='text-[20px]  font-medium'>{elem.title}</p>
                                                 <p className=' text-textGrey font-'>{elem.description}</p>

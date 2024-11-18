@@ -10,7 +10,6 @@ const Page = () => {
     </div>
   )
 }
-
 export default Page
 
   export async function generateMetadata() {

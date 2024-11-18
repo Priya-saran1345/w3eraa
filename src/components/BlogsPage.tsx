@@ -84,7 +84,7 @@ const Blogs = () => {
                     <ul className="flex flex-col gap-3 list-disc mx-4">
                       {blogs?.results?.blogs?.slice(0, 5).map((elem: any) => (
                         <div key={elem?.slug_link}>
-                                                                              <Link href={`/blog/${elem?.slug_link}`} key={elem?.slug_link}>
+                         <Link href={`/blog/${elem?.slug_link}`} key={elem?.slug_link}>
 
                           <p>{elem?.title}</p>
                           </Link>
@@ -92,7 +92,6 @@ const Blogs = () => {
                       ))}
                     </ul>
                   </div>
-
                   <div className='bg-white p-8 rounded-lg max-h-[280px]  overflow-y-auto text-textGrey text-[18px] hidden lg:block'>
                                         <div className='border-b-2 border-pink w-fit mb-4 text-black'>
                                             <p className='text-[24px] font-medium mb-1'>Categories</p>
@@ -152,10 +151,10 @@ const Blogs = () => {
                           </p>
                           <p className="text-[18px] text-textGrey">
                             {elem?.summary && elem?.summary.length > 100
-                              ? `${elem?.summary.substring(0, 100)}...`
+                              ? `${elem?.summary.substring(0, 80)}...`
                               : elem?.summary}
                           </p>
-                          <button className="text-pink text-[18px] mt-3 font-medium">Read More</button>
+                          <button className="text-pink text-[18px]  font-medium">Read More</button>
                         </div>
                       </div>
                       </Link>

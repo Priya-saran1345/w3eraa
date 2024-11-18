@@ -69,16 +69,16 @@ const Banner = () => {
   };
   return (
     <>
-      <div className="w-full relative bg-blue banner min-h-[78vh]">
+      <div className="w-full relative bg-blue banner min-h-[850px]">
         <video
           autoPlay
           loop
           muted
-          className="h-[100vh] lg:h-screen hidden sm:block 2xl:h-[95vh] w-full object-cover"
+          className="h-[100vh] lg:h-screen hidden sm:block min-h-[850px] 2xl:h-[95vh] w-full object-cover"
         >
           <source src="/images/bg-video.mp4" type="video/mp4" />
         </video>
-        <div className="w-full sm:absolute px-6 lg:px-2 h-full top-0 left-0 flex justify-center bg-[#1090D059] items-center  min-h-[78vh]">
+        <div className="w-full sm:absolute px-6 lg:px-2 h-full top-0 left-0 flex justify-center bg-[#1090D059] items-center  min-h-[700px]">
           <div className="w-full text-white flex flex-col justify-center  h-full items-center px-4 xl:w-[75%] mx-auto">
             <div className="flex flex-col justify-around lg:flex-row py-10 lg:py-3 xl:justify-between  items-center">
               <div>

@@ -63,28 +63,28 @@ const Footer = () => {
                             <p className='text-[21px] flex  font-medium w-full  sm:border-b-2'>About Company <FaMinus className='sm:hidden' />
                             </p></div>
                         <ul className='text-[14px font-medium] flex flex-col gap-2 py-3'>
-                            <Link href={'/about-us'}>
+                            <Link target="_blank"  href={'/about-us'}>
                                 <li>About US</li>
                             </Link>
-                            <Link href={'/case-study'}>
+                            <Link target="_blank" href={'/case-study'}>
                                 <li>Case Study</li>
                             </Link>
-                            <Link href={'/portfolio'}>
+                            <Link target="_blank" href={'/portfolio'}>
 
                                 <li>Portfolio</li>
                             </Link>
-                            <Link href={'/contact-us'}>
+                            <Link target="_blank" href={'/contact-us'}>
 
                                 <li>Contact Us</li>
                             </Link>
-                            <Link href={'/testimonials'}>
+                            <Link target="_blank" href={'/testimonials'}>
                                 <li>Testimonials</li>
                             </Link>
-                            <Link href={'/faq'}>
+                            <Link target="_blank" href={'/faq'}>
 
                                 <li>Frequently Asked Questions</li>
                             </Link>
-                            <Link href={'/life-at-w3era'}>
+                            <Link target="_blank" href={'/life-at-w3era'}>
                                 <li>Life at W3era</li>
                             </Link>
                         </ul>
@@ -94,56 +94,56 @@ const Footer = () => {
                         </div>
                         <div className='flex
                          gap-2 mt-5 text-black'>
-                            <Link href={`${basic_details?.basic_details[0].facebook_url}`}>
+                            <Link target="_blank" href={`${basic_details?.basic_details[0].facebook_url}`}>
                                 <div className='w-[26px] h-[26px] rounded-full flex justify-center items-center bg-white'>
                                     <FaFacebook />
                                 </div>
                             </Link>
-                            <Link href={`${basic_details?.basic_details[0].instagram_url}`} >
+                            <Link target="_blank" href={`${basic_details?.basic_details[0].instagram_url}`} >
                                 <div className='w-[26px] h-[26px] flex justify-center items-center rounded-full  bg-white'>
                                     <FaInstagram />
                                 </div>
                             </Link>
-                            <Link href={`${basic_details?.basic_details[0].linkedin_url}`}>
+                            <Link target="_blank" href={`${basic_details?.basic_details[0].linkedin_url}`}>
 
                                 <div className='w-[26px] h-[26px] flex justify-center items-center rounded-full  bg-white'>
                                     <FaLinkedin />
                                 </div>
                             </Link>
-                            <Link href={`${basic_details?.basic_details[0].twitter_url}`}>
+                            <Link target="_blank" href={`${basic_details?.basic_details[0].twitter_url}`}>
 
                                 <div className='w-[26px] h-[26px] flex justify-center items-center rounded-full  bg-white'>
                                     <FaXTwitter />
                                 </div>
 
                             </Link>
-                            <Link href={`${basic_details?.basic_details[0].youtube_url}`}>
+                            <Link target="_blank" href={`${basic_details?.basic_details[0].youtube_url}`}>
 
                                 <div className='w-[26px] h-[26px] flex justify-center items-center rounded-full  bg-white'>
                                     <FaYoutube />
 
                                 </div>
                             </Link>
-                            <Link href={`${basic_details?.basic_details[0].skype_url}`}>
+                            <Link target="_blank" href={`${basic_details?.basic_details[0].skype_url}`}>
 
                                 <div className='w-[26px] h-[26px] flex justify-center items-center rounded-full  bg-white'>
                                     <FaSkype />
                                 </div>
                             </Link>
-                            <Link href={`${basic_details?.basic_details[0].pinterest_url}`}>
+                            <Link target="_blank" href={`${basic_details?.basic_details[0].pinterest_url}`}>
 
                                 <div className='w-[26px] h-[26px] flex justify-center items-center rounded-full  bg-white'>
                                     <FaPinterest />
                                 </div>
                             </Link>
-                            <Link href={`${basic_details?.basic_details[0].gmb_url}`}>
+                            <Link target="_blank" href={`${basic_details?.basic_details[0].gmb_url}`}>
 
                                 <div className='w-[26px] h-[26px] flex justify-center items-center rounded-full  bg-white'>
                                     <IoLocationOutline />
                                 </div>
                             </Link>
                         </div>
-                        <Link href={'https://clutch.co/profile/w3era-web-technology?utm_source=widget&utm_medium=2&utm_campaign=widget&utm_content=num_reviews&utm_term=www.w3era.com#reviews'}>
+                        <Link target="_blank" href={'https://clutch.co/profile/w3era-web-technology?utm_source=widget&utm_medium=2&utm_campaign=widget&utm_content=num_reviews&utm_term=www.w3era.com#reviews'}>
                             <Image
                                 src={'/images/footer1.png'} // Ensure this path is correct
                                 alt={''}
@@ -160,36 +160,36 @@ const Footer = () => {
                             </p>
                         </div>
                         <ul className='text-[14px font-medium] flex flex-col gap-2 py-3'>
-                            <Link href={'/blog'}>
+                            <Link target="_blank" href={'/blog'}>
                                 <li>Blogs</li>
                             </Link>
-                            <Link href={'/career'}>
+                            <Link target="_blank" href={'/career'}>
                                 <li>Career</li>
                             </Link>
-                            <Link href={'/tool'}>
+                            <Link target="_blank" href={'/tool'}>
                                 <li>SEO Tools</li>
                             </Link>
-                            <Link href={'https://onpageinsights.com/'}>
+                            <Link target="_blank" href={'https://onpageinsights.com/'}>
 
                             <li>Website Audit Tool</li>
                             </Link>
-                            <Link href={'/seo-by-industry'}>
+                            <Link target="_blank" href={'/seo-by-industry'}>
                                 <li>SEO By Industry</li>
                             </Link>
-                            <Link href={'/our-client-list'}>
+                            <Link target="_blank" href={'/our-client-list'}>
                                 <li>Our Clients</li>
                             </Link>
-                            <Link href={'/refund-policy'}>
+                            <Link target="_blank" href={'/refund-policy'}>
                                 <li>Refund Policy</li>
                             </Link>
-                            <Link href={'/privacy-policy'}>
+                            <Link target="_blank" href={'/privacy-policy'}>
                                 <li>Privacy Policy</li>
                             </Link>
-                            <Link href={'/terms-conditions'}>
+                            <Link target="_blank" href={'/terms-conditions'}>
                                 <li>Terms & Conditions</li>
                             </Link>
                         </ul>
-                        <Link href={'https://www.semrush.com/agencies/w3era-web-technology-pvt-ltd/'}>
+                        <Link target="_blank" href={'https://www.semrush.com/agencies/w3era-web-technology-pvt-ltd/'}>
                             <Image
                                 src={'/images/footer2.png'}
                                 alt={''}
@@ -207,7 +207,7 @@ const Footer = () => {
                         </div>
                         <ul className='text-[14px font-medium] flex flex-col gap-2 py-3'>
                             <div className="">
-                                <Link href={'/search-engine-optimization-services'}>
+                                <Link target="_blank" href={'/search-engine-optimization-services'}>
                                 <li className='flex gap-1 items-center cursor-pointer'
                                     onMouseEnter={() => toggleDropdown(0)}
                                     // onMouseLeave={() => setOpenDropdown(null)}
@@ -216,24 +216,24 @@ const Footer = () => {
                                 {openDropdown === 0 && (
                                     <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute" onMouseLeave={() => setOpenDropdown(null)}>
                                         <ul className="flex  flex-col gap-3">
-                                            <Link href={'/on-page-seo-services'}><li className="hover:text-pink cursor-pointer ">On Page SEO Services</li></Link>
-                                            <Link href={'/off-page-seo'}><li className="hover:text-pink cursor-pointer ">Off Page SEO Service</li></Link>
-                                            <Link href={'/guest-posting-services'}><li className="hover:text-pink cursor-pointer ">Guest Posting Services</li></Link>
-                                            <Link href={'/link-building-services'}><li className="hover:text-pink cursor-pointer ">Link Building Service</ li></Link>
-                                            <Link href={'/private-label-seo-services'}><li className="hover:text-pink cursor-pointer ">Private Label SEO Service</li></Link>
-                                            <Link href={'/mobile-seo-services'}><li className="hover:text-pink cursor-pointer ">Mobile SEO Service</li></Link>
-                                            <Link href={'/enterprise-seo'}><li className="hover:text-pink cursor-pointer ">Enterprise SEO Service</li></Link>
-                                            <Link href={'/local-seo-services'}><li className="hover:text-pink cursor-pointer ">Local SEO Service</li></Link>
-                                            <Link href={'/small-business-seo-services'}><li className="hover:text-pink cursor-pointer ">Small Business SEO Service</li></Link>
-                                            <Link href={'/ecommerce-seo-services'}><li className="hover:text-pink cursor-pointer ">E-Commerce SEO service</li></Link>
-                                            <Link href={'/white-label-seo-services'}><li className="hover:text-pink cursor-pointer ">White Label SEO Service</li></Link>
-                                            <Link href={'/seo-reseller-services'}><li className="hover:text-pink cursor-pointer ">SEO Reseller Services</li></Link>
+                                            <Link target="_blank" href={'/on-page-seo-services'}><li className="hover:text-pink cursor-pointer ">On Page SEO Services</li></Link>
+                                            <Link target="_blank" href={'/off-page-seo'}><li className="hover:text-pink cursor-pointer ">Off Page SEO Service</li></Link>
+                                            <Link target="_blank" href={'/guest-posting-services'}><li className="hover:text-pink cursor-pointer ">Guest Posting Services</li></Link>
+                                            <Link target="_blank" href={'/link-building-services'}><li className="hover:text-pink cursor-pointer ">Link Building Service</ li></Link>
+                                            <Link target="_blank" href={'/private-label-seo-services'}><li className="hover:text-pink cursor-pointer ">Private Label SEO Service</li></Link>
+                                            <Link target="_blank" href={'/mobile-seo-services'}><li className="hover:text-pink cursor-pointer ">Mobile SEO Service</li></Link>
+                                            <Link target="_blank" href={'/enterprise-seo'}><li className="hover:text-pink cursor-pointer ">Enterprise SEO Service</li></Link>
+                                            <Link target="_blank" href={'/local-seo-services'}><li className="hover:text-pink cursor-pointer ">Local SEO Service</li></Link>
+                                            <Link target="_blank" href={'/small-business-seo-services'}><li className="hover:text-pink cursor-pointer ">Small Business SEO Service</li></Link>
+                                            <Link target="_blank" href={'/ecommerce-seo-services'}><li className="hover:text-pink cursor-pointer ">E-Commerce SEO service</li></Link>
+                                            <Link target="_blank" href={'/white-label-seo-services'}><li className="hover:text-pink cursor-pointer ">White Label SEO Service</li></Link>
+                                            <Link target="_blank" href={'/seo-reseller-services'}><li className="hover:text-pink cursor-pointer ">SEO Reseller Services</li></Link>
                                         </ul>
                                     </div>
                                 )}
                             </div>
                             <div>
-                                <Link href={'/digital-marketing-packages'}>
+                                <Link target="_blank" href={'/digital-marketing-packages'}>
                                 <li className='flex gap-1 items-center cursor-pointer' onMouseEnter={() => toggleDropdown(1)}
                                     //   onMouseLeave={() => setOpenDropdown(null)}
                                       >
@@ -242,29 +242,29 @@ const Footer = () => {
                                 {openDropdown === 1 && (
                                     <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute overflow-y-auto h-1/2" onMouseLeave={() => setOpenDropdown(null)}>
                                         <ul className="flex  flex-col gap-3">
-                                            <Link href={'/seo-packages'}><li className="hover:text-pink cursor-pointer">SEO Packages</li></Link>
-                                            <Link href={'/app-store-aso-packages'}><li className="hover:text-pink cursor-pointer">App Store Packages</li></Link>
-                                            <Link href={'/content-marketing-packages'}><li className="hover:text-pink cursor-pointer">Content Marketing Packages</li></Link>
-                                            <Link href={'/cro-packages'}><li className="hover:text-pink cursor-pointer">CRO Packages</li></Link>
-                                            <Link href={'/ecommerce-seo-packages'}><li className="hover:text-pink cursor-pointer">Ecommerce Packages</li></Link>
-                                            <Link href={'/facebook-marketing-packages'}><li className="hover:text-pink cursor-pointer"> Facebook Marketing Packages</li></Link>
-                                            <Link href={'/guest-posting-service-packages'}><li className="hover:text-pink cursor-pointer">Guest Posting Service Packages</li></Link>
-                                            <Link href={'/link-building-packages'}><li className="hover:text-pink cursor-pointer">Link Building  Packages</li></Link>
-                                            <Link href={'/local-seo-packages'}><li className="hover:text-pink cursor-pointer">Local SEO Packages</li></Link>
-                                            <Link href={'/mobile-seo-packages'}><li className="hover:text-pink cursor-pointer">Mobile SEO Packages</li></Link>
-                                            <Link href={'/orm-packages'}><li className="hover:text-pink cursor-pointer">ORM Packages</li></Link>
-                                            <Link href={'/social-media-marketing-packages/'}><li className="hover:text-pink cursor-pointer">Social Media Marketing Packages</li></Link>
-                                            <Link href={'/video-marketing-packages'}><li className="hover:text-pink cursor-pointer">Video Marketing Packages</li></Link>
-                                            <Link href={'/wordpress-development-packages'}><li className="hover:text-pink cursor-pointer">WordPress Development Packages</li></Link>
-                                            <Link href={'/website-migration-package'}><li className="hover:text-pink cursor-pointer">Website Migration Packages</li></Link>
-                                            <Link href={'/web-development-package'}><li className="hover:text-pink cursor-pointer">Web Development Packages</li></Link>
-                                            <Link href={'/small-business-seo-packages'}><li className="hover:text-pink cursor-pointer">Small Business SEO Packages</li></Link>
+                                            <Link target="_blank" href={'/seo-packages'}><li className="hover:text-pink cursor-pointer">SEO Packages</li></Link>
+                                            <Link target="_blank" href={'/app-store-aso-packages'}><li className="hover:text-pink cursor-pointer">App Store Packages</li></Link>
+                                            <Link target="_blank" href={'/content-marketing-packages'}><li className="hover:text-pink cursor-pointer">Content Marketing Packages</li></Link>
+                                            <Link target="_blank" href={'/cro-packages'}><li className="hover:text-pink cursor-pointer">CRO Packages</li></Link>
+                                            <Link target="_blank" href={'/ecommerce-seo-packages'}><li className="hover:text-pink cursor-pointer">Ecommerce Packages</li></Link>
+                                            <Link target="_blank" href={'/facebook-marketing-packages'}><li className="hover:text-pink cursor-pointer"> Facebook Marketing Packages</li></Link>
+                                            <Link target="_blank" href={'/guest-posting-service-packages'}><li className="hover:text-pink cursor-pointer">Guest Posting Service Packages</li></Link>
+                                            <Link target="_blank" href={'/link-building-packages'}><li className="hover:text-pink cursor-pointer">Link Building  Packages</li></Link>
+                                            <Link target="_blank" href={'/local-seo-packages'}><li className="hover:text-pink cursor-pointer">Local SEO Packages</li></Link>
+                                            <Link target="_blank" href={'/mobile-seo-packages'}><li className="hover:text-pink cursor-pointer">Mobile SEO Packages</li></Link>
+                                            <Link target="_blank" href={'/orm-packages'}><li className="hover:text-pink cursor-pointer">ORM Packages</li></Link>
+                                            <Link target="_blank" href={'/social-media-marketing-packages/'}><li className="hover:text-pink cursor-pointer">Social Media Marketing Packages</li></Link>
+                                            <Link target="_blank" href={'/video-marketing-packages'}><li className="hover:text-pink cursor-pointer">Video Marketing Packages</li></Link>
+                                            <Link target="_blank" href={'/wordpress-development-packages'}><li className="hover:text-pink cursor-pointer">WordPress Development Packages</li></Link>
+                                            <Link target="_blank" href={'/website-migration-package'}><li className="hover:text-pink cursor-pointer">Website Migration Packages</li></Link>
+                                            <Link target="_blank" href={'/web-development-package'}><li className="hover:text-pink cursor-pointer">Web Development Packages</li></Link>
+                                            <Link target="_blank" href={'/small-business-seo-packages'}><li className="hover:text-pink cursor-pointer">Small Business SEO Packages</li></Link>
                                         </ul>
                                     </div>
                                 )}
                             </div>
                             <div>
-                            <Link href={'/social-media-marketing-services'}>
+                            <Link target="_blank" href={'/social-media-marketing-services'}>
                                 <li className='flex gap-1 items-center cursor-pointer' onMouseEnter={() => toggleDropdown(2)}
                                     //   onMouseLeave={() => setOpenDropdown(null)}
                                       >
@@ -273,20 +273,20 @@ const Footer = () => {
                                 {openDropdown === 2 && (
                                     <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute" onMouseLeave={() => setOpenDropdown(null)}>
                                         <ul className="flex  flex-col gap-3">
-                                            <Link href={'/facebook-advertising-services'}><li className="hover:text-pink cursor-pointer">Facebook Advertising Services</li></Link>
-                                            <Link href={'/instagram-marketing-services'}><li className="hover:text-pink cursor-pointer">Instagram Marketing Services</li></Link>
-                                            <Link href={'/linkedin-marketing-services-india'}><li className="hover:text-pink cursor-pointer">Linkedin Marketing Services India</li></Link>
-                                            <Link href={'/linkedin-marketing-services-usa'}><li className="hover:text-pink cursor-pointer">Linkedin Markting Services USA</li></Link>
-                                            <Link href={'/pinterest-marketing-services-usa'}><li className="hover:text-pink cursor-pointer">  Pinterest Marketing Services</li></Link>
-                                            <Link href={'/youtube-marketing-services'}><li className="hover:text-pink cursor-pointer"> Youtube Markting Services</li></Link>
-                                            <Link href={'/twitter-marketing-services'}><li className="hover:text-pink cursor-pointer">Twitter Marketing Services</li></Link>
+                                            <Link target="_blank" href={'/facebook-advertising-services'}><li className="hover:text-pink cursor-pointer">Facebook Advertising Services</li></Link>
+                                            <Link target="_blank" href={'/instagram-marketing-services'}><li className="hover:text-pink cursor-pointer">Instagram Marketing Services</li></Link>
+                                            <Link target="_blank" href={'/linkedin-marketing-services-india'}><li className="hover:text-pink cursor-pointer">Linkedin Marketing Services India</li></Link>
+                                            <Link target="_blank" href={'/linkedin-marketing-services-usa'}><li className="hover:text-pink cursor-pointer">Linkedin Markting Services USA</li></Link>
+                                            <Link target="_blank" href={'/pinterest-marketing-services-usa'}><li className="hover:text-pink cursor-pointer">  Pinterest Marketing Services</li></Link>
+                                            <Link target="_blank" href={'/youtube-marketing-services'}><li className="hover:text-pink cursor-pointer"> Youtube Markting Services</li></Link>
+                                            <Link target="_blank" href={'/twitter-marketing-services'}><li className="hover:text-pink cursor-pointer">Twitter Marketing Services</li></Link>
 
                                         </ul>
                                     </div>
                                 )}
                             </div>
                             <div>
-                                <Link href={'/web-development-services'}>
+                                <Link target="_blank" href={'/web-development-services'}>
                                 <li className='flex gap-1 items-center cursor-pointer' onMouseEnter={() => toggleDropdown(3)}
                                     //   onMouseLeave={() => setOpenDropdown(null)}
                                       >
@@ -295,23 +295,23 @@ const Footer = () => {
                                 {openDropdown === 3 && (
                                     <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute" onMouseLeave={() => setOpenDropdown(null)}>
                                         <ul className="flex  flex-col gap-3">
-                                            <Link href={'/wordpress-development-services'}><li className="hover:text-pink cursor-pointer">WordPress Development Services</li></Link>
-                                            <Link href={'/magento-web-development-services'}><li className="hover:text-pink cursor-pointer">Magneto Development Services</li></Link>
-                                            <Link href={'/asp-dot-net-development-services'}><li className="hover:text-pink cursor-pointer">ASP.NET Development Services</li></Link>
-                                            <Link href={'/laravel-development-services'}><li className="hover:text-pink cursor-pointer">Laravel Development Services</li></Link>
+                                            <Link target="_blank" href={'/wordpress-development-services'}><li className="hover:text-pink cursor-pointer">WordPress Development Services</li></Link>
+                                            <Link target="_blank" href={'/magento-web-development-services'}><li className="hover:text-pink cursor-pointer">Magneto Development Services</li></Link>
+                                            <Link target="_blank" href={'/asp-dot-net-development-services'}><li className="hover:text-pink cursor-pointer">ASP.NET Development Services</li></Link>
+                                            <Link target="_blank" href={'/laravel-development-services'}><li className="hover:text-pink cursor-pointer">Laravel Development Services</li></Link>
 
                                         </ul>
                                     </div>
                                 )}
                             </div>
                             <div>
-                                <Link href={'/online-reputation-management'}>
+                                <Link target="_blank" href={'/online-reputation-management'}>
                                     <li className='flex gap-1 items-center cursor-pointer' >Reputation Management</li>
                                 </Link>
                             </div>
                             <div>
 
-                              <Link href={'/google-ads-services'}>
+                              <Link target="_blank" href={'/google-ads-services'}>
                                 <li className='flex gap-1 items-center cursor-pointer' 
                                 onMouseEnter={() => toggleDropdown(5)}
                                 // onMouseLeave={() => setOpenDropdown(null)}
@@ -320,16 +320,16 @@ const Footer = () => {
                                 {openDropdown === 5 && (
                                     <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute" onMouseLeave={() => setOpenDropdown(null)}>
                                         <ul className="flex  flex-col gap-3">
-                                            <Link href={'/google-my-business-ads'}><li className="hover:text-pink cursor-pointer">Google My Business Ads</li></Link>
-                                            <Link href={'/google-shopping-ads'}><li className="hover:text-pink cursor-pointer">Google Shopping Ads</li></Link>
-                                            <Link href={'/ppc-company-in-usa'}><li className="hover:text-pink cursor-pointer">PPC Company In USA</li></Link>
-                                            <Link href={'/ppc-company-in-florida'}><li className="hover:text-pink cursor-pointer">PPC Company In Florida</li></Link>
+                                            <Link target="_blank" href={'/google-my-business-ads'}><li className="hover:text-pink cursor-pointer">Google My Business Ads</li></Link>
+                                            <Link target="_blank" href={'/google-shopping-ads'}><li className="hover:text-pink cursor-pointer">Google Shopping Ads</li></Link>
+                                            <Link target="_blank" href={'/ppc-company-in-usa'}><li className="hover:text-pink cursor-pointer">PPC Company In USA</li></Link>
+                                            <Link target="_blank" href={'/ppc-company-in-florida'}><li className="hover:text-pink cursor-pointer">PPC Company In Florida</li></Link>
                                         </ul>
                                     </div>
                                 )}
                             </div>
                             <div>
-                            <Link href={'/web-design-services'}>
+                            <Link target="_blank" href={'/web-design-services'}>
                                 <li className='flex gap-1 items-center cursor-pointer' 
                                   onMouseLeave={() => setOpenDropdown(null)}
                                 // onMouseEnter={() => toggleDropdown(6)}
@@ -338,31 +338,31 @@ const Footer = () => {
                                 {openDropdown === 6 && (
                                     <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute" onMouseLeave={() => setOpenDropdown(null)}>
                                         <ul className="flex  flex-col gap-3">
-                                            <Link href={'/logo-design-services'}><li className="hover:text-pink cursor-pointer">Logo Designing Services</li></Link>
-                                            <Link href={'/mobile-responsive-designing-services'}><li className="hover:text-pink cursor-pointer">Mobile Responsive Design</li></Link>
+                                            <Link target="_blank" href={'/logo-design-services'}><li className="hover:text-pink cursor-pointer">Logo Designing Services</li></Link>
+                                            <Link target="_blank" href={'/mobile-responsive-designing-services'}><li className="hover:text-pink cursor-pointer">Mobile Responsive Design</li></Link>
                                         </ul>
                                     </div>
                                 )}
                             </div>
                             <div>
-                                <Link href={'/content-marketing-services'}>
+                                <Link target="_blank" href={'/content-marketing-services'}>
                                 <li className='flex gap-1 items-center cursor-pointer' onClick={() => toggleDropdown(7)} onMouseLeave={() => setOpenDropdown(null)}>Content Marketing Services<IoMdArrowDropdown /></li>
                                 </Link>
                                 {openDropdown === 7 && (
                                     <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute" onMouseLeave={() => setOpenDropdown(null)}   >
                                         <ul className="flex  flex-col gap-3">
-                                            <Link href={'/content-marketing-services-india'}><li className="hover:text-pink cursor-pointer">Content Marketing Services India</li></Link>
+                                            <Link target="_blank" href={'/content-marketing-services-india'}><li className="hover:text-pink cursor-pointer">Content Marketing Services India</li></Link>
                                         </ul>
                                     </div>
                                 )}
                             </div>
-                            <Link href={'/digital-marketing-services'}>
+                            <Link target="_blank" href={'/digital-marketing-services'}>
                                 <li>Digital Marketing Services</li>
                             </Link>
-                            <Link href={'/social-media-optimization'}>
+                            <Link target="_blank" href={'/social-media-optimization'}>
                                 <li>Social Media Optimization</li>
                             </Link>
-                            <Link href={'/google-business-profile-management-services'}>
+                            <Link target="_blank" href={'/google-business-profile-management-services'}>
                                 <li>Google Business Profile</li>
                             </Link>
                         </ul>
@@ -387,7 +387,7 @@ const Footer = () => {
                             <p className='mt-4 '>{basic_details?.basic_details[0].phonenumber}</p>
                         </a>
                         <div className='w-[276px]'>
-                            <Link target="_blank" href={'https://www.google.com/maps/place/W3Era/@26.8427364,75.7465518,17z/data=!3m1!4b1!4m6!3m5!1s0x396db5e07f400001:0x2cbf92fc1b9cc85e!8m2!3d26.8427364!4d75.7465518!16s%2Fg%2F11dxh7mg8z?entry=ttu&g_ep=EgoyMDI0MTEwNS4wIKXMDSoASAFQAw%3D%3D'}>
+                            <Link target="_blank"  href={'https://www.google.com/maps/place/W3Era/@26.8427364,75.7465518,17z/data=!3m1!4b1!4m6!3m5!1s0x396db5e07f400001:0x2cbf92fc1b9cc85e!8m2!3d26.8427364!4d75.7465518!16s%2Fg%2F11dxh7mg8z?entry=ttu&g_ep=EgoyMDI0MTEwNS4wIKXMDSoASAFQAw%3D%3D'}>
                                 <Image
                                     src={'/images/footer3.png'} // Ensure this path is correct
                                     alt={''}

@@ -60,7 +60,7 @@ export default function Component({ props ,title }: any) {
                   onClick={() => toggleItem(index)}
                   initial={false}
                 >
-                  <div className="flex items-start">{item.title}</div>
+                  <div className="flex items-start" dangerouslySetInnerHTML={{__html:item.title}}></div>
                   <motion.div
                     className="flex min-h-[48px] min-w-[48px] items-center justify-center rounded-full bg-lightpink"
                     // animate={{ rotate: openIndex === index ? 45 : 0 }}
@@ -85,7 +85,7 @@ export default function Component({ props ,title }: any) {
                       transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
                     >
                      
-                        <p className="py-3 pb-6 text-[18px] text-homegrey">{item.description}</p>
+                        <p className="py-3 pb-6 text-[18px] text-homegrey" dangerouslySetInnerHTML={{__html:item.description}}></p>
                      
                     </motion.div>
                   )}

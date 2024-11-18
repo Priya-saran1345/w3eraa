@@ -9,10 +9,10 @@ const index = ({title,description,image,btnlink,btntext,image_alt ,status='false
     <div className='mx-auto xl:w-[75%] px-6 flex justify-center '>
         <div className='flex justify-between items-center py-4 md:py-10 gap-7'>
             <div className={`lg:w-1/2 flex flex-col  gap-6`}>
-                <p className=' text-[32px] leading-[45px] font-bold lg:text-[38px] '>{title}</p>
-                <p className="text-[18px] text-homegrey text-justify "  dangerouslySetInnerHTML={{ __html:description }}
+                <h1 className=' text-[32h1x] leading-[45px] font-bold lg:text-[38px] '>{title}</h1>
+                <div className="text-[18px] text-homegrey text-justify "  dangerouslySetInnerHTML={{ __html:description }}
                                     >
-                                        </p>
+                                        </div>
 
                 <div className='flex flex-wrap justify-center md:justify-start sm:gap-5'>
                 <Link href={'/get-a-free-quote'}>

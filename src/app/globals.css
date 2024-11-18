@@ -15,14 +15,13 @@
 --homegrey:'#535353';
 --homeblack: '#333333';
 }
-/* body {
-  font-family: "Inter ", 
-} */
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
+
 .meeting-btn {
   position: relative;
   overflow: hidden;
@@ -96,12 +95,10 @@ input:-webkit-autofill {
 .sticky-wrapper {
   overflow: visible; /* Ensure parent does not interfere */
 }
-
 .fixed-video-size {
   max-height: 500px;
   /* Full width responsiveness */
 }
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -130,8 +127,6 @@ input:-webkit-autofill {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
 
-
-
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -158,29 +153,13 @@ input:-webkit-autofill {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-
-
-
   }
-
-
-
 }
-
 @layer base {
   * {
     @apply border-border;
-
-
-
   }
   body {
     @apply bg-background text-foreground;
-
-
-
   }
-
-
-
 }

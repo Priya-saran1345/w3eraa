@@ -100,9 +100,12 @@ const Category = () => {
               </div>
               <div className="flex mt-4 mb-16 justify-center flex-wrap gap-5">
                 {blog?.map((elem: any, i: number) => (
-                  <div key={i} className="relative border-[2px] border-lightblue hover:shadow-xl duration-300 w-[461px] pb-2 rounded-lg">
+                  
+                  <div key={i} className="relative border-[2px] border-lightblue hover:shadow-xl duration-300 sm:w-[45%] w-[9] lg:w-[32%] pb-2 rounded-lg">
+
+                    
                   <div className="bg-pink absolute top-3 left-3 text-white text-[17px] font-medium rounded-lg py-1 px-4">
-                    {elem?.blog_date || '16 Oct,2024'}
+                    {elem?.blog_date || ''}
                   </div>
                   <div className="text-blue font-medium px-3 py-1 w-fit absolute top-3 right-3 rounded-md bg-lightblue">
                       <Link href={`/blog/category/${elem?.category?.category_slug}`}>

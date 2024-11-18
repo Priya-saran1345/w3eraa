@@ -50,9 +50,9 @@ const Header = () => {
                   </div>
                   {openDropdown === "about-us" && (
                     <div className='absolute w-[200px] text-homeblack text-left border-lightpink border-[2px] z-50 top-10 flex flex-col   bg-white  rounded-md ' onMouseLeave={() => handleToggle('')}>
-                      <Link href={'/about-us'}><p className=' hover:bg-pink px-5 hover:text-white py-4   border-slate-300'>Who we are</p></Link>
-                      <Link href={'/life-at-w3era'}><p className=' hover:bg-pink px-5 hover:text-white py-4   border-slate-300'>Life at w3era</p></Link>
-                      <Link href={'/blog'}><p className=' hover:bg-pink hover:text-white  px-5  py-4 border-slate-300'>
+                      <Link target='_blank' href={'/about-us'}><p className=' hover:bg-pink px-5 hover:text-white py-4   border-slate-300'>Who we are</p></Link>
+                      <Link target='_blank' href={'/life-at-w3era'}><p className=' hover:bg-pink px-5 hover:text-white py-4   border-slate-300'>Life at w3era</p></Link>
+                      <Link target='_blank' href={'/blog'}><p className=' hover:bg-pink hover:text-white  px-5  py-4 border-slate-300'>
                         Know More</p></Link>
                     </div>
                   )}
@@ -70,33 +70,30 @@ const Header = () => {
                   </div>
                   {openDropdown === "our-work" && (
                     <div className='absolute w-[200px] text-homeblack border-lightpink border-[2px] text-left z-50 top-10 flex flex-col   bg-white rounded-md ' onMouseLeave={() => handleToggle('')}>
-                      <Link href={'/work'}><p className='hover:text-white py-4 px-5 hover:bg-pink border-slate-300'>We Work</p></Link>
-                      <Link href={'/case-study'}><p className='hover:text-white py-4 px-5 hover:bg-pink border-slate-300'>Case Study</p></Link>
-                      <Link href={'/our-client-list'}><p className='hover:text-white py-4 px-5 hover:bg-pink '>Our Clients</p></Link>
+                      <Link  target='_blank'  href={'/work'}><p className='hover:text-white py-4 px-5 hover:bg-pink border-slate-300'>We Work</p></Link>
+                      <Link  target='_blank' href={'/case-study'}><p className='hover:text-white py-4 px-5 hover:bg-pink border-slate-300'>Case Study</p></Link>
+                      <Link  target='_blank' href={'/our-client-list'}><p className='hover:text-white py-4 px-5 hover:bg-pink '>Our Clients</p></Link>
                     </div>
                   )}
                 </div>
                 {/* Other Navbar Items */}
-                <Link href={'/blog'}>
+                <Link  target='_blank' href={'/blog'}>
                   <div>Blog</div>
                 </Link>
-                <Link href={'/web-stories'}>
+                <Link  target='_blank' href={'/web-stories'}>
                   <div>Web Story</div>
                 </Link>
                 <div className=''>
-
-                  <Link href={'https://onpageinsights.com/'} target='_blank'>
-
+                  <Link  target='_blank' href={'https://onpageinsights.com/'} >
                     <div>Free Website Audit</div>
                   </Link>
                 </div>
-                <Link href='/contact-us'>
+                <Link  target='_blank' href='/contact-us'>
                   <div>Contact Us</div>
                 </Link>
               </div>
               {/* Proposal Button */}
-              <a href={`tel:${basic_details?.basic_details[0].contact_job}`}>
-
+              <a  href={`tel:${basic_details?.basic_details[0].contact_job}`}>
                 <button
                   className='flex items-center justify-center px-4 md:px-6 text-white rounded-md py-2 group bg-pink transition duration-300'>
                   <span className='transition-transform duration-300 group-hover:-translate-x-2'>Apply for Job</span>

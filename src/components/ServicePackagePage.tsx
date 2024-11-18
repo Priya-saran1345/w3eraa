@@ -69,7 +69,7 @@ const Service_Pkackages = () => {
     // Effect to fetch data
     useEffect(() => {
         fetchPackages();
-    }, []);
+        }, []);
     // Effect to filter and set package cards
     useEffect(() => {
         setPackageCards(result?.data?.packagecategory?.filter((elem: any, index: number) => index > 0));
@@ -110,7 +110,6 @@ const Service_Pkackages = () => {
                 <Button content='Get a quote' />
             </Link>}</div>;
     };
-    // console.log('-------service faq--------------------', data?.service_faq)
     return (
         <div >
             {
@@ -150,7 +149,7 @@ const Service_Pkackages = () => {
                                                     <p className='text-homeblack text-[24px] font-semibold leading-[29px]'>
                                                         {data?.aboutservice?.subtitle || ''}
                                                     </p>
-                                                    <p
+                                                    <div
                                                         className='text-homegrey text-[18px] mt-4'
                                                         dangerouslySetInnerHTML={{ __html: data?.aboutservice?.description || '' }}
                                                     />
@@ -160,18 +159,18 @@ const Service_Pkackages = () => {
                                     </div>
                                 ) : null
                             }
-
+                           
                             {
                                 data?.clients_say &&
                                 <ClientSays props={data?.clients_say} />
                             }
-                            {/* content 1 section */}
+                          
                             {
                                 data?.contentsection1?.description &&
                                 <div className='w-full mx-auto xl:w-[75%] flex flex-col gap-4 px-6 xl:px-2 py-12'>
 
                                     <StyledWrapper>
-                                        <p
+                                        <div
                                             className="text-homegrey text-[18px]"
                                             dangerouslySetInnerHTML={{ __html: data?.contentsection1?.description || '' }}
                                         />
@@ -179,6 +178,71 @@ const Service_Pkackages = () => {
                                 </div>
 
                             }
+                               {
+                            (lastsegment === 'blog-commenting-service') &&
+                              
+                                <div className='xl:w-[75%] mx-auto my-8 px-4 xl:px-0'>
+                                  
+                                    <div className='flex w-full justify-center mt-6 gap-3 flex-wrap'>
+                                        {
+                                            [{
+                                                plan: 'Plan 50', comments: 'Blog Comments (50)'
+                                                , submission: 'Manual Submissions', report: 'Detailed Submissions Report',
+                                                time: 'Submissions Time (5 Days)'
+                                            }
+                                                ,
+                                            {
+                                                plan: 'Plan 100', comments: 'Blog Comments (100)'
+                                                , submission: 'Manual Submissions', report: 'Detailed Submissions Report',
+                                                time: 'Submissions Time (7 Days)'
+                                            },
+                                            {
+                                                plan: 'Plan 200', comments: 'Blog Comments (200)'
+                                                , submission: 'Manual Submissions', report: 'Detailed Submissions Report',
+                                                time: 'Submissions Time (10 Days)'
+                                            },
+                                            {
+                                                plan: 'Plan 300', comments: 'Blog Comments (300)'
+                                                , submission: 'Manual Submissions', report: 'Detailed Submissions Report',
+                                                time: 'Submissions Time (15 Days)'
+                                            }
+                                            ].map((elem: any, i: number) => (
+                                                <div key={i} className='rounded-xl p-8 text-center w-[90%] sm:w-[45%] lg:w-[23%] bg-lightblue  flex flex-col gap-2 justify-between hover:shadow-xl'>
+
+                                                    <p className='text-[26px] text-blue font-bold  leading-[31px]'>{elem?.plan}</p>
+                                                    <p
+                                                        className='text-[16px] lg:text-[18px] mt-2 text-homegrey leading-[22px]'
+                                                        dangerouslySetInnerHTML={{ __html: elem?.comments }}
+                                                    />
+                                                    <p
+                                                        className='text-[16px] lg:text-[18px] mt-2 text-homegrey leading-[22px]'
+                                                        dangerouslySetInnerHTML={{ __html: elem?.submission }}
+                                                    /> <p
+                                                        className='text-[16px] lg:text-[18px] mt-2 text-homegrey leading-[22px]'
+                                                        dangerouslySetInnerHTML={{ __html: elem?.report }}
+                                                    /> <p
+                                                        className='text-[16px] lg:text-[18px] mt-2 text-homegrey leading-[22px]'
+                                                        dangerouslySetInnerHTML={{ __html: elem?.time }}
+                                                    />
+                                                    <div className='flex justify-center'>
+
+                                                    <Link href={'/get-a-free-strategy-review'} className='mt-3'>
+                                                        <Button content='Get A Quote' />
+                                                    </Link>
+                                                    </div>
+
+
+                                                    <div>
+
+                                                    </div>
+                                                </div>
+
+                                            ))
+                                        }
+                                    </div>
+
+                                </div>
+                               }
 
                             {
                                 data?.service_card1.length > 0 &&
@@ -190,7 +254,7 @@ const Service_Pkackages = () => {
                                 <div className='xl:w-[75%] px-6 mx-auto py-12 flex flex-col gap-8  lg:py-16'>
                                     {/* <p className='text-center text-[28px] lg:text-[38px] text-homeblack font-bold'>{data?.contentsection2[0]?.title}</p> */}
                                     <StyledWrapper>
-                                        <p className='text-[18px] text-homegrey ' dangerouslySetInnerHTML={{ __html: data?.contentsection2?.description || '' }} />
+                                        <div className='text-[18px] text-homegrey ' dangerouslySetInnerHTML={{ __html: data?.contentsection2?.description || '' }} />
                                     </StyledWrapper>
                                 </div>
 
@@ -216,7 +280,7 @@ const Service_Pkackages = () => {
                                         {/* Uncomment this if you want to show the title */}
                                         {/* <p className='text-[28px] text-homeblack font-semibold lg:text-[38px]'>{data?.contentsection3?.title}</p> */}
                                         <StyledWrapper>
-                                            <p className='text-homegrey text-[18px]' dangerouslySetInnerHTML={{ __html: data.contentsection3.description || '' }} />
+                                            <div className='text-homegrey text-[18px]' dangerouslySetInnerHTML={{ __html: data.contentsection3.description || '' }} />
                                         </StyledWrapper>
                                     </div>
                                 </div>
@@ -409,7 +473,7 @@ const Service_Pkackages = () => {
                             {
                                 data?.contentsection1?.description &&
                                 <div className='w-full mx-auto xl:w-[75%] flex flex-col gap-4 px-6  py-12'>
-                                    <p
+                                    <div
                                         className='text-homegrey text-[18px]'
                                         dangerouslySetInnerHTML={{ __html: data?.contentsection1?.description }}
                                     />

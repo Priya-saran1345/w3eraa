@@ -87,10 +87,9 @@ const [data, setdata] = useState<any>()
                           objectFit="cover"
                           className="rounded-lg"
                         />
-              
                         {hoveredCardIndex === index && (
                           <div
-                            className="absolute bg-white/80 rounded-md px-6 py-6 w-[380px] h-[180px]"
+                            className="absolute bg-white/80 rounded-md px-6 py-6 w-[85%] h-[180px]"
                             data-aos="zoom-in"
                             data-aos-duration="1000"
                           >
@@ -115,8 +114,12 @@ const [data, setdata] = useState<any>()
                         Qualified Leads and Increased Sales
                     </p>
                     <div className='flex flex-wrap mt-8 justify-center gap-4'>
+                      <Link href={'/get-a-free-quote'}>
                         <Button content={'Get a Quote Now!'} />
+                      </Link>
+                      <Link href={'/get-a-free-strategy-review'}>
                         <Button content={'Analyse my Website for Free!'} />
+                      </Link>
                     </div>
                 </div>
             </div>
