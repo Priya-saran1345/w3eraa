@@ -69,6 +69,8 @@ const Marketing = () => {
           <Image
             src={marketingData?.image}
             alt={marketingData?.image_alt}
+            loading='eager'
+
             height={580}
             width={588}
           />

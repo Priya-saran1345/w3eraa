@@ -24,9 +24,7 @@ const Page = () => {
     </>
   )
 }
-
 export default Page
-
 export async function generateMetadata() {
   try {
     const metaData = await fetchMeta("career");

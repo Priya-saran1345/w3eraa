@@ -10,7 +10,6 @@ import { RxCross2 } from 'react-icons/rx';
 const Navbar = () => {
   const { basic_details } = Useapi();
   const [showmenu, setshowmenu] = useState(false);
-
   return (
     <div className='text-homeblack py-3 lg:py-0 bg-white sticky shadow-md -top-2 z-20'>
       <div className='w-full px-4 xl:w-[75%] mx-auto'>

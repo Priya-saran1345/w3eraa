@@ -164,6 +164,8 @@ const Banner = () => {
                   <div>
                     <Image
                       src={elem.image}
+                      loading='eager'
+
                       alt={`${elem?.image_alt}`}
                       height={114}
                       width={

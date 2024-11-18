@@ -1,5 +1,4 @@
 "use client";
-import Image from 'next/image';
 import { IoCall, IoLocationOutline } from "react-icons/io5";
 import Link from 'next/link';
 import { Useapi } from '@/helpers/apiContext';

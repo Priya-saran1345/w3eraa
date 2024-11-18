@@ -204,7 +204,7 @@ const Footerbanner = ({ content, slug, image, description, btncontent }: any) =>
             </div>
           </div>
           <div className='rounded-2xl'>
-            <Image src={'/images/girlFooter.png'} height={312} width={488} alt='' className='hidden md:block rounded-r-2xl' />
+            <Image src={'/images/girlFooter.png'} loading='eager' height={312} width={488} alt='' className='hidden md:block rounded-r-2xl' />
           </div>
         </div>
       </div>
