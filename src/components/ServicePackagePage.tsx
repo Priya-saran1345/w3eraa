@@ -128,7 +128,7 @@ const Service_Pkackages = () => {
                             {
                                 data?.aboutservice?.title || data?.aboutservice?.subtitle || data?.aboutservice?.description ? (
                                     <div className='bg-white mt-12 mb-8 xl:w-[75%] px-4 xl:px-0 mx-auto'>
-                                        <h2 className='text-homeblack text-[28px] text-center font-bold lg:text-[38px]'>
+                                        <h2 className='text-homeblack text-[24px] lg:text-[32px] text-center font-bold '>
                                             {data?.aboutservice?.title || ''}
                                         </h2>
                                         <div className='flex justify-between items-center  lg:gap-16'>
@@ -146,7 +146,7 @@ const Service_Pkackages = () => {
 
                                             <StyledWrapper>
                                                 <div className='w-full '>
-                                                    <h3 className='text-homeblack text-[24h3x] font-semibold leading-[29px]'>
+                                                    <h3 className='text-homeblack text-[18px] lg:text-[20px] font-semibold leading-[29px]'>
                                                         {data?.aboutservice?.subtitle || ''}
                                                     </h3>
                                                     <div

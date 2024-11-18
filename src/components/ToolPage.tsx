@@ -16,9 +16,9 @@ import styled from 'styled-components'
 //  import {useRouter} from 'next/navigation';
 const Page = () => {
     // const router=useRouter()
-    const itemsPerPage = 10;
+    // const itemsPerPage = 10;
     const [tools, setTools] = useState<any>();
-    const [currentPage, setCurrentPage] = useState(1);
+    // const [currentPage, setCurrentPage] = useState(1);
     const [searchedTool, setSearchedTool] = useState("");
     const [body, setbody] = useState<any>()
     // Function to fetch tools from the API
@@ -42,23 +42,23 @@ const Page = () => {
         fetchTools();
     }, []);
 
-    const totalPages = Math.ceil(tools?.length / itemsPerPage);
+    // const totalPages = Math.ceil(tools?.length / itemsPerPage);
 
     // Function to handle Next button click
-    const handleNext = () => {
-        if (currentPage < totalPages) {
-            setCurrentPage(currentPage + 1);
-        }
-    };
+    // const handleNext = () => {
+    //     if (currentPage < totalPages) {
+    //         setCurrentPage(currentPage + 1);
+    //     }
+    // };
 
-    const handlePrevious = () => {
-        if (currentPage > 1) {
-            setCurrentPage(currentPage - 1);
-        }
-    };
+    // const handlePrevious = () => {
+    //     if (currentPage > 1) {
+    //         setCurrentPage(currentPage - 1);
+    //     }
+    // };
 
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const currentItems = tools?.slice(startIndex, startIndex + itemsPerPage);
+    // const startIndex = (currentPage - 1) * itemsPerPage;
+    // const currentItems = tools?.slice(startIndex, startIndex + itemsPerPage);
 
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchedTool(e.target.value);
@@ -68,7 +68,8 @@ const Page = () => {
         ? tools.filter((tool: any) =>
             tool.title.toLowerCase().includes(searchedTool.toLowerCase())
         )
-        : currentItems;
+        // : currentItems;
+        :tools;
 
     return (
         <>
@@ -111,7 +112,7 @@ const Page = () => {
                                     </Link>
                                 ))}
                             </div>
-                            <div className='flex justify-center'>
+                            {/* <div className='flex justify-center'>
                                 <div className='flex justify-center mt-12 items-center gap-3'>
                                     <div
                                         className={`flex justify-center size-[45px] items-center rounded-full ${currentPage === 1 ? 'bg-pink text-white cursor-not-allowed' : 'bg-lightpink text-pink cursor-pointer'}`}
@@ -127,7 +128,7 @@ const Page = () => {
                                         <FaAngleRight />
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                         <div className='bg-white flex justify-between gap-3 xl:w-[77%] mx-auto px-4 w-full my-10'>
                             <div className='w-full rounded-xl border-slate-100 border-[1px] h-full py-8 px-6 shadow-lg'>

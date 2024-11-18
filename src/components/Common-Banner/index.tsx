@@ -3,16 +3,19 @@ import React from 'react'
 import { IoMdStar } from 'react-icons/io'
 import Link from 'next/link'
 import Button from '@/components/button'
+import styled from 'styled-components'
+
 const index = ({title,description,image,btnlink,btntext,image_alt ,status='false'}:any) => {
   return (
     <div> <div className='bg-lightblue md:bg-[url("/images/banner-bg.png")] flex justify-center  w-full  h-fit py-4   bg-center bg-no-repeat'>
     <div className='mx-auto xl:w-[75%] px-6 flex justify-center '>
         <div className='flex justify-between items-center py-4 md:py-10 gap-7'>
             <div className={`lg:w-1/2 flex flex-col  gap-6`}>
-                <h1 className=' text-[32h1x] leading-[45px] font-bold lg:text-[38px] '>{title}</h1>
-                <div className="text-[18px] text-homegrey text-justify "  dangerouslySetInnerHTML={{ __html:description }}
-                                    >
+                <h1 className=' text-[28px] leading-[45px] font-bold lg:text-[38px] '>{title}</h1>
+                <StyledWrapper>
+                <div className="  text-homegrey text-justify "  dangerouslySetInnerHTML={{ __html:description }} >
                                         </div>
+                                        </StyledWrapper>
 
                 <div className='flex flex-wrap justify-center md:justify-start sm:gap-5'>
                 <Link href={'/get-a-free-quote'}>
@@ -88,3 +91,60 @@ const index = ({title,description,image,btnlink,btntext,image_alt ,status='false
 }
 
 export default index
+const StyledWrapper = styled.div`
+  ul {
+    list-style: disc;
+  }
+
+ 
+    h2 ,h1{
+
+    font-size: 28px !important; /* 36px */
+    font-weight: 700; /* Bold */
+  }
+
+  h3 {
+
+    font-size: 1.5rem; /* 24px */
+    font-weight: 600; /* Semi-Bold */
+  }
+
+  h4 {
+
+    font-size: 1.25rem; /* 20px */
+    font-weight: 600; /* Semi-Bold */
+  }
+
+  h5 {
+
+    font-size: 5rem; /* 16px */
+    font-weight: 500; /* Medium */
+  }
+
+  h6 {
+
+    font-size: 0.875rem; /* 14px */
+    font-weight: 400; /* Medium */
+  }
+ p {
+  font-size: 1rem; /* 16px */
+  font-weight: 400; /* Regular */
+  color: #535353; /* Replace with your color */
+}
+  ol, ul {
+    padding-left: 1.5rem;
+    list-style-type:disc;
+  }
+    table{
+    border:1px solid black;
+    margin-top:26px ;
+    margin-bottom:26px
+    width:100% ;
+    }
+    td{
+    padding-x:10px;
+    border:1px solid black;}
+    a{
+    color:red;
+    font-weight:500;}
+`

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { TiStar } from 'react-icons/ti';
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+import { CiUser } from 'react-icons/ci';
 
 const TestimonialCard = ({ props }: any) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -29,14 +30,23 @@ const TestimonialCard = ({ props }: any) => {
           <div key={index} className='md:w-[45%] w-[95%] lg:w-[30%] rounded-lg border-[2px] border-lightblue p-6'>
             <div className='flex justify-between mb-4 items-center'>
               <div className='flex gap-2 items-center'>
-                <div className='flex justify-center items-center w-[63px] h-[63px] rounded-full'>
-                  <Image
-                    src={item?.image||'/images/testimonial-user.png'}
+                <div className='flex justify-center border-lightblue border-2 items-center w-[53px] h-[53px] rounded-full'>
+                  {
+item?.image&&
+                    <Image
+                    src={item?.image
+                    }
                     height={63}
                     width={63}
                     alt={item?.image_alt}
                     className='rounded-full'
-                  />
+                    />
+                  }
+                  {
+                    !item?.image&&
+                    <CiUser  className=' text-blue font-bold text-[30px]' />
+
+                  }
                 </div>
                 <div>
                   <p className='text-[20px] font-medium text-homeblack'>{item.client_name}</p>

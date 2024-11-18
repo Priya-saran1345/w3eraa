@@ -15,9 +15,8 @@ const Index = ({ props }: any) => {
    
     
         <div className='bg-white xl:w-[75%] mx-auto px-6 py-12 lg:py-16'>
-            <p className='text-homeblack font-bold text-[28px] lg:text-[38px]'>{props?.title}</p>
+            <h2 className='text-homeblack font-bold text-[28px] lg:text-[38px]'>{props?.title}</h2>
             <p className='text-homegrey text-[18px] mt-3'>{props?.subtitle}</p>
-
             <div className='my-8 flex md:flex-nowrap flex-wrap justify-between gap-10'>
                 {/* Left Side: List of Services */}
                 <div className='flex flex-wrap justify-center md:flex-col gap-4'>
@@ -33,7 +32,6 @@ const Index = ({ props }: any) => {
                         </div>
                     ))}
                 </div>
-
                 {/* Right Side: Display Selected Service Details */}
                 <div className='bg-lightblue w-[1079px] p-8 rounded-lg min-h-full'>
                     <div className='bg-white rounded-lg flex justify-center items-center w-[104px] h-[104px]'>
@@ -41,8 +39,6 @@ const Index = ({ props }: any) => {
                     </div>
                     <p className='text-[18px] leading-[24px] mt-6 text-homegrey'  dangerouslySetInnerHTML={{ __html:props?.card[selectedServiceIndex]?.description || 
                         " " }}/>
-
-                 
                 </div>
             </div>
 

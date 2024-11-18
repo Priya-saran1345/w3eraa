@@ -7,8 +7,8 @@ const Index = ({props}:any) => {
     <div className='bg-white w-full py-10 lg:py-16'>
              <div className='xl:w-[75%] px-6 mx-auto'>
                 <div  className=' md:w-[75%] lg:w-[50%] leading-[45px] mx-auto text-center'>
-                    <p className=' text-[24px]  leading-tight lg:leading-[] lg:text-[38px] font-bold '>
-                    {props?.title}</p>
+                    <h2 className=' text-[24px]  leading-tight lg:leading-[] lg:text-[38px] font-bold '>
+                    {props?.title}</h2>
                 </div>
                 <div className='mt-12 flex flex-wrap justify-center gap-4'>
                {

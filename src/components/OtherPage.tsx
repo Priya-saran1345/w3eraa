@@ -28,7 +28,7 @@ other&&
         {
           other?.title&&
        <div className='w-full bg-no-repeat bg-center bg-[url("/images/tool-bg.png")] py-9 flex flex-col justify-center items-center'>
-                    <p className='text-[32px] lg:text-[44px] font-bold text-white'> {other?.title || ''}</p>
+                    <h1 className='text-[32px] lg:text-[44px] font-bold text-white'> {other?.title || ''}</h1>
                     
         </div>
         }

@@ -37,9 +37,9 @@ export default function Component({props}:any) {
   
   return (
     <div className="w-full px-4 mx-auto py-10 lg:py-16 xl:w-[75%]">
-      <p className=" text-[28px] lg:text-[38px] xl:text-[48px] text-homeblack font-bold text-center my-4">
+      <h2 className=" text-[28px] lg:text-[38px] xl:text-[48px] text-homeblack font-bold text-center my-4">
         {data.first} <span className="text-pink">{data.second}</span>
-      </p>
+      </h2>
       <p className="text-homegrey text-[16px] lg:text-[18px] text-center">
         Dive into our latest blogs to keep up with the newest trends, insights, and tips in the digital marketing world.
       </p>

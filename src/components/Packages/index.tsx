@@ -33,11 +33,10 @@ const Packages = ({props}:any) => {
     return (
         <div className='w-full bg-lightblue  py-12 lg:py-16'>
             <div className='w-full xl:w-[75%] mx-auto px-4'>
-                <p className=' text-[28px] lg:text-[38px] xl:text-[48px] capitalize text-center lg:text-left font-bold'>{data.first} <span className='text-pink'> {data.second}</span></p>
+                <h2 className=' text-[28px] lg:text-[38px] xl:text-[48px] capitalize text-center lg:text-left font-bold'>{data.first}
+                     <span className='text-pink'> {data.second}</span></h2>
             </div>
-
             <div className="flex flex-wrap lg:flex-nowrap mt-10 justify-center gap-5  items-center px-4 lg:px-3 w-full xl:w-[75%] mx-auto">
-
                 {props?.map((elem: any, i:number) => (
                     <div key={i} className='rounded-xl px-4 2xl:px-8 py-8 w-[347px] h-[357px] flex flex-col gap-2 justify-between bg-white hover:shadow-xl'>
                         <div className='p-4 size-[72px] flex justify-center items-center rounded-lg bg-lightblue'>

@@ -7,7 +7,7 @@ const index = ({ props }: any) => {
     return (
         <div className='w-full bg-lightblue py-10 text-white  lg:py-16'>
             <div className='xl:w-[75%] px-4 mx-auto flex flex-col gap-10'>
-                <p className=' text-[32px] text-center lg:text-[38px] font-bold text-homeblack leading-[45px]'>{props?.title}</p>
+                <h2 className=' text-[32px] text-center lg:text-[38px] font-bold text-homeblack leading-[45px]'>{props?.title}</h2>
                 <p className=' text-[18px] px-3 lg:px-16 text-center  text-homegrey ' dangerouslySetInnerHTML={{ __html: props?.description }} />
                 <div className='flex justify-center gap-5 flex-wrap'>
                     {
