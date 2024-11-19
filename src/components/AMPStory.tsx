@@ -37,11 +37,9 @@ export default function AMPStory({ slug }: { slug: string }) {
       <Loader/>
     </div>
   }
-
   if (error) {
     return <div>{error}</div>
   }
-
   if (!story) {
     return <div>No story data available.</div>
   }
@@ -51,7 +49,6 @@ export default function AMPStory({ slug }: { slug: string }) {
       <Script src="https://cdn.ampproject.org/v0/amp-story-1.0.js" strategy="lazyOnload" custom-element="amp-story" />
       <Script src="https://cdn.ampproject.org/v0/amp-video-0.1.js" strategy="lazyOnload" custom-element="amp-video" />
       <Script src="https://cdn.ampproject.org/v0/amp-img-0.1.js" strategy="lazyOnload" custom-element="amp-img" />
-      
       <AMPStoryContent story={story} />
     </>
   )

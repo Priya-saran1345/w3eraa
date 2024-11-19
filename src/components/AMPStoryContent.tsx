@@ -52,12 +52,15 @@ export default function AMPStoryContent({ story }: { story: Story }) {
             />
           </amp-story-grid-layer>
           <amp-story-grid-layer template="vertical">
-            <h1 animate-in="fly-in-bottom" animate-in-delay="0.3s">
+            <div className='bg-black/45 p-4 rounded-xl' animate-in="fly-in-left ">
+
+            <h1  animate-in="fly-in-top" animate-in-delay="0.3s" className=' text-[24px] font-semibold text-white text-center'>
               {stripHtml(card.title)}
             </h1>
-            <p animate-in="fly-in-left" animate-in-delay="0.5s">
+            <p animate-in="fly-in-bottom" animate-in-delay="0.5s" className='text-white text-center mt-4 font-medium text-[20px]'>
               {stripHtml(card.description)}
             </p>
+            </div>
           </amp-story-grid-layer>
         </amp-story-page>
       ))}

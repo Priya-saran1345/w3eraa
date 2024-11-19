@@ -192,3 +192,9 @@ input:-webkit-autofill {
 @keyframes l26 {
   100% {transform:rotate(1turn)}
 }
+.bg_rev{
+  background-image: url("/images/revenue-bg.png");
+  background-size: 100% 100%;
+  background-position: cover;
+  background-repeat: no-repeat;
+}
