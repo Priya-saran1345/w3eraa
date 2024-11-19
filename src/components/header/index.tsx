@@ -2,7 +2,7 @@
 import { IoCall, IoLocationOutline } from "react-icons/io5";
 import Link from 'next/link';
 import { Useapi } from '@/helpers/apiContext';
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { MdOutlineEmail, MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { IoIosArrowUp } from "react-icons/io";
 import { useState } from 'react';
 import { FaFacebook, FaInstagram, FaLinkedinIn, FaPinterest, FaSkype, FaYoutube } from 'react-icons/fa';
@@ -27,13 +27,15 @@ const Header = () => {
                 <Link target='_blank' href={`${basic_details?.basic_details[0].linkedin_url}`}><FaLinkedinIn /></Link>
                 <Link target='_blank' href={`${basic_details?.basic_details[0].twitter_url}`}><BsTwitterX /></Link>
                 <Link target='_blank' href={`${basic_details?.basic_details[0].skype_url}`}><FaSkype /></Link>
+                <Link target='_blank' href={`mailto:${basic_details?.basic_details[0].email}`}><MdOutlineEmail /></Link>
                 <Link target='_blank' href={`${basic_details?.basic_details[0].youtube_url}`}><FaYoutube /></Link>
                 <Link target='_blank' href={`${basic_details?.basic_details[0].pinterest_url}`}><FaPinterest /></Link>
                 <Link target='_blank' href={`${basic_details?.basic_details[0].gmb_url}`}><IoLocationOutline /></Link>
+
               </div>
-              <a href={`mailto:${basic_details?.basic_details[0].email}`}>
+              {/* <a href={`mailto:${basic_details?.basic_details[0].email}`}>
                 <p className='text-[15px] text-white mt-1'>{basic_details?.basic_details[0].email} </p>
-              </a>
+              </a> */}
             </div>
             <div className='flex text-white gap-4 py-3 items-center text-[16px]'>
               <div className='items-center 2xl:font-semibold hidden lg:flex gap-5 2xl:gap-5'>
