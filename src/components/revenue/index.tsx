@@ -6,7 +6,7 @@ import ClientsCount from '../ClientsCount';
 
 const Revenue = () => {
   return (
-    <div className='w-full py-10 md:py-16 bg-[url("/images/revenue-bg.png")] text-white bg_rev'>
+    <div className='w-full py-10 md:py-16  text-white bg_rev'>
       <div className='w-full xl:w-[75%] text-center lg:text-left text-white mx-auto px-4'>
        
         <h2 className=' mt-4 font-bold  text-[28px] lg:text-[38px] xl:text-[48px]'>Need Revenue? We Can Help!</h2>
