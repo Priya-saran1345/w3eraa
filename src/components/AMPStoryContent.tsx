@@ -1,4 +1,5 @@
 'use client'
+import { useRouter } from 'next/navigation'
 
 import { useEffect } from 'react'
 
@@ -22,6 +23,7 @@ interface Story {
 }
 
 export default function AMPStoryContent({ story }: { story: Story }) {
+  const router = useRouter()
   useEffect(() => {
     document.documentElement.setAttribute('amp', '')
   }, [])
@@ -29,8 +31,23 @@ export default function AMPStoryContent({ story }: { story: Story }) {
   const stripHtml = (html: string) => {
     return html.replace(/<[^>]*>?/gm, '')
   }
-
+  const handleCancel = () => {
+    router.back()
+}
   return (
+    <>
+     <button
+                onClick={handleCancel}
+                className="absolute top-4 right-4 z-50 bg-black/45 bg-opacity-50 text-white rounded-full p-2"
+                aria-label="Close story"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+<div>
+
     <amp-story
       standalone=""
       title={stripHtml(story.title) || "AMP Story"}
@@ -39,7 +56,7 @@ export default function AMPStoryContent({ story }: { story: Story }) {
       poster-portrait-src={story.image || "https://amp.dev/static/samples/img/story_dog2_portrait.jpg"}
     >
       {story.card.map((card: Card, index: number) => (
-        <amp-story-page key={card.id} id={`page-${index + 1}`}>
+        <amp-story-page key={card.id} id={`page-${index + 1}`} auto-advance-after="10s">
           <amp-story-grid-layer template="fill">
             <amp-img
               src={card.image}
@@ -57,13 +74,19 @@ export default function AMPStoryContent({ story }: { story: Story }) {
             <h1  animate-in="fly-in-top" animate-in-delay="0.3s" className=' text-[24px] font-semibold text-white text-center'>
               {stripHtml(card.title)}
             </h1>
-            <p animate-in="fly-in-bottom" animate-in-delay="0.5s" className='text-white text-center mt-4 font-medium text-[20px]'>
-              {stripHtml(card.description)}
-            </p>
+            <p 
+  animate-in="fly-in-bottom" 
+  animate-in-delay="0.5s" 
+  className="text-white text-center mt-4 font-medium text-[20px]"
+  dangerouslySetInnerHTML={{ __html: card.description }}>
+</p>
             </div>
           </amp-story-grid-layer>
         </amp-story-page>
       ))}
     </amp-story>
+    </div>
+
+    </>
   )
 }

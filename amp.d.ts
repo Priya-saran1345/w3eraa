@@ -30,6 +30,7 @@ declare namespace JSX {
       },
       HTMLImageElement
     >;
+
     'amp-video': React.DetailedHTMLProps<
       React.VideoHTMLAttributes<HTMLVideoElement> & {
         layout?: string;

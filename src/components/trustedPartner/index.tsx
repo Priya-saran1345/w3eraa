@@ -12,8 +12,6 @@ const Index = ({ props }: any) => {
     };
 
     return (
-   
-    
         <div className='bg-white xl:w-[75%] mx-auto px-6 py-12 lg:py-16'>
             <h2 className='text-homeblack font-bold text-[28px] lg:text-[38px]'>{props?.title}</h2>
             <p className='text-homegrey text-[18px] mt-3'>{props?.subtitle}</p>
@@ -44,7 +42,6 @@ const Index = ({ props }: any) => {
                         " " }}/>
                 </div>
             </div>
-
             <div className='flex justify-center'>
             <Link href={'/our-client-list'}>
 

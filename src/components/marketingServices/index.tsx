@@ -17,7 +17,7 @@ const index = ({ props }: any) => {
                                     (elem.title && elem.description)?
                                     <div>
                                         {
-                                            elem.icon &&
+                                            elem.icon && (props?.is_icon==true)&&
                                             <div className='p-4 size-[72px] flex justify-center items-center rounded-lg bg-lightblue'>
                                                 <Image
                                                     src={elem.icon || ''}
@@ -28,6 +28,17 @@ const index = ({ props }: any) => {
                                                 />
                                             </div>
                                         }
+                                         {elem?.icon && (props?.is_icon==false)&&
+                                <div className=' flex justify-center items-center rounded-lg '>
+                                    <Image
+                                        src={elem?.icon || ''}
+                                        alt={''}
+                                        height={350}
+                                        width={360}
+                                        className={'w-full rounded-md'}
+                                    />
+                                </div>
+                                }
                                         <p className='text-[26px] font-medium text-homeblack leading-[31px]'>{elem?.title}</p>
                                         <p className='text-[20px]  text-homeblack leading-[31px]'>{elem?.subtitle}</p>
                                         <p className='text-[16px] text-homegrey leading-[22px]' dangerouslySetInnerHTML={{ __html: elem?.description }} />
@@ -51,7 +62,6 @@ const index = ({ props }: any) => {
                                 <div>
                                 </div>
                             </div>
-
 
                         ))
                     }

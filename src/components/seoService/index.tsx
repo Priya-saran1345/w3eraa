@@ -19,7 +19,7 @@ const index = ({ props }: any) => {
                             <div key={i} className='rounded-xl p-8  sm:w-[45%] lg:w-[31%]  flex flex-col gap-2 justify-between bg-white hover:shadow-xl'>
 
                                 {
-                                    elem?.icon &&
+                                    elem?.icon && (props?.is_icon==true)&&
                                     <div className='p-4 size-[72px] flex justify-center items-center rounded-lg bg-lightblue'>
                                         <Image
                                             src={elem?.icon || ''}
@@ -29,6 +29,17 @@ const index = ({ props }: any) => {
                                             className={''}
                                         />
                                     </div>
+                                }
+                                {elem?.icon && (props?.is_icon==false)&&
+                                <div className=' flex justify-center items-center rounded-lg '>
+                                    <Image
+                                        src={elem?.icon || ''}
+                                        alt={''}
+                                        height={350}
+                                        width={360}
+                                        className={'w-full rounded-md'}
+                                    />
+                                </div>
                                 }
                                 <p className='text-[26px] font-medium text-homeblack leading-[31px]'>{elem?.title}</p>
                                 <p

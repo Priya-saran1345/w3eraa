@@ -33,6 +33,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Packages from '@/components/Packages/index'
 import Link from 'next/link'
 import Other from '@/components/OtherPage'
+import { div } from 'framer-motion/client'
 
 const Service_Pkackages = () => {
     const { basic_details } = Useapi();
@@ -69,7 +70,7 @@ const Service_Pkackages = () => {
     // Effect to fetch data
     useEffect(() => {
         fetchPackages();
-        }, []);
+    }, []);
     // Effect to filter and set package cards
     useEffect(() => {
         setPackageCards(result?.data?.packagecategory?.filter((elem: any, index: number) => index > 0));
@@ -107,7 +108,7 @@ const Service_Pkackages = () => {
         }
         return <div className={cellClasses}>{value ? value :
             <Link href={'/get-a-free-quote'}>
-               <Button content='Get a quote' />
+                <Button content='Get a quote' />
             </Link>}</div>;
     };
     return (
@@ -117,7 +118,7 @@ const Service_Pkackages = () => {
                 <Loader />
             }
             {
-             result &&
+                result &&
                 <div>
                     {result?.pagetype == 'service' &&
                         <div className=''>
@@ -174,11 +175,11 @@ const Service_Pkackages = () => {
                                 </div>
 
                             }
-                               {
-                            (lastsegment === 'blog-commenting-service') &&
-                              
+                            {
+                                (lastsegment === 'blog-commenting-service') &&
+
                                 <div className='xl:w-[75%] mx-auto my-8 px-4 xl:px-0'>
-                                  
+
                                     <div className='flex w-full justify-center mt-6 gap-3 flex-wrap'>
                                         {
                                             [{
@@ -222,9 +223,9 @@ const Service_Pkackages = () => {
                                                     />
                                                     <div className='flex justify-center'>
 
-                                                    <Link href={'/get-a-free-strategy-review'} className='mt-3'>
-                                                        <Button content='Get A Quote' />
-                                                    </Link>
+                                                        <Link href={'/get-a-free-strategy-review'} className='mt-3'>
+                                                            <Button content='Get A Quote' />
+                                                        </Link>
                                                     </div>
                                                     <div>
                                                     </div>
@@ -235,12 +236,61 @@ const Service_Pkackages = () => {
                                     </div>
 
                                 </div>
-                               }
+                            }
 
-                            {
+                            {!(lastsegment == 'google-business-profile-management-services') &&
                                 data?.service_card1.length > 0 &&
                                 <SeoService props={data?.service_card1[0]} />
                             }
+                            {
+
+                                (lastsegment == 'google-business-profile-management-services') &&
+                                <div className='w-full bg-lightblue py-10 text-white  lg:py-16'>
+                                    <div className='xl:w-[75%] px-4 mx-auto flex flex-col gap-10'>
+                                        <div className='md:w-[80%] flex flex-col gap-4 mx-auto'>
+                                            <h2 className=' text-[32px] text-center lg:text-[38px] font-bold text-homeblack leading-[45px]'>{data?.service_card1[0]?.title || ''} </h2>
+                                            <p className=' text-center text-[18px]  text-homegrey '>{data?.service_card1[0]?.description ||
+                                                '  '}</p>
+                                        </div>
+                                        <div className='flex justify-center gap-5 flex-wrap'>
+                                            {
+                                                data?.service_card1[0]?.card?.map((elem: any, i: number) => (
+                                                    <div key={i} className='rounded-xl p-8  sm:w-[45%]  lg:w-[30%] xl:w-[22%] flex gap-2 items-start  bg-white hover:shadow-xl'>
+                                                        {
+                                                            elem?.icon &&
+                                                            <div className='p-4 size-[72px] flex justify-center items-center rounded-lg bg-lightblue'>
+                                                                <Image
+                                                                    src={elem?.icon || ''}
+                                                                    alt={''}
+                                                                    height={48}
+                                                                    width={36}
+                                                                    className={''}
+                                                                />
+                                                            </div>
+                                                        }
+                                                        <p className='text-[26px] font-medium text-homeblack leading-[31px]'>{elem?.title}</p>
+                                                        <p
+                                                            className='text-[18px] font-medium text-homegrey leading-[22px]'
+                                                            dangerouslySetInnerHTML={{ __html: elem?.description }}
+                                                        />
+                                                        <div>
+                                                        </div>
+                                                    </div>
+                                                ))
+                                            }
+                                        </div>
+                                        <div className='flex justify-center'>
+                                            <Link href={'/get-a-free-quote'}>
+                                                <Button content={'Get a Quote Now!'} />
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            {/* {
+                                data?.service_card2.length > 0 &&
+                                <SeoService props={data?.service_card1[0]} />
+                            } */}
                             {/* content 2 section */}
                             {data?.contentsection2?.description &&
 
@@ -296,8 +346,8 @@ const Service_Pkackages = () => {
                             }
                             <CluthRating props={cluth} />
                             {
-                                data?.service_packages_faq?.title && data?.service_packages_faq?.card  &&
-                                <Faq props={data?.service_packages_faq?.card ||[] } title={data?.service_packages_faq.title} />
+                                data?.service_packages_faq?.title && data?.service_packages_faq?.card &&
+                                <Faq props={data?.service_packages_faq?.card || []} title={data?.service_packages_faq.title} />
                             }
                             {quicklinks &&
                                 <QuickLinks props={quicklinks} />

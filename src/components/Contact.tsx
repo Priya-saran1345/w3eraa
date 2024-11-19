@@ -20,6 +20,7 @@ import Loader from '@/components/loader'
 import index from '@/components/Navbar-items'
 import toast from 'react-hot-toast'
 import Link from 'next/link'
+ import Hubspot from '@/components/Hubspot'
 const Contact = () => {
   const { basic_details } = Useapi();
   const [data, setdata] = useState<any>()
@@ -152,7 +153,7 @@ data&& basic_details&&
               }
             </div>
           </div>
-          <div className="w-[791px] relative shadow-xl min-h-[840px] rounded-2xl bg-white">
+          <div className="w-[791px] p-5 relative shadow-xl min-h-[840px] rounded-2xl bg-white">
             <div className="w-full bg-gray-200 text-center py-6 rounded-t-xl text-[22px] md:text-[28px] font-semibold">
               STAY IN TOUCH WITH US
             </div>
@@ -256,6 +257,7 @@ data&& basic_details&&
                 </button>
               </div>
             </div>
+            {/* <Hubspot  portalId="20095080" formId={"1a55b499-b50e-4776-bfaa-90e9d8287b41"} region={'na1'}/> */}
           </div>
         </div>
       </div>
