@@ -25,7 +25,7 @@ const Tool = () => {
     const [loading, setLoading] = useState<boolean>(false); // Loading state
     const [error, setError] = useState<string | null>(null); // Error state
     const [result, setResult] = useState<any>(null); // Result state
-    const [tools, setTools] = useState<any[]>([]);
+    const [tools, setTools] = useState<any>();
     const [currentTool, setCurrentTool] = useState<any[]>([]);
     const [showresult, setshowresult] = useState<any>(false)
     const [keywords, setkeywords] = useState<any>()
@@ -137,7 +137,7 @@ const Tool = () => {
         <>
             {
                 !tools && currentTool&&
-                <Loader />
+                <Loader/>
             }
             {
                 tools && currentTool&&
@@ -188,7 +188,8 @@ const Tool = () => {
                                 (currentTool[0]?.slug_link === 'keyword-position-checker' || currentTool[0]?.slug_link === 'keywords-suggestion-tool' || currentTool[0]?.slug_link ===
                                     'meta-tag-generator') &&
                                 (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
-                                    <input type="text" placeholder='Enter Keywords Seprated By Coma(,)' className='w-full  border-none outline-none' onChange={handleKeyword} />
+                                    <input type="text" placeholder='Enter Keywords Seprated By Coma(,)'
+                                     className='w-full  border-none outline-none' onChange={handleKeyword} />
                                 </div>)
                             }
                             {

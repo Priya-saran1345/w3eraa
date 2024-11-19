@@ -16,14 +16,12 @@ const CustomerChoose = () => {
             title: '15+ Years in Business'
             ,
             Descriptions: 'For over fifteen years, we have been delivering excellent SEO and Digital Marketing services to loads of customers, and each year, we become stronger and stronger in our vision and mission'
-
         },
         {
             image: '/images/c2.svg',
             title: 'Gratified Clients'
             ,
             Descriptions: 'We have guided 3M+ leads for our clients, and the number continues to rise. We have about 87 percent of repeated customers.'
-
         },
         {
             image: '/images/c3.svg',
@@ -54,8 +52,6 @@ const CustomerChoose = () => {
             Descriptions:
                 'We embrace a 360-degree approach, implement agile methods, and use the new techniques to improve your search engine result pages ranking.'
         },
-
-
         ]
     }
     const [data, setdata] = useState({ first: '', second: '' })
@@ -79,7 +75,7 @@ const CustomerChoose = () => {
 
 
     return (
-        <div className='w-full bg-white py-10 lg:py-20'>
+        <div className='w-full bg-white border-b-2 border-lightblue py-10 lg:py-12'>
             <div className=' h-[236px] leading-[29px] md:w-[80%] px-4 lg:w-[40%] text-center mx-auto  md:text-left pt-4  flex flex-col gap-3'>
                 <h2 className=' text-[28px] lg:text-[38px] xl:text-[48px] lg:leading-[52px] text-center  font-bold'>{data.first} <span className='text-pink'>{data.second}</span></h2>
                 {/* <p className='text-[24px] font-medium'>{props?.subtitle}</p> */}
@@ -110,15 +106,15 @@ const CustomerChoose = () => {
                         </p>
                     </div>
                 ))}
-                <div className='sm:h-[284px] lg:w-[30%] flex  justify-center items-center'>
-                    <div className='flex flex-col justify-center items-center gap-2'>
+                {/* <div className='sm:h-[284px] lg:w-[30%] flex  justify-center items-center'> */}
+                    <div className='flex flex-col mt-8 justify-center items-center gap-2'>
                         <div>
                             <Link href={'/contact-us'}>
                                 <Button content={'Contact Us'} />
                             </Link>
                         </div>
                         <ClientsCount />
-                    </div>
+                    {/* </div> */}
                 </div>
             </div >
         </div>

@@ -1,6 +1,5 @@
 
-import React from 'react'
-import WebStoryDetailPage from '@/components/WebStoryDetailPage'
+
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
 
@@ -16,18 +15,7 @@ async function SchemaScript({ params}:any) {
     />
   )
 }
-const Page = ({ params }: any) => {
-  return (
-    <div>
-        <Suspense fallback={null}>
-        <SchemaScript />
-      </Suspense>
-      <WebStoryDetailPage/>
-    </div>
-  )
-}
 
-export default Page
 
 export async function generateMetadata({ params }: any) {
   const  slug  = params?.id;
@@ -87,4 +75,16 @@ export async function generateMetadata({ params }: any) {
       description: 'A premier Digital Marketing Company, W3era® offer comprehensive services like SEO, PPC, and Web development. Schedule a free marketing consultation today.',
     };
   }
+}
+
+import AMPStory from '@/components/AMPStory'
+
+export default function WebStoryPage({ params }: { params: { id: string } }) {
+  return ( <div>
+         <Suspense fallback={null}>
+         <SchemaScript />
+       </Suspense>
+       <AMPStory slug={params.id} />
+       
+     </div>)
 }

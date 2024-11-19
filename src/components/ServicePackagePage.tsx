@@ -107,7 +107,7 @@ const Service_Pkackages = () => {
         }
         return <div className={cellClasses}>{value ? value :
             <Link href={'/get-a-free-quote'}>
-                <Button content='Get a quote' />
+               <Button content='Get a quote' />
             </Link>}</div>;
     };
     return (
@@ -117,7 +117,7 @@ const Service_Pkackages = () => {
                 <Loader />
             }
             {
-                result &&
+             result &&
                 <div>
                     {result?.pagetype == 'service' &&
                         <div className=''>
@@ -143,7 +143,6 @@ const Service_Pkackages = () => {
                                                     />
                                                 </div>
                                             )}
-
                                             <StyledWrapper>
                                                 <div className='w-full '>
                                                     <h3 className='text-homeblack text-[18px] lg:text-[20px] font-semibold leading-[29px]'>
@@ -159,19 +158,16 @@ const Service_Pkackages = () => {
                                     </div>
                                 ) : null
                             }
-                           
                             {
                                 data?.clients_say &&
                                 <ClientSays props={data?.clients_say} />
                             }
-                          
                             {
                                 data?.contentsection1?.description &&
                                 <div className='w-full mx-auto xl:w-[75%] flex flex-col gap-4 px-6 xl:px-2 py-12'>
-
                                     <StyledWrapper>
                                         <div
-                                            className="text-homegrey text-[18px]"
+                                            className=" "
                                             dangerouslySetInnerHTML={{ __html: data?.contentsection1?.description || '' }}
                                         />
                                     </StyledWrapper>
@@ -230,10 +226,7 @@ const Service_Pkackages = () => {
                                                         <Button content='Get A Quote' />
                                                     </Link>
                                                     </div>
-
-
                                                     <div>
-
                                                     </div>
                                                 </div>
 
@@ -254,7 +247,7 @@ const Service_Pkackages = () => {
                                 <div className='xl:w-[75%] px-6 mx-auto py-12 flex flex-col gap-8  lg:py-16'>
                                     {/* <p className='text-center text-[28px] lg:text-[38px] text-homeblack font-bold'>{data?.contentsection2[0]?.title}</p> */}
                                     <StyledWrapper>
-                                        <div className='text-[18px]  text-homegrey ' dangerouslySetInnerHTML={{ __html: data?.contentsection2?.description || '' }} />
+                                        <div className='' dangerouslySetInnerHTML={{ __html: data?.contentsection2?.description || '' }} />
                                     </StyledWrapper>
                                 </div>
 
@@ -280,8 +273,8 @@ const Service_Pkackages = () => {
                                         {/* Uncomment this if you want to show the title */}
                                         {/* <p className='text-[28px] text-homeblack font-semibold lg:text-[38px]'>{data?.contentsection3?.title}</p> */}
                                         <StyledWrapper>
-                                            <div className='text-homegrey 
-                                             text-[18px]' dangerouslySetInnerHTML={{ __html: data.contentsection3.description || '' }} />
+                                            <div className='
+                                           ' dangerouslySetInnerHTML={{ __html: data.contentsection3.description || '' }} />
                                         </StyledWrapper>
                                     </div>
                                 </div>
@@ -475,8 +468,7 @@ const Service_Pkackages = () => {
                                 data?.contentsection1?.description &&
                                 <div className='w-full mx-auto xl:w-[75%] flex flex-col gap-4 px-6  py-12'>
                                     <div
-                                        className='text-homegrey 
-                                          text-[18px]'
+                                        className=''
                                         dangerouslySetInnerHTML={{ __html: data?.contentsection1?.description }}
                                     />
                                 </div>
@@ -541,16 +533,16 @@ const StyledWrapper = styled.div`
     list-style: disc;
   }
 
- 
    h1{
 
     font-size: 32px !important;
-    font-weight:700 !important /* 36px */
+    font-weight:700
+    color:var(--homeblack) !important /* 36px */
    
   }
 h2{
   font-size: 26px  !important; /*
-     font-weight: 600 !important; /* Semi-Bold */
+    font-weight:700!important
 
 }
   h3 {
@@ -576,7 +568,7 @@ h2{
     font-weight: 400; /* Medium */
   }
  p {
-  font-size: 1rem; /* 16px */
+  font-size: 17px; /* 16px */
   font-weight: 400; /* Regular */
   color: #535353; /* Replace with your color */
   text-align: justify;

@@ -49,8 +49,8 @@ const Main = () => {
       <Solution/>
       <ClientSays props={apidata?.clients_say[0]}  />
       <Choose props={apidata?.why_choose[0]}  />
-      <Faq1 props={apidata?.marketing_agency} title={"Frequently Asked Questions"} />
      <ChooseAgency/>
+      <Faq1 props={apidata?.marketing_agency} title={"Frequently Asked Questions"} />
       <Revenue/>
       <Certificate/>
       <CustomerChoose/>
