@@ -1,4 +1,4 @@
-name: Deploy Next.js to Ubuntu Server
+name: Deploy Next.js to Ubuntu Server 
 
 on:
   push:
