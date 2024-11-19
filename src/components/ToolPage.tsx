@@ -75,7 +75,7 @@ const Page = () => {
         <>
             {
                 !tools &&
-                <Loader />
+                <Loader/>
             }
             {
                 tools &&

@@ -60,7 +60,7 @@ client&& apidata&&
                 <div className='w-full pt-20 bg-[url("/images/footer-bg.png")] bg-cover bg-center '>
                     <div className='w-full relative  xl:w-[75%] mx-auto py-8  bg-white flex justify-between items-center '>
                         <div className=' bg-white md:w-[55%] flex-col flex text-center md:text-left px-12 py-10 md:py-0 '>
-                            <p className='text-[32px] lg:text-[34px] font-bold leading-[] lg:leading-[58px]'>
+                            <p className=' text-[24px] xl:text-[28px] font-semibold text-homegrey  leading-[] lg:leading-[40px]'>
                            {client?.client[0]?.reputation_description}
                             </p>
                             <div className='flex justify-center md:justify-start flex-wrap gap-6 items-center'>
@@ -77,7 +77,8 @@ client&& apidata&&
                             </div>
                         </div>
                         <div>
-                            <Image src={ client?.client[0]?.reputation_image||'/images/pana.png'} height={512} width={588} alt={client?.client[0]?.image_alt} className='hidden md:block'/>
+                        <Image src={ client?.client[0]?.reputation_image||'/images/pana.png'} height={512} width={588}
+                         alt={client?.client[0]?.image_alt} className='hidden md:block min-h-full'/>
                         </div>
                     </div>
                 </div>

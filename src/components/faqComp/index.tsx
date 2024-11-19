@@ -25,7 +25,7 @@ export default function Component({ props ,title }: any) {
 
   useEffect(() => {
     const result = splitStringByLastWords(
-      title,3
+      title,2
     )
     setData(result)
   }, [])

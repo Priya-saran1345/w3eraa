@@ -6,7 +6,6 @@ import { BASE_URL } from '@/util/api'
 import axios from 'axios'
 import { usePathname } from 'next/navigation';
 
-
 export default function AMPStory() {
   const pathname = usePathname();
   const segments = pathname.replace(/\/$/, '').split('/');
@@ -38,17 +37,15 @@ export default function AMPStory() {
       <Script src="https://cdn.ampproject.org/v0/amp-story-1.0.js" strategy="beforeInteractive" custom-element="amp-story" />
       <Script src="https://cdn.ampproject.org/v0/amp-video-0.1.js" strategy="beforeInteractive" custom-element="amp-video" />
       <Script src="https://cdn.ampproject.org/v0/amp-img-0.1.js" strategy="beforeInteractive" custom-element="amp-img" />
+
       {/* AMP Story */}
-      
       <amp-story
         standalone=""
         title={story?.title?.replace(/<[^>]*>?/gm, '') || "AMP Story"}
         publisher="W3era"
         publisher-logo-src="https://amp.dev/favicons/coast-228x228.png"
         poster-portrait-src={story?.image || "https://amp.dev/static/samples/img/story_dog2_portrait.jpg"}
-        
       >
-
         {/* Dynamic Story Pages */}
         {story?.card?.map((card: any, index: number) => (
           <amp-story-page key={index} id={`page-${index + 1}`}>
@@ -59,7 +56,7 @@ export default function AMPStory() {
                 height="1280"
                 layout="responsive"
                 animate-in="fade-in"
-                animate-in-duration="0.5s "
+                animate-in-duration="0.5s"
               ></amp-img>
             </amp-story-grid-layer>
             <amp-story-grid-layer template="vertical">
@@ -107,7 +104,6 @@ export default function AMPStory() {
           layout="nodisplay"
         ></amp-story-bookend> */}
       </amp-story>
-
     </>
   );
 }

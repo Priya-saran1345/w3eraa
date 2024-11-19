@@ -34,9 +34,12 @@ const Index = ({ props }: any) => {
                 </div>
                 {/* Right Side: Display Selected Service Details */}
                 <div className='bg-lightblue w-[1079px] p-8 rounded-lg min-h-full'>
-                    <div className='bg-white rounded-lg flex justify-center items-center w-[104px] h-[104px]'>
-                        <Image src={props?.card[selectedServiceIndex]?.icon||''} height={71} width={53} alt={''} />
+                    {/* <div className='bg-white rounded-lg flex justify-center items-center w-[104px] h-[104px]'> */}
+                    <div className='flex justify-center items-center'>
+
+                        <Image src={props?.card[selectedServiceIndex]?.icon||''} height={171} width={200} alt={''} />
                     </div>
+                    {/* </div> */}
                     <p className='text-[18px] leading-[24px] mt-6 text-homegrey'  dangerouslySetInnerHTML={{ __html:props?.card[selectedServiceIndex]?.description || 
                         " " }}/>
                 </div>

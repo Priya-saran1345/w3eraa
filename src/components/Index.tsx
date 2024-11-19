@@ -22,7 +22,7 @@ import WebsiteReport from '@/components/websiteReport'
 import Loader from '@/components/loader';
 import ChooseAgency from "@/components/ChooseAgency"
 import Certificate from '@/components/Certificate'
-
+import CustomerChoose from '@/components/CustomerChoose';
 const Main = () => {
     const { basic_details } = Useapi();
     const { apidata } = Useapi();
@@ -49,11 +49,11 @@ const Main = () => {
       <Solution/>
       <ClientSays props={apidata?.clients_say[0]}  />
       <Choose props={apidata?.why_choose[0]}  />
-      <Faq1 props={apidata?.marketing_agency} title={"What to look for when choosing a digital marketing agency?"} />
+      <Faq1 props={apidata?.marketing_agency} title={"Frequently Asked Questions"} />
      <ChooseAgency/>
       <Revenue/>
       <Certificate/>
-
+      <CustomerChoose/>
       <Blogs props={apidata?.blog} />
       <Footer />
 </div>

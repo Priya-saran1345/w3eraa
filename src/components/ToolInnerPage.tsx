@@ -136,11 +136,11 @@ const Tool = () => {
     return (
         <>
             {
-                !tools &&
+                !tools && currentTool&&
                 <Loader />
             }
             {
-                tools &&
+                tools && currentTool&&
                 <div>
                     <Header />
                     <Navbar />
