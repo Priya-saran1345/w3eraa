@@ -20,7 +20,7 @@ const Page = () => {
          <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
-      <WebstroyPage/>
+      <WebstroyPage />
     </div>
   )
 }

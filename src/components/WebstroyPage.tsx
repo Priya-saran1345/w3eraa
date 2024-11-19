@@ -32,6 +32,7 @@ const WebStories = () => {
   }
   useEffect(() => {
     fetch();
+    
   }, [])
 
   return (
@@ -42,7 +43,7 @@ const WebStories = () => {
 
     }
    {basic_details&&data&&data_others&&
-    <div>
+    <div className='overflow-y-auto'>
       <Header />
       <Navbar />
       <CommonBanner title={data_others?.title || ''} description={data_others?.body || ''}

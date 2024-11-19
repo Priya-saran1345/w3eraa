@@ -36,7 +36,7 @@ const DriveResults = () => {
     return (
         <div className='w-full bg-lightblue  py-12 lg:py-16'>
             <div className='w-full xl:w-[75%] mx-auto px-4'>
-                <p className='  text-[28px] lg:text-[38px] xl:text-[48px] text-center lg:text-left capitalize font-bold'>{data.first} <span className='text-pink'>{data.second}</span></p>
+                <p className='  text-[28px] lg:text-[38px] text-homeblack xl:text-[48px] text-center lg:text-left capitalize font-bold'>{data.first} <span className='text-pink'>{data.second}</span></p>
             </div>
 
             <div className="flex mt-10 flex-wrap lg:flex-nowrap justify-center gap-5  items-center px-4 xl:px-0 w-full xl:w-[75%] mx-auto">

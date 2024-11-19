@@ -83,7 +83,7 @@ const Banner = () => {
             <div className="flex flex-col justify-around lg:flex-row py-10 lg:py-3 xl:justify-between  items-center">
               <div>
                 <div className='2xl:w-[80%]'>
-                <h1
+                <div
             className="font-bold text-center  sm:text-left text-[28px] lg:text-[32px] xl:text-[48px] 2xl:text-[55px] leading-tight xl:leading-[70px]"
             dangerouslySetInnerHTML={{ __html: bannerData?.title || "Default Title" }}
         />
@@ -153,7 +153,7 @@ const Banner = () => {
       </div>
       <div className='w-full border-b-2 border-lightblue mx-auto'>
         <div className="w-full px-6 xl:w-[75%] mx-auto ">
-          <p className=" text-[28px] lg:text-[38px] xl:text-[48px] text-homeback font-bold mt-8 mb-3">
+          <p className=" text-[28px] lg:text-[38px] xl:text-[48px] text-homeblack font-bold mt-8 mb-3">
             {data.first} <span className='text-pink'>{data.second}</span>
           </p>
           <div className="bg-white flex flex-wrap xl:flex-nowrap justify-center gap-4 items-center rounded-xl py-5 md:py-10">

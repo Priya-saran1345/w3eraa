@@ -33,6 +33,7 @@ export default function AMPStoryContent({ story }: { story: Story }) {
   }
   const handleCancel = () => {
     router.back()
+ 
 }
   return (
     <>

@@ -230,7 +230,6 @@ const Service_Pkackages = () => {
                                                     <div>
                                                     </div>
                                                 </div>
-
                                             ))
                                         }
                                     </div>
@@ -258,13 +257,13 @@ const Service_Pkackages = () => {
                                                     <div key={i} className='rounded-xl p-8  sm:w-[45%]  lg:w-[30%] xl:w-[22%] flex gap-2 items-start  bg-white hover:shadow-xl'>
                                                         {
                                                             elem?.icon &&
-                                                            <div className='p-4 size-[72px] flex justify-center items-center rounded-lg bg-lightblue'>
+                                                            <div className='p-3 size-[72px] flex justify-center items-center rounded-lg bg-lightblue'>
                                                                 <Image
                                                                     src={elem?.icon || ''}
                                                                     alt={''}
                                                                     height={48}
                                                                     width={36}
-                                                                    className={''}
+                                                                    className={'min-w-[36px]'}
                                                                 />
                                                             </div>
                                                         }
