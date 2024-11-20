@@ -11,12 +11,11 @@ const index = ({title,description,image,btnlink,btntext,image_alt ,status='false
     <div className='mx-auto xl:w-[75%] px-6 flex justify-center '>
         <div className='flex justify-between items-center py-4 md:py-10 gap-7'>
             <div className={`lg:w-1/2 flex flex-col  gap-6`}>
-                <h1 className=' leading-none xl:leading-[55px] font-bold '>{title}</h1>
+                <h1 className=' leading-none text-homeblack xl:leading-[55px] font-bold '>{title}</h1>
                 <StyledWrapper>
                 <div className="text-homegrey text-justify "  dangerouslySetInnerHTML={{ __html:description }} >
                                         </div>
                                         </StyledWrapper>
-
                 <div className='flex flex-wrap justify-center md:justify-start sm:gap-5'>
                 <Link href={'/get-a-free-quote'}>
                     <Button content={'Get a Free Quote'}></Button>

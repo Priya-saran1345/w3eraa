@@ -44,7 +44,7 @@ export default function Component({ props ,title }: any) {
     <div className="w-full bg-lightblue py-10 lg:py-16">
       <div className="mx-auto w-full px-4 md:w-[80%] xl:w-[70%]">
         <h2 className="my-3 text-center font-bold lg:leading-[54px] text-textPurple ">
-          {data.first} <br />
+          {data.first} 
           <span className="text-pink">{data.second}</span>
         </h2>
 
