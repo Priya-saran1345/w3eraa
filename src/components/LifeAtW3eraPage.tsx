@@ -104,7 +104,8 @@ const Life = () => {
                                     life?.fly_high[0].cards.map((elem: any, i:number) => (
                                         <div key={i} className='flex justify-end gap-5'>
                                             <div className='bg-white sm:w-[230px] lg:w-[272px] min-h-[252px] max-h-[330px] py-5 rounded-lg flex items-center  flex-col justify-center gap-4 px-4 text-center'>
-                                                <Image src={elem.icon} height={62} width={62} alt=''></Image>
+                                                <Image src={elem.icon}
+                                                 height={62} width={62} alt={elem.icon_alt}></Image>
                                                 <p className='text-[20px]  font-medium'>{elem.title}</p>
                                                 <p className=' text-textGrey font-'>{elem.description}</p>
                                             </div>

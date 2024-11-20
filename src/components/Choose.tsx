@@ -44,7 +44,8 @@ const Choose = ({props}:any) => {
 
             <div key={index} className='max-w-[404px] hover:shadow-xl border-[2px] relative border-lightblue min-h-[219px] bg-white rounded-xl group leading-[29px] p-10 flex flex-col gap-3'>
               <div className='bg-lightblue absolute -top-14 rounded-xl p-4 w-[110px] h-[90px] flex justify-center items-center'>
-                <Image src={card.icon} alt={card.title} height={62} width={62} />
+                <Image src={card.icon} 
+                alt={card.icon_alt} height={62} width={62} />
               </div>
               <p className=' text-[22px] lg:text-[24px] font-bold '>{card.title}</p>
               <p className='text-[16px] text-homegrey leading-tight'>

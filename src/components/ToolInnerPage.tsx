@@ -145,9 +145,8 @@ const Tool = () => {
                     <Header />
                     <Navbar />
                     <div className='w-full'>
-                        <div className='w-full bg-no-repeat bg-center bg-[url("/images/tool-bg.png")] py-9 flex flex-col justify-center items-center'>
-                            <p className='text-[32px] lg:text-[44px] font-bold text-white'>{currentTool[0]?.title || 'This is'}</p>
-
+                        <div className='w-full bg-no-repeat bg-center min-h-[40vh] bg-[url("/images/tool-bg.png")] py-9 flex flex-col justify-center items-center'>
+                            <h1 className='text-[32px] lg:text-[44px] font-bold text-white'>{currentTool[0]?.title || 'This is'}</h1>
                         </div>
                     </div>
                     <div className='mt-4 w-full px-4 xl:px-0 xl:w-[75%] mx-auto'>

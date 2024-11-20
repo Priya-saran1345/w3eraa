@@ -27,7 +27,7 @@ const Category = () => {
   // Fetch blog data
   const fetch = async (page: number = 1) => {
     try {
-      const response = await axios.get(`${BASE_URL}blogs/?category=${lastsegment}&page=${page}`);
+      const response = await axios.get(`${BASE_URL}blogs/?tags=${lastsegment}&page=${page}`);
       setBlogs(response?.data?.results.blogs);
       setdescriton(response.data.results.category_details);
       setTotalBlogs(response.data.count); // Set the total count of blogs
@@ -75,16 +75,16 @@ const Category = () => {
           <div className="w-full xl:w-[75%] mx-auto px-4 bg-white">
             <div className="mt-5 py-3 w-full border-b-[2px] border-lightblue">
               <p className="text-homegrey font-medium">
-                <Link href={'/blog'}>Blog</Link> / Category/<span className="text-pink capitalize">{lastsegment}</span>
+                <Link href={'/blog'}>Blog</Link> / tag/<span className="text-pink capitalize">{lastsegment}</span>
               </p>
             </div>
-            <div className="w-full leading-[21px] bg-lightblue text-[18px] text-homegrey p-4 md:p-10 mt-3 rounded-2xl">
+            {/* <div className="w-full leading-[21px] bg-lightblue text-[18px] text-homegrey p-4 md:p-10 mt-3 rounded-2xl">
               <div
                 dangerouslySetInnerHTML={{
                   __html: descripton?.description || 'data not available',
                 }}
               />
-            </div>
+            </div> */}
 
             <div className="w-full mt-16">
               <div className="w-full border-b-2 border-lightblue pb-5">

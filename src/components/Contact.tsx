@@ -135,11 +135,11 @@ const Contact = () => {
                     {data?.contact_page[0]?.banner_subtitle}
                   </p>
                   <div className="flex mt-5 gap-2">
-                    <Link href={`tel:${basic_details?.basic_details[0]?.phonenumber}`}>
+                    <a href={`tel:${basic_details?.basic_details[0]?.phonenumber}`}>
                       <button className="text-[18px] font-medium py-3 px-9 xl:w-[211px] bg-pink text-white rounded-lg">
                         Get a free Quote
                       </button>
-                    </Link>
+                    </a>
                     {/* <button className="text-[18px] font-medium py-3  px-9 xl:w-[211px] bg-white text-pink rounded-lg">Lorem</button> */}
                   </div>
                 </div>

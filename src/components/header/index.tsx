@@ -71,7 +71,7 @@ const Header = () => {
                   </div>
                   {openDropdown === "our-work" && (
                     <div className='absolute w-[200px] text-homeblack border-lightpink border-[2px] text-left z-50 top-10 flex flex-col   bg-white rounded-md ' onMouseLeave={() => handleToggle('')}>
-                      <Link  target='_blank'  href={'/testimonials'}><p className='hover:text-white py-4 px-5 hover:bg-pink border-slate-300'>We Work</p></Link>
+                      <Link  target='_blank'  href={'/testimonials'}><p className='hover:text-white py-4 px-5 hover:bg-pink border-slate-300'>Testimonials</p></Link>
                       <Link  target='_blank' href={'/case-study'}><p className='hover:text-white py-4 px-5 hover:bg-pink border-slate-300'>Case Study</p></Link>
                       <Link  target='_blank' href={'/our-client-list'}><p className='hover:text-white py-4 px-5 hover:bg-pink '>Our Clients</p></Link>
                     </div>

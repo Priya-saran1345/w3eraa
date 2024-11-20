@@ -195,7 +195,7 @@ basic_details && about&&
                                             <div className=' size-[30px] lg:size-[40px] rounded-full border-2 border-white flex justify-center items-center'>
                                                 <Image
                                                     src={elem.icon} // Ensure this path is correct
-                                                    alt={''}
+                                                    alt={elem.icon_alt}
                                                     height={12}
                                                     width={18}
                                                 />

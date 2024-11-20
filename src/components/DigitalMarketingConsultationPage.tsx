@@ -9,11 +9,12 @@ import { Useapi } from '@/helpers/apiContext';
 import ClientSays from "@/components/clientSays"
 import Image from 'next/image'
 import { BarChartIcon as ChartBar, Users, Phone, Newspaper } from 'lucide-react'
+import HubspotForm from '@/components/HubspotForm'
 
 const DigitalMarketingConsultationPage = () => {
   const { apidata } = Useapi();
   const [currentSlide, setCurrentSlide] = useState(0)
-  
+
   const slides = [
     {
       title: "Free Digital Marketing Consultation",
@@ -87,66 +88,20 @@ const DigitalMarketingConsultationPage = () => {
       </div>
 
       {/* Form Section */}
-      <div className=" bg-red-500 p-8 text-white">
+      <div className=" bg-blue p-8 text-white">
         <div className="max-w-md mx-auto">
           <h2 className="text-3xl font-bold mb-4">ENQUIRE NOW</h2>
           <p className="mb-8">Fill out the information below and we will call you soon</p>
           
-          <form className="space-y-4">
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="w-full p-3 rounded text-gray-900"
-              required
-            />
-            
-            <input
-              type="tel"
-              placeholder="Phone Number"
-              className="w-full p-3 rounded text-gray-900"
-              required
-            />
-            
-            <input
-              type="email"
-              placeholder="Email Address"
-              className="w-full p-3 rounded text-gray-900"
-              required
-            />
-            
-            <input
-              type="url"
-              placeholder="Website URL"
-              className="w-full p-3 rounded text-gray-900"
-              required
-            />
-            
-            <textarea
-              placeholder="Message"
-              rows={4}
-              className="w-full p-3 rounded text-gray-900"
-              required
-            />
-            
-            <div className="bg-white p-4 rounded">
-              <div className="text-gray-600 text-sm">
-                Protected by reCAPTCHA
-              </div>
-            </div>
-            
-            <button
-              type="submit"
-              className="w-full bg-white text-red-500 font-bold py-3 px-6 rounded hover:bg-gray-100 transition-colors"
-            >
-              Submit
-            </button>
-          </form>
+         
+                      <HubspotForm  portalId="20095080" formId={"f27c7197-db33-4e7e-a06c-eb8df7887b66"} region={'na1'} />
           
           <p className="mt-6 text-sm text-center">
             Create your own free forms to generate leads from your website.
           </p>
         </div>
       </div>
+
       </div>
     </div>
       <MarketingServices props={Data?.Digital_Marketing_Channels} />

@@ -17,6 +17,9 @@ import Link from 'next/link';
 import { Useapi } from '@/helpers/apiContext'
 import { useState } from "react";
 import FooterBanner from '@/components/footer-banner'
+import toast from "react-hot-toast";
+import axios from "axios";
+import { BASE_URL } from "@/util/api";
 
 const Footer = () => {
     const { basic_details } = Useapi();
@@ -24,6 +27,30 @@ const Footer = () => {
     const toggleDropdown = (index: any) => {
         setOpenDropdown(openDropdown === index ? null : index); // Toggle the dropdown
     };
+    const [message, setMessage] = useState({
+        name: "",
+        email: "",
+
+      });
+      const handleChange = (e: any) => {
+        setMessage({ ...message, [e.target.name]: e.target.value });
+      };
+      const handleSubmit = async () => {
+        try {
+          const response = await axios.post(`${BASE_URL}subscription/`, message);
+          console.log('Message sent successfully');
+          toast.success('Message send successfully')
+    
+          setMessage({
+            name: "",
+            email: "",
+          });
+        } catch (error) {
+          console.error('Error submitting data:', error);
+          toast.error('Try again')
+    
+        }
+      };
     return (
         <>
      <FooterBanner/>
@@ -38,18 +65,27 @@ const Footer = () => {
                     </div>
                     <div className='md:w-[45%]'>
                         <div className='flex sm:flex-row flex-col gap-6 justify-between'>
-                            <input type="text" placeholder='Full Name' className='py-3 px-5 bg-white w-full border-none rounded-lg outline-none text-textGrey' />
-                            <input type="email" placeholder='Email Address' className='py-3 px-5 bg-white w-full rounded-lg border-none outline-none text-textGrey' />
+                            <input 
+                            name="name"
+                            value={message.name}
+                            onChange={handleChange}
+                            type="text" placeholder='Full Name' className='py-3 px-5 bg-white w-full border-none rounded-lg outline-none text-textGrey' />
+                            <input 
+                            name="email"
+                            value={message.email}
+                            onChange={handleChange}
+                            type="email" placeholder='Email Address' className='py-3 px-5 bg-white w-full rounded-lg border-none outline-none text-textGrey' />
                         </div>
                         <div className='mt-2 sm:flex justify-between gap-10'>
-                            <div className="flex justify-start items-start gap-3">
+                            {/* <div className="flex justify-start items-start gap-3">
                                 <input type="checkbox" className="min-h-[15px] min-w-[15px] rounded-md mt-2" />
                                 <p className='text-[18px] block'>{basic_details?.subscribeto[0].description}</p>
-                            </div>
-                            <div className="flex justify-center mt-3 sm:mt-0 sm:block">
+                            </div> */}
+                            <div className="flex justify-end w-full mt-3 sm:mt-0 ">
 
                             <button
-                                className='flex items-center h-[50px] justify-center px-8  text-white  rounded-lg py-3 text-[18px] group bg-pink transition duration-300'>
+                            onClick={handleSubmit}
+                                className='flex items-center h-[50px] justify-end px-8  text-white  rounded-lg py-3 text-[18px] group bg-pink transition duration-300'>
                                 <span className=' transition-transform duration-200 group-hover:-translate-x-2'>   Subscribe</span>
                                 <FaArrowRightLong className='text-[20px] opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-x-2' />
                             </button>
@@ -57,6 +93,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
+                {/* put here */}
                 <div className=' mt-12 lg:mt-28  flex-wrap  lg:flex-nowrap flex lg:justify-around gap-8 px-7'>
                     <div className=' w-full sm:w-1/4'>
                         <div className=''>

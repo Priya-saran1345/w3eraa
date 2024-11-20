@@ -51,7 +51,6 @@ const Blogs = () => {
       block: 'start', // Align to the start of the section
     });
   };
-
   return (
     <div>
       {!blogs ? <Loader /> : (
@@ -59,9 +58,8 @@ const Blogs = () => {
           <Header />
           <Navbar />
           <div className="w-full px-4 bg-[url('/images/blog-bg.png')] h-[45vh] flex justify-center items-center">
-            <p className="text-white text-[32px] font-bold lg:text-[48px]">W3era Blogs</p>
+            <h1 className="text-white text-[32px] font-bold lg:text-[48px]">W3era Blogs</h1>
           </div>
-
           <div className="bg-lightblue py-5">
             <div className="w-full flex gap-5 relative h-full justify-between lg:flex-nowrap flex-wrap mx-auto xl:w-[95%] 2xl:w-[75%] px-4 text-white mb-8 lg:mb-32">
               <aside>

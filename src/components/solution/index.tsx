@@ -113,7 +113,7 @@ const Solution = () => {
                   <div  className="mb-6 flex h-[72px] w-[72px] items-center justify-center rounded-xl bg-lightblue">
                     <Image
                       src={elem.icon}
-                      alt=""
+                      alt={elem?.icon_alt}
                       height={44}
                       width={30}
                       className="text-primary"

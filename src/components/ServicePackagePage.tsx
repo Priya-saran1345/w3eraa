@@ -294,7 +294,7 @@ const Service_Pkackages = () => {
                                                             <div className='p-3 size-[72px] flex justify-center items-center rounded-lg bg-lightblue'>
                                                                 <Image
                                                                     src={elem?.icon || ''}
-                                                                    alt={''}
+                                                                    alt={elem?.icon_alt}
                                                                     height={48}
                                                                     width={36}
                                                                     className={'min-w-[36px]'}
@@ -384,9 +384,7 @@ const Service_Pkackages = () => {
                                 data?.service_packages_faq?.title && data?.service_packages_faq?.card &&
                                 <Faq props={data?.service_packages_faq?.card || []} title={data?.service_packages_faq.title} />
                             }
-                            {quicklinks &&
-                                <QuickLinks props={quicklinks} />
-                            }
+                           {quicklinks && quicklinks.length > 0 && <QuickLinks props={quicklinks} />}
                             {
                                 data?.service_card3.length > 0 &&
                                 <MarketingServices props={data?.service_card3[0]} />

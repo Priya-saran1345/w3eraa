@@ -83,8 +83,8 @@ const Page = () => {
                     <Header />
                     <Navbar />
                     <div className='w-full '>
-                        <div className='w-full bg-no-repeat bg-center bg-[url("/images/tool-bg.png")] py-9 flex flex-col justify-center items-center'>
-                            <p className='text-[32px] lg:text-[44px] font-bold text-white'>Free SEO Tools</p>
+                        <div className='w-full bg-no-repeat bg-center min-h-[40vh] bg-[url("/images/tool-bg.png")]  py-9 flex flex-col justify-center items-center'>
+                            <h1 className='text-[32px] lg:text-[44px] font-bold text-white'>Free SEO Tools</h1>
                             <div className='rounded-full w-1/3 flex justify-between items-center p-3 px-6 mt-4 bg-white'>
                                 <input
                                     type="text"

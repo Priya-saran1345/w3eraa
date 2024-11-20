@@ -21,7 +21,7 @@ const index = ({ props }: any) => {
                                             <div className='p-4 size-[72px] flex justify-center items-center rounded-lg bg-lightblue'>
                                                 <Image
                                                     src={elem.icon || ''}
-                                                    alt={''}
+                                                    alt={elem.icon_alt}
                                                     height={48}
                                                     width={36}
                                                     className={''}
@@ -32,7 +32,7 @@ const index = ({ props }: any) => {
                                 <div className=' flex justify-center items-center rounded-lg '>
                                     <Image
                                         src={elem?.icon || ''}
-                                        alt={''}
+                                        alt={elem.icon_alt}
                                         height={350}
                                         width={360}
                                         className={'w-full rounded-md'}

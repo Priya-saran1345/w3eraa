@@ -79,7 +79,7 @@ const Growth = () => {
                         ></p>
 
                     </div>
-                    <div className='flex flex-wrap justify-center md:justify-start sm:flex-nowrap mt-5 gap-2'>
+                    {/* <div className='flex flex-wrap justify-center md:justify-start sm:flex-nowrap mt-5 gap-2'>
                         <div className='bg-white p-3 flex gap-3 rounded-xl'>
                             <div className='rounded-full flex justify-center items-center size-[63px]'>
                                 <Image
@@ -127,7 +127,7 @@ const Growth = () => {
                         <div className='bg-white rounded-lg lg:hidden xl:flex items-center min-h-full p-3'>
                             <p className='text-blue text-[20px]'>5k+</p>
                         </div>
-                    </div>
+                    </div> */}
                     <div className='flex  mt-2'>
                         <Link href={'/get-a-free-quote'}>
                             <Button content={'Learn More'} />

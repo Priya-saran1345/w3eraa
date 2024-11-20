@@ -47,7 +47,7 @@ const DriveResults = () => {
                         <div className='p-4 size-[72px] flex justify-center items-center rounded-lg bg-lightblue'>
                             <Image
                                 src={elem.icon}
-                                alt={''}
+                                alt={elem?.icon_alt}
                                 height={44}
                                 width={30}
                                 className={''}

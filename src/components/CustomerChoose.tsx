@@ -12,7 +12,7 @@ const CustomerChoose = () => {
         title: 'Why Should Customers Choose W3era?',
         descriptions: 'Experience the competence of our digital marketing services as we amplify brand visibility, cultivate high-quality leads, and yield result-driven results',
         card: [{
-            image: '/images/c1.svg',
+            image: '/images/c6.svg',
             title: '15+ Years in Business'
             ,
             Descriptions: 'For over fifteen years, we have been delivering excellent SEO and Digital Marketing services to loads of customers, and each year, we become stronger and stronger in our vision and mission'
@@ -46,7 +46,7 @@ const CustomerChoose = () => {
                 'We are constantly altering our SEO tactics to keep the search scores in line with the current search engine guidelines.'
         },
         {
-            image: '/images/c6.svg',
+            image: '/images/c1.svg',
             title: '360 Degree Approach'
             ,
             Descriptions:
@@ -65,7 +65,6 @@ const CustomerChoose = () => {
         const splitIndex = words.length - numOfWords;
         const firstPart = words.slice(0, splitIndex).join(' ');
         const secondPart = words.slice(splitIndex).join(' ');
-
         return { first: firstPart, second: secondPart };
     }
     useEffect(() => {

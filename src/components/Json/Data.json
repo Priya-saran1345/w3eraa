@@ -8,24 +8,28 @@
           "id": 63,
           "icon":"/images/digital1.png",
           "title": "Google Adwords",
+          " icon_alt":"",
           "description": "<p>At W3Era, our  rofessionals understand that Blog commenting generates useful and relevant backlinks from your niche. If you use our  rofessional Blog Commenting Service then we assure you to provide good relationships and a network of connections through various relevant blogs. We never do blog commenting with the direct intention of link building; instead, we participate in discussions, ask questions, and give answers for knowledge sharing. In this process, we may also get the backlinks for the website.</p>"
         },
         {
           "id": 64,
           "icon":"/images/digital2.png",
           "title": "Seo",
+         " icon_alt":"",
           "description": "<p>Commenting Policy – we do blog commenting in a very natural way instead of a promotional activity.</strong></p><p>Best Anchor text – We always use the best anchor text according to your business.</strong></p><p>Manual Submissions – We only do manual submissions.</strong></p><p>Flexible Plans – we offer various plans according to the number of blog comments.</strong></p><p>Valuable Comments – We believe in a respectable commenting process which increases your brand reputation, that is why we avoid leaving comments with harsh or rude words.</strong></p><p>Focus on Quality blogs – We only use high-quality, do-follow blogs.</strong></p><p>Deep Linking – We also create deep links.</strong></p><p>Avoid Spamming – We are against spamming, so we always follow an ethical blog commenting policy.</strong></p>"
         },
         {
           "id": 65,
           "icon":"/images/digital4.png",
           "title": "Content",
+          " icon_alt":"",
           "description": "<p>High-Class Backlinks – Best way to generate high-class backlinks.</strong></p><p>High Traffic – Instant results of high traffic towards a website.</strong></p><p>Generate Opportunity – Consistent and good performance in discussions and fruitful comments may generate opportunities for you, like proposals for more discussions and guest posting as well.</strong></p><p>Profile Recognition – By adding knowledgeable and helpful comments, you may increase your profile recognition.</strong></p><p>Targeted Traffic – Niche blog commenting service provides targeted traffic.</strong></p>"
         },
         {
             "id": 66,
             "icon":"/images/digital4.png",
             "title": "Website Enhancement",
+            " icon_alt":"",
             "description": "<p>High-Class Backlinks – Best way to generate high-class backlinks.</strong></p><p>High Traffic – Instant results of high traffic towards a website.</strong></p><p>Generate Opportunity – Consistent and good performance in discussions and fruitful comments may generate opportunities for you, like proposals for more discussions and guest posting as well.</strong></p><p>Profile Recognition – By adding knowledgeable and helpful comments, you may increase your profile recognition.</strong></p><p>Targeted Traffic – Niche blog commenting service provides targeted traffic.</strong></p>"
           },
           {
@@ -50,31 +54,37 @@
         {
           "id": 63,
           "icon":"/images/process1.png",
+          " icon_alt":"",
           "description": "Goal Analysis"
         },
         {
           "id": 64,
           "icon":"/images/process2.png",
+          " icon_alt":"",
           "description": "Audience Research   "
         },
         {
           "id": 65,
           "icon":"/images/process4.png",
+          " icon_alt":"",
           "description": "Competition Analysis"
         },
         {
             "id": 66,
             "icon":"/images/process4.png",
+            " icon_alt":"",
             "description": "Finding Channels"
           },
           {
             "id": 67,
             "icon":"/images/process5.png",
+            " icon_alt":"",
             "description": "Creating Content"
           },
           {
             "id": 68,
             "icon":"/images/process6.png",
+            " icon_alt":"",
             "description": "Measuring Results"
           }
       ]
