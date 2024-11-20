@@ -45,7 +45,7 @@ export default function Component({ props ,title }: any) {
       <div className="mx-auto w-full px-4 md:w-[80%] xl:w-[70%]">
         <h2 className="my-3 text-center font-bold lg:leading-[54px] text-textPurple ">
           {data.first} 
-          <span className="text-pink">{data.second}</span>
+          <span className=" mx-2 text-pink">{data.second}</span>
         </h2>
 
         <div className="mt-14 rounded-2xl bg-white p-4 md:p-16">

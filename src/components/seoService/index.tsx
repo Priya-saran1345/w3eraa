@@ -8,7 +8,7 @@ const index = ({ props }: any) => {
             <div className='xl:w-[75%] px-4 mx-auto flex flex-col gap-10'>
                 <div className='md:w-[80%] flex flex-col gap-4 mx-auto'>
 
-                    <h2 className=' text-[32px] text-center lg:text-[38px] font-bold text-homeblack leading-[45px]'>{props?.title || ''} </h2>
+                    <h2 className=' text-center  font-bold text-homeblack leading-[45px]'>{props?.title || ''} </h2>
                     <p className=' text-center text-[18px]  text-homegrey '>{props?.description ||
                      '  '}</p>
                 </div>
@@ -42,7 +42,7 @@ const index = ({ props }: any) => {
                                 </div>
                                 }
                                 <p className='text-[26px] font-medium text-homeblack leading-[31px]'>{elem?.title}</p>
-                                <p
+                                <div
                                     className='text-[16px] text-homegrey text-justify leading-[22px]'
                                     dangerouslySetInnerHTML={{ __html: elem?.description   }}
                                 />

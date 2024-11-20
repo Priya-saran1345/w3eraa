@@ -1,5 +1,9 @@
+
+
+
 "use client";
-import { useEffect } from "react";
+
+import { useEffect, useRef } from "react";
 
 // Extend the Window interface to include hbspt
 declare global {
@@ -12,37 +16,49 @@ interface HubspotProps {
   portalId: string;
   formId: string;
   region: string;
+  target?: string;
 }
 
-const Hubspot = ({ portalId, formId, region }: HubspotProps) => {
+const Hubspot = ({ portalId, formId, region, target }: HubspotProps) => {
+  const formRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://js.hsforms.net/forms/v2.js";
-    script.async = true;
-    script.onload = () => {
-      if (window.hbspt) {
+    // Check if the script is already loaded
+    if (window.hbspt) {
+      renderForm();
+    } else {
+      const script = document.createElement("script");
+      script.src = "https://js.hsforms.net/forms/v2.js";
+      script.async = true;
+      script.onload = () => {
+        renderForm();
+      };
+      document.body.appendChild(script);
+    }
+
+    function renderForm() {
+      if (window.hbspt && formRef.current) {
         window.hbspt.forms.create({
           portalId,
           formId,
           region,
-          target: "#hubspotForm",
+          target: `#${formRef.current.id}`,
         });
       }
-    };
-    document.body.appendChild(script);
+    }
 
     return () => {
-      // Clean up the script to prevent duplicates
-      const existingScript = document.querySelector(
-        'script[src="https://js.hsforms.net/forms/v2.js"]'
-      );
-      if (existingScript) {
-        existingScript.remove();
+      // Clean up the form instance
+      if (formRef.current) {
+        formRef.current.innerHTML = '';
       }
     };
   }, [portalId, formId, region]);
 
-  return <div id="hubspotForm"></div>;
+  // Generate a unique ID for each form instance
+  const uniqueId = `hubspotForm-${formId}`;
+
+  return <div ref={formRef} id={uniqueId}></div>;
 };
 
 export default Hubspot;

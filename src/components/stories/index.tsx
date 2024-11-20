@@ -14,10 +14,9 @@ const Stories = ({ props }: any) => {
       {props?.map((elem: any, index: number) => (
         <div
           key={index}
-          className='relative h-[573px] w-full sm:w-[48%] md:w-[32%] lg:w-[24%] justify-center group rounded-lg overflow-hidden'
+          className='relative h-[573px] hover:cursor-pointer w-full sm:w-[48%] md:w-[32%] lg:w-[24%] justify-center group rounded-lg overflow-hidden'
           onClick={() => router.push(`/web-stories/${elem?.slug}`)}
         >
-         
           <Image
             src={elem.image}
             alt={elem?.image_alt}
@@ -25,7 +24,6 @@ const Stories = ({ props }: any) => {
             objectFit="cover"
             className="rounded-lg"
           />
-          
           <div className='absolute top-0 left-0 w-full h-full rounded-lg bg-gradient-to-t from-black to-transparent flex flex-col justify-between p-4'>
             <div className='flex justify-end'>
               <div className='min-w-[42px] h-[42px] rounded-full flex justify-center items-center group-hover:bg-white duration-200'>
@@ -33,10 +31,10 @@ const Stories = ({ props }: any) => {
               </div>
             </div>
             <div className='text-white'>
-              <p
-                className="text-[18px] font-bold leading-[21px]"
+              <div
+                className="text-[18px] font-bold "
                 dangerouslySetInnerHTML={{ __html: elem?.title }}
-              ></p>
+              ></div>
               <p className='text-[14px] mt-1'>
                 {elem?.description}
               </p>

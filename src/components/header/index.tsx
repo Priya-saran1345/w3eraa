@@ -53,7 +53,7 @@ const Header = () => {
                     <div className='absolute w-[200px] text-homeblack text-left border-lightpink border-[2px] z-50 top-10 flex flex-col   bg-white  rounded-md ' onMouseLeave={() => handleToggle('')}>
                       <Link target='_blank' href={'/about-us'}><p className=' hover:bg-pink px-5 hover:text-white py-4   border-slate-300'>Who we are</p></Link>
                       <Link target='_blank' href={'/life-at-w3era'}><p className=' hover:bg-pink px-5 hover:text-white py-4   border-slate-300'>Life at w3era</p></Link>
-                      <Link target='_blank' href={'/blog'}><p className=' hover:bg-pink hover:text-white  px-5  py-4 border-slate-300'>
+                      <Link target='_blank' href={'/faq'}><p className=' hover:bg-pink hover:text-white  px-5  py-4 border-slate-300'>
                         Know More</p></Link>
                     </div>
                   )}
@@ -71,7 +71,7 @@ const Header = () => {
                   </div>
                   {openDropdown === "our-work" && (
                     <div className='absolute w-[200px] text-homeblack border-lightpink border-[2px] text-left z-50 top-10 flex flex-col   bg-white rounded-md ' onMouseLeave={() => handleToggle('')}>
-                      <Link  target='_blank'  href={'/work'}><p className='hover:text-white py-4 px-5 hover:bg-pink border-slate-300'>We Work</p></Link>
+                      <Link  target='_blank'  href={'/testimonials'}><p className='hover:text-white py-4 px-5 hover:bg-pink border-slate-300'>We Work</p></Link>
                       <Link  target='_blank' href={'/case-study'}><p className='hover:text-white py-4 px-5 hover:bg-pink border-slate-300'>Case Study</p></Link>
                       <Link  target='_blank' href={'/our-client-list'}><p className='hover:text-white py-4 px-5 hover:bg-pink '>Our Clients</p></Link>
                     </div>

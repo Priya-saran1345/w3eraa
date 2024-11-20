@@ -14,6 +14,7 @@ import axios from 'axios'
 import { BASE_URL } from '@/util/api'
 import { Useapi } from '@/helpers/apiContext';
 import Loader from '@/components/loader'
+import CustomerChoose from '@/components/CustomerChoose';
 
 const Page = () => {
     const { apidata } = Useapi();
@@ -79,7 +80,8 @@ data&&caseStudydata&&
                    
             </div>
             <Revenue />
-            <Choose props={apidata?.why_choose[0]} />
+            {/* <Choose props={apidata?.why_choose[0]} /> */}
+            <CustomerChoose/>
 
         
             <Footer />

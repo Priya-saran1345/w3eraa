@@ -66,7 +66,7 @@ const Index = ({ props }: any) => {
     <div className='bg-white py-12 hidden md:block lg:py-16'>
       <div className='xl:w-[75%] px-6 mx-auto'>
         {/* Title and Overall Ratings Section */}
-        <h2 className='text-[28px] text-homeblack font-semibold lg:text-[38px]'>
+        <h2 className=' text-homeblack font-semibold '>
           Our Ratings on Clutch
         </h2>
         <div className='mt-8 flex border-b-2 flex-wrap border-lightblue'>

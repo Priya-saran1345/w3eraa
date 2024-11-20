@@ -20,7 +20,7 @@ const ChooseAgency = () => {
 
                         <MdKeyboardDoubleArrowRight className='text-pink text-[30px] mt-3' />
                         <p className='text-[16px] gap-2 text-justify mt-2  items-center text-homegrey lg:text-[18px]'>
-                            <span className='font-semibold text-[20px] text-homeblack'>Expertise and Track Record:</span>
+                            <span className='font-semibold text-[20px] text-homeblack mr-2'>Expertise and Track Record:</span>
                             Evaluate the agency&apos;s experience and success in delivering effective campaigns across diverse industries.
                         </p>
                     </div>
@@ -28,7 +28,7 @@ const ChooseAgency = () => {
 
                         <MdKeyboardDoubleArrowRight className='text-pink text-[30px] mt-3' />
                         <p className='text-[16px] gap-2 text-justify mt-2  items-center text-homegrey lg:text-[18px]'>
-                            <span className='font-semibold text-[20px] text-homeblack'>Transparency Matters:</span>
+                            <span className='font-semibold text-[20px] text-homeblack mr-2'>Transparency Matters:</span>
                             Seek an agency that is transparent about its strategies, methods, and past results, avoiding those promising unrealistic overnight success.
                         </p>
                     </div>
@@ -36,7 +36,7 @@ const ChooseAgency = () => {
 
                         <MdKeyboardDoubleArrowRight className='text-pink text-[30px] mt-3' />
                         <p className='text-[16px] gap-2 text-justify mt-2  items-center text-homegrey lg:text-[18px]'>
-                            <span className='font-semibold text-[20px] text-homeblack'>Comprehensive Service Offering:</span>
+                            <span className='font-semibold text-[20px] text-homeblack mr-2'>Comprehensive Service Offering:</span>
                             Opt for an agency that provides a wide range of services encompassing SEO, social media, content creation, and analytics.    </p>
                     </div>
 
@@ -45,7 +45,7 @@ const ChooseAgency = () => {
 
                         <MdKeyboardDoubleArrowRight className='text-pink text-[30px] mt-3' />
                         <p className='text-[16px] gap-2 text-justify mt-2  items-center text-homegrey lg:text-[18px]'>
-                            <span className='font-semibold text-[20px] text-homeblack'>Skillful Team:</span>
+                            <span className='font-semibold text-[20px] text-homeblack mr-2'>Skillful Team:</span>
                             Ensure the agency&apos;s team possesses a diverse skill set, from strategic planning and design to copywriting and data analysis.
                         </p>
                     </div>
@@ -53,7 +53,7 @@ const ChooseAgency = () => {
 
                         <MdKeyboardDoubleArrowRight className='text-pink text-[30px] mt-3' />
                         <p className='text-[16px] gap-2 text-justify mt-2  items-center text-homegrey lg:text-[18px]'>
-                            <span className='font-semibold text-[20px] text-homeblack'>Customized Approach:</span>
+                            <span className='font-semibold text-[20px] text-homeblack mr-2'>Customized Approach:</span>
                             Inquire about their approach to understanding your business and target audience, aiming for a strategy aligned with your brand&apos;s unique identity.
                         </p>
                     </div>
@@ -61,7 +61,7 @@ const ChooseAgency = () => {
 
                         <MdKeyboardDoubleArrowRight className='text-pink text-[30px] mt-3' />
                         <p className='text-[16px] gap-2 text-justify mt-2  items-center text-homegrey lg:text-[18px]'>
-                            <span className='font-semibold text-[20px] text-homeblack'> Budget Alignment:</span>
+                            <span className='font-semibold text-[20px] text-homeblack mr-2'> Budget Alignment:</span>
                             Select a digital marketing agency that offers the best quality services at affordable prices.
                         </p>
                     </div>
@@ -69,7 +69,7 @@ const ChooseAgency = () => {
 
                         <MdKeyboardDoubleArrowRight className='text-pink text-[30px] mt-3' />
                         <p className='text-[16px] gap-2 text-justify mt-2  items-center text-homegrey lg:text-[18px]'>
-                            <span className='font-semibold text-[20px] text-homeblack'>Effective Communication: </span>
+                            <span className='font-semibold text-[20px] text-homeblack mr-2'>Effective Communication: </span>
                             Emphasize open communication and collaboration, seeking an agency that maintains regular updates and engages closely with your team.
                         </p>
                     </div>

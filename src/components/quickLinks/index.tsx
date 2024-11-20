@@ -7,7 +7,7 @@ const Quicklinks = ({ props }: any) => {
   return (
     <div className="w-full px-6 mx-auto pt-10 pb-8 lg:pt-20 xl:w-[75%]">
       <div className="md:w-[50%] px-4 mx-auto text-center flex flex-col gap-3">
-        <p className="text-[28px] text-homeblack font-bold lg:text-[38px]">Quick Links </p>
+        <h2 className=" text-homeblack font-bold ">Quick Links </h2>
         {/* Optionally, you can add a description */}
         {/* <p className='text-homegrey text-[18px]'>Find all the essential resources at your fingertips. Explore our services, get in touch, or access important information easily.</p> */}
       </div>

@@ -34,6 +34,8 @@ import Packages from '@/components/Packages/index'
 import Link from 'next/link'
 import Other from '@/components/OtherPage'
 import { div } from 'framer-motion/client'
+import CustomerChoose from '@/components/CustomerChoose';
+
 
 const Service_Pkackages = () => {
     const { basic_details } = Useapi();
@@ -48,6 +50,7 @@ const Service_Pkackages = () => {
     const [activePlan, setActivePlan] = useState<string | null>('Professional'); // Default to "Professional"
     const router = useRouter();
     const [quicklinks, setquicklinks] = useState<any>()
+    const [err, seterr] = useState<any>(false)
     const fetchPackages = async () => {
         try {
             const response = await axios.get(`${BASE_URL}service-packages/${lastsegment}/`);
@@ -55,7 +58,8 @@ const Service_Pkackages = () => {
         } catch (error: any) {
             console.log('service ,package error', error);
             if (error?.response?.status === 404) {
-                router.push('/not/found')
+                // router.push('/not/found')
+                seterr(true)
             }
         }
         try {
@@ -111,6 +115,35 @@ const Service_Pkackages = () => {
                 <Button content='Get a quote' />
             </Link>}</div>;
     };
+    if(err){
+        return (    <div className='w-full'>
+            <Header />
+            <Navbar />
+            <div className='w-full flex justify-center items-center bg-lightblue'>
+      <div className='flex flex-col justify-center items-center max-h-[500px] xl:w-[75%] px-6 mx-auto'>
+        {/* Ensure the image path is correct */}
+        <Link href={'/'}>
+        <Image src='/images/loader.gif' height={500} width={500} alt='Loading Animation' />
+        </Link>
+        
+        <p className='text-[48px] font-extrabold  text-center mt-6 drop-shadow-lg'>
+           404 Page Not Found
+        </p>
+
+        <div className='mt-8 pb-24 flex gap-4'>
+          <Link href="/" passHref>
+            <Button content='Home' />
+          </Link>
+          <Link href="/blog" passHref>
+            <Button content='Blog' />
+          </Link>
+        </div>
+      </div>
+    </div>
+            <Footer/>
+        </div>)
+            
+        }
     return (
         <div >
             {
@@ -175,6 +208,10 @@ const Service_Pkackages = () => {
                                 </div>
 
                             }
+                             {!(lastsegment == 'google-business-profile-management-services') &&
+                                data?.service_card1.length > 0 &&
+                                <SeoService props={data?.service_card1[0]} />
+                            }
                             {
                                 (lastsegment === 'blog-commenting-service') &&
 
@@ -237,17 +274,14 @@ const Service_Pkackages = () => {
                                 </div>
                             }
 
-                            {!(lastsegment == 'google-business-profile-management-services') &&
-                                data?.service_card1.length > 0 &&
-                                <SeoService props={data?.service_card1[0]} />
-                            }
+                           
                             {
 
                                 (lastsegment == 'google-business-profile-management-services') &&
                                 <div className='w-full bg-lightblue py-10 text-white  lg:py-16'>
                                     <div className='xl:w-[75%] px-4 mx-auto flex flex-col gap-10'>
                                         <div className='md:w-[80%] flex flex-col gap-4 mx-auto'>
-                                            <h2 className=' text-[32px] text-center lg:text-[38px] font-bold text-homeblack leading-[45px]'>{data?.service_card1[0]?.title || ''} </h2>
+                                            <h2 className='  text-center  font-bold text-homeblack leading-[45px]'>{data?.service_card1[0]?.title || ''} </h2>
                                             <p className=' text-center text-[18px]  text-homegrey '>{data?.service_card1[0]?.description ||
                                                 '  '}</p>
                                         </div>
@@ -336,9 +370,11 @@ const Service_Pkackages = () => {
                                 <TrustedPartner props={data?.service_type[0]} />
                             )}
                             <Revenue />
-                            {data?.why_choose &&
+                            {/* {data?.why_choose &&
                                 <Choose props={data?.why_choose} />
-                            }
+                            } */}
+                                  <CustomerChoose/>
+
                             {
                                 data?.our_package.length > 0 &&
                                 <Packages props={data?.our_package} />
@@ -532,10 +568,12 @@ const Service_Pkackages = () => {
                                 <Faq props={data?.service_packages_faq?.card} title={data?.service_packages_faq?.title} />
                             }
                             <WebsiteReport />
-                            {
+                            {/* {
                                 data?.why_choose &&
                                 <Choose props={data?.why_choose} />
-                            }
+                            } */}
+                                  <CustomerChoose/>
+
                             {
                                 data?.our_package.length > 0 &&
                                 <Packages props={data?.our_package} />

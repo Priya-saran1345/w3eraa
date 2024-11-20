@@ -8,6 +8,8 @@ import Revenue from '@/components/revenue';
 import { Useapi } from '@/helpers/apiContext'
 import Loader from '@/components/loader';
 import Link from 'next/link';
+import CustomerChoose from '@/components/CustomerChoose';
+
 
 const Client = () => {
     const { client } = Useapi(); 
@@ -89,7 +91,9 @@ client&& apidata&&
                     <Revenue />
                 </div>
             </div>
-            <div className='w-full py-12 lg:py-16'>
+            <CustomerChoose/>
+
+            {/* <div className='w-full py-12 lg:py-16'>
                 <div className='2xl:w-[75%] w-full px-4 mx-auto'>
                     <p className='lg:text-[48px] text-[32px] font-bold text-center'>Why Should Customers Choose W3era?</p>
                     <div className='flex flex-wrap mt-10 gap-5 justify-center'>
@@ -118,7 +122,7 @@ client&& apidata&&
                         }
                     </div>
                 </div>
-            </div>
+            </div> */}
             <Footer />
         </div>
            }
