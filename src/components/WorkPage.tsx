@@ -147,7 +147,7 @@ const Work = () => {
                         Providing regular performance reports and refining strategies based on insights to maximize effectiveness.                                                 </p>
                     </div>
                 </div>
-                <div >
+                {/* <div >
                     <div className='md:w-[40%] mt-10 mx-auto flex flex-col gap-4 text-center'>
                     <p className=' text-[32px] lg:text-[48px] font-bold'>Lorem Ipsum is simply</p>
                     <p className='text-[18px] font-medium'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, </p>
@@ -157,7 +157,7 @@ const Work = () => {
                  </Link>
                     </div>
                     </div>
-                </div>
+                </div> */}
             </div>
             <Footer />
         </div>

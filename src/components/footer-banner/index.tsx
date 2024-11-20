@@ -5,6 +5,8 @@ import { GoArrowUpRight } from 'react-icons/go';
 import axios from 'axios';
 import { BASE_URL } from '@/util/api';
 import toast from 'react-hot-toast';
+import HubspotForm from '@/components/HubspotForm'
+
 const Footerbanner = ({ content, slug, image, description, btncontent }: any) => {
   const [message, setMessage] = useState({
     name: "",
@@ -91,10 +93,10 @@ const Footerbanner = ({ content, slug, image, description, btncontent }: any) =>
       <div className='w-full mx-auto rounded-xl pt-12 bg-lightblue bg-cover bg-center'>
         <div className='w-full relative rounded-xl xl:w-[75%] mx-auto bg-white flex justify-between items-center'>
           <div className='bg-white md:w-[55%] flex-col flex text-center md:text-left px-4 sm:px-12 py-10 md:py-0'>
-            <p className='text-homeblack font-semibold mt-3 lg:leading-[45px] text-[24px] lg:text-[38px]'>
+            {/* <p className='text-homeblack font-semibold mt-3 lg:leading-[45px] text-[24px] lg:text-[38px]'>
               Discover How We Can Help Your Business Grow.
-            </p>
-            <div className="px-2 py-2 flex flex-col gap-5">
+            </p> */}
+            {/* <div className="px-2 py-2 flex flex-col gap-5">
               <div className="flex sm:flex-nowrap flex-wrap justify-between gap-10">
                 <div className='sm:w-1/2 flex flex-col'>
                 <input
@@ -178,15 +180,7 @@ const Footerbanner = ({ content, slug, image, description, btncontent }: any) =>
                 {errors.message && <span className="text-red-500">{errors.message}</span>}
               </div>
               <div>
-                {/* <label className="flex items-center gap-2">
-                  <input
-                    type="checkbox"
-                    checked={isChecked}
-                    onChange={handleCheckboxChange}
-                  />
-                  <span className="text-[16px] md:text-[16px] lg:text-[18px]">I agree to the terms and conditions</span>
-                </label> */}
-                {/* {errors.isChecked && <span className="text-red-500">{errors.isChecked}</span>} */}
+               
               </div>
               <div className='w-fit'>
                 <button 
@@ -201,7 +195,9 @@ const Footerbanner = ({ content, slug, image, description, btncontent }: any) =>
                   </span>
                 </button>
               </div>
-            </div>
+            </div> */}
+            <HubspotForm  portalId="20095080" formId={"2a841ab2-9b37-41a6-a33e-6e1321aa9bff"} region={'na1'}/>
+
           </div>
           <div className='rounded-2xl'>
             <Image src={'/images/girlFooter.png'} loading='eager' height={312} width={488} alt='' className='hidden md:block rounded-r-2xl' />

@@ -17,6 +17,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Loader from '@/components/loader'
 import toast from 'react-hot-toast'
+import HubspotForm from '@/components/HubspotForm'
 
 const Contact = () => {
   const { basic_details } = Useapi();
@@ -90,11 +91,11 @@ const Contact = () => {
       <Navbar />
       <div className="w-full bg-no-repeat bg-[url('/images/contactbanner.png')] ">
         <div className=" mx-auto xl:w-[75%]  px-4  py-24 flex flex-wrap md:flex-nowrap justify-center gap-8 items-start">
-          <div className="w-full xl:w-[75%]  shadow-xl rounded-2xl bg-white">
-            <div className="w-full bg-gray-200 text-center py-6 rounded-t-xl text-[22px] md:text-[28px] font-semibold">
+          <div className="w-full xl:w-[75%] p-8  shadow-xl rounded-2xl bg-white">
+            {/* <div className="w-full bg-gray-200 text-center py-6 rounded-t-xl text-[22px] md:text-[28px] font-semibold">
              GET A FREE QUOTE
-            </div>
-            <div className="p-8 flex flex-col gap-5">
+            </div> */}
+            {/* <div className="p-8 flex flex-col gap-5">
               <div className="flex sm:flex-nowrap flex-wrap justify-between gap-10">
                 <input
                   type="text"
@@ -192,7 +193,8 @@ const Contact = () => {
                   Submit
                 </button>
               </div>
-            </div>
+            </div> */}
+            <HubspotForm  portalId="20095080" formId={"fa975034-9559-4ada-bdfe-bb84df26e68d"} region={'na1'}/>
           </div>
         </div>
       </div>

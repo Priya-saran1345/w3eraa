@@ -32,20 +32,27 @@ const TestimonialCard = ({ props }: any) => {
               <div className='flex gap-2 items-center'>
                 <div className='flex justify-center border-lightblue border-2 items-center w-[53px] h-[53px] rounded-full'>
                   {
-item?.image&&
+                    item?.image &&
                     <Image
-                    src={item?.image
-                    }
+                      src={item?.image
+                      }
+                      height={63}
+                      width={63}
+                      alt={item?.image_alt}
+                      className='rounded-full'
+                    />
+                  }
+                  {
+                    !item?.image &&
+                    // <CiUser className=' text-blue font-bold text-[30px]' />
+                    <Image
+                    src='/images/testimonial-user.svg'
+                    
                     height={63}
                     width={63}
                     alt={item?.image_alt}
                     className='rounded-full'
-                    />
-                  }
-                  {
-                    !item?.image&&
-                    <CiUser  className=' text-blue font-bold text-[30px]' />
-
+                  />
                   }
                 </div>
                 <div>
@@ -66,8 +73,7 @@ item?.image&&
                 width={13}
                 alt="Upper Coma"
               />
-                <p className='text-[18px] my-2 text-homegrey' dangerouslySetInnerHTML={{ __html: item.description }} />
-
+              <p className='text-[18px] my-2 text-homegrey' dangerouslySetInnerHTML={{ __html: item.description }} />
               <div className='w-full flex justify-end'>
                 <Image
                   src={'/images/lovercoma.svg'}
@@ -95,7 +101,7 @@ item?.image&&
             className={`flex justify-center size-[45px] items-center rounded-full ${currentPage === totalPages ? 'bg-pink text-white cursor-not-allowed' : 'bg-grey text-pink cursor-pointer'}`}
             onClick={handleNext}
           >
-            <FaAngleRight  />
+            <FaAngleRight />
           </div>
         </div>
       </div>

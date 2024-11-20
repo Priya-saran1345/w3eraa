@@ -12,12 +12,10 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
 import axios from 'axios'
 import { BASE_URL } from '@/util/api'
-import FooterBanner from '@/components/footer-banner'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Loader from '@/components/loader'
-import index from '@/components/Navbar-items'
 import toast from 'react-hot-toast'
 import Link from 'next/link'
  import HubspotForm from '@/components/HubspotForm'
