@@ -189,7 +189,6 @@ input:-webkit-autofill {
 .loader:after {
   transform: rotate(60deg);
 }
-
 @keyframes l26 {
   100% {transform:rotate(1turn)}
 }
@@ -200,29 +199,29 @@ input:-webkit-autofill {
   background-repeat: no-repeat !important;
 }
 h2{
-  font-size:42px!important;
+  font-size:40px!important;
 }
-
-
-
-
+h1{
+  font-size: 48px!important;
+}
 @media (max-width: 1250px)
 {
   h2{
-
-    font-size:34px!important;
+    font-size:32px!important;
   }
-
+  h1{
+    font-size: 38px!important;
+  }
 }
-
-
 @media (max-width: 1050px)
 {
   h2{
 
-    font-size:28px!important;
+    font-size:24px!important;
   }
-
+  h1{
+    font-size: 28px!important;
+  }
 }
 
 .vef_bg {
