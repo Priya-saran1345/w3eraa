@@ -29,7 +29,7 @@ export default Page
   export async function generateMetadata() {
     try {
       const metaData = await fetchMeta("life-at-w3era");
-      console.log('metadata of about us',metaData)
+     
       return {
         title: metaData?.title || '',
         description: metaData?.description || '',

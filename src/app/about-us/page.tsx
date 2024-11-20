@@ -75,7 +75,8 @@ export async function generateMetadata() {
       //   canonical: metaData?.openGraph?.url || '',
       // },
     };
-  } catch (error) {
+  }
+ catch (error) {
     console.error('Error fetching meta data:', error);
     return {
       title: 'W3era® | Performance Driven Digital Marketing Company',

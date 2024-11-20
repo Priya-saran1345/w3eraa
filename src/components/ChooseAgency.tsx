@@ -6,7 +6,7 @@ const ChooseAgency = () => {
     return (
         <div className='w-full  border-b-[1px] border-blue py-12 lg:py-16'>
             <p className='w-full xl:w-[75%] mx-auto px-4 lg:px-[30px]'>
-                <h2 className=' text-[28px] text-center lg:text-[38px]  xl:text-[38px] capitalize   font-bold'>
+                <h2 className=' text-center  capitalize   font-bold'>
                     What to look for when choosing a digital marketing agency?
                 </h2>
                 <p className='text-[16px] text-homegrey lg:text-[18px] mt-2 text-center'>In the digital marketing world,

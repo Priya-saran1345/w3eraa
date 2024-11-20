@@ -61,12 +61,11 @@ const CaseStudy: React.FC = () => {
         sliderTextRef.current?.slickNext();
         sliderImageRef.current?.slickNext();
     };
-    
     return (
         <div className='w-full bg-white py-8 md:py-20'>
             <div className='w-full mx-auto p-4 md:p-16 border-[2px] border-slate-100 rounded-3xl xl:w-[82%]'>
                 <div>
-                    <p className=' text-[28px] lg:text-[38px] xl:text-[48px] text-homeblack font-bold'>{data.first} <span className='text-pink'>{data.second}</span></p>
+                    <h2 className='  text-homeblack font-bold'>{data.first} <span className='text-pink'>{data.second}</span></h2>
                 </div>
                 <div className='flex flex-col md:flex-row mt-5 justify-between items-center w-full md:gap-16'>
                     <div className='md:w-[40%]'>

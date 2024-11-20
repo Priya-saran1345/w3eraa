@@ -32,7 +32,7 @@ export default function Data({ props }: any) {
       <div className="w-full px-4 xl:w-[75%] mx-auto">
         <div className="md:w-[60%] mx-auto text-center">
           {/* Title */}
-          <h2 className="  text-[28px] lg:text-[38px] xl:text-[48px] font-bold text-homeblack mt-4 text-center leading-tight">
+          <h2 className="  font-bold text-homeblack mt-4 text-center leading-tight">
             {heading.first} <span className="text-pink">{heading.second}</span>
           </h2>
           {/* Description */}

@@ -27,7 +27,6 @@ export default Page
 export async function generateMetadata() {
   try {
     const metaData = await fetchMeta("testimonials");
-    console.log('metadata of about us',metaData)
     return {
       title: metaData?.title || '',
       description: metaData?.description || '',

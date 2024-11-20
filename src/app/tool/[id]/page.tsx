@@ -16,7 +16,6 @@ async function SchemaScript({ params}:any) {
   )
 }
 const Page = ({ params }: any) => {
-  console.log('Slug from URL:', params.slug);  // Check the dynamic slug passed
 
   return (
     <div>
@@ -35,7 +34,7 @@ export async function generateMetadata({ params }: any) {
 
   try {
     const metaData = await fetchMeta(`tool/${slug}`);
-    console.log('metadata of about us',metaData)
+   
     return {
       title: metaData?.title || '',
       description: metaData?.description || '',

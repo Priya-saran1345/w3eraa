@@ -199,28 +199,43 @@ input:-webkit-autofill {
   background-position: cover !important;
   background-repeat: no-repeat !important;
 }
-/* h2{
-  font-size:48px!important;
+h2{
+  font-size:42px!important;
 }
 
 
 
 
-@media (min-width: 1250px)
+@media (max-width: 1250px)
 {
   h2{
 
-    font-size:38px!important;
+    font-size:34px!important;
   }
 
 }
 
 
-@media (min-width: 1050px)
+@media (max-width: 1050px)
 {
   h2{
 
     font-size:28px!important;
   }
 
-} */
+}
+
+.vef_bg {
+  margin-top: 30px;
+  color: white !important;
+  background-color: var(--blue);
+  border-radius: 20px !important;
+}
+.vef_btn {
+  background-color: var(--pink);
+  padding: 15px 20px !important;
+  color: white !important;
+  border-radius: 10px !important;
+  cursor: pointer;
+}
+

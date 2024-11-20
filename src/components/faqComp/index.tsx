@@ -43,10 +43,10 @@ export default function Component({ props ,title }: any) {
   return (
     <div className="w-full bg-lightblue py-10 lg:py-16">
       <div className="mx-auto w-full px-4 md:w-[80%] xl:w-[70%]">
-        <p className="my-3 text-center  text-[28px] lg:text-[38px] xl:text-[48px] font-bold lg:leading-[54px] text-textPurple ">
+        <h2 className="my-3 text-center font-bold lg:leading-[54px] text-textPurple ">
           {data.first} <br />
           <span className="text-pink">{data.second}</span>
-        </p>
+        </h2>
 
         <div className="mt-14 rounded-2xl bg-white p-4 md:p-16">
           {props?.map((item: any, index: number) => (

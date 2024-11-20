@@ -33,7 +33,6 @@ export async function generateMetadata({ params }: any) {
 
   try {
     const metaData = await fetchMeta(`seo-by-industry/${params?.id}/${params?.nonId}`);
-    console.log('metadata of about us',metaData)
     return {
       title: metaData?.title || '',
       description: metaData?.description || '',

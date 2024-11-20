@@ -9,7 +9,7 @@ const Revenue = () => {
     <div className='w-full py-10 md:py-16  text-white bg_rev'>
       <div className='w-full xl:w-[75%] text-center lg:text-left text-white mx-auto px-4'>
        
-        <h2 className=' mt-4 font-bold  text-[28px] lg:text-[38px] xl:text-[48px]'>Need Revenue? We Can Help!</h2>
+        <h2 className=' mt-4 font-bold '>Need Revenue? We Can Help!</h2>
         <p className='  text-[16px] lg:text-[18px]'>Experience the competence of our digital marketing services as we amplify brand visibility,
            cultivate high-quality leads, and yield result-driven results. </p>
 

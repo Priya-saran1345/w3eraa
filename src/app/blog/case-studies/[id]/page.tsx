@@ -34,7 +34,6 @@ export async function generateMetadata({ params }: any) {
 
   try {
     const metaData = await fetchMeta(`blog/case-studies/${slug}`);
-    console.log('metadata of about us',metaData)
     return {
       title: metaData?.title || '',
       description: metaData?.description || '',

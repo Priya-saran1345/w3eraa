@@ -98,7 +98,7 @@ const Solution = () => {
   return (
     <div className="w-full border-t border-slate-100">
       <div className="mx-auto w-full px-4 py-10 md:py-16 xl:w-[75%]">
-        <h2 className="mb-4 text-[24px] lg:text-[30px] font-bold leading-tight text-black xl:text-[37px]">
+        <h2 className="mb-4  font-bold leading-tight text-black ">
           {data.first} <span className="text-pink">{data.second}</span>
         </h2>
         <p className="mb-8 text-[16px] lg:text-[18px] leading-tight text-muted-foreground">

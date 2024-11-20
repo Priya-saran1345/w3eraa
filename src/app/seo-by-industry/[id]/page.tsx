@@ -34,7 +34,7 @@ export default Page
 
     try {
       const metaData = await fetchMeta(`seo-by-industry/${slug}`);
-      console.log('metadata of about us',metaData)
+     
       return {
         title: metaData?.title || '',
         description: metaData?.description || '',

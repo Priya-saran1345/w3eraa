@@ -6,7 +6,6 @@ import React from 'react'
  async function SchemaScript() {
   const metaData = await fetchMeta("portfolio")
   const schemaData = metaData?.scripts[0].content
-
   return (
     <script
       type="application/ld+json"
@@ -29,7 +28,7 @@ export default Page
 export async function generateMetadata() {
   try {
     const metaData = await fetchMeta("portfolio");
-    console.log('metadata of about us',metaData)
+   
     return {
       title: metaData?.title || '',
       description: metaData?.description || '',

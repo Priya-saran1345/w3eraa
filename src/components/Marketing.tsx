@@ -37,8 +37,7 @@ const Marketing = () => {
       <div className=" flex justify-between flex-col md:flex-row items-center  px-4 w-full xl:w-[75%] mx-auto">
         <div className="lg:w-1/2 text-center flex flex-col gap-3 md:text-left">
           <p className='text-homeblack text-[18px] lg:text-[20px] font-semibold  uppercase'>{marketingData?.subtitle}</p>
-          
-          <p className='  font-bold  text-homeblack text-[28px] lg:text-[38px] xl:text-[48px] lg:leading-[58px]'>{data.first} <span className='text-pink'>{data.second}</span></p>
+          <h2 className='  font-bold  text-homeblack  lg:leading-[58px]'>{data.first} <span className='text-pink'>{data.second}</span></h2>
           <p className='text-homegrey text-[16px] lg:text-[18px]'>{marketingData?.summary}</p>
           <div className='flex gap-4 mt-5 flex-wrap sm:flex-nowrap justify-between'>
             <div className="bg-lightblue p-5 rounded-lg items-start flex gap-4 group hover:bg-white duration-300 hover:shadow-lg transition-all">

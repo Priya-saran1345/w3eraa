@@ -33,7 +33,7 @@ const Packages = ({props}:any) => {
     return (
         <div className='w-full bg-lightblue  py-12 lg:py-16'>
             <div className='w-full xl:w-[75%] mx-auto px-4'>
-                <h2 className=' text-[28px] lg:text-[38px] xl:text-[48px] capitalize text-center text-homeblack lg:text-left font-bold'>{data.first}
+                <h2 className=' capitalize text-center text-homeblack lg:text-left font-bold'>{data.first}
                      <span className='text-pink'> {data.second}</span></h2>
             </div>
             <div className="flex flex-wrap lg:flex-nowrap mt-10 justify-center gap-5  items-center px-4 lg:px-3 w-full xl:w-[75%] mx-auto">
