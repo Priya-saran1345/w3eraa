@@ -21,7 +21,7 @@ const Navbar = () => {
               width={137} 
               loading='eager'
               height={58} 
-              alt='Logo' 
+              alt={basic_details?.basic_details[0]?.logo_alt} 
               className="cursor-pointer"
             />
           </Link>

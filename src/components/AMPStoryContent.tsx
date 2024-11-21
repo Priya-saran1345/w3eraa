@@ -9,7 +9,6 @@ interface Card {
   description: string
   image: string
 }
-
 interface Story {
   id: number
   slug: string
@@ -56,16 +55,14 @@ export default function AMPStoryContent({ story }: { story: Story }) {
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
-
       <div>
-
         <amp-story
           standalone=""
           title={stripHtml(story.title) || "W3era story"}
           publisher={story?.author}
           publisher-logo-src="/images/logo.png"
           poster-portrait-src={story.image || ""}
-        >
+          >
           {story.card.map((card: Card, index: number) => (
             <amp-story-page key={card.id} id={`page-${index + 1}`} auto-advance-after="10s">
               <amp-story-grid-layer template="fill">
@@ -81,9 +78,12 @@ export default function AMPStoryContent({ story }: { story: Story }) {
               </amp-story-grid-layer>
               <amp-story-grid-layer template="vertical">
                 <div className='bg-black/45 p-4 rounded-xl' animate-in="fly-in-bottom">
-                  <h1 animate-in="fly-in-top" animate-in-delay="0.3s" className=' text-[24px] font-semibold text-white text-center'>
-                    {stripHtml(card.title)}
-                  </h1>
+                  <h1
+                    animate-in="fly-in-top"
+                    animate-in-delay="0.3s"
+                    className="text-[28px] leading-[54px] font-semibold text-white text-center"
+                    dangerouslySetInnerHTML={{ __html: card.title }}
+                  ></h1>
                   <p
                     animate-in="fly-in-left"
                     animate-in-delay="0.5s"
