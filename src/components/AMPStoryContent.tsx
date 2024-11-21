@@ -61,10 +61,10 @@ export default function AMPStoryContent({ story }: { story: Story }) {
 
         <amp-story
           standalone=""
-          title={stripHtml(story.title) || "AMP Story"}
-          publisher="W3era"
-          publisher-logo-src="https://amp.dev/favicons/coast-228x228.png"
-          poster-portrait-src={story.image || "https://amp.dev/static/samples/img/story_dog2_portrait.jpg"}
+          title={stripHtml(story.title) || "W3era story"}
+          publisher={story?.author}
+          publisher-logo-src="/images/logo.png"
+          poster-portrait-src={story.image || ""}
         >
           {story.card.map((card: Card, index: number) => (
             <amp-story-page key={card.id} id={`page-${index + 1}`} auto-advance-after="10s">

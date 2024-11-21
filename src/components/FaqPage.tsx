@@ -24,7 +24,7 @@ export default function AnimatedFaqs() {
         <Header />
         <Navbar />
         <div className='flex h-[45vh] w-full items-center justify-center bg-[url("/images/blog-bg.png")] px-4'>
-          <p className='text-center text-[32px] font-bold text-white lg:text-[48px]'>Frequently Asked Questions</p>
+          <h1 className='text-center  font-bold text-white '>Frequently Asked Questions</h1>
         </div>
         <div className='mx-auto mb-8 flex w-full flex-wrap bg-lightblue mt-20 rounded-lg justify-between gap-5 px-4 lg:px-10 pt-10 text-white lg:mb-32 md:py-10 xl:w-[75%]'>
           {faq?.map((item: any, index: number) => (

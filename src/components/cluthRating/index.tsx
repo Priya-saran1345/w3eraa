@@ -7,7 +7,6 @@ import Button from '@/components/button';
 import { CiUser } from 'react-icons/ci';
 import { RiVerifiedBadgeLine } from "react-icons/ri";
 import  Link from 'next/link';
-
 // Slider component
 const Index = ({ props }: any) => {
 

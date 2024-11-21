@@ -237,4 +237,6 @@ h1{
   border-radius: 10px !important;
   cursor: pointer;
 }
-
+.justify-content p{
+text-align: justify;
+}

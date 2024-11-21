@@ -16,12 +16,13 @@ import Link from 'next/link'; // Updated import
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Button from '@/components/button'
-import styled from 'styled-components'
 import CommonBanner from '@/components/Common-Banner'
 import { usePathname } from 'next/navigation';
 import { BASE_URL } from '@/util/api';
 import axios from 'axios';
 import Image from 'next/image';
+import {StyledWrapper} from '@/components/Styled'
+
 
 const Main = () => {
     const { apidata } = Useapi();
@@ -186,15 +187,3 @@ data?.title && data?.image&&
 };
 
 export default Main;
-const StyledWrapper = styled.div`
-  ul {
-    list-style: disc;
-  }
-
-  ol, ul {
-    padding-left: 1.5rem;
-  }
-      a{
-    color:red;
-    font-weight:500;}
-    `

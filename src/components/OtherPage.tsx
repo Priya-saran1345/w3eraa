@@ -6,8 +6,9 @@ import Navbar from '@/components/navbar'
 import Revenue from '@/components/revenue'
 
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
 import CommonBanner from '@/components/Common-Banner'
+import {StyledWrapper} from '@/components/Styled'
+
 const Page = ({props}:any) => {
   const [other, setother] = useState<any>()
 
@@ -54,46 +55,3 @@ other&&
 }
 
 export default Page
-const StyledWrapper = styled.div`
-  menu, ol, ul {
-    list-style: disc !important;
-  }
-  h2 ,h1{
-    font-size: 28px !important; /* 36px */
-    font-weight: 700; /* Bold */
-  }
-  h3 {
-
-    font-size: 1.5rem; /* 24px */
-    font-weight: 600; /* Semi-Bold */
-  }
-
-  h4 {
-
-    font-size: 1.25rem; /* 20px */
-    font-weight: 600; /* Semi-Bold */
-  }
-
-  h5 {
-
-    font-size: 5rem; /* 16px */
-    font-weight: 500; /* Medium */
-  }
-  h6 {
-
-    font-size: 0.875rem; /* 14px */
-    font-weight: 400; /* Medium */
-  }
- p {
-  font-size: 1rem; /* 16px */
-  font-weight: 400; /* Regular */
-  color: #535353; /* Replace with your color */
-  line-height:28px
-}
-  ol, ul {
-    padding-left: 1.5rem;
-  }
-      a{
-    color:red;
-    font-weight:500;}
-`

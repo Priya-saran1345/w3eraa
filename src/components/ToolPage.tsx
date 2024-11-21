@@ -11,7 +11,8 @@ import { BASE_URL } from '@/util/api';
 import Link from 'next/link';
 import { HiArrowTopRightOnSquare } from 'react-icons/hi2';
 import Loader from '@/components/loader';
-import styled from 'styled-components'
+import {StyledWrapper} from '@/components/Styled'
+
 
 //  import {useRouter} from 'next/navigation';
 const Page = () => {
@@ -188,59 +189,4 @@ const Page = () => {
 };
 
 export default Page;
-const StyledWrapper = styled.div`
-  menu, ol, ul {
-    list-style: disc !important;
-  }
-h1
-{font-size: 32px ;
-color:var(--homeblack);
-font-weight:600 !important;}
-  h2 {
 
-    font-size: 28px !important; /* 36px */
-    font-weight: 400; /* Bold */
-    color:var(--homeblack);
-
-  }
-
-  h3 {
-
-    font-size: 1.5rem; /* 24px */
-    font-weight: 400; /* Semi-Bold */
-  }
-
-  h4 {
-
-    font-size: 1.25rem; /* 20px */
-    font-weight: 600; /* Semi-Bold */
-  }
-
-  h5 {
-
-    font-size: 5rem; /* 16px */
-    font-weight: 500; /* Medium */
-  }
-
-  h6 {
-
-    font-size: 0.875rem; /* 14px */
-    font-weight: 400; /* Medium */
-  }
-
-  ol, ul {
-    padding-left: 1.5rem;
-  }
-    table{
-    border:1px solid black;
-    margin-top:26px ;
-    margin-bottom:26px
-    width:100% ;
-    }
-    td{
-    padding-x:10px;
-    border:1px solid black;}
-      a{
-    color:red;
-    font-weight:500;}
-`

@@ -14,7 +14,7 @@ import { IoReturnUpBackOutline } from 'react-icons/io5';
 import Button from '@/components/button';
 import { BsBoxArrowUpRight } from 'react-icons/bs';
 import Loader from '@/components/loader';
-import styled from 'styled-components'
+import {StyledWrapper} from '@/components/Styled'
 
 const Tool = () => {
     const [innerloading, setinnerloading] = useState<any>(false)
@@ -409,64 +409,3 @@ const Tool = () => {
 }
 
 export default Tool;
-const StyledWrapper = styled.div`
-  ul {
-    list-style: disc;
-  }
-
- 
-   h1{
-
-    font-size: 32px !important; /* 36px */
-   
-  }
-h2{
- font-size: 28px  !important; /*
-     font-weight: 500 !important; /* Semi-Bold */
-
-}
-  h3 {
-
-    font-size: 1.5rem; /* 24px */
-    font-weight: 600; /* Semi-Bold */
-  }
-
-  h4 {
-
-    font-size: 1.25rem; /* 20px */
-    font-weight: 600; /* Semi-Bold */
-  }
-
-  h5 {
-
-    font-size: 5rem; /* 16px */
-    font-weight: 500; /* Medium */
-  }
-
-  h6 {
-
-    font-size: 0.875rem; /* 14px */
-    font-weight: 400; /* Medium */
-  }
- p {
-  font-size: 1rem; /* 16px */
-  font-weight: 400; /* Regular */
-  color: #535353; /* Replace with your color */
-}
-  ol, ul {
-    padding-left: 1.5rem;
-    list-style-type:disc;
-  }
-    table{
-    border:1px solid black;
-    margin-top:26px ;
-    margin-bottom:26px
-    width:100% ;
-    }
-    td{
-    padding-x:10px;
-    border:1px solid black;}
-    a{
-    color:red;
-    font-weight:500;}
-`

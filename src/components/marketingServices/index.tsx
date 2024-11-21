@@ -2,6 +2,8 @@ import React from 'react'
 import Image from 'next/image'
 import Button from '@/components/button'
 import Link from 'next/link'
+import {StyledWrapper} from '@/components/Styled'
+
 const index = ({ props }: any) => {
     return (
         <div className='w-full bg-lightblue py-10 text-white  lg:py-16'>
@@ -40,7 +42,9 @@ const index = ({ props }: any) => {
                                 }
                                         <p className='text-[26px] font-medium text-homeblack leading-[31px]'>{elem?.title}</p>
                                         <p className='text-[20px]  text-homeblack mt-2 leading-[31px]'>{elem?.subtitle}</p>
+                                        <StyledWrapper>
                                         <div className='text-[16px] text-homegrey mt-2 leading-[22px]' dangerouslySetInnerHTML={{ __html: elem?.description }} />
+                                   </StyledWrapper>
                                     </div>:
                                      <div className='flex flex-col gap-3 justify-center items-center'>
                                      {
@@ -55,7 +59,9 @@ const index = ({ props }: any) => {
                                  }
                                      <p className='text-[26px] font-medium text-homeblack leading-[31px]'>{elem?.title}</p>
                                      <p className='text-[20px]  text-homeblack leading-[31px]'>{elem?.subtitle}</p>
-                                     <p className='text-[16px] text-homegrey leading-[22px] text-justify' dangerouslySetInnerHTML={{ __html: elem?.description }} />
+                                     <StyledWrapper>
+                                     <div className='text-[16px] text-homegrey leading-[22px] text-justify' dangerouslySetInnerHTML={{ __html: elem?.description }} />
+                                 </StyledWrapper>
                                  </div>
                                 }
                                 <div>
@@ -75,5 +81,4 @@ const index = ({ props }: any) => {
         </div>
     )
 }
-
 export default index

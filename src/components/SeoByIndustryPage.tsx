@@ -21,6 +21,8 @@ import CommonBanner from '@/components/Common-Banner'
 import { BASE_URL } from '@/util/api';
 import axios from 'axios';
 import Image from 'next/image';
+import {StyledWrapper} from '@/components/Styled'
+
 const Main = () => {
     const { apidata } = Useapi();
     const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(null);
@@ -157,15 +159,3 @@ const [data, setdata] = useState<any>()
 };
 
 export default Main;
-const StyledWrapper = styled.div`
-  ul {
-    list-style: disc;
-  }
-
-  ol, ul {
-    padding-left: 1.5rem;
-  }
-      a{
-    color:red;
-    font-weight:500;}
-    `

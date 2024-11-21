@@ -9,7 +9,7 @@ import { BASE_URL } from '@/util/api';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
-import styled from 'styled-components'
+import {StyledWrapper} from '@/components/Styled'
 import Loader from '@/components/loader';
 const Blogs = () => {
     const { blogs } = Useapi();
@@ -155,58 +155,4 @@ const Blogs = () => {
     );
 };
 export default Blogs;
-const StyledWrapper = styled.div`
-  menu, ol, ul {
-    list-style: disc !important;
-  }
 
-  h2 ,h1{
-
-    font-size: 28px !important; /* 36px */
-    font-weight: 700; /* Bold */
-  }
-
-  h3 {
-
-    font-size: 1.5rem; /* 24px */
-    font-weight: 600; /* Semi-Bold */
-  }
-
-  h4 {
-
-    font-size: 1.25rem; /* 20px */
-    font-weight: 600; /* Semi-Bold */
-  }
-
-  h5 {
-
-    font-size: 5rem; /* 16px */
-    font-weight: 500; /* Medium */
-  }
-
-  h6 {
-
-    font-size: 0.875rem; /* 14px */
-    font-weight: 400; /* Medium */
-  }
- p {
-  font-size: 1rem; /* 16px */
-  font-weight: 400; /* Regular */
-  color: #535353; /* Replace with your color */
-}
-  ol, ul {
-    padding-left: 1.5rem;
-  }
-    table{
-    border:1px solid black;
-    margin-top:26px ;
-    margin-bottom:26px
-    width:100% ;
-    }
-    td{
-    padding-x:10px;
-    border:1px solid black;}
-      a{
-    color:red;
-    font-weight:500;}
-`

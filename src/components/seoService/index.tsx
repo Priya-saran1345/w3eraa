@@ -2,6 +2,8 @@ import React from 'react'
 import Button from '@/components/button'
 import Image from 'next/image'
 import Link from 'next/link'
+import {StyledWrapper} from '@/components/Styled'
+
 const index = ({ props }: any) => {
     return (
         <div className='w-full bg-lightblue py-10 text-white  lg:py-16'>
@@ -42,10 +44,12 @@ const index = ({ props }: any) => {
                                 </div>
                                 }
                                 <p className='text-[26px] font-medium text-homeblack leading-[31px]'>{elem?.title}</p>
+                                <StyledWrapper>
                                 <div
                                     className='text-[16px] text-homegrey text-justify leading-[22px]'
                                     dangerouslySetInnerHTML={{ __html: elem?.description   }}
                                 />
+                                    </StyledWrapper>
                                 <div>
                                    
                                 </div>
