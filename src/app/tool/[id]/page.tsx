@@ -34,12 +34,10 @@ export async function generateMetadata({ params }: any) {
 
   try {
     const metaData = await fetchMeta(`tool/${slug}`);
-   
     return {
       title: metaData?.title || '',
       description: metaData?.description || '',
       keywords: metaData?.keywords ||'',
-
       openGraph: metaData?.openGraph
         ? {
             type: metaData.openGraph.type || '',

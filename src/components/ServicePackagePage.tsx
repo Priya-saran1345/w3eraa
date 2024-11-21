@@ -253,10 +253,17 @@ const Service_Pkackages = () => {
 
                                 </div>
                             }
-                            {/* {data?.packagecategory?.length > 0 &&(
+                         
+                          
+                            {data?.packagecategory?.length > 0 &&(
+                             
+                                <div className='py-10 lg:py-16'>
+                                    {
 
-                           
-                                  <div className='bg-white  w-full px-4 xl:w-[75%] mx-auto py-10 lg:py-16'>
+                                        data.package_title &&
+                                   <h2 className=' text-center  font-bold text-homeblack leading-[45px]'>{ data.package_title} </h2>
+                                    }
+                                  <div className='bg-white  w-full px-4 xl:w-[75%] mx-auto '>
                                   <div className='mt-16'>
                                       <div className='shadow-lg  p-5 border-slate-200 border-[1px]  rounded-2xl mb-4'>
                                           <div className='overflow-x-auto'>
@@ -373,8 +380,9 @@ const Service_Pkackages = () => {
                                       </div>
                                   </div>
                               </div>
+                              </div>
                                )
-                            } */}
+                            }
                             {(lastsegment === 'dallas-seo-services') &&
                                 <SeoIndustryService props={Jsondata?.dallas_seo_services} />
                             }

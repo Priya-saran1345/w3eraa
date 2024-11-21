@@ -1,7 +1,7 @@
 'use client';
 import Header from '@/components/header';
 import Navbar from '@/components/navbar';
-import React, { useEffect, useState ,useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Footer from '@/components/footer';
 import Image from 'next/image';
 import Loader from '@/components/loader';
@@ -74,7 +74,6 @@ const Blogs = () => {
                     />
                     <button className="bg-pink rounded-md text-white py-2 px-6">Search</button>
                   </div>
-
                   <div className="bg-white leading-tight p-8 rounded-lg text-textGrey text-[18px] hidden lg:block">
                     <div className="border-b-2 border-pink w-fit mb-4 text-black">
                       <p className="text-[24px] font-medium mb-1 text-homeblack">Recent Posts</p>
@@ -82,79 +81,81 @@ const Blogs = () => {
                     <ul className="flex flex-col gap-3 list-disc mx-4">
                       {blogs?.results?.blogs?.slice(0, 5).map((elem: any) => (
                         <div key={elem?.slug_link}>
-                         <Link href={`/blog/${elem?.slug_link}`} key={elem?.slug_link}>
+                          <Link href={`/blog/${elem?.slug_link}`} key={elem?.slug_link}>
 
-                          <p>{elem?.title}</p>
+                            <p>{elem?.title}</p>
                           </Link>
                         </div>
                       ))}
                     </ul>
                   </div>
                   <div className='bg-white p-8 rounded-lg max-h-[280px]  overflow-y-auto text-textGrey text-[18px] hidden lg:block'>
-                                        <div className='border-b-2 border-pink w-fit mb-4 text-black'>
-                                            <p className='text-[24px] font-medium mb-1'>Categories</p>
-                                        </div>
-                                        <ul className='flex flex-col leading-tight gap-3 list-disc mx-4'>
-                                            {blogs?.results?.category?.map((elem: any) => (
-                                                <Link href={`/blog/category/${elem?.category_slug}`} key={elem.name}>
-                                                    <li className='hover:text-pink cursor-pointer'>{elem?.name}</li>
-                                                </Link>
-                                            ))}
-                                        </ul>
-                             </div>
+                    <div className='border-b-2 border-pink w-fit mb-4 text-black'>
+                      <p className='text-[24px] font-medium mb-1'>Categories</p>
+                    </div>
+                    <ul className='flex flex-col leading-tight gap-3 list-disc mx-4'>
+                      {blogs?.results?.category?.map((elem: any) => (
+                        <Link href={`/blog/category/${elem?.category_slug}`} key={elem.name}>
+                          <li className='hover:text-pink cursor-pointer'>{elem?.name}</li>
+                        </Link>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </aside>
-
               <div className="w-full">
-              <div className='bg-white p-3 md:p-8 mt-5 block lg:hidden  rounded-lg text-textGrey text-[18px] '>
-                                    <div>
+                <div className='bg-white p-3 md:p-8 mt-5 block lg:hidden  rounded-lg text-textGrey text-[18px] '>
+                  <div>
 
-                                        <div className='border-b-2 border-pink w-fit mb-4 text-black'>
-                                            <p className='text-[24px] font-medium mb-1'>Categories</p>
-                                        </div>
-                                        <div className='flex flex-wrap mt-6  leading-tight gap-3 list-disc md:mx-4'>
-                                            {blogs?.results?.category?.map((elem: any) => (
-                                                <Link href={`/blog/category/${elem?.category_slug}`} key={elem.name}>
-                                                    <div className='hover:text-pink p-2 rounded-md bg-grey cursor-pointer'>{elem?.name}</div>
-                                                </Link>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
+                    <div className='border-b-2 border-pink w-fit mb-4 text-black'>
+                      <p className='text-[24px] font-medium mb-1'>Categories</p>
+                    </div>
+                    <div className='flex flex-wrap mt-6  leading-tight gap-3 list-disc md:mx-4'>
+                      {blogs?.results?.category?.map((elem: any) => (
+                        <Link href={`/blog/category/${elem?.category_slug}`} key={elem.name}>
+                          <div className='hover:text-pink p-2 rounded-md bg-grey cursor-pointer'>{elem?.name}</div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
                 <div className="md:px-5 " ref={sectionRef}>
                   <div className="border-b-2 border-pink w-fit mb-4 text-black">
                     <p className="text-[28px] text-homeblack font-semibold mb-1">Latest Blogs</p>
                   </div>
 
-                  {filteredBlogs.length>0? (
+                  {filteredBlogs.length > 0 ? (
                     filteredBlogs.map((elem: any, index: number) => (
-                     <Link href={`/blog/${elem?.slug_link}`} key={index}>
+                      <Link href={`/blog/${elem?.slug_link}`} key={index}>
 
-                      <div key={index} className="bg-white rounded-lg my-4 w-full p-4 flex sm:flex-row flex-col
+                        <div key={index} className="bg-white rounded-lg my-4 w-full p-4 flex sm:flex-row flex-col
                        sm:text-left items-start gap-2 ">
-                        <Image
-                          src={elem?.image || ''}
-                          height={175}
-                          width={328}
-                          alt={elem?.image_alt}
-                          className="w-full sm:w-[300px] min-h-[175px] xl:min-w-[328px]"
-                        />
-                        <div className="flex flex-col ml-4 items-start gap-2">
-                          <p className="text-[20px] text-homeblack font-medium">{elem?.title}</p>
-                          <p className="text-homegrey text-[18px]">
-                            <Link href={`/blog/category/${elem?.category?.category_slug}`}>
-                            <span className="text-blue font-medium">{elem?.category?.name || 'Uncategorized'}</span> |
-                            </Link>
-                            &nbsp;<span className="text-homegrey">{elem?.blog_date || ''}</span>
-                          </p>
-                          <p className="text-[18px] text-textGrey">
-                            {elem?.summary && elem?.summary.length > 100
-                              ? `${elem?.summary.substring(0, 80)}...`
-                              : elem?.summary}
-                          </p>
-                          <button className="text-pink text-[18px]  font-medium">Read More</button>
+                        {
+                          elem?.image &&
+                          <Image
+                            src={elem?.image || ''}
+                            height={175}
+                            width={328}
+                            alt={elem?.image_alt}
+                            className="w-full sm:w-[300px] min-h-[175px] xl:min-w-[328px]"
+                          />
+                        }
+                          <div className="flex flex-col ml-4 items-start gap-2">
+                            <p className="text-[20px] text-homeblack font-medium">{elem?.title}</p>
+                            <p className="text-homegrey text-[18px]">
+                              <Link href={`/blog/category/${elem?.category?.category_slug}`}>
+                                <span className="text-blue font-medium">{elem?.category?.name || 'Uncategorized'}</span> |
+                              </Link>
+                              &nbsp;<span className="text-homegrey">{elem?.blog_date || ''}</span>
+                            </p>
+                            <p className="text-[18px] text-textGrey">
+                              {elem?.summary && elem?.summary.length > 100
+                                ? `${elem?.summary.substring(0, 80)}...`
+                                : elem?.summary}
+                            </p>
+                            <button className="text-pink text-[18px]  font-medium">Read More</button>
+                          </div>
                         </div>
-                      </div>
                       </Link>
                     ))
                   ) : (
@@ -167,8 +168,8 @@ const Blogs = () => {
                       total={blogs?.count || 0} // Total blogs count
                       pageSize={10} // Assuming 10 blogs per page
                       onChange={handlePageChange} // Handle page change
-                      // showQuickJumper
-                      // showTotal={(total) => `Total ${total} blogs`} // Display total number of blogs
+                    // showQuickJumper
+                    // showTotal={(total) => `Total ${total} blogs`} // Display total number of blogs
                     />
                   </div>
                 </div>

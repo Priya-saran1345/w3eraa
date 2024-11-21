@@ -12,7 +12,7 @@ import Link from 'next/link';
 import { HiArrowTopRightOnSquare } from 'react-icons/hi2';
 import Loader from '@/components/loader';
 import {StyledWrapper} from '@/components/Styled'
-
+import HubspotForm from '@/components/HubspotForm'
 
 //  import {useRouter} from 'next/navigation';
 const Page = () => {
@@ -110,7 +110,7 @@ const Page = () => {
                                             />
                                             <p className='text-[20px] text-center font-medium'>{elem?.title}</p>
                                         </div>
-                                    </Link>
+                                    </Link> 
                                 ))}
                             </div>
                             {/* <div className='flex justify-center'>
@@ -147,18 +147,19 @@ const Page = () => {
                                 </div>
                             </div>
                             <div className='w-[394px] hidden md:block border-slate-100 border-[1px] py-16 px-4 rounded-md shadow-lg'>
-                                <div className='border-b-[1px] border-slate-200'>
+                                <div className='border-b-[1px] border-slate-200 mb-4'>
                                     <p className='text-[24px] font-medium text-homeblack mb-3'>Package</p>
                                 </div>
                                
-                                <form className='text-homegrey'>
+                                {/* <form className='text-homegrey'>
                                     <input type="text" required placeholder='Please Enter Your Name*' className='my-2 w-full p-3 rounded-lg border-[2px] border-grey outline-none' />
                                     <input type="email" required placeholder='Email Address*' className='my-2 w-full p-3 rounded-lg border-[2px] border-grey outline-none' />
                                     <input type="number" required placeholder='Contact No.*' className='my-2 w-full p-3 rounded-lg border-[2px] border-grey outline-none' />
                                     <input type="text" required placeholder='Website URL (if any)' className='my-2 w-full p-3 rounded-lg border-[2px] border-grey outline-none' />
                                     <textarea required className='my-2 w-full p-3 rounded-lg border-[2px] border-grey outline-none' />
                                     <button className='bg-pink text-white text-[14px] w-[133px] h-[44px] flex justify-center items-center rounded-lg'>SUBMIT NOW</button>
-                                </form>
+                                </form> */}
+                                <HubspotForm  portalId="20095080" formId={"2aeda8d3-d0a1-4624-87f7-39fea7a4d68d"} region={'na1'}/>
 
 
                                 <div className='border-b-[1px] border-slate-200 mt-5 mb-3'>

@@ -349,7 +349,6 @@ const Footer = () => {
                                 </Link>
                             </div>
                             <div>
-
                               <Link target="_blank" href={'/google-ads-services'}>
                                 <li className='flex gap-1 items-center cursor-pointer' 
                                 onMouseEnter={() => toggleDropdown(5)}

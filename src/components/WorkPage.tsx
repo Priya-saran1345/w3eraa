@@ -19,8 +19,8 @@ const Work = () => {
             <div className="w-full bg-no-repeat  lg:bg-[url('/images/work.png')]  pb-28 ">
                 <div className='text-white pt-8   bg-blue pb-7 lg:pt-32 lg:pb-0 lg:bg-inherit w-full xl:w-[75%] px-4 mx-auto'>
                     <div className='lg:w-[70%]'>
-                    <p className=' text-[28px] lg:text-[38px] font-semibold md:mb-8 '>Experts Consultation                    </p>
-                    <p className=' text-[34px] lg:text-[58px] font-semibold '>From Consultation To Conversion                    </p>
+                    <p className=' text-[28px] lg:text-[38px] font-semibold md:mb-8 '>Experts Consultation</p>
+                    <h1 className=' text-[34px] lg:text-[58px] font-semibold '>From Consultation To Conversion </h1>
                     <p className='text-[18px] font-medium leading-[22px] '>With our commitment to craft excellence transparently, we have brought to you a comprehensive roadmap, that will tell you the whole process of how we work! Because transparency and accountability are our commitments.
                     </p>
                     <Image  src={'/images/work-arrow1.svg'} loading='eager' height={56} width={77} alt="" className='hidden lg:block' />

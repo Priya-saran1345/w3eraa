@@ -15,6 +15,8 @@ import Button from '@/components/button';
 import { BsBoxArrowUpRight } from 'react-icons/bs';
 import Loader from '@/components/loader';
 import {StyledWrapper} from '@/components/Styled'
+import Sites from '@/components/Sites.json'
+import HubspotForm from '@/components/HubspotForm'
 
 const Tool = () => {
     const [innerloading, setinnerloading] = useState<any>(false)
@@ -39,6 +41,7 @@ const Tool = () => {
     const [disallowpath, setdisallowpath] = useState<any>()
     const [crawlDelay, setcrawlDelay] = useState<any>()
     const [sitemapUrl, setsitemapUrl] = useState<any>()
+    const [displayedRows, setDisplayedRows] = useState<any[]>([]); // Initially empty
     // Function to fetch tools from the API
     const fetchTools = async () => {
         try {
@@ -54,6 +57,56 @@ const Tool = () => {
             console.log("tool body error", error.message);
         }
     };
+
+    const displayRowsOneByOne = (rows: any[]) => {
+        let i = 0;
+      
+        const appendRow = () => {
+          if (i < rows.length) {
+            setDisplayedRows((prevRows) => [...prevRows, rows[i]]);
+            i++;
+      
+            // Generate a random delay between 5 and 20 seconds
+            const randomDelay = Math.floor(Math.random() * (20000 - 5000 + 1)) + 5000;
+      
+            setTimeout(appendRow, randomDelay); // Schedule the next row with random delay
+          }
+        };
+      
+        appendRow(); // Start the recursive process
+      };
+      
+      // Call this function after `setResult` is updated
+      useEffect(() => {
+        if (result?.length > 0) {
+          setDisplayedRows([]); // Reset displayed rows
+          displayRowsOneByOne(result);
+        }
+      }, [result]);
+
+      
+
+
+    const checkBacklink = () => {
+        if (!url) return; // Ensure the URL is valid before proceeding
+      
+        const formattedDomain = url.replace(/https?:\/\/|www\./g, ""); // Remove protocol and 'www.'
+        setshowresult(true); // Show the result section
+
+        setLoading(true); // Set loading to true
+        setError(null);        // Use setTimeout to delay the result display
+        setTimeout(() => {
+          setLoading(false); // Stop loading after 3 seconds
+         // Show the result section
+          const formattedResults = Sites?.sites.map((site: any, index: number) => ({
+            id: index + 1, // Incremental ID
+            Page: site.replace("{domain}", formattedDomain), // Replace `{domain}` in URLs
+            Status: "Success", // Example status
+          }));
+          setResult(formattedResults || []); // Update the state with the formatted results
+        }, 1500); // 3 seconds delay
+      };
+           
     useEffect(() => {
         fetchTools();
     }, []);
@@ -248,7 +301,7 @@ const Tool = () => {
                                 </div>)
                             }
                             {showresult && <div className=' rounded-xl p-7  mt-5 border-slate-100 border-[1px]'>
-                                {loading &&  <div className=" flex justify-center items-center">
+                                {loading &&<div className=" flex justify-center items-center">
 
                                     <div className=" loader"></div>
                                 </div>
@@ -267,8 +320,33 @@ const Tool = () => {
                                                             <th className='p-2 border-r'>Pages contain backlink</th>
                                                             <th className='p-2'>Status</th>
                                                         </tr>
-                                                    </thead>
-                                                    <tbody>
+                                                            </thead>
+                                                            <tbody>
+                                                                {displayedRows.map((elem: any, index: number) => (
+                                                                    <tr key={index} className="border-b">
+                                                                        <td className="p-2 text-center border-r">{index + 1}</td>
+                                                                        <td className="p-2 border-r">
+                                                                            <a
+                                                                                href={elem?.Page}
+                                                                                target="_blank"
+                                                                                rel="noopener noreferrer"
+                                                                                className="text-blue-500 text-homegrey hover:text-blue duration-75 hover:underline"
+                                                                            >
+                                                                                {elem?.Page}
+                                                                            </a>
+                                                                        </td>
+                                                                        <td
+                                                                            className={`p-2 ${elem?.Status === "Success" ? "text-green-600" : "text-red-600"
+                                                                                }`}
+                                                                        >
+                                                                            {elem?.Status}
+                                                                        </td>
+                                                                    </tr>
+                                                                ))}
+                                                               
+                                                            </tbody>
+
+                                                    {/* <tbody>
                                                         {result.map((elem: any, index: number) => {
                                                             return (
                                                                 <tr key={index} className='border-b'>
@@ -284,7 +362,7 @@ const Tool = () => {
                                                                 </tr>
                                                             );
                                                         })}
-                                                    </tbody>
+                                                    </tbody> */}
                                                 </table>
                                             </div>
                                         }
@@ -298,11 +376,17 @@ const Tool = () => {
                                     </div>
                                 )}
                             </div>}
-                            <div className='flex justify-start items-center gap-2'>
+                                <div className='flex justify-start items-center gap-2'>
 
-                                <div className='mt-4 w-fit' onClick={handleSubmit} >
+                                    <div
+                                        className="mt-4 w-fit"
+                                        onClick={lastSegment === "backlink-maker" ? checkBacklink : handleSubmit}
+                                    >
+                                        <Button content={"Check"} type="submit" />
+                                    </div>
+                                {/* <div className='mt-4 w-fit'{ (lastSegment=="backlink-maker")?checkBacklink :onClick={handleSubmit} }>
                                     <Button content={'Check'} type="submit" />
-                                </div>
+                                </div> */}
                                 {/* <div className='mt-4 w-fit' onClick={handleClear}> */}
                                 <button onClick={handleClear} className=' h-fit px-7 py-2 rounded-md bg-grey text-homeblack  font-medium hover:bg-pink hover:text-white duration-200'>Clear</button>
 
@@ -330,10 +414,10 @@ const Tool = () => {
                         </div>
 
                         <div className='w-[394px] hidden md:block border-slate-100 border-[1px] py-8 px-4 rounded-md shadow-lg'>
-                            <div className='border-b-[1px] border-slate-200'>
+                            {/* <div className='border-b-[1px] border-slate-200'>
                                 <p className='text-[24px] font-medium text-homeblack mb-3'>Package</p>
-                            </div>
-                            <div className='flex flex-col my-4 gap-2'>
+                            </div> */}
+                            {/* <div className='flex flex-col my-4 gap-2'>
                                 <div className='bg-white w-[364px] rounded-lg shadow-sm border-[.5px] border-slate-100'>
                                     <div className='rounded-t-lg justify-between flex'>
                                         <div className='bg-blue py-2 h-fit rounded-tl-lg rounded-br-lg w-fit  px-5'>
@@ -372,18 +456,20 @@ const Tool = () => {
                                     </div>
 
                                 </div>
-                            </div>
-                            <div className='border-b-[1px] border-slate-200'>
+                            </div> */}
+                            <div className='border-b-[1px] mb-5 border-slate-200'>
                                 <p className='text-[24px] font-medium text-homeblack mb-3 leading-[28px]'>Double Your Organic Traffic With Our SEO Services</p>
                             </div>
-                            <form className='text-homegrey'>
+                            {/* <form className='text-homegrey'>
                                 <input type="text" required placeholder='Please Enter Your Name*' className='my-2 w-full p-3 rounded-lg border-[2px] border-grey outline-none' />
                                 <input type="email" required placeholder='Email Address*' className='my-2 w-full p-3 rounded-lg border-[2px] border-grey outline-none' />
                                 <input type="number" required placeholder='Contact No.*' className='my-2 w-full p-3 rounded-lg border-[2px] border-grey outline-none' />
                                 <input type="text" required placeholder='Website URL (if any)' className='my-2 w-full p-3 rounded-lg border-[2px] border-grey outline-none' />
                                 <textarea required className='my-2 w-full p-3 rounded-lg border-[2px] border-grey outline-none' />
                                 <button className='bg-pink text-white text-[14px] w-[133px] h-[44px] flex justify-center items-center rounded-lg'>SUBMIT NOW</button>
-                            </form>
+                            </form> */}
+                            <HubspotForm  portalId="20095080" formId={"2aeda8d3-d0a1-4624-87f7-39fea7a4d68d"} region={'na1'}/>
+
                             <div className='border-b-[1px] border-slate-200 mt-5 mb-3'>
                                 <p className='text-[24px] font-medium text-homeblack mb-3'>Trendy SEO Tools</p>
                             </div>

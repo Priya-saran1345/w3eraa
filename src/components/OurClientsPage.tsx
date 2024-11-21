@@ -31,7 +31,7 @@ client&& apidata&&
             <Header />
             <Navbar />
             <div className='w-full px-4 bg-[url("/images/blog-bg.png")] h-[45vh] flex justify-center items-center'>
-                <p className='text-white text-[32px] font-bold lg:text-[48px]'>{client?.client[0].title}</p>
+                <h1 className='text-white text-[32px] font-bold lg:text-[48px]'>{client?.client[0].title}</h1>
 
             </div>
             <div className='w-full '>

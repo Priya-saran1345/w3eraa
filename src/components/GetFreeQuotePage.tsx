@@ -90,7 +90,9 @@ const Contact = () => {
       <Header />
       <Navbar />
       <div className="w-full bg-no-repeat bg-[url('/images/contactbanner.png')] ">
+        <h1 className='text-[32px] lg:text-[44px] text-center pt-12 font-bold text-white'>GET A FREE QUOTE</h1>
         <div className=" mx-auto xl:w-[75%]  px-4  py-24 flex flex-wrap md:flex-nowrap justify-center gap-8 items-start">
+
           <div className="w-full xl:w-[75%] p-8  shadow-xl rounded-2xl bg-white">
             {/* <div className="w-full bg-gray-200 text-center py-6 rounded-t-xl text-[22px] md:text-[28px] font-semibold">
              GET A FREE QUOTE
