@@ -48,6 +48,8 @@ export async function generateMetadata() {
               alt: image?.alt || '',
             })) || [],
             locale: metaData.openGraph.locale || '',
+            authors: metaData.openGraph.authors || [], 
+            publishedTime: metaData.openGraph.publishedTime || '',
           }
         : undefined,
       robots: {

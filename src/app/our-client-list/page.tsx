@@ -51,6 +51,8 @@ export default Page
                 alt: image?.alt || '',
               })) || [],
               locale: metaData.openGraph.locale || '',
+              authors: metaData.openGraph.authors || [], 
+              publishedTime: metaData.openGraph.publishedTime || '',
             }
           : undefined,
         robots: {

@@ -45,6 +45,8 @@ export async function generateMetadata(): Promise<Metadata> {
               alt: image?.alt,
             })),
             locale: metaData.openGraph.locale,
+            authors: metaData.openGraph.authors || [], 
+            publishedTime: metaData.openGraph.publishedTime || '',
           }
         : undefined,
       robots: {
