@@ -43,7 +43,8 @@ const DriveResults = () => {
             <div className="flex mt-10 flex-wrap lg:flex-nowrap justify-center gap-5  items-center px-4 xl:px-0 w-full xl:w-[75%] mx-auto">
 
                 {Data?.map((elem: any, i:number) => (
-                    <div key={i} className='rounded-xl px-4 2xl:px-8 py-8 w-[347px] sm:w-[300px] md:w-[347px] h-[350px] flex flex-col gap-2 justify-between bg-white hover:shadow-xl'>
+                    <div key={i} className='rounded-xl px-4 2xl:px-8 py-8 w-[347px] text-center sm:text-left sm:w-[300px] md:w-[347px] h-[350px] 
+                    items-center sm:items-start flex flex-col gap-2 justify-between bg-white hover:shadow-xl'>
                         <div className='p-4 size-[72px] flex justify-center items-center rounded-lg bg-lightblue'>
                             <Image
                                 src={elem.icon}

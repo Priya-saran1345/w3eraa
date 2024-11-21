@@ -40,15 +40,15 @@ const Choose = ({props}:any) => {
       </div>
       <div className='w-full px-4 xl:w-[75%] mx-auto flex justify-center gap-5 flex-wrap '>
         {props?.cards &&props?.cards.map((card: any, index: number) => (
-          <div key={index} className='min-h-[284px] lg:w-[30%]'>
+          <div key={index} className='min-h-[284px] md:w-[45%] lg:w-[30%]'>
 
             <div key={index} className='max-w-[404px] hover:shadow-xl border-[2px] relative border-lightblue min-h-[219px] bg-white rounded-xl group leading-[29px] p-10 flex flex-col gap-3'>
-              <div className='bg-lightblue absolute -top-14 rounded-xl p-4 w-[110px] h-[90px] flex justify-center items-center'>
+              <div className='bg-lightblue absolute -top-14 left-28 md:left-8 rounded-xl p-4 w-[110px] h-[90px] flex justify-center items-center'>
                 <Image src={card.icon} 
                 alt={card.icon_alt} height={62} width={62} />
               </div>
-              <p className=' text-[22px] lg:text-[24px] font-bold '>{card.title}</p>
-              <p className='text-[16px] text-homegrey leading-tight'>
+              <p className=' text-[22px] text-center md:text-left lg:text-[24px] font-bold '>{card.title}</p>
+              <p className='text-[16px] text-center md:text-left text-homegrey leading-tight'>
                 {card.description}
               </p>
             </div>
@@ -62,8 +62,6 @@ const Choose = ({props}:any) => {
               </Link>
             </div>
             <ClientsCount/>
-
-           
           </div>
         </div>
       </div >

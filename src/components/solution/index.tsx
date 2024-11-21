@@ -98,18 +98,18 @@ const Solution = () => {
   return (
     <div className="w-full border-t border-slate-100">
       <div className="mx-auto w-full px-4 py-10 md:py-16 xl:w-[75%]">
-        <h2 className="mb-4  font-bold leading-tight text-black ">
+        <h2 className="mb-4 items-center sm:items-start  font-bold leading-tight text-black ">
           {data.first} <span className="text-pink">{data.second}</span>
         </h2>
-        <p className="mb-8 text-[16px] lg:text-[18px] leading-tight text-muted-foreground">
+        <p className="mb-8 text-[16px] text-center md:text-left lg:text-[18px] leading-tight text-muted-foreground">
           {solutionData?.description}
         </p>
         <Slider ref={sliderRef} {...settings} className="flex justify-between  pb-4 gap-7 overflow-x-hidden">
         {solutionData?.cards.map((elem: any, index: number) => (
             <div key={index} className="px-2">
               <div className="flex h-[270px]   max-w-[401px] flex-col justify-between rounded-xl border border-slate-100
-               bg-white p-8 transition-all duration-300 hover:shadow-xl">
-                <div className="flex justify-between  flex-col">
+               bg-white p-8 transition-all duration-300  hover:shadow-xl">
+                <div className="flex justify-between items-center sm:items-start text-center sm:text-left flex-col">
                   <div  className="mb-6 flex h-[72px] w-[72px] items-center justify-center rounded-xl bg-lightblue">
                     <Image
                       src={elem.icon}

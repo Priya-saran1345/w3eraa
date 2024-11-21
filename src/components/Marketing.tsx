@@ -58,7 +58,7 @@ const Marketing = () => {
               </div>
             </div>
           </div>
-          <div className=' w-fit mt-6'>
+          <div className='w-full flex justify-center sm:w-fit mt-6'>
             <Link href={'/contact-us'}>
           <Button content={'Contact US'}/>
             </Link>

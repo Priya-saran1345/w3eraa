@@ -65,13 +65,13 @@ const CaseStudy: React.FC = () => {
         <div className='w-full bg-white py-8 md:py-20'>
             <div className='w-full mx-auto p-4 md:p-16 border-[2px] border-slate-100 rounded-3xl xl:w-[82%]'>
                 <div>
-                    <h2 className='  text-homeblack font-bold'>{data.first} <span className='text-pink'>{data.second}</span></h2>
+                    <h2 className=' text-center lg:text-left text-homeblack font-bold'>{data.first} <span className='text-pink'>{data.second}</span></h2>
                 </div>
                 <div className='flex flex-col md:flex-row mt-5 justify-between items-center w-full md:gap-16'>
-                    <div className='md:w-[40%]'>
+                    <div className='lg:w-[40%]'>
                         {provenResult && provenResult[activeIndex] && (
                             <div className='mb-10'>
-                                <div className='flex justify-start gap-2'>
+                                <div className='flex justify-center lg:justify-start gap-2'>
                                     <div
                                         onClick={handlePrev}
                                         className=' rounded-2xl text-pink bg-lightpink p-5 flex justify-center items-center text-[24px] cursor-pointer transition duration-300'
@@ -90,22 +90,22 @@ const CaseStudy: React.FC = () => {
                                         <FaArrowRightLong />
                                     </div>
                                 </div>
-                                <p className='text-[18px] lg:text-[24px] mt-4 font-medium text-homegrey'>
+                                <p className='text-[18px] lg:text-[24px] mt-4 text-center lg:text-left font-medium text-homegrey'>
                                     {provenResult[activeIndex].subtitle}
                                 </p>
                                 <p 
-                                    className='text-[18px] mt-4 leading-tight text-homegrey'
+                                    className='text-[18px] mt-4 text-center lg:text-left leading-tight text-homegrey'
                                     dangerouslySetInnerHTML={{ __html: provenResult[activeIndex].description }} 
                                   />
 
-                                <div className='mt-6 p-5 bg-lightblue w-fit rounded-2xl mb-4 md:mb-8'>
+                                <div className='mt-6 p-5 bg-lightblue flex flex-col mx-auto lg:mx-0 w-fit rounded-2xl mb-4 md:mb-8'>
                                     <p className='text-[16px] font-bold text-homeblack'>Results</p>
                                     <div className='flex gap-10'>
                                         <div dangerouslySetInnerHTML={{ __html: provenResult[activeIndex].app_download }} />
                                         <div dangerouslySetInnerHTML={{ __html: provenResult[activeIndex].new_users }} />
                                     </div>
                                 </div>
-                                <div>
+                                <div className='flex justify-center lg:justify-start'>
                                     <Link href={`${provenResult[activeIndex].slug}`}>
                                     <Button content={'Learn More'}/>
                                     </Link>
@@ -115,7 +115,7 @@ const CaseStudy: React.FC = () => {
                         )}
                     </div>
 
-                    <div className='relative hidden md:block md:w-[60%]'>
+                    <div className='relative hidden lg:block md:w-[60%]'>
                         <Slider ref={sliderImageRef} {...settings} className='overflow-hidden'>
                             {provenResult?.map((elem: any, index: number) => (
                                 <div key={index} className='overflow-hidden min-h-[507px]'>

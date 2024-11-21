@@ -38,7 +38,8 @@ const Packages = ({props}:any) => {
             </div>
             <div className="flex flex-wrap lg:flex-nowrap mt-10 justify-center gap-5  items-center px-4 lg:px-3 w-full xl:w-[75%] mx-auto">
                 {props?.map((elem: any, i:number) => (
-                    <div key={i} className='rounded-xl px-4 2xl:px-8 py-8 w-[347px] h-[357px] flex flex-col gap-2 justify-between bg-white hover:shadow-xl'>
+                    <div key={i} className='rounded-xl items-center sm:items-start text-center sm:text-left px-4 2xl:px-8 py-8  w-[300px] sm:w-[45%] lg:w-[23%]
+                     h-[357px] flex flex-col  gap-2 justify-between bg-white hover:shadow-xl'>
                         <div className='p-4 size-[72px] flex justify-center items-center rounded-lg bg-lightblue'>
                             <Image
                                 src={elem.icon}
