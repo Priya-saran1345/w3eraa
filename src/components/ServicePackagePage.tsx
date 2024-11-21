@@ -35,8 +35,9 @@ import Link from 'next/link'
 import Other from '@/components/OtherPage'
 import { div } from 'framer-motion/client'
 import CustomerChoose from '@/components/CustomerChoose';
+import SeoIndustryService from '@/components/SeoIndustryService'
 
-
+import Jsondata from '@/components/Json/Data.json'
 const Service_Pkackages = () => {
     const { basic_details } = Useapi();
     const { cluth } = Useapi()
@@ -115,35 +116,35 @@ const Service_Pkackages = () => {
                 <Button content='Get a quote' />
             </Link>}</div>;
     };
-    if(err){
-        return (    <div className='w-full'>
+    if (err) {
+        return (<div className='w-full'>
             <Header />
             <Navbar />
             <div className='w-full flex justify-center items-center bg-lightblue'>
-      <div className='flex flex-col justify-center items-center max-h-[500px] xl:w-[75%] px-6 mx-auto'>
-        {/* Ensure the image path is correct */}
-        <Link href={'/'}>
-        <Image src='/images/loader.gif' height={500} width={500} alt='Loading Animation' />
-        </Link>
-        
-        <p className='text-[48px] font-extrabold  text-center mt-6 drop-shadow-lg'>
-           404 Page Not Found
-        </p>
+                <div className='flex flex-col justify-center items-center max-h-[500px] xl:w-[75%] px-6 mx-auto'>
+                    {/* Ensure the image path is correct */}
+                    <Link href={'/'}>
+                        <Image src='/images/loader.gif' height={500} width={500} alt='Loading Animation' />
+                    </Link>
 
-        <div className='mt-8 pb-24 flex gap-4'>
-          <Link href="/" passHref>
-            <Button content='Home' />
-          </Link>
-          <Link href="/blog" passHref>
-            <Button content='Blog' />
-          </Link>
-        </div>
-      </div>
-    </div>
-            <Footer/>
+                    <p className='text-[48px] font-extrabold  text-center mt-6 drop-shadow-lg'>
+                        404 Page Not Found
+                    </p>
+
+                    <div className='mt-8 pb-24 flex gap-4'>
+                        <Link href="/" passHref>
+                            <Button content='Home' />
+                        </Link>
+                        <Link href="/blog" passHref>
+                            <Button content='Blog' />
+                        </Link>
+                    </div>
+                </div>
+            </div>
+            <Footer />
         </div>)
-            
-        }
+
+    }
     return (
         <div >
             {
@@ -208,7 +209,7 @@ const Service_Pkackages = () => {
                                 </div>
 
                             }
-                             {!(lastsegment == 'google-business-profile-management-services') &&
+                            {!(lastsegment == 'google-business-profile-management-services') &&
                                 data?.service_card1.length > 0 &&
                                 <SeoService props={data?.service_card1[0]} />
                             }
@@ -216,31 +217,10 @@ const Service_Pkackages = () => {
                                 (lastsegment === 'blog-commenting-service') &&
 
                                 <div className='xl:w-[75%] mx-auto my-8 px-4 xl:px-0'>
-
                                     <div className='flex w-full justify-center mt-6 gap-3 flex-wrap'>
                                         {
-                                            [{
-                                                plan: 'Plan 50', comments: 'Blog Comments (50)'
-                                                , submission: 'Manual Submissions', report: 'Detailed Submissions Report',
-                                                time: 'Submissions Time (5 Days)'
-                                            }
-                                                ,
-                                            {
-                                                plan: 'Plan 100', comments: 'Blog Comments (100)'
-                                                , submission: 'Manual Submissions', report: 'Detailed Submissions Report',
-                                                time: 'Submissions Time (7 Days)'
-                                            },
-                                            {
-                                                plan: 'Plan 200', comments: 'Blog Comments (200)'
-                                                , submission: 'Manual Submissions', report: 'Detailed Submissions Report',
-                                                time: 'Submissions Time (10 Days)'
-                                            },
-                                            {
-                                                plan: 'Plan 300', comments: 'Blog Comments (300)'
-                                                , submission: 'Manual Submissions', report: 'Detailed Submissions Report',
-                                                time: 'Submissions Time (15 Days)'
-                                            }
-                                            ].map((elem: any, i: number) => (
+                                           
+                                           Jsondata?.blog_commenting_service.cards.map((elem: any, i: number) => (
                                                 <div key={i} className='rounded-xl p-8 text-center w-[90%] sm:w-[45%] lg:w-[23%] bg-lightblue  flex flex-col gap-2 justify-between hover:shadow-xl'>
 
                                                     <p className='text-[26px] text-blue font-bold  leading-[31px]'>{elem?.plan}</p>
@@ -273,8 +253,19 @@ const Service_Pkackages = () => {
 
                                 </div>
                             }
+                            {(lastsegment === 'dallas-seo-services') &&
+                                <SeoIndustryService props={Jsondata?.dallas_seo_services} />
+                            }
+                            {
+                               (lastsegment === 'new-york-seo-company') && 
+                               <SeoIndustryService props={Jsondata?.new_york_seo_company} />
 
-                           
+                            }
+                            {
+                                 (lastsegment === 'florida-seo-company') && 
+                                 <SeoIndustryService props={Jsondata?.florida_seo_company} />
+                            }
+
                             {
 
                                 (lastsegment == 'google-business-profile-management-services') &&
@@ -373,7 +364,7 @@ const Service_Pkackages = () => {
                             {/* {data?.why_choose &&
                                 <Choose props={data?.why_choose} />
                             } */}
-                                  <CustomerChoose/>
+                            <CustomerChoose />
 
                             {
                                 data?.our_package.length > 0 &&
@@ -384,7 +375,7 @@ const Service_Pkackages = () => {
                                 data?.service_packages_faq?.title && data?.service_packages_faq?.card &&
                                 <Faq props={data?.service_packages_faq?.card || []} title={data?.service_packages_faq.title} />
                             }
-                           {quicklinks && quicklinks.length > 0 && <QuickLinks props={quicklinks} />}
+                            {quicklinks && quicklinks.length > 0 && <QuickLinks props={quicklinks} />}
                             {
                                 data?.service_card3.length > 0 &&
                                 <MarketingServices props={data?.service_card3[0]} />
@@ -570,7 +561,7 @@ const Service_Pkackages = () => {
                                 data?.why_choose &&
                                 <Choose props={data?.why_choose} />
                             } */}
-                                  <CustomerChoose/>
+                            <CustomerChoose />
 
                             {
                                 data?.our_package.length > 0 &&

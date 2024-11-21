@@ -13,7 +13,7 @@ const index = ({title,description,image,btnlink,btntext,image_alt ,status='false
             <div className={`lg:w-1/2 flex flex-col  gap-6`}>
                 <h1 className=' leading-none text-homeblack xl:leading-[55px] font-bold '>{title}</h1>
                 <StyledWrapper>
-                <div className="text-homegrey text-justify "  dangerouslySetInnerHTML={{ __html:description }} >
+                <div className="text-homegrey"  dangerouslySetInnerHTML={{ __html:description }} >
                                         </div>
                                         </StyledWrapper>
                 <div className='flex flex-wrap justify-center md:justify-start sm:gap-5'>

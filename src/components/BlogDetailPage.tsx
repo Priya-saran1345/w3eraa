@@ -124,7 +124,25 @@ const Blogs = () => {
                                     ) : (
                                         <p>Loading...</p>
                                     )}
-                                                                        </div>
+
+<div className='flex mt-3  gap-3'>
+  <span className="text-homeblack text-[17px] font-medium">Tagged: </span>
+  <div className="flex flex-wrap gap-4 list-none">
+    {Object.entries(apidata?.tag || {}).map(([key, value]: any) => (
+      <li key={key}>
+        <Link
+          href={`/blog/tag/${key}`}
+          className="text-blue-500 no-underline"
+        >
+          {value}
+        </Link>
+      </li>
+    ))}
+  </div>
+</div>
+
+
+         </div>
 
                             </StyledWrapper>
                                 </div>

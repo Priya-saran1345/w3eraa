@@ -27,7 +27,7 @@ const Category = () => {
   // Fetch blog data
   const fetch = async (page: number = 1) => {
     try {
-      const response = await axios.get(`${BASE_URL}blogs/?tags=${lastsegment}&page=${page}`);
+      const response = await axios.get(`${BASE_URL}blogs/?tag=${lastsegment}&page=${page}`);
       setBlogs(response?.data?.results.blogs);
       setdescriton(response.data.results.category_details);
       setTotalBlogs(response.data.count); // Set the total count of blogs

@@ -23,7 +23,7 @@ const Page = ({params}: any) => {
         <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
-        <ServicePackage/>
+      <ServicePackage/>
     </div>
   )
 }

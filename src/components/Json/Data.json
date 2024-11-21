@@ -88,6 +88,201 @@
             "description": "Measuring Results"
           }
       ]
+    },
+   "dallas_seo_services": {
+    "title":"Industries that have Benefitted from Our Dallas SEO Services",
+     "cards": [
+      {
+       "icons":"/images/static8.svg",
+       "title":"Education",
+       "link":"seo-by-industry/education",
+       "description":"Education institutions reach on top rank by availing of our services from our SEO professionals. This helps in enhancing revenue exponentially."
+    }
+      ,
+    {
+      "icons":"/images/static1.svg",
+       "title":"Jewellary Business",
+       "link":"seo-by-industry/jewellery",
+       "description":"Jewellery businesses attract mainly women. As an e-commerce website, we offer effective e-commerce SEO services that help in improving your website’s visibility on Google’s search results pages."
+    },
+    {
+       "icons":"/images/static2.svg",
+       "title":"Healthcare",
+       "link":"seo-by-industry/health",
+       "description":"We specialize in retaining website traffic for your patients in the healthcare industry. To ensure customer retention on your website, we offer SEO services."
+    },
+    {
+      "icons":"/images/static3.svg",
+       "title":"Travel",
+       "link":"seo-by-industry/automotive-transportation",
+       "description":"Travel companies reach their targeted audiences with the help of our elite SEO services. This will help in more revenue for the business."
+    },
+    {
+      "icons":"/images/static4.svg",
+       "title":"Real Estate",
+       "link":"seo-by-industry/florida-seo-company",
+       "description":"Branding is the most crucial component in the real estate industry. Effective branding helps to attract more customers, which will surely drive profitability for real estate owners."
+    },
+    {
+      "icons":"/images/static7.svg",
+       "title":"Restaurant",
+       "link":"seo-by-industry/food-beverage",
+       "description":"The restaurant industry gains more competition as people are more conscious of trying different food beverages. This makes us help them go bigger in a different manner from competitors."
+    },
+    {
+      "icons":"/images/static5.svg",
+       "title":"Electronics",
+       "link":"seo-by-industry/tech/",
+       "description":"In electronics, we offer exceptional SEO services to drive organic traffic. This will result in exponential business growth in the electronics industry."
+    },
+    {
+      "icons":"/images/static6.svg",
+       "title":"Finance",
+       "link":"seo-by-industry/finance/",
+       "description":"We have helped the finance industry to grow along with facilitating finance marketer owners to gain revenue."
+    }
+    ]
+    },
+    "new_york_seo_company":{
+"title":"We Have Worked Across Different Types Of Sectors",
+     "cards": [
+      {
+       "icons":"/images/static8.svg",
+       "title":"Education Marketing",
+       "link":"seo-by-industry/education",
+       "description":""
+    }
+      ,
+    {
+      "icons":"/images/static1.svg",
+       "title":"Jewellary Marketing",
+       "link":"seo-by-industry/jewellery",
+       "description":""
+    },
+   
+    {
+      "icons":"/images/static3.svg",
+       "title":"Travel Marketing",
+       "link":"seo-by-industry/automotive-transportation",
+       "description":""
+      },
+    {
+      "icons":"/images/static4.svg",
+       "title":"Real Estate Marketing",
+       "link":"seo-by-industry/real-estate",
+       "description":""
+    },
+    {
+      "icons":"/images/static7.svg",
+       "title":"Food Beverages Marketing",
+       "link":"seo-by-industry/food-beverage",
+       "description":""
+    },
+    {
+      "icons":"/images/static5.svg",
+       "title":"Electronics Marketing",
+       "link":"seo-by-industry/tech/",
+       "description":""
+    },
+    {
+      "icons":"/images/static6.svg",
+       "title":"Finance Marketing",
+       "link":"seo-by-industry/finance/",
+       "description":""
+    },
+    {
+      "icons":"/images/static2.svg",
+      "title":"You can be the next",
+      "link":"new-york-seo-company",
+      "description":""
+   }]
+    },
+    "florida_seo_company":{
+"title":"Industries We’ve Served the Most in SEO",
+     "cards": [
+      {
+       "icons":"/images/static8.svg",
+       "title":"Education Marketing",
+       "link":"seo-by-industry/education",
+       "description":""
+    }
+      ,
+    {
+      "icons":"/images/static1.svg",
+       "title":"Jewellary Marketing",
+       "link":"florida-seo-company",
+       "description":""
+    },
+   
+    {
+      "icons":"/images/static3.svg",
+       "title":"Travel Marketing",
+       "link":"seo-by-industry/automotive-transportation",
+       "description":""
+      },
+    {
+      "icons":"/images/static4.svg",
+       "title":"Real Estate Marketing",
+       "link":"seo-by-industry/real-estate",
+       "description":""
+    },
+    {
+      "icons":"/images/static7.svg",
+       "title":"Food Beverages Marketing",
+       "link":"seo-by-industry/food-beverage",
+       "description":""
+    },
+    {
+      "icons":"/images/static5.svg",
+       "title":"Electronics Marketing",
+       "link":"seo-by-industry/tech/",
+       "description":""
+    },
+    {
+      "icons":"/images/static6.svg",
+       "title":"Finance Marketing",
+       "link":"seo-by-industry/finance/",
+       "description":""
+    },
+    {
+      "icons":"/images/static2.svg",
+      "title":"Medical Marketing",
+      "link":"seo-by-industry/health",
+      "description":""
+   }]
+    }
+    ,
+    "blog_commenting_service":{
+     "cards" : [{
+        "plan": "Plan 50",
+         "comments": "Blog Comments (50)",
+         "submission": "Manual Submissions",
+          "report": "Detailed Submissions Report",
+        "time": "Submissions Time (5 Days)"
+    }
+    ,
+    {
+        "plan": "Plan 100", 
+        "comments": "Blog Comments (100)"
+        ,"submission": "Manual Submissions",
+         "report": "Detailed Submissions Report",
+        "time": "Submissions Time (7 Days)"
+    },
+    {
+        "plan": "Plan 200",
+         "comments": "Blog Comments (200)"
+        , "submission": "Manual Submissions",
+         "report": "Detailed Submissions Report",
+        "time": "Submissions Time (10 Days)"
+    },
+    {
+        "plan": "Plan 300",
+         "comments": "Blog Comments (300)"
+        ,"submission": "Manual Submissions",
+         "report": "Detailed Submissions Report",
+        "time": "Submissions Time (15 Days)"
+    }
+    ]
     }
   }
   
