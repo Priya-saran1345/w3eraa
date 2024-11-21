@@ -100,7 +100,8 @@ basic_details && about&&
             <Header />
             <Navbar />
             <div className='w-full px-4 bg-[url("/images/aboutbg.png")] h-[388px] flex justify-center items-center'>
-            
+            <h1 className="text-homeblack text-[32px] font-bold lg:text-[48px]">About US</h1>
+
             </div>
             <div className='full'>
                 <div className='w-full pt-12 lg:pt-16 xl:w-[75%] mx-auto px-4' >

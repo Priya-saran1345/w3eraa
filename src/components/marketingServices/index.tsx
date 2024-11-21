@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Button from '@/components/button'
 import Link from 'next/link'
 const index = ({ props }: any) => {
-    console.log('---------------------', props)
     return (
         <div className='w-full bg-lightblue py-10 text-white  lg:py-16'>
             <div className='xl:w-[75%] px-4 mx-auto flex flex-col gap-10'>

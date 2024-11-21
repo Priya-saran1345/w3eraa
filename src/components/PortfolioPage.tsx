@@ -37,7 +37,10 @@ const CaseStudy = () => {
         <div className="w-full">
           <Header />
           <Navbar />
-          <div className="w-full h-[40vh] bg-[url('/images/casebanner.png')]" />
+          <div className="w-full h-[40vh] flex justify-center items-center bg-[url('/images/casebanner.png')]" >
+          <h1 className="text-white text-[32px] font-bold lg:text-[48px]">Portfolio</h1>
+
+          </div>
           <div className="w-full px-4 xl:px-9 mx-auto bg-white pb-16">
             {/* <div className="bg-[url('/images/casebaner2.png')] pt-8 lg:pt-20 md:mt-8 bg-center bg-no-repeat flex justify-center items-end">
               <div className="flex flex-col gap-3 text-center md:w-[75%]">

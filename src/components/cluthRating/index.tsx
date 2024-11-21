@@ -11,7 +11,6 @@ import  Link from 'next/link';
 // Slider component
 const Index = ({ props }: any) => {
 
-  console.log('props',props)
   // Slick slider settings for smooth transitions
   const settings = {
     infinite: true,  // Infinite looping of slides

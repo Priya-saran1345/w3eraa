@@ -65,8 +65,7 @@ const Service_Pkackages = () => {
         }
         try {
             const response = await axios.get(`${BASE_URL}quick-link/${lastsegment}/`);
-            console.log('quick links', (response.data.link_category
-            ))
+            // console.log('quick links', (response.data.link_category))
             setquicklinks(response.data.link_category);
         } catch (error: any) {
             console.log('quicklinks error', error);
@@ -219,8 +218,8 @@ const Service_Pkackages = () => {
                                 <div className='xl:w-[75%] mx-auto my-8 px-4 xl:px-0'>
                                     <div className='flex w-full justify-center mt-6 gap-3 flex-wrap'>
                                         {
-                                           
-                                           Jsondata?.blog_commenting_service.cards.map((elem: any, i: number) => (
+
+                                            Jsondata?.blog_commenting_service.cards.map((elem: any, i: number) => (
                                                 <div key={i} className='rounded-xl p-8 text-center w-[90%] sm:w-[45%] lg:w-[23%] bg-lightblue  flex flex-col gap-2 justify-between hover:shadow-xl'>
 
                                                     <p className='text-[26px] text-blue font-bold  leading-[31px]'>{elem?.plan}</p>
@@ -253,17 +252,139 @@ const Service_Pkackages = () => {
 
                                 </div>
                             }
+                            {/* {data?.packagecategory?.length > 0 &&(
+
+                           
+                                  <div className='bg-white  w-full px-4 xl:w-[75%] mx-auto py-10 lg:py-16'>
+                                  <div className='mt-16'>
+                                      <div className='shadow-lg  p-5 border-slate-200 border-[1px]  rounded-2xl mb-4'>
+                                          <div className='overflow-x-auto'>
+                                              <div className='flex justify-start mb-14'>
+                                                  <div className='min-w-[25%] min-h-full flex  items-center '> 
+                                                  <p className="text-[24px] font-semibold">{data?.packagecategory[0]?.title || ''}</p></div>
+                                                  <div className='w-full min-w-[800px] flex justify-around '>
+                                                      {['Basic', 'Advanced', 'Professional', 'Premium'].map((plan, index) => (
+                                                          <div key={index} className='flex flex-col items-center'>
+                                                              <div className='w-fit ' onClick={() => handleSelectPlan(plan)}>
+                                                                  < Button content={`${plan}`} />
+                                                              </div>
+                                                          </div>
+                                                      ))}
+                                                  </div>
+                                              </div>
+                                              <table className='w-full min-w-[900px] '>
+                                                  <tbody className='text-[18px] font-medium flex flex-col gap-3 text-textGrey'>
+                                                      {data?.packagecategory[0]?.card.map((item: any, cardIndex: any) => (
+                                                          <tr className='border-b-2 flex border-slate-200  ' key={cardIndex}>
+                                                              <td className='w-[30%] p-2'>{item?.title}</td>
+                                                              <div className='w-full flex justify-around'>
+                                                                  <td className="flex flex-1 items-center justify-center   p-2 font-medium">
+                                                                      {renderCell(item.basic_type, "Basic")}
+                                                                  </td>
+                                                                  <td className="flex flex-1 items-center  p-2 justify-center font-medium">
+                                                                      {renderCell(item.advance_type, "Advanced")}
+                                                                  </td>
+                                                                  <td className="flex flex-1 items-center  p-2 justify-center font-medium">
+                                                                     
+                                                                      {renderCell(item.professional_type, "Professional")}
+                                                                  </td>
+                                                                  <td className="flex flex-1 items-center p-2 justify-center font-medium">
+                                                                      {renderCell(item.premium_type, "Premium")}
+                                                                  </td>
+                                                              </div>
+                                                          </tr>
+                                                      ))}
+                                                  </tbody>
+                                              </table>
+                                          </div>
+                                      </div>
+                                      <div className="w-full">
+                                          {packageCards?.map((elem: any, index: any) => (
+                                              <motion.div
+                                                  key={elem.id}
+                                                  className="mb-4 rounded-2xl border-[1px] border-slate-200 p-2 shadow-lg"
+                                                  initial={false}
+                                                  transition={{ duration: 0.3 }}
+                                              >
+                                                  <div
+                                                      className="flex cursor-pointer items-center gap-3 p-4"
+                                                      onClick={() => toggleExpand(index)}
+                                                  >
+                                                      <p className="text-[20px] font-semibold">{elem.title}</p>
+                                                      <motion.div
+                                                          animate={{ rotate: expandedIndices.includes(index) ? 180 : 0 }}
+                                                          transition={{ duration: 0.3 }}
+                                                      >
+                                                          {expandedIndices.includes(index) ? (
+                                                              <FaMinus className="rounded-md bg-grey p-2 text-[36px]" />
+                                                          ) : (
+                                                              <FaPlus className="rounded-md bg-grey p-2 text-[36px]" />
+                                                          )}
+                                                      </motion.div>
+                                                  </div>
+                                                  <AnimatePresence initial={false}>
+                                                      {expandedIndices.includes(index) && (
+                                                          <motion.div
+                                                              key="content"
+                                                              initial="collapsed"
+                                                              animate="open"
+                                                              exit="collapsed"
+                                                              variants={{
+                                                                  open: { opacity: 1, height: "auto" },
+                                                                  collapsed: { opacity: 0, height: 0 }
+                                                              }}
+                                                              transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                                                          >
+                                                              <motion.div
+                                                                  initial={{ opacity: 0 }}
+                                                                  animate={{ opacity: 1 }}
+                                                                  exit={{ opacity: 0 }}
+                                                                  transition={{ duration: 0.3, delay: 0.1 }}
+                                                                  className="overflow-x-auto p-4"
+                                                              >
+                                                                  <table className="w-full min-w-[900px]">
+                                                                      <tbody className="flex flex-col  gap-3 text-[18px] text-textGrey">
+                                                                          {elem?.card?.map((item: any, cardIndex: number) => (
+                                                                              <tr key={cardIndex} className="flex border-b-2 border-slate-200">
+                                                                                  <td className="w-[30%] p-2 font-medium">{item.title}</td>
+                                                                                  <td className="flex flex-1 items-center justify-center p-2 font-medium">
+                                                                                      {renderCell(item.basic_type, "Basic")}
+                                                                                  </td>
+                                                                                  <td className="flex flex-1 items-center justify-center p-2 font-medium">
+                                                                                      {renderCell(item.advance_type, "Advanced")}
+                                                                                  </td>
+                                                                                  <td className="flex flex-1 items-center justify-center p-2 font-medium">
+                                                                                      {renderCell(item.professional_type, "Professional")}
+                                                                                  </td>
+                                                                                  <td className="flex flex-1 items-center justify-center p-2 font-medium">
+                                                                                      {renderCell(item.premium_type, "Premium")}
+                                                                                  </td>
+                                                                              </tr>
+                                                                          ))}
+                                                                      </tbody>
+                                                                  </table>
+                                                              </motion.div>
+                                                          </motion.div>
+                                                      )}
+                                                  </AnimatePresence>
+                                              </motion.div>
+                                          ))}
+                                      </div>
+                                  </div>
+                              </div>
+                               )
+                            } */}
                             {(lastsegment === 'dallas-seo-services') &&
                                 <SeoIndustryService props={Jsondata?.dallas_seo_services} />
                             }
                             {
-                               (lastsegment === 'new-york-seo-company') && 
-                               <SeoIndustryService props={Jsondata?.new_york_seo_company} />
+                                (lastsegment === 'new-york-seo-company') &&
+                                <SeoIndustryService props={Jsondata?.new_york_seo_company} />
 
                             }
                             {
-                                 (lastsegment === 'florida-seo-company') && 
-                                 <SeoIndustryService props={Jsondata?.florida_seo_company} />
+                                (lastsegment === 'florida-seo-company') &&
+                                <SeoIndustryService props={Jsondata?.florida_seo_company} />
                             }
 
                             {
@@ -344,7 +465,6 @@ const Service_Pkackages = () => {
                             {data?.contentsection3?.description && (
                                 <div className='w-full mx-auto xl:w-[75%] flex flex-col gap-4 px-6 xl:px-2 py-12'>
                                     <div>
-                                        {/* Uncomment this if you want to show the title */}
                                         {/* <p className='text-[28px] text-homeblack font-semibold lg:text-[38px]'>{data?.contentsection3?.title}</p> */}
                                         <StyledWrapper>
                                             <div className='
@@ -391,13 +511,17 @@ const Service_Pkackages = () => {
                             <Navbar />
                             <CommonBanner title={data?.title}
                                 status={'true'}
-                                description={data?.description} image={data?.image} image_alt={data?.image_alt} btntext={data?.link_text} btnlink={data?.link_url} />
+                                description={data?.description} 
+                                image={data?.image} image_alt={data?.image_alt}
+                                 btntext={data?.link_text}
+                                  btnlink={data?.link_url} />
                             <div className='bg-white  w-full px-4 xl:w-[75%] mx-auto py-10 lg:py-16'>
                                 <div className='mt-16'>
                                     <div className='shadow-lg  p-5 border-slate-200 border-[1px]  rounded-2xl mb-4'>
                                         <div className='overflow-x-auto'>
                                             <div className='flex justify-start mb-14'>
-                                                <div className='min-w-[25%] min-h-full flex  items-center '>   <p className="text-[24px] font-semibold">{data?.packagecategory[0]?.title || ''}</p></div>
+                                                <div className='min-w-[25%] min-h-full flex  items-center '> 
+                                                <p className="text-[24px] font-semibold">{data?.packagecategory[0]?.title || ''}</p></div>
                                                 <div className='w-full min-w-[800px] flex justify-around '>
                                                     {['Basic', 'Advanced', 'Professional', 'Premium'].map((plan, index) => (
                                                         <div key={index} className='flex flex-col items-center'>
@@ -415,24 +539,17 @@ const Service_Pkackages = () => {
                                                             <td className='w-[30%] p-2'>{item?.title}</td>
                                                             <div className='w-full flex justify-around'>
                                                                 <td className="flex flex-1 items-center justify-center   p-2 font-medium">
-                                                                    {/* {renderCell(item?.basic_type)} */}
                                                                     {renderCell(item.basic_type, "Basic")}
-
                                                                 </td>
                                                                 <td className="flex flex-1 items-center  p-2 justify-center font-medium">
-                                                                    {/* {renderCell(item?.advance_type)} */}
                                                                     {renderCell(item.advance_type, "Advanced")}
-
                                                                 </td>
                                                                 <td className="flex flex-1 items-center  p-2 justify-center font-medium">
-                                                                    {/* {renderCell(item?.professional_type)} */}
+                                                                   
                                                                     {renderCell(item.professional_type, "Professional")}
-
                                                                 </td>
                                                                 <td className="flex flex-1 items-center p-2 justify-center font-medium">
-                                                                    {/* {renderCell(item?.premium_type)} */}
                                                                     {renderCell(item.premium_type, "Premium")}
-
                                                                 </td>
                                                             </div>
                                                         </tr>
@@ -522,7 +639,8 @@ const Service_Pkackages = () => {
                             }
                             <div className='w-full bg-blue py-10 text-white  lg:py-16'>
                                 <div className=' md:w-[75%] mx-auto xl:w-[50%]'>
-                                    <p className=' text-[28px] font-bold text-center lg:leading-[46px] lg:text-[38px]'>Get A Top Rank on Google Search Results,
+                                    <p className=' text-[28px] font-bold text-center lg:leading-[46px] lg:text-[38px]'>
+                                        Get A Top Rank on Google Search Results,
                                         Qualified Leads and Increased Sales
                                     </p>
                                     <div className='flex flex-wrap mt-8 justify-center gap-4'>

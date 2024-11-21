@@ -194,7 +194,7 @@ input:-webkit-autofill {
 }
 .bg_rev{
   background-image: url("/images/revenue-bg.png") !important;
-  background-size: 100% 100% !important;
+  /* background-size: 100% 100% !important; */
   background-position: cover !important;
   background-repeat: no-repeat !important;
 }
