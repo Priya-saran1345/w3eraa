@@ -14,12 +14,23 @@ const index = ({props}:any) => {
                     {
                         props?.card.map((elem: any, i:number) => (
                             <div key={i} className=' flex flex-col gap-10 sm:w-[80%] md:w-[48%] bg-white rounded-xl hover:shadow-xl border-[1px] border-lightblue p-4'>
-                                <div className='bg-lightblue items-center flex gap-6 p-5 rounded-xl'>
-                                     <Image src={elem?.image} height={107} width={132} alt={elem?.image_alt}/>
-                                     <p className='text-[26px] pr-4 text-homeblack leading-[31px] font-semibold '>{elem?.title}</p>
-                                </div>
-                                <div className='px-7 text-justify'>
-                                    <p className='text-[18px] text-homegrey'>
+                                <div className="bg-lightblue items-center justify-center flex flex-col md:flex-row gap-6 p-5 rounded-xl">
+  <div className="flex justify-center md:justify-start">
+    <Image 
+      src={elem?.image} 
+      height={107} 
+      width={132} 
+      alt={elem?.image_alt} 
+      className="mx-auto md:mx-0" 
+    />
+  </div>
+  <p className="text-[20px] lg:text-[26px] text-center md:text-left pr-0 md:pr-4 text-homeblack leading-[31px] font-semibold">
+    {elem?.title}
+  </p>
+</div>
+
+                                <div className=" text-justify">
+                                    <p className=' text-[16px] lg:text-[18px] text-homegrey'>
                                       {elem?.description}
                                          </p>
                                 </div>

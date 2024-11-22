@@ -5,13 +5,13 @@ import Navbar from '@/components/navbar';
 import React, { useEffect, useState } from 'react';
 import { IoIosSearch } from "react-icons/io";
 import Image from 'next/image';
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
+import { FaAngleLeft, FaAngleRight, FaArrowRightLong } from "react-icons/fa6";
 import axios from 'axios';
 import { BASE_URL } from '@/util/api';
 import Link from 'next/link';
 import { HiArrowTopRightOnSquare } from 'react-icons/hi2';
 import Loader from '@/components/loader';
-import {StyledWrapper} from '@/components/Styled'
+import { StyledWrapper } from '@/components/Styled'
 import HubspotForm from '@/components/HubspotForm'
 
 //  import {useRouter} from 'next/navigation';
@@ -70,13 +70,13 @@ const Page = () => {
             tool.title.toLowerCase().includes(searchedTool.toLowerCase())
         )
         // : currentItems;
-        :tools;
+        : tools;
 
     return (
         <>
             {
                 !tools &&
-                <Loader/>
+                <Loader />
             }
             {
                 tools &&
@@ -100,17 +100,32 @@ const Page = () => {
                             <div className='flex gap-5 justify-center flex-wrap items-center'>
                                 {filteredTools.map((elem: any, index: number) => (
                                     <Link href={`/tool/${elem.slug_link}`} key={index}>
-                                        <div className='border-[1px] p-5 w-[155px] lg:min-w-[241px] min-h-[200px] lg:h-[264px] flex flex-col justify-center items-center gap-7 border-slate-200 rounded-md hover:shadow-lg'>
-                                            <Image
-                                                src={elem?.image}
-                                                height={90}
-                                                width={90}
-                                                alt={elem?.image_alt}
-                                                className="transition-all duration-200"
-                                            />
-                                            <p className='text-[20px] text-center font-medium'>{elem?.title}</p>
+                                        <div className="bg-lightblue hover:shadow-lg p-5 w-[155px] lg:min-w-[241px]
+                                         group min-h-[200px] lg:h-[284px] flex flex-col
+                                          justify-center items-center gap-4 border-slate-200 rounded-md hover:bg-white transition-all duration-300 ease-in-out transform hover:scale-105">
+                                            <div className="min-h-[100px] rounded-full flex justify-center items-center min-w-[100px] bg-white group-hover:bg-blue group-hover:scale-110 transition-all duration-300 ease-in-out">
+                                                <Image
+                                                    src={elem?.image}
+                                                    height={60}
+                                                    width={60}
+                                                    alt={elem?.image_alt}
+                                                    className="transition-all duration-300 ease-in-out group-hover:brightness-0 group-hover:invert"
+                                                />
+
+                                            </div>
+                                            <p className="text-[18px] group-hover:text-pink text-center
+                                             font-medium transition-all duration-300 ease-in-out">
+                                                {elem?.title}
+                                            </p>
+                                            <div className="flex justify-center items-center">
+                                                <FaArrowRightLong className="text-[28px]
+                                                 text-pink opacity-0 group-hover:opacity-100 
+                                                 transition-all 
+                                                 duration-300 ease-in-out transform group-hover:translate-y-0 translate-y-7" />
+                                            </div>
                                         </div>
-                                    </Link> 
+
+                                    </Link>
                                 ))}
                             </div>
                             {/* <div className='flex justify-center'>
@@ -137,12 +152,12 @@ const Page = () => {
                                     <p className='text-[24px] font-medium text-homeblack mb-3'>About SEO Tools</p>
                                 </div>
                                 <div className='my-8 px-4'>
-                                <StyledWrapper>
-                                    <div
-                                        dangerouslySetInnerHTML={{
-                                            __html: body
-                                        }}
-                                    />
+                                    <StyledWrapper>
+                                        <div
+                                            dangerouslySetInnerHTML={{
+                                                __html: body
+                                            }}
+                                        />
                                     </StyledWrapper>
                                 </div>
                             </div>
@@ -150,7 +165,7 @@ const Page = () => {
                                 <div className='border-b-[1px] border-slate-200 mb-4'>
                                     <p className='text-[24px] font-medium text-homeblack mb-3'>Package</p>
                                 </div>
-                               
+
                                 {/* <form className='text-homegrey'>
                                     <input type="text" required placeholder='Please Enter Your Name*' className='my-2 w-full p-3 rounded-lg border-[2px] border-grey outline-none' />
                                     <input type="email" required placeholder='Email Address*' className='my-2 w-full p-3 rounded-lg border-[2px] border-grey outline-none' />
@@ -159,7 +174,7 @@ const Page = () => {
                                     <textarea required className='my-2 w-full p-3 rounded-lg border-[2px] border-grey outline-none' />
                                     <button className='bg-pink text-white text-[14px] w-[133px] h-[44px] flex justify-center items-center rounded-lg'>SUBMIT NOW</button>
                                 </form> */}
-                                <HubspotForm  portalId="20095080" formId={"2aeda8d3-d0a1-4624-87f7-39fea7a4d68d"} region={'na1'}/>
+                                <HubspotForm portalId="20095080" formId={"2aeda8d3-d0a1-4624-87f7-39fea7a4d68d"} region={'na1'} />
 
 
                                 <div className='border-b-[1px] border-slate-200 mt-5 mb-3'>
