@@ -20,7 +20,6 @@ const Marketing = () => {
     const splitIndex = words.length - numOfWords;
     const firstPart = words.slice(0, splitIndex).join(' ');
     const secondPart = words.slice(splitIndex).join(' ');
-    
     return { first: firstPart, second: secondPart };
 }
   useEffect(() => {
@@ -39,7 +38,7 @@ const Marketing = () => {
           <p className='text-homeblack text-[18px] lg:text-[20px] font-semibold  uppercase'>{marketingData?.subtitle}</p>
           <h2 className='  font-bold  text-homeblack  lg:leading-[58px]'>{data.first} <span className='text-pink'>{data.second}</span></h2>
           <p className='text-homegrey text-[16px] lg:text-[18px]'>{marketingData?.summary}</p>
-          <div className='flex gap-4 mt-5 flex-wrap sm:flex-nowrap justify-between'>
+          <div className='flex gap-4 mt-5 flex-wrap  md:flex-nowrap lg:flex-wrap 2xl:flex-nowrap justify-between'>
             <div className="bg-lightblue p-5 rounded-lg items-start flex gap-4 group hover:bg-white duration-300 hover:shadow-lg transition-all">
               <p className="text-homeblack text-[16px] lg:text-[18px]">
               {marketingData?.box1}
