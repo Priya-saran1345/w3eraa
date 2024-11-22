@@ -107,7 +107,7 @@ const CaseStudy: React.FC = () => {
                                 </div>
                                 <div className='flex justify-center lg:justify-start'>
                                     <Link href={`${provenResult[activeIndex].slug}`}>
-                                    <Button content={'Learn More'}/>
+                                    <Button content={'Know More'}/>
                                     </Link>
 
                                 </div>
@@ -124,7 +124,7 @@ const CaseStudy: React.FC = () => {
                                         alt={elem?.image_alt}
                                         height={507}
                                         width={829}
-                                        className='w-[500px] xl:w-[829px] h-full rounded-lg'
+                                        className='w-[500px]  xl:w-[829px] h-full rounded-lg'
                                     />
                                 </div>
                             ))}

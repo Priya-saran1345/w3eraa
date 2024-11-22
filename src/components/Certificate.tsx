@@ -8,9 +8,7 @@ const Certificate = () => {
             <p className='w-full xl:w-[75%] mx-auto px-4 lg:px-[30px]'>
                 <h2 className='  text-homeblack leading-none lg:leading-[45px] text-center  capitalize   font-bold'>
                     W3era wins Certification of Recognition in India 5000 Best MSME Award for Quality excellence
-
                 </h2>
-
             </p>
             <div className="flex flex-wrap lg:flex-nowrap mt-10 justify-center gap-5  items-center px-4 lg:px-3 w-full xl:w-[75%] mx-auto">
                 <div className=' hidden lg:block '>

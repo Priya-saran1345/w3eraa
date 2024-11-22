@@ -14,7 +14,7 @@ const Revenue = () => {
            cultivate high-quality leads, and yield result-driven results. </p>
 
         <div className='w-full mt-12 flex justify-center lg:justify-start gap-4 lg:flex-nowrap flex-wrap  '>
-          <div className='w-[307px] h-[164px] flex text-white bg-white/10 px-6  rounded-md items-center gap-3'>
+          <div className=' w-[97%] sm:w-[307px] h-[164px] flex text-white bg-white/10 px-6  rounded-md items-center gap-3'>
             <div className='min-w-[108px] min-h-[108px] bg-white/10  rounded-xl flex justify-center items-center'>
               <Image src={'/images/revenue1.svg'} alt='revenue1' height={55} width={57} />
             </div>
@@ -24,7 +24,7 @@ const Revenue = () => {
             </div>
           </div>
          
-          <div className='w-[307px] h-[164px] text-white  flex bg-white/10  px-6  rounded-md items-center gap-3'>
+          <div className=' w-[97%] m:w-[307px] h-[164px] text-white  flex bg-white/10  px-6  rounded-md items-center gap-3'>
             <div className='min-w-[108px] min-h-[108px] bg-white/10 rounded-xl flex justify-center items-center'>
               <Image src={'/images/revenue2.svg'} alt='revenue2' height={55} width={57} />
             </div>
@@ -33,7 +33,7 @@ const Revenue = () => {
               <p className=' mt-3 font-medium text-[18px] lg:text-[22px]'>Qualified Leads</p>
             </div>
           </div>
-          <div className='w-[307px] h-[164px] flex text-white  gap-3 bg-white/10 px-6 rounded-md items-center '>
+          <div className=' w-[97%]  sm:w-[307px] h-[164px] flex text-white  gap-3 bg-white/10 px-6 rounded-md items-center '>
             <div className='min-w-[108px] min-h-[108px] bg-white/10 rounded-xl flex justify-center items-center'>
               <Image src={'/images/revenue3.svg'} alt='revenue3' height={55} width={57} />
             </div>

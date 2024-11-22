@@ -101,14 +101,13 @@ basic_details && about&&
             <Navbar />
             <div className='w-full px-4 bg-[url("/images/aboutbg.png")] h-[388px] flex justify-center items-center'>
             <h1 className="text-homeblack text-[32px] font-bold lg:text-[48px]">About US</h1>
-
             </div>
             <div className='full'>
                 <div className='w-full pt-12 lg:pt-16 xl:w-[75%] mx-auto px-4' >
                     <div>
-                        <p className=' text-[28px] lg:text-[32px] text-homeblack font-medium'>About</p>
-                        <p className=' text-[32px] lg:text-[38px] text-homeblack  font-bold mb-2'>{about?.aboutus[0]?.title}</p>
-                        <p className='text-[18px] text-homegrey' dangerouslySetInnerHTML={{ __html:about?.aboutus[0]?.description }} />
+                        <p className=' text-[20px] lg:text-[32px] text-homeblack font-medium'>About</p>
+                        <h2 className=' text-homeblack font-bold mb-2'>{about?.aboutus[0]?.title}</h2>
+                        <p className=' text-[16px] lg:text-[18px] text-homegrey' dangerouslySetInnerHTML={{ __html:about?.aboutus[0]?.description }} />
                     </div>
                     {/* <div className='  relative my-20' onMouseLeave={() => setshow(false)} >
 
@@ -187,7 +186,6 @@ basic_details && about&&
                 </div>
                 <div className=' w-full bg-grey '>
                     <div className='w-full xl:w-[75%] py-12 flex flex-wrap gap-5 justify-between mx-auto px-4'>
-
                         {
                             about?.who_youare[0].cards.map((elem: any ,index:any) => {
                                 return (
@@ -203,7 +201,7 @@ basic_details && about&&
                                             </div>
                                         </div>
                                         <div className='flex flex-col gap-3 mt-4'>
-                                            <p className=' text-[23px] lg:text-[26px] text-homeblack group-hover:text-pink font-medium'>{elem.title}</p>
+                                            <h2 className=' text-[23px] lg:text-[26px] text-homeblack group-hover:text-pink font-medium'>{elem.title}</h2>
                                             <p className=' text-[20px] lg:text-[22px] text-homeblack     font-medium'>{elem.subtitle}</p>
                                             <p className=' text-[16px] text-homegrey lg:text-[18px]'>
                                                 {
