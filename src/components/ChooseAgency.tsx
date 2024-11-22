@@ -26,7 +26,8 @@ const ChooseAgency = () => {
                         ))
                     }
                     {Data.home_agency.cards.map((elem: any, i: number) => (
-                        <div key={i} className=' md:hidden rounded-xl my-2 border-[1px] border-lightblue items-center sm:items-start text-center sm:text-left px-4 2xl:px-8 py-8  
+                        <div key={i} className=' md:hidden rounded-xl my-2 border-[2px]
+                         border-lightblue items-center sm:items-start text-center sm:text-left px-4 2xl:px-8 py-4  
                               flex flex-col  gap-2 justify-between bg-white hover:shadow-xl'>
 
                             <p className=' text-[20px] md:text-[26px] font-medium text-homeblack leading-[31px]'>{elem.title}</p>
