@@ -26,6 +26,7 @@ import CustomerChoose from '@/components/CustomerChoose';
 import DownNavbar from '@/components/DownNavbar'
 
 
+
 const Main = () => {
     const { basic_details } = Useapi();
     console.log("basic_details",basic_details);

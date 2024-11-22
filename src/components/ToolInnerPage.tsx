@@ -187,12 +187,12 @@ const Tool = () => {
     };
     return (
         <>
-            {/* {
+            {
                 !tools && currentTool&&
                 <Loader/>
-            } */}
+            }
             {
-                // tools && currentTool&&
+                tools && currentTool&&
                 <div>
                     <Header />
                     <Navbar />
