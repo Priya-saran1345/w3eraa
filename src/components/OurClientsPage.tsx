@@ -42,7 +42,7 @@ client&& apidata&&
                     {
                        client?.client[0]?.client_list?.map((elem: any, i: number) => {
                             return (
-                                <div key={i} className="flex min-w-[190] max-h-[120px] p-1 group md:size-[181px] justify-center items-center border-[1px] border-slate-100 rounded-sm">
+                                <div key={i} className="flex w-[170px] max-h-[120px] p-1 group md:size-[181px] justify-center items-center border-[1px] border-slate-100 rounded-sm">
                                     <Image
                                         src={elem?.image}
                                         alt={elem?.image_alt}
