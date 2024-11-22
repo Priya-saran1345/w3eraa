@@ -21,11 +21,11 @@ const Page = () => {
     } catch (error: any) {
       console.log(error.message);
     }
+   
   }
   useEffect(() => {
     fetch();
   }, [])
-  console.log('basic detail-------',basic_details)
   return (
     <div>
       {

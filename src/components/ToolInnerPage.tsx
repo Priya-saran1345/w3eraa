@@ -72,7 +72,6 @@ const Tool = () => {
             setTimeout(appendRow, randomDelay); // Schedule the next row with random delay
           }
         };
-      
         appendRow(); // Start the recursive process
       };
       

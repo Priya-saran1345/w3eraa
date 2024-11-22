@@ -283,6 +283,80 @@
         "time": "Submissions Time (15 Days)"
     }
     ]
+    
+    },
+
+    "home_agency":{
+      "title":"What to look for when choosing a digital marketing agency?",
+      "description": "In the digital marketing world, finding the perfect agency partner requires careful consideration. There are various factors that need to be considered when selecting a digital marketing agency:"
+,
+
+
+           "cards": [
+            {
+            
+             "title":"Expertise and Track Record:",
+            
+             "description":"Evaluate the agency's experience and success in delivering effective campaigns across diverse industries."
+          },
+          {
+            
+            "title":"Transparency Matters:",
+           
+            "description":"Seek an agency that is transparent about its strategies, methods, and past results, avoiding those promising unrealistic overnight success."
+         },
+         {
+            
+          "title":"Comprehensive Service Offering:",
+          "description":"Opt for an agency that provides a wide range of services encompassing SEO, social media, content creation, and analytics."
+       },
+       {
+            
+        "title":"Skillful Team:",
+       
+        "description":"Ensure the agency's team possesses a diverse skill set, from strategic planning and design to copywriting and data analysis."
+     },
+     {
+            
+      "title":"Customized Approach:",
+     
+      "description":"Inquire about their approach to understanding your business and target audience, aiming for a strategy aligned with your brand's unique"
+   },
+   {
+            
+    "title":"Budget Alignment:",
+   
+    "description":"Select a digital marketing agency that offers the best quality services at affordable prices."
+ }
+,
+{
+            
+  "title":"Effective Communication:",
+ 
+  "description":"Emphasize open communication and collaboration, seeking an agency that maintains regular updates and engages closely with your team.You can grow your business to new digital heights by partnering with the right internet marketing agency."
+}
+
+        ]
+      }
+,
+"home_certificate":{
+  "title":"W3era wins Certification of Recognition in India 5000 Best MSME Award for Quality excellence",
+  "cards":[
+    {
+      "description":"We are thrilled to announce that W3era, the best digital marketing company, has been awarded the Certification of Recognition in India 5000 Best MSME Award for Quality Excellence. This award is a testament to our team's unwavering commitment to delivering high-quality digital marketing services to our clients."
+    },
+    {
+"description":"The India 5000 Best MSME Award is a prestigious recognition program that celebrates outstanding Micro, Small, and Medium Enterprises (MSMEs) in India. The certification process involves a rigorous evaluation of each nominee's business practices, quality standards, innovation, and customer service."
+    },
+    {
+      "description":"At W3era, we are deeply honored to have received this award, and we believe it reflects the hard work and dedication of our talented team. Our commitment to quality excellence is at the heart of everything we do, and we strive to provide our clients with the best possible digital marketing solutions tailored to their unique business needs."
+    },
+    {
+      "description":"By choosing W3era as your digital marketing partner, you can be assured of receiving exceptional service and results that will help your business grow and succeed in today's competitive online landscape. We are grateful for the recognition provided by India 5000 Best MSME Award, and we look forward to continuing to exceed our client 's expectations."
     }
+  ]
+
+}
+
   }
   

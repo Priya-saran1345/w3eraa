@@ -222,6 +222,10 @@ h1{
   h1{
     font-size: 28px!important;
   }
+  .vef_btn{
+    padding: 10px 10px !important;
+    font-size: 14px!important;
+  }
 }
 
 .vef_bg {
@@ -239,4 +243,47 @@ h1{
 }
 .justify-content p{
 text-align: justify;
+}
+
+
+/* animated cards css from here */
+
+.box {
+color: white;
+  --border-angle: 0turn; 
+  --main-bg: conic-gradient(
+      from var(--border-angle),
+      #213,
+      #112 5%,
+      #112 60%,
+      #213 95%
+    );
+  
+  border: solid 5px transparent;
+  border-radius: 2em;
+  --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
+  
+  background: 
+    var(--main-bg) padding-box,
+    var(--gradient-border) border-box, 
+    var(--main-bg) border-box;
+  
+  background-position: center center;
+
+  animation: bg-spin 3s linear infinite;
+  @keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
+    }
+  }
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
 }

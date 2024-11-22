@@ -21,8 +21,15 @@ const Index = ({show}:any) => {
               <li  className='flex  lg:hidden gap-1 items-center mb-2 cursor-pointer'>
                Blogs
               </li>
+              </Link>
+              <Link target='_blank' href={'/contact-us'}>
               <li  className='flex  lg:hidden gap-1 items-center cursor-pointer'>
                 Contact us 
+              </li>
+              </Link>
+              <Link target='_blank' href={'/web-stories'}>
+              <li  className='flex  lg:hidden gap-1 items-center cursor-pointer'>
+               web Story
               </li>
               </Link>
               <li onClick={() => toggleDropdown('seo')} className='flex gap-1 items-center cursor-pointer'>

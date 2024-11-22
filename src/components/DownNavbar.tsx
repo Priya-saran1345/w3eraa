@@ -17,11 +17,11 @@ const Header = () => {
   };
   return (
     <>
-      <div className='bg-purple text-white'>
+      <div className='bg-purple lg:hidden text-white'>
         <div className='w-full  px-4 xl:w-[75%] mx-auto'>
           <div className='flex justify-between xl:justify-end 2xl:justify-between items-center '>
             <div className='block xl:hidden 2xl:block my-3'>
-              <div className='flex gap-[3px] sm:gap-2 text-[19px]'>
+              {/* <div className='flex gap-[3px] sm:gap-2 text-[19px]'>
                 <Link target='_blank' href={`${basic_details?.basic_details[0].facebook_url}`}><FaFacebook /></Link>
                 <Link target='_blank' href={`${basic_details?.basic_details[0].instagram_url}`}><FaInstagram /></Link>
                 <Link target='_blank' href={`${basic_details?.basic_details[0].linkedin_url}`}><FaLinkedinIn /></Link>
@@ -32,13 +32,13 @@ const Header = () => {
                 <Link target='_blank' href={`${basic_details?.basic_details[0].pinterest_url}`}><FaPinterest /></Link>
                 <Link target='_blank' href={`${basic_details?.basic_details[0].gmb_url}`}><IoLocationOutline /></Link>
 
-              </div>
+              </div> */}
               {/* <a href={`mailto:${basic_details?.basic_details[0].email}`}>
                 <p className='text-[15px] text-white mt-1'>{basic_details?.basic_details[0].email} </p>
               </a> */}
             </div>
             <div className='flex text-white gap-4 py-3 items-center text-[16px]'>
-              <div className='items-center 2xl:font-semibold hidden lg:flex gap-5 2xl:gap-5'>
+              <div className='items-center 2xl:font-semibold flex gap-2 flex-wrap 2xl:gap-5'>
 
                 {/* About Us Dropdown */}
                 <div className='relative'>
@@ -78,29 +78,29 @@ const Header = () => {
                   )}
                 </div>
                 {/* Other Navbar Items */}
-                <Link  target='_blank' href={'/blog'}>
+                {/* <Link  target='_blank' href={'/blog'}>
                   <div>Blog</div>
-                </Link>
-                <Link  target='_blank' href={'/web-stories'}>
+                </Link> */}
+                {/* <Link  target='_blank' href={'/web-stories'}>
                   <div>Web Story</div>
-                </Link>
+                </Link> */}
                 <div className=''>
                   <Link  target='_blank' href={'/website-seo-analyzer'} >
                     <div>Free Website Audit</div>
                   </Link>
                 </div>
-                <Link  target='_blank' href='/contact-us'>
+                {/* <Link  target='_blank' href='/contact-us'>
                   <div>Contact Us</div>
-                </Link>
+                </Link> */}
               </div>
               {/* Proposal Button */}
-              <a  href={`tel:${basic_details?.basic_details[0].contact_job}`}>
+              {/* <a  href={`tel:${basic_details?.basic_details[0].contact_job}`}>
                 <button
                   className='flex items-center justify-center px-4  md:px-6 text-white rounded-lg py-2 group bg-pink transition duration-300'>
                   <span className='transition-transform duration-300 group-hover:-translate-x-2'>Apply for Job</span>
                   <IoCall className='text-[20px] opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-x-2' />
                 </button>
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

@@ -13,7 +13,7 @@ const index = ({ props }: any) => {
                 <div className='flex justify-center gap-5 flex-wrap'>
                     {
                         props?.card.map((elem: any, i: number) => (
-                            <div key={i} className='rounded-xl p-8  sm:w-[45%] lg:w-[31%]  flex flex-col gap-2 justify-between bg-white hover:shadow-xl'>
+                            <div key={i} className='rounded-xl p-8 w-[90%] sm:w-[45%] lg:w-[31%]  flex flex-col gap-2 justify-between bg-white hover:shadow-xl'>
                                 {
                                     (elem.title && elem.description)?
                                     <div>

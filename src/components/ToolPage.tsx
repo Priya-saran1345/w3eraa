@@ -86,7 +86,7 @@ const Page = () => {
                     <div className='w-full '>
                         <div className='w-full bg-no-repeat bg-center min-h-[40vh] bg-[url("/images/tool-bg.png")]  py-9 flex flex-col justify-center items-center'>
                             <h1 className='text-[32px] lg:text-[44px] font-bold text-white'>Free SEO Tools</h1>
-                            <div className='rounded-full w-1/3 flex justify-between items-center p-3 px-6 mt-4 bg-white'>
+                            <div className='rounded-full w-[90%] md:w-[80%] lg:w-1/3 flex justify-between items-center p-3 px-6 mt-4 bg-white'>
                                 <input
                                     type="text"
                                     className='text-textGrey w-full border-none outline-none text-[18px]'

@@ -19,7 +19,7 @@ const Navbar = () => {
             <Image 
               src={basic_details?.basic_details[0]?.logo} 
               width={137} 
-              loading='eager'
+              // loading='eager'
               height={58} 
               alt={basic_details?.basic_details[0]?.logo_alt} 
               className="cursor-pointer"
@@ -30,7 +30,6 @@ const Navbar = () => {
           <div className="hidden lg:block">
             <NavbarItems  show={0} />
           </div>
-
           {/* Mobile Menu Icon */}
           <div className='text-[26px] lg:hidden cursor-pointer' onClick={() => setshowmenu((prev)=>!prev)}>
             {!showmenu&&
@@ -46,7 +45,7 @@ const Navbar = () => {
 
       {/* Mobile Navbar */}
       {showmenu && (
-        <div className=' lg:hidden absolute px-6 top-[57px] left-0 w-full bg-white shadow-md z-30'>
+        <div className=' lg:hidden absolute px-6 top-[72px] left-0 w-full bg-white shadow-md z-30'>
           <NavbarItems show={1} />
         </div>
       )}

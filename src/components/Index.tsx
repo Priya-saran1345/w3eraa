@@ -23,19 +23,25 @@ import Loader from '@/components/loader';
 import ChooseAgency from "@/components/ChooseAgency"
 import Certificate from '@/components/Certificate'
 import CustomerChoose from '@/components/CustomerChoose';
+import DownNavbar from '@/components/DownNavbar'
+
+
 const Main = () => {
     const { basic_details } = Useapi();
+    console.log("basic_details",basic_details);
+    
     const { apidata } = Useapi();
-    const {blogs  } = Useapi();
+    // const {blogs  } = Useapi();
     return (
     <div>
-        { !basic_details&&!apidata&&!blogs&&  
+        { !basic_details&&!apidata&&  
        <Loader/>
         }
          {
-           basic_details&&apidata&&blogs&& 
+           basic_details&&apidata&&
       <div>
       <Header />
+      <DownNavbar/>
       <Navbar />
       <Banner />
       <Marketing />

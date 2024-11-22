@@ -268,7 +268,7 @@ const Service_Pkackages = () => {
                                       <div className='shadow-lg  p-5 border-slate-200 border-[1px]  rounded-2xl mb-4'>
                                           <div className='overflow-x-auto'>
                                               <div className='flex justify-start mb-14'>
-                                                  <div className='min-w-[25%] min-h-full flex  items-center '> 
+                                                  <div className='min-w-[230px] sm:min-w-[25%] min-h-full flex  items-center '> 
                                                   <p className="text-[24px] font-semibold">{data?.packagecategory[0]?.title || ''}</p></div>
                                                   <div className='w-full min-w-[800px] flex justify-around '>
                                                       {['Basic', 'Advanced', 'Professional', 'Premium'].map((plan, index) => (
@@ -529,7 +529,7 @@ const Service_Pkackages = () => {
                                     <div className='shadow-lg  p-5 border-slate-200 border-[1px]  rounded-2xl mb-4'>
                                         <div className='overflow-x-auto'>
                                             <div className='flex justify-start mb-14'>
-                                                <div className='min-w-[25%] min-h-full flex  items-center '> 
+                                                <div className='min-w-[230px] sm:min-w-[25%] min-h-full flex  items-center '> 
                                                 <p className="text-[24px] font-semibold">{data?.packagecategory[0]?.title || ''}</p></div>
                                                 <div className='w-full min-w-[800px] flex justify-around '>
                                                     {['Basic', 'Advanced', 'Professional', 'Premium'].map((plan, index) => (

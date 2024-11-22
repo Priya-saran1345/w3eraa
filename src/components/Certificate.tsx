@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import Data from '@/components/Json/Data.json'
 
 const Certificate = () => {
     return (
@@ -22,28 +23,26 @@ const Certificate = () => {
                     />
                 </div>
                 <div className=''>
-                    <div className='text-[16px] gap-2 mt-2 flex items-center text-homegrey lg:text-[18px]'>
-                        We are thrilled to announce that W3era, the best digital marketing company, has been awarded the Certification
-                         of Recognition in India 5000 Best MSME Award for Quality Excellence.
-                        This award is a testament to our team&apos;s unwavering commitment to delivering high-quality digital marketing services to our clients.
-                        <br /><br />
-                        The India 5000 Best MSME Award is a prestigious recognition program that celebrates outstanding
-                         Micro, Small, and Medium Enterprises (MSMEs) in India. The certification process involves a rigorous evaluation of each nominee&apos;s business 
-                         practices, quality standards, innovation, and customer service.
+                    {
+                       Data.home_certificate.cards.map((elem:any ,index:number) =>(
+                        <div key={index} className= ' hidden text-[16px] gap-2 my-4 mb-6 sm:flex items-center text-homegrey lg:text-[18px]'>
+                            {elem?.description}
+                            </div>
+                       ))
+                    }
+                      {Data.home_certificate.cards.map((elem: any, i: number) => (
+                        <div key={i} className='box md:hidden rounded-xl my-2  items-center sm:items-start
+                         text-center sm:text-left px-4 2xl:px-8 py-8  
+                              flex flex-col  gap-2 justify-between bg-white hover:shadow-xl'>
 
-                        <br /><br />
-                        At W3era, we are deeply honored to have received this award, 
-                        and we believe it reflects the hard work and dedication of our talented team. Our commitment to quality excellence is
-                         at the heart of everything we do, and we strive to provide our clients with the best possible digital marketing solutions tailored to their unique business needs.
-
-                        <br /><br />
-                        By choosing W3era as your digital marketing partner, you can be assured of receiving exceptional
-                         service and results that will help your business grow and succeed in today&apos;s competitive online landscape. We are grateful for
-                          the recognition provided by India 5000 Best MSME Award, and we look forward to continuing to exceed our client &apos;s expectations.
+                            {/* <p className=' text-[20px] md:text-[26px] font-medium text-homeblack leading-[31px]'>{elem.title}</p> */}
+                            <p className='text-[16px] lg:text-[18px]  leading-[22px]'>
+                                {elem?.description}</p>
 
 
-                    </div>
-
+                        </div>
+                    ))}
+                  
                 </div>
 
 
