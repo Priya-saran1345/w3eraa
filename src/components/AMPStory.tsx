@@ -5,10 +5,10 @@ import dynamic from 'next/dynamic'
 import Script from 'next/script'
 import axios from 'axios'
 import Loader from '@/components/loader'
+import { BASE_URL } from '@/util/api'
 
 const AMPStoryContent = dynamic(() => import('@/components/AMPStoryContent'), { ssr: false })
 
-const BASE_URL = 'https://w3era.vefogix.com/api/'
 
 export default function AMPStory({ slug }: { slug: string }) {
   const [story, setStory] = useState<any>(null)
