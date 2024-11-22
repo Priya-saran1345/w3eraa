@@ -85,7 +85,7 @@ const Banner = () => {
                 <div className='2xl:w-[80%]'>
                 <div
             className="font-bold text-center  sm:text-left text-[28px] lg:text-[32px] xl:text-[48px] 2xl:text-[62px] leading-tight xl:leading-[60px]"
-            dangerouslySetInnerHTML={{ __html: bannerData?.title || "Default Title" }}
+            dangerouslySetInnerHTML={{ __html: bannerData?.title || "Digital Marketing Company " }}
         />
                   <p className="text-[22px] lg:text-[28px] text-center sm:text-left font-semibold mt-3">
                     {bannerData?.subtitle}

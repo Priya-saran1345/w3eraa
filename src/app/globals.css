@@ -283,7 +283,9 @@ color: white;
   inherits: true;
   initial-value: 0turn;
 }
-.blog-img img{
-  height: auto !important;
-  max-width: 100%;
+.blog-img img {
+  height: auto !important; /* Ensure the height scales proportionally */
+  max-width: 100%; /* Restrict the image width to the container */
+  display: block; /* Ensure it's treated as a block-level element for centering */
+  margin: 0 auto; /* Center horizontally */
 }

@@ -114,7 +114,7 @@ const Blogs = () => {
 
                                         {apidata ? (
                                             <div>
-                                                <h2 className='text-[28px] text-center text-homeblack md:text-left font-semibold mb-2'>{apidata.title || "No Title Available"}</h2>
+                                                <h1 className='text-[28px] text-center text-homeblack md:text-left font-semibold mb-2'>{apidata.title || "No Title Available"}</h1>
                                                 <p className='text-[20px] mb-5 flex items-center gap-1' ><Link href="/"><span className='text-blue'>Home</span></Link>
                                                     <MdOutlineKeyboardDoubleArrowRight />
                                                     <Link href={`/blog/category/${apidata?.category_slug}`}>

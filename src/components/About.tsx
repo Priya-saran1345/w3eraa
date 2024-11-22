@@ -181,7 +181,7 @@ const AboutUS = () => {
                 <div className=' w-full bg-[url("/images/aboutwave.png")] flex items-end min-h-[345px]'>
                     <div  className='w-full xl:w-[75%] mx-auto px-4 mt-8 sm:mt-0' >
                         <h2 className=' font-bold text-homeblack text-center'>{about?.who_youare[0].title}</h2>
-                        <p className=' text-[16px] lg:text-[18px] 2xl:text-[20px] px-10 text-center text-homegrey'  dangerouslySetInnerHTML={{ __html: about?.who_youare[0].description }} ></p>
+                            <p className=' text-[16px] lg:text-[18px] 2xl:text-[20px] px-10 text-center text-homegrey'  dangerouslySetInnerHTML={{ __html: about?.who_youare[0].description }} ></p>
                     </div>
                 </div>
                 <div className=' w-full bg-grey '>
@@ -216,8 +216,8 @@ const AboutUS = () => {
                 </div>
                 <div className='w-full bg-[url("/images/aboutbg2.png")] py-12   flex flex-col justify-center '>
                     <div className='md:w-[55%] flex flex-col gap-3 mx-auto text-white text-center'>
-                        <p className=' text-[32px] lg:text-[38px] font-bold '>{about?.ourvalue[0].title}</p>
-                        <p className=' text-[18px] lg:text-[20px] leading-[24px]'>
+                        <h2 className=' text-[32px] lg:text-[38px] font-bold '>{about?.ourvalue[0].title}</h2>
+                        <p className='text-[16px] lg:text-[18px] xl:text-[20px] leading-[24px]'>
                             {about?.ourvalue[0].description}
                         </p>
                     </div>
@@ -234,9 +234,9 @@ const AboutUS = () => {
                 <div className='w-full  py-8 lg:py-16 bg-grey'>
                     <div className='md:w-[55%] mx-auto'>
 
-                        <p className=' text-[32px] lg:text-[48px] font-bold pb-4 text-center text-homeblack'> {about?.about_client[0]?.title}
-                        </p>
-                        <p className='text-[20px] fomt-medium text-center text-homegrey'>{about?.about_client[0]?.description}</p>
+                        <h2 className=' text-[32px] lg:text-[48px] font-bold pb-4 text-center text-homeblack'> {about?.about_client[0]?.title}
+                        </h2>
+                        <p className=' text-[16px] lg:text-[20px] fomt-medium text-center text-homegrey'>{about?.about_client[0]?.description}</p>
                     </div>
                     <div className=' mt-8 md:mt-12 overflow-hidden'>
                         <Slider {...settings}>
@@ -273,8 +273,8 @@ const AboutUS = () => {
 
                 <div className=' pt-12 lg:pt-16 bg-white md:flex-row flex-col flex justify-between  items-start px-4 mx-auto xl:w-[75%]'>
                     <div className='md:w-[342px] text-center md:text-left mb-16 md:mb-0'>
-                        <p className=' text-[32px] lg:text-[38px] text-homeblack font-semibold'>{about?.milestone[0]?.title}</p>
-                        <p className=' text-[18px] lg:text-[20px] text-homegrey font-medium'>{about?.milestone[0]?.description}</p>
+                        <h2 className=' text-[32px] lg:text-[38px] text-homeblack font-semibold'>{about?.milestone[0]?.title}</h2>
+                        <p className=' text-[16px] lg:text-[18px] xl:text-[20px] text-homegrey font-medium'>{about?.milestone[0]?.description}</p>
                     </div>
                     <div>
                         <Image

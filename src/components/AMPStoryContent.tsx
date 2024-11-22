@@ -20,29 +20,18 @@ interface Story {
   post_date: string
   card: Card[]
 }
-
 export default function AMPStoryContent({ story }: { story: Story }) {
   const router = useRouter()
   useEffect(() => {
     document.documentElement.setAttribute('amp', '')
   }, [])
-
   const stripHtml = (html: string) => {
     return html.replace(/<[^>]*>?/gm, '')
   }
   const handleCancel = () => {
-
-    // Navigate back in history
-    // router.back();
-
-    // // Optional: Force a full-page reload
-    // setTimeout(() => {
-    //   window.location.reload();
-    // }, 0);
     window.location.href = '/web-stories'; // Replace with your actual previous page
 
   };
-
   return (
     <>
       <button
