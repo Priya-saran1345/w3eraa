@@ -71,7 +71,7 @@ const Provide = () => {
     >
       <Image
         src={icon}
-        alt={apidata?.we_provide[index].icon_alt}
+        alt={apidata?.we_provide[index].icon_alt || 'w3era'}
         height={51}
         width={49}
         className={`transition duration-300 w-[35px] lg:w-[49px] h-[45px] lg:h-[51px] ${

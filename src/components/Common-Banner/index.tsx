@@ -45,7 +45,7 @@ const index = ({ title, description, image, btnlink, btntext, image_alt, status 
               <div className='w-full  flex flex-col justify-center lg:justify-start gap-4 lg:flex-nowrap flex-wrap  '>
                 <div className='w-[357px] h-[104px] flex bg-blue text-white  px-3  rounded-md items-center gap-3'>
                   <div className='min-w-[88px] min-h-[88px] bg-white/10  rounded-xl flex justify-center items-center'>
-                    <Image src={'/images/revenue1.svg'} alt=' ' height={55} width={57} />
+                    <Image src={'/images/revenue1.svg'} alt='revenue1' height={55} width={57} />
                   </div>
                   <div className=' leading-[29px]'>
                     <p className='  font-medium text-[16px]'>Access the data</p>
@@ -56,7 +56,7 @@ const index = ({ title, description, image, btnlink, btntext, image_alt, status 
 
                 <div className='w-[357px] h-[104px] text-white  flex bg-blue px-3  rounded-md items-center gap-3'>
                   <div className='min-w-[88px] min-h-[88px] bg-white/10 rounded-xl flex justify-center items-center'>
-                    <Image src={'/images/revenue2.svg'} alt=' ' height={55} width={57} />
+                    <Image src={'/images/revenue2.svg'} alt='revenue2' height={55} width={57} />
                   </div>
                   <div className=' leading-[29px]'>
                     <p className='  font-medium text-[16px]'>Accelerate ROI with</p>
@@ -67,7 +67,7 @@ const index = ({ title, description, image, btnlink, btntext, image_alt, status 
                 </div>
                 <div className='w-[357px] h-[104px] flex text-white  gap-3 bg-blue  px-3 rounded-md items-center '>
                   <div className='min-w-[88px] min-h-[88px] bg-white/10 rounded-xl flex justify-center items-center'>
-                    <Image src={'/images/revenue3.svg'} alt=' ' height={55} width={57} />
+                    <Image src={'/images/revenue3.svg'} alt='revenue3' height={55} width={57} />
                   </div>
                   <div className=' leading-[29px]'>
                     <p className='  font-medium text-[16px] leading-tight'>Use the expert-led tactics behind</p>
@@ -78,7 +78,7 @@ const index = ({ title, description, image, btnlink, btntext, image_alt, status 
                 </div>
                 <div className='w-[357px] h-[104px] flex text-white  gap-3 bg-blue  px-3 rounded-md items-center '>
                   <div className='min-w-[88px] min-h-[88px] bg-white/10 rounded-xl flex justify-center items-center'>
-                    <Image src={'/images/revenue4.svg'} alt=' ' height={55} width={57} />
+                    <Image src={'/images/revenue4.svg'} alt='revenue4' height={55} width={57} />
                   </div>
                   <div className=' leading-[29px]'>
                     <p className='  font-medium leading-tight text-[16px]'>Unlock do-it-for-me marketing with</p>

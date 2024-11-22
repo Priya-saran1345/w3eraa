@@ -6,6 +6,7 @@ import { ApiProvider } from "@/helpers/apiContext"; // Capitalized for standard 
 import Canonical from "@/components/Canonical";
 import { Toaster } from 'react-hot-toast';
 import { Inter } from 'next/font/google'
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -25,6 +26,37 @@ export default function RootLayout({
     <html lang="en">
       <head>
           <Canonical/>
+          <Script type="text/javascript" defer async src="https://www.googletagmanager.com/gtag/js?id=G-SQ89MG760K"  id="google_gtagjs-js"></Script>
+          <Script
+        defer
+          id="gtag"
+          dangerouslySetInnerHTML={{
+            __html: `
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+
+gtag("set","linker",{"domains":["www.w3era.com"]});
+
+gtag("js", new Date());
+
+gtag("set", "developer_id.dZTNiMT", true);
+
+gtag("config", "G-SQ89MG760K");
+          `,
+          }}
+        />
+        <Script
+        defer
+          id="gtag"
+          dangerouslySetInnerHTML={{
+            __html: `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6BF8XH1GYF');
+          `,
+          }}
+        />
       </head>
       <body
         className={`${inter.variable} `}>

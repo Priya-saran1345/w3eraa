@@ -16,7 +16,7 @@ const Revenue = () => {
         <div className='w-full mt-12 flex justify-center lg:justify-start gap-4 lg:flex-nowrap flex-wrap  '>
           <div className='w-[307px] h-[164px] flex text-white bg-white/10 px-6  rounded-md items-center gap-3'>
             <div className='min-w-[108px] min-h-[108px] bg-white/10  rounded-xl flex justify-center items-center'>
-              <Image src={'/images/revenue1.svg'} alt=' ' height={55} width={57} />
+              <Image src={'/images/revenue1.svg'} alt='revenue1' height={55} width={57} />
             </div>
             <div className=' leading-[29px]'>
               <p className='  text-[28px] lg:text-[38px] xl:text-[48px] font-bold'>1M+</p>
@@ -26,7 +26,7 @@ const Revenue = () => {
          
           <div className='w-[307px] h-[164px] text-white  flex bg-white/10  px-6  rounded-md items-center gap-3'>
             <div className='min-w-[108px] min-h-[108px] bg-white/10 rounded-xl flex justify-center items-center'>
-              <Image src={'/images/revenue2.svg'} alt=' ' height={55} width={57} />
+              <Image src={'/images/revenue2.svg'} alt='revenue2' height={55} width={57} />
             </div>
             <div className=' leading-[29px]'>
               <p className='  text-[28px] lg:text-[38px] xl:text-[48px] font-bold'>3M+</p>
@@ -35,7 +35,7 @@ const Revenue = () => {
           </div>
           <div className='w-[307px] h-[164px] flex text-white  gap-3 bg-white/10 px-6 rounded-md items-center '>
             <div className='min-w-[108px] min-h-[108px] bg-white/10 rounded-xl flex justify-center items-center'>
-              <Image src={'/images/revenue3.svg'} alt=' ' height={55} width={57} />
+              <Image src={'/images/revenue3.svg'} alt='revenue3' height={55} width={57} />
             </div>
             <div className=' leading-[29px]'>
               <p className='  text-[28px] lg:text-[38px] xl:text-[48px] font-bold'>10K+</p>

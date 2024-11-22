@@ -117,7 +117,7 @@ const Category = () => {
                       {/* | &nbsp;<span>Latest</span> */}
                     </div>
                     <div>
-                      <Image src={elem?.image || '/images/blog1.png'} alt={elem?.image_alt} height={218} width={461} className="rounded-lg max-h-[218px]" />
+                      <Image src={elem?.image || '/images/blog1.png'} alt={elem?.image_alt || "alt"} height={218} width={461} className="rounded-lg max-h-[218px]" />
                     </div>
                     <div className="p-4 flex flex-col  gap-3 justify-between">
 
