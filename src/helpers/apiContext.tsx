@@ -1,92 +1,115 @@
 "use client"; // Ensure this is a client component
 import { useEffect, createContext, useContext, useState } from "react";
+import axios from "axios";
 import { BASE_URL } from "@/util/api";
-
 interface ApiContextType {
   apidata: any;
   faq: any;
-  blog: any;
-  blogs: any;
-  service: any;
-  client: any;
-  about: any;
-  basic_details: any;
-  portfolio: any;
-  life: any;
-  loading: boolean;
-  cluth: any;
-  career: any;
+  blog:any;
+  blogs:any;
+  service:any;
+  client:any;
+  about:any;
+  basic_details:any;
+  portfolio:any;
+  life:any;
+  loading:any;
+  cluth:any;
+  career:any;
 }
-
 const ApiContext = createContext<ApiContextType | undefined>(undefined);
 
 export const ApiProvider = ({ children }: { children: React.ReactNode }) => {
-  const [state, setState] = useState<ApiContextType>({
-    apidata: null,
-    faq: null,
-    blog: null,
-    blogs: null,
-    service: null,
-    client: null,
-    about: null,
-    basic_details: null,
-    portfolio: null,
-    life: null,
-    loading: true,
-    cluth: null,
-    career: null,
-  });
-
-  // Helper function for fetching data with caching
-  const fetchData = async (endpoint: string, key: keyof ApiContextType) => {
+  const [apidata, setapidata] = useState<any>(null);
+  const [blog, setblog] = useState<any>()
+  const [blogs, setblogs] = useState<any>()
+  const [faq, setfaq] = useState<any>()
+  const [service, setservice] = useState<any>()
+  const [client, setclient] = useState<any>()
+  const [about, setabout] = useState<any>()
+  const [basic_details, setbasic_details] = useState<any>()
+  const [portfolio, setportfolio] = useState<any>()
+  const [life, setlife] = useState<any>()
+  const [loading, setloading] = useState<any>(true)
+  const [career, setcareer] = useState<any>()
+  const [cluth, setcluth] = useState<any>()
+  const fetch = async () => {
     try {
-      console.log(`[Client] Fetching data from: ${BASE_URL}${endpoint}`);
-      const response = await fetch(`${BASE_URL}${endpoint}`, { cache: "force-cache" });
-      if (!response.ok) {
-        throw new Error(`Failed to fetch ${endpoint}. Status: ${response.status}`);
-      }
-      const data = await response.json();
-      setState((prevState) => ({ ...prevState, [key]: data }));
-      console.log(`[Client] Successfully fetched: ${key}`, data);
-    } catch (error) {
-      console.error(`[Client] Error fetching ${key}:`, error);
+      const response = await axios.get(`${BASE_URL}home/`);
+      setapidata(response.data);
+    } catch (error: any) {
+      console.log(error.message);
     }
+    try {
+      const response = await axios.get(`${BASE_URL}faq/`);
+      setfaq(response.data);
+    } catch (error: any) {
+      console.log("faq error", error.message);
+    }
+    try {
+      const response = await axios.get(`${BASE_URL}blogs/?page=1`);
+      setblogs(response.data);
+    } catch (error: any) {
+      console.log("blogs error", error.message);
+    }
+    try {
+      const response = await axios.get(`${BASE_URL}career/`);
+      setcareer(response.data);
+    } catch (error: any) {
+      console.log("career error", error.message);
+    }
+    try {
+      const response = await axios.get(`${BASE_URL}our-clients/`);
+      setclient(response.data);
+    } catch (error: any) {
+      console.log("client error", error.message);
+    }
+    try {
+      const response = await axios.get(`${BASE_URL}about/`);
+      setabout(response.data);
+    } catch (error: any) {
+      console.log("about error", error.message);
+    }
+    try {
+      const response = await axios.get(`${BASE_URL}clutch/`);
+      setcluth(response.data);
+    } catch (error: any) {
+      console.log(error.message);
+
+    }
+    try {
+      const response = await axios.get(`${BASE_URL}basic-details/`);
+      setbasic_details(response.data);
+    } catch (error: any) {
+      console.log("basic details error", error.message);
+    }
+    try {
+      const response = await axios.get(`${BASE_URL}portfolio/`);
+      setportfolio(response.data);
+    } catch (error: any) {
+      console.log("case study error", error.message);
+    }
+    try {
+      const response = await axios.get(`${BASE_URL}w3era-life/`);
+      setlife(response.data);
+    } catch (error: any) {
+    console.log("w3era-life study error", error.message);
+    }
+    setloading(false)
   };
-
   useEffect(() => {
-    const fetchAllData = async () => {
-      await Promise.all([
-        fetchData("home/", "apidata"),
-        fetchData("faq/", "faq"),
-        fetchData("blogs/?page=1", "blogs"),
-        fetchData("career/", "career"),
-        fetchData("our-clients/", "client"),
-        fetchData("about/", "about"),
-        fetchData("clutch/", "cluth"),
-        fetchData("basic-details/", "basic_details"),
-        // fetchData("portfolio/", "portfolio"),
-        fetchData("w3era-life/", "life"),
-      ]);
-      setState((prevState) => ({ ...prevState, loading: false }));
-    };
-
-    fetchAllData();
+    fetch();
   }, []);
-
-  console.log("[ApiProvider] State after fetch:", state);
-
   return (
-    <ApiContext.Provider value={state}>
+    <ApiContext.Provider value={{ apidata, faq,blog,blogs ,service,client,about,basic_details,portfolio,life,loading,career,cluth}}>
       {children}
     </ApiContext.Provider>
   );
 };
-
 export const Useapi = () => {
   const context = useContext(ApiContext);
   if (!context) {
-    console.error("[Useapi] Context is undefined");
-    throw new Error("Useapi must be used within an ApiProvider");
+    throw new Error('Useapi must be used within a apiProvider');
   }
   return context;
 };

@@ -26,12 +26,14 @@ const CaseStudy = () => {
     AOS.refresh();
   }, []);
   // Fetch portfolio data with caching and revalidation
+
+
   // Effect to fetch portfolio data on component mount
   useEffect(() => {
     const fetchPortfolio = async () => {
       try {
         const response = await fetch(`${BASE_URL}portfolio/`, {
-          cache: "force-cache", // Enable caching
+         
         });
   
         if (!response.ok) {
@@ -47,6 +49,7 @@ const CaseStudy = () => {
         }
       }
     };
+
     fetchPortfolio();
   }, []);
 
