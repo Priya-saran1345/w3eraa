@@ -19,7 +19,7 @@ const Navbar = () => {
             <Image 
               src={basic_details?.basic_details[0]?.logo} 
               width={137} 
-              // loading='eager'
+              loading='lazy'
               height={58} 
               alt={basic_details?.basic_details[0]?.logo_alt} 
               className="cursor-pointer"

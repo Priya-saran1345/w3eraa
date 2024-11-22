@@ -4,21 +4,18 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-
 // Extend the Window interface to include hbspt
 declare global {
   interface Window {
     hbspt: any;
   }
 }
-
 interface HubspotProps {
   portalId: string;
   formId: string;
   region: string;
   target?: string;
 }
-
 const Hubspot = ({ portalId, formId, region, target }: HubspotProps) => {
   const formRef = useRef<HTMLDivElement>(null);
 
@@ -29,7 +26,8 @@ const Hubspot = ({ portalId, formId, region, target }: HubspotProps) => {
     } else {
       const script = document.createElement("script");
       script.src = "https://js.hsforms.net/forms/v2.js";
-      script.async = true;
+      // script.async = true;
+      script.defer = true; 
       script.onload = () => {
         renderForm();
       };

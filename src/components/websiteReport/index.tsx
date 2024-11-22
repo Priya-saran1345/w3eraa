@@ -2,7 +2,7 @@ import React from 'react'
 
 const index = () => {
   return (
-    <div className='bg-[url("/images/home-middle-banner.png")] w-full bg-no-repeat py-4 lg:py-16 bg-center '>
+    <div className='bg-[url("/images/home-middle-banner.webp")] w-full bg-no-repeat py-4 lg:py-16 bg-center '>
     <div className="xl:w-[50%] flex flex-col  items-center justify-center text-white px-4 mx-auto w-full ">
       <p className="text-[16px] lg:text-[18px] text-center font-semibold">LET’S GET STARTED.</p>
       <p className=" text-[28px] md:text-[38px] font-bold text-center md:text-left capitalize">View your Website Report-</p>

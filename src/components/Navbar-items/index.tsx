@@ -33,7 +33,9 @@ const Index = ({show}:any) => {
               </li>
               </Link>
               <li onClick={() => toggleDropdown('seo')} className='flex gap-1 items-center cursor-pointer'>
-                SEO {openDropdown === 'seo' ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                SEO {openDropdown === 'seo' ? <span className='-mt-2 text-black font-bold'>&#8964;
+                  </span> :<span className='-mt-2 text-black font-bold'>&#8964;
+                  </span> } 
               </li>
               {openDropdown === 'seo' && (
                 <div className=' absolute text-homegrey shadow-md text-[17px] w-[85%] lg:w-[95%] overflow-y-scroll lg:overflow-auto  max-h-[70vh] lg:h-fit
@@ -131,7 +133,9 @@ const Index = ({show}:any) => {
 
               {/* Pay Per Click Dropdown */}
               <li onClick={() => toggleDropdown('ppc')} className='flex gap-1 items-center cursor-pointer'>
-                Pay Per Click {openDropdown === 'ppc' ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                Pay Per Click {openDropdown === 'ppc' ? <span className='-mt-2 text-black font-bold'>&#8964;
+                  </span> : <span className='-mt-2 text-black font-bold'>&#8964;
+                  </span>}
               </li>
               {openDropdown === 'ppc' && (
                 <div className='shadow-md absolute text-homegrey text-[17px]
@@ -217,7 +221,9 @@ const Index = ({show}:any) => {
 
               {/* SMM Dropdown */}
               <li onClick={() => toggleDropdown('smm')} className='flex gap-1 items-center cursor-pointer'>
-                SMM {openDropdown === 'smm' ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                SMM {openDropdown === 'smm' ? <span className='-mt-2 text-black font-bold'>&#8964;
+                  </span> : <span className='-mt-2 text-black font-bold'>&#8964;
+                  </span>}
               </li>
               {openDropdown === 'smm' && (
                 <div className='shadow-md absolute text-homegrey 
@@ -303,7 +309,9 @@ const Index = ({show}:any) => {
               )}
               {/* Our Packages Dropdown */}
               <li onClick={() => toggleDropdown('packages')} className='flex gap-1 items-center cursor-pointer'>
-                Our Packages {openDropdown === 'packages' ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                Our Packages {openDropdown === 'packages' ? <span className='-mt-2 text-black font-bold'>&#8964;
+                  </span> : <span className='-mt-2 text-black font-bold'>&#8964;
+                  </span>}
               </li>
               {openDropdown === 'packages' && (
                 <div className='shadow-md absolute text-homegrey text-[17px]  w-[85%] lg:w-[95%] lg:h-fit overflow-y-scroll lg:overflow-auto max-h-[70vh]
@@ -402,7 +410,9 @@ const Index = ({show}:any) => {
 
               {/* Web Development Dropdown */}
               <li onClick={() => toggleDropdown('web-dev')} className='flex gap-1 items-center cursor-pointer'>
-                Web Development {openDropdown === 'web-dev' ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                Web Development {openDropdown === 'web-dev' ? <span className='-mt-2 text-black font-bold'>&#8964;
+                  </span> : <span className='-mt-2 text-black font-bold'>&#8964;
+                  </span>}
               </li>
               {openDropdown === 'web-dev' && (
                 <div className='shadow-md absolute text-homegrey text-[17px]  w-[85%] lg:w-[95%] lg:h-fit overflow-y-scroll lg:overflow-auto 
