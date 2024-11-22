@@ -33,28 +33,27 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
 window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
-
 gtag("set","linker",{"domains":["www.w3era.com"]});
-
 gtag("js", new Date());
-
 gtag("set", "developer_id.dZTNiMT", true);
-
 gtag("config", "G-SQ89MG760K");
           `,
           }}
         />
         <Script
-        defer
-          id="gtag"
+          id="gtm"
+          type="text/javascript"
+          defer 
           dangerouslySetInnerHTML={{
-            __html: `
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-6BF8XH1GYF');
-          `,
+            __html: `( function( w, d, s, l, i ) {
+                w[l] = w[l] || [];
+                w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+                var f = d.getElementsByTagName( s )[0],
+                    j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore( j, f );
+            } )( window, document, 'script', 'dataLayer', 'GTM-WJW2WL3' );`,
           }}
         />
       </head>
@@ -64,7 +63,18 @@ gtag("config", "G-SQ89MG760K");
         <ApiProvider> {/* Wrap the provider around children */}
           {children}
         </ApiProvider>
+
+
+        <noscript  
+          dangerouslySetInnerHTML={{
+            __html: `
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJW2WL3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe>
+          `,
+          }}
+        />
       </body>
+      
     </html>
   );
 }
