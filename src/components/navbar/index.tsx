@@ -17,7 +17,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/">
             <Image 
-              src={basic_details?.basic_details[0]?.logo} 
+              src={'/images/logo.png'} 
               width={137} 
               loading='lazy'
               height={58} 
