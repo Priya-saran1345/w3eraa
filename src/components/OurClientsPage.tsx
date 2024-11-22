@@ -19,7 +19,7 @@ const Client = () => {
     return (
         <>
       {
-!client&& !apidata&&
+!client&&!apidata&&
 
           <Loader/>
 
