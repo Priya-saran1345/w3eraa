@@ -120,7 +120,7 @@ const Blogs = () => {
                                                     <Link href={`/blog/category/${apidata?.category_slug}`}>
                                                         <span className='text-blue '>{apidata?.category}</span></Link> <MdOutlineKeyboardDoubleArrowRight />
                                                     {apidata.title}</p>
-                                                <div className='text-homeblack leading-[30px]'
+                                                <div className='text-homeblack leading-[30px] blog-img'
                                                     dangerouslySetInnerHTML={{ __html: apidata.body || "No Content Available" }}
                                                 />
                                             </div>

@@ -283,3 +283,6 @@ color: white;
   inherits: true;
   initial-value: 0turn;
 }
+.blog-img img{
+  @apply max-w-full h-auto;
+  }

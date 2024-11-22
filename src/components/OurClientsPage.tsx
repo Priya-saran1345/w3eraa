@@ -15,11 +15,10 @@ const Client = () => {
     const { client } = Useapi(); 
     const { apidata } = Useapi(); 
     const arr = [1, 2, 3, 3, 3, 3, 3, 3, 3, 3];
-    console.log('clients are here',client)
     return (
         <>
       {
-!client&&!apidata&&
+       (  !client) && (!apidata)&&
 
           <Loader/>
 
