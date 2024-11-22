@@ -30,12 +30,12 @@ const Page = () => {
   console.log('case study inner data',data)
   return (
     <>
-    {
+    {/* {
       !data&&
       <Loader/>
-    }
+    } */}
     {
-data&&
+// data&&
     <div>
     <Header/>
     <Navbar/>

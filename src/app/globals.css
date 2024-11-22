@@ -284,5 +284,6 @@ color: white;
   initial-value: 0turn;
 }
 .blog-img img{
-  @apply max-w-full h-auto;
-  }
+  height: auto !important;
+  max-width: 100%;
+}

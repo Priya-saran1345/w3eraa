@@ -61,8 +61,10 @@ const CaseStudy = () => {
 
   return (
     <div>
-      {!portfolio && <Loader />}
-      {portfolio && (
+      {/* {!portfolio && <Loader />} */}
+      {
+      // portfolio && 
+      (
         <div className="w-full">
           <Header />
           <Navbar />

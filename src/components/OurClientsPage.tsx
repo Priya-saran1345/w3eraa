@@ -17,14 +17,14 @@ const Client = () => {
     const arr = [1, 2, 3, 3, 3, 3, 3, 3, 3, 3];
     return (
         <>
-      {
+      {/* {
        (!client) && (!apidata)&&
 
           <Loader/>
 
-      }
+      } */}
       {
-client&& apidata&&
+// client&& apidata&&
    
         <div className='w-full'>
             <Header />

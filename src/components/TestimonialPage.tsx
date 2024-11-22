@@ -46,11 +46,11 @@ const Page = () => {
 
   return (
     <div>
-      {
+      {/* {
         !apidata && <Loader />
-      }
+      } */}
       {
-        apidata &&
+        // apidata &&
         <div>
           <Header />
           <Navigation />

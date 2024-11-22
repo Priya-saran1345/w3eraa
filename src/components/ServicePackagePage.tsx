@@ -147,12 +147,12 @@ const Service_Pkackages = () => {
     }
     return (
         <div >
-            {
+            {/* {
                 !result &&
                 <Loader />
-            }
+            } */}
             {
-                result &&
+                // result &&
                 <div>
                     {result?.pagetype == 'service' &&
                         <div className=''>

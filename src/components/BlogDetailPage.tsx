@@ -42,12 +42,12 @@ const Blogs = () => {
     }, [blogs]);
     return (
         <div>
-            {!blogs && !apidata &&
+            {/* {!blogs && !apidata &&
                 <Loader />
 
-            }
+            } */}
             {
-                blogs && apidata &&
+                // blogs && apidata &&
                 <div className='w-full'>
                     <Header />
                     <Navbar />

@@ -38,9 +38,9 @@ const PortfolioInner = () => {
     category.card.filter((card: any) => card.slug === lastSegment)
   )[0]; // Get the first matched card if any
 
-  if (!apidata) {
-    return <Loader />;
-  }
+  // if (!apidata) {
+  //   return <Loader />;
+  // }
 
   return (
     <div>

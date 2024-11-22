@@ -67,8 +67,10 @@ const Category = () => {
   }, [blog]); // Trigger the scroll effect when the `blog` data changes
   return (
     <div>
-      {!blog && <Loader />}
-      {blog && (
+      {/* {!blog && <Loader />} */}
+      {
+      // blog && 
+      (
         <div>
           <Header />
           <Navbar />

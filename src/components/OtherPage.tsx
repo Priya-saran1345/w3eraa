@@ -17,12 +17,12 @@ const Page = ({props}:any) => {
   },[props])
   return (
     <>
-    {
+    {/* {
       !other&&
       <Loader/>
-    }
+    } */}
     {
-other&&
+// other&&
     <div>
         <Header/>
         <Navbar/>

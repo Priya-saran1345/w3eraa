@@ -53,7 +53,9 @@ const Blogs = () => {
   };
   return (
     <div>
-      {!blogs ? <Loader /> : (
+      {
+      // !blogs ? <Loader /> : 
+      (
         <div className="w-full">
           <Header />
           <Navbar />

@@ -14,12 +14,12 @@ const Life = () => {
 
     return (
         <div>
-            {!basic_details && !life &&
+            {/* {!basic_details && !life &&
 
                 <Loader />
-            }
+            } */}
             {
-                basic_details && life &&
+                // basic_details && life &&
 
                 <div className='w-full'>
                     <Header />

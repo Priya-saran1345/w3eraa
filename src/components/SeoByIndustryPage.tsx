@@ -59,9 +59,9 @@ const [data, setdata] = useState<any>()
     }, []);
 
     // Loading State
-    if (!apidata) {
-        return <Loader />;
-    }
+    // if (!apidata) {
+    //     return <Loader />;
+    // }
     console.log('industry data',data)
     return (
         <div>

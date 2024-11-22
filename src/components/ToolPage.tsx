@@ -72,14 +72,15 @@ const Page = () => {
         // : currentItems;
         : tools;
 
+
     return (
         <>
-            {
+            {/* {
                 !tools &&
                 <Loader />
-            }
+            } */}
             {
-                tools &&
+                // tools &&
                 <div>
                     <Header />
                     <Navbar />
@@ -98,7 +99,7 @@ const Page = () => {
                         </div>
                         <div className='bg-white xl:w-[77%] mx-auto px-4 w-full py-10'>
                             <div className='flex gap-5 justify-center flex-wrap items-center'>
-                                {filteredTools.map((elem: any, index: number) => (
+                                {filteredTools?.map((elem: any, index: number) => (
                                     <Link href={`/tool/${elem.slug_link}`} key={index}>
                                         <div className="bg-lightblue hover:shadow-lg p-5 w-[155px] lg:min-w-[241px]
                                          group min-h-[200px] lg:h-[284px] flex flex-col
@@ -175,8 +176,6 @@ const Page = () => {
                                     <button className='bg-pink text-white text-[14px] w-[133px] h-[44px] flex justify-center items-center rounded-lg'>SUBMIT NOW</button>
                                 </form> */}
                                 <HubspotForm portalId="20095080" formId={"2aeda8d3-d0a1-4624-87f7-39fea7a4d68d"} region={'na1'} />
-
-
                                 <div className='border-b-[1px] border-slate-200 mt-5 mb-3'>
                                     <p className='text-[24px] font-medium text-homeblack mb-3'>Trendy SEO Tools</p>
                                 </div>

@@ -34,11 +34,11 @@ const Main = () => {
     // const {blogs  } = Useapi();
     return (
     <div>
-        { !basic_details&&!apidata&&  
+        {/* { !basic_details&&!apidata&&  
        <Loader/>
-        }
+        } */}
          {
-           basic_details&&apidata&&
+          //  basic_details&&apidata&&
       <div>
       <Header />
       <DownNavbar/>

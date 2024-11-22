@@ -16,10 +16,10 @@ export default function AnimatedFaqs() {
   }
   return (
     <div>
-      {!faq && <Loader />}
+      {/* {!faq && <Loader />} */}
       {
 
-    faq &&
+    // faq &&
       <div className='w-full'>
         <Header />
         <Navbar />

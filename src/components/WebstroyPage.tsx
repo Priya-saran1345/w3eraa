@@ -37,12 +37,13 @@ const WebStories = () => {
 
   return (
     <>
-    {
+    {/* {
       !basic_details&&!data&&!data_others&&
       <Loader/>
 
-    }
-   {basic_details&&data&&data_others&&
+    } */}
+   {
+  //  basic_details&&data&&data_others&&
     <div className='overflow-y-auto'>
       <Header />
       <Navbar />

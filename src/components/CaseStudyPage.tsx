@@ -45,12 +45,12 @@ const Page = () => {
 
     return (
         <>
-        {
+        {/* {
 !data&&!caseStudydata&&
 <Loader/>
-        }
+        } */}
         {
-data&&caseStudydata&&
+// data&&caseStudydata&&
        
         <div>
             <Header />

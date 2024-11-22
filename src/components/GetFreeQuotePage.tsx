@@ -81,11 +81,11 @@ const Contact = () => {
   const isFormValid = isChecked && validateFields();
   return (
     <div>
-    {  !basic_details&&
+    {/* {  !basic_details&&
                 <Loader/>
-    }
+    } */}
 {
-    basic_details&&
+    // basic_details&&
     <div>
       <Header />
       <Navbar />

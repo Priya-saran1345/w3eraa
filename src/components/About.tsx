@@ -90,11 +90,11 @@ const AboutUS = () => {
 
     return (
         <div>
-{ !basic_details && !about&&
+{/* { !basic_details && !about&&
             <Loader/>
-}
+} */}
 {
-basic_details && about&&
+// basic_details && about&&
 
         <div>
             <Header />
@@ -179,9 +179,9 @@ basic_details && about&&
                     </div> */}
                 </div>
                 <div className=' w-full bg-[url("/images/aboutwave.png")] flex items-end min-h-[345px]'>
-                    <div className='w-full xl:w-[75%] mx-auto px-4 mt-8 sm:mt-0' >
-                        <p className=' text-[32px] lg:text-[38px] font-bold text-homeblack text-center'>{about?.who_youare[0].title}</p>
-                        <p className=' text-[18px] lg:text-[20px] px-10 text-center text-homegrey'  dangerouslySetInnerHTML={{ __html: about?.who_youare[0].description }} ></p>
+                    <div  className='w-full xl:w-[75%] mx-auto px-4 mt-8 sm:mt-0' >
+                        <h2 className=' font-bold text-homeblack text-center'>{about?.who_youare[0].title}</h2>
+                        <p className=' text-[16px] lg:text-[18px] 2xl:text-[20px] px-10 text-center text-homegrey'  dangerouslySetInnerHTML={{ __html: about?.who_youare[0].description }} ></p>
                     </div>
                 </div>
                 <div className=' w-full bg-grey '>
@@ -190,18 +190,18 @@ basic_details && about&&
                             about?.who_youare[0].cards.map((elem: any ,index:any) => {
                                 return (
                                     <div className='bg-white rounded-md p-8 mt-6 group  md:w-[48%]' key={index}>
-                                        <div className='bg-pink flex size-[60px] lg:size-[94px] justify-center items-center'>
-                                            <div className=' size-[30px] lg:size-[40px] rounded-full border-2 border-white flex justify-center items-center'>
+                                        <div className='bg-pink flex size-[60px] lg:size-[94px] rounded-xl justify-center items-center'>
+                                            <div className=' size-[30px] lg:size-[50px]  rounded-full border-2 border-white flex justify-center items-center'>
                                                 <Image
                                                     src={elem.icon} // Ensure this path is correct
                                                     alt={elem.icon_alt}
-                                                    height={12}
-                                                    width={18}
+                                                    height={18}
+                                                    width={20}
                                                 />
                                             </div>
                                         </div>
                                         <div className='flex flex-col gap-3 mt-4'>
-                                            <h2 className=' text-[23px] lg:text-[26px] text-homeblack group-hover:text-pink font-medium'>{elem.title}</h2>
+                                            <h3 className=' text-[23px] lg:text-[26px] text-homeblack group-hover:text-pink font-medium'>{elem.title}</h3>
                                             <p className=' text-[20px] lg:text-[22px] text-homeblack     font-medium'>{elem.subtitle}</p>
                                             <p className=' text-[16px] text-homegrey lg:text-[18px]'>
                                                 {

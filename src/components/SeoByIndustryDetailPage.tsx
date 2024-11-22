@@ -33,14 +33,14 @@ useEffect(() => {
 }, []);
   return (
     <>
-  {
+  {/* {
     
     !data&&
 <Loader/>
-  }
+  } */}
   {
 
-data&&
+// data&&
     <div>
       <Header />
       <Navbar />

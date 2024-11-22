@@ -116,12 +116,12 @@ const Contact = () => {
 
   return (
     <div>
-      {!data && !basic_details &&
+      {/* {!data && !basic_details &&
         <Loader />
-      }
+      } */}
 
       {
-        data && basic_details &&
+        // data && basic_details &&
         <div>
           <Header />
           <Navbar />

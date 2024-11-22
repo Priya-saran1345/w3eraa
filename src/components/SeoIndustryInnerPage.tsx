@@ -67,9 +67,9 @@ const Main = () => {
     }, []);
 
     // Loading State
-    if (!apidata) {
-        return <Loader />;
-    }
+    // if (!apidata) {
+    //     return <Loader />;
+    // }
     return (
         <div>
             <Header />

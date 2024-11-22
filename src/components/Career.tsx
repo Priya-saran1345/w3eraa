@@ -28,12 +28,12 @@ const Page = () => {
   }, [])
   return (
     <div>
-      {
+      {/* {
         !career && ! apidata&&
         <Loader />
-      }
+      } */}
       {
-        career &&apidata&&
+        // career &&apidata&&
         <div>
           <Header />
           <Navbar />

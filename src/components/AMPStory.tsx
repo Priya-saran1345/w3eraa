@@ -31,11 +31,13 @@ export default function AMPStory({ slug }: { slug: string }) {
     fetchStory()
   }, [slug])
 
-  if (loading) {
-    return <div>
-      <Loader/>
-    </div>
-  }
+  // if (loading) {
+  //   return
+     
+  //   <div>
+  //     <Loader/>
+  //   </div>
+  // }
   if (error) {
     return <div>{error}</div>
   }
