@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /website-seo-analyzer/domain/*
+Disallow: /tool/output
+Disallow: /tool-new/
+Disallow: /tool-old/
+
+Sitemap: https://www.w3era.com/sitemap.xml

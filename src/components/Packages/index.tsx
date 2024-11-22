@@ -36,9 +36,11 @@ const Packages = ({props}:any) => {
                 <h2 className=' capitalize text-center text-homeblack lg:text-left font-bold'>{data.first}
                      <span className='text-pink'> {data.second}</span></h2>
             </div>
-            <div className="flex flex-wrap lg:flex-nowrap mt-10 justify-center gap-5  items-center px-4 lg:px-3 w-full xl:w-[75%] mx-auto">
+            <div className="flex flex-wrap lg:flex-nowrap mt-10 justify-center gap-5 items-center px-4 lg:px-3 w-full xl:w-[75%] mx-auto">
                 {props?.map((elem: any, i:number) => (
-                    <div key={i} className='rounded-xl items-center sm:items-start text-center sm:text-left px-4 2xl:px-8 py-8  w-[300px] sm:w-[45%] lg:w-[23%]
+                    <div key={i} className='rounded-xl items-center 
+                    sm:items-start text-center sm:text-left px-4 2xl:px-8 py-8 
+                     w-[97%] sm:w-[45%] lg:w-[23%]
                      h-[357px] flex flex-col  gap-2 justify-between bg-white hover:shadow-xl'>
                         <div className='p-4 size-[72px] flex justify-center items-center rounded-lg bg-lightblue'>
                             <Image
@@ -54,7 +56,7 @@ const Packages = ({props}:any) => {
                             {elem?.description}</p>
                         <div>
                             <Link href={`/${elem?.slug}`}>
-                        <Button content={'Learn More'}/>
+                        <Button content={'Know More'}/>
                             </Link>
                         </div>
                     </div>

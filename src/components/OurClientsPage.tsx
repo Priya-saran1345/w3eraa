@@ -32,23 +32,22 @@ client&& apidata&&
             <Navbar />
             <div className='w-full px-4 bg-[url("/images/blog-bg.png")] h-[45vh] flex justify-center items-center'>
                 <h1 className='text-white text-[32px] font-bold lg:text-[48px]'>{client?.client[0].title}</h1>
-
             </div>
             <div className='w-full '>
                 <div className='w-full xl:w-[75%] px-4 mx-auto py-12 lg:py-20'>
                     <p className='lg:text-[48px] text-[32px] font-bold text-black text-center'>We &apos;ve helped 5000+ customers worldwide</p>
-                
-                    <div className='mx-auto mt-7 flex justify-center flex-wrap  lg:w-[80%]'>
+                    <div className='mx-auto mt-7 flex justify-center flex-wrap lg:w-[80%]'>
                     {
                        client?.client[0]?.client_list?.map((elem: any, i: number) => {
                             return (
-                                <div key={i} className="flex min-w-[190] max-h-[120px] p-1 group md:size-[181px] justify-center items-center border-[1px] border-slate-100 rounded-sm">
+                                <div key={i} className="flex min-w-[150px] max-h-[120px] p-1 group md:size-[181px] justify-center items-center border-[1px]
+                                 border-slate-100 rounded-sm">
                                     <Image
                                         src={elem?.image}
                                         alt={elem?.image_alt}
                                         height={101}
                                         width={200}
-                                        className="grayscale w-[145px] lg:max-w-[175px] group-hover:grayscale-0 transition duration-100 ease-in-out"
+                                        className="grayscale max-w-[45px] lg:max-w-[175px] group-hover:grayscale-0 transition duration-100 ease-in-out"
                                     />
                                 </div>
                             )

@@ -107,7 +107,7 @@ const CaseStudy: React.FC = () => {
                                 </div>
                                 <div className='flex justify-center lg:justify-start'>
                                     <Link href={`${provenResult[activeIndex].slug}`}>
-                                    <Button content={'Learn More'}/>
+                                    <Button content={'Know More'}/>
                                     </Link>
 
                                 </div>

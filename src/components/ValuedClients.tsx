@@ -45,11 +45,11 @@ const DriveResults = () => {
                         dangerouslySetInnerHTML={{ __html: Data?.description }}
                     ></p>
                 </div>
-                <div className='mx-auto mt-7 flex justify-center flex-wrap  lg:w-[80%]'>
+                <div className='mx-auto mt-7 w-full flex justify-center flex-wrap  lg:w-[80%]'>
                     {
                         Data?.cards?.map((elem: any, i: number) => {
                             return (
-                                <div key={i} className="flex min-w-[190] max-h-[120px] p-5 group md:size-[181px] justify-center items-center border-[1px] border-slate-100 rounded-sm">
+                                <div key={i} className="flex  max-h-[120px] p-5 group w-[165px] md:w-[181px] md:h-[181px] justify-center items-center border-[1px] border-slate-100 rounded-sm">
                                     <Image
                                         src={elem.image}
                                         alt={elem?.image_alt}
