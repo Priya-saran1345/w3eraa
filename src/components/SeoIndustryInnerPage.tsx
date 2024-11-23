@@ -22,6 +22,7 @@ import { BASE_URL } from '@/util/api';
 import axios from 'axios';
 import Image from 'next/image';
 import {StyledWrapper} from '@/components/Styled'
+import DownNavbar from '@/components/DownNavbar'
 
 
 const Main = () => {
@@ -73,6 +74,8 @@ const Main = () => {
     return (
         <div>
             <Header />
+            <DownNavbar/>
+
             <Navbar />
          <CommonBanner title={data?.banner_title ||''} description={data?.banner_description||''} 
          image={data?.image} 

@@ -9,6 +9,7 @@ import axios from 'axios'
 import { BASE_URL } from '@/util/api'
 import { Useapi } from '@/helpers/apiContext';
 import Loader from '@/components/loader'
+import DownNavbar from '@/components/DownNavbar'
 
 const WebStories = () => {
 
@@ -46,6 +47,8 @@ const WebStories = () => {
   //  basic_details&&data&&data_others&&
     <div className='overflow-y-auto'>
       <Header />
+      <DownNavbar/>
+
       <Navbar />
       <CommonBanner title={data_others?.title || ''} description={data_others?.body || ''}
       //  image={data?.image} btntext={data?.link_text} btnlink={data?.link_url}

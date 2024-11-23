@@ -17,6 +17,7 @@ import Loader from '@/components/loader';
 import {StyledWrapper} from '@/components/Styled'
 import Sites from '@/components/Sites.json'
 import HubspotForm from '@/components/HubspotForm'
+import DownNavbar from '@/components/DownNavbar'
 
 const Tool = () => {
     const [innerloading, setinnerloading] = useState<any>(false)
@@ -195,6 +196,8 @@ const Tool = () => {
                 tools && currentTool&&
                 <div>
                     <Header />
+                    <DownNavbar/>
+
                     <Navbar />
                     <div className='w-full'>
                         <div className='w-full bg-no-repeat bg-center min-h-[40vh] bg-[url("/images/tool-bg.png")] py-9 flex flex-col justify-center items-center'>
@@ -214,12 +217,12 @@ const Tool = () => {
                             <button onClick={handleClear} className=' h-fit px-7 py-[9px] rounded-md bg-lightpink text-pink font-medium  hover:bg-pink hover:text-white duration-200'>Clear</button>
                         </div>
                         <div className='rounded-xl p-7 shadow-xl border-slate-100 border-[1px]'>
-                            <div className='bg-grey p-4 rounded-lg w-full flex items-center gap-3'>
-                                <div className='size-[53px] rounded-full flex justify-center items-center'>
+                            <div className='bg-grey px-4 py-2 rounded-lg w-full flex items-center gap-3'>
+                                <div className='w-[93px] h-[93px] bg-white rounded-full flex justify-center items-center'>
                                     <Image src={currentTool?.[0]?.image || ''} height={53} width={53} alt={currentTool?.[0]?.image_alt} />
                                 </div>
                                 <div>
-                                    <p className='text-homeblack text-[20px]'>{currentTool?.[0]?.title}</p>
+                                    <p className='text-homeblack font-semibold text-[18px] md:text-[20px]'>{currentTool?.[0]?.title}</p>
                                 </div>
                             </div>
                             {

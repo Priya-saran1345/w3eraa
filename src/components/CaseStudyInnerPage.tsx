@@ -9,6 +9,7 @@ import { BASE_URL } from '@/util/api'
 import {usePathname} from 'next/navigation'
 import Loader from '@/components/loader'
 import {StyledWrapper} from '@/components/Styled'
+import DownNavbar from '@/components/DownNavbar'
 
 const Page = () => {
   const pathname = usePathname();
@@ -38,6 +39,8 @@ const Page = () => {
 // data&&
     <div>
     <Header/>
+    <DownNavbar/>
+
     <Navbar/>
     <CommonBanner title={data?.title||''} image_alt={data?.image_alt} description={data?.description||''} image={data?.image||''} btnlink={''}btntext={''} />
 <div className='w-full '>

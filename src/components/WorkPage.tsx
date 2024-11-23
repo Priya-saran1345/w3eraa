@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 import Link from 'next/link'
+import DownNavbar from '@/components/DownNavbar'
 
 const Work = () => {
 
@@ -15,6 +16,8 @@ const Work = () => {
         {
         <div>
             <Header />
+            <DownNavbar/>
+
             <Navbar />
             <div className="w-full bg-no-repeat  lg:bg-[url('/images/work.png')]  pb-28 ">
                 <div className='text-white pt-8   bg-blue pb-7 lg:pt-32 lg:pb-0 lg:bg-inherit w-full xl:w-[75%] px-4 mx-auto'>

@@ -10,6 +10,7 @@ import ClientSays from "@/components/clientSays"
 import Image from 'next/image'
 import { BarChartIcon as ChartBar, Users, Phone, Newspaper } from 'lucide-react'
 import HubspotForm from '@/components/HubspotForm'
+import DownNavbar from '@/components/DownNavbar'
 
 const DigitalMarketingConsultationPage = () => {
   const { apidata } = Useapi();
@@ -44,6 +45,8 @@ const DigitalMarketingConsultationPage = () => {
   return (
     <div>
       <Header />
+      <DownNavbar/>
+
       <Navbar />
       <div className="flex lg:flex-row  bg-gray-50">
         <div className='flex lg:flex-nowrap flex-wrap px-4 xl:w-[75%] mx-auto'>

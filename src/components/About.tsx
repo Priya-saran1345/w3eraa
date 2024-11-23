@@ -12,6 +12,8 @@ import Loader from '@/components/loader'
 import Link from 'next/link';
 import ClientsCount from './ClientsCount';
 import Button from '@/components/button'
+import DownNavbar from '@/components/DownNavbar'
+
 const AboutUS = () => {
     const { about } = Useapi();
     const { basic_details } = Useapi();
@@ -98,6 +100,8 @@ const AboutUS = () => {
 
         <div>
             <Header />
+            <DownNavbar/>
+
             <Navbar />
             <div className='w-full px-4 bg-[url("/images/aboutbg.png")] h-[388px] flex justify-center items-center'>
             <h1 className="text-homeblack text-[32px] font-bold lg:text-[48px]">About US</h1>
@@ -216,7 +220,7 @@ const AboutUS = () => {
                 </div>
                 <div className='w-full bg-[url("/images/aboutbg2.png")] py-12   flex flex-col justify-center '>
                     <div className='md:w-[55%] flex flex-col gap-3 mx-auto text-white text-center'>
-                        <h2 className=' text-[32px] lg:text-[38px] font-bold '>{about?.ourvalue[0].title}</h2>
+                        <h2 className=' font-bold '>{about?.ourvalue[0].title}</h2>
                         <p className='text-[16px] lg:text-[18px] xl:text-[20px] leading-[24px]'>
                             {about?.ourvalue[0].description}
                         </p>
@@ -231,14 +235,14 @@ const AboutUS = () => {
                     </div>
                 </div>
 
-                <div className='w-full  py-8 lg:py-16 bg-grey'>
+                <div className='w-full hidden lg:block  py-8 lg:py-16 bg-grey'>
                     <div className='md:w-[55%] mx-auto'>
 
-                        <h2 className=' text-[32px] lg:text-[48px] font-bold pb-4 text-center text-homeblack'> {about?.about_client[0]?.title}
+                        <h2 className='  font-bold pb-4 text-center text-homeblack'> {about?.about_client[0]?.title}
                         </h2>
                         <p className=' text-[16px] lg:text-[20px] fomt-medium text-center text-homegrey'>{about?.about_client[0]?.description}</p>
                     </div>
-                    <div className=' mt-8 md:mt-12 overflow-hidden'>
+                    <div className='  mt-8 md:mt-12 overflow-hidden'>
                         <Slider {...settings}>
                             {
                                 about?.about_client[0].cards.map((value: any, index: number) => (
@@ -250,7 +254,7 @@ const AboutUS = () => {
                                                 height={400}
                                                 width={290}
                                             />
-                                            <div className='p-6 w-[80%] flex flex-col overflow-y-scroll  justify-center'>
+                                            <div className='p-6 w-[80%] flex flex-col   justify-center'>
                                                 <div className='border-l-2 mb-6 border-slate-800 pl-2'>
                                                     <p className='text-[24px] text-homeblack font-semibold mb-3'>{value?.title}</p>
                                                     <p className='text-[20px] text-homegrey'>{value?.description}</p>
@@ -273,7 +277,7 @@ const AboutUS = () => {
 
                 <div className=' pt-12 lg:pt-16 bg-white md:flex-row flex-col flex justify-between  items-start px-4 mx-auto xl:w-[75%]'>
                     <div className='md:w-[342px] text-center md:text-left mb-16 md:mb-0'>
-                        <h2 className=' text-[32px] lg:text-[38px] text-homeblack font-semibold'>{about?.milestone[0]?.title}</h2>
+                        <h2 className='  text-homeblack font-semibold'>{about?.milestone[0]?.title}</h2>
                         <p className=' text-[16px] lg:text-[18px] xl:text-[20px] text-homegrey font-medium'>{about?.milestone[0]?.description}</p>
                     </div>
                     <div>
@@ -290,10 +294,10 @@ const AboutUS = () => {
                  <div className='w-full rounded-xl pt-12 bg-lightblue bg-cover bg-center '>
                      <div className='w-full relative rounded-xl  xl:w-[75%] mx-auto  bg-white flex justify-between items-center '>
                          <div className=' bg-white md:w-[55%] flex-col flex text-center md:text-left px-4 sm:px-12 py-10 md:py-0 '>
-                             <p className=' lg:text-[30px] font-bold text-homeblack leading-[] lg:leading-[48px]'>
+                             <h2 className=' lg:text-[30px] font-bold text-homeblack leading-[] lg:leading-[48px]'>
                                  {about?.ourapproach[0].title}
-                             </p>
-                             <p className='text-textGrey text-[18px] mt-4 leading-[21px]'  dangerouslySetInnerHTML={{ __html:about?.ourapproach[0].description }} >
+                             </h2>
+                             <p className='text-textGrey text-[16px] lg:text-[18px] mt-4 leading-[21px]'  dangerouslySetInnerHTML={{ __html:about?.ourapproach[0].description }} >
                             
                              </p>
                              <div className='flex-col flex gap-3 w-fit items-center mt-4'>
@@ -318,17 +322,17 @@ const AboutUS = () => {
                 <div className='w-full bg-grey'>
                     <div className='w-full xl:w-[75%] mx-auto pb-16 px-4'>
                         <div className='md:w-[60%] mx-auto mb-8 py-4 text-center flex flex-col gap-3'>
-                            <p className=' text-[32px] lg:text-[38px] text-homeblack font-semibold'>{about?.ourvision[0].title}</p>
+                            <h2 className='  text-homeblack font-semibold'>{about?.ourvision[0].title}</h2>
                             <p className=' text-[18px] lg:text-[20px] text-homegrey font-medium'>{about?.ourvision[0].description} </p>
                         </div>
                         {
                             about?.ourvision_point.map((elem: any, index:any) => (
                                 <div key={elem.id} className='bg-white mb-5 flex gap-10 group items-start py-4 px-4 md:px-16 rounded-lg'>
                                     <div className=''>
-                                        <p className='text-textGrey group-hover:text-pink text-[32px] lg:text-[38px]'>0{index+1}</p>
+                                        <h2 className='text-textGrey group-hover:text-pink text-[32px] lg:text-[38px]'>0{index+1}</h2>
                                     </div>
                                     <div>
-                                        <p className='text-[26px] font-semibold group-hover:text-pink text-homeblack'>{elem.title}</p>
+                                        <h3 className=' text-[22px] lg:text-[24px] font-semibold group-hover:text-pink text-homeblack'>{elem.title}</h3>
                                         <p className='text-textGrey text-[18px] mt-1 leading-[21px] mb-4'>{elem.description}</p>
                                     </div>
                                 </div>

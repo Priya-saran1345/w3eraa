@@ -9,6 +9,7 @@ import axios from 'axios';
 import { BASE_URL } from '@/util/api';
 import { Pagination } from 'antd';
 import Link from 'next/link';
+import DownNavbar from '@/components/DownNavbar'
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState<any>(null);
@@ -58,6 +59,8 @@ const Blogs = () => {
       (
         <div className="w-full">
           <Header />
+          <DownNavbar/>
+
           <Navbar />
           <div className="w-full px-4 bg-[url('/images/blog-bg.png')] h-[45vh] flex justify-center items-center">
             <h1 className="text-white text-[32px] font-bold lg:text-[48px]">W3era Blogs</h1>

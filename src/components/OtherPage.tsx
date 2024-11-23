@@ -8,6 +8,7 @@ import Revenue from '@/components/revenue'
 import React, { useEffect, useState } from 'react'
 import CommonBanner from '@/components/Common-Banner'
 import {StyledWrapper} from '@/components/Styled'
+import DownNavbar from '@/components/DownNavbar'
 
 const Page = ({props}:any) => {
   const [other, setother] = useState<any>()
@@ -25,6 +26,8 @@ const Page = ({props}:any) => {
 // other&&
     <div>
         <Header/>
+        <DownNavbar/>
+
         <Navbar/>
         {
           other?.title&&

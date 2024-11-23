@@ -12,6 +12,7 @@ import { BASE_URL } from '@/util/api'
 import Loader from '@/components/loader'
 import { Useapi } from '@/helpers/apiContext';
 import { usePathname, useRouter } from 'next/navigation';
+import DownNavbar from '@/components/DownNavbar'
 
 const Page = () => {
   const { basic_details } = Useapi(); // Get blog data from context
@@ -53,6 +54,7 @@ const Page = () => {
         // apidata &&
         <div>
           <Header />
+          <DownNavbar/>
           <Navigation />
           <CommonBanner title={apidata?.title} description={apidata?.body}  image={apidata?.image} btnlink={apidata?.button_url} btntext={apidata?.button_text}
            image_alt={apidata?.image_alt} />

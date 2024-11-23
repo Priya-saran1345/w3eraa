@@ -97,7 +97,7 @@ const Footer = () => {
                 <div className=' mt-12 lg:mt-28  flex-wrap  lg:flex-nowrap flex lg:justify-around gap-8 px-7'>
                     <div className=' w-full sm:w-1/4'>
                         <div className=''>
-                            <p className='text-[21px] flex  font-medium w-full  sm:border-b-2'>About Company <FaMinus className='sm:hidden' />
+                            <p className='text-[21px] flex  font-medium w-full  sm:border-b-2'>About Company <FaMinus className='mt-2 mx-2 sm:hidden' />
                             </p></div>
                         <ul className='text-[14px font-medium] flex flex-col gap-2 py-3'>
                             <Link target="_blank"  href={'/about-us'}>
@@ -126,7 +126,7 @@ const Footer = () => {
                             </Link>
                         </ul>
                         <div className='flex gap-2 items-center'>
-                            <p className='text-[21px] flex  font-medium w-full  sm:border-b-2'>Connect with Social<FaMinus className='sm:hidden' />
+                            <p className='text-[21px] flex  font-medium w-full  sm:border-b-2'>Connect with Social<FaMinus className=' mt-2 mx-2 sm:hidden' />
                             </p>
                         </div>
                         <div className='flex
@@ -194,7 +194,7 @@ const Footer = () => {
                     <div className='   w-full sm:w-1/4'>
                         <div className='flex gap-2 items-center'>
                             <p className='text-[21px] flex  font-medium w-full  sm:border-b-2'>
-                                Resources <FaMinus className='sm:hidden' />
+                                Resources <FaMinus className='mt-2 mx-2 sm:hidden' />
                             </p>
                         </div>
                         <ul className='text-[14px font-medium] flex flex-col gap-2 py-3'>
@@ -241,7 +241,7 @@ const Footer = () => {
                     <div className=' w-full   sm:w-1/4'>
                         <div className='flex gap-2 items-center'>
                             <p className='text-[21px] flex  font-medium w-full  sm:border-b-2'>
-                                Our Services <FaMinus className='sm:hidden' />
+                                Our Services <FaMinus className=' mt-2 mx-2 sm:hidden' />
                             </p>
                         </div>
                         <ul className='text-[14px font-medium] flex flex-col gap-2 py-3'>
@@ -406,7 +406,8 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className=' w-full  sm:w-1/4'>
-                        <div className='flex gap-2 items-center'><p className='text-[21px] flex  font-medium w-full  sm:border-b-2'>Head Office </p><FaMinus className='sm:hidden' />
+                        <div className='flex gap-2 items-center'><p className='text-[21px] flex  font-medium w-full  sm:border-b-2'>Head Office </p>
+                        <FaMinus className='mt-2 mx-2 sm:hidden' />
                         </div>
                         <div className='flex gap-6 mt-4'>
                             <IoLocationSharp className='text-[48px]' /><p>
@@ -414,7 +415,7 @@ const Footer = () => {
                         </div>
                         <div className='flex gap-2 items-center'>
                             <p className='text-[21px] flex  font-medium w-full mt-4 sm:border-b-2'>
-                                US Office </p><FaMinus className='sm:hidden' />
+                                US Office </p><FaMinus className='mt-2 mx-2 sm:hidden' />
                         </div>
                         <div className='flex gap-6 mt-4  pb-3 '>
                             <IoLocationSharp className='text-[38px]' />

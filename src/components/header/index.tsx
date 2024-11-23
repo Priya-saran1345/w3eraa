@@ -37,7 +37,7 @@ const Header = () => {
                 <p className='text-[15px] text-white mt-1'>{basic_details?.basic_details[0].email} </p>
               </a> */}
             </div>
-            <div className='flex text-white gap-4 py-3 items-center text-[14px]'>
+            <div className='flex text-white gap-4 py-3 items-center text-[14px] xl:text-[16px]'>
               <div className='items-center 2xl:font-semibold hidden lg:flex gap-5 2xl:gap-5'>
 
                 {/* About Us Dropdown */}

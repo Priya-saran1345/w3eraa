@@ -19,6 +19,8 @@ import Loader from '@/components/loader'
 import toast from 'react-hot-toast'
 import Link from 'next/link'
 import HubspotForm from '@/components/HubspotForm'
+import DownNavbar from '@/components/DownNavbar'
+
 const Contact = () => {
   const { basic_details } = Useapi();
   const [data, setdata] = useState<any>()
@@ -124,6 +126,8 @@ const Contact = () => {
         // data && basic_details &&
         <div>
           <Header />
+          <DownNavbar/>
+
           <Navbar />
           <div className="w-full bg-no-repeat bg-[url('/images/contactbanner.png')] ">
             <div className="w-full xl:w-[75%]  px-4 mx-auto py-12 md:py-24 flex flex-wrap md:flex-nowrap justify-between gap-8 items-start">

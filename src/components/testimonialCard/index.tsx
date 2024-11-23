@@ -19,12 +19,11 @@ const TestimonialCard = ({ props }: any) => {
       setCurrentPage(currentPage + 1);
     }
   };
-
   const currentItems = props?.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   return (
     <div className='w-full bg-white py-12'>
-      <p className='text-[38px] font-bold text-homeblack text-center'>Testimonials</p>
+      <h2 className='text-[38px] font-bold text-homeblack text-center'>Testimonials</h2>
       <div className='xl:w-[75%] mx-auto flex-wrap justify-center mt-8 flex gap-6'>
         {currentItems?.map((item: any, index: number) => (
           <div key={index} className='md:w-[45%] w-[95%] lg:w-[30%] rounded-lg border-[2px] border-lightblue p-6'>

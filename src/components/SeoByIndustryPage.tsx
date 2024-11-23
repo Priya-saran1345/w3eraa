@@ -22,6 +22,7 @@ import { BASE_URL } from '@/util/api';
 import axios from 'axios';
 import Image from 'next/image';
 import {StyledWrapper} from '@/components/Styled'
+import DownNavbar from '@/components/DownNavbar'
 
 const Main = () => {
     const { apidata } = Useapi();
@@ -66,6 +67,7 @@ const [data, setdata] = useState<any>()
     return (
         <div>
             <Header />
+            <DownNavbar/>
             <Navbar />
            <CommonBanner title={data?.seo_industry[0].title||''} description={data?.seo_industry[0].description|| ''} 
          image={data?.image}

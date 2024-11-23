@@ -18,7 +18,7 @@ const CaseStudy = ({ props }: { props: any }) => {
   return (
     <div className='w-full py-12'>
       <div className='px-6 xl:px-0 xl:w-[75%] mx-auto'>
-        <p className='text-[38px] font-bold text-center'>Case Study</p>
+        <h2 className='text-[38px] font-bold text-center'>Case Study</h2>
 
         {/* Step 4: Render category buttons with active state */}
         <div className='flex gap-2 text-homeblack justify-center items-center my-4 mb-10'>

@@ -10,6 +10,7 @@ import { Useapi } from '@/helpers/apiContext';
 import { usePathname } from 'next/navigation';
 import axios from 'axios';
 import { BASE_URL } from '@/util/api';
+import DownNavbar from '@/components/DownNavbar'
 
 const PortfolioInner = () => {
   const { apidata } = Useapi();
@@ -47,6 +48,8 @@ const PortfolioInner = () => {
       {apidata && (
         <div>
           <Header />
+          <DownNavbar/>
+
           <Navbar />
           <div className="border-b-2 border-lightblue">
             <div className="py-12 xl:w-[70%] px-6 mx-auto items-center lg:py-16 flex-col gap-12">

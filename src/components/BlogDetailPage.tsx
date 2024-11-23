@@ -13,6 +13,8 @@ import { StyledWrapper } from '@/components/Styled'
 import Loader from '@/components/loader';
 import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
+import DownNavbar from '@/components/DownNavbar'
+
 const Blogs = () => {
     const { blogs } = Useapi();
     const [apidata, setapidata] = useState<any>(null);
@@ -50,6 +52,8 @@ const Blogs = () => {
                 // blogs && apidata &&
                 <div className='w-full'>
                     <Header />
+                    <DownNavbar />
+
                     <Navbar />
 
                     <div className='bg-grey py-5'>
@@ -114,12 +118,20 @@ const Blogs = () => {
 
                                         {apidata ? (
                                             <div>
-                                                <h1 className='text-[28px] text-center text-homeblack md:text-left font-semibold mb-2'>{apidata.title || "No Title Available"}</h1>
-                                                <p className='text-[20px] mb-5 flex items-center gap-1' ><Link href="/"><span className='text-blue'>Home</span></Link>
+                                                <h1 className='text-[28px] text-center text-homeblack font-bold md:text-left  mb-2'>{apidata.title || "No Title Available"}</h1>
+                                                <div className="text-[20px] mb-5 flex flex-wrap lg:flex-nowrap items-center gap-2">
+                                                    <Link href="/">
+                                                        <span className="text-blue">Home</span>
+                                                    </Link>
                                                     <MdOutlineKeyboardDoubleArrowRight />
                                                     <Link href={`/blog/category/${apidata?.category_slug}`}>
-                                                        <span className='text-blue '>{apidata?.category}</span></Link> <MdOutlineKeyboardDoubleArrowRight />
-                                                    {apidata.title}</p>
+                                                        <span className="text-blue">{apidata?.category}</span>
+                                                    </Link>
+                                                    <MdOutlineKeyboardDoubleArrowRight />
+                                                    <span>{apidata?.title}</span>
+                                                </div>
+
+
                                                 <div className='text-homeblack leading-[30px] blog-img'
                                                     dangerouslySetInnerHTML={{ __html: apidata.body || "No Content Available" }}
                                                 />

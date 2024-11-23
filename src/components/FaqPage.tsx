@@ -7,6 +7,7 @@ import Header from '@/components/header'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import Loader from '@/components/loader'
+import DownNavbar from '@/components/DownNavbar'
 
 export default function AnimatedFaqs() {
   const { faq } = Useapi()
@@ -22,6 +23,8 @@ export default function AnimatedFaqs() {
     // faq &&
       <div className='w-full'>
         <Header />
+        <DownNavbar/>
+
         <Navbar />
         <div className='flex h-[45vh] w-full items-center justify-center bg-[url("/images/blog-bg.png")] px-4'>
           <h1 className='text-center  font-bold text-white '>Frequently Asked Questions</h1>

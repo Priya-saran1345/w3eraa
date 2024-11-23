@@ -37,6 +37,7 @@ import { div } from 'framer-motion/client'
 import CustomerChoose from '@/components/CustomerChoose';
 import SeoIndustryService from '@/components/SeoIndustryService'
 import {StyledWrapper} from '@/components/Styled'
+import DownNavbar from '@/components/DownNavbar'
 
 import Jsondata from '@/components/Json/Data.json'
 const Service_Pkackages = () => {
@@ -119,6 +120,8 @@ const Service_Pkackages = () => {
     if (err) {
         return (<div className='w-full'>
             <Header />
+            <DownNavbar/>
+
             <Navbar />
             <div className='w-full flex justify-center items-center bg-lightblue'>
                 <div className='flex flex-col justify-center items-center max-h-[500px] xl:w-[75%] px-6 mx-auto'>

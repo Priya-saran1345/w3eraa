@@ -18,6 +18,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Loader from '@/components/loader'
 import toast from 'react-hot-toast'
 import HubspotForm from '@/components/HubspotForm'
+import DownNavbar from '@/components/DownNavbar'
 
 const Contact = () => {
   const { basic_details } = Useapi();
@@ -88,6 +89,8 @@ const Contact = () => {
     // basic_details&&
     <div>
       <Header />
+      <DownNavbar/>
+
       <Navbar />
       <div className="w-full bg-no-repeat bg-[url('/images/contactbanner.png')] ">
         <h1 className='text-[32px] lg:text-[44px] text-center pt-12 font-bold text-white'>GET A FREE QUOTE</h1>

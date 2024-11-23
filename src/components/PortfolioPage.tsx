@@ -11,6 +11,7 @@ import Loader from '@/components/loader';
 import Image from 'next/image';
 import Button from '@/components/button';
 import { BASE_URL } from '@/util/api';
+import DownNavbar from '@/components/DownNavbar'
 
 const CaseStudy = () => {
   const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(null);
@@ -67,6 +68,8 @@ const CaseStudy = () => {
       (
         <div className="w-full">
           <Header />
+          <DownNavbar/>
+
           <Navbar />
           <div className="w-full h-[40vh] flex justify-center items-center bg-[url('/images/casebanner.png')]">
             <h1 className="text-white text-[32px] font-bold lg:text-[48px]">Portfolio</h1>
@@ -138,9 +141,9 @@ const CaseStudy = () => {
           </div>
           <div className="w-full bg-blue py-10 text-white lg:py-16">
             <div className="md:w-[75%] mx-auto xl:w-[50%]">
-              <p className="text-[28px] font-bold text-center lg:leading-[46px] lg:text-[38px]">
+              <h2 className="text-[28px] font-bold text-center lg:leading-[46px] lg:text-[38px]">
                 Get A Top Rank on Google Search Results, Qualified Leads and Increased Sales
-              </p>
+              </h2>
               <div className="flex flex-wrap mt-8 justify-center gap-4">
                 <Link href={'/get-a-free-quote'}>
                   <Button content={'Get a Quote Now!'} />

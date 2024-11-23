@@ -12,6 +12,7 @@ import axios from 'axios';
 import { BASE_URL } from '@/util/api';
 import Loader from '@/components/loader';
 import { Pagination } from 'antd';
+import DownNavbar from '@/components/DownNavbar'
 
 const Category = () => {
   const pathname = usePathname();
@@ -74,6 +75,8 @@ const Category = () => {
        (
         <div>
           <Header />
+          <DownNavbar/>
+
           <Navbar />
           <div className="w-full xl:w-[75%] mx-auto px-4 bg-white">
             <div className="mt-5 py-3 w-full border-b-[2px] border-lightblue">

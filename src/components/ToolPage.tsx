@@ -13,6 +13,7 @@ import { HiArrowTopRightOnSquare } from 'react-icons/hi2';
 import Loader from '@/components/loader';
 import { StyledWrapper } from '@/components/Styled'
 import HubspotForm from '@/components/HubspotForm'
+import DownNavbar from '@/components/DownNavbar'
 
 //  import {useRouter} from 'next/navigation';
 const Page = () => {
@@ -83,6 +84,8 @@ const Page = () => {
                 // tools &&
                 <div>
                     <Header />
+                    <DownNavbar/>
+
                     <Navbar />
                     <div className='w-full '>
                         <div className='w-full bg-no-repeat bg-center min-h-[40vh] bg-[url("/images/tool-bg.png")]  py-9 flex flex-col justify-center items-center'>
@@ -102,9 +105,9 @@ const Page = () => {
                                 {filteredTools?.map((elem: any, index: number) => (
                                     <Link href={`/tool/${elem.slug_link}`} key={index}>
                                         <div className="bg-lightblue hover:shadow-lg p-5 w-[155px] lg:min-w-[241px]
-                                         group min-h-[200px] lg:h-[284px] flex flex-col
+                                         group h-[300px] lg:h-[284px] flex flex-col
                                           justify-center items-center gap-4 border-slate-200 rounded-md hover:bg-white transition-all duration-300 ease-in-out transform hover:scale-105">
-                                            <div className="min-h-[100px] rounded-full flex justify-center items-center min-w-[100px] bg-white group-hover:bg-blue group-hover:scale-110 transition-all duration-300 ease-in-out">
+                                            <div className="min-h-[100px]  rounded-full flex justify-center items-center min-w-[100px] bg-white group-hover:bg-blue group-hover:scale-110 transition-all duration-300 ease-in-out">
                                                 <Image
                                                     src={elem?.image}
                                                     height={60}
@@ -112,7 +115,6 @@ const Page = () => {
                                                     alt={elem?.image_alt}
                                                     className="transition-all duration-300 ease-in-out group-hover:brightness-0 group-hover:invert"
                                                 />
-
                                             </div>
                                             <p className="text-[18px] group-hover:text-pink text-center
                                              font-medium transition-all duration-300 ease-in-out">
@@ -125,7 +127,6 @@ const Page = () => {
                                                  duration-300 ease-in-out transform group-hover:translate-y-0 translate-y-7" />
                                             </div>
                                         </div>
-
                                     </Link>
                                 ))}
                             </div>

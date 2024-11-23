@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { Useapi } from '@/helpers/apiContext'
 import Link from 'next/link';
 import Loader from '@/components/loader';
+import DownNavbar from '@/components/DownNavbar'
 
 const Life = () => {
     const { life } = Useapi();
@@ -23,14 +24,17 @@ const Life = () => {
 
                 <div className='w-full'>
                     <Header />
+                    <DownNavbar/>
+
                     <Navbar />
                     <div className='w-full px-4 bg-[url("/images/lifeBanner.png")] bg-center bg-no-repeat b h-[40vh] flex justify-center items-center'>
-                        <p className='text-white text-[32px] font-bold lg:text-[48px]'>Life at W3era</p>
+                        <h1 className='text-white  font-bold '>Life at W3era</h1>
                     </div>
                     <div className='w-full mx-auto 2xl:w-[75%] px-6 items-center bg-white flex flex-col-reverse  md:flex-row justify-between gap-10  py-12 lg:py-28'>
                         <div className=' md:w-[70%] lg:w-[40%] text-center md:text-left'>
-                            <p className='  text-[28px] lg:text-[38px] 2xl:text-[48px] leading-[] text-homeblack xl:leading-[58px] font-bold'>{life?.Revolutionize[0].title}</p>
-                            <p className='text-[19px]  mt-3 text-textGrey'>
+                            <h2 className='  text-[28px] lg:text-[38px] 2xl:text-[48px] leading-[] text-homeblack xl:leading-[58px] font-bold'>
+                                {life?.Revolutionize[0].title}</h2>
+                            <p className=' text-[16px] lg:text-[19px]  mt-3 text-textGrey'>
                                 {life?.Revolutionize[0].description}</p>
                             <Link href="/about-us">
                                 <button className='text-white mt-5 bg-pink rounded-lg px-6 py-3 text-[18px]'>About Us</button>
@@ -44,8 +48,8 @@ const Life = () => {
                     <div className='w-full bg-blue py-12 lg:py-24'>
                         <div className='w-full mx-auto px-4 xl:w-[75%]'>
                             <div className='lg:w-[60%] mx-auto text-white  text-center '>
-                                <p className=' text-[32px] lg:text-[48px] font-semibold mb-4 leading-[] md:leading-[58px]'>{life?.team_work[0].title}</p>
-                                <p className='text-[19px]  leading-[21px]' dangerouslySetInnerHTML={{ __html: life?.team_work[0].description }} >
+                                <h2 className='font-semibold mb-4 leading-[] md:leading-[58px]'>{life?.team_work[0].title}</h2>
+                                <p className=' text-[16px] lg:text-[19px]  leading-[21px]' dangerouslySetInnerHTML={{ __html: life?.team_work[0].description }} >
                                 </p>
 
                             </div>
@@ -68,8 +72,8 @@ const Life = () => {
                     <div className='w-full bg-grey'>
                         <div className='2xl:w-[75%] px-3 w-full  py-12 lg:py-24 mx-auto'>
                             <div className='md:w-[60%] mx-auto  text-center '>
-                                <p className=' text-[32px] lg:text-[48px] text-homeblack font-semibold mb-4'>{life?.event[0].title}</p>
-                                <p className='text-[19px] text-homegrey  leading-[21px]' dangerouslySetInnerHTML={{ __html: life?.event[0].description }} >
+                                <h2 className=' text-homeblack font-semibold mb-4'>{life?.event[0].title}</h2>
+                                <p className=' text-[16px] lg:text-[19px] text-homegrey  leading-[21px]' dangerouslySetInnerHTML={{ __html: life?.event[0].description }} >
                                 </p>
                             </div>
                             <div className='w-full flex  mt-8 gap-4 flex-wrap justify-center'>
@@ -92,7 +96,7 @@ const Life = () => {
                     <div className='w-full bg-blue py-12 lg:py-16'>
                         <div className='w-full 2xl:w-[75%] mx-auto flex flex-wrap xl:flex-nowrap justify-center gap-10 px-4'>
                             <div className='text-white md:w-[60%] text-center mx-auto '>
-                                <p className='  text-[28px] lg:text-[38px] 2xl:text-[48px] font-semibold leading-[58px]'>{life?.fly_high[0].title}</p>
+                                <h2 className='  text-[28px] lg:text-[38px] 2xl:text-[48px] font-semibold leading-[58px]'>{life?.fly_high[0].title}</h2>
                                 <p className=' text-[16px] lg:text-[18px] mt-2' dangerouslySetInnerHTML={{ __html: life?.fly_high[0].description }} >
                                 </p>
                             </div>
@@ -106,8 +110,8 @@ const Life = () => {
                                             <div className='bg-white sm:w-[230px] lg:w-[272px] min-h-[252px] max-h-[330px] py-5 rounded-lg flex items-center  flex-col justify-center gap-4 px-4 text-center'>
                                                 <Image src={elem.icon}
                                                  height={62} width={62} alt={elem.icon_alt}></Image>
-                                                <p className='text-[20px]  font-medium'>{elem.title}</p>
-                                                <p className=' text-textGrey font-'>{elem.description}</p>
+                                                <p className=' text-[18px] md:text-[20px]  font-medium'>{elem.title}</p>
+                                                <p className=' text-textGrey '>{elem.description}</p>
                                             </div>
                                         </div>
                                     ))
@@ -119,8 +123,8 @@ const Life = () => {
                     <div className='w-full  mx-auto  py-12 lg:py-24 px-4'>
                         <div>
                             <div className='mx-auto md:w-[60%] flex flex-col gap-5'>
-                                <p className=' text-[32px] lg:text-[48px] font-bold text-homeblack text-center'>{life?.grow_withus[0].title}</p>
-                                <p className='text-textGrey text-[19px] text-center'>{life?.grow_withus[0].description}</p>
+                                <h2 className='font-bold text-homeblack text-center'>{life?.grow_withus[0].title}</h2>
+                                <p className='text-textGrey  text-[16px] lg:text-[19px] text-center'>{life?.grow_withus[0].description}</p>
                             </div>
                         </div>
                         <div className='flex w-full xl:w-[75%] mx-auto md:flex-nowrap flex-wrap justify-between mt-7 gap-4 '>

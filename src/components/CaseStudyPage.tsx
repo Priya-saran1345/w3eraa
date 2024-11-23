@@ -5,6 +5,7 @@ import Navigation from '@/components/navbar'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import Button from '@/components/button'
+import DownNavbar from '@/components/DownNavbar'
 
 import Choose from '@/components/Choose'
 import Revenue from '@/components/revenue'
@@ -54,15 +55,16 @@ const Page = () => {
        
         <div>
             <Header />
+            <DownNavbar/>
             <Navigation />
             <CommonBanner title={data?.banner_title} description={data?.banner_desc} image={data?.image||''}
              btnlink={data?.button_url} btntext={data?.button_text} image_alt={data?.image_alt} />
             <Casestudycontent props={caseStudydata} />
             <div className='w-full bg-blue py-10 text-white  lg:py-16'>
                 <div className=' md:w-[75%] mx-auto xl:w-[50%]'>
-                    <p className=' text-[28px] font-bold text-center lg:leading-[46px] lg:text-[38px]'>Get A Top Rank on Google Search Results,
+                    <h2 className=' text-[28px] font-bold text-center lg:leading-[46px] lg:text-[38px]'>Get A Top Rank on Google Search Results,
                         Qualified Leads and Increased Sales
-                    </p>
+                    </h2>
                     <div className='flex flex-wrap mt-8 justify-center gap-4'>
                         <Link href={'/get-a-free-quote'}>
                         <Button content={'Get a Quote Now!'} />

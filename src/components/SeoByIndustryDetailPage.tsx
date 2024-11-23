@@ -12,6 +12,7 @@ import { div } from 'framer-motion/client'
 import { usePathname } from 'next/navigation';
 import Loader from '@/components/loader'
 import {StyledWrapper} from '@/components/Styled'
+import DownNavbar from '@/components/DownNavbar'
 
 const Page = () => {
   const [data, setdata] = useState<any>()
@@ -43,6 +44,8 @@ useEffect(() => {
 // data&&
     <div>
       <Header />
+      <DownNavbar/>
+
       <Navbar />
       
       <div className='py-12 xl:w-[75%] px-6 mx-auto'>
