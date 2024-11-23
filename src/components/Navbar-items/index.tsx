@@ -36,7 +36,7 @@ const Index = ({show}:any) => {
                 SEO {openDropdown === 'seo' ?  <Image 
               src={'images/up-icon.svg'} 
               width={14} 
-              loading='lazy'
+             
               height={11} 
               alt={basic_details?.basic_details[0]?.logo_alt} 
               className="cursor-pointer "
@@ -44,7 +44,7 @@ const Index = ({show}:any) => {
              <Image 
               src={'/images/down-icon.svg'} 
               width={14} 
-              loading='lazy'
+             
               height={11} 
               alt={basic_details?.basic_details[0]?.logo_alt} 
               className="cursor-pointer "
@@ -149,7 +149,7 @@ const Index = ({show}:any) => {
                 Pay Per Click {openDropdown === 'ppc' ? <Image 
               src={'images/up-icon.svg'} 
               width={14} 
-              loading='lazy'
+           
               height={11} 
               alt={basic_details?.basic_details[0]?.logo_alt} 
               className="cursor-pointer "
@@ -157,7 +157,7 @@ const Index = ({show}:any) => {
              <Image 
               src={'/images/down-icon.svg'} 
               width={14} 
-              loading='lazy'
+           
               height={11} 
               alt={basic_details?.basic_details[0]?.logo_alt} 
               className="cursor-pointer "
@@ -250,7 +250,7 @@ const Index = ({show}:any) => {
                 SMM {openDropdown === 'smm' ? <Image 
               src={'images/up-icon.svg'} 
               width={14} 
-              loading='lazy'
+           
               height={11} 
               alt={basic_details?.basic_details[0]?.logo_alt} 
               className="cursor-pointer "
@@ -258,7 +258,7 @@ const Index = ({show}:any) => {
              <Image 
               src={'/images/down-icon.svg'} 
               width={14} 
-              loading='lazy'
+           
               height={11} 
               alt={basic_details?.basic_details[0]?.logo_alt} 
               className="cursor-pointer "
@@ -351,7 +351,6 @@ const Index = ({show}:any) => {
                 Our Packages {openDropdown === 'packages' ? <Image 
               src={'images/up-icon.svg'} 
               width={14} 
-              loading='lazy'
               height={11} 
               alt={basic_details?.basic_details[0]?.logo_alt} 
               className="cursor-pointer "
@@ -359,7 +358,6 @@ const Index = ({show}:any) => {
              <Image 
               src={'/images/down-icon.svg'} 
               width={14} 
-              loading='lazy'
               height={11} 
               alt={basic_details?.basic_details[0]?.logo_alt} 
               className="cursor-pointer "
@@ -465,7 +463,6 @@ const Index = ({show}:any) => {
                 Web Development {openDropdown === 'web-dev' ? <Image 
               src={'images/up-icon.svg'} 
               width={14} 
-              loading='lazy'
               height={11} 
               alt={basic_details?.basic_details[0]?.logo_alt} 
               className="cursor-pointer "
@@ -473,7 +470,6 @@ const Index = ({show}:any) => {
              <Image 
               src={'/images/down-icon.svg'} 
               width={14} 
-              loading='lazy'
               height={11} 
               alt={basic_details?.basic_details[0]?.logo_alt} 
               className="cursor-pointer "

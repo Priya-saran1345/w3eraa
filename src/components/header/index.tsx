@@ -50,14 +50,13 @@ const Header = () => {
                     {openDropdown === "about-us" ? <Image 
               src={'/images/down-arrow-header.svg'} 
               width={14} 
-              loading='lazy'
               height={11} 
               alt={basic_details?.basic_details[0]?.logo_alt} 
               className="cursor-pointer mt-1"
             /> : <Image 
               src={'/images/up-arrow-header.svg'} 
               width={14} 
-              loading='lazy'
+             
               height={11} 
               alt={basic_details?.basic_details[0]?.logo_alt} 
               className="cursor-pointer mt-1"
@@ -84,7 +83,6 @@ const Header = () => {
                     {openDropdown === "our-work" ? <Image 
               src={'images/down-arrow-header.svg'} 
               width={14} 
-              loading='lazy'
               height={11} 
               alt={basic_details?.basic_details[0]?.logo_alt} 
               className="cursor-pointer mt-1"
@@ -92,7 +90,6 @@ const Header = () => {
              <Image 
               src={'/images/up-arrow-header.svg'} 
               width={14} 
-              loading='lazy'
               height={11} 
               alt={basic_details?.basic_details[0]?.logo_alt} 
               className="cursor-pointer mt-1"

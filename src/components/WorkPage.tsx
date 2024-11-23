@@ -26,7 +26,7 @@ const Work = () => {
                     <h1 className=' text-[34px] lg:text-[58px] font-semibold '>From Consultation To Conversion </h1>
                     <p className='text-[18px] font-medium leading-[22px] '>With our commitment to craft excellence transparently, we have brought to you a comprehensive roadmap, that will tell you the whole process of how we work! Because transparency and accountability are our commitments.
                     </p>
-                    <Image  src={'/images/work-arrow1.svg'} loading='eager' height={56} width={77} alt="" className='hidden lg:block' />
+                    <Image  src={'/images/work-arrow1.svg'}  height={56} width={77} alt="" className='hidden lg:block' />
                     </div>
                 </div>
                 <div className='w-full xl:w-[75%] bg-white lg:bg-inherit  flex lg:flex-nowrap flex-wrap xl:mt-24 justify-center gap-5 mx-auto px-4 py-16'>
@@ -35,7 +35,7 @@ const Work = () => {
                     </div>
                     <div className='w-[345px] relative max-h-[500px]'>
                         <div className='w-[260px] h-[260px] bg-no-repeat bg-center flex justify-center items-center bg-[url("/images/bluestar.png")]'>
-                            <Image src={'/images/current.png'} loading='eager' height={71} width={40} alt='' />
+                            <Image src={'/images/current.png'}  height={71} width={40} alt='' />
                         </div>
                         <p className='text-[24px] font-medium'>Initial Assessment
                         </p>
@@ -44,11 +44,11 @@ const Work = () => {
                         </p>
                     </div>
                     <div className='hidden lg:block'>
-                        <Image src={'/images/pinkarrow.png'} loading='eager' height={102} width={181} alt='' className='mt-52'/>
+                        <Image src={'/images/pinkarrow.png'}  height={102} width={181} alt='' className='mt-52'/>
                     </div>
                     <div className='w-[345px] max-h-[500px] relative lg:mt-32'>
                         <div className='w-[260px] h-[260px] bg-no-repeat bg-center flex justify-center items-center bg-[url("/images/bluestar.png")]'>
-                            <Image src={'/images/current.png'} loading='eager' height={71} width={40} alt='' />
+                            <Image src={'/images/current.png'}  height={71} width={40} alt='' />
                         </div>
                         <p className='text-[24px] font-medium'>Goal Setting
                         </p>
@@ -56,11 +56,11 @@ const Work = () => {
                         We collaborate with you to define clear, actionable objectives tailored to your business needs.             </p>
                     </div>
                     <div className='hidden lg:block'>
-                        <Image src={'/images/ultaarrow-pink.png'} loading='eager' height={102} width={181} alt='' className='mt-80 ' />
+                        <Image src={'/images/ultaarrow-pink.png'}  height={102} width={181} alt='' className='mt-80 ' />
                     </div>
                     <div className='w-[345px] max-h-[500px] relative lg:mt-64'>
                         <div className='w-[260px] h-[260px] bg-no-repeat bg-center flex justify-center items-center bg-[url("/images/bluestar.png")]'>
-                            <Image src={'/images/current.png'} loading='eager' height={71} width={40} alt='' />
+                            <Image src={'/images/current.png'}  height={71} width={40} alt='' />
                         </div>
                         <p className='text-[24px] font-medium'>Customized Recommendations
                         </p>
@@ -75,7 +75,7 @@ const Work = () => {
                     </div>
                     <div className='w-[345px] relative max-h-[500px]'>
                         <div className='w-[260px] h-[260px] bg-no-repeat bg-center flex justify-center items-center bg-[url("/images/pinkstar.png")]'>
-                            <Image src={'/images/current.png'} loading='eager' height={71} width={40} alt='' />
+                            <Image src={'/images/current.png'}  height={71} width={40} alt='' />
                         </div>
                         <p className='text-[24px] font-medium'>Market Research
                         </p>
@@ -84,11 +84,11 @@ const Work = () => {
                      </p>
                     </div>
                     <div className='hidden lg:block'>
-                        <Image src={'/images/whitearrow.png'} loading='eager' height={102} width={181} alt='' className='mt-52'/>
+                        <Image src={'/images/whitearrow.png'}  height={102} width={181} alt='' className='mt-52'/>
                     </div>
                     <div className='w-[345px] max-h-[500px] relative lg:mt-32'>
                         <div className='w-[260px] h-[260px] bg-no-repeat bg-center flex justify-center items-center bg-[url("/images/pinkstar.png")]'>
-                            <Image src={'/images/current.png'} loading='eager' height={71} width={40} alt='' />
+                            <Image src={'/images/current.png'}  height={71} width={40} alt='' />
                         </div>
                         <p className='text-[24px] font-medium'>Strategy Development
                         </p>
@@ -97,11 +97,11 @@ const Work = () => {
                    </p>
                     </div>
                     <div className='hidden lg:block'>
-                        <Image src={'/images/ultaarrow-white.png'} loading='eager' height={102} width={181} alt='' className='mt-80 ' />
+                        <Image src={'/images/ultaarrow-white.png'}  height={102} width={181} alt='' className='mt-80 ' />
                     </div>
                     <div className='w-[345px] max-h-[500px] relative lg:mt-64'>
                         <div className='w-[260px] h-[260px] bg-no-repeat bg-center flex justify-center items-center bg-[url("/images/pinkstar.png")]'>
-                            <Image src={'/images/current.png'} loading='eager'  height={71} width={40} alt='' />
+                            <Image src={'/images/current.png'}   height={71} width={40} alt='' />
                         </div>
                         <p className='text-[24px] font-medium'>Roadmap Creation
                         </p>
@@ -116,7 +116,7 @@ const Work = () => {
                     </div>
                     <div className='w-[345px] relative max-h-[500px]'>
                         <div className='w-[260px] h-[260px] bg-no-repeat bg-center flex justify-center items-center bg-[url("/images/bluestar.png")]'>
-                            <Image src={'/images/current.png'} loading='eager' height={71} width={40} alt='' />
+                            <Image src={'/images/current.png'}  height={71} width={40} alt='' />
                         </div>
                         <p className='text-[24px] font-medium'>Campaign Implementation
                         </p>
@@ -125,11 +125,11 @@ const Work = () => {
                         </p>
                     </div>
                     <div className='hidden lg:block'>
-                        <Image src={'/images/pinkarrow.png'} loading='eager' height={102} width={181} alt='' className='mt-52'/>
+                        <Image src={'/images/pinkarrow.png'}  height={102} width={181} alt='' className='mt-52'/>
                     </div>
                     <div className='w-[345px] max-h-[500px] relative lg:mt-32'>
                         <div className='w-[260px] h-[260px] bg-no-repeat bg-center flex justify-center items-center bg-[url("/images/bluestar.png")]'>
-                            <Image src={'/images/current.png'} loading='eager' height={71} width={40} alt='' />
+                            <Image src={'/images/current.png'}  height={71} width={40} alt='' />
                         </div>
                         <p className='text-[24px] font-medium'>Performance Monitoring
                         </p>
@@ -138,11 +138,11 @@ const Work = () => {
                         </p>
                     </div>
                     <div className='hidden lg:block'>
-                        <Image src={'/images/ultaarrow-pink.png'} loading='eager' height={102} width={181} alt='' className='mt-80 ' />
+                        <Image src={'/images/ultaarrow-pink.png'}  height={102} width={181} alt='' className='mt-80 ' />
                     </div>
                     <div className='w-[345px] max-h-[500px] relative lg:mt-64'>
                         <div className='w-[260px] h-[260px] bg-no-repeat bg-center flex justify-center items-center bg-[url("/images/bluestar.png")]'>
-                            <Image src={'/images/current.png'} loading='eager' height={71} width={40} alt='' />
+                            <Image src={'/images/current.png'}  height={71} width={40} alt='' />
                         </div>
                         <p className='text-[24px] font-medium'>Reporting & Optimization
                         </p>

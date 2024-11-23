@@ -184,7 +184,6 @@ const Footer = () => {
                             <Image
                                 src={'/images/footer1.png'} // Ensure this path is correct
                                 alt={''}
-                                loading='eager'
                                 height={106}
                                 width={200}
                                 className='mt-7'
@@ -231,7 +230,6 @@ const Footer = () => {
                             <Image
                                 src={'/images/footer2.png'}
                                 alt={''}
-                                loading='eager'
                                 height={108}
                                 width={108}
                                 className='mt-3'
@@ -430,8 +428,7 @@ const Footer = () => {
                                 <Image
                                     src={'/images/footer3.png'} // Ensure this path is correct
                                     alt={''}
-                                    loading='eager'
-                                    height={155}
+                                        height={155}
                                     width={236}
                                     className='mt-7 rounded-xl'
                                 />
