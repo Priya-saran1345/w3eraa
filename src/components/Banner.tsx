@@ -41,7 +41,7 @@ const Banner = () => {
   const settings = {
     // dots: true,
     infinite: true,
-    arrows:false,
+    arrows: false,
     speed: 200,
     slidesToShow: 4, // Set to 1 for mobile, adjust in responsive settings
     slidesToScroll: 1,
@@ -67,6 +67,7 @@ const Banner = () => {
       },
     ],
   };
+  console.log('banner data', bannerData?.title)
   return (
     <>
       <div className="w-full relative bg-blue banner min-h-[78vh]">
@@ -83,10 +84,10 @@ const Banner = () => {
             <div className="flex flex-col justify-around lg:flex-row py-10 lg:py-3 xl:justify-between  items-center">
               <div>
                 <div className='2xl:w-[80%]'>
-                <div
-            className="font-bold text-center  sm:text-left text-[28px] lg:text-[32px] xl:text-[48px] 2xl:text-[62px] leading-tight xl:leading-[60px]"
-            dangerouslySetInnerHTML={{ __html: bannerData?.title || "Default Title" }}
-        />
+                  <div
+                    className="font-bold text-center  sm:text-left text-[28px] lg:text-[32px] xl:text-[48px] 2xl:text-[62px] leading-tight xl:leading-[60px]"
+                    dangerouslySetInnerHTML={{ __html: bannerData?.title || "Default Title" }}
+                  />
                   <p className="text-[22px] lg:text-[28px] text-center sm:text-left font-semibold mt-3">
                     {bannerData?.subtitle}
                   </p>
@@ -94,25 +95,25 @@ const Banner = () => {
                     {bannerData?.description}
                   </p>
                   <div className="flex mt-3 flex-wrap gap-4 justify-center md:justify-start items-center">
-                  <a href={`tel:${basic_details?.basic_details[0].phonenumber}`}>
-                    <button className="flex items-center h-[55px] justify-center px-4 md:px-8 bg-white text-pink font-medium hover:text-white text-[18px] rounded-md  group hover:bg-pink transition duration-300">
-                      <span  className="transition-transform duration-300 group-hover:-translate-x-2 text-[20px]">
-                       Call For Sales
-                      </span>
-                      <GoArrowRight className="text-[20px] opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-x-2" />
-                    </button>
+                    <a href={`tel:${basic_details?.basic_details[0].phonenumber}`}>
+                      <button className="flex items-center h-[55px] justify-center px-4 md:px-8 bg-white text-pink font-medium hover:text-white text-[18px] rounded-md  group hover:bg-pink transition duration-300">
+                        <span className="transition-transform duration-300 group-hover:-translate-x-2 text-[20px]">
+                          Call For Sales
+                        </span>
+                        <GoArrowRight className="text-[20px] opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-x-2" />
+                      </button>
                     </a>
                     <Link href={'/contact-us'}>
-                    <button className="flex items-center hover:bg-white hover:text-pink font-medium justify-center  px-4 md:px-8 text-[18px]
+                      <button className="flex items-center hover:bg-white hover:text-pink font-medium justify-center  px-4 md:px-8 text-[18px]
                      text-white rounded-md h-[55px] group bg-pink transition duration-300">
-                      <span className="transition-transform duration-300 group-hover:-translate-x-2 text-[20px]">
-                        Contact Us
-                      </span>
-                      <GoArrowRight className="text-[20px] opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-x-2" />
-                    </button>
-                       </Link>
-                      < ClientsCount/>
-                   
+                        <span className="transition-transform duration-300 group-hover:-translate-x-2 text-[20px]">
+                          Contact Us
+                        </span>
+                        <GoArrowRight className="text-[20px] opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-x-2" />
+                      </button>
+                    </Link>
+                    < ClientsCount />
+
                   </div>
                 </div>
 
@@ -120,28 +121,28 @@ const Banner = () => {
                   <div className='flex justify-between'>
                     <p className=' text-[24px] lg:text-[28px] font-medium'>  {bannerData?.our_core_services}</p>
                     <div className='flex gap-2 text-[24px]'>
-                         <div className="arrow left  hover:text-pink  cursor-pointer text-[24px]" onClick={() => sliderRef.current?.slickPrev()}><GoArrowLeft /></div>
-                         <div className="arrow right hover:text-pink cursor-pointer text-[24px]" onClick={() => sliderRef.current?.slickNext()}><GoArrowRight /></div>
+                      <div className="arrow left  hover:text-pink  cursor-pointer text-[24px]" onClick={() => sliderRef.current?.slickPrev()}><GoArrowLeft /></div>
+                      <div className="arrow right hover:text-pink cursor-pointer text-[24px]" onClick={() => sliderRef.current?.slickNext()}><GoArrowRight /></div>
                     </div>
                   </div>
                   <Slider ref={sliderRef} {...settings} className="mt-5">
-                    {bannerData?.card.map((service:any, index:any) => (
-                      <Link href={`${service?.slug}`}  key={index}>
-                    
-                      <div
-                       
-                        className='rounded-2xl border-[1px] max-w-[297px] hover:bg-white h-[180px] hover:text-homeblack group flex justify-between items-start gap-4 p-5'
-                      >
-                        <div className='flex gap-4'>
-                          <div>
-                            <p className='text-[20px] font-medium group-hover:font-semibold'>{service.title}</p>
-                            <p className='mt-3 group-hover:text-homegrey'>{service.description}</p>
-                          </div>
-                          <div className='flex justify-center items-center min-w-[45px] h-[45px] text-[28px] rounded-full border-[1px] border-white group-hover:bg-pink group-hover:text-white'>
-                            <GoArrowUpRight className='group-hover:rotate-[45deg] duration-200' />
+                    {bannerData?.card.map((service: any, index: any) => (
+                      <Link href={`${service?.slug}`} key={index}>
+
+                        <div
+
+                          className='rounded-2xl border-[1px] max-w-[297px] hover:bg-white h-[180px] hover:text-homeblack group flex justify-between items-start gap-4 p-5'
+                        >
+                          <div className='flex gap-4'>
+                            <div>
+                              <p className='text-[20px] font-medium group-hover:font-semibold'>{service.title}</p>
+                              <p className='mt-3 group-hover:text-homegrey'>{service.description}</p>
+                            </div>
+                            <div className='flex justify-center items-center min-w-[45px] h-[45px] text-[28px] rounded-full border-[1px] border-white group-hover:bg-pink group-hover:text-white'>
+                              <GoArrowUpRight className='group-hover:rotate-[45deg] duration-200' />
+                            </div>
                           </div>
                         </div>
-                      </div>
                       </Link>
                     ))}
                   </Slider>
@@ -159,7 +160,7 @@ const Banner = () => {
           <div className="bg-white flex flex-wrap xl:flex-nowrap justify-center gap-4 items-center rounded-xl py-5 md:py-10">
             {apidata?.brand.map((elem: any, index: number) => (
               <React.Fragment key={index}>
-             
+
                 <div className='h-[140px] min-w-[100px] md:size-[140px] w-[140px] rounded-full flex justify-center items-center border-[1px] border-lightblue'>
                   <div>
                     <Image
@@ -170,11 +171,11 @@ const Banner = () => {
                       height={114}
                       width={
                         100}
-                      
+
                     />
                   </div>
                 </div>
-                
+
                 {index < 7 && (
                   <div className="h-[90px] hidden md:block w-[1px] bg-slate-200" />
                 )}
