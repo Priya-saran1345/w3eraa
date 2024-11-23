@@ -10,6 +10,7 @@ import { BASE_URL } from '@/util/api'
 const AMPStoryContent = dynamic(() => import('@/components/AMPStoryContent'), { ssr: false })
 
 
+
 export default function AMPStory({ slug }: { slug: string }) {
   const [story, setStory] = useState<any>(null)
   const [loading, setLoading] = useState(true)

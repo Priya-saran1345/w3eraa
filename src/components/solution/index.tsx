@@ -55,7 +55,7 @@ const Solution = () => {
       {
         breakpoint: 1600,
         settings: {
-          slidesToShow: 2.3,
+          slidesToShow: 3,
         },
       },
       {
@@ -67,13 +67,13 @@ const Solution = () => {
       {
         breakpoint: 800,
         settings: {
-          slidesToShow: 1.5,
+          slidesToShow: 2,
         },
       },
       {
         breakpoint: 640,
         settings: {
-          slidesToShow: 1.2,
+          slidesToShow: 1,
         },
       },
       {

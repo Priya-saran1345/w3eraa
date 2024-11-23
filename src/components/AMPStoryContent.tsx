@@ -20,6 +20,8 @@ interface Story {
   post_date: string
   card: Card[]
 }
+
+export const config = { amp: true }
 export default function AMPStoryContent({ story }: { story: Story }) {
   const router = useRouter()
   useEffect(() => {

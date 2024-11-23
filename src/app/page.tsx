@@ -72,9 +72,7 @@ export async function generateMetadata(): Promise<Metadata> {
             images: metaData.twitter.images,
           }
         : undefined,
-      alternates: {
-        canonical: metaData?.openGraph?.url,
-      },
+
     };
   } 
   catch (error) {

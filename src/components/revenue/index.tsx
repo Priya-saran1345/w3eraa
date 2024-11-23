@@ -24,7 +24,7 @@ const Revenue = () => {
             </div>
           </div>
          
-          <div className=' w-[97%] md:w-[307px] h-[164px] text-white  flex bg-white/10  px-6  rounded-md items-center gap-3'>
+          <div className=' w-[97%] sm:w-[307px] h-[164px] text-white  flex bg-white/10  px-6  rounded-md items-center gap-3'>
             <div className='min-w-[108px] min-h-[108px] bg-white/10 rounded-xl flex justify-center items-center'>
               <Image src={'/images/revenue2.svg'} alt='revenue2' height={55} width={57} />
             </div>

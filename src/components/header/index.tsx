@@ -7,7 +7,7 @@ import { IoIosArrowUp } from "react-icons/io";
 import { useState } from 'react';
 import { FaFacebook, FaInstagram, FaLinkedinIn, FaPinterest, FaSkype, FaYoutube } from 'react-icons/fa';
 import { BsTwitterX } from 'react-icons/bs';
-
+import Image from 'next/image';
 const Header = () => {
   const { basic_details } = Useapi();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -37,7 +37,7 @@ const Header = () => {
                 <p className='text-[15px] text-white mt-1'>{basic_details?.basic_details[0].email} </p>
               </a> */}
             </div>
-            <div className='flex text-white gap-4 py-3 items-center text-[16px]'>
+            <div className='flex text-white gap-4 py-3 items-center text-[14px]'>
               <div className='items-center 2xl:font-semibold hidden lg:flex gap-5 2xl:gap-5'>
 
                 {/* About Us Dropdown */}
@@ -47,7 +47,21 @@ const Header = () => {
                     className='flex items-center gap-1 cursor-pointer'
                   >
                     About Us
-                    {openDropdown === "about-us" ? <IoIosArrowUp className='text-[24px]' /> : <MdOutlineKeyboardArrowDown className='text-[24px]' />}
+                    {openDropdown === "about-us" ? <Image 
+              src={'/images/down-arrow-header.svg'} 
+              width={14} 
+              loading='lazy'
+              height={11} 
+              alt={basic_details?.basic_details[0]?.logo_alt} 
+              className="cursor-pointer mt-1"
+            /> : <Image 
+              src={'/images/up-arrow-header.svg'} 
+              width={14} 
+              loading='lazy'
+              height={11} 
+              alt={basic_details?.basic_details[0]?.logo_alt} 
+              className="cursor-pointer mt-1"
+            />}
                   </div>
                   {openDropdown === "about-us" && (
                     <div className='absolute w-[200px] text-homeblack text-left border-lightpink border-[2px] z-50 top-10 flex flex-col   bg-white  rounded-md ' onMouseLeave={() => handleToggle('')}>
@@ -67,7 +81,22 @@ const Header = () => {
                     className='flex items-center text-white gap-1 cursor-pointer'
                   >
                     Our Work
-                    {openDropdown === "our-work" ? <IoIosArrowUp className='text-[24px]' /> : <MdOutlineKeyboardArrowDown className='text-[24px]' />}
+                    {openDropdown === "our-work" ? <Image 
+              src={'images/down-arrow-header.svg'} 
+              width={14} 
+              loading='lazy'
+              height={11} 
+              alt={basic_details?.basic_details[0]?.logo_alt} 
+              className="cursor-pointer mt-1"
+            /> :
+             <Image 
+              src={'/images/up-arrow-header.svg'} 
+              width={14} 
+              loading='lazy'
+              height={11} 
+              alt={basic_details?.basic_details[0]?.logo_alt} 
+              className="cursor-pointer mt-1"
+            />}
                   </div>
                   {openDropdown === "our-work" && (
                     <div className='absolute w-[200px] text-homeblack border-lightpink border-[2px] text-left z-50 top-10 flex flex-col   bg-white rounded-md ' onMouseLeave={() => handleToggle('')}>

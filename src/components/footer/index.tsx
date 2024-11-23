@@ -207,7 +207,7 @@ const Footer = () => {
                             <Link target="_blank" href={'/tool'}>
                                 <li>SEO Tools</li>
                             </Link>
-                            <Link target="_blank" href={'https://onpageinsights.com/'}>
+                            <Link target="_blank" href={'/website-seo-analyzer'}>
 
                             <li>Website Audit Tool</li>
                             </Link>
