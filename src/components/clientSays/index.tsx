@@ -36,10 +36,10 @@ export default function Data({ props }: any) {
             {heading.first} <span className="text-pink">{heading.second}</span>
           </h2>
           {/* Description */}
-          <p
+          <div
             className="text-[16px] lg:text-[18px] text-homegrey mt-4 text-center lg:leading-tight"
             dangerouslySetInnerHTML={{ __html: props?.description || "" }}
-          ></p>
+          ></div>
         </div>
 
         {/* Testimonial Cards */}

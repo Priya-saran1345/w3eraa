@@ -40,10 +40,10 @@ const DriveResults = () => {
                 <div className=' w-full sm:w-[75%] lg:w-[50%] text-center mx-auto flex flex-col gap-3'>
                     <h2 className='  leading-tight 
                     font-bold text-homeblack'>{data.first} <span className='text-pink'>{data.second}</span></h2>
-                    <p
+                    <div
                         className='text-[16px] lg:text-[18px] leading-[22px] text-homegrey'
                         dangerouslySetInnerHTML={{ __html: Data?.description }}
-                    ></p>
+                    ></div>
                 </div>
                 <div className='mx-auto mt-7 w-full flex justify-center flex-wrap  lg:w-[80%]'>
                     {

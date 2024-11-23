@@ -71,10 +71,10 @@ const Growth = () => {
                     <div className=' md:w-[80%] lg:w-full text-center lg:text-left'>
 
                         <p className='  text-[28px] lg:text-[38px] xl:text-[48px]  font-bold lg:leading-[58px]'><span className='text-pink'>{data.first}</span>{data.second}</p>
-                        <p
+                        <div
                             className="text-homegrey mt-3 text-[16px] lg:text-[18px] leading-[21px]"
                             dangerouslySetInnerHTML={{ __html: Data?.description }}
-                        ></p>
+                        ></div>
 
                     </div>
                     {/* <div className='flex flex-wrap justify-center md:justify-start sm:flex-nowrap mt-5 gap-2'>

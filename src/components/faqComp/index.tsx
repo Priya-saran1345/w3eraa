@@ -85,7 +85,7 @@ export default function Component({ props ,title }: any) {
                       transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
                     >
                      
-                        <p className="py-3 pb-6 text-[18px] text-homegrey" dangerouslySetInnerHTML={{__html:item.description}}></p>
+                        <div className="py-3 pb-6 text-[18px] text-homegrey" dangerouslySetInnerHTML={{__html:item.description}}></div>
                      
                     </motion.div>
                   )}

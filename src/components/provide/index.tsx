@@ -96,7 +96,7 @@ const Provide = () => {
                   />
                   <div className='text-center md:text-left'>
                     <p className=' text-[24px] lg:text-[28px] text-homeblack font-semibold mb-4'>{elem?.title}</p>
-                    <p
+                    <div
                       className="text-homegrey text-[16px] lg:text-[18px]"
                       dangerouslySetInnerHTML={{ __html: elem?.description }}
                     />

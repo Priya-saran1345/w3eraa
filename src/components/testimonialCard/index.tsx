@@ -26,7 +26,7 @@ const TestimonialCard = ({ props }: any) => {
       <h2 className='text-[38px] font-bold text-homeblack text-center'>Testimonials</h2>
       <div className='xl:w-[75%] mx-auto flex-wrap justify-center mt-8 flex gap-6'>
         {currentItems?.map((item: any, index: number) => (
-          <div key={index} className='md:w-[45%] w-[95%] lg:w-[30%] rounded-lg border-[2px] border-lightblue p-6'>
+          <div key={index} className='md:w-[45%]  flex flex-col justify-start w-[95%] lg:w-[30%] rounded-lg border-[2px] border-lightblue p-6'>
             <div className='flex justify-between mb-4 items-center'>
               <div className='flex gap-2 items-center'>
                 <div className='flex justify-center border-lightblue border-2 items-center w-[53px] h-[53px] rounded-full'>
@@ -65,7 +65,7 @@ const TestimonialCard = ({ props }: any) => {
                 ))}
               </div>
             </div>
-            <div>
+            <div className=' h-full flex flex-col justify-between'>
               <Image
                 src={'/images/uppercoma.svg'}
                 height={13}

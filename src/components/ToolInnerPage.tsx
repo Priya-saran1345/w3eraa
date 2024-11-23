@@ -197,7 +197,6 @@ const Tool = () => {
                 <div>
                     <Header />
                     <DownNavbar/>
-
                     <Navbar />
                     <div className='w-full'>
                         <div className='w-full bg-no-repeat bg-center min-h-[40vh] bg-[url("/images/tool-bg.png")] py-9 flex flex-col justify-center items-center'>
