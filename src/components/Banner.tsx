@@ -14,7 +14,6 @@ const Banner = () => {
   const { apidata } = Useapi();
   const { basic_details } = Useapi();
   const [loading, setLoading] = useState(true); // Loading state
-
   const [data, setData] = useState({ first: '', second: '' });
   const sliderRef = useRef<Slider>(null); // Ref for the slider
 
@@ -69,7 +68,7 @@ const Banner = () => {
       {/* Video Background */}
       {
 !apidata&&
-      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('/images/home-video-poster.png')` }}></div>
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('/images/home-video-poster.jpg')` }}></div>
       }
       {
 
