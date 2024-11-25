@@ -367,7 +367,7 @@ const Footer = () => {
                             <div>
                             <Link target="_blank" href={'/web-design-services'}>
                                 <li className='flex gap-1 items-center cursor-pointer' 
-                                  onMouseLeave={() => setOpenDropdown(null)}
+                                 
                                 onMouseEnter={() => toggleDropdown(6)}
                                 >Web Design Services<IoMdArrowDropdown /></li>
                                 </Link>
@@ -383,7 +383,7 @@ const Footer = () => {
                             <div>
                                 <Link target="_blank" href={'/content-marketing-services'}>
                                 <li className='flex gap-1 items-center cursor-pointer'
-                                 onMouseEnter={() => toggleDropdown(7)} onMouseLeave={() => setOpenDropdown(null)}>Content Marketing Services<IoMdArrowDropdown /></li>
+                                 onMouseEnter={() => toggleDropdown(7)} >Content Marketing Services<IoMdArrowDropdown /></li>
                                 </Link>
                                 {openDropdown === 7 && (
                                     <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute" onMouseLeave={() => setOpenDropdown(null)}   >
