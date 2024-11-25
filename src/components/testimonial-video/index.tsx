@@ -49,36 +49,36 @@ const Index = ({ props }: any) => {
       <div className="flex flex-wrap justify-center gap-8 items-center mt-12">
       {currentItems?.map((cardData: any, index: number) => (
         <div
-          key={cardData.id}
-          className="h-[535px] rounded-xl sm:w-[45%] lg:w-[31%] bg-white overflow-hidden"
-        >
-          {/* Toggle Video or Image */}
-          {active === index && cardData.video ? (
-           <div className="max-h-[317px] w-full">
-           <ReactPlayer
-             url={cardData?.video}
-             controls
-             playing={true} // This will automatically start playing when the video is loaded
-             autoplay={true} // Ensures the video starts automatically
-             className="w-full max-h-[300px] "
-             onClick={() => setActive(null)}
-           />
-         </div>
-          ) : (
-            <div
-              className="relative cursor-pointer"
-              onClick={() => setActive(index)}
-            >
-              {/* Image component replacing background image */}
-              <Image
-                src={cardData.thumbnail || ''}
-                alt={cardData?.thumbnail_alt || ''}
-                layout="responsive"
-                width={404}
-                height={317}
-                className="rounded-t-xl min-h-[317px] max-h-[317px] object-cover"
-              />
-              <div className="absolute inset-0  bg-gradient-to-b from-transparent to-black flex flex-col justify-between p-4">
+        key={index}
+        className="min-h-[535px] rounded-xl w-[350px] sm:w-[47%] lg:w-[31%] bg-white overflow-hidden flex flex-col"
+      >
+        {/* Toggle YouTube Video or Image */}
+        {active === index && cardData.video ? (
+          <div className="max-h-[317px] w-full">
+            <ReactPlayer
+              url={cardData?.video}
+              controls
+              playing={true} // This will automatically start playing when the video is loaded
+              autoplay={true} // Ensures the video starts automatically
+              className="w-full max-h-[317px]"
+              onClick={() => setActive(null)}
+            />
+          </div>
+        ) : (
+          <div
+            className="h-[317px] w-full relative cursor-pointer"
+            onClick={() => setActive(index)}
+          >
+            <div className="relative min-h-[317px] w-[404px] bg-cover">
+              <div className="h-full w-full">
+                <Image
+                  src={cardData?.thumbnail || "/images/slient-says-card.png"}
+                  height={317}
+                  width={404}
+                  alt={cardData?.thumbnail_alt}
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black flex flex-col justify-between h-full p-4">
                 <div className="flex flex-col justify-center items-center py-20">
                   <div className="bg-pink w-[53px] h-[53px] flex justify-center items-center rounded-full">
                     <CiPlay1 className="text-[28px] text-white" />
@@ -91,51 +91,54 @@ const Index = ({ props }: any) => {
                 </div>
               </div>
             </div>
-          )}
+          </div>
+        )}
 
-          {/* Content */}
-          <div>
-            <div className="m-2 mt-3 flex flex-col -gap-2">
+        {/* Content */}
+        <div className="flex flex-col justify-between flex-grow p-4">
+          <div className="m-2 flex flex-col -gap-2">
+            <Image
+              src={"/images/uppercoma.svg"}
+              height={18}
+              width={18}
+              alt="Upper Coma"
+            />
+            <p className=" text-[20px] lg:text-[24px] 2xl:text-[26px] text-center font-semibold text-homeblack">
+              {cardData.description ||
+                "Professionals at W3Era are incredible. Simply dummy text of the printing."}
+            </p>
+            <div className="flex w-full justify-end">
               <Image
-                src="/images/uppercoma.svg"
+                src={"/images/lovercoma.svg"}
                 height={18}
                 width={18}
-                alt="Upper Coma"
+                alt="Lower Coma"
               />
-              <p className="text-[26px] text-center font-semibold text-homeblack">
-                {cardData.description ||
-                  "Professionals at W3Era are incredible. Simply dummy text of the printing."}
-              </p>
-              <div className="flex w-full justify-end">
-                <Image
-                  src="/images/lovercoma.svg"
-                  height={18}
-                  width={18}
-                  alt="Lower Coma"
-                />
-              </div>
             </div>
-            <div className="flex justify-center w-full">
-              <div>
-                <p className="text-[30px] font-semibold text-blue text-center">
-                  {cardData?.card1_title}
-                </p>
-                <p className="text-center text-homegrey text-[16px]">
-                  {cardData?.card1_content}
-                </p>
-              </div>
-              <div className="w-[2px] min-h-full mx-2 bg-pink"></div>
-              <div>
-                <p className="text-[30px] font-semibold text-blue text-center">
-                  {cardData?.card2_title}
-                </p>
-                <p className="text-center text-homegrey text-[16px]">
-                  {cardData?.card2_content}
-                </p>
-              </div>
+          </div>
+
+          {/* Bottom Content */}
+          <div className="flex justify-center w-full mt-auto">
+            <div className="flex flex-col mb-4 items-center gap-2">
+              <p className="text-[26px] lg:text-[30px] font-semibold text-blue text-center">
+                {cardData?.card1_title}
+              </p>
+              <p className="text-center text-homegrey text-[16px]">
+                {cardData?.card1_content}
+              </p>
+            </div>
+            <div className="w-[2px] min-h-full mx-2 bg-pink"></div>
+            <div className="flex flex-col pb-4 items-center gap-2">
+              <p className="text-[26px] lg:text-[30px] font-semibold text-blue text-center">
+                {cardData?.card2_title}
+              </p>
+              <p className="text-center text-homegrey text-[16px]">
+                {cardData?.card2_content}
+              </p>
             </div>
           </div>
         </div>
+      </div>
       ))}
     </div>
         {/* Pagination Controls */}

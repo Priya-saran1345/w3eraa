@@ -93,7 +93,7 @@ const CaseStudy: React.FC = () => {
                                 <p className='text-[18px] lg:text-[24px] mt-4 text-center lg:text-left font-medium text-homegrey'>
                                     {provenResult[activeIndex].subtitle}
                                 </p>
-                                <p 
+                                <div
                                     className='text-[18px] mt-4 text-center lg:text-left leading-tight text-homegrey'
                                     dangerouslySetInnerHTML={{ __html: provenResult[activeIndex].description }} 
                                   />

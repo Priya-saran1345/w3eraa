@@ -1,6 +1,5 @@
 'use client'
 import { useRouter } from 'next/navigation'
-
 import { useEffect } from 'react'
 
 interface Card {
@@ -27,13 +26,15 @@ export default function AMPStoryContent({ story }: { story: Story }) {
   useEffect(() => {
     document.documentElement.setAttribute('amp', '')
   }, [])
+
   const stripHtml = (html: string) => {
     return html.replace(/<[^>]*>?/gm, '')
   }
-  const handleCancel = () => {
-    window.location.href = '/web-stories'; // Replace with your actual previous page
 
-  };
+  const handleCancel = () => {
+    window.location.href = '/web-stories' // Replace with your actual previous page
+  }
+
   return (
     <>
       <button
@@ -41,19 +42,29 @@ export default function AMPStoryContent({ story }: { story: Story }) {
         className="absolute top-4 right-4 z-50 bg-black/45 bg-opacity-50 text-white rounded-full p-2"
         aria-label="Close story"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
-      <div>
+      <div className="">
         <amp-story
           standalone=""
-          title={stripHtml(story.title) || "W3era story"}
+          title={stripHtml(story.title) || 'W3era story'}
           publisher={story?.author}
           publisher-logo-src="/images/logo.png"
-          poster-portrait-src={story.image || ""}
-          >
+          poster-portrait-src={story.image || ''}
+        >
           {story.card.map((card: Card, index: number) => (
             <amp-story-page key={card.id} id={`page-${index + 1}`} auto-advance-after="10s">
               <amp-story-grid-layer template="fill">
@@ -68,26 +79,37 @@ export default function AMPStoryContent({ story }: { story: Story }) {
                 />
               </amp-story-grid-layer>
               <amp-story-grid-layer template="vertical">
-                <div className='bg-black/45 p-4 rounded-xl' animate-in="fly-in-bottom">
-                  <h1
-                    animate-in="fly-in-top"
-                    animate-in-delay="0.3s"
-                    className="text-[28px] leading-[54px] font-semibold text-white text-center"
-                    dangerouslySetInnerHTML={{ __html: card.title }}
-                  ></h1>
+                <div
+                  className="absolute bottom-10 left-5 w-[90%] right-0 bg-black/45 p-4 rounded-xl"
+                  animate-in="fly-in-bottom"
+                >
+                  {index === 0 ? (
+                    <h1
+                      animate-in="fly-in-top"
+                      animate-in-delay="0.3s"
+                      className="text-[38px] leading-[54px] font-semibold text-white text-center"
+                      dangerouslySetInnerHTML={{ __html: card.title }}
+                    ></h1>
+                  ) : (
+                    <h2
+                      animate-in="fly-in-top"
+                      animate-in-delay="0.3s"
+                      className="text-[28px] leading-[54px] font-semibold text-white text-center"
+                      dangerouslySetInnerHTML={{ __html: card.title }}
+                    ></h2>
+                  )}
                   <p
                     animate-in="fly-in-left"
                     animate-in-delay="0.5s"
                     className="text-white text-center mt-4 font-medium text-[20px]"
-                    dangerouslySetInnerHTML={{ __html: card.description }}>
-                  </p>
+                    dangerouslySetInnerHTML={{ __html: card.description }}
+                  ></p>
                 </div>
               </amp-story-grid-layer>
             </amp-story-page>
           ))}
         </amp-story>
       </div>
-
     </>
   )
 }

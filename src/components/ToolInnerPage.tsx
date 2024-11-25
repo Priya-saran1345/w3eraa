@@ -196,7 +196,7 @@ const Tool = () => {
                 tools && currentTool &&
                 <div>
                     <Header />
-                    <DownNavbar />
+                    <DownNavbar/>
 
                     <Navbar />
                     <div className='w-full'>
