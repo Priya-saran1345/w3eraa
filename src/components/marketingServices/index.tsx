@@ -40,10 +40,10 @@ const index = ({ props }: any) => {
                                     />
                                 </div>
                                 }
-                                        <p className='text-[26px] font-medium text-homeblack leading-[31px]'>{elem?.title}</p>
+                                        <p className='text-[18px] lg:text-[22px] mt-3 font-medium text-homeblack leading-[31px]'>{elem?.title}</p>
                                         <p className='text-[20px]  text-homeblack mt-2 leading-[31px]'>{elem?.subtitle}</p>
                                         <StyledWrapper>
-                                        <div className='text-[16px] text-homegrey mt-2 leading-[22px]' dangerouslySetInnerHTML={{ __html: elem?.description }} />
+                                        <div className='text-[16px]  text-homegrey mt-2 leading-[22px]' dangerouslySetInnerHTML={{ __html: elem?.description }} />
                                    </StyledWrapper>
                                     </div>:
                                      <div className='flex flex-col gap-3 justify-center items-center'>
@@ -57,7 +57,7 @@ const index = ({ props }: any) => {
                                      className={''}
                                      />
                                  }
-                                     <p className='text-[26px] font-medium text-homeblack leading-[31px]'>{elem?.title}</p>
+                                     <p className='text-[18px] lg:text-[22px] mt-3 font-medium text-homeblack leading-[31px]'>{elem?.title}</p>
                                      <p className='text-[20px]  text-homeblack leading-[31px]'>{elem?.subtitle}</p>
                                      <StyledWrapper>
                                      <div className='text-[16px] text-homegrey leading-[22px] text-justify' dangerouslySetInnerHTML={{ __html: elem?.description }} />
