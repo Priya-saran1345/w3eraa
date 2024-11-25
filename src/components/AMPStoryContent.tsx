@@ -1,7 +1,7 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
-
+import logo from '/images/logo.png'
 interface Card {
   id: number
   title: string
@@ -19,7 +19,6 @@ interface Story {
   post_date: string
   card: Card[]
 }
-
 export const config = { amp: true }
 export default function AMPStoryContent({ story }: { story: Story }) {
   const router = useRouter()
@@ -58,13 +57,14 @@ export default function AMPStoryContent({ story }: { story: Story }) {
         </svg>
       </button>
       <div className="">
-        <amp-story
-          standalone=""
-          title={stripHtml(story.title) || 'W3era story'}
-          publisher={story?.author}
-          publisher-logo-src="/images/logo.png"
-          poster-portrait-src={story.image || ''}
-        >
+      <amp-story
+  standalone=""
+  title={stripHtml(story.title) || 'W3era story'}
+  publisher={story?.author}
+  publisher-logo-src="/images/logo.png"
+  poster-portrait-src={story.image || ''}
+>
+
           {story.card.map((card: Card, index: number) => (
             <amp-story-page key={card.id} id={`page-${index + 1}`} auto-advance-after="10s">
               <amp-story-grid-layer template="fill">

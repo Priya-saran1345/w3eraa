@@ -11,8 +11,8 @@ const index = ({ props }: any) => {
                 <div className='md:w-[80%] flex flex-col gap-4 mx-auto'>
 
                     <h2 className=' text-center  font-bold text-homeblack leading-[45px]'>{props?.title || ''} </h2>
-                    <p className=' text-center text-[18px]  text-homegrey '>{props?.description ||
-                     '  '}</p>
+                    <p className=' text-center text-[16px] lg:text-[18px]  text-homegrey '>{props?.description ||
+                     ' '}</p>
                 </div>
 
                 <div className='flex justify-center gap-5 flex-wrap'>
@@ -43,7 +43,7 @@ const index = ({ props }: any) => {
                                     />
                                 </div>
                                 }
-                                <p className='text-[26px] font-medium text-homeblack leading-[31px]'>{elem?.title}</p>
+                                <p className=' text-[22px] lg:text-[26px] font-medium text-homeblack leading-[31px]'>{elem?.title}</p>
                                 <StyledWrapper>
                                 <div
                                     className='text-[16px] text-homegrey text-justify leading-[22px]'

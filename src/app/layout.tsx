@@ -12,6 +12,7 @@ const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
 })
+// export const config = { amp: true }
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" > 
       <head>
         <Canonical />
         <Script type="text/javascript" defer async src="https://www.googletagmanager.com/gtag/js?id=G-SQ89MG760K" id="google_gtagjs-js"></Script>
@@ -56,6 +57,7 @@ export default function RootLayout({
             } )( window, document, 'script', 'dataLayer', 'GTM-WJW2WL3' );`,
           }}
         />
+      
       </head>
       <body
         className={`${inter.variable} `}>
