@@ -122,7 +122,7 @@ const Index = ({show}:any) => {
                     </div>
                     <ul className='  flex flex-col gap-2 mt-5 '>
                       <Link target='_blank' className='hover:text-pink' href='/tool/backlink-maker'><li>Create Backlinks</li></Link>
-                      <Link target='_blank' className='hover:text-pink' href='/tool/website-seo-analyzer'><li>Website SEO Analyzer</li></Link>
+                      <Link target='_blank' className='hover:text-pink' href='/website-seo-analyzer'><li>Website SEO Analyzer</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/tool'><li>Free SEO Tools</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/tool/keyword-position-checker'><li>Keyword Position Checker</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/tool/google-index-checker/'><li>Google Index Checker</li></Link>

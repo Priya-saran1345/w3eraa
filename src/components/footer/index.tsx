@@ -61,7 +61,7 @@ const Footer = () => {
                         <p className=' text-[30px] lg:text-[36px] font-semibold leading-tight text-center sm:text-left'>
                             {basic_details?.subscribeto[0].title}
                             {basic_details?.subscribeto[0].subtitle}
-                        </p>
+                        </p>    
                     </div>
                     <div className='md:w-[45%]'>
                         <div className='flex sm:flex-row flex-col gap-6 justify-between'>

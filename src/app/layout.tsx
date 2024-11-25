@@ -27,6 +27,9 @@ export default function RootLayout({
     <html lang="en" > 
       <head>
         <Canonical />
+        <link rel="icon" href="/images/favicon.ico" />
+        <link rel="apple-touch-icon" href="/images/favicon.ico" />
+
         <Script type="text/javascript"
          defer async src="https://www.googletagmanager.com/gtag/js?id=G-SQ89MG760K" id="google_gtagjs-js"></Script>
         <Script

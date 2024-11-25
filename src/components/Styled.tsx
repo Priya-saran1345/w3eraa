@@ -47,15 +47,19 @@ h2{
   ol, ul {
     padding-left: 1.5rem;
     list-style-type:disc;
+    color: #535353;
+    font-size:17px!important;
   }
     table{
     border:1px solid black;
     margin-top:26px ;
     margin-bottom:26px
+    color: #535353;
     width:100% ;
     }
     td{
     padding-x:10px;
+    color: #535353;
     border:1px solid black;}
     a{
     color:#EF1649;

@@ -43,7 +43,7 @@ const index = ({ props }: any) => {
                                     />
                                 </div>
                                 }
-                                <p className=' text-[22px] lg:text-[26px] font-medium text-homeblack leading-[31px]'>{elem?.title}</p>
+                                <p className=' text-[18px] lg:text-[22px] font-medium text-homeblack leading-[31px]'>{elem?.title}</p>
                                 <StyledWrapper>
                                 <div
                                     className='text-[16px] text-homegrey text-justify leading-[22px]'
