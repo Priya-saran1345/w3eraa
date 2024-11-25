@@ -31,7 +31,7 @@ const Page = ({props}:any) => {
         <Navbar/>
         {
           other?.title&&
-       <div className='w-full bg-no-repeat bg-center min-h-[40vh] bg-[url("/images/tool-bg.png")] py-9 flex flex-col justify-center items-center'>
+          <div className='w-full px-4 bg-[url("/images/blog-bg.png")] h-[45vh] flex justify-center items-center'>
         <h1 className='text-[32px] lg:text-[44px] font-bold text-white'> {other?.title || ''}</h1>
         </div>
         }
