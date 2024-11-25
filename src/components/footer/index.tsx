@@ -54,7 +54,7 @@ const Footer = () => {
     return (
         <>
      <FooterBanner/>
-        <div className='w-full bg-blue'>
+        <div className='w-full bg-blue' onClick={() => setOpenDropdown(null)}>
             <div  className='xl:w-[75%] text-white pt-0 lg:py-16 mx-auto px-4'>
                 <div className='flex justify-between md:flex-row gap-5 flex-col '>
                     <div className='md:w-1/2'>
