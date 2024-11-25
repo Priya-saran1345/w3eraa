@@ -14,7 +14,7 @@ import { IoReturnUpBackOutline } from 'react-icons/io5';
 import Button from '@/components/button';
 import { BsBoxArrowUpRight } from 'react-icons/bs';
 import Loader from '@/components/loader';
-import {StyledWrapper} from '@/components/Styled'
+import { StyledWrapper } from '@/components/Styled'
 import Sites from '@/components/Sites.json'
 import HubspotForm from '@/components/HubspotForm'
 import DownNavbar from '@/components/DownNavbar'
@@ -61,52 +61,52 @@ const Tool = () => {
 
     const displayRowsOneByOne = (rows: any[]) => {
         let i = 0;
-      
+
         const appendRow = () => {
-          if (i < rows.length) {
-            setDisplayedRows((prevRows) => [...prevRows, rows[i]]);
-            i++;
-      
-            // Generate a random delay between 5 and 20 seconds
-            const randomDelay = Math.floor(Math.random() * (20000 - 5000 + 1)) + 5000;
-      
-            setTimeout(appendRow, randomDelay); // Schedule the next row with random delay
-          }
+            if (i < rows.length) {
+                setDisplayedRows((prevRows) => [...prevRows, rows[i]]);
+                i++;
+
+                // Generate a random delay between 5 and 20 seconds
+                const randomDelay = Math.floor(Math.random() * (20000 - 5000 + 1)) + 5000;
+
+                setTimeout(appendRow, randomDelay); // Schedule the next row with random delay
+            }
         };
         appendRow(); // Start the recursive process
-      };
-      
-      // Call this function after `setResult` is updated
-      useEffect(() => {
-        if (result?.length > 0) {
-          setDisplayedRows([]); // Reset displayed rows
-          displayRowsOneByOne(result);
-        }
-      }, [result]);
+    };
 
-      
+    // Call this function after `setResult` is updated
+    useEffect(() => {
+        if (result?.length > 0) {
+            setDisplayedRows([]); // Reset displayed rows
+            displayRowsOneByOne(result);
+        }
+    }, [result]);
+
+
 
 
     const checkBacklink = () => {
         if (!url) return; // Ensure the URL is valid before proceeding
-      
+
         const formattedDomain = url.replace(/https?:\/\/|www\./g, ""); // Remove protocol and 'www.'
         setshowresult(true); // Show the result section
 
         setLoading(true); // Set loading to true
         setError(null);        // Use setTimeout to delay the result display
         setTimeout(() => {
-          setLoading(false); // Stop loading after 3 seconds
-         // Show the result section
-          const formattedResults = Sites?.sites.map((site: any, index: number) => ({
-            id: index + 1, // Incremental ID
-            Page: site.replace("{domain}", formattedDomain), // Replace `{domain}` in URLs
-            Status: "Success", // Example status
-          }));
-          setResult(formattedResults || []); // Update the state with the formatted results
+            setLoading(false); // Stop loading after 3 seconds
+            // Show the result section
+            const formattedResults = Sites?.sites.map((site: any, index: number) => ({
+                id: index + 1, // Incremental ID
+                Page: site.replace("{domain}", formattedDomain), // Replace `{domain}` in URLs
+                Status: "Success", // Example status
+            }));
+            setResult(formattedResults || []); // Update the state with the formatted results
         }, 1500); // 3 seconds delay
-      };
-           
+    };
+
     useEffect(() => {
         fetchTools();
     }, []);
@@ -189,14 +189,14 @@ const Tool = () => {
     return (
         <>
             {
-                !tools && currentTool&&
-                <Loader/>
+                !tools && currentTool &&
+                <Loader />
             }
             {
-                tools && currentTool&&
+                tools && currentTool &&
                 <div>
                     <Header />
-                    <DownNavbar/>
+                    <DownNavbar />
 
                     <Navbar />
                     <div className='w-full'>
@@ -243,7 +243,7 @@ const Tool = () => {
                                     'meta-tag-generator') &&
                                 (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
                                     <input type="text" placeholder='Enter Keywords Seprated By Coma(,)'
-                                     className='w-full  border-none outline-none' onChange={handleKeyword} />
+                                        className='w-full  border-none outline-none' onChange={handleKeyword} />
                                 </div>)
                             }
                             {
@@ -303,7 +303,7 @@ const Tool = () => {
                                 </div>)
                             }
                             {showresult && <div className=' rounded-xl p-7  mt-5 border-slate-100 border-[1px]'>
-                                {loading &&<div className=" flex justify-center items-center">
+                                {loading && <div className=" flex justify-center items-center">
 
                                     <div className=" loader"></div>
                                 </div>
@@ -322,31 +322,31 @@ const Tool = () => {
                                                             <th className='p-2 border-r'>Pages contain backlink</th>
                                                             <th className='p-2'>Status</th>
                                                         </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                {displayedRows.map((elem: any, index: number) => (
-                                                                    <tr key={index} className="border-b">
-                                                                        <td className="p-2 text-center border-r">{index + 1}</td>
-                                                                        <td className="p-2 border-r">
-                                                                            <a
-                                                                                href={elem?.Page}
-                                                                                target="_blank"
-                                                                                rel="noopener noreferrer"
-                                                                                className="text-blue-500 text-homegrey hover:text-blue duration-75 hover:underline"
-                                                                            >
-                                                                                {elem?.Page}
-                                                                            </a>
-                                                                        </td>
-                                                                        <td
-                                                                            className={`p-2 ${elem?.Status === "Success" ? "text-green-600" : "text-red-600"
-                                                                                }`}
-                                                                        >
-                                                                            {elem?.Status}
-                                                                        </td>
-                                                                    </tr>
-                                                                ))}
-                                                               
-                                                            </tbody>
+                                                    </thead>
+                                                    <tbody>
+                                                        {displayedRows.map((elem: any, index: number) => (
+                                                            <tr key={index} className="border-b">
+                                                                <td className="p-2 text-center border-r">{index + 1}</td>
+                                                                <td className="p-2 border-r">
+                                                                    <a
+                                                                        href={elem?.Page}
+                                                                        target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                        className="text-blue-500 text-homegrey hover:text-blue duration-75 hover:underline"
+                                                                    >
+                                                                        {elem?.Page}
+                                                                    </a>
+                                                                </td>
+                                                                <td
+                                                                    className={`p-2 ${elem?.Status === "Success" ? "text-green-600" : "text-red-600"
+                                                                        }`}
+                                                                >
+                                                                    {elem?.Status}
+                                                                </td>
+                                                            </tr>
+                                                        ))}
+
+                                                    </tbody>
 
                                                     {/* <tbody>
                                                         {result.map((elem: any, index: number) => {
@@ -378,14 +378,14 @@ const Tool = () => {
                                     </div>
                                 )}
                             </div>}
-                                <div className='flex justify-start items-center gap-2'>
+                            <div className='flex justify-start items-center gap-2'>
 
-                                    <div
-                                        className="mt-4 w-fit"
-                                        onClick={lastSegment === "backlink-maker" ? checkBacklink : handleSubmit}
-                                    >
-                                        <Button content={"Check"} type="submit" />
-                                    </div>
+                                <div
+                                    className="mt-4 w-fit"
+                                    onClick={lastSegment === "backlink-maker" ? checkBacklink : handleSubmit}
+                                >
+                                    <Button content={"Check"} type="submit" />
+                                </div>
                                 {/* <div className='mt-4 w-fit'{ (lastSegment=="backlink-maker")?checkBacklink :onClick={handleSubmit} }>
                                     <Button content={'Check'} type="submit" />
                                 </div> */}
@@ -408,7 +408,7 @@ const Tool = () => {
                                 </div>
                                 <div className='my-8 px-4'>
                                     <StyledWrapper>
-                                    <div dangerouslySetInnerHTML={{ __html: tools_body?.body || 'body is null' }} />
+                                        <div dangerouslySetInnerHTML={{ __html: tools_body?.body || 'body is null' }} />
                                     </StyledWrapper>
                                 </div>
                             </div>
@@ -470,7 +470,7 @@ const Tool = () => {
                                 <textarea required className='my-2 w-full p-3 rounded-lg border-[2px] border-grey outline-none' />
                                 <button className='bg-pink text-white text-[14px] w-[133px] h-[44px] flex justify-center items-center rounded-lg'>SUBMIT NOW</button>
                             </form> */}
-                            <HubspotForm  portalId="20095080" formId={"2aeda8d3-d0a1-4624-87f7-39fea7a4d68d"} region={'na1'}/>
+                            <HubspotForm portalId="20095080" formId={"2aeda8d3-d0a1-4624-87f7-39fea7a4d68d"} region={'na1'} />
 
                             <div className='border-b-[1px] border-slate-200 mt-5 mb-3'>
                                 <p className='text-[24px] font-medium text-homeblack mb-3'>Trendy SEO Tools</p>
