@@ -158,7 +158,6 @@ data?.title && data?.image&&
                         </p> */}
                     </StyledWrapper>
                 </div>
-
             }
             <div className='bg-white mt-12 xl:w-[75%] px-4 xl:px-0 mx-auto'>
                 {/* <p className='text-homeblack text-[28px] text-center mb-8 font-bold lg:text-[38px]'>{data?.aboutservice?.title || ''}</p> */}

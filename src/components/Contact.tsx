@@ -317,7 +317,7 @@ const Contact = () => {
                     src={'/images/contacticon.svg'}
                     height={32}
                     width={32}
-                    alt=''
+                    alt='w3era contact image'
                     className='transition-all duration-200'
                   />
                   <p className='text-[38px] lg:text-[60px] font-medium'>7000+</p>
@@ -328,7 +328,7 @@ const Contact = () => {
                     src={'/images/contacticon1.svg'}
                     height={32}
                     width={32}
-                    alt=''
+                    alt='w3era contact image'
                     className='transition-all duration-200'
                   />
                   <p className='text-[38px] lg:text-[60px] font-medium'>130+</p>
@@ -339,7 +339,7 @@ const Contact = () => {
                     src={'/images/contacticon2.svg'}
                     height={32}
                     width={32}
-                    alt=''
+                    alt='w3era contact image'
                     className='transition-all duration-200'
                   />
                   <p className='text-[38px] lg:text-[60px] font-medium'>67+</p>
@@ -350,7 +350,7 @@ const Contact = () => {
                     src={'/images/contacticon3.svg'}
                     height={32}
                     width={32}
-                    alt=''
+                    alt='w3era contact image'
                     className='transition-all duration-200'
                   />
                   <p className='text-[38px] lg:text-[60px] font-medium'>2,377+</p>
@@ -365,7 +365,7 @@ const Contact = () => {
           </h2>
           <div className='w-full bg-[url("/images/havamahal.png")] py-8 min-h-[47vh] px-4 flex-wrap bg-center  flex justify-center items-center gap-10 lg:gap-20 '>
             <div className='flex flex-col w-[266px] gap-4 text-center h-[304px] text-white items-center justify-center'>
-              <Image src={'/images/india.png'} height={85} width={85} alt=''></Image>
+              <Image src={'/images/india.png'} height={85} width={85} alt='w3era contact image'></Image>
               <p className=' text-[22px] lg:text-[25px] uppercase border-b-2 border-pink font-medium'>india(HQ)</p>
               <p className='leading-[19px]'>
                 {basic_details?.basic_details[0].address1}
@@ -377,7 +377,7 @@ const Contact = () => {
             </div>
             <div className='min-h-[300px] bg-pink w-[1px] hidden md:block'></div>
             <div className='flex flex-col w-[266px] h-[304px]  gap-4 text-center text-white items-center justify-center'>
-              <Image src={'/images/mother.png'} height={85} width={85} alt=''></Image>
+              <Image src={'/images/mother.png'} height={85} width={85} alt='w3era contact image'></Image>
               <p className='text-[22px] lg:text-[25px] uppercase border-b-2 border-pink font-medium'>US OFFICE</p>
               <p className='leading-[19px]'> {basic_details?.basic_details[0].address2}</p>
               <p className=' text-[18px] flex gap-3 items-center'><IoMdMail className='text-pink' />

@@ -35,7 +35,7 @@ const Work = () => {
                     </div>
                     <div className='w-[345px] relative max-h-[500px]'>
                         <div className='w-[260px] h-[260px] bg-no-repeat bg-center flex justify-center items-center bg-[url("/images/bluestar.png")]'>
-                            <Image src={'/images/current.png'}  height={71} width={40} alt='' />
+                            <Image src={'/images/current.png'}  height={71} width={40} alt='w3era contact image' />
                         </div>
                         <p className='text-[24px] font-medium'>Initial Assessment
                         </p>
@@ -44,11 +44,11 @@ const Work = () => {
                         </p>
                     </div>
                     <div className='hidden lg:block'>
-                        <Image src={'/images/pinkarrow.png'}  height={102} width={181} alt='' className='mt-52'/>
+                        <Image src={'/images/pinkarrow.png'}  height={102} width={181} alt='w3era contact image' className='mt-52'/>
                     </div>
                     <div className='w-[345px] max-h-[500px] relative lg:mt-32'>
                         <div className='w-[260px] h-[260px] bg-no-repeat bg-center flex justify-center items-center bg-[url("/images/bluestar.png")]'>
-                            <Image src={'/images/current.png'}  height={71} width={40} alt='' />
+                            <Image src={'/images/current.png'}  height={71} width={40} alt='w3era contact image' />
                         </div>
                         <p className='text-[24px] font-medium'>Goal Setting
                         </p>
@@ -56,11 +56,11 @@ const Work = () => {
                         We collaborate with you to define clear, actionable objectives tailored to your business needs.             </p>
                     </div>
                     <div className='hidden lg:block'>
-                        <Image src={'/images/ultaarrow-pink.png'}  height={102} width={181} alt='' className='mt-80 ' />
+                        <Image src={'/images/ultaarrow-pink.png'}  height={102} width={181} alt='w3era contact image' className='mt-80 ' />
                     </div>
                     <div className='w-[345px] max-h-[500px] relative lg:mt-64'>
                         <div className='w-[260px] h-[260px] bg-no-repeat bg-center flex justify-center items-center bg-[url("/images/bluestar.png")]'>
-                            <Image src={'/images/current.png'}  height={71} width={40} alt='' />
+                            <Image src={'/images/current.png'}  height={71} width={40} alt='w3era contact image' />
                         </div>
                         <p className='text-[24px] font-medium'>Customized Recommendations
                         </p>
@@ -75,7 +75,7 @@ const Work = () => {
                     </div>
                     <div className='w-[345px] relative max-h-[500px]'>
                         <div className='w-[260px] h-[260px] bg-no-repeat bg-center flex justify-center items-center bg-[url("/images/pinkstar.png")]'>
-                            <Image src={'/images/current.png'}  height={71} width={40} alt='' />
+                            <Image src={'/images/current.png'}  height={71} width={40} alt='w3era contact image' />
                         </div>
                         <p className='text-[24px] font-medium'>Market Research
                         </p>
@@ -84,11 +84,11 @@ const Work = () => {
                      </p>
                     </div>
                     <div className='hidden lg:block'>
-                        <Image src={'/images/whitearrow.png'}  height={102} width={181} alt='' className='mt-52'/>
+                        <Image src={'/images/whitearrow.png'}  height={102} width={181} alt='w3era contact image' className='mt-52'/>
                     </div>
                     <div className='w-[345px] max-h-[500px] relative lg:mt-32'>
                         <div className='w-[260px] h-[260px] bg-no-repeat bg-center flex justify-center items-center bg-[url("/images/pinkstar.png")]'>
-                            <Image src={'/images/current.png'}  height={71} width={40} alt='' />
+                            <Image src={'/images/current.png'}  height={71} width={40} alt='w3era contact image' />
                         </div>
                         <p className='text-[24px] font-medium'>Strategy Development
                         </p>
@@ -97,11 +97,11 @@ const Work = () => {
                    </p>
                     </div>
                     <div className='hidden lg:block'>
-                        <Image src={'/images/ultaarrow-white.png'}  height={102} width={181} alt='' className='mt-80 ' />
+                        <Image src={'/images/ultaarrow-white.png'}  height={102} width={181} alt='w3era contact image' className='mt-80 ' />
                     </div>
                     <div className='w-[345px] max-h-[500px] relative lg:mt-64'>
                         <div className='w-[260px] h-[260px] bg-no-repeat bg-center flex justify-center items-center bg-[url("/images/pinkstar.png")]'>
-                            <Image src={'/images/current.png'}   height={71} width={40} alt='' />
+                            <Image src={'/images/current.png'}   height={71} width={40} alt='w3era contact image' />
                         </div>
                         <p className='text-[24px] font-medium'>Roadmap Creation
                         </p>
@@ -116,7 +116,7 @@ const Work = () => {
                     </div>
                     <div className='w-[345px] relative max-h-[500px]'>
                         <div className='w-[260px] h-[260px] bg-no-repeat bg-center flex justify-center items-center bg-[url("/images/bluestar.png")]'>
-                            <Image src={'/images/current.png'}  height={71} width={40} alt='' />
+                            <Image src={'/images/current.png'}  height={71} width={40} alt='w3era contact image' />
                         </div>
                         <p className='text-[24px] font-medium'>Campaign Implementation
                         </p>
@@ -125,11 +125,11 @@ const Work = () => {
                         </p>
                     </div>
                     <div className='hidden lg:block'>
-                        <Image src={'/images/pinkarrow.png'}  height={102} width={181} alt='' className='mt-52'/>
+                        <Image src={'/images/pinkarrow.png'}  height={102} width={181} alt='w3era contact image' className='mt-52'/>
                     </div>
                     <div className='w-[345px] max-h-[500px] relative lg:mt-32'>
                         <div className='w-[260px] h-[260px] bg-no-repeat bg-center flex justify-center items-center bg-[url("/images/bluestar.png")]'>
-                            <Image src={'/images/current.png'}  height={71} width={40} alt='' />
+                            <Image src={'/images/current.png'}  height={71} width={40} alt='w3era contact image' />
                         </div>
                         <p className='text-[24px] font-medium'>Performance Monitoring
                         </p>
@@ -138,11 +138,11 @@ const Work = () => {
                         </p>
                     </div>
                     <div className='hidden lg:block'>
-                        <Image src={'/images/ultaarrow-pink.png'}  height={102} width={181} alt='' className='mt-80 ' />
+                        <Image src={'/images/ultaarrow-pink.png'}  height={102} width={181} alt='w3era contact image' className='mt-80 ' />
                     </div>
                     <div className='w-[345px] max-h-[500px] relative lg:mt-64'>
                         <div className='w-[260px] h-[260px] bg-no-repeat bg-center flex justify-center items-center bg-[url("/images/bluestar.png")]'>
-                            <Image src={'/images/current.png'}  height={71} width={40} alt='' />
+                            <Image src={'/images/current.png'}  height={71} width={40} alt='w3era contact image' />
                         </div>
                         <p className='text-[24px] font-medium'>Reporting & Optimization
                         </p>

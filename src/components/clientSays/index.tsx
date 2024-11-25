@@ -100,7 +100,7 @@ export default function Data({ props }: any) {
                     width={18}
                     alt="Upper Coma"
                   />
-                  <p className=" text-[20px] lg:text-[24px] 2xl:text-[26px] text-center font-semibold text-homeblack">
+                  <p className=" text-[20px] xl:text-[24px] 2xl:text-[26px] text-center font-semibold text-homeblack">
                     {cardprops.description ||
                       "Professionals at W3Era are incredible. Simply dummy text of the printing."}
                   </p>

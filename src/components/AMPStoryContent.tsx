@@ -1,7 +1,7 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
-import logo from '/images/logo.png'
+
 interface Card {
   id: number
   title: string
@@ -20,6 +20,7 @@ interface Story {
   card: Card[]
 }
 export const config = { amp: true }
+
 export default function AMPStoryContent({ story }: { story: Story }) {
   const router = useRouter()
   useEffect(() => {
@@ -56,17 +57,19 @@ export default function AMPStoryContent({ story }: { story: Story }) {
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
-      <div className="">
-      <amp-story
-  standalone=""
-  title={stripHtml(story.title) || 'W3era story'}
-  publisher={story?.author}
-  publisher-logo-src="/images/logo.png"
-  poster-portrait-src={story.image || ''}
->
 
+      <div className="">
+        <amp-story
+          standalone=""
+          title={stripHtml(story.title) || 'W3era story'}
+          publisher={story?.author}
+          publisher-logo-src="images/web-story-logo.png"
+          poster-portrait-src={story.image || ''}
+        >
+          {/* Story Pages */}
           {story.card.map((card: Card, index: number) => (
             <amp-story-page key={card.id} id={`page-${index + 1}`} auto-advance-after="10s">
+              {/* Background Layer */}
               <amp-story-grid-layer template="fill">
                 <amp-img
                   src={card.image}
@@ -78,6 +81,24 @@ export default function AMPStoryContent({ story }: { story: Story }) {
                   alt={story.image_alt}
                 />
               </amp-story-grid-layer>
+
+              {/* Logo Layer - Fixed Position at the top of each story page */}
+              <amp-story-grid-layer template="vertical">
+                <div
+                  className="absolute top-2 left-4"
+                  style={{ width: '96px', height: '96px', zIndex: 99999 }}
+                >
+                  <amp-img
+                    src="/images/web-story-logo.png"
+                    width="96"
+                    height="96"
+                    layout="fixed"
+                    alt="Logo"
+                  ></amp-img>
+                </div>
+              </amp-story-grid-layer>
+
+              {/* Content Layer */}
               <amp-story-grid-layer template="vertical">
                 <div
                   className="absolute bottom-10 left-5 w-[90%] right-0 bg-black/45 p-4 rounded-xl"
@@ -112,4 +133,4 @@ export default function AMPStoryContent({ story }: { story: Story }) {
       </div>
     </>
   )
-}
+} 

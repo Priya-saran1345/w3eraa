@@ -14,8 +14,6 @@ import { HiArrowTopRightOnSquare } from 'react-icons/hi2'
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
 
-
-
 const Audit = () => {
 
     const [url, setUrl] = useState('');

@@ -43,7 +43,7 @@ export default function AMPStory({ slug }: { slug: string }) {
     return <div>{error}</div>
   }
   if (!story) {
-    return <div>No story data available.</div>
+    return <div></div>
   }
   return (
     

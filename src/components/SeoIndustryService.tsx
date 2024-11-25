@@ -12,7 +12,7 @@ const SeoIndustryService = ({props}:any) => {
                <div key={i} className='rounded-xl p-8 text-center w-[90%] sm:w-[45%] lg:w-[23%] bg-lightblue  flex flex-col gap-2 justify-between hover:shadow-xl'>
                      <div className='h-[100px] w-[100px] flex justify-center items-center bg-white rounded-full mx-auto'>
                          <Image
-                          src={elem?.icons} alt='' width={60} height={60} />
+                          src={elem?.icons} alt='w3era' width={60} height={60} />
 
                      </div>
                    <p className='text-[26px] text-blue font-bold  leading-[31px]'>{elem?.plan}</p>

@@ -27,7 +27,8 @@ export default function RootLayout({
     <html lang="en" > 
       <head>
         <Canonical />
-        <Script type="text/javascript" defer async src="https://www.googletagmanager.com/gtag/js?id=G-SQ89MG760K" id="google_gtagjs-js"></Script>
+        <Script type="text/javascript"
+         defer async src="https://www.googletagmanager.com/gtag/js?id=G-SQ89MG760K" id="google_gtagjs-js"></Script>
         <Script
           defer
           id="gtag"

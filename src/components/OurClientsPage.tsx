@@ -90,37 +90,6 @@ const Client = () => {
                 </div>
             </div>
             <CustomerChoose/>
-
-            {/* <div className='w-full py-12 lg:py-16'>
-                <div className='2xl:w-[75%] w-full px-4 mx-auto'>
-                    <p className='lg:text-[48px] text-[32px] font-bold text-center'>Why Should Customers Choose W3era?</p>
-                    <div className='flex flex-wrap mt-10 gap-5 justify-center'>
-                        {
-                            client?.whychoose_w3era.map((elem: any, index: number) => {
-                                return ( // Add return statement here
-                                    <div key={index} className='hover:shadow-lg flex flex-col gap-4 sm:min-w-[348px] w-[378px] h-[261px] px-5 justify-center rounded-lg group transition-shadow duration-300'>
-                                        <div className='group-hover:filter group-hover:brightness-0 group-hover:contrast-100'>
-                                            <Image
-                                                src={elem?.icon} // Ensure this path is correct
-                                                alt='' // Add a descriptive alt text
-                                                height={38}
-                                                width={41}
-                                                className='transition-all duration-300'
-                                            />
-                                        </div>
-                                        <p className='text-[22px] font-medium group-hover:text-pink transition-colors duration-300'>
-                                           {elem?.title}
-                                        </p>
-                                        <p className='text-[17px] text-textGrey'>
-                                        {elem?.description}
-                                        </p>
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-                </div>
-            </div> */}
             <Footer />
         </div>
            }
