@@ -117,16 +117,7 @@ const Audit = () => {
                     </div>
                 </div>
                 <div className='mt-4 w-full px-4 xl:px-0 xl:w-[75%] mx-auto'>
-                    <div className='flex gap-3'>
-                        <div className='w-fit'>
-                            <Link href={'/tool'}>
-                                <button className='bg-lightpink text-pink mb-7 p-2 px-4 text-[18px] font-medium flex justify-center gap-3 rounded-lg items-center'>
-                                    <IoReturnUpBackOutline className='text-[24px]' /> Back
-                                </button>
-                            </Link>
-                        </div>
-                        <button onClick={handleClear} className='h-fit px-7 py-[9px] rounded-md bg-lightpink text-pink font-medium hover:bg-pink hover:text-white duration-200'>Clear</button>
-                    </div>
+
                     <div className='rounded-xl p-7 shadow-xl border-slate-100 border-[1px] bg-white'>
                         <div className='bg-grey px-4 py-2 rounded-lg w-full flex items-center gap-3'>
                             <div className='w-[93px] h-[93px] bg-white rounded-full flex justify-center items-center'>
