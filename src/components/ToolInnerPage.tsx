@@ -227,7 +227,7 @@ const Tool = () => {
                             </div>
                             {
                                 !(currentTool[0]?.slug_link === 'keywords-suggestion-tool' || currentTool[0]?.slug_link === 'robots-txt-generator') && (
-                                    <div className='rounded-lg w-full border-grey border-[2px] flex justify-between items-center p-3 px-6 mt-4 bg-white'>
+                                    <div className='rounded-lg w-full border-grey border-[2px] flex justify-between items-center p-3 px-6 mt-4 dark:bg-white bg-white'>
                                         <input
                                             type="text"
                                             className='text-textGrey w-full border-none outline-none text-[18px]'
