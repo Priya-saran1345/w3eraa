@@ -111,7 +111,7 @@ const AboutUS = () => {
                     <div>
                         <p className=' text-[20px] lg:text-[32px] text-homeblack font-medium'>About</p>
                         <h2 className=' text-homeblack font-bold mb-2'>{about?.aboutus[0]?.title}</h2>
-                        <p className=' text-[16px] lg:text-[18px] text-homegrey' dangerouslySetInnerHTML={{ __html:about?.aboutus[0]?.description }} />
+                        <div className=' text-[16px] lg:text-[18px] text-homegrey' dangerouslySetInnerHTML={{ __html:about?.aboutus[0]?.description }} />
                     </div>
                     {/* <div className='  relative my-20' onMouseLeave={() => setshow(false)} >
 
@@ -185,7 +185,8 @@ const AboutUS = () => {
                 <div className=' w-full bg-[url("/images/aboutwave.png")] flex items-end min-h-[345px]'>
                     <div  className='w-full xl:w-[75%] mx-auto px-4 mt-8 sm:mt-0' >
                         <h2 className=' font-bold text-homeblack text-center'>{about?.who_youare[0].title}</h2>
-                            <p className=' text-[16px] lg:text-[18px] 2xl:text-[20px] px-10 text-center text-homegrey'  dangerouslySetInnerHTML={{ __html: about?.who_youare[0].description }} ></p>
+                            <div className=' text-[16px] lg:text-[18px] 2xl:text-[20px] px-10 text-center text-homegrey'
+                              dangerouslySetInnerHTML={{ __html: about?.who_youare[0].description }} ></div>
                     </div>
                 </div>
                 <div className=' w-full bg-grey '>
@@ -297,9 +298,9 @@ const AboutUS = () => {
                              <h2 className=' lg:text-[30px] font-bold text-homeblack leading-[] lg:leading-[48px]'>
                                  {about?.ourapproach[0].title}
                              </h2>
-                             <p className='text-textGrey text-[16px] lg:text-[18px] mt-4 leading-[21px]'  dangerouslySetInnerHTML={{ __html:about?.ourapproach[0].description }} >
+                             <div className='text-textGrey text-[16px] lg:text-[18px] mt-4 leading-[21px]'  dangerouslySetInnerHTML={{ __html:about?.ourapproach[0].description }} >
                             
-                             </p>
+                             </div>
                              <div className='flex-col flex gap-3 w-fit items-center mt-4'>
                             
                        <ClientsCount/>

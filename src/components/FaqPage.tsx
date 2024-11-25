@@ -73,7 +73,7 @@ export default function AnimatedFaqs() {
                       transition={{ duration: 0.2, delay: 0.1 }}
                       className='py-6 text-[18px]  text-homegrey'
                     >
-                  <p
+                  <div
                       className='!text-homegrey'
                       dangerouslySetInnerHTML={{ __html: item?.description }}
                     />                    </motion.div>

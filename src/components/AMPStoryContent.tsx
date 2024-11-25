@@ -119,12 +119,12 @@ export default function AMPStoryContent({ story }: { story: Story }) {
                       dangerouslySetInnerHTML={{ __html: card.title }}
                     ></h2>
                   )}
-                  <p
+                  <div
                     animate-in="fly-in-left"
                     animate-in-delay="0.5s"
                     className="text-white text-center mt-4 font-medium text-[20px]"
                     dangerouslySetInnerHTML={{ __html: card.description }}
-                  ></p>
+                  ></div>
                 </div>
               </amp-story-grid-layer>
             </amp-story-page>

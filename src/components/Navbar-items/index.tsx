@@ -387,12 +387,13 @@ const Index = ({show}:any) => {
                       <Link target='_blank' className='hover:text-pink' href='/guest-posting-service-packages'><li>Guest Posting Service Packages</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/app-store-aso-packages'><li>App Store ASO Packages</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/link-building-packages'><li>Link Building Packages</li></Link>
+                      <Link target='_blank' className='hover:text-pink' href='/ecommerce-seo-packages'><li>Ecommerce Seo Packages</li></Link>
 
                     </ul>
                   </div>
                   <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
                   </div>
-                  <div>
+                  {/* <div>
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                         <Image
@@ -410,7 +411,7 @@ const Index = ({show}:any) => {
                     </ul>
                   </div>
                   <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
-                  </div>
+                  </div> */}
                   <div>
                     <div className='flex justify-start gap-2 items-center'>
                       <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>

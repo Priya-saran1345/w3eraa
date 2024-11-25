@@ -77,7 +77,7 @@ const Page = () => {
             </div>
             <div className='w-full mx-auto xl:w-[75%] flex flex-col gap-4 px-6 xl:px-2 py-12'>
                 
-            <p className='text-homegrey text-[18px]' dangerouslySetInnerHTML={{ __html: caseStudydata?.content_1[0]?.description }} />
+            <div className='text-homegrey text-[18px]' dangerouslySetInnerHTML={{ __html: caseStudydata?.content_1[0]?.description }} />
 
                    
             </div>

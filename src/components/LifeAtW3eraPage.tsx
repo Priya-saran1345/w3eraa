@@ -49,8 +49,8 @@ const Life = () => {
                         <div className='w-full mx-auto px-4 xl:w-[75%]'>
                             <div className='lg:w-[60%] mx-auto text-white  text-center '>
                                 <h2 className='font-semibold mb-4 leading-[] md:leading-[58px]'>{life?.team_work[0].title}</h2>
-                                <p className=' text-[16px] lg:text-[19px]  leading-[21px]' dangerouslySetInnerHTML={{ __html: life?.team_work[0].description }} >
-                                </p>
+                                <div className=' text-[16px] lg:text-[19px]  leading-[21px]' dangerouslySetInnerHTML={{ __html: life?.team_work[0].description }} >
+                                </div>
 
                             </div>
                             <div className='w-full rounded-xl pt-10'>
@@ -73,8 +73,8 @@ const Life = () => {
                         <div className='2xl:w-[75%] px-3 w-full  py-12 lg:py-24 mx-auto'>
                             <div className='md:w-[60%] mx-auto  text-center '>
                                 <h2 className=' text-homeblack font-semibold mb-4'>{life?.event[0].title}</h2>
-                                <p className=' text-[16px] lg:text-[19px] text-homegrey  leading-[21px]' dangerouslySetInnerHTML={{ __html: life?.event[0].description }} >
-                                </p>
+                                <div className=' text-[16px] lg:text-[19px] text-homegrey  leading-[21px]' dangerouslySetInnerHTML={{ __html: life?.event[0].description }} >
+                                </div>
                             </div>
                             <div className='w-full flex  mt-8 gap-4 flex-wrap justify-center'>
                                 {
