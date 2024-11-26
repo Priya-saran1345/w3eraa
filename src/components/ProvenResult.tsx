@@ -97,7 +97,6 @@ const CaseStudy: React.FC = () => {
                                     className='text-[18px] mt-4 text-center lg:text-left leading-tight text-homegrey'
                                     dangerouslySetInnerHTML={{ __html: provenResult[activeIndex].description }} 
                                   />
-
                                 <div className='mt-6 p-5 bg-lightblue flex flex-col mx-auto lg:mx-0 w-fit rounded-2xl mb-4 md:mb-8'>
                                     <p className='text-[16px] font-bold text-homeblack'>Results</p>
                                     <div className='flex gap-10'>
@@ -106,9 +105,11 @@ const CaseStudy: React.FC = () => {
                                     </div>
                                 </div>
                                 <div className='flex justify-center lg:justify-start'>
-                                    <Link href={`${provenResult[activeIndex].slug}`}>
+                                    {/* <Link href={`${provenResult[activeIndex].slug}`}> */}
+                                    <div onClick={()=>Router.push(`${provenResult[activeIndex].slug}`)} className='w-fit'>
                                     <Button content={'Know More'}/>
-                                    </Link>
+                                    {/* </Link> */}
+                                    </div>
 
                                 </div>
                             </div>
@@ -129,7 +130,6 @@ const CaseStudy: React.FC = () => {
                                 </div>
                             ))}
                         </Slider>
-
                         {/* Dots Navigation */}
                         {/* <div className='absolute bottom-6 left-4 flex  gap-2'>
                             {provenResult?.map((elem:any, index: number) => (

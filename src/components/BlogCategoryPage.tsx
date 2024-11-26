@@ -36,8 +36,8 @@ const Category = () => {
       const totalPages = Math.ceil(response.data.count / 10); // Calculate total pages
       setPages(totalPages); // Update pages count
 
-      console.log('response -----------', response.data);
-    } catch (error: any) {
+    }
+     catch (error: any) {
       console.log("client error", error.message);
     }
   };

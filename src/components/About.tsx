@@ -22,7 +22,8 @@ const fetch = async () => {
     try {
         const response = await axios.get(`${BASE_URL}about/`);
         setabout(response.data);
-      } catch (error: any) {
+      }
+       catch (error: any) {
         console.log("about error", error.message);
       }
     }

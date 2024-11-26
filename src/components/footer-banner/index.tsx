@@ -23,7 +23,6 @@ const Footerbanner = ({ content, slug, image, description, btncontent }: any) =>
     if (!validateFields()) return;
     try {
       await axios.post(`${BASE_URL}business-form/`, message);
-      console.log('Message sent successfully');
       toast.success('Message send successfully')
       setMessage({
         name: "",

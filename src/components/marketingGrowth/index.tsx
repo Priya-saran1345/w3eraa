@@ -5,10 +5,11 @@ import { Useapi } from '@/helpers/apiContext'
 import { IoMdStar } from "react-icons/io";
 import Button from '@/components/button';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 const Growth = () => {
     const [Data, setData] = useState<any>(); // Initial state should be null
     const { apidata } = Useapi(); // Destructure apidata from the context
-
+const Router=useRouter()
     const [data, setdata] = useState({ first: '', second: '' })
     function splitStringByLastWords(text: any, numOfWords: number) {
         const words = text.split(' '); // Split the string by spaces to get individual words
@@ -127,9 +128,10 @@ const Growth = () => {
                         </div>
                     </div> */}
                     <div className='flex  mt-2'>
-                        <Link href={'/get-a-free-quote'}>
+                       
+                        <div onClick={()=>Router.push('/get-a-free-quote')} className='w-fit'>
                             <Button content={'Know More'} />
-                        </Link>
+                            </div>
 
                     </div>
 

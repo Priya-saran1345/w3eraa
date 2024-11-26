@@ -86,9 +86,12 @@ export default function Component({ props }: any) {
         ))}
       </div>
       <div className="w-full mt-10 flex justify-center items-center">
-        <Link href="/blog">
+        <div className='w-fit' onClick={()=>Router.push('/blog')}>
+
+        {/* <Link href="/blog"> */}
           <Button content={'View All'}></Button>
-        </Link>
+        {/* </Link> */}
+        </div>
       </div>
     </div>
   )

@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { Useapi } from '@/helpers/apiContext'
 import Button from '@/components/button';
 import Link from 'next/link';
-
+import { useRouter } from 'next/navigation';
 const Packages = ({props}:any) => {
 // Destructure apidata from the context
-
+const Router = useRouter()
     
     const [data, setdata] = useState({first:'',second:''})
 
@@ -55,9 +55,10 @@ const Packages = ({props}:any) => {
                         <p className='text-[16px] lg:text-[18px] text-homegrey leading-[22px]'>
                             {elem?.description}</p>
                         <div>
-                            <Link href={`/${elem?.slug}`}>
+                            <div onClick={()=>Router.push(`/${elem?.slug}`)} className='w-fit'>
+
                         <Button content={'Know More'}/>
-                            </Link>
+                        </div>
                         </div>
                     </div>
                 ))}

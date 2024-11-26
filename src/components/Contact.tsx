@@ -39,7 +39,6 @@ const Contact = () => {
 
     try {
       const response = await axios.post(`${BASE_URL}contact-form/`, message);
-      console.log('Message sent successfully');
       toast.success('Message send successfully')
 
       setMessage({

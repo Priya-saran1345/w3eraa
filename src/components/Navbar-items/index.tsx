@@ -6,10 +6,12 @@ import { MdOutlineRocketLaunch } from 'react-icons/md'
 import Image from 'next/image'
 import Button from '@/components/button'
 import ClientsCount from '../ClientsCount'
+import { useRouter } from 'next/navigation'
 
 const Index = ({show}:any) => {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const { basic_details } = Useapi();
+  const Router = useRouter()
   const toggleDropdown = (menu: string) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
   };
@@ -32,7 +34,7 @@ const Index = ({show}:any) => {
                web Story
               </li>
               </Link>
-              <li onClick={() => toggleDropdown('seo')} className='flex gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('seo')} className='flex font-semibold gap-1 items-center cursor-pointer'>
                 SEO {openDropdown === 'seo' ?  <Image 
               src={'/images/up.svg'} 
               width={14} 
@@ -132,9 +134,11 @@ const Index = ({show}:any) => {
                   <div className='min-h-full lg:w-[20%] flex justify-center items-start  lg:items-center'>
                     <div className='flex flex-col gap-3 justify-center items-center'>
                       <p className='text-[20px] text-homeblack font-medium'>For More Information</p>
-                      <Link target='_blank' href={'/contact-us'}>
+                      {/* <Link target='_blank' href={'/contact-us'}> */}
+                      <div className='w-fit' onClick={()=>Router.push('/contact-us')}>
                       <Button content={'Contact Us'} />
-                      </Link>
+                      </div>
+                      {/* </Link> */}
                      
                       <ClientsCount/>
                     </div>
@@ -143,7 +147,7 @@ const Index = ({show}:any) => {
               )}
 
               {/* Pay Per Click Dropdown */}
-              <li onClick={() => toggleDropdown('ppc')} className='flex gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('ppc')} className='flex font-semibold gap-1 items-center cursor-pointer'>
                 Pay Per Click {openDropdown === 'ppc' ? <Image 
               src={'/images/up.svg'} 
               width={14} 
@@ -232,9 +236,9 @@ const Index = ({show}:any) => {
                   <div className='min-h-full lg:w-[20%] flex justify-center items-start  lg:items-center'>
                     <div className='flex flex-col gap-3 justify-center items-center'>
                       <p className='text-[20px] text-homeblack font-medium'>For More Information</p>
-                      <Link target='_blank' href={'/contact-us'}>
+                      <div className='w-fit' onClick={()=>Router.push('/contact-us')}>
                       <Button content={'Contact Us'} />
-                      </Link>
+                      </div>
                      
                       <ClientsCount/>
 
@@ -244,7 +248,7 @@ const Index = ({show}:any) => {
               )}
 
               {/* SMM Dropdown */}
-              <li onClick={() => toggleDropdown('smm')} className='flex gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('smm')} className='flex  font-semibold gap-1 items-center cursor-pointer'>
                 SMM {openDropdown === 'smm' ? <Image 
               src={'/images/up.svg'} 
               width={14} 
@@ -335,17 +339,16 @@ const Index = ({show}:any) => {
                     <div className='flex flex-col gap-3 justify-center  items-center'>
                       <p className='text-[20px] text-homeblack font-medium'>For More Information</p>
 
-                      <Link target='_blank' href={'/contact-us'}>
-
+                      <div className='w-fit' onClick={()=>Router.push('/contact-us')}>
                       <Button content={'Contact Us'} />
-                      </Link>
+                      </div>
                       <ClientsCount/>
                     </div>
                   </div>
                 </div>
               )}
               {/* Our Packages Dropdown */}
-              <li onClick={() => toggleDropdown('packages')} className='flex gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('packages')} className=' font-semibold flex gap-1 items-center cursor-pointer'>
                 Our Packages {openDropdown === 'packages' ? <Image 
                src={'/images/up.svg'} 
               width={14} 
@@ -458,7 +461,7 @@ const Index = ({show}:any) => {
               )}
 
               {/* Web Development Dropdown */}
-              <li onClick={() => toggleDropdown('web-dev')} className='flex gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('web-dev')} className='flex  font-semibold gap-1 items-center cursor-pointer'>
                 Web Development {openDropdown === 'web-dev' ? <Image 
              src={'/images/up.svg'} 
               width={14} 
@@ -548,11 +551,10 @@ const Index = ({show}:any) => {
                   <div className='min-h-full lg:w-[20%] flex justify-center items-start   lg:items-center'>
                     <div className='flex flex-col gap-3 justify-center items-center'>
                       <p className='text-[20px] text-homeblack font-medium'>For More Information</p>
-                      <Link target='_blank' href={'/contact-us'}>
+                      <div className='w-fit' onClick={()=>Router.push('/contact-us')}>
                       <Button content={'Contact Us'} />
-                      </Link>
+                      </div>
                       <ClientsCount/>
-
                     </div>
                   </div>
                 </div>
@@ -560,20 +562,22 @@ const Index = ({show}:any) => {
             </div>
             {/* Buttons */}
             <div className='flex gap-2 lg:gap-1 mt-2 lg:mt-0 flex-col lg:flex-row'>
-
            <Link target='_blank' href={'https://meetings.hubspot.com/sakshi-jass?uuid=ae684c90-b22d-4aed-a972-4de20bef7f87'}>
             <button className='px-1 max-w-[180px] py-3 border-2 border-pink rounded-full meeting-btn'>
-              <span className="meeting-text">Book a Meeting</span>
+              <span className="meeting-text font-semibold">Book a Meeting</span>
             </button>
            </Link>
-
-            <Link target='_blank' href={'/get-a-free-quote'}>
+           {/* <Link target='_blank' href={'/get-a-free-quote'}> */}
+           <div className='w-fit' onClick={()=>Router.push('/get-a-free-quote')}>
               <button
                 className='flex items-center justify-center px-3 2xl:w-[180px] text-white rounded-full py-3 group bg-pink transition duration-300'>
-                <span className='transition-transform duration-300 group-hover:-translate-x-2'>Get a Proposal</span>
+                <span className='transition-transform duration-300 group-hover:-translate-x-2 font-semibold'>
+                  Get a Proposal
+                  </span>
                 <MdOutlineRocketLaunch className='text-[20px] opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-x-2' />
               </button>
-            </Link>
+            </div>
+            {/* </Link> */}
             </div>
           </div>
   )

@@ -41,7 +41,7 @@ const Footer = () => {
 
 
             const response = await axios.post(`${BASE_URL}subscription/`, message);
-            console.log('Message sent successfully');
+          
             toast.success('Message send successfully')
 
             setMessage({
@@ -114,10 +114,13 @@ const Footer = () => {
                             <div className=''>
                                 <p className='text-[21px] flex  font-medium w-full  sm:border-b-2'>About Company <FaMinus className='mt-2 mx-2 sm:hidden' />
                                 </p></div>
-                            <ul className='text-[14px font-medium] flex flex-col gap-2 py-3'>
-                                <Link target="_blank" href={'/about-us'}>
-                                    <li>About US</li>
+                            <ul className='text-[14px] font-medium flex flex-col gap-2 py-3'>
+                               
+                                    <li>
+                                    <Link target="_blank" href={'/about-us'}>
+                                        About US
                                 </Link>
+                                        </li>
                                 <Link target="_blank" href={'/case-study'}>
                                     <li>Case Study</li>
                                 </Link>
@@ -211,7 +214,7 @@ const Footer = () => {
                                     Resources <FaMinus className='mt-2 mx-2 sm:hidden' />
                                 </p>
                             </div>
-                            <ul className='text-[14px font-medium] flex flex-col gap-2 py-3'>
+                            <ul className='text-[14px] font-medium flex flex-col gap-2 py-3'>
                                 <Link target="_blank" href={'/blog'}>
                                     <li>Blogs</li>
                                 </Link>
@@ -257,7 +260,7 @@ const Footer = () => {
                                     Our Services <FaMinus className=' mt-2 mx-2 sm:hidden' />
                                 </p>
                             </div>
-                            <ul className='text-[14px font-medium] flex flex-col gap-2 py-3'>
+                            <ul className='text-[14px] font-medium flex flex-col gap-2 py-3'>
                                 <div className="">
                                     <li
                                         className="flex gap-1 items-center cursor-pointer"
