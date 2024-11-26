@@ -21,7 +21,7 @@ const Navbar = () => {
               width={137} 
               loading='lazy'
               height={58} 
-              alt={basic_details?.basic_details[0]?.logo_alt} 
+              alt={basic_details?.basic_details[0]?.logo_alt|| 'w3era'} 
               className="cursor-pointer"
             />
           </Link>

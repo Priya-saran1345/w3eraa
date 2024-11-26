@@ -51,14 +51,14 @@ const Header = () => {
               src={'/images/down-arrow-header.svg'} 
               width={14} 
               height={11} 
-              alt={basic_details?.basic_details[0]?.logo_alt} 
+              alt={'w3era digital marketing company'} 
               className="cursor-pointer mt-1"
             /> : <Image 
               src={'/images/up-arrow-header.svg'} 
               width={14} 
              
               height={11} 
-              alt={basic_details?.basic_details[0]?.logo_alt} 
+              alt={'w3era digital marketing company'} 
               className="cursor-pointer mt-1"
             />}
                   </div>
@@ -81,17 +81,17 @@ const Header = () => {
                   >
                     Our Work
                     {openDropdown === "our-work" ? <Image 
-              src={'images/down-arrow-header.svg'} 
+              src={'/images/down-arrow-header.svg'} 
               width={14} 
               height={11} 
-              alt={basic_details?.basic_details[0]?.logo_alt} 
+              alt={'w3era digital marketing company'} 
               className="cursor-pointer mt-1"
-            /> :
-             <Image 
+            /> : <Image 
               src={'/images/up-arrow-header.svg'} 
               width={14} 
+             
               height={11} 
-              alt={basic_details?.basic_details[0]?.logo_alt} 
+              alt={'w3era digital marketing company'} 
               className="cursor-pointer mt-1"
             />}
                   </div>

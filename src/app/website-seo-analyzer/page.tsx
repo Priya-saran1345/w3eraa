@@ -24,12 +24,10 @@ const Audit = () => {
     const handleUrlChange = (e: any) => {
         setUrl(e.target.value);
     };
-
     const handleClear = () => {
         setUrl('');
         setResult(null);
     };
-
     const handleSubmit = async () => {
         setIsAnalyzing(true);
         try {
@@ -41,13 +39,11 @@ const Audit = () => {
         }
         setIsAnalyzing(false);
     };
-
     const getScoreColor = (score:any) => {
         if (score >= 80) return '#22c55e'
         if (score >= 60) return '#eab308'
         return '#ef4444'
     }
-
     const renderCard = (title:any, content:any, className = "") => (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -59,12 +55,10 @@ const Audit = () => {
            <p className='text-homegrey'>{content}</p> 
         </motion.div>
     )
-
     const SEOScoreChart = ({ score }:any) => {
         const color = getScoreColor(score)
         const circumference = 2 * Math.PI * 45
         const strokeDasharray = `${(score / 100) * circumference} ${circumference}`
-
         return (
             <div className="relative w-40 h-40">
                 <svg className="w-full h-full" viewBox="0 0 100 100">
@@ -107,9 +101,6 @@ const Audit = () => {
             <Header />
             <DownNavbar />
             <Navbar />
-
-
-
             <div className="min-h-screen ">
                 <div className='w-full'>
                     <div className='w-full bg-no-repeat bg-center min-h-[40vh] bg-[url("/images/tool-bg.png")] py-9 flex flex-col justify-center items-center'>
@@ -261,16 +252,10 @@ const Audit = () => {
                     </AnimatePresence>
                 </div>
             </div>
-
-
-
-
             <div className='bg-white flex justify-between gap-3 xl:w-[77%] mx-auto px-4 w-full my-10'>
 
                 <div className='w-full rounded-xl border-slate-100 border-[1px] h-full py-8 px-6 shadow-lg'>
-
                     <div>
-
                         <div className='border-b-[2px] border-slate-200'>
                             <p className='text-[24px] font-medium text-homeblack mb-3'>About Website Seo Analyzer</p>
                         </div>
@@ -280,18 +265,13 @@ const Audit = () => {
                             </StyledWrapper>
                         </div>
                     </div>
-
-
                 </div>
-
                 <div className='w-[394px] hidden md:block border-slate-100 border-[1px] py-8 px-4 rounded-md shadow-lg'>
 
                     <div className='border-b-[1px] mb-5 border-slate-200'>
                         <p className='text-[24px] font-medium text-homeblack mb-3 leading-[28px]'>Double Your Organic Traffic With Our SEO Services</p>
                     </div>
-
                     <HubspotForm portalId="20095080" formId={"2aeda8d3-d0a1-4624-87f7-39fea7a4d68d"} region={'na1'} />
-
                     <div className='border-b-[1px] border-slate-200 mt-5 mb-3'>
                         <p className='text-[24px] font-medium text-homeblack mb-3'>Trendy SEO Tools</p>
                     </div>

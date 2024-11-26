@@ -30,13 +30,14 @@ const Footer = () => {
     const [message, setMessage] = useState({
         name: "",
         email: "",
-
       });
       const handleChange = (e: any) => {
         setMessage({ ...message, [e.target.name]: e.target.value });
       };
       const handleSubmit = async () => {
         try {
+          
+
           const response = await axios.post(`${BASE_URL}subscription/`, message);
           console.log('Message sent successfully');
           toast.success('Message send successfully')
@@ -51,6 +52,7 @@ const Footer = () => {
     
         }
       };
+
     return (
         <>
      <FooterBanner/>
