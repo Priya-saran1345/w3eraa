@@ -7,12 +7,12 @@ import HubspotForm from '@/components/HubspotForm'
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { IoReturnUpBackOutline } from 'react-icons/io5'
 import Button from '@/components/button'
 import { StyledWrapper } from '@/components/Styled'
 import { HiArrowTopRightOnSquare } from 'react-icons/hi2'
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
+import toast from 'react-hot-toast'
 
 const Audit = () => {
 
@@ -33,8 +33,9 @@ const Audit = () => {
         try {
             const response = await axios.post('https://onpageinsights.com/api/seo-check/', { url });
             setResult(response.data);
-        } catch (error) {
+        } catch (error:any) {
             console.error('Error analyzing URL:', error);
+            toast.error(error.response.data.error)
             // Handle error (e.g., show error message to user)
         }
         setIsAnalyzing(false);
@@ -101,7 +102,7 @@ const Audit = () => {
             <Header />
             <DownNavbar />
             <Navbar />
-            <div className="min-h-screen ">
+            <div className=" ">
                 <div className='w-full'>
                     <div className='w-full bg-no-repeat bg-center min-h-[40vh] bg-[url("/images/tool-bg.png")] py-9 flex flex-col justify-center items-center'>
                         <h1 className='text-[32px] lg:text-[44px] font-bold text-white'>Website SEO Analyzer</h1>
@@ -225,7 +226,6 @@ const Audit = () => {
                                             <p className="text-md">Email Privacy: {result.indexing.email_privacy_message}</p>
                                         </div>
                                     ), "col-span-full")}
-
                                     {renderCard("Accessibility", (
                                         <div className="space-y-2">
                                             <p className="text-md">Friendly Links: {result.analyze_accessibility.friendly_links_message}</p>
@@ -236,7 +236,6 @@ const Audit = () => {
                                     {renderCard("Schema", (
                                         <p className="text-md">{result.schema_message}</p>
                                     ))}
-
                                     {renderCard("Social Media", (
                                         <div className="space-y-2">
                                             {result.social_media.map((platform:any) => (
