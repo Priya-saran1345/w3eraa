@@ -11,11 +11,11 @@ interface ApiContextType {
   client:any;
   about:any;
   basic_details:any;
-  portfolio:any;
+  // portfolio:any;
   life:any;
   loading:any;
   cluth:any;
-  career:any;
+  career:any; 
 }
 const ApiContext = createContext<ApiContextType | undefined>(undefined);
 
@@ -28,7 +28,7 @@ export const ApiProvider = ({ children }: { children: React.ReactNode }) => {
   const [client, setclient] = useState<any>()
   const [about, setabout] = useState<any>()
   const [basic_details, setbasic_details] = useState<any>()
-  const [portfolio, setportfolio] = useState<any>()
+  // const [portfolio, setportfolio] = useState<any>()
   const [life, setlife] = useState<any>()
   const [loading, setloading] = useState<any>(true)
   const [career, setcareer] = useState<any>()
@@ -83,12 +83,12 @@ export const ApiProvider = ({ children }: { children: React.ReactNode }) => {
     } catch (error: any) {
       console.log("basic details error", error.message);
     }
-    try {
-      const response = await axios.get(`${BASE_URL}portfolio/`);
-      setportfolio(response.data);
-    } catch (error: any) {
-      console.log("case study error", error.message);
-    }
+    // try {
+    //   const response = await axios.get(`${BASE_URL}portfolio/`);
+    //   setportfolio(response.data);
+    // } catch (error: any) {
+    //   console.log("case study error", error.message);
+    // }
     try {
       const response = await axios.get(`${BASE_URL}w3era-life/`);
       setlife(response.data);
@@ -101,7 +101,7 @@ export const ApiProvider = ({ children }: { children: React.ReactNode }) => {
     fetch();
   }, []);
   return (
-    <ApiContext.Provider value={{ apidata, faq,blog,blogs ,service,client,about,basic_details,portfolio,life,loading,career,cluth}}>
+    <ApiContext.Provider value={{ apidata, faq,blog,blogs ,service,client,about,basic_details,life,loading,career,cluth}}>
       {children}
     </ApiContext.Provider>
   );

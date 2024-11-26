@@ -47,7 +47,7 @@ export default function Data({ props }: any) {
           {props?.cards?.map((cardprops: any, index: number) => (
             <div
               key={index}
-              className="min-h-[535px] h-full rounded-xl w-full sm:w-[45%] lg:w-[31%] bg-white overflow-hidden flex flex-col"
+              className="min-h-[535px] h-full rounded-xl w-[350px] sm:w-[404px] bg-white overflow-hidden flex flex-col"
             >
               {/* Toggle YouTube Video or Image */}
               {active === index && cardprops.video ? (
@@ -100,7 +100,7 @@ export default function Data({ props }: any) {
                     width={18}
                     alt="Upper Coma"
                   />
-                  <p className=" text-[20px] lg:text-[16px] 2xl:text-[20px] text-center font-semibold text-homeblack">
+                  <p className=" text-[20px] xl:text-[18px] 2xl:text-[20px] text-center font-semibold text-homeblack">
                     {cardprops.description ||
                       "Professionals at W3Era are incredible. Simply dummy text of the printing."}
                   </p>
@@ -120,7 +120,7 @@ export default function Data({ props }: any) {
                     <p className="text-[26px] lg:text-[30px] font-semibold text-blue text-center">
                       {cardprops?.card1_title}
                     </p>
-                    <p className="text-center text-homegrey text-[16px]">
+                    <p className="text-center text-homegrey text-[14px] 2xl:text-[16px]">
                       {cardprops?.card1_content}
                     </p>
                   </div>
@@ -129,7 +129,7 @@ export default function Data({ props }: any) {
                     <p className="text-[26px] lg:text-[30px] font-semibold text-blue text-center">
                       {cardprops?.card2_title}
                     </p>
-                    <p className="text-center text-homegrey text-[16px]">
+                    <p className="text-center text-homegrey text-[14px] 2xl:text-[16px]">
                       {cardprops?.card2_content}
                     </p>
                   </div>
