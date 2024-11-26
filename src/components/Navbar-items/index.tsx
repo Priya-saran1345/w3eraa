@@ -228,7 +228,6 @@ const Index = ({show}:any) => {
                     <ul className='  flex flex-col gap-2 mt-5 rounded-lg'>
                       <Link target='_blank' className='hover:text-pink' href='/case-study'><li>Case study</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/our-client-list'><li>Our Clients</li></Link>
-
                     </ul>
                   </div>
                   <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
@@ -239,7 +238,6 @@ const Index = ({show}:any) => {
                       <div className='w-fit' onClick={()=>Router.push('/contact-us')}>
                       <Button content={'Contact Us'} />
                       </div>
-                     
                       <ClientsCount/>
 
                     </div>

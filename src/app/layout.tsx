@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en" > 
       <head>
         <Canonical />
-        <link rel="icon" href="/images/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
         <link rel="apple-touch-icon" href="/images/favicon.ico" />
 
         <Script type="text/javascript"

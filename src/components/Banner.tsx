@@ -122,7 +122,6 @@ const Router =useRouter()
                       <ClientsCount />
                     </div>
                   </div>
-
                   {/* Core Services and Slider */}
                   <div className="mt-5 w-full max-w-[90vw] px-3 lg:px-1 xl:max-w-[70vw]">
                     <div className="flex justify-between">
