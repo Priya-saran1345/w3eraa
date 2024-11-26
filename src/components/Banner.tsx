@@ -62,16 +62,14 @@ const Banner = () => {
       },
     ],
   };
-
   return (
     <div className="w-full relative bg-blue banner min-h-[78vh]">
       {/* Video Background */}
       {
 !apidata&&
-      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('/images/home-video-poster.jpg')` }}></div>
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('/images/home-video-poster.webp')` }}></div>
       }
       {
-
 apidata &&
       <video
         autoPlay
@@ -82,7 +80,6 @@ apidata &&
         <source src="/images/bg-video.mp4" type="video/mp4" />
       </video>
  }
-      
       {
       // !loading && 
       (
@@ -154,9 +151,9 @@ apidata &&
                               </p>
                               <p className="mt-3 group-hover:text-homegrey">{service.description}</p>
                             </div>
-                            <div className="flex justify-center items-center min-w-[45px] h-[45px] text-[28px] rounded-full border-[1px] border-white group-hover:bg-pink group-hover:text-white">
+                            <span className="flex justify-center items-center min-w-[45px] h-[45px] text-[28px] rounded-full border-[1px] border-white group-hover:bg-pink group-hover:text-white">
                               <GoArrowUpRight className="group-hover:rotate-[45deg] duration-200" />
-                            </div>
+                            </span>
                           </div>
                         </div>
                       </Link>

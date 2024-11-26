@@ -75,7 +75,7 @@ const Index = ({ props }: any) => {
                   src={cardData?.thumbnail || "/images/slient-says-card.png"}
                   height={317}
                   width={404}
-                  alt={cardData?.thumbnail_alt}
+                  alt={cardData?.thumbnail_alt||cardData.description}
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black flex flex-col justify-between h-full p-4">

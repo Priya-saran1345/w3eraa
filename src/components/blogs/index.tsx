@@ -4,12 +4,12 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Button from '@/components/button'
-
+import {useRouter} from 'next/navigation'
 export default function Component({ props }: any) {
   const [data, setData] = useState({ first: '', second: '' })
   const [expandedTitle, setExpandedTitle] = useState<number | null>(null)
   const [expandedSummary, setExpandedSummary] = useState<number | null>(null)
-
+  const Router = useRouter()
   // Split string into two parts, with the second part consisting of the last few words
   function splitStringByLastWords(text: string, numOfWords: number) {
     const words = text.split(' ')
@@ -61,7 +61,7 @@ export default function Component({ props }: any) {
               {/* | &nbsp;<span>Latest</span> */}
             </div>
             <div>
-              <Image src={elem?.image || '/images/blog1.png'} alt={elem?.image_alt || "alt"}
+              <Image src={elem?.image || '/images/blog1.png'} alt={elem?.image_alt || elem?.title}
                 height={218} width={461} className="rounded-lg max-h-[218px]" />
             </div>
             <div className="p-4 flex flex-col  gap-3 justify-between">
@@ -74,9 +74,12 @@ export default function Component({ props }: any) {
                 {expandedSummary === i ? elem?.summary : truncateText(elem?.summary, 60)} {/* Truncate summary to 60 characters */}
               </p>
               <div className='flex justify-center sm:justify-start'>
-                <Link href={`/blog/${elem?.slug_link}`}>
-                  <Button content={'View'}></Button>
-                </Link>
+                {/* <Link href={`/blog/${elem?.slug_link}`}> */}
+                <div onClick={()=>Router.push(`/blog/${elem?.slug_link}`)} className='w-fit'>
+
+                  <Button content={'View'} ></Button>
+                </div>
+                {/* </Link> */}
               </div>
             </div>
           </div>

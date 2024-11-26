@@ -40,43 +40,43 @@ export const ApiProvider = ({ children }: { children: React.ReactNode }) => {
     } catch (error: any) {
       console.log(error.message);
     }
-    try {
-      const response = await axios.get(`${BASE_URL}faq/`);
-      setfaq(response.data);
-    } catch (error: any) {
-      console.log("faq error", error.message);
-    }
-    try {
-      const response = await axios.get(`${BASE_URL}blogs/?page=1`);
-      setblogs(response.data);
-    } catch (error: any) {
-      console.log("blogs error", error.message);
-    }
-    try {
-      const response = await axios.get(`${BASE_URL}career/`);
-      setcareer(response.data);
-    } catch (error: any) {
-      console.log("career error", error.message);
-    }
-    try {
-      const response = await axios.get(`${BASE_URL}our-clients/`);
-      setclient(response.data);
-    } catch (error: any) {
-      console.log("client error", error.message);
-    }
-    try {
-      const response = await axios.get(`${BASE_URL}about/`);
-      setabout(response.data);
-    } catch (error: any) {
-      console.log("about error", error.message);
-    }
-    try {
-      const response = await axios.get(`${BASE_URL}clutch/`);
-      setcluth(response.data);
-    } catch (error: any) {
-      console.log(error.message);
+    // try {
+    //   const response = await axios.get(`${BASE_URL}faq/`);
+    //   setfaq(response.data);
+    // } catch (error: any) {
+    //   console.log("faq error", error.message);
+    // }
+    // try {
+    //   const response = await axios.get(`${BASE_URL}blogs/?page=1`);
+    //   setblogs(response.data);
+    // } catch (error: any) {
+    //   console.log("blogs error", error.message);
+    // }
+    // try {
+    //   const response = await axios.get(`${BASE_URL}career/`);
+    //   setcareer(response.data);
+    // } catch (error: any) {
+    //   console.log("career error", error.message);
+    // }
+    // try {
+    //   const response = await axios.get(`${BASE_URL}our-clients/`);
+    //   setclient(response.data);
+    // } catch (error: any) {
+    //   console.log("client error", error.message);
+    // }
+    // try {
+    //   const response = await axios.get(`${BASE_URL}about/`);
+    //   setabout(response.data);
+    // } catch (error: any) {
+    //   console.log("about error", error.message);
+    // }
+    // try {
+    //   const response = await axios.get(`${BASE_URL}clutch/`);
+    //   setcluth(response.data);
+    // } catch (error: any) {
+    //   console.log(error.message);
 
-    }
+    // }
     try {
       const response = await axios.get(`${BASE_URL}basic-details/`);
       setbasic_details(response.data);
