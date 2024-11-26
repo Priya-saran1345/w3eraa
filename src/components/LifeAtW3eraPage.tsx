@@ -1,17 +1,34 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '@/components/header'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer';
 import Image from 'next/image';
-import { Useapi } from '@/helpers/apiContext'
 import Link from 'next/link';
 import Loader from '@/components/loader';
 import DownNavbar from '@/components/DownNavbar'
+import axios from 'axios';
+import { BASE_URL } from '@/util/api';
+const Page = () => {
+    const [life, setLife] = useState<any>();
 
-const Life = () => {
-    const { life } = Useapi();
-    const { basic_details } = Useapi();
+    const fetchLife = async () => {
+      try {
+        const response = await fetch(`${BASE_URL}w3era-life/`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        setLife(data);
+      } catch (error: any) {
+        console.error("w3era-life study error:", error.message);
+      }
+    };
+    
+    useEffect(() => {
+      fetchLife();
+    }, []);
+    
 
     return (
         <div>
@@ -143,4 +160,4 @@ const Life = () => {
 
 
 
-export default Life
+export default Page

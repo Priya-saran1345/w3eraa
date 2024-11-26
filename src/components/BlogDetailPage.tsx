@@ -16,7 +16,8 @@ import { FaXTwitter } from 'react-icons/fa6';
 import DownNavbar from '@/components/DownNavbar'
 
 const Blogs = () => {
-    const { blogs } = Useapi();
+    const [blogs, setblogs] = useState<any>()
+   
     const [apidata, setapidata] = useState<any>(null);
     const pathname = usePathname();
     const path_name = window.location.href
@@ -32,6 +33,12 @@ const Blogs = () => {
             } catch (error: any) {
                 console.log("Error fetching data:", error.message);
             }
+            try {
+                const response = await axios.get(`${BASE_URL}blogs/?page=1`);
+                setblogs(response.data);
+              } catch (error: any) {
+                console.log("blogs error", error.message);
+              }
         };
 
         fetch();

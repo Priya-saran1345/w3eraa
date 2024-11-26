@@ -32,7 +32,6 @@ const Main = () => {
     console.log("basic_details",basic_details);
     
     const { apidata } = Useapi();
-    // const {blogs  } = Useapi();
     return (
     <div>
         {/* { !basic_details&&!apidata&&  

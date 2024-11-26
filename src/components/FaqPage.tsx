@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaArrowUpLong, FaArrowDownLong } from "react-icons/fa6"
 import { Useapi } from '@/helpers/apiContext'
@@ -8,9 +8,31 @@ import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import Loader from '@/components/loader'
 import DownNavbar from '@/components/DownNavbar'
+import { BASE_URL } from '@/util/api'
 
 export default function AnimatedFaqs() {
-  const { faq } = Useapi()
+ 
+
+
+  const [faq, setfaq] = useState<any>();
+
+const fetchLife = async () => {
+  try {
+    const response = await fetch(`${BASE_URL}faq/`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    setfaq(data);
+  } catch (error: any) {
+    console.error("w3era-life study error:", error.message);
+  }
+};
+
+useEffect(() => {
+  fetchLife();
+}, []);
+
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   const handleToggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)

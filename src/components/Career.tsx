@@ -10,7 +10,8 @@ import Loader from '@/components/loader'
 import axios from 'axios'
 import { BASE_URL } from '@/util/api'
 const Page = () => {
-  const { career } = Useapi();
+  const [career, setcareer] = useState<any>();
+
   const [apidata, setapidata] = useState<any>()
   const {basic_details} = Useapi();
 
@@ -18,6 +19,12 @@ const Page = () => {
     try {
       const response = await axios.get(`${BASE_URL}other/career/`);
       setapidata(response.data);
+    } catch (error: any) {
+      console.log(error.message);
+    }
+    try {
+      const response = await axios.get(`${BASE_URL}career/`);
+      setcareer(response.data);
     } catch (error: any) {
       console.log(error.message);
     }

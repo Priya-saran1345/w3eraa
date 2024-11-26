@@ -1,7 +1,7 @@
 'use client'
 import Header from '@/components/header'
 import Navbar from '@/components/navbar'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Footer from '@/components/footer';
 import Image from 'next/image';
 import Revenue from '@/components/revenue';
@@ -10,11 +10,23 @@ import Loader from '@/components/loader';
 import Link from 'next/link';
 import CustomerChoose from '@/components/CustomerChoose';
 import DownNavbar from '@/components/DownNavbar'
+import axios from 'axios';
+import { BASE_URL } from '@/util/api';
 
 
 const Client = () => {
-    const { client } = Useapi(); 
-    const { apidata } = Useapi(); 
+    const [client, setclient] = useState<any>()
+    const fetch = async () => {
+        try {
+            const response = await axios.get(`${BASE_URL}our-clients/`);
+            setclient(response.data);
+          } catch (error: any) {
+            console.log("client error", error.message);
+          }
+        }
+        useEffect(() => {
+            fetch();
+        }, [])
     const arr = [1, 2, 3, 3, 3, 3, 3, 3, 3, 3];
     return (
         <>

@@ -11,9 +11,7 @@ interface ApiContextType {
   client:any;
   about:any;
   basic_details:any;
-  // portfolio:any;
   life:any;
-  loading:any;
   cluth:any;
   career:any; 
 }
@@ -28,7 +26,6 @@ export const ApiProvider = ({ children }: { children: React.ReactNode }) => {
   const [client, setclient] = useState<any>()
   const [about, setabout] = useState<any>()
   const [basic_details, setbasic_details] = useState<any>()
-  // const [portfolio, setportfolio] = useState<any>()
   const [life, setlife] = useState<any>()
   const [loading, setloading] = useState<any>(true)
   const [career, setcareer] = useState<any>()
@@ -40,63 +37,62 @@ export const ApiProvider = ({ children }: { children: React.ReactNode }) => {
     } catch (error: any) {
       console.log(error.message);
     }
-    try {
-      const response = await axios.get(`${BASE_URL}faq/`);
-      setfaq(response.data);
-    } catch (error: any) {
-      console.log("faq error", error.message);
-    }
-    try {
-      const response = await axios.get(`${BASE_URL}blogs/?page=1`);
-      setblogs(response.data);
-    } catch (error: any) {
-      console.log("blogs error", error.message);
-    }
-    try {
-      const response = await axios.get(`${BASE_URL}career/`);
-      setcareer(response.data);
-    } catch (error: any) {
-      console.log("career error", error.message);
-    }
-    try {
-      const response = await axios.get(`${BASE_URL}our-clients/`);
-      setclient(response.data);
-    } catch (error: any) {
-      console.log("client error", error.message);
-    }
-    try {
-      const response = await axios.get(`${BASE_URL}about/`);
-      setabout(response.data);
-    } catch (error: any) {
-      console.log("about error", error.message);
-    }
-    try {
-      const response = await axios.get(`${BASE_URL}clutch/`);
-      setcluth(response.data);
-    } catch (error: any) {
-      console.log(error.message);
-
-    }
+    // try {
+    //   const response = await axios.get(`${BASE_URL}clutch/`);
+    //   setcluth(response.data);
+    // } catch (error: any) {
+    //   console.log(error.message);
+    // }
     try {
       const response = await axios.get(`${BASE_URL}basic-details/`);
       setbasic_details(response.data);
     } catch (error: any) {
       console.log("basic details error", error.message);
     }
-   
-    try {
-      const response = await axios.get(`${BASE_URL}w3era-life/`);
-      setlife(response.data);
-    } catch (error: any) {
-    console.log("w3era-life study error", error.message);
-    }
+    // try {
+    //   const response = await axios.get(`${BASE_URL}blogs/?page=1`);
+    //   setblogs(response.data);
+    // } catch (error: any) {
+    //   console.log("blogs error", error.message);
+    // }
+    // try {
+    //   const response = await axios.get(`${BASE_URL}faq/`);
+    //   setfaq(response.data);
+    // } catch (error: any) {
+    //   console.log("faq error", error.message);
+    // }
+    // try {
+    //   const response = await axios.get(`${BASE_URL}career/`);
+    //   setcareer(response.data);
+    // } catch (error: any) {
+    //   console.log("career error", error.message);
+    // }
+    // try {
+    //   const response = await axios.get(`${BASE_URL}our-clients/`);
+    //   setclient(response.data);
+    // } catch (error: any) {
+    //   console.log("client error", error.message);
+    // }
+    // try {
+    //   const response = await axios.get(`${BASE_URL}about/`);
+    //   setabout(response.data);
+    // } catch (error: any) {
+    //   console.log("about error", error.message);
+    // }
+    // try {
+    //   const response = await axios.get(`${BASE_URL}w3era-life/`);
+    //   setlife(response.data);
+    // } catch (error: any) {
+    // console.log("w3era-life study error", error.message);
+    // }
+
     setloading(false)
   };
   useEffect(() => {
     fetch();
   }, []);
   return (
-    <ApiContext.Provider value={{ apidata, faq,blog,blogs ,service,client,about,basic_details,life,loading,career,cluth}}>
+    <ApiContext.Provider value={{ apidata, faq,blog,blogs ,service,client,about,basic_details,life,career,cluth}}>
       {children}
     </ApiContext.Provider>
   );
