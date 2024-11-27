@@ -39,7 +39,6 @@ const Header = () => {
             </div>
             <div className='flex text-white gap-4 py-3 items-center text-[16px]'>
               <div className='items-center 2xl:font-semibold flex gap-2 flex-wrap 2xl:gap-5'>
-
                 {/* About Us Dropdown */}
                 <div className='relative'>
                   <div
@@ -58,7 +57,6 @@ const Header = () => {
                     </div>
                   )}
                 </div>
-
                 {/* Our Work Dropdown */}
                 <div className='relative'>
                   <div
@@ -85,8 +83,8 @@ const Header = () => {
                   <div>Web Story</div>
                 </Link> */}
                 <div className=''>
-                  <Link  target='_blank' href={'/website-seo-analyzer'} >
-                    <div>Free Website Audit</div>
+                  <Link  target='_blank' href={'/career'} >
+                    <div>Career</div>
                   </Link>
                 </div>
                 {/* <Link  target='_blank' href='/contact-us'>
