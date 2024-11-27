@@ -66,10 +66,10 @@ const Router =useRouter()
     <div className="w-full relative bg-blue banner min-h-[78vh]">
       {/* Video Background */}
       {
-        // !props &&
+        !props &&
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('/images/home-video-poster.webp')` }}></div>
       }
-      {/* {
+      {
         props &&
         <video
           autoPlay
@@ -79,7 +79,7 @@ const Router =useRouter()
         >
           <source src="/images/bg-video.mp4" type="video/mp4" />
         </video>
-      } */}
+      }
       {
         // !loading && 
         (
