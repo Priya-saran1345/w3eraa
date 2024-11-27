@@ -34,20 +34,20 @@ const Index = ({show}:any) => {
                web Story
               </li>
               </Link>
-              <li onClick={() => toggleDropdown('seo')} className='flex font-semibold gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('seo')} className='flex font-semibold 2xl:gap-1 items-center cursor-pointer'>
                 SEO {openDropdown === 'seo' ?  <Image 
               src={'/images/up.svg'} 
               width={14} 
               height={11} 
               alt={"w3era digital marketing company"} 
-              className="cursor-pointer "
+              className="cursor-pointer 2xl:w-[14px] w-[12px] "
             /> :
              <Image 
               src={'/images/down-icon.svg'} 
               width={14} 
               height={11} 
               alt={"w3era digital marketing company"} 
-              className="cursor-pointer "
+              className="cursor-pointer 2xl:w-[14px] w-[12px] "
             /> } 
               </li>
               {openDropdown === 'seo' && (
@@ -147,14 +147,14 @@ const Index = ({show}:any) => {
               )}
 
               {/* Pay Per Click Dropdown */}
-              <li onClick={() => toggleDropdown('ppc')} className='flex font-semibold gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('ppc')} className='flex font-semibold 2xl:gap-1 items-center cursor-pointer'>
                 Pay Per Click {openDropdown === 'ppc' ? <Image 
               src={'/images/up.svg'} 
               width={14} 
            
               height={11} 
               alt={"w3era digital marketing company"} 
-              className="cursor-pointer "
+              className="cursor-pointer 2xl:w-[14px] w-[12px] "
             /> :
              <Image 
               src={'/images/down-icon.svg'} 
@@ -162,7 +162,7 @@ const Index = ({show}:any) => {
            
               height={11} 
               alt={"w3era digital marketing company"} 
-              className="cursor-pointer "
+              className="cursor-pointer 2xl:w-[14px] w-[12px] "
             />}
               </li>
               {openDropdown === 'ppc' && (
@@ -246,14 +246,14 @@ const Index = ({show}:any) => {
               )}
 
               {/* SMM Dropdown */}
-              <li onClick={() => toggleDropdown('smm')} className='flex  font-semibold gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('smm')} className='flex  font-semibold 2xl:gap-1 items-center cursor-pointer'>
                 SMM {openDropdown === 'smm' ? <Image 
               src={'/images/up.svg'} 
               width={14} 
            
               height={11} 
               alt={"w3era digital marketing company"} 
-              className="cursor-pointer "
+              className="cursor-pointer 2xl:w-[14px] w-[12px] "
             /> :
              <Image 
               src={'/images/down-icon.svg'} 
@@ -261,7 +261,7 @@ const Index = ({show}:any) => {
            
               height={11} 
               alt={"w3era digital marketing company"} 
-              className="cursor-pointer "
+              className="cursor-pointer 2xl:w-[14px] w-[12px] "
             />}
               </li>
               {openDropdown === 'smm' && (
@@ -346,20 +346,20 @@ const Index = ({show}:any) => {
                 </div>
               )}
               {/* Our Packages Dropdown */}
-              <li onClick={() => toggleDropdown('packages')} className=' font-semibold flex gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('packages')} className=' font-semibold flex 2xl:gap-1 items-center cursor-pointer'>
                 Our Packages {openDropdown === 'packages' ? <Image 
                src={'/images/up.svg'} 
               width={14} 
               height={11} 
               alt={"w3era digital marketing company"} 
-              className="cursor-pointer "
+              className="cursor-pointer 2xl:w-[14px] w-[12px] "
             /> :
              <Image 
               src={'/images/down-icon.svg'} 
               width={14} 
               height={11} 
               alt={"w3era digital marketing company"} 
-              className="cursor-pointer "
+              className="cursor-pointer 2xl:w-[14px] w-[12px]"
             />}
               </li>
               {openDropdown === 'packages' && (
@@ -459,20 +459,20 @@ const Index = ({show}:any) => {
               )}
 
               {/* Web Development Dropdown */}
-              <li onClick={() => toggleDropdown('web-dev')} className='flex  font-semibold gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('web-dev')} className='flex  font-semibold 2xl:gap-1 items-center cursor-pointer'>
                 Web Development {openDropdown === 'web-dev' ? <Image 
              src={'/images/up.svg'} 
               width={14} 
               height={11} 
               alt={"w3era digital marketing company"} 
-              className="cursor-pointer "
+              className="cursor-pointer 2xl:w-[14px] w-[12px]"
             /> :
              <Image 
               src={'/images/down-icon.svg'} 
               width={14} 
               height={11} 
               alt={"w3era digital marketing company"} 
-              className="cursor-pointer "
+              className="cursor-pointer2xl:w-[14px] w-[12px]"
             />}
               </li>
               {openDropdown === 'web-dev' && (
