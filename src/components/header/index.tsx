@@ -10,6 +10,7 @@ import { BsTwitterX } from 'react-icons/bs';
 import Image from 'next/image';
 import { FiTool } from "react-icons/fi";
 import { useRouter } from "next/navigation";
+import { motion } from 'framer-motion'
 const Header = () => {
   const { basic_details } = Useapi();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -44,7 +45,7 @@ const Header = () => {
                 {/* About Us Dropdown */}
                 <div className='relative'>
                   <div
-                    onClick={() => handleToggle("about-us")}
+                    onMouseOver={() => handleToggle("about-us")}
                     className='flex items-center gap-1 cursor-pointer'
                   >
                     About Us
@@ -57,26 +58,36 @@ const Header = () => {
             /> : <Image 
               src={'/images/up-arrow-header.svg'} 
               width={14} 
-             
               height={11} 
               alt={'w3era digital marketing company'} 
               className="cursor-pointer mt-1"
             />}
                   </div>
                   {openDropdown === "about-us" && (
-                    <div className='absolute w-[200px] text-homeblack text-left border-lightpink border-[2px] z-50 top-10 flex flex-col   bg-white  rounded-md ' onMouseLeave={() => handleToggle('')}>
+                 <motion.div 
+                 initial="hidden"
+                 animate="visible"
+                 exit="hidden"
+                 variants={{
+                   hidden: { opacity: 0, y: -10, scale: 0.95 },
+                   visible: { opacity: 1, y: 0, scale: 1 }
+                 }}
+                 transition={{ duration: 0.3, ease: [0.25, 0.8, 0.5, 1] }} // Smooth easing
+                 className="absolute w-[200px] text-homeblack border-lightpink border-[2px] text-left z-50 top-10 flex flex-col bg-white rounded-md"
+                 onMouseLeave={() => handleToggle('')}
+               >
                       <Link target='_blank' href={'/about-us'}><p className=' hover:bg-pink px-5 hover:text-white py-4   border-slate-300'>Who we are</p></Link>
                       <Link target='_blank' href={'/life-at-w3era'}><p className=' hover:bg-pink px-5 hover:text-white py-4   border-slate-300'>Life at w3era</p></Link>
                       <Link target='_blank' href={'/faq'}><p className=' hover:bg-pink hover:text-white  px-5  py-4 border-slate-300'>
                         Know More</p></Link>
-                    </div>
+                    </motion.div>
                   )}
                 </div>
 
                 {/* Our Work Dropdown */}
                 <div className='relative'>
                   <div
-                    onClick={() => handleToggle("our-work")}
+                    onMouseOver={() => handleToggle("our-work")}
 
                     className='flex items-center text-white gap-1 cursor-pointer'
                   >
@@ -97,11 +108,22 @@ const Header = () => {
             />}
                   </div>
                   {openDropdown === "our-work" && (
-                    <div className='absolute w-[200px] text-homeblack border-lightpink border-[2px] text-left z-50 top-10 flex flex-col   bg-white rounded-md ' onMouseLeave={() => handleToggle('')}>
+                   <motion.div 
+                   initial="hidden"
+                   animate="visible"
+                   exit="hidden"
+                   variants={{
+                     hidden: { opacity: 0, y: -10, scale: 0.95 },
+                     visible: { opacity: 1, y: 0, scale: 1 }
+                   }}
+                   transition={{ duration: 0.3, ease: [0.25, 0.8, 0.5, 1] }} // Smooth easing
+                   className="absolute w-[200px] text-homeblack border-lightpink border-[2px] text-left z-50 top-10 flex flex-col bg-white rounded-md"
+                   onMouseLeave={() => handleToggle('')}
+                 >
                       <Link  target='_blank'  href={'/testimonials'}><p className='hover:text-white py-4 px-5 hover:bg-pink border-slate-300'>Testimonials</p></Link>
                       <Link  target='_blank' href={'/case-study'}><p className='hover:text-white py-4 px-5 hover:bg-pink border-slate-300'>Case Study</p></Link>
                       <Link  target='_blank' href={'/our-client-list'}><p className='hover:text-white py-4 px-5 hover:bg-pink '>Our Clients</p></Link>
-                    </div>
+                    </motion.div>
                   )}
                 </div>
                 {/* Other Navbar Items */}

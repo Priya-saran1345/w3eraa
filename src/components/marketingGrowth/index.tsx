@@ -42,11 +42,11 @@ const Router=useRouter()
                         {/* {
                         [ 1, 4].map((elem: any) => ( */}
                         <div className='bg-white flex flex-col gap-3 justify-center items-center w-[162px] h-[150px]
-                         md:w-[345px] min-h-[201px] text-homeblack text-center hover:bg-blue hover:text-white rounded-xl'>
+                         md:w-[345px] min-h-[201px] text-homeblack text-center duration-300 ease-in-out   hover:bg-blue hover:text-white rounded-xl'>
                             <p className=' text-[28px] md:text-[38px] font-medium'>10,000+</p>
                             <p>Happy Clients</p>
                         </div>
-                        <div className='bg-white flex flex-col gap-3 justify-center items-center w-[162px] h-[150px] md:w-[345px] min-h-[201px] text-homeblack text-center hover:bg-blue hover:text-white rounded-xl'>
+                        <div className='bg-white flex flex-col gap-3 justify-center items-center w-[162px] h-[150px] md:w-[345px] min-h-[201px] text-homeblack text-center  duration-300 ease-in-out hover:bg-blue hover:text-white rounded-xl'>
                             <p className=' text-[28px] md:text-[38px] font-medium'>87%</p>
                             <p>Retention Rate</p>
                         </div>
@@ -56,11 +56,11 @@ const Router=useRouter()
                     <div className='flex  mt-3 flex-wrap justify-center md:flex-nowrap gap-3'>
                         {/* {
                         [ 3, 4].map((elem: any) => ( */}
-                        <div className='bg-white flex flex-col gap-3 justify-center items-center w-[162px] h-[150px] md:w-[345px] min-h-[201px] text-homeblack text-center hover:bg-blue hover:text-white rounded-xl'>
+                        <div className='bg-white flex flex-col gap-3 justify-center items-center w-[162px] h-[150px] md:w-[345px] min-h-[201px] text-homeblack text-center  duration-300 ease-in-out hover:bg-blue hover:text-white rounded-xl'>
                             <p className=' text-[28px] md:text-[38px] font-medium'>$1B+</p>
                             <p>Revenue Generated</p>
                         </div>
-                        <div className='bg-white flex flex-col gap-3 justify-center items-center w-[162px] h-[150px] md:w-[345px] min-h-[201px] text-homeblack text-center hover:bg-blue hover:text-white rounded-xl'>
+                        <div className='bg-white flex flex-col gap-3 justify-center items-center w-[162px] h-[150px] md:w-[345px] min-h-[201px] text-homeblack text-center  duration-300 ease-in-out hover:bg-blue hover:text-white rounded-xl'>
                             <p className=' text-[28px] md:text-[38px] font-medium'>3M+</p>
                             <p>Leads Generated</p>
                         </div>

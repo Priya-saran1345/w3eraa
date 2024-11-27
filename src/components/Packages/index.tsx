@@ -41,13 +41,13 @@ const Router = useRouter()
                     <div key={i} className='rounded-xl items-center 
                     sm:items-start text-center sm:text-left px-4 2xl:px-8 py-8 
                      w-[97%] sm:w-[45%] lg:w-[23%]
-                     h-[357px] flex flex-col  gap-2 justify-between bg-white hover:shadow-xl'>
+                     h-[357px] flex flex-col  gap-2 justify-between bg-white duration-300 ease-in-out hover:shadow-xl'>
                         <div className='p-4 size-[72px] flex justify-center items-center rounded-lg bg-lightblue'>
                             <Image
                                 src={elem.icon}
                                 alt={elem?.icon_alt}
-                                height={44}
-                                width={30}
+                                height={54}
+                                width={50}
                                 className={''}
                             />
                         </div>

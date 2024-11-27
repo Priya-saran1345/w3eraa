@@ -114,8 +114,8 @@ const Solution = ({solutionData}:any) => {
                     <Image
                       src={elem.icon}
                       alt={elem?.icon_alt}
-                      height={44}
-                      width={30}
+                      height={54}
+                      width={45}
                       className="text-primary"
                     />
                   </div>

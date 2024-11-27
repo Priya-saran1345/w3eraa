@@ -43,7 +43,7 @@ const Choose = ({ props }: any) => {
         <div className="flex flex-wrap w-full gap-5">
           {props?.cards && props?.cards.map((card: any, index: number) => (
             <div key={index} className='flex-1 min-h-[200px] mt-20 min-w-full sm:min-w-[45%] lg:min-w-[30%]'>
-              <div className='hover:shadow-xl border-[2px] relative border-lightblue bg-white rounded-xl
+              <div className='duration-300 ease-in-out hover:shadow-xl border-[2px] relative border-lightblue bg-white rounded-xl
                group leading-[29px] p-10 flex flex-col gap-3 h-full'>
                 <div className='bg-lightblue absolute -top-14 left-[37%] md:left-8 rounded-xl p-4 w-[110px] h-[90px] flex justify-center items-center'>
                   <Image src={card.icon} alt={card.icon_alt} height={62} width={62} />

@@ -85,10 +85,10 @@ const CustomerChoose = () => {
                 {dataCard?.card?.map((card: any, index: number) => (
                     <div
                         key={index}
-                        className="max-w-[404px] w-full sm:max-w-[45%] lg:max-w-[30%] text-center group mt-16 hover:shadow-xl border-[2px] relative border-lightblue min-h-[219px] bg-white rounded-xl group leading-[29px] p-10 flex flex-col gap-3"
+                        className="max-w-[404px] w-full sm:max-w-[45%] lg:max-w-[30%] text-center group mt-16 duration-300 ease-in-out hover:shadow-xl border-[2px] relative border-lightblue min-h-[219px] bg-white rounded-xl group leading-[29px] p-10 flex flex-col gap-3"
                     >
                         <div
-                            className="bg-lightblue group-hover:bg-blue duration-100 absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 rounded-full p-4 w-[120px] h-[120px] flex justify-center items-center"
+                            className="bg-lightblue group-hover:bg-blue duration-300 absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 rounded-full p-4 w-[120px] h-[120px] flex justify-center items-center"
                         >
                             <Image
                                 src={card.image}
