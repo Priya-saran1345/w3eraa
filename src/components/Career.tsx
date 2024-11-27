@@ -1,38 +1,31 @@
-'use client'
+// 'use client'
 import Footer from '@/components/footer'
 import Header from '@/components/header'
 import Navbar from '@/components/navbar'
 import React, { useEffect, useState } from 'react'
 import CommonBanner from '@/components/Common-Banner'
 import Button from '@/components/button'
-import { Useapi } from '@/helpers/apiContext';
+// import { Useapi } from '@/helpers/apiContext';
 import Loader from '@/components/loader'
-import axios from 'axios'
 import { BASE_URL } from '@/util/api'
-const Page = () => {
-  const [career, setcareer] = useState<any>();
-
-  const [apidata, setapidata] = useState<any>()
-  const {basic_details} = Useapi();
-
-  const fetch = async () => {
-    try {
-      const response = await axios.get(`${BASE_URL}other/career/`);
-      setapidata(response.data);
-    } catch (error: any) {
-      console.log(error.message);
-    }
-    try {
-      const response = await axios.get(`${BASE_URL}career/`);
-      setcareer(response.data);
-    } catch (error: any) {
-      console.log(error.message);
-    }
-   
+async function getData() {
+  const res = await fetch(`${BASE_URL}career/`, { cache: 'no-store' });
+  if (!res.ok) {
+    throw new Error('career data not found');
   }
-  useEffect(() => {
-    fetch();
-  }, [])
+  return res.json();
+}
+async function getOtherData() {
+  const res = await fetch(`${BASE_URL}other/career/`, { cache: 'no-store' });
+  if (!res.ok) {
+    throw new Error('career data not found from others');
+  }
+  return res.json();
+}
+export default async function Page  ()  {
+  // const {basic_details} = Useapi();
+  const career = await getData();
+  const apidata = await getOtherData();
   return (
     <div>
       {/* {
@@ -63,8 +56,7 @@ const Page = () => {
                           <p className=' text-[19px] lg:text-[20px] text-homeblack font-medium'>{card?.title}</p>
                           <p className=' text-[16px] lg:text-[18px] text-homegrey leading-[21px]'>{card?.description}</p>
                           <div className='mt-3'>
-                           <a href={`tel:${basic_details?.basic_details[0].contact_job}`}>
-
+                           <a href={`tel:+918306229633`}>
                             <Button content={'Apply Now'} />
                            </a>
                           </div>
@@ -83,4 +75,3 @@ const Page = () => {
   )
 }
 
-export default Page

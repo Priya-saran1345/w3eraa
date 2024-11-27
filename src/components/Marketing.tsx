@@ -1,13 +1,13 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { Useapi } from '@/helpers/apiContext'
+// import { Useapi } from '@/helpers/apiContext'
 import { GoArrowUpRight } from "react-icons/go";
 import Button from '@/components/button';
 import Link from 'next/link';
-const Marketing = () => {
+const Marketing = ({props}:any) => {
   const [marketingData, setmarketingData] = useState<any>(); // Initial state should be null
-  const { apidata } = Useapi(); // Destructure apidata from the context
+  // const { apidata } = Useapi(); // Destructure apidata from the context
   const [data, setdata] = useState({first:'',second:''})
 
   function splitStringByLastWords(text:any, numOfWords:number) {
@@ -16,7 +16,6 @@ const Marketing = () => {
     if (numOfWords >= words.length) {
         return { first: '', second: text };
     }
-    
     const splitIndex = words.length - numOfWords;
     const firstPart = words.slice(0, splitIndex).join(' ');
     const secondPart = words.slice(splitIndex).join(' ');
@@ -27,10 +26,10 @@ const Marketing = () => {
     setdata(result);
 }, [marketingData]);
   useEffect(() => {
-    if (apidata && apidata?.aboutsection[0]) {
-      setmarketingData(apidata?.aboutsection[0]);
+    if (props ) {
+      setmarketingData(props);
     }
-  }, [apidata]);
+  }, [props]);
   return (
     <div className='w-full bg-white py-8'>
       <div className=" flex justify-between flex-col md:flex-row items-center  px-4 w-full xl:w-[75%] mx-auto">

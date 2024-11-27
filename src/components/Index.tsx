@@ -1,6 +1,5 @@
-"use client";
-import React, { Suspense } from "react";
-import { Useapi } from "@/helpers/apiContext";
+// 'use client'
+import React  from "react";
 import Header from "@/components/header";
 import Navbar from "@/components/navbar";
 import Banner from "@/components/Banner";
@@ -24,29 +23,43 @@ import ChooseAgency from "@/components/ChooseAgency";
 import Certificate from "@/components/Certificate";
 import CustomerChoose from "@/components/CustomerChoose";
 import DownNavbar from "@/components/DownNavbar";
-
-const Main = () => {
-  const { basic_details } = Useapi();
-  const { apidata } = Useapi();
-
+import { BASE_URL } from "@/util/api";
+// const { apidata } = Useapi();
+async function getHomeData() {
+  const res = await fetch(`${BASE_URL}home/`, { cache: 'no-store' });
+  if (!res.ok) {
+    throw new Error('Failed to fetch FAQ data');
+  }
+  return res.json();
+}
+async function getBasicData() {
+  const res = await fetch(`${BASE_URL}basic-details/`, { cache: 'no-store' });
+  if (!res.ok) {
+    throw new Error('Failed to fetch FAQ data');
+  }
+  return res.json();
+}
+ export default async function  Main   ()  {
+  const apidata = await getHomeData();
+  const basic_details=await getBasicData()
   return (
     <div>
-      {(!basic_details || !apidata) && <Loader />}
-      {basic_details && apidata && (
+      {/* {(!basic_details || !apidata) && <Loader />}
+      {basic_details && apidata && ( */}
        <>
           <Header />
           <DownNavbar />
           <Navbar />
-          <Banner />
-          <Marketing />
-          <DriveResults />
-          <ValuedClients />
+          <Banner  props={apidata?.banner[0]} basic_details={basic_details}/>
+          <Marketing  props={apidata?.aboutsection[0]}/>
+          <DriveResults Data={apidata?.drive_result} />
+          <ValuedClients Data={apidata?.valued_client[0]}/>
           <Packages props={apidata?.our_package} />
-          <ProvenResult />
-          <MarketingGrowth />
+          <ProvenResult provenResult={apidata?.proven_result} />
+          <MarketingGrowth Data={apidata?.marketing_growth[0]}  />
           <WebsiteReport />
-          <Provide />
-          <Solution />
+          <Provide props={apidata?.we_provide} />
+          <Solution solutionData={apidata?.achieve_your_goal[0]} />
           <ClientSays props={apidata?.clients_say[0]} />
           <Choose props={apidata?.why_choose[0]} />
           <ChooseAgency />
@@ -58,9 +71,8 @@ const Main = () => {
           <Footer />
        </>
   
-   )}
+   {/* )} */}
     </div>
   );
 };
 
-export default Main;

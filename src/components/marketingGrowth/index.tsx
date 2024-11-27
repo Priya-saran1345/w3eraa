@@ -1,14 +1,14 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { Useapi } from '@/helpers/apiContext'
+// import { Useapi } from '@/helpers/apiContext'
 import { IoMdStar } from "react-icons/io";
 import Button from '@/components/button';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-const Growth = () => {
-    const [Data, setData] = useState<any>(); // Initial state should be null
-    const { apidata } = Useapi(); // Destructure apidata from the context
+const Growth = ({Data}:any) => {
+    // const [Data, setData] = useState<any>(); // Initial state should be null
+    // const { apidata } = Useapi(); // Destructure apidata from the context
 const Router=useRouter()
     const [data, setdata] = useState({ first: '', second: '' })
     function splitStringByLastWords(text: any, numOfWords: number) {
@@ -26,12 +26,12 @@ const Router=useRouter()
         const result = splitStringByLastWords(Data?.title || '', 3);
         setdata(result);
     }, [Data]);
-    useEffect(() => {
-        if (apidata && apidata?.marketing_growth[0]
-        ) {
-            setData(apidata?.marketing_growth[0]);
-        }
-    }, [apidata]);
+    // useEffect(() => {
+    //     if (apidata && apidata?.marketing_growth[0]
+    //     ) {
+    //         setData(apidata?.marketing_growth[0]);
+    //     }
+    // }, [apidata]);
 
     // Effect to control body scroll
     return (

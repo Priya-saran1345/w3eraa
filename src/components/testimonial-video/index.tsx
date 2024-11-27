@@ -1,3 +1,4 @@
+'use client'
 import React, { useState, useRef } from 'react';
 import { CiPlay1 } from 'react-icons/ci';
 import Image from 'next/image';

@@ -10,21 +10,20 @@ import Link from 'next/link';
 import ClientsCount from './ClientsCount';
 import { useRouter } from 'next/navigation';
 
-const Banner = () => {
+const Banner = ({props ,basic_details}:any) => {
   const [bannerData, setBannerData] = useState<any>();
-  const { apidata } = Useapi();
-  const { basic_details } = Useapi();
+  // const { apidata } = Useapi();
+  // const { basic_details } = Useapi();
   const [loading, setLoading] = useState(true); // Loading state
   const [data, setData] = useState({ first: '', second: '' });
   const sliderRef = useRef<Slider>(null); // Ref for the slider
 const Router =useRouter()
   useEffect(() => {
-    if (apidata && apidata?.banner[0]) {
-      setBannerData(apidata?.banner[0]);
+    if (props ) {
+      setBannerData(props);
       setLoading(false); // Data has loaded
     }
-  }, [apidata]);
-
+  }, [props]);
   const splitStringByLastWords = (text: any, numOfWords: number) => {
     const words = text.split(' ');
     if (numOfWords >= words.length) {
@@ -67,11 +66,11 @@ const Router =useRouter()
     <div className="w-full relative bg-blue banner min-h-[78vh]">
       {/* Video Background */}
       {
-        !apidata &&
+        !props &&
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('/images/home-video-poster.webp')` }}></div>
       }
       {
-        apidata &&
+        props &&
         <video
           autoPlay
           loop

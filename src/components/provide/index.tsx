@@ -2,12 +2,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Slider from "react-slick";
-import { Useapi } from '@/helpers/apiContext';
+// import { Useapi } from '@/helpers/apiContext';
 import Button from '@/components/button';
 import Link from 'next/link';
 
-const Provide = () => {
-  const { apidata } = Useapi();
+const Provide = ({props}:any) => {
+  // const { apidata } = Useapi();
   const [icons, setIcons] = useState<string[]>([]);
   const sliderRef = useRef<Slider | null>(null);
   const [data, setdata] = useState({ first: '', second: '' });
@@ -41,11 +41,11 @@ const Provide = () => {
   };
 
   useEffect(() => {
-    if (apidata?.we_provide) {
-      const icons = apidata.we_provide.map((elem: any) => elem?.icon);
+    if (props) {
+      const icons = props.map((elem: any) => elem?.icon);
       setIcons(icons);
     }
-  }, [apidata]);
+  }, []);
 
   const handleSlide = (index: number) => {
     if (sliderRef.current) {
@@ -71,7 +71,7 @@ const Provide = () => {
     >
       <Image
         src={icon}
-        alt={apidata?.we_provide[index].icon_alt || 'w3era'}
+        alt={props[index].icon_alt || 'w3era'}
         height={51}
         width={49}
         className={`transition duration-300 w-[35px] lg:w-[49px] h-[45px] lg:h-[51px] ${
@@ -84,7 +84,7 @@ const Provide = () => {
 
         <div className='bg-lightblue p-4 pb-12 md:p-12 w-full rounded-md mt-12 overflow-hidden'>
           <Slider ref={sliderRef} {...settings}>
-            {apidata?.we_provide.map((elem: any, index: number) => (
+            {props.map((elem: any, index: number) => (
               <div key={index}>
                 <div className='flex flex-col md:flex-row gap-7 md:gap-20 items-center'>
                   <Image

@@ -2,15 +2,15 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Useapi } from '@/helpers/apiContext'
-const DriveResults = () => {
-    const [Data, setData] = useState<any>(); // Initial state should be null
-    const { apidata } = Useapi(); // Destructure apidata from the context
-    useEffect(() => {
-        if (apidata && apidata?.drive_result
-        ) {
-            setData(apidata?.drive_result);
-        }
-    }, [apidata]);
+const DriveResults = ({Data}:any) => {
+    // const [Data, setData] = useState<any>(); // Initial state should be null
+    // const { apidata } = Useapi(); // Destructure apidata from the context
+    // useEffect(() => {
+    //     if (apidata && apidata?.drive_result
+    //     ) {
+    //         setData(apidata?.drive_result);
+    //     }
+    // }, [apidata]);
 
 
     const [data, setdata] = useState({first:'',second:''})
@@ -31,7 +31,7 @@ const DriveResults = () => {
       useEffect(() => {
         const result = splitStringByLastWords('How We Drive Results', 2);
         setdata(result);
-    }, [apidata]);
+    }, []);
     
     return (
         <div className='w-full bg-lightblue  py-12 lg:py-16'>

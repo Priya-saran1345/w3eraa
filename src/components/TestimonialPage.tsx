@@ -1,70 +1,47 @@
-"use client"
 import Footer from '@/components/footer'
 import Header from '@/components/header'
-import React, { useEffect, useState } from 'react'
 import Navigation from '@/components/navbar'
 import CommonBanner from '@/components/Common-Banner'
-import QuickLinks from '@/components/quickLinks'
 import TestimonialVideo from '@/components/testimonial-video'
 import TestimonialCard from '@/components/testimonialCard'
-import axios from 'axios'
 import { BASE_URL } from '@/util/api'
-import Loader from '@/components/loader'
-import { Useapi } from '@/helpers/apiContext';
-import { usePathname, useRouter } from 'next/navigation';
 import DownNavbar from '@/components/DownNavbar'
 
-const Page = () => {
-  const { basic_details } = Useapi(); // Get blog data from context
-  const pathname = usePathname();
-  const segments = pathname.replace(/\/$/, '').split('/');
-  const lastsegment = segments.pop();
-  const [apidata, setapidata] = useState<any>()
-  const [testimonial, settestimonial] = useState<any>()
-  const fetch = async () => {
-    try {
-      const response = await axios.get(`${BASE_URL}other/testimonials/`);
-      setapidata(response.data);
-    } catch (error: any) {
-      console.log('testimonial error from other', error.message);
-
-    }
-   
+async function fetchData() {
+  try {
+    const [testimonialRes, otherRes] = await Promise.all([
+      fetch(`${BASE_URL}testimonial/`, { cache: 'no-store' }),
+      fetch(`${BASE_URL}other/testimonials/`, { cache: 'no-store' }),
+    ]);
+    if (!testimonialRes.ok) throw new Error('Failed to fetch testimonial data');
+    if (!otherRes.ok) throw new Error('Failed to fetch other testimonial data');
+    const testimonial = await testimonialRes.json();
+    const apidata = await otherRes.json();
+    return { testimonial, apidata };
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
   }
-  const fetch1 = async () => {
-    try {
-      const response = await axios.get(`${BASE_URL}testimonial/`);
-      settestimonial(response.data);
-    } catch (error: any) {
-      console.log('testimonial error', error.message);
-
-    }
-  }
-  useEffect(() => {
-    fetch();
-    fetch1()
-  }, [])
-
+}
+export default async function TestimonialPage() {
+  const { testimonial, apidata } = await fetchData();
   return (
     <div>
-      {/* {
-        !apidata && <Loader />
-      } */}
-      {
-        // apidata &&
-        <div>
-          <Header />
-          <DownNavbar/>
-          <Navigation />
-          <CommonBanner title={apidata?.title} description={apidata?.body}  image={apidata?.image} btnlink={apidata?.button_url} btntext={apidata?.button_text}
-           image_alt={apidata?.image_alt} />
-          <TestimonialCard props={testimonial?.review} />
-          <TestimonialVideo props={testimonial?.clients_say_card} />
-          <Footer />
-        </div>
-      }
+      <Header />
+      <DownNavbar />
+      <Navigation />
+      <CommonBanner 
+        title={apidata.title} 
+        description={apidata.body}  
+        image={apidata.image} 
+        btnlink={apidata.button_url} 
+        btntext={apidata.button_text}
+        image_alt={apidata.image_alt} 
+      />
+      <TestimonialCard props={testimonial.review} />
+      <TestimonialVideo props={testimonial.clients_say_card} />
+      <Footer />
     </div>
   )
 }
 
-export default Page

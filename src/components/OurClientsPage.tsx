@@ -1,11 +1,10 @@
-'use client'
+// 'use client'
 import Header from '@/components/header'
 import Navbar from '@/components/navbar'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Footer from '@/components/footer';
 import Image from 'next/image';
 import Revenue from '@/components/revenue';
-import { Useapi } from '@/helpers/apiContext'
 import Loader from '@/components/loader';
 import Link from 'next/link';
 import CustomerChoose from '@/components/CustomerChoose';
@@ -13,20 +12,16 @@ import DownNavbar from '@/components/DownNavbar'
 import axios from 'axios';
 import { BASE_URL } from '@/util/api';
 
-
-const Client = () => {
-    const [client, setclient] = useState<any>()
-    const fetch = async () => {
-        try {
-            const response = await axios.get(`${BASE_URL}our-clients/`);
-            setclient(response.data);
-          } catch (error: any) {
-            console.log("client error", error.message);
-          }
-        }
-        useEffect(() => {
-            fetch();
-        }, [])
+async function getClientData() {
+    const res = await fetch(`${BASE_URL}our-clients/`, { cache: 'no-store' });
+    if (!res.ok) {
+      throw new Error('Failed to fetch client data');
+    }
+    return res.json();
+  }
+export default async function Client ()  {
+const client=await getClientData();
+  
     const arr = [1, 2, 3, 3, 3, 3, 3, 3, 3, 3];
     return (
         <>
@@ -40,7 +35,6 @@ const Client = () => {
         <div className='w-full'>
             <Header />
             <DownNavbar/>
-
             <Navbar />
             <div className='w-full px-4 bg-[url("/images/blog-bg.png")] h-[45vh] flex justify-center items-center'>
                 <h1 className='text-white text-[32px] font-bold lg:text-[48px]'>{client?.client[0].title}</h1>
@@ -108,4 +102,3 @@ const Client = () => {
         </>
     );
 };
-export default Client;

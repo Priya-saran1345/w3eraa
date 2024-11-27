@@ -4,13 +4,13 @@ import Image from 'next/image';
 import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
 import Slider from "react-slick";
 import { useRouter } from "next/navigation";
-import { Useapi } from '@/helpers/apiContext';
+// import { Useapi } from '@/helpers/apiContext';
 import Button from '@/components/button';
 import Link from 'next/link';
 
-const CaseStudy: React.FC = () => {
-    const { apidata } = Useapi();
-    const [provenResult, setProvenResult] = useState<any>();
+const CaseStudy = ({provenResult}:any) => {
+    // const { apidata } = Useapi();
+    // const [provenResult, setProvenResult] = useState<any>();
     const [activeIndex, setActiveIndex] = useState(0); // Track the active slide index
     const Router = useRouter();
     const sliderTextRef = useRef<Slider | null>(null);
@@ -36,9 +36,9 @@ const CaseStudy: React.FC = () => {
         const result = splitStringByLastWords(' Our Proven Results', 2);
         setdata(result);
     }, []);
-    useEffect(() => {
-        setProvenResult(apidata?.proven_result);
-    }, [apidata]);
+    // useEffect(() => {
+    //     setProvenResult(apidata?.proven_result);
+    // }, [apidata]);
 
     const settings = {
         infinite: true,
