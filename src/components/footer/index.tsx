@@ -21,7 +21,6 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { BASE_URL } from "@/util/api";
 
-
 const Footer = () => {
     const dropdownRef = useRef<HTMLDivElement | null>(null);
     const { basic_details } = Useapi();
@@ -32,14 +31,13 @@ const Footer = () => {
     const [message, setMessage] = useState({
         name: "",
         email: "",
+
     });
     const handleChange = (e: any) => {
         setMessage({ ...message, [e.target.name]: e.target.value });
     };
     const handleSubmit = async () => {
         try {
-
-
             const response = await axios.post(`${BASE_URL}subscription/`, message);
           
             toast.success('Message send successfully')
@@ -208,7 +206,7 @@ const Footer = () => {
                                 />
                             </Link>
                         </div>
-                        <div className='w-full sm:w-1/4'>
+                        <div className='   w-full sm:w-1/4'>
                             <div className='flex gap-2 items-center'>
                                 <p className='text-[21px] flex  font-medium w-full  sm:border-b-2'>
                                     Resources <FaMinus className='mt-2 mx-2 sm:hidden' />
@@ -262,20 +260,15 @@ const Footer = () => {
                             </div>
                             <ul className='text-[14px] font-medium flex flex-col gap-2 py-3'>
                                 <div className="">
-                                    <li
-                                        className="flex gap-1 items-center cursor-pointer"
-                                        onMouseOver={() => toggleDropdown(0)} // Handles mouse hover
-                                    // Handles click
-                                    >
-                                        Search Engine Optimization Services<IoMdArrowDropdown />
-                                    </li>
+                                    <Link target="_blank" href={'/search-engine-optimization-services'}>
+                                        <li className='flex gap-1 items-center cursor-pointer'
+                                            onMouseEnter={() => toggleDropdown(0)}
+                                        // onMouseLeave={() => setOpenDropdown(null)}
+                                        >Search Engine Optimization Services<IoMdArrowDropdown /></li>
+                                    </Link>
                                     {openDropdown === 0 && (
-                                        <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute"
-                                         onMouseLeave={() => setOpenDropdown(null)}
-                                         
-                                         >
+                                        <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute" onMouseLeave={() => setOpenDropdown(null)}>
                                             <ul className="flex  flex-col gap-3">
-                                                <Link target="_blank" href={'/search-engine-optimization-services'}><li className="hover:text-pink cursor-pointer ">Search Engine Optimization Services</li></Link>
                                                 <Link target="_blank" href={'/on-page-seo-services'}><li className="hover:text-pink cursor-pointer ">On Page SEO Services</li></Link>
                                                 <Link target="_blank" href={'/off-page-seo'}><li className="hover:text-pink cursor-pointer ">Off Page SEO Service</li></Link>
                                                 <Link target="_blank" href={'/guest-posting-services'}><li className="hover:text-pink cursor-pointer ">Guest Posting Services</li></Link>
@@ -293,15 +286,15 @@ const Footer = () => {
                                     )}
                                 </div>
                                 <div>
-
-                                    <li className='flex gap-1 items-center cursor-pointer' onMouseOver={() => toggleDropdown(1)}
-                                    >
-                                        Digital Marketing Packages<IoMdArrowDropdown /></li>
-
+                                    <Link target="_blank" href={'/digital-marketing-packages'}>
+                                        <li className='flex gap-1 items-center cursor-pointer' onMouseEnter={() => toggleDropdown(1)}
+                                        //   onMouseLeave={() => setOpenDropdown(null)}
+                                        >
+                                            Digital Marketing Packages<IoMdArrowDropdown /></li>
+                                    </Link>
                                     {openDropdown === 1 && (
                                         <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute overflow-y-auto h-1/2" onMouseLeave={() => setOpenDropdown(null)}>
                                             <ul className="flex  flex-col gap-3">
-                                                <Link target="_blank" href={'/digital-marketing-packages'}><li className="hover:text-pink cursor-pointer"  >Digital Marketing Packages</li></Link>
                                                 <Link target="_blank" href={'/seo-packages'}><li className="hover:text-pink cursor-pointer">SEO Packages</li></Link>
                                                 <Link target="_blank" href={'/app-store-aso-packages'}><li className="hover:text-pink cursor-pointer">App Store Packages</li></Link>
                                                 <Link target="_blank" href={'/content-marketing-packages'}><li className="hover:text-pink cursor-pointer">Content Marketing Packages</li></Link>
@@ -324,14 +317,15 @@ const Footer = () => {
                                     )}
                                 </div>
                                 <div>
-                                    <li className='flex gap-1 items-center cursor-pointer' onMouseOver={() => toggleDropdown(2)}
-                                    >
-                                        Social Media Marketing <IoMdArrowDropdown /></li>
-
+                                    <Link target="_blank" href={'/social-media-marketing-services'}>
+                                        <li className='flex gap-1 items-center cursor-pointer' onMouseEnter={() => toggleDropdown(2)}
+                                        //   onMouseLeave={() => setOpenDropdown(null)}
+                                        >
+                                            Social Media Marketing <IoMdArrowDropdown /></li>
+                                    </Link>
                                     {openDropdown === 2 && (
                                         <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute" onMouseLeave={() => setOpenDropdown(null)}>
                                             <ul className="flex  flex-col gap-3">
-                                                <Link target="_blank" href={'/social-media-marketing-services'}><li className='hover:text-pink cursor-pointer' >Social Media Marketing </li></Link>
                                                 <Link target="_blank" href={'/facebook-advertising-services'}><li className="hover:text-pink cursor-pointer">Facebook Advertising Services</li></Link>
                                                 <Link target="_blank" href={'/instagram-marketing-services'}><li className="hover:text-pink cursor-pointer">Instagram Marketing Services</li></Link>
                                                 <Link target="_blank" href={'/linkedin-marketing-services-india'}><li className="hover:text-pink cursor-pointer">Linkedin Marketing Services India</li></Link>
@@ -345,16 +339,15 @@ const Footer = () => {
                                     )}
                                 </div>
                                 <div>
-
-                                    <li className='flex gap-1 items-center cursor-pointer' onMouseOver={() => toggleDropdown(3)}
-
-                                    >
-                                        Web Development Services <IoMdArrowDropdown /></li>
-
+                                    <Link target="_blank" href={'/web-development-services'}>
+                                        <li className='flex gap-1 items-center cursor-pointer' onMouseEnter={() => toggleDropdown(3)}
+                                        //   onMouseLeave={() => setOpenDropdown(null)}
+                                        >
+                                            Web Development Services <IoMdArrowDropdown /></li>
+                                    </Link>
                                     {openDropdown === 3 && (
                                         <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute" onMouseLeave={() => setOpenDropdown(null)}>
                                             <ul className="flex  flex-col gap-3">
-                                                <Link target="_blank" href={'/web-development-services'}> <li className='hover:text-pink cursor-pointer' > Web Development Services</li></Link>
                                                 <Link target="_blank" href={'/wordpress-development-services'}><li className="hover:text-pink cursor-pointer">WordPress Development Services</li></Link>
                                                 <Link target="_blank" href={'/magento-web-development-services'}><li className="hover:text-pink cursor-pointer">Magneto Development Services</li></Link>
                                                 <Link target="_blank" href={'/asp-dot-net-development-services'}><li className="hover:text-pink cursor-pointer">ASP.NET Development Services</li></Link>
@@ -370,15 +363,15 @@ const Footer = () => {
                                     </Link>
                                 </div>
                                 <div>
-
-                                    <li className='flex gap-1 items-center cursor-pointer'
-                                        onMouseOver={() => toggleDropdown(5)}
-
-                                    >Pay Per Click (PPC)<IoMdArrowDropdown /></li>
+                                    <Link target="_blank" href={'/google-ads-services'}>
+                                        <li className='flex gap-1 items-center cursor-pointer'
+                                            onMouseEnter={() => toggleDropdown(5)}
+                                        // onMouseLeave={() => setOpenDropdown(null)}
+                                        >Pay Per Click (PPC)<IoMdArrowDropdown /></li>
+                                    </Link>
                                     {openDropdown === 5 && (
                                         <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute" onMouseLeave={() => setOpenDropdown(null)}>
                                             <ul className="flex  flex-col gap-3">
-                                                <Link target="_blank" href={'/google-ads-services'}> <li className='hover:text-pink cursor-pointer'  >Pay Per Click (PPC)</li></Link>
                                                 <Link target="_blank" href={'/google-my-business-ads'}><li className="hover:text-pink cursor-pointer">Google My Business Ads</li></Link>
                                                 <Link target="_blank" href={'/google-shopping-ads'}><li className="hover:text-pink cursor-pointer">Google Shopping Ads</li></Link>
                                                 <Link target="_blank" href={'/ppc-company-in-usa'}><li className="hover:text-pink cursor-pointer">PPC Company In USA</li></Link>
@@ -388,16 +381,15 @@ const Footer = () => {
                                     )}
                                 </div>
                                 <div>
+                                    <Link target="_blank" href={'/web-design-services'}>
+                                        <li className='flex gap-1 items-center cursor-pointer'
 
-                                    <li className='flex gap-1 items-center cursor-pointer'
-
-                                        onMouseOver={() => toggleDropdown(6)}
-                                    >Web Design Services</li>
-
+                                            onMouseEnter={() => toggleDropdown(6)}
+                                        >Web Design Services<IoMdArrowDropdown /></li>
+                                    </Link>
                                     {openDropdown === 6 && (
                                         <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute" onMouseLeave={() => setOpenDropdown(null)}>
                                             <ul className="flex  flex-col gap-3">
-                                                <Link target="_blank" href={'/web-design-services'}> <li className='hover:text-pink cursor-pointer'  >Web Design Services</li> </Link>
                                                 <Link target="_blank" href={'/logo-design-services'}><li className="hover:text-pink cursor-pointer">Logo Designing Services</li></Link>
                                                 <Link target="_blank" href={'/mobile-responsive-designing-services'}><li className="hover:text-pink cursor-pointer">Mobile Responsive Design</li></Link>
                                             </ul>
@@ -405,12 +397,13 @@ const Footer = () => {
                                     )}
                                 </div>
                                 <div>
-                                    <li className='flex gap-1 items-center cursor-pointer'
-                                        onMouseOver={() => toggleDropdown(7)} >Content Marketing Services<IoMdArrowDropdown /></li>
+                                    <Link target="_blank" href={'/content-marketing-services'}>
+                                        <li className='flex gap-1 items-center cursor-pointer'
+                                            onMouseEnter={() => toggleDropdown(7)} >Content Marketing Services<IoMdArrowDropdown /></li>
+                                    </Link>
                                     {openDropdown === 7 && (
                                         <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute" onMouseLeave={() => setOpenDropdown(null)}   >
                                             <ul className="flex  flex-col gap-3">
-                                                <Link target="_blank" href={'/content-marketing-services'}> <li className='hover:text-pink cursor-pointer'  >Content Marketing Services</li> </Link>
                                                 <Link target="_blank" href={'/content-marketing-services-india'}><li className="hover:text-pink cursor-pointer">Content Marketing Services India</li></Link>
                                             </ul>
                                         </div>
