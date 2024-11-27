@@ -34,7 +34,7 @@ const Index = ({show}:any) => {
                web Story
               </li>
               </Link>
-              <li onClick={() => toggleDropdown('seo')} className='flex font-semibold 2xl:gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('seo')} className='flex font-semibold gap-[2px] 2xl:gap-1 items-center cursor-pointer'>
                 SEO {openDropdown === 'seo' ?  <Image 
               src={'/images/up.svg'} 
               width={14} 
@@ -147,7 +147,7 @@ const Index = ({show}:any) => {
               )}
 
               {/* Pay Per Click Dropdown */}
-              <li onClick={() => toggleDropdown('ppc')} className='flex font-semibold 2xl:gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('ppc')} className='flex font-semibold gap-[2px] 2xl:gap-1 items-center cursor-pointer'>
                 Pay Per Click {openDropdown === 'ppc' ? <Image 
               src={'/images/up.svg'} 
               width={14} 
@@ -246,7 +246,7 @@ const Index = ({show}:any) => {
               )}
 
               {/* SMM Dropdown */}
-              <li onClick={() => toggleDropdown('smm')} className='flex  font-semibold 2xl:gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('smm')} className='flex  font-semibold gap-[2px] 2xl:gap-1 items-center cursor-pointer'>
                 SMM {openDropdown === 'smm' ? <Image 
               src={'/images/up.svg'} 
               width={14} 
@@ -346,7 +346,7 @@ const Index = ({show}:any) => {
                 </div>
               )}
               {/* Our Packages Dropdown */}
-              <li onClick={() => toggleDropdown('packages')} className=' font-semibold flex 2xl:gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('packages')} className=' font-semibold flex gap-[2px] 2xl:gap-1 items-center cursor-pointer'>
                 Our Packages {openDropdown === 'packages' ? <Image 
                src={'/images/up.svg'} 
               width={14} 
@@ -459,7 +459,7 @@ const Index = ({show}:any) => {
               )}
 
               {/* Web Development Dropdown */}
-              <li onClick={() => toggleDropdown('web-dev')} className='flex  font-semibold 2xl:gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('web-dev')} className='flex  font-semibold gap-[2px] 2xl:gap-1 items-center cursor-pointer'>
                 Web Development {openDropdown === 'web-dev' ? <Image 
              src={'/images/up.svg'} 
               width={14} 
@@ -561,14 +561,14 @@ const Index = ({show}:any) => {
             {/* Buttons */}
             <div className='flex gap-2 lg:gap-1 mt-2 lg:mt-0 flex-col lg:flex-row'>
            <Link target='_blank' href={'https://meetings.hubspot.com/sakshi-jass?uuid=ae684c90-b22d-4aed-a972-4de20bef7f87'}>
-            <button className='px-1 max-w-[180px] py-3 border-2 border-pink rounded-full meeting-btn'>
+            <button className='px-1 max-w-[180px] py-[8px] 2xl:py-3 border-2 border-pink rounded-full meeting-btn'>
               <span className="meeting-text font-semibold">Book a Meeting</span>
             </button>
            </Link>
            {/* <Link target='_blank' href={'/get-a-free-quote'}> */}
            <div className='w-fit' onClick={()=>Router.push('/get-a-free-quote')}>
               <button
-                className='flex items-center justify-center px-3 2xl:w-[180px] text-white rounded-full py-3 group bg-pink transition duration-300'>
+                className='flex items-center justify-center px-2 2xl:w-[180px] text-white rounded-full py-[11px] 2xl:py-3 group bg-pink transition duration-300'>
                 <span className='transition-transform duration-300 group-hover:-translate-x-2 font-semibold'>
                   Get a Proposal
                   </span>

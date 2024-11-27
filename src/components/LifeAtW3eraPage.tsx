@@ -1,4 +1,4 @@
-'use client'
+// 'use client'
 import React, { useEffect, useState } from 'react'
 import Header from '@/components/header'
 import Navbar from '@/components/navbar'
@@ -7,29 +7,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Loader from '@/components/loader';
 import DownNavbar from '@/components/DownNavbar'
-import axios from 'axios';
 import { BASE_URL } from '@/util/api';
-const Page = () => {
-    const [life, setLife] = useState<any>();
 
-    const fetchLife = async () => {
-      try {
-        const response = await fetch(`${BASE_URL}w3era-life/`);
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const data = await response.json();
-        setLife(data);
-      } catch (error: any) {
-        console.error("w3era-life study error:", error.message);
-      }
-    };
-    
-    useEffect(() => {
-      fetchLife();
-    }, []);
-    
+async function getlifedata() {
+    const res = await fetch(`${BASE_URL}w3era-life/`, { cache: 'no-store' });
+    if (!res.ok) {
+      throw new Error('Failed to fetch portfolio data');
+    }
+    return res.json();
+  }
 
+export default async function Page () {
+
+const life= await getlifedata()
     return (
         <div>
             {/* {!basic_details && !life &&
@@ -160,4 +150,4 @@ const Page = () => {
 
 
 
-export default Page
+// export default Page

@@ -31,9 +31,9 @@ const Main = () => {
 
   return (
     <div>
-      {/* {(!basic_details || !apidata) && <Loader />} */}
-      {/* {basic_details && apidata && ( */}
-       
+      {(!basic_details || !apidata) && <Loader />}
+      {basic_details && apidata && (
+       <>
           <Header />
           <DownNavbar />
           <Navbar />
@@ -56,8 +56,9 @@ const Main = () => {
           <CustomerChoose />
           <Blogs props={apidata?.blog} />
           <Footer />
+       </>
   
-      {/* )} */}
+   )}
     </div>
   );
 };
