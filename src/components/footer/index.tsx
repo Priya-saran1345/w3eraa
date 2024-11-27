@@ -31,7 +31,6 @@ const Footer = () => {
     const [message, setMessage] = useState({
         name: "",
         email: "",
-
     });
     const handleChange = (e: any) => {
         setMessage({ ...message, [e.target.name]: e.target.value });
@@ -442,13 +441,15 @@ const Footer = () => {
                             </a>
                             <div className='w-[276px]'>
                                 <Link target="_blank" href={'https://www.google.com/maps/place/W3Era/@26.8427364,75.7465518,17z/data=!3m1!4b1!4m6!3m5!1s0x396db5e07f400001:0x2cbf92fc1b9cc85e!8m2!3d26.8427364!4d75.7465518!16s%2Fg%2F11dxh7mg8z?entry=ttu&g_ep=EgoyMDI0MTEwNS4wIKXMDSoASAFQAw%3D%3D'}>
-                                    <Image
+                                  <Image
                                         src={'/images/footer3.png'} // Ensure this path is correct
                                         alt={''}
                                         height={155}
                                         width={236}
                                         className='mt-7 rounded-xl'
                                     />
+                                   
+
                                 </Link>
                                 <div>
                                     <div className='flex mt-5 justify-center text-yellow-500 gap-2 text-[24px]'>
