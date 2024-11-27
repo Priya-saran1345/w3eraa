@@ -7,6 +7,7 @@ import Image from 'next/image'
 import Button from '@/components/button'
 import ClientsCount from '../ClientsCount'
 import { useRouter } from 'next/navigation'
+import { motion } from 'framer-motion'
 
 const Index = ({show}:any) => {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -34,7 +35,7 @@ const Index = ({show}:any) => {
                web Story
               </li>
               </Link>
-              <li onClick={() => toggleDropdown('seo')} className='flex font-semibold  gap-1 items-center cursor-pointer'>
+              <li onMouseOver={() => toggleDropdown('seo')} className='flex font-semibold  gap-1 items-center cursor-pointer'>
                 SEO {openDropdown === 'seo' ?  <Image 
               src={'/images/up.svg'} 
               width={14} 
@@ -51,7 +52,10 @@ const Index = ({show}:any) => {
             /> } 
               </li>
               {openDropdown === 'seo' && (
-                <div className=' absolute text-homegrey shadow-md text-[17px] w-[85%] lg:w-[95%] overflow-y-scroll lg:overflow-auto  max-h-[70vh] lg:h-fit
+                <motion.div 
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                className=' absolute text-homegrey shadow-md text-[17px] w-[85%] lg:w-[95%] overflow-y-scroll lg:overflow-auto  max-h-[70vh] lg:h-fit
                   flex-wrap lg:flex-nowrap px-12 py-14 z-[99999] top-20 left-10 bg-white justify-start lg:justify-around flex 
                    gap-5  p-7 rounded-xl' onMouseLeave={() => toggleDropdown('')}>
                   <div>
@@ -143,11 +147,11 @@ const Index = ({show}:any) => {
                       <ClientsCount/>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               )}
 
               {/* Pay Per Click Dropdown */}
-              <li onClick={() => toggleDropdown('ppc')} className='flex font-semibold  gap-1 items-center cursor-pointer'>
+              <li onMouseOver={() => toggleDropdown('ppc')} className='flex font-semibold  gap-1 items-center cursor-pointer'>
                 Pay Per Click {openDropdown === 'ppc' ? <Image 
               src={'/images/up.svg'} 
               width={14} 
@@ -166,7 +170,10 @@ const Index = ({show}:any) => {
             />}
               </li>
               {openDropdown === 'ppc' && (
-                <div className='shadow-md absolute text-homegrey text-[17px]
+                <motion.div
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                className='shadow-md absolute text-homegrey text-[17px]
                 w-[85%] lg:w-[95%] overflow-y-scroll lg:overflow-auto max-h-[70vh] lg:h-fit flex-wrap lg:flex-nowrap 
                   px-12 py-14 z-[99999] top-20 left-10 bg-white  justify-start lg:justify-around flex gap-5  p-7 rounded-xl' onMouseLeave={() => toggleDropdown('')}>
                   <div>
@@ -242,11 +249,11 @@ const Index = ({show}:any) => {
 
                     </div>
                   </div>
-                </div>
+                </motion.div>
               )}
 
               {/* SMM Dropdown */}
-              <li onClick={() => toggleDropdown('smm')} className='flex  font-semibold  gap-1 items-center cursor-pointer'>
+              <li onMouseOver={() => toggleDropdown('smm')} className='flex  font-semibold  gap-1 items-center cursor-pointer'>
                 SMM {openDropdown === 'smm' ? <Image 
               src={'/images/up.svg'} 
               width={14} 
@@ -265,7 +272,10 @@ const Index = ({show}:any) => {
             />}
               </li>
               {openDropdown === 'smm' && (
-                <div className='shadow-md absolute text-homegrey 
+                <motion.div 
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                className='shadow-md absolute text-homegrey 
                 w-[85%] lg:w-[95%] overflow-y-scroll lg:overflow-auto max-h-[70vh] lg:h-fit flex-wrap lg:flex-nowrap text-[17px]  px-12 py-14 z-[99999] 
                 top-20 left-10 bg-white justify-start  lg:justify-around flex gap-5 p-7 rounded-xl' onMouseLeave={() => toggleDropdown('')}>
                   <div>
@@ -343,10 +353,10 @@ const Index = ({show}:any) => {
                       <ClientsCount/>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               )}
               {/* Our Packages Dropdown */}
-              <li onClick={() => toggleDropdown('packages')} className=' font-semibold flex  gap-1 items-center cursor-pointer'>
+              <li onMouseOver={() => toggleDropdown('packages')} className=' font-semibold flex  gap-1 items-center cursor-pointer'>
                 Our Packages {openDropdown === 'packages' ? <Image 
                src={'/images/up.svg'} 
               width={14} 
@@ -363,7 +373,10 @@ const Index = ({show}:any) => {
             />}
               </li>
               {openDropdown === 'packages' && (
-                <div className='shadow-md absolute text-homegrey text-[17px]  w-[85%] lg:w-[95%] lg:h-fit overflow-y-scroll lg:overflow-auto max-h-[70vh]
+                <motion.div 
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                className='shadow-md absolute text-homegrey text-[17px]  w-[85%] lg:w-[95%] lg:h-fit overflow-y-scroll lg:overflow-auto max-h-[70vh]
                   flex-wrap lg:flex-nowrap px-12 py-14 z-[99999] top-20 left-10 bg-white  justify-start lg:justify-around flex gap-5  p-7 rounded-xl' onMouseLeave={() => toggleDropdown('')}>
                   <div>
                     <div className='flex justify-start gap-2 items-center'>
@@ -455,11 +468,11 @@ const Index = ({show}:any) => {
 
                     </ul>
                   </div>
-                </div>
+                </motion.div>
               )}
 
               {/* Web Development Dropdown */}
-              <li onClick={() => toggleDropdown('web-dev')} className='flex  font-semibold  gap-1 items-center cursor-pointer'>
+              <li onMouseOver={() => toggleDropdown('web-dev')} className='flex  font-semibold  gap-1 items-center cursor-pointer'>
                 Web Development {openDropdown === 'web-dev' ? <Image 
              src={'/images/up.svg'} 
               width={14} 
@@ -476,7 +489,10 @@ const Index = ({show}:any) => {
             />}
               </li>
               {openDropdown === 'web-dev' && (
-                <div className='shadow-md absolute text-homegrey text-[17px]  w-[85%] lg:w-[95%] lg:h-fit overflow-y-scroll lg:overflow-auto 
+                <motion.div 
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                className='shadow-md absolute text-homegrey text-[17px]  w-[85%] lg:w-[95%] lg:h-fit overflow-y-scroll lg:overflow-auto 
                max-h-[70vh]  flex-wrap lg:flex-nowrap px-12 py-14 z-[99999] top-20 left-10 bg-white  justify-start lg:justify-around flex gap-5  p-7 rounded-xl' onMouseLeave={() => toggleDropdown('')}>
                   <div>
                     <div className='flex justify-start gap-2 items-center'>
@@ -555,7 +571,7 @@ const Index = ({show}:any) => {
                       <ClientsCount/>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               )}
             </div>
             {/* Buttons */}
