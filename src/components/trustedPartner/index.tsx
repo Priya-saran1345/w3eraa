@@ -12,7 +12,7 @@ const Index = ({ props }: any) => {
     };
 
     return (
-        <div className='bg-white xl:w-[75%] mx-auto px-6 py-12 lg:py-16'>
+        <div className='bg-white xl:w-[95%]  2xl:w-[75%] mx-auto px-6 py-12 lg:py-16'>
             <h2 className='text-homeblack font-bold '>{props?.title}</h2>
             <p className='text-homegrey text-[18px] mt-3'>{props?.subtitle}</p>
             <div className='my-8 flex md:flex-nowrap flex-wrap justify-between gap-10'>

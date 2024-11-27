@@ -46,7 +46,7 @@ const Page = () => {
 <div className='w-full '>
 <StyledWrapper>
 <div
-  className="mx-auto px-6  py-12 xl:w-[75%]"
+  className="mx-auto px-6  py-12 xl:w-[95%]  2xl:w-[75%]"
   dangerouslySetInnerHTML={{ __html: data?.body }}
 ></div>
 </StyledWrapper>

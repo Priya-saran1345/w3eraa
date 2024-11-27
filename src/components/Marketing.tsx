@@ -32,7 +32,7 @@ const Marketing = ({props}:any) => {
   }, [props]);
   return (
     <div className='w-full bg-white py-8'>
-      <div className=" flex justify-between flex-col md:flex-row items-center  px-4 w-full xl:w-[75%] mx-auto">
+      <div className=" flex justify-between flex-col md:flex-row items-center  px-4 w-full xl:w-[95%]  2xl:w-[75%] mx-auto">
         <div className="lg:w-1/2 text-center flex flex-col gap-3 md:text-left">
           <p className='text-homeblack text-[18px] lg:text-[20px] font-semibold  uppercase'>{marketingData?.subtitle}</p>
           <h2 className='  font-bold  text-homeblack  lg:leading-[58px]'>{data.first} <span className='text-pink'>{data.second}</span></h2>

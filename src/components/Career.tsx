@@ -39,7 +39,7 @@ export default async function Page  ()  {
           <Navbar />
           <CommonBanner title={apidata?.title} description={apidata?.body} image={apidata?.image} image_alt={apidata?.image_alt} btnlink={apidata?.button_url}
            btntext={apidata?.button_text} />
-          <div className=' px-6 xl:px-0 xl:w-[75%] py-12 mx-auto'>
+          <div className=' px-6 xl:px-0 xl:w-[95%]  2xl:w-[75%] py-12 mx-auto'>
             <h2 className='text-homeblack text-[38px] font-bold text-center'>Current Job Openings in Jaipur
             </h2>
             {

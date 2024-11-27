@@ -48,7 +48,7 @@ useEffect(() => {
 
       <Navbar />
       
-      <div className='py-12 xl:w-[75%] px-6 mx-auto'>
+      <div className='py-12 xl:w-[95%]  2xl:w-[75%] px-6 mx-auto'>
         <StyledWrapper>
             <div className='text-homeblack leading-[30px]'
             >

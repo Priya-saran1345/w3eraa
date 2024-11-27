@@ -7,7 +7,7 @@ import {StyledWrapper} from '@/components/Styled'
 const index = ({ props }: any) => {
     return (
         <div className='w-full bg-lightblue py-10 text-white  lg:py-16'>
-            <div className='xl:w-[75%] px-4 mx-auto flex flex-col gap-10'>
+            <div className='xl:w-[95%]  2xl:w-[75%] px-4 mx-auto flex flex-col gap-10'>
                 <h2 className='  text-center font-bold text-homeblack leading-[45px]'>{props?.title}</h2>
                 <p className=' text-[16px] lg:text-[18px] px-3 lg:px-16 text-center  text-homegrey ' dangerouslySetInnerHTML={{ __html: props?.description }} />
                 <div className='flex justify-center gap-5 flex-wrap'>

@@ -4,7 +4,7 @@ import Button from '@/components/button'
 import Image from 'next/image'
 const SeoIndustryService = ({props}:any) => {
   return (
-    <div className='xl:w-[75%] mx-auto my-8 px-4 xl:px-0'>
+    <div className='xl:w-[95%]  2xl:w-[75%] mx-auto my-8 px-4 xl:px-0'>
     <h2 className='text-center my-3 text-homeblack font-semibold'>{props?.title}</h2>
    <div className='flex w-full justify-center mt-6 gap-3 flex-wrap'>
        {

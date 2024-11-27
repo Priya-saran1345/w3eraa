@@ -29,7 +29,7 @@ export default function Data({ props }: any) {
 
   return (
     <div className="w-full bg-lightblue py-12">
-      <div className="w-full px-4 xl:w-[75%] mx-auto">
+      <div className="w-full px-4 xl:w-[95%]  2xl:w-[75%] mx-auto">
         <div className="md:w-[60%] mx-auto text-center">
           {/* Title */}
           <h2 className="font-bold text-homeblack mt-4 text-center leading-tight">

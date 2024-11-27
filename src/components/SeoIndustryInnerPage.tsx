@@ -85,7 +85,7 @@ const Main = () => {
           {
 
 data?.title && data?.image&&
-            <div className='w-full xl:w-[75%] mx-auto px-6 py-8'>
+            <div className='w-full xl:w-[95%]  2xl:w-[75%] mx-auto px-6 py-8'>
                 <div  className='w-full my-4 flex flex-wrap gap-4 '>
                     {[{ id: 1 }].map((elem, index) => (
                         <div
@@ -142,7 +142,7 @@ data?.title && data?.image&&
             </div>
             {
                 // data?.contentsection1?.description &&
-                <div className='w-full mx-auto xl:w-[75%] flex flex-col gap-4 px-6 xl:px-2 py-12'>
+                <div className='w-full mx-auto xl:w-[95%]  2xl:w-[75%] flex flex-col gap-4 px-6 xl:px-2 py-12'>
                     {/* {
                            
                                     <div>
@@ -159,7 +159,7 @@ data?.title && data?.image&&
                     </StyledWrapper>
                 </div>
             }
-            <div className='bg-white mt-12 xl:w-[75%] px-4 xl:px-0 mx-auto'>
+            <div className='bg-white mt-12 xl:w-[95%]  2xl:w-[75%] px-4 xl:px-0 mx-auto'>
                 {/* <p className='text-homeblack text-[28px] text-center mb-8 font-bold lg:text-[38px]'>{data?.aboutservice?.title || ''}</p> */}
                 <div className='flex justify-between lg:gap-16'>
                     <div className=' hidden lg:block'>

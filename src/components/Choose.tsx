@@ -39,7 +39,7 @@ const Choose = ({ props }: any) => {
           {props?.description}
         </p>
       </div>
-      <div className='w-full px-4 xl:w-[75%] mx-auto flex justify-center gap-5 flex-wrap'>
+      <div className='w-full px-4 xl:w-[95%]  2xl:w-[75%] mx-auto flex justify-center gap-5 flex-wrap'>
         <div className="flex flex-wrap w-full gap-5">
           {props?.cards && props?.cards.map((card: any, index: number) => (
             <div key={index} className='flex-1 min-h-[200px] mt-20 min-w-full sm:min-w-[45%] lg:min-w-[30%]'>

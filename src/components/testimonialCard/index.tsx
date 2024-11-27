@@ -25,7 +25,7 @@ const TestimonialCard = ({ props }: any) => {
   return (
     <div className='w-full bg-white py-12'>
       <h2 className='text-[38px] font-bold text-homeblack text-center'>Testimonials</h2>
-      <div className='xl:w-[75%] mx-auto flex-wrap justify-center mt-8 flex gap-6'>
+      <div className='xl:w-[95%]  2xl:w-[75%] mx-auto flex-wrap justify-center mt-8 flex gap-6'>
         {currentItems?.map((item: any, index: number) => (
           <div key={index} className='md:w-[45%]  flex flex-col justify-start w-[95%] lg:w-[30%] rounded-lg border-[2px] border-lightblue p-6'>
             <div className='flex justify-between mb-4 items-center'>
@@ -73,7 +73,7 @@ const TestimonialCard = ({ props }: any) => {
                 width={13}
                 alt="Upper Coma"
               />
-              <p className='text-[18px] my-2 text-homegrey' dangerouslySetInnerHTML={{ __html: item.description }} />
+              <div className='text-[18px] my-2 text-homegrey' dangerouslySetInnerHTML={{ __html: item.description }} />
               <div className='w-full flex justify-end'>
                 <Image
                   src={'/images/lovercoma.svg'}

@@ -9,7 +9,7 @@ import {StyledWrapper} from '@/components/Styled'
 const index = ({ title, description, image, btnlink, btntext, image_alt, status = 'false' }: any) => {
   return (
     <div> <div className='bg-lightblue md:bg-[url("/images/banner-bg.png")] flex justify-center  w-full  h-fit py-4   bg-center bg-no-repeat'>
-      <div className='mx-auto xl:w-[75%] px-6 flex justify-center '>
+      <div className='mx-auto xl:w-[95%]  2xl:w-[75%] px-6 flex justify-center '>
         <div className='flex justify-between items-center py-4 md:py-10 gap-7'>
           <div className={`lg:w-1/2 flex flex-col  gap-6`}>
             <h1 className=' leading-none text-homeblack xl:leading-[55px] font-bold '>{title}</h1>

@@ -108,7 +108,7 @@ const Audit = () => {
                         <h1 className='text-[32px] lg:text-[44px] font-bold text-white'>Website SEO Analyzer</h1>
                     </div>
                 </div>
-                <div className='mt-4 w-full px-4 xl:px-0 xl:w-[75%] mx-auto'>
+                <div className='mt-4 w-full px-4 xl:px-0 xl:w-[95%]  2xl:w-[75%] mx-auto'>
 
                     <div className='rounded-xl p-7 shadow-xl border-slate-100 border-[1px] bg-white'>
                         <div className='bg-grey px-4 py-2 rounded-lg w-full flex items-center gap-3'>

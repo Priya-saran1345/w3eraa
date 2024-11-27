@@ -129,7 +129,7 @@ const Contact = () => {
 
           <Navbar />
           <div className="w-full bg-no-repeat bg-[url('/images/contactbanner.png')] ">
-            <div className="w-full xl:w-[75%]  px-4 mx-auto py-12 md:py-24 flex flex-wrap md:flex-nowrap justify-between gap-8 items-start">
+            <div className="w-full xl:w-[95%]  2xl:w-[75%]  px-4 mx-auto py-12 md:py-24 flex flex-wrap md:flex-nowrap justify-between gap-8 items-start">
               <div className=" relative  md:min-h-[600px] h-full">
                 <div className="max-w-[543px]">
                   <h1 className="   text-white font-bold leading-[] mb-4 ">
@@ -265,7 +265,7 @@ const Contact = () => {
           </div>
 
           <div className='w-full'>
-            <div className='w-full xl:w-[75%] mx-auto px-4'>
+            <div className='w-full xl:w-[95%]  2xl:w-[75%] mx-auto px-4'>
               <h2 className='text-center  mt-4  font-bold'>{data?.contact_page[0]?.card_title} </h2>
               <div className='bg-grey flex flex-wrap md:flex-nowrap mt-12 justify-between p-8 rounded-lg'>
                 <div className='mb-5 md:mb-0'>
@@ -306,7 +306,7 @@ const Contact = () => {
             </div>
           </div>
           <div className='w-full bg-white px-4 py-12 lg:py-16'>
-            <div className='w-full mx-auto xl:w-[75%] px-4'>
+            <div className='w-full mx-auto xl:w-[95%]  2xl:w-[75%] px-4'>
               <h2 className='text-center  font-bold'>
                 {data?.contact_page[0]?.score_title}
               </h2>

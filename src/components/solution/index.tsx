@@ -97,7 +97,7 @@ const Solution = ({solutionData}:any) => {
 
   return (
     <div className="w-full border-t border-slate-100">
-      <div className="mx-auto w-full px-4 py-10 md:py-16 xl:w-[75%]">
+      <div className="mx-auto w-full px-4 py-10 md:py-16 xl:w-[95%]  2xl:w-[75%]">
         <h2 className="mb-4 text-center sm:text-start  font-bold leading-tight text-black ">
           {data.first} <span className="text-pink">{data.second}</span>
         </h2>

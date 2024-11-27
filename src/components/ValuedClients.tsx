@@ -36,7 +36,7 @@ const DriveResults = ({Data}:any) => {
 
     return (
         <div className='w-full py-12 lg:py-20'>
-            <div className="  px-4 w-full xl:w-[75%] mx-auto">
+            <div className="  px-4 w-full xl:w-[95%]  2xl:w-[75%] mx-auto">
                 <div className=' w-full sm:w-[75%] lg:w-[50%] text-center mx-auto flex flex-col gap-3'>
                     <h2 className='  leading-tight 
                     font-bold text-homeblack'>{data.first} <span className='text-pink'>{data.second}</span></h2>

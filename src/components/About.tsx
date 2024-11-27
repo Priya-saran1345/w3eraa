@@ -87,14 +87,10 @@ const fetch = async () => {
     useEffect(() => {
         setaboutContent(about?.aboutus_image?.filter((elem: any) => elem.id > 1));
     }, [about]);
-
-
     const [currentIndex, setCurrentIndex] = useState(0);
-
     const handleNext = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % aboutContent.length);
     };
-
     const handlePrevious = () => {
         setCurrentIndex(
             (prevIndex) => (prevIndex - 1 + aboutContent.length) % aboutContent.length
@@ -119,90 +115,23 @@ const fetch = async () => {
             <h1 className="text-homeblack text-[32px] font-bold lg:text-[48px]">About US</h1>
             </div>
             <div className='full'>
-                <div className='w-full pt-12 lg:pt-16 xl:w-[75%] mx-auto px-4' >
+                <div className='w-full pt-12 lg:pt-16 xl:w-[95%]  2xl:w-[75%] mx-auto px-4' >
                     <div>
                         <p className=' text-[20px] lg:text-[32px] text-homeblack font-medium'>About</p>
                         <h2 className=' text-homeblack font-bold mb-2'>{about?.aboutus[0]?.title}</h2>
                         <div className=' text-[16px] lg:text-[18px] text-homegrey' dangerouslySetInnerHTML={{ __html:about?.aboutus[0]?.description }} />
                     </div>
-                    {/* <div className='  relative my-20' onMouseLeave={() => setshow(false)} >
-
-                        <div className={`${show ? 'flex' : 'hidden'}  between gap-20 min-h-[62vh]  items-center bg-blue p-10 w-full`}>
-                            <div className='min-w-[473px] sm:hidden lg:block '>
-                                <Image
-                                    src={image}
-                                    alt=''
-                                    height={479}
-                                    width={473}
-                                    className='mt-7 '
-                                />
-                            </div>
-                            <div className='text-white  flex flex-col items-between'>
-                                <p className='text-[32px] font-semibold leading-[39px]'>{title}</p>
-                                <div dangerouslySetInnerHTML={{ __html: description }} className='text-[18px] mt-3' />
-                                <div className='flex mt-3 items-end gap-4'>
-                                    <Image
-                                        src='/images/aboutarrow-white.svg'
-                                        alt=''
-                                        height={65}
-                                        width={63}
-                                        className='mt-7'
-                                    />
-                                    <Link href={'/contact-us'}>
-                                    <button
-                                        className='p-3 px-5 bg-pink rounded-md text-white flex justify-center items-center'
-                                        >
-                                        {link}
-                                    </button>
-                                        </Link>
-                                </div>
-                                <div className='flex text-pink mt-6 gap-6 text-[35px]'>
-                                    <button onClick={handlePrevious}>
-                                        <FaArrowLeftLong />
-                                    </button>
-                                    <button onClick={handleNext}>
-                                        <FaArrowRightLong />
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={`${!show ? 'flex' : 'hidden'} justify-around py-16  items-center`}>
-                            <div>
-                                <Image
-                                    src={about?.aboutus_image[0]?.image} // Ensure this path is correct
-                                    alt={''}
-                                    height={217}
-                                    width={217}
-                                    className='mt-7 hidden md:block'
-                                />
-                            </div>
-                            <div>
-                                <p className='text-[32px] font-semibold'>Lorem Ipsum is simply dummy</p>
-                                <p className='text-[24px] font-medium'>As small business owners</p>
-                                <div className='flex items-end gap-4'>
-                                    <Image
-                                        src={'/images/aboutarrow.png'} // Ensure this path is correct
-                                        alt={''}
-                                        height={65}
-                                        width={63}
-                                        className='mt-7'
-                                    />
-                                    <button className='p-3 px-5 bg-pink rounded-md text-white flex justify-center items-center' onClick={() => setshow(true)}><FaArrowRightLong />
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
+                  
                 </div>
                 <div className=' w-full bg-[url("/images/aboutwave.png")] flex items-end min-h-[345px]'>
-                    <div  className='w-full xl:w-[75%] mx-auto px-4 mt-8 sm:mt-0' >
+                    <div  className='w-full xl:w-[95%]  2xl:w-[75%] mx-auto px-4 mt-8 sm:mt-0' >
                         <h2 className=' font-bold text-homeblack text-center'>{about?.who_youare[0].title}</h2>
                             <div className=' text-[16px] lg:text-[18px] 2xl:text-[20px] px-10 text-center text-homegrey'
                               dangerouslySetInnerHTML={{ __html: about?.who_youare[0].description }} ></div>
                     </div>
                 </div>
                 <div className=' w-full bg-grey '>
-                    <div className='w-full xl:w-[75%] py-12 flex flex-wrap gap-5 justify-between mx-auto px-4'>
+                    <div className='w-full xl:w-[95%]  2xl:w-[75%] py-12 flex flex-wrap gap-5 justify-between mx-auto px-4'>
                         {
                             about?.who_youare[0].cards.map((elem: any ,index:any) => {
                                 return (
@@ -288,7 +217,7 @@ const fetch = async () => {
                     </div>
                 </div>
 
-                <div className=' pt-12 lg:pt-16 bg-white md:flex-row flex-col flex justify-between  items-start px-4 mx-auto xl:w-[75%]'>
+                <div className=' pt-12 lg:pt-16 bg-white md:flex-row flex-col flex justify-between  items-start px-4 mx-auto xl:w-[95%]  2xl:w-[75%]'>
                     <div className='md:w-[342px] text-center md:text-left mb-16 md:mb-0'>
                         <h2 className='  text-homeblack font-semibold'>{about?.milestone[0]?.title}</h2>
                         <p className=' text-[16px] lg:text-[18px] xl:text-[20px] text-homegrey font-medium'>{about?.milestone[0]?.description}</p>
@@ -305,7 +234,7 @@ const fetch = async () => {
                 </div>
                      <div className='w-full'>
                  <div className='w-full rounded-xl pt-12 bg-lightblue bg-cover bg-center '>
-                     <div className='w-full relative rounded-xl  xl:w-[75%] mx-auto  bg-white flex justify-between items-center '>
+                     <div className='w-full relative rounded-xl  xl:w-[95%]  2xl:w-[75%] mx-auto  bg-white flex justify-between items-center '>
                          <div className=' bg-white md:w-[55%] flex-col flex text-center md:text-left px-4 sm:px-12 py-10 md:py-0 '>
                              <h2 className=' lg:text-[30px] font-bold text-homeblack leading-[] lg:leading-[48px]'>
                                  {about?.ourapproach[0].title}
@@ -333,7 +262,7 @@ const fetch = async () => {
              </div> 
 
                 <div className='w-full bg-grey'>
-                    <div className='w-full xl:w-[75%] mx-auto pb-16 px-4'>
+                    <div className='w-full xl:w-[95%]  2xl:w-[75%] mx-auto pb-16 px-4'>
                         <div className='md:w-[60%] mx-auto mb-8 py-4 text-center flex flex-col gap-3'>
                             <h2 className='  text-homeblack font-semibold'>{about?.ourvision[0].title}</h2>
                             <p className=' text-[18px] lg:text-[20px] text-homegrey font-medium'>{about?.ourvision[0].description} </p>

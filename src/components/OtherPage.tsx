@@ -39,7 +39,7 @@ const Page = ({props}:any) => {
         <CommonBanner  title={other?.banner_title} description={other?.banner_desc} image={other?.banner_img} image_alt={other?.bannerimg_alt}
          btntext={other?.button_text} btnlink={other?.button_url} />
         }
-         <div className='w-full px-6 xl:px-0 xl:w-[75%] mx-auto py-12'>
+         <div className='w-full px-6 xl:px-0 xl:w-[95%]  2xl:w-[75%] mx-auto py-12'>
          {/* <p className='text-[38px] text-center font-bold text-homeblack mb-7'>{other?.title || ''}</p> */}
         {/* Use Refundother or display a fallback message */}
         <StyledWrapper>

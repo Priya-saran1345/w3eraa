@@ -5,7 +5,7 @@ import Button from '@/components/button'
 const Quicklinks = ({ props }: any) => {
   console.log('this is the quicklinks component', props)
   return (
-    <div className="w-full px-6 mx-auto pt-10 pb-8 lg:pt-20 xl:w-[75%]">
+    <div className="w-full px-6 mx-auto pt-10 pb-8 lg:pt-20 xl:w-[95%]  2xl:w-[75%]">
       <div className="md:w-[50%] px-4 mx-auto text-center flex flex-col gap-3">
         <h2 className=" text-homeblack font-bold ">Quick Links </h2>
         {/* Optionally, you can add a description */}

@@ -32,7 +32,7 @@ export default function AnimatedFaqs({ faqData }: AnimatedFaqsProps) {
       <div className='flex h-[45vh] w-full items-center justify-center bg-[url("/images/blog-bg.png")] px-4'>
         <h1 className='text-center font-bold text-white'>Frequently Asked Questions</h1>
       </div>
-      <div className='mx-auto mb-8 flex w-full flex-wrap bg-lightblue mt-20 rounded-lg justify-between gap-5 px-4 lg:px-10 pt-10 text-white lg:mb-32 md:py-10 xl:w-[75%]'>
+      <div className='mx-auto mb-8 flex w-full flex-wrap bg-lightblue mt-20 rounded-lg justify-between gap-5 px-4 lg:px-10 pt-10 text-white lg:mb-32 md:py-10 xl:w-[95%]  2xl:w-[75%]'>
         {faqData.map((item: FaqItem, index: number) => (
           <motion.div
             key={index}

@@ -32,11 +32,11 @@ const Router = useRouter()
     // Effect to control body scroll
     return (
         <div className='w-full bg-lightblue  py-12 lg:py-16'>
-            <div className='w-full xl:w-[75%] mx-auto px-4'>
+            <div className='w-full xl:w-[95%]  2xl:w-[75%] mx-auto px-4'>
                 <h2 className=' capitalize text-center text-homeblack lg:text-left font-bold'>{data.first}
                      <span className='text-pink'> {data.second}</span></h2>
             </div>
-            <div className="flex flex-wrap lg:flex-nowrap mt-10 justify-center gap-5 items-center px-4 lg:px-3 w-full xl:w-[75%] mx-auto">
+            <div className="flex flex-wrap lg:flex-nowrap mt-10 justify-center gap-5 items-center px-4 lg:px-3 w-full xl:w-[95%]  2xl:w-[75%] mx-auto">
                 {props?.map((elem: any, i:number) => (
                     <div key={i} className='rounded-xl items-center 
                     sm:items-start text-center sm:text-left px-4 2xl:px-8 py-8 

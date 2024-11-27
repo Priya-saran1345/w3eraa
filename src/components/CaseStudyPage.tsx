@@ -46,7 +46,7 @@ export default async function CaseStudyPage() {
         status={otherData.status}
       />
       <CaseStudyContent props={caseStudyData} />
-      <div className="w-full mx-auto xl:w-[75%] flex flex-col gap-4 px-6 xl:px-2 py-12">
+      <div className="w-full mx-auto xl:w-[95%]  2xl:w-[75%] flex flex-col gap-4 px-6 xl:px-2 py-12">
         {caseStudyData.content_1 && caseStudyData.content_1[0] && (
           <div
             className="text-homegrey text-[18px]"

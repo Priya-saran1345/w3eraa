@@ -4,7 +4,7 @@ import { GoArrowUpRight } from 'react-icons/go'
 const index = () => {
     return (
         <div className=' w-full border-t border-[2px] border-lightblue'>
-            <div className='xl:w-[75%] mx-auto px-6 my-12'>
+            <div className='xl:w-[95%]  2xl:w-[75%] mx-auto px-6 my-12'>
                 <p className=' text-[28px] text-center lg:text-[38px] text-homeblack font-bold'>Lorem Ipsum is simply dummy text </p>
                 <div className='mt-10 flex justify-center gap-6 flex-wrap'>
                     {

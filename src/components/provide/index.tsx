@@ -55,7 +55,7 @@ const Provide = ({props}:any) => {
 
   return (
     <div className='w-full bg-white py-8 lg:py-20'>
-      <div className='w-full xl:w-[75%] px-4 flex flex-col justify-center items-center mx-auto'>
+      <div className='w-full xl:w-[95%]  2xl:w-[75%] px-4 flex flex-col justify-center items-center mx-auto'>
         <h2 className=' font-bold text-homeblack'>
           {data.first} <span className='text-pink'>{data.second}</span>
         </h2>
