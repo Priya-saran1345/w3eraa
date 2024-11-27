@@ -25,7 +25,6 @@ const Navbar = () => {
               className="cursor-pointer"
             />
           </Link>
-
           {/* Desktop Navbar */}
           <div className="hidden lg:block">
             <NavbarItems  show={0} />

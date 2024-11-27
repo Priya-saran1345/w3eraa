@@ -1,14 +1,15 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { Useapi } from '@/helpers/apiContext'
+// import { Useapi } from '@/helpers/apiContext'
 import { IoMdStar } from "react-icons/io";
 import Button from '@/components/button';
 import Link from 'next/link';
-const Growth = () => {
-    const [Data, setData] = useState<any>(); // Initial state should be null
-    const { apidata } = Useapi(); // Destructure apidata from the context
-
+import { useRouter } from 'next/navigation';
+const Growth = ({Data}:any) => {
+    // const [Data, setData] = useState<any>(); // Initial state should be null
+    // const { apidata } = Useapi(); // Destructure apidata from the context
+const Router=useRouter()
     const [data, setdata] = useState({ first: '', second: '' })
     function splitStringByLastWords(text: any, numOfWords: number) {
         const words = text.split(' '); // Split the string by spaces to get individual words
@@ -25,12 +26,12 @@ const Growth = () => {
         const result = splitStringByLastWords(Data?.title || '', 3);
         setdata(result);
     }, [Data]);
-    useEffect(() => {
-        if (apidata && apidata?.marketing_growth[0]
-        ) {
-            setData(apidata?.marketing_growth[0]);
-        }
-    }, [apidata]);
+    // useEffect(() => {
+    //     if (apidata && apidata?.marketing_growth[0]
+    //     ) {
+    //         setData(apidata?.marketing_growth[0]);
+    //     }
+    // }, [apidata]);
 
     // Effect to control body scroll
     return (
@@ -127,9 +128,10 @@ const Growth = () => {
                         </div>
                     </div> */}
                     <div className='flex  mt-2'>
-                        <Link href={'/get-a-free-quote'}>
+                       
+                        <div onClick={()=>Router.push('/get-a-free-quote')} className='w-fit'>
                             <Button content={'Know More'} />
-                        </Link>
+                            </div>
 
                     </div>
 

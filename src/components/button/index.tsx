@@ -10,8 +10,8 @@ const button = ({content}:any) => {
                  <GoArrowUpRight className="-rotate-30 group-hover:text-white text-[28px] text-pink" />
              </div>
              <span className="transform pr-6 transition-transform  duration-300 group-hover:translate-x-2">
-                 <p>{content} </p>
-             </span>
+                 {content} 
+                 </span>
     </button >
   )
 }

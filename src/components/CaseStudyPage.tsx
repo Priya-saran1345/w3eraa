@@ -1,96 +1,63 @@
-'use client'
-import Footer from '@/components/footer'
-import Header from '@/components/header'
-import Navigation from '@/components/navbar'
-import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
-import Button from '@/components/button'
-import DownNavbar from '@/components/DownNavbar'
-
-import Choose from '@/components/Choose'
-import Revenue from '@/components/revenue'
-import Casestudycontent from '@/components/Casestudycontent'
-import CommonBanner from '@/components/Common-Banner'
-import axios from 'axios'
-import { BASE_URL } from '@/util/api'
-import { Useapi } from '@/helpers/apiContext';
-import Loader from '@/components/loader'
+import { BASE_URL } from '@/util/api';
+import Footer from '@/components/footer';
+import Header from '@/components/header';
+import Navigation from '@/components/navbar';
+import DownNavbar from '@/components/DownNavbar';
+import Revenue from '@/components/revenue';
 import CustomerChoose from '@/components/CustomerChoose';
+import CaseStudyContent from '@/components/Casestudycontent';
+import CommonBanner from '@/components/Common-Banner';
 
-const Page = () => {
-    const { apidata } = Useapi();
-    const { basic_details } = Useapi();
+async function fetchData() {
+  try {
+    const [caseStudyRes, otherRes] = await Promise.all([
+      fetch(`${BASE_URL}case-study/`, { cache: 'no-store' }),
+      fetch(`${BASE_URL}other/case-study/`, { cache: 'no-store' }),
+    ]);
 
-    const [caseStudydata, setcaseStudydata] = useState<any>()
-    const [data, setdata] = useState<any>()
+    if (!caseStudyRes.ok) throw new Error('Failed to fetch case study data');
+    if (!otherRes.ok) throw new Error('Failed to fetch other case study data');
 
-    const fetch = async () => {
-        try {
-            const response = await axios.get(`${BASE_URL}case-study/`);
-            setcaseStudydata(response.data);
-        }
-        catch (error: any) {
-            console.log('error from case study', error.message);
-        }
-        try {
-            const response = await axios.get(`${BASE_URL}other/case-study/`);
-            setdata(response.data);
-        } catch (error: any) {
-            console.log('error from others case study', error.message);
+    const caseStudyData = await caseStudyRes.json();
+    const otherData = await otherRes.json();
 
-        }
-    }
-    useEffect(() => {
-        fetch();
-    }, [])
-
-    return (
-        <>
-        {/* {
-!data&&!caseStudydata&&
-<Loader/>
-        } */}
-        {
-// data&&caseStudydata&&
-       
-        <div>
-            <Header />
-            <DownNavbar/>
-            <Navigation />
-            <CommonBanner title={data?.banner_title} description={data?.banner_desc} image={data?.image||''}
-             btnlink={data?.button_url} btntext={data?.button_text} image_alt={data?.image_alt} />
-            <Casestudycontent props={caseStudydata} />
-            <div className='w-full bg-blue py-10 text-white  lg:py-16'>
-                <div className=' md:w-[75%] mx-auto xl:w-[50%]'>
-                    <h2 className=' text-[28px] font-bold text-center lg:leading-[46px] lg:text-[38px]'>Get A Top Rank on Google Search Results,
-                        Qualified Leads and Increased Sales
-                    </h2>
-                    <div className='flex flex-wrap mt-8 justify-center gap-4'>
-                        <Link href={'/get-a-free-quote'}>
-                        <Button content={'Get a Quote Now!'} />
-                        </Link>
-                        <Link href={'/get-a-free-strategy-review'}>
-                        <Button content={'Analyse my Website for Free!'} />
-                        </Link>
-                    </div>
-                </div>
-            </div>
-            <div className='w-full mx-auto xl:w-[75%] flex flex-col gap-4 px-6 xl:px-2 py-12'>
-                
-            <div className='text-homegrey text-[18px]' dangerouslySetInnerHTML={{ __html: caseStudydata?.content_1[0]?.description }} />
-
-                   
-            </div>
-            <Revenue />
-            {/* <Choose props={apidata?.why_choose[0]} /> */}
-            <CustomerChoose/>
-
-        
-            <Footer />
-        </div>
-         }
-        </>
-    )
+    return { caseStudyData, otherData };
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error; // Re-throw the error to be handled by Next.js error boundary
+  }
 }
 
-export default Page
+export default async function CaseStudyPage() {
+  const { caseStudyData, otherData } = await fetchData();
+
+  return (
+    <div>
+      <Header />
+      <DownNavbar />
+      <Navigation />
+      <CommonBanner
+        title={otherData.banner_title}
+        description={otherData.banner_desc}
+        image={otherData.image || ''}
+        btnlink={otherData.button_url}
+        btntext={otherData.button_text}
+        image_alt={otherData.image_alt}
+        status={otherData.status}
+      />
+      <CaseStudyContent props={caseStudyData} />
+      <div className="w-full mx-auto xl:w-[75%] flex flex-col gap-4 px-6 xl:px-2 py-12">
+        {caseStudyData.content_1 && caseStudyData.content_1[0] && (
+          <div
+            className="text-homegrey text-[18px]"
+            dangerouslySetInnerHTML={{ __html: caseStudyData.content_1[0].description }}
+          />
+        )}
+      </div>
+      <Revenue />
+      <CustomerChoose />
+      <Footer />
+    </div>
+  );
+}
+

@@ -17,6 +17,7 @@ async function SchemaScript({ params}:any) {
     />
   )
 }
+
 const Page = ({params}: any) => {
   return (
     <div>
@@ -27,6 +28,7 @@ const Page = ({params}: any) => {
     </div>
   )
 }
+
 export default Page
   export async function generateMetadata({ params  }: any) {
     const  slug  = params?.id;

@@ -36,7 +36,8 @@ export const fetchMeta = async (slug: string) => {
     else {
       throw new Error('Response is not JSON');
     }
-  } catch (error) {
+  }
+   catch (error) {
     console.error("Error posting meta:", error);
     throw error;
   }

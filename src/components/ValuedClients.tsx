@@ -1,21 +1,21 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { Useapi } from '@/helpers/apiContext'
+// import { Useapi } from '@/helpers/apiContext'
 import Button from '@/components/button';
 import Link from 'next/link';
 
-const DriveResults = () => {
-    const [Data, setData] = useState<any>(); // Initial state should be null
-    const { apidata } = Useapi(); // Destructure apidata from the context
+const DriveResults = ({Data}:any) => {
+    // const [Data, setData] = useState<any>(); // Initial state should be null
+    // const { apidata } = Useapi(); // Destructure apidata from the context
     const [data, setdata] = useState({ first: '', second: '' })
 
-    useEffect(() => {
-        if (apidata && apidata?.valued_client[0]
-        ) {
-            setData(apidata?.valued_client[0]);
-        }
-    }, [apidata]);
+    // useEffect(() => {
+    //     if (apidata && apidata?.valued_client[0]
+    //     ) {
+    //         setData(apidata?.valued_client[0]);
+    //     }
+    // }, [apidata]);
     
     function splitStringByLastWords(text: any, numOfWords: number) {
         const words = text.split(' '); // Split the string by spaces to get individual words

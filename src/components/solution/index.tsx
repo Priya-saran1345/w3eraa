@@ -6,9 +6,9 @@ import Slider from "react-slick"
 import { Useapi } from "@/helpers/apiContext"
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react"
 import Button from '@/components/button'
-const Solution = () => {
-  const [solutionData, setSolutionData] = useState<any>(null)
-  const { apidata } = Useapi()
+const Solution = ({solutionData}:any) => {
+  // const [solutionData, setSolutionData] = useState<any>(null)
+  // const { apidata } = Useapi()
 
   const [data, setData] = useState({ first: "", second: "" })
 
@@ -31,11 +31,11 @@ const Solution = () => {
     setData(result)
   }, [solutionData])
 
-  useEffect(() => {
-    if (apidata && apidata?.achieve_your_goal[0]) {
-      setSolutionData(apidata?.achieve_your_goal[0])
-    }
-  }, [apidata])
+  // useEffect(() => {
+  //   if (apidata && apidata?.achieve_your_goal[0]) {
+  //     setSolutionData(apidata?.achieve_your_goal[0])
+  //   }
+  // }, [apidata])
 
   const sliderRef = useRef<Slider | null>(null)
 

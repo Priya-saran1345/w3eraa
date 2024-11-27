@@ -13,7 +13,7 @@ async function SchemaScript() {
     />
   )
 }
-const Page = () => {
+ export default function Page(){
     
     return(
       <>
@@ -24,8 +24,7 @@ const Page = () => {
       </>
     )
 }
-export default Page
-
+// export default Page
   export async function generateMetadata() {
     try {
       const metaData = await fetchMeta("case-study");

@@ -28,12 +28,10 @@ import CommonBanner from '@/components/Common-Banner'
 import Loader from '@/components/loader'
 import { Useapi } from '@/helpers/apiContext';
 import { IoCheckmark } from 'react-icons/io5'
-import styled from 'styled-components'
 import { motion, AnimatePresence } from 'framer-motion'
 import Packages from '@/components/Packages/index'
 import Link from 'next/link'
 import Other from '@/components/OtherPage'
-import { div } from 'framer-motion/client'
 import CustomerChoose from '@/components/CustomerChoose';
 import SeoIndustryService from '@/components/SeoIndustryService'
 import {StyledWrapper} from '@/components/Styled'
@@ -41,8 +39,8 @@ import DownNavbar from '@/components/DownNavbar'
 
 import Jsondata from '@/components/Json/Data.json'
 const Service_Pkackages = () => {
-    const { basic_details } = Useapi();
-    const { cluth } = Useapi()
+    // const { cluth } = Useapi()
+    const [cluth, setcluth] = useState<any>()
     const [data, setdata] = useState<any>()
     const pathname = usePathname();
     const segments = pathname.replace(/\/$/, '').split('/');
@@ -65,6 +63,12 @@ const Service_Pkackages = () => {
                 seterr(true)
             }
         }
+        try {
+            const response = await axios.get(`${BASE_URL}clutch/`);
+            setcluth(response.data);
+          } catch (error: any) {
+            console.log(error.message);
+          }
         try {
             const response = await axios.get(`${BASE_URL}quick-link/${lastsegment}/`);
             // console.log('quick links', (response.data.link_category))

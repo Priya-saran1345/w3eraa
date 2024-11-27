@@ -8,13 +8,15 @@ import { useState } from 'react';
 import { FaFacebook, FaInstagram, FaLinkedinIn, FaPinterest, FaSkype, FaYoutube } from 'react-icons/fa';
 import { BsTwitterX } from 'react-icons/bs';
 import Image from 'next/image';
+import { FiTool } from "react-icons/fi";
+import { useRouter } from "next/navigation";
 const Header = () => {
   const { basic_details } = Useapi();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-
   const handleToggle = (menu: string) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
   };
+   const Router= useRouter()
   return (
     <>
       <div className='bg-purple text-white'>
@@ -31,7 +33,6 @@ const Header = () => {
                 <Link target='_blank' href={`${basic_details?.basic_details[0].youtube_url}`}><FaYoutube /></Link>
                 <Link target='_blank' href={`${basic_details?.basic_details[0].pinterest_url}`}><FaPinterest /></Link>
                 <Link target='_blank' href={`${basic_details?.basic_details[0].gmb_url}`}><IoLocationOutline /></Link>
-
               </div>
               {/* <a href={`mailto:${basic_details?.basic_details[0].email}`}>
                 <p className='text-[15px] text-white mt-1'>{basic_details?.basic_details[0].email} </p>
@@ -111,8 +112,8 @@ const Header = () => {
                   <div>Web Story</div>
                 </Link>
                 <div className=''>
-                  <Link  target='_blank' href={'/website-seo-analyzer'} >
-                    <div>Free Website Audit</div>
+                  <Link  target='_blank' href={'/career'} >
+                    <div>Career</div>
                   </Link>
                 </div>
                 <Link  target='_blank' href='/contact-us'>
@@ -120,13 +121,16 @@ const Header = () => {
                 </Link>
               </div>
               {/* Proposal Button */}
-              <a  href={`tel:${basic_details?.basic_details[0].contact_job}`}>
+              {/* <a  href={`tel:${basic_details?.basic_details[0].contact_job}`}> */}
+              <div className="w-fit" onClick={()=>Router.push('/tool')}>
+
                 <button
                   className='flex items-center justify-center px-4  md:px-6 text-white rounded-lg py-2 group bg-pink transition duration-300'>
-                  <span className='transition-transform duration-300 group-hover:-translate-x-2'>Apply for Job</span>
-                  <IoCall className='text-[20px] opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-x-2' />
+                  <span className='transition-transform font-semibold duration-300 group-hover:-translate-x-2'>Seo Tools</span>
+                  <FiTool className='text-[20px] opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-x-2' />
                 </button>
-              </a>
+                    </div>
+              {/* </a> */}
             </div>
           </div>
         </div>

@@ -1,18 +1,25 @@
-'use client'
-import React from 'react'
+// 'use client'
+import React, { useEffect, useState } from 'react'
 import Header from '@/components/header'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer';
 import Image from 'next/image';
-import { Useapi } from '@/helpers/apiContext'
 import Link from 'next/link';
 import Loader from '@/components/loader';
 import DownNavbar from '@/components/DownNavbar'
+import { BASE_URL } from '@/util/api';
 
-const Life = () => {
-    const { life } = Useapi();
-    const { basic_details } = Useapi();
+async function getlifedata() {
+    const res = await fetch(`${BASE_URL}w3era-life/`, { cache: 'no-store' });
+    if (!res.ok) {
+      throw new Error('Failed to fetch portfolio data');
+    }
+    return res.json();
+  }
 
+export default async function Page () {
+
+const life= await getlifedata()
     return (
         <div>
             {/* {!basic_details && !life &&
@@ -143,4 +150,4 @@ const Life = () => {
 
 
 
-export default Life
+// export default Page

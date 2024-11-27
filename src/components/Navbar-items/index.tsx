@@ -6,10 +6,12 @@ import { MdOutlineRocketLaunch } from 'react-icons/md'
 import Image from 'next/image'
 import Button from '@/components/button'
 import ClientsCount from '../ClientsCount'
+import { useRouter } from 'next/navigation'
 
 const Index = ({show}:any) => {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const { basic_details } = Useapi();
+  const Router = useRouter()
   const toggleDropdown = (menu: string) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
   };
@@ -32,20 +34,20 @@ const Index = ({show}:any) => {
                web Story
               </li>
               </Link>
-              <li onClick={() => toggleDropdown('seo')} className='flex gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('seo')} className='flex font-semibold gap-[2px] 2xl:gap-1 items-center cursor-pointer'>
                 SEO {openDropdown === 'seo' ?  <Image 
               src={'/images/up.svg'} 
               width={14} 
               height={11} 
               alt={"w3era digital marketing company"} 
-              className="cursor-pointer "
+              className="cursor-pointer 2xl:w-[14px] w-[12px] "
             /> :
              <Image 
               src={'/images/down-icon.svg'} 
               width={14} 
               height={11} 
               alt={"w3era digital marketing company"} 
-              className="cursor-pointer "
+              className="cursor-pointer 2xl:w-[14px] w-[12px] "
             /> } 
               </li>
               {openDropdown === 'seo' && (
@@ -132,9 +134,11 @@ const Index = ({show}:any) => {
                   <div className='min-h-full lg:w-[20%] flex justify-center items-start  lg:items-center'>
                     <div className='flex flex-col gap-3 justify-center items-center'>
                       <p className='text-[20px] text-homeblack font-medium'>For More Information</p>
-                      <Link target='_blank' href={'/contact-us'}>
+                      {/* <Link target='_blank' href={'/contact-us'}> */}
+                      <div className='w-fit' onClick={()=>Router.push('/contact-us')}>
                       <Button content={'Contact Us'} />
-                      </Link>
+                      </div>
+                      {/* </Link> */}
                      
                       <ClientsCount/>
                     </div>
@@ -143,14 +147,14 @@ const Index = ({show}:any) => {
               )}
 
               {/* Pay Per Click Dropdown */}
-              <li onClick={() => toggleDropdown('ppc')} className='flex gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('ppc')} className='flex font-semibold gap-[2px] 2xl:gap-1 items-center cursor-pointer'>
                 Pay Per Click {openDropdown === 'ppc' ? <Image 
               src={'/images/up.svg'} 
               width={14} 
            
               height={11} 
               alt={"w3era digital marketing company"} 
-              className="cursor-pointer "
+              className="cursor-pointer 2xl:w-[14px] w-[12px] "
             /> :
              <Image 
               src={'/images/down-icon.svg'} 
@@ -158,7 +162,7 @@ const Index = ({show}:any) => {
            
               height={11} 
               alt={"w3era digital marketing company"} 
-              className="cursor-pointer "
+              className="cursor-pointer 2xl:w-[14px] w-[12px] "
             />}
               </li>
               {openDropdown === 'ppc' && (
@@ -224,7 +228,6 @@ const Index = ({show}:any) => {
                     <ul className='  flex flex-col gap-2 mt-5 rounded-lg'>
                       <Link target='_blank' className='hover:text-pink' href='/case-study'><li>Case study</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/our-client-list'><li>Our Clients</li></Link>
-
                     </ul>
                   </div>
                   <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
@@ -232,10 +235,9 @@ const Index = ({show}:any) => {
                   <div className='min-h-full lg:w-[20%] flex justify-center items-start  lg:items-center'>
                     <div className='flex flex-col gap-3 justify-center items-center'>
                       <p className='text-[20px] text-homeblack font-medium'>For More Information</p>
-                      <Link target='_blank' href={'/contact-us'}>
+                      <div className='w-fit' onClick={()=>Router.push('/contact-us')}>
                       <Button content={'Contact Us'} />
-                      </Link>
-                     
+                      </div>
                       <ClientsCount/>
 
                     </div>
@@ -244,14 +246,14 @@ const Index = ({show}:any) => {
               )}
 
               {/* SMM Dropdown */}
-              <li onClick={() => toggleDropdown('smm')} className='flex gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('smm')} className='flex  font-semibold gap-[2px] 2xl:gap-1 items-center cursor-pointer'>
                 SMM {openDropdown === 'smm' ? <Image 
               src={'/images/up.svg'} 
               width={14} 
            
               height={11} 
               alt={"w3era digital marketing company"} 
-              className="cursor-pointer "
+              className="cursor-pointer 2xl:w-[14px] w-[12px] "
             /> :
              <Image 
               src={'/images/down-icon.svg'} 
@@ -259,7 +261,7 @@ const Index = ({show}:any) => {
            
               height={11} 
               alt={"w3era digital marketing company"} 
-              className="cursor-pointer "
+              className="cursor-pointer 2xl:w-[14px] w-[12px] "
             />}
               </li>
               {openDropdown === 'smm' && (
@@ -335,30 +337,29 @@ const Index = ({show}:any) => {
                     <div className='flex flex-col gap-3 justify-center  items-center'>
                       <p className='text-[20px] text-homeblack font-medium'>For More Information</p>
 
-                      <Link target='_blank' href={'/contact-us'}>
-
+                      <div className='w-fit' onClick={()=>Router.push('/contact-us')}>
                       <Button content={'Contact Us'} />
-                      </Link>
+                      </div>
                       <ClientsCount/>
                     </div>
                   </div>
                 </div>
               )}
               {/* Our Packages Dropdown */}
-              <li onClick={() => toggleDropdown('packages')} className='flex gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('packages')} className=' font-semibold flex gap-[2px] 2xl:gap-1 items-center cursor-pointer'>
                 Our Packages {openDropdown === 'packages' ? <Image 
                src={'/images/up.svg'} 
               width={14} 
               height={11} 
               alt={"w3era digital marketing company"} 
-              className="cursor-pointer "
+              className="cursor-pointer 2xl:w-[14px] w-[12px] "
             /> :
              <Image 
               src={'/images/down-icon.svg'} 
               width={14} 
               height={11} 
               alt={"w3era digital marketing company"} 
-              className="cursor-pointer "
+              className="cursor-pointer 2xl:w-[14px] w-[12px]"
             />}
               </li>
               {openDropdown === 'packages' && (
@@ -458,20 +459,20 @@ const Index = ({show}:any) => {
               )}
 
               {/* Web Development Dropdown */}
-              <li onClick={() => toggleDropdown('web-dev')} className='flex gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('web-dev')} className='flex  font-semibold gap-[2px] 2xl:gap-1 items-center cursor-pointer'>
                 Web Development {openDropdown === 'web-dev' ? <Image 
              src={'/images/up.svg'} 
               width={14} 
               height={11} 
               alt={"w3era digital marketing company"} 
-              className="cursor-pointer "
+              className="cursor-pointer 2xl:w-[14px] w-[12px]"
             /> :
              <Image 
               src={'/images/down-icon.svg'} 
               width={14} 
               height={11} 
               alt={"w3era digital marketing company"} 
-              className="cursor-pointer "
+              className="cursor-pointer2xl:w-[14px] w-[12px]"
             />}
               </li>
               {openDropdown === 'web-dev' && (
@@ -548,11 +549,10 @@ const Index = ({show}:any) => {
                   <div className='min-h-full lg:w-[20%] flex justify-center items-start   lg:items-center'>
                     <div className='flex flex-col gap-3 justify-center items-center'>
                       <p className='text-[20px] text-homeblack font-medium'>For More Information</p>
-                      <Link target='_blank' href={'/contact-us'}>
+                      <div className='w-fit' onClick={()=>Router.push('/contact-us')}>
                       <Button content={'Contact Us'} />
-                      </Link>
+                      </div>
                       <ClientsCount/>
-
                     </div>
                   </div>
                 </div>
@@ -560,20 +560,22 @@ const Index = ({show}:any) => {
             </div>
             {/* Buttons */}
             <div className='flex gap-2 lg:gap-1 mt-2 lg:mt-0 flex-col lg:flex-row'>
-
            <Link target='_blank' href={'https://meetings.hubspot.com/sakshi-jass?uuid=ae684c90-b22d-4aed-a972-4de20bef7f87'}>
-            <button className='px-1 max-w-[180px] py-3 border-2 border-pink rounded-full meeting-btn'>
-              <span className="meeting-text">Book a Meeting</span>
+            <button className=' max-w-[180px]  py-[8px] 2xl:py-[10px]  border-2 px-4 border-pink rounded-full meeting-btn'>
+              <span className="meeting-text font-semibold">Book a Meeting</span>
             </button>
            </Link>
-
-            <Link target='_blank' href={'/get-a-free-quote'}>
+           {/* <Link target='_blank' href={'/get-a-free-quote'}> */}
+           <div className='w-fit' onClick={()=>Router.push('/get-a-free-quote')}>
               <button
-                className='flex items-center justify-center px-3 2xl:w-[180px] text-white rounded-full py-3 group bg-pink transition duration-300'>
-                <span className='transition-transform duration-300 group-hover:-translate-x-2'>Get a Proposal</span>
-                <MdOutlineRocketLaunch className='text-[20px] opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-x-2' />
+                className='flex items-center justify-center px-3 2xl:w-[180px] text-white rounded-full py-[11px] 2xl:py-3 group bg-pink transition duration-300'>
+                <span className='transition-transform duration-300 group-hover:-translate-x-2 font-semibold'>
+                  Get a Proposal
+                  </span>
+                <MdOutlineRocketLaunch className='text-[20px] hidden 2xl:block opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-x-2' />
               </button>
-            </Link>
+            </div>
+            {/* </Link> */}
             </div>
           </div>
   )

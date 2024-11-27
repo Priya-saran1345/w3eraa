@@ -13,11 +13,23 @@ import Link from 'next/link';
 import ClientsCount from './ClientsCount';
 import Button from '@/components/button'
 import DownNavbar from '@/components/DownNavbar'
+import axios from 'axios';
+import { BASE_URL } from '@/util/api';
 
 const AboutUS = () => {
-    const { about } = Useapi();
-    const { basic_details } = Useapi();
-
+const [about, setabout] = useState<any>()
+const fetch = async () => {
+    try {
+        const response = await axios.get(`${BASE_URL}about/`);
+        setabout(response.data);
+      }
+       catch (error: any) {
+        console.log("about error", error.message);
+      }
+    }
+    useEffect(() => {
+        fetch();
+    }, [])
     const [aboutContent, setaboutContent] = useState<any>()
     const [show, setshow] = useState(false)
     const arr = [1, 2, 3, 4]

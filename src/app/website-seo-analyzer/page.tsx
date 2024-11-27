@@ -17,7 +17,7 @@ import toast from 'react-hot-toast'
 const Audit = () => {
 
     const [url, setUrl] = useState('');
-    // console.log(url);
+    
     const [isAnalyzing, setIsAnalyzing] = useState(false);
     const [result, setResult] = useState<any>(null);
 

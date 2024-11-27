@@ -84,7 +84,7 @@ const Page = () => {
                 // tools &&
                 <div>
                     <Header />
-                    <DownNavbar/>
+                    <DownNavbar />
 
                     <Navbar />
                     <div className='w-full '>
@@ -103,32 +103,50 @@ const Page = () => {
                         <div className='bg-white xl:w-[77%] mx-auto px-4 w-full py-10'>
                             <div className='flex gap-5 justify-center flex-wrap items-center'>
                                 {filteredTools?.map((elem: any, index: number) => (
-                                    <Link href={`/tool/${elem.slug_link}`} key={index}>
-                                        <div className="bg-lightblue hover:shadow-lg p-5 w-[155px] lg:min-w-[241px]
-                                         group h-[300px] lg:h-[284px] flex flex-col
-                                          justify-center items-center gap-4 border-slate-200 rounded-md hover:bg-white transition-all duration-300 ease-in-out transform hover:scale-105">
-                                            <div className="min-h-[100px]  rounded-full flex justify-center items-center min-w-[100px] bg-white group-hover:bg-blue group-hover:scale-110 transition-all duration-300 ease-in-out">
-                                                <Image
-                                                    src={elem?.image}
-                                                    height={60}
-                                                    width={60}
-                                                    alt={elem?.image_alt}
-                                                    className="transition-all duration-300 ease-in-out group-hover:brightness-0 group-hover:invert"
-                                                />
+                                    elem?.slug_link === 'website-seo-analyzer' ? (
+                                        <Link href={`/${elem.slug_link}`} key={index}>
+                                            <div className="bg-lightblue hover:shadow-lg p-5 w-[155px] lg:min-w-[241px] group h-[300px] lg:h-[284px] flex flex-col justify-center items-center gap-4 border-slate-200 rounded-md hover:bg-white transition-all duration-300 ease-in-out transform hover:scale-105">
+                                                <div className="min-h-[100px] rounded-full flex justify-center items-center min-w-[100px] bg-white group-hover:bg-blue group-hover:scale-110 transition-all duration-300 ease-in-out">
+                                                    <Image
+                                                        src={elem?.image}
+                                                        height={60}
+                                                        width={60}
+                                                        alt={elem?.image_alt}
+                                                        className="transition-all duration-300 ease-in-out group-hover:brightness-0 group-hover:invert"
+                                                    />
+                                                </div>
+                                                <p className="text-[18px] group-hover:text-pink text-center font-medium transition-all duration-300 ease-in-out">
+                                                    {elem?.title}
+                                                </p>
+                                                <div className="flex justify-center items-center">
+                                                    <FaArrowRightLong className="text-[28px] text-pink opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out transform group-hover:translate-y-0 translate-y-7" />
+                                                </div>
                                             </div>
-                                            <p className="text-[18px] group-hover:text-pink text-center
-                                             font-medium transition-all duration-300 ease-in-out">
-                                                {elem?.title}
-                                            </p>
-                                            <div className="flex justify-center items-center">
-                                                <FaArrowRightLong className="text-[28px]
-                                                 text-pink opacity-0 group-hover:opacity-100 
-                                                 transition-all 
-                                                 duration-300 ease-in-out transform group-hover:translate-y-0 translate-y-7" />
+                                        </Link>
+                                    ) : (
+                                        <Link href={`/tool/${elem.slug_link}`} key={index}>
+                                            <div className="bg-lightblue hover:shadow-lg p-5 w-[155px] lg:min-w-[241px] group h-[300px] lg:h-[284px] flex flex-col justify-center items-center gap-4 border-slate-200 rounded-md hover:bg-white transition-all duration-300 ease-in-out transform hover:scale-105">
+                                                <div className="min-h-[100px] rounded-full flex justify-center items-center min-w-[100px] bg-white group-hover:bg-blue group-hover:scale-110 transition-all duration-300 ease-in-out">
+                                                    <Image
+                                                        src={elem?.image}
+                                                        height={60}
+                                                        width={60}
+                                                        alt={elem?.image_alt}
+                                                        className="transition-all duration-300 ease-in-out group-hover:brightness-0 group-hover:invert"
+                                                    />
+                                                </div>
+                                                <p className="text-[18px] group-hover:text-pink text-center font-medium transition-all duration-300 ease-in-out">
+                                                    {elem?.title}
+                                                </p>
+                                                <div className="flex justify-center items-center">
+                                                    <FaArrowRightLong className="text-[28px] text-pink opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out transform group-hover:translate-y-0 translate-y-7" />
+                                                </div>
                                             </div>
-                                        </div>
-                                    </Link>
+                                        </Link>
+                                    )
                                 ))}
+
+
                             </div>
                             {/* <div className='flex justify-center'>
                                 <div className='flex justify-center mt-12 items-center gap-3'>

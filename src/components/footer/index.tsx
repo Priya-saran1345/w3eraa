@@ -15,13 +15,14 @@ import { FaMinus } from "react-icons/fa";
 import Image from 'next/image';
 import Link from 'next/link';
 import { Useapi } from '@/helpers/apiContext'
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import FooterBanner from '@/components/footer-banner'
 import toast from "react-hot-toast";
 import axios from "axios";
 import { BASE_URL } from "@/util/api";
 
 const Footer = () => {
+    const dropdownRef = useRef<HTMLDivElement | null>(null);
     const { basic_details } = Useapi();
     const [openDropdown, setOpenDropdown] = useState(null);
     const toggleDropdown = (index: any) => {
@@ -38,7 +39,7 @@ const Footer = () => {
     const handleSubmit = async () => {
         try {
             const response = await axios.post(`${BASE_URL}subscription/`, message);
-            console.log('Message sent successfully');
+          
             toast.success('Message send successfully')
 
             setMessage({
@@ -51,10 +52,22 @@ const Footer = () => {
 
         }
     };
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+          if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+            setOpenDropdown(null);
+          }
+        };
+    
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+          document.removeEventListener("mousedown", handleClickOutside);
+        };
+      }, [setOpenDropdown]);
     return (
         <>
             <FooterBanner />
-            <div className='w-full bg-blue' onClick={() => setOpenDropdown(null)}>
+            <div className='w-full bg-blue'>
                 <div className='xl:w-[75%] text-white pt-0 lg:py-16 mx-auto px-4'>
                     <div className='flex justify-between md:flex-row gap-5 flex-col '>
                         <div className='md:w-1/2'>
@@ -99,10 +112,13 @@ const Footer = () => {
                             <div className=''>
                                 <p className='text-[21px] flex  font-medium w-full  sm:border-b-2'>About Company <FaMinus className='mt-2 mx-2 sm:hidden' />
                                 </p></div>
-                            <ul className='text-[14px font-medium] flex flex-col gap-2 py-3'>
-                                <Link target="_blank" href={'/about-us'}>
-                                    <li>About US</li>
+                            <ul className='text-[14px] font-medium flex flex-col gap-2 py-3'>
+                               
+                                    <li>
+                                    <Link target="_blank" href={'/about-us'}>
+                                        About US
                                 </Link>
+                                        </li>
                                 <Link target="_blank" href={'/case-study'}>
                                     <li>Case Study</li>
                                 </Link>
@@ -196,7 +212,7 @@ const Footer = () => {
                                     Resources <FaMinus className='mt-2 mx-2 sm:hidden' />
                                 </p>
                             </div>
-                            <ul className='text-[14px font-medium] flex flex-col gap-2 py-3'>
+                            <ul className='text-[14px] font-medium flex flex-col gap-2 py-3'>
                                 <Link target="_blank" href={'/blog'}>
                                     <li>Blogs</li>
                                 </Link>
@@ -236,13 +252,13 @@ const Footer = () => {
                                 />
                             </Link>
                         </div>
-                        <div className=' w-full   sm:w-1/4'>
+                        <div className=' w-full   sm:w-1/4' ref={dropdownRef}>
                             <div className='flex gap-2 items-center'>
                                 <p className='text-[21px] flex  font-medium w-full  sm:border-b-2'>
                                     Our Services <FaMinus className=' mt-2 mx-2 sm:hidden' />
                                 </p>
                             </div>
-                            <ul className='text-[14px font-medium] flex flex-col gap-2 py-3'>
+                            <ul className='text-[14px] font-medium flex flex-col gap-2 py-3'>
                                 <div className="">
                                     <Link target="_blank" href={'/search-engine-optimization-services'}>
                                         <li className='flex gap-1 items-center cursor-pointer'

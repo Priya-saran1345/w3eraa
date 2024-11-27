@@ -5,23 +5,23 @@ import Data from '@/components/Json/Data.json'
 const ChooseAgency = () => {
     return (
         <div className='w-full  border-b-[1px] border-blue py-12 lg:py-16'>
-            <p className='w-full xl:w-[75%] mx-auto px-4 lg:px-[30px]'>
+            <div className='w-full xl:w-[75%] mx-auto px-4 lg:px-[30px]'>
                 <h2 className=' text-center  capitalize   font-bold'>
                     {Data.home_agency.title}
                 </h2>
                 <p className='text-[16px] text-homegrey lg:text-[18px] mt-2 text-center'> {Data.home_agency.description}
                 </p>
-            </p>
+            </div>
             <div className="flex flex-wrap lg:flex-nowrap mt-10 justify-between gap-6 items-center px-4 lg:px-3 w-full xl:w-[75%] mx-auto">
                 <div className='lg:w-1/2'>
                     {
                         Data.home_agency.cards.map((elem: any, index: any) => (
                             <div key={index} className=' hidden md:flex'>
                                 {/* <MdKeyboardDoubleArrowRight className='text-pink text-[30px] mt-3' /> */}
-                                <p className='text-[16px] gap-2 text-justify mt-2  items-center text-homegrey lg:text-[18px]'>
+                                <div className='text-[16px] gap-2 text-justify mt-2  items-center text-homegrey lg:text-[18px]'>
                                     <span className='font-semibold text-[20px] text-homeblack mr-2'>{elem?.title}</span>
                                     {elem?.description}
-                                </p>
+                                </div>
                             </div>
                         ))
                     }
