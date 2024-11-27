@@ -105,7 +105,7 @@ const Page = () => {
                                 {filteredTools?.map((elem: any, index: number) => (
                                     elem?.slug_link === 'website-seo-analyzer' ? (
                                         <Link href={`/${elem.slug_link}`} key={index}>
-                                            <div className="bg-lightblue hover:shadow-lg p-5 w-[155px] lg:min-w-[241px] group h-[300px] lg:h-[284px] flex flex-col justify-center items-center gap-4 border-slate-200 rounded-md hover:bg-white transition-all duration-300 ease-in-out transform hover:scale-105">
+                                            <div className="bg-lightblue hover:shadow-lg p-5 w-[320px] sm:w-[200px] 2xl:w-[241px] group h-[300px] lg:h-[284px] flex flex-col justify-center items-center gap-4 border-slate-200 rounded-md hover:bg-white transition-all duration-300 ease-in-out transform hover:scale-105">
                                                 <div className="min-h-[100px] rounded-full flex justify-center items-center min-w-[100px] bg-white group-hover:bg-blue group-hover:scale-110 transition-all duration-300 ease-in-out">
                                                     <Image
                                                         src={elem?.image}
@@ -125,7 +125,7 @@ const Page = () => {
                                         </Link>
                                     ) : (
                                         <Link href={`/tool/${elem.slug_link}`} key={index}>
-                                            <div className="bg-lightblue hover:shadow-lg p-5 w-[155px] lg:min-w-[241px] group h-[300px] lg:h-[284px] flex flex-col justify-center items-center gap-4 border-slate-200 rounded-md hover:bg-white transition-all duration-300 ease-in-out transform hover:scale-105">
+                                            <div className="bg-lightblue hover:shadow-lg p-5 w-[320px] sm:w-[200px] 2xl:w-[241px] group h-[300px] lg:h-[284px] flex flex-col justify-center items-center gap-4 border-slate-200 rounded-md hover:bg-white transition-all duration-300 ease-in-out transform hover:scale-105">
                                                 <div className="min-h-[100px] rounded-full flex justify-center items-center min-w-[100px] bg-white group-hover:bg-blue group-hover:scale-110 transition-all duration-300 ease-in-out">
                                                     <Image
                                                         src={elem?.image}

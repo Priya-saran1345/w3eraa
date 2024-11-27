@@ -46,12 +46,12 @@ const Index = ({ props }: any) => {
 
   return (
     <div className="w-full bg-lightblue py-12 " ref={sectionRef}>
-      <div className="w-full px-4 xl:w-[70%] mx-auto">
+      <div className="w-full px-4 xl:w-[95%]  2xl:w-[75%] mx-auto">
       <div className="flex flex-wrap justify-center gap-8 items-center mt-12">
       {currentItems?.map((cardData: any, index: number) => (
         <div
         key={index}
-        className="min-h-[535px] rounded-xl w-[350px] sm:w-[47%] lg:w-[31%] bg-white overflow-hidden flex flex-col"
+        className="min-h-[535px] rounded-xl w-[350px] sm:w-[47%] md:w-[40%] lg:w-[27%]  bg-white overflow-hidden flex flex-col"
       >
         {/* Toggle YouTube Video or Image */}
         {active === index && cardData.video ? (

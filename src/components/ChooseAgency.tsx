@@ -18,7 +18,7 @@ const ChooseAgency = () => {
                         Data.home_agency.cards.map((elem: any, index: any) => (
                             <div key={index} className=' hidden md:flex'>
                                 {/* <MdKeyboardDoubleArrowRight className='text-pink text-[30px] mt-3' /> */}
-                                <div className='text-[16px] gap-2 text-justify mt-2  items-center text-homegrey lg:text-[18px]'>
+                                <div className='text-[16px] gap-2  mt-2  items-center text-homegrey lg:text-[18px]'>
                                     <span className='font-semibold text-[20px] text-homeblack mr-2'>{elem?.title}</span>
                                     {elem?.description}
                                 </div>
