@@ -62,7 +62,7 @@ const Index = ({ props }: any) => {
   };
   return (
     <div className='bg-white py-12 hidden md:block lg:py-16'>
-      <div className='xl:w-[75%] px-6 mx-auto'>
+      <div className='xl:w-[95%]  2xl:w-[75%] px-6 mx-auto'>
         {/* Title and Overall Ratings Section */}
         <h2 className=' text-homeblack font-semibold '>
           Our Ratings on Clutch

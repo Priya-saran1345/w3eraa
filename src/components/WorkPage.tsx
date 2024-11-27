@@ -20,7 +20,7 @@ const Work = () => {
 
             <Navbar />
             <div className="w-full bg-no-repeat  lg:bg-[url('/images/work.png')]  pb-28 ">
-                <div className='text-white pt-8   bg-blue pb-7 lg:pt-32 lg:pb-0 lg:bg-inherit w-full xl:w-[75%] px-4 mx-auto'>
+                <div className='text-white pt-8   bg-blue pb-7 lg:pt-32 lg:pb-0 lg:bg-inherit w-full xl:w-[95%]  2xl:w-[75%] px-4 mx-auto'>
                     <div className='lg:w-[70%]'>
                     <p className=' text-[28px] lg:text-[38px] font-semibold md:mb-8 '>Experts Consultation</p>
                     <h1 className=' text-[34px] lg:text-[58px] font-semibold '>From Consultation To Conversion </h1>
@@ -29,7 +29,7 @@ const Work = () => {
                     <Image  src={'/images/work-arrow1.svg'}  height={56} width={77} alt="" className='hidden lg:block' />
                     </div>
                 </div>
-                <div className='w-full xl:w-[75%] bg-white lg:bg-inherit  flex lg:flex-nowrap flex-wrap xl:mt-24 justify-center gap-5 mx-auto px-4 py-16'>
+                <div className='w-full xl:w-[95%]  2xl:w-[75%] bg-white lg:bg-inherit  flex lg:flex-nowrap flex-wrap xl:mt-24 justify-center gap-5 mx-auto px-4 py-16'>
                     <div className='lg:-rotate-90 lg:mt-80 text-center lg:text-left w-full lg:w-[40px] mr-8  h-fit'>
                         <p className='text-pink text-[34px] lg:text-[58px] font-bold uppercase'>Onboarding</p>
                     </div>
@@ -69,7 +69,7 @@ const Work = () => {
                         </p>
                     </div>
                 </div>
-                <div className='w-full xl:w-[75%] bg-blue lg:bg-inherit   flex lg:flex-nowrap text-white flex-wrap  justify-center gap-5 mx-auto px-4 py-5 xl:py-16'>
+                <div className='w-full xl:w-[95%]  2xl:w-[75%] bg-blue lg:bg-inherit   flex lg:flex-nowrap text-white flex-wrap  justify-center gap-5 mx-auto px-4 py-5 xl:py-16'>
                     <div className='lg:-rotate-90 lg:mt-80 text-center lg:text-left w-full lg:w-[40px] mr-8  h-fit'>
                         <p className='text-pink text-[34px] lg:text-[58px] font-bold uppercase'>Production</p>
                     </div>
@@ -110,7 +110,7 @@ const Work = () => {
                         </p>
                     </div>
                 </div>
-                <div className='w-full xl:w-[75%] bg-white lg:bg-inherit  flex lg:flex-nowrap flex-wrap py-7 lg:py-0 justify-center gap-5 mx-auto px-4 '>
+                <div className='w-full xl:w-[95%]  2xl:w-[75%] bg-white lg:bg-inherit  flex lg:flex-nowrap flex-wrap py-7 lg:py-0 justify-center gap-5 mx-auto px-4 '>
                     <div className='lg:-rotate-90 lg:mt-80 text-center lg:text-left w-full lg:w-[40px] mr-8  h-fit'>
                         <p className='text-pink text-[34px] lg:text-[58px] font-bold uppercase'>DELIVERY</p>
                     </div>

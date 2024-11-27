@@ -5,15 +5,12 @@ import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import MarketingServices from '@/components/marketingServices'
 import Data from '@/components/Json/Data.json'
-import { Useapi } from '@/helpers/apiContext';
-import ClientSays from "@/components/clientSays"
 import Image from 'next/image'
 import { BarChartIcon as ChartBar, Users, Phone, Newspaper } from 'lucide-react'
 import HubspotForm from '@/components/HubspotForm'
 import DownNavbar from '@/components/DownNavbar'
-
+import CustomerChoose from "@/components/CustomerChoose";
 const DigitalMarketingConsultationPage = () => {
-  const { apidata } = Useapi();
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const slides = [
@@ -49,7 +46,7 @@ const DigitalMarketingConsultationPage = () => {
 
       <Navbar />
       <div className="flex lg:flex-row  bg-gray-50">
-        <div className='flex lg:flex-nowrap flex-wrap px-4 xl:w-[75%] mx-auto'>
+        <div className='flex lg:flex-nowrap flex-wrap px-4 xl:w-[95%]  2xl:w-[75%] mx-auto'>
       {/* Slider Section */}
       <div className="flex-1 relative p-8 lg:p-12 flex items-center">
         <div className="max-w-2xl mx-auto">
@@ -129,7 +126,7 @@ const DigitalMarketingConsultationPage = () => {
       <div className='bg-[#E8E6E7] w-full'>
 
 
-<div className='   xl:w-[75%] py-10 px-4 xl:px-0 mx-auto'>
+<div className='   xl:w-[95%]  2xl:w-[75%] py-10 px-4 xl:px-0 mx-auto'>
   <div className='flex justify-between mt-6 items-center lg:gap-16'>
 
     <div className='w-full '>
@@ -192,7 +189,7 @@ const DigitalMarketingConsultationPage = () => {
 </div>
 </div>
       <MarketingServices props={Data?.Digital_Marketing_Process} />
-      <div className="flex xl:w-[75%] flex-col md:flex-row gap-6 p-4  mx-auto">
+      <div className="flex xl:w-[95%]  2xl:w-[75%] flex-col md:flex-row gap-6 p-4  mx-auto">
         {/* Numbers Speak Panel */}
         <div className="flex-1 border-2 border-red-500 p-8">
           <h2 className="text-2xl font-bold mb-8">
@@ -259,7 +256,7 @@ const DigitalMarketingConsultationPage = () => {
           </div>
         </div>
       </div>
-      <div  className='bg-white mt-12 mb-8 xl:w-[75%] px-4 xl:px-0 mx-auto'>
+      <div  className='bg-white mt-12 mb-8 xl:w-[95%]  2xl:w-[75%] px-4 xl:px-0 mx-auto'>
         <div className='flex justify-between mt-6 items-center lg:gap-16'>
           <div className=' hidden  rounded-xl py-3  lg:block min-w-[477px]'>
             <Image
@@ -282,7 +279,8 @@ const DigitalMarketingConsultationPage = () => {
           </div>
         </div>
       </div>
-      <ClientSays props={apidata?.clients_say[0]} />
+      <CustomerChoose />
+
       <Footer />
     </div>
   )

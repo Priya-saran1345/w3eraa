@@ -74,7 +74,7 @@ const [data, setdata] = useState<any>()
          image_alt={data?.seo_industry[0]?.image_alt}
         //  btntext={data?.link_text} btnlink={data?.link_url}
           />
-            <div className='w-full xl:w-[75%] mx-auto px-6 py-8'>
+            <div className='w-full xl:w-[95%]  2xl:w-[75%] mx-auto px-6 py-8'>
                 <div className='w-full my-4 flex flex-wrap gap-4 justify-center'>
                     {data?.seo_industry[0]?.card?.map((elem:any, index:any) => (
                         <div
@@ -128,7 +128,7 @@ const [data, setdata] = useState<any>()
                 </div>
             </div>
             {
-                <div  className='w-full mx-auto xl:w-[75%] flex flex-col gap-4 px-6 xl:px-2 py-12'>
+                <div  className='w-full mx-auto xl:w-[95%]  2xl:w-[75%] flex flex-col gap-4 px-6 xl:px-2 py-12'>
                     <StyledWrapper>
                         <p
                             className="text-homegrey text-[18px]"
@@ -138,7 +138,7 @@ const [data, setdata] = useState<any>()
                     </StyledWrapper>
                 </div>
             }
-            <div className='w-full mx-auto xl:w-[75%] flex flex-col gap-4 px-6 xl:px-2 py-12'>
+            <div className='w-full mx-auto xl:w-[95%]  2xl:w-[75%] flex flex-col gap-4 px-6 xl:px-2 py-12'>
                     <StyledWrapper>
                         <div
                             className="text-homegrey text-[18px]"

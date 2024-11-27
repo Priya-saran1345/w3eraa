@@ -16,8 +16,8 @@ const Index = ({show}:any) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
   };
   return (
-    <div  className=' lg:flex gap-1 2xl:gap-3 py-3 items-center text-[17px] lg:text-[14px] 2xl:text-[17px] '>
-          <div className={`lg:items-center font-medium ${show ? "flex flex-col" : "flex"} gap-2 2xl:gap-4`}>
+    <div  className=' lg:flex gap-1 2xl:gap-3 py-3 items-center text-[17px] lg:text-[15px] xl:text-[17px] '>
+          <div className={`lg:items-center font-medium ${show ? "flex flex-col" : "flex"} gap-4`}>
               {/* SEO Dropdown */}
               <Link target='_blank' href={'/blog'}>
               <li  className='flex  lg:hidden gap-1 items-center mb-2 cursor-pointer'>
@@ -34,7 +34,7 @@ const Index = ({show}:any) => {
                web Story
               </li>
               </Link>
-              <li onClick={() => toggleDropdown('seo')} className='flex font-semibold gap-[2px] 2xl:gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('seo')} className='flex font-semibold  gap-1 items-center cursor-pointer'>
                 SEO {openDropdown === 'seo' ?  <Image 
               src={'/images/up.svg'} 
               width={14} 
@@ -147,7 +147,7 @@ const Index = ({show}:any) => {
               )}
 
               {/* Pay Per Click Dropdown */}
-              <li onClick={() => toggleDropdown('ppc')} className='flex font-semibold gap-[2px] 2xl:gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('ppc')} className='flex font-semibold  gap-1 items-center cursor-pointer'>
                 Pay Per Click {openDropdown === 'ppc' ? <Image 
               src={'/images/up.svg'} 
               width={14} 
@@ -246,7 +246,7 @@ const Index = ({show}:any) => {
               )}
 
               {/* SMM Dropdown */}
-              <li onClick={() => toggleDropdown('smm')} className='flex  font-semibold gap-[2px] 2xl:gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('smm')} className='flex  font-semibold  gap-1 items-center cursor-pointer'>
                 SMM {openDropdown === 'smm' ? <Image 
               src={'/images/up.svg'} 
               width={14} 
@@ -346,7 +346,7 @@ const Index = ({show}:any) => {
                 </div>
               )}
               {/* Our Packages Dropdown */}
-              <li onClick={() => toggleDropdown('packages')} className=' font-semibold flex gap-[2px] 2xl:gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('packages')} className=' font-semibold flex  gap-1 items-center cursor-pointer'>
                 Our Packages {openDropdown === 'packages' ? <Image 
                src={'/images/up.svg'} 
               width={14} 
@@ -459,7 +459,7 @@ const Index = ({show}:any) => {
               )}
 
               {/* Web Development Dropdown */}
-              <li onClick={() => toggleDropdown('web-dev')} className='flex  font-semibold gap-[2px] 2xl:gap-1 items-center cursor-pointer'>
+              <li onClick={() => toggleDropdown('web-dev')} className='flex  font-semibold  gap-1 items-center cursor-pointer'>
                 Web Development {openDropdown === 'web-dev' ? <Image 
              src={'/images/up.svg'} 
               width={14} 

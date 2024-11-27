@@ -26,7 +26,7 @@ export default function PortfolioFilter({ initialPortfolio }: any) {
   return (
     <>
       {/* Category Filters */}
-      <div className="w-full bg-grey xl:w-[75%] mx-auto rounded-lg justify-center flex flex-wrap gap-4 my-8 p-4 md:p-7">
+      <div className="w-full bg-grey xl:w-[95%]  2xl:w-[75%] mx-auto rounded-lg justify-center flex flex-wrap gap-4 my-8 p-4 md:p-7">
         <button
           onClick={() => setActiveCategory('All')}
           className={`px-4 md:px-8 py-1 md:py-2 text-black bg-white rounded-md transition-all duration-300 ease-in-out hover:text-white hover:bg-pink text-[18px] font-medium ${
@@ -49,7 +49,7 @@ export default function PortfolioFilter({ initialPortfolio }: any) {
       </div>
 
       {/* Portfolio Cards */}
-      <div className="w-full xl:w-[75%] mx-auto my-4 flex flex-wrap gap-7 justify-center">
+      <div className="w-full xl:w-[95%]  2xl:w-[75%] mx-auto my-4 flex flex-wrap gap-7 justify-center">
         {filteredCards.length === 0 ? (
           <p className="text-center text-lg font-medium">No projects available in this category.</p>
         ) : (

@@ -8,7 +8,7 @@ const Stories = ({ props }: any) => {
     return (
         <div className='relative'>
             <div className='w-full py-12'>
-                <div className='xl:w-[75%] w-full px-6 xl:px-0 mx-auto'>
+                <div className='xl:w-[95%]  2xl:w-[75%] w-full px-6 xl:px-0 mx-auto'>
                     <p className='text-[32px] text-center lg:text-[48px] font-bold text-homeblack'>Stories</p>
                     <div className='flex gap-3 mt-6 flex-wrap justify-center'>
       {props?.map((elem: any, index: number) => (

@@ -76,7 +76,7 @@ const Category = () => {
           <DownNavbar/>
 
           <Navbar />
-          <div className="w-full xl:w-[75%] mx-auto px-4 bg-white">
+          <div className="w-full xl:w-[95%]  2xl:w-[75%] mx-auto px-4 bg-white">
             <div className="mt-5 py-3 w-full border-b-[2px] border-lightblue">
               <p className="text-homegrey font-medium">
                 <Link href={'/blog'}>Blog</Link> / tag/<span className="text-pink capitalize">{lastsegment}</span>

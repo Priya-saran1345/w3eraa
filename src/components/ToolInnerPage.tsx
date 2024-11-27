@@ -204,7 +204,7 @@ const Tool = () => {
                             <h1 className='text-[32px] lg:text-[44px] font-bold text-white'>{currentTool[0]?.title || 'This is'}</h1>
                         </div>
                     </div>
-                    <div className='mt-4 w-full px-4 xl:px-0 xl:w-[75%] mx-auto'>
+                    <div className='mt-4 w-full px-4 xl:px-0 xl:w-[95%]  2xl:w-[75%] mx-auto'>
                         <div className='flex  gap-3'>
 
                             <div className='w-fit'>

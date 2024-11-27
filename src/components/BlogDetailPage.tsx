@@ -64,12 +64,12 @@ const Blogs = () => {
                     <Navbar />
 
                     <div className='bg-grey py-5'>
-                        <div className='mt-5  w-full mx-auto xl:w-[75%] px-6  mb-8 '>
+                        <div className='mt-5  w-full mx-auto xl:w-[95%]  2xl:w-[75%] px-6  mb-8 '>
                             <p className='text-homegrey py-3 font-medium border-b-[2px] border-slate-200'>
                                 {/* <Link href={'/blog'}>Blog</Link>  &nbsp;/&nbsp;<span className='text-pink'>{lastSegment}</span> */}
                             </p>
                         </div>
-                        <div className='w-full flex gap-5  lg:flex-nowrap flex-wrap mx-auto xl:w-[95%] 2xl:w-[75%] px-4 text-white mb-8 lg:mb-32 '>
+                        <div className='w-full flex gap-5  lg:flex-nowrap flex-wrap mx-auto xl:w-[95%] 2xl:w-[95%]  2xl:w-[75%] px-4 text-white mb-8 lg:mb-32 '>
                             <aside>
                                 <div className='xl:min-w-[414px] w-[314px] sticky top-32 flex flex-col gap-6'>
                                     {/* <div className='bg-white w-full flex text-[18px] font-medium justify-between rounded-lg p-3'>

@@ -35,12 +35,12 @@ const DriveResults = ({Data}:any) => {
     
     return (
         <div className='w-full bg-lightblue  py-12 lg:py-16'>
-            <div className='w-full xl:w-[75%] mx-auto px-4'>
+            <div className='w-full xl:w-[95%]  2xl:w-[75%] mx-auto px-4'>
                 <h2 className='  text-homeblack text-center 
                 lg:text-left capitalize font-bold'>{data.first} <span className='text-pink'>{data.second}</span></h2>
             </div>
 
-            <div className="flex mt-10 flex-wrap lg:flex-nowrap justify-center gap-5  items-center px-4 xl:px-0 w-full xl:w-[75%] mx-auto">
+            <div className="flex mt-10 flex-wrap lg:flex-nowrap justify-center gap-5  items-center px-4 xl:px-0 w-full xl:w-[95%]  2xl:w-[75%] mx-auto">
 
                 {Data?.map((elem: any, i:number) => (
                     <div key={i} className='rounded-xl px-4 2xl:px-8 py-8 w-[347px] text-center sm:text-left sm:w-[300px] md:w-[347px] h-[350px] 

@@ -36,7 +36,7 @@ const Router=useRouter()
     // Effect to control body scroll
     return (
         <div className='w-full bg-lightblue py-12 lg:py-16'>
-            <div className="flex flex-wrap lg:flex-nowrap justify-between  gap-7 items-center px-4 w-full xl:w-[75%] mx-auto">
+            <div className="flex flex-wrap lg:flex-nowrap justify-between  gap-7 items-center px-4 w-full xl:w-[95%]  2xl:w-[75%] mx-auto">
                 <div className=' mx-auto w-full lg:max-w-[50%] '>
                     <div className='flex  flex-wrap justify-center md:flex-nowrap gap-3'>
                         {/* {

@@ -84,7 +84,7 @@ const Router =useRouter()
         // !loading && 
         (
           <div className="w-full sm:absolute px-6 lg:px-2 h-full top-0 left-0 flex justify-center bg-[#1090D059] items-center min-h-[78vh]">
-            <div className="w-full text-white flex flex-col justify-center h-full items-center px-4 xl:w-[75%] mx-auto">
+            <div className="w-full text-white flex flex-col justify-center h-full items-center px-4 xl:w-[95%]  2xl:w-[75%] mx-auto">
               <div className="flex flex-col justify-around lg:flex-row py-10 lg:py-3 xl:justify-between items-center">
                 <div>
                   <div className="2xl:w-[80%]">

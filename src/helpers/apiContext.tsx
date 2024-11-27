@@ -31,12 +31,12 @@ export const ApiProvider = ({ children }: { children: React.ReactNode }) => {
   const [career, setcareer] = useState<any>()
   const [cluth, setcluth] = useState<any>()
   const fetch = async () => {
-    try {
-      const response = await axios.get(`${BASE_URL}home/`);
-      setapidata(response.data);
-    } catch (error: any) {
-      console.log(error.message);
-    }
+    // try {
+    //   const response = await axios.get(`${BASE_URL}home/`);
+    //   setapidata(response.data);
+    // } catch (error: any) {
+    //   console.log(error.message);
+    // }
     // try {
     //   const response = await axios.get(`${BASE_URL}clutch/`);
     //   setcluth(response.data);
@@ -85,14 +85,13 @@ export const ApiProvider = ({ children }: { children: React.ReactNode }) => {
     // } catch (error: any) {
     // console.log("w3era-life study error", error.message);
     // }
-
     setloading(false)
   };
   useEffect(() => {
     fetch();
   }, []);
   return (
-    <ApiContext.Provider value={{ apidata, faq,blog,blogs ,service,client,about,basic_details,life,career,cluth}}>
+    <ApiContext.Provider value={{apidata,faq,blog,blogs ,service,client,about,basic_details,life,career,cluth}}>
       {children}
     </ApiContext.Provider>
   );

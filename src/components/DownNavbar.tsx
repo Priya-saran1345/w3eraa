@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <>
       <div className='bg-purple lg:hidden text-white'>
-        <div className='w-full  px-4 xl:w-[75%] mx-auto'>
+        <div className='w-full  px-4 xl:w-[95%]  2xl:w-[75%] mx-auto'>
           <div className='flex justify-between xl:justify-end 2xl:justify-between items-center '>
             <div className='block xl:hidden 2xl:block my-3'>
               {/* <div className='flex gap-[3px] sm:gap-2 text-[19px]'>

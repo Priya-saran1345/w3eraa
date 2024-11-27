@@ -40,7 +40,7 @@ const client=await getClientData();
                 <h1 className='text-white text-[32px] font-bold lg:text-[48px]'>{client?.client[0].title}</h1>
             </div>
             <div className='w-full '>
-                <div className='w-full xl:w-[75%] px-4 mx-auto py-12 lg:py-20'>
+                <div className='w-full xl:w-[95%]  2xl:w-[75%] px-4 mx-auto py-12 lg:py-20'>
                     <h2 className='lg:text-[48px] text-[32px] font-bold text-black text-center'>We &apos;ve helped 5000+ customers worldwide</h2>
                     <div className='mx-auto mt-7 flex justify-center flex-wrap lg:w-[80%]'>
                     {
@@ -64,7 +64,7 @@ const client=await getClientData();
             <div className='w-full'>
             <div className='w-full'>
                 <div className='w-full pt-20 bg-[url("/images/footer-bg.png")] bg-cover bg-center '>
-                    <div className='w-full relative  xl:w-[75%] mx-auto py-8  bg-white flex justify-between items-center '>
+                    <div className='w-full relative  xl:w-[95%]  2xl:w-[75%] mx-auto py-8  bg-white flex justify-between items-center '>
                         <div className=' bg-white md:w-[55%] flex-col flex text-center md:text-left px-12 py-10 md:py-0 '>
                             <p className=' text-[24px] xl:text-[28px] font-semibold text-homegrey  leading-[] lg:leading-[40px]'>
                            {client?.client[0]?.reputation_description}

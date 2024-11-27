@@ -5,7 +5,7 @@ import Link from 'next/link'
 const Index = ({props}:any) => {
   return (
     <div className='bg-white w-full py-10 lg:py-16'>
-             <div className='xl:w-[75%] px-6 mx-auto'>
+             <div className='xl:w-[95%]  2xl:w-[75%] px-6 mx-auto'>
                 <div  className=' md:w-[75%] lg:w-[50%] leading-[45px] mx-auto text-center'>
                     <h2 className=' text-[24px]  leading-tight lg:leading-[] lg:text-[38px] font-bold '>
                     {props?.title}</h2>

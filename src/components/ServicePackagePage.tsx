@@ -128,7 +128,7 @@ const Service_Pkackages = () => {
 
             <Navbar />
             <div className='w-full flex justify-center items-center bg-lightblue'>
-                <div className='flex flex-col justify-center items-center max-h-[500px] xl:w-[75%] px-6 mx-auto'>
+                <div className='flex flex-col justify-center items-center max-h-[500px] xl:w-[95%]  2xl:w-[75%] px-6 mx-auto'>
                     {/* Ensure the image path is correct */}
                     <Link href={'/'}>
                         <Image src='/images/loader.gif' height={500} width={500} alt='Loading Animation' />
@@ -168,7 +168,7 @@ const Service_Pkackages = () => {
                                 btntext={data?.link_text} btnlink={data?.link_url} image_alt={data?.image_alt} />
                             {
                                 data?.aboutservice?.title || data?.aboutservice?.subtitle || data?.aboutservice?.description ? (
-                                    <div className='bg-white mt-12 mb-8 xl:w-[75%] px-4 xl:px-0 mx-auto'>
+                                    <div className='bg-white mt-12 mb-8 xl:w-[95%]  2xl:w-[75%] px-4 xl:px-0 mx-auto'>
                                         <h2 className='text-homeblack  text-center font-bold '>
                                             {data?.aboutservice?.title || ''}
                                         </h2>
@@ -205,7 +205,7 @@ const Service_Pkackages = () => {
                             }
                             {
                                 data?.contentsection1?.description &&
-                                <div className='w-full mx-auto xl:w-[75%] flex flex-col gap-4 px-6 xl:px-2 py-12'>
+                                <div className='w-full mx-auto xl:w-[95%]  2xl:w-[75%] flex flex-col gap-4 px-6 xl:px-2 py-12'>
                                     <StyledWrapper>
                                         <div
                                             className=" "
@@ -222,7 +222,7 @@ const Service_Pkackages = () => {
                             {
                                 (lastsegment === 'blog-commenting-service') &&
 
-                                <div className='xl:w-[75%] mx-auto my-8 px-4 xl:px-0'>
+                                <div className='xl:w-[95%]  2xl:w-[75%] mx-auto my-8 px-4 xl:px-0'>
                                     <div className='flex w-full justify-center mt-6 gap-3 flex-wrap'>
                                         {
 
@@ -269,7 +269,7 @@ const Service_Pkackages = () => {
                                         data.package_title &&
                                    <h2 className=' text-center  font-bold text-homeblack leading-[45px]'>{ data.package_title} </h2>
                                     }
-                                  <div className='bg-white  w-full px-4 xl:w-[75%] mx-auto '>
+                                  <div className='bg-white  w-full px-4 xl:w-[95%]  2xl:w-[75%] mx-auto '>
                                   <div className='mt-16'>
                                       <div className='shadow-lg  p-5 border-slate-200 border-[1px]  rounded-2xl mb-4'>
                                           <div className='overflow-x-auto'>
@@ -406,7 +406,7 @@ const Service_Pkackages = () => {
 
                                 (lastsegment == 'google-business-profile-management-services') &&
                                 <div className='w-full bg-lightblue py-10 text-white  lg:py-16'>
-                                    <div className='xl:w-[75%] px-4 mx-auto flex flex-col gap-10'>
+                                    <div className='xl:w-[95%]  2xl:w-[75%] px-4 mx-auto flex flex-col gap-10'>
                                         <div className='md:w-[80%] flex flex-col gap-4 mx-auto'>
                                             <h2 className='  text-center  font-bold text-homeblack leading-[45px]'>{data?.service_card1[0]?.title || ''} </h2>
                                             <p className=' text-center text-[18px]  text-homegrey '>{data?.service_card1[0]?.description ||
@@ -454,7 +454,7 @@ const Service_Pkackages = () => {
                             {/* content 2 section */}
                             {data?.contentsection2?.description &&
 
-                                <div className='xl:w-[75%] px-6 mx-auto py-12 flex flex-col gap-8  lg:py-16'>
+                                <div className='xl:w-[95%]  2xl:w-[75%] px-6 mx-auto py-12 flex flex-col gap-8  lg:py-16'>
                                     {/* <p className='text-center text-[28px] lg:text-[38px] text-homeblack font-bold'>{data?.contentsection2[0]?.title}</p> */}
                                     <StyledWrapper>
                                         <div className='' dangerouslySetInnerHTML={{ __html: data?.contentsection2?.description || '' }} />
@@ -478,7 +478,7 @@ const Service_Pkackages = () => {
                                 </div>
                             </div>
                             {data?.contentsection3?.description && (
-                                <div className='w-full mx-auto xl:w-[75%] flex flex-col gap-4 px-6 xl:px-2 py-12'>
+                                <div className='w-full mx-auto xl:w-[95%]  2xl:w-[75%] flex flex-col gap-4 px-6 xl:px-2 py-12'>
                                     <div>
                                         {/* <p className='text-[28px] text-homeblack font-semibold lg:text-[38px]'>{data?.contentsection3?.title}</p> */}
                                         <StyledWrapper>
@@ -530,7 +530,7 @@ const Service_Pkackages = () => {
                                 image={data?.image} image_alt={data?.image_alt}
                                  btntext={data?.link_text}
                                   btnlink={data?.link_url} />
-                            <div className='bg-white  w-full px-4 xl:w-[75%] mx-auto py-10 lg:py-16'>
+                            <div className='bg-white  w-full px-4 xl:w-[95%]  2xl:w-[75%] mx-auto py-10 lg:py-16'>
                                 <div className='mt-16'>
                                     <div className='shadow-lg  p-5 border-slate-200 border-[1px]  rounded-2xl mb-4'>
                                         <div className='overflow-x-auto'>
@@ -673,7 +673,7 @@ const Service_Pkackages = () => {
                             </div>
                             {
                                 data?.contentsection1?.description &&
-                                <div className='w-full mx-auto xl:w-[75%] flex flex-col gap-4 px-6  py-12'>
+                                <div className='w-full mx-auto xl:w-[95%]  2xl:w-[75%] flex flex-col gap-4 px-6  py-12'>
                                     <div
                                         className=''
                                         dangerouslySetInnerHTML={{ __html: data?.contentsection1?.description }}

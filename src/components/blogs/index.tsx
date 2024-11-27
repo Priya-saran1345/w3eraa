@@ -36,7 +36,7 @@ export default function Component({ props }: any) {
   }, [])
 
   return (
-    <div className="w-full px-4 mx-auto py-10 lg:py-16 xl:w-[75%]">
+    <div className="w-full px-4 mx-auto py-10 lg:py-16 xl:w-[95%]  2xl:w-[75%]">
       <h2 className="  text-homeblack font-bold text-center my-4">
         {data.first} <span className="text-pink">{data.second}</span>
       </h2>

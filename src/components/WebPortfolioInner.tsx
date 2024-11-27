@@ -11,13 +11,12 @@ import { usePathname } from 'next/navigation';
 import axios from 'axios';
 import { BASE_URL } from '@/util/api';
 import DownNavbar from '@/components/DownNavbar'
-
+import CustomerChoose from "@/components/CustomerChoose";
 const PortfolioInner = () => {
   const { apidata } = Useapi();
   const pathname = usePathname();
   const segments = pathname.replace(/\/$/, '').split('/');
   const lastSegment = segments.pop(); // This will be the 'slug' from the URL
-
   const [data, setData] = useState<any>(null);
 
   // Fetch portfolio data
@@ -77,7 +76,9 @@ const PortfolioInner = () => {
             </div>
           </div>
           {/* Conditional rendering of Choose component */}
-          <Choose props={apidata?.why_choose[0] || ''} />
+          {/* <Choose props={apidata?.why_choose[0] || ''} /> */}
+          <CustomerChoose />
+
           <Footer />
         </div>
       )}

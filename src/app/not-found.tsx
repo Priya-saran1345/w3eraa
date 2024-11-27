@@ -6,7 +6,7 @@ import Link from 'next/link'
 const Page = () => {
   return (
     <div className='w-full h-screen flex justify-center items-center bg-lightblue'>
-      <div className='flex flex-col justify-center items-center max-h-[500px] xl:w-[75%] px-6 mx-auto'>
+      <div className='flex flex-col justify-center items-center max-h-[500px] xl:w-[95%]  2xl:w-[75%] px-6 mx-auto'>
         {/* Ensure the image path is correct */}
         <Link href={'/'}>
         <Image src='/images/loader.gif' height={500} width={500} alt='Loading Animation' />

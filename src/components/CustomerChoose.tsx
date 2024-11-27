@@ -81,7 +81,7 @@ const CustomerChoose = () => {
                     {dataCard?.descriptions}
                 </p>
             </div>
-            <div className='w-full px-4  xl:w-[75%] mx-auto flex justify-center gap-5 flex-wrap '>
+            <div className='w-full px-4  xl:w-[95%]  2xl:w-[75%] mx-auto flex justify-center gap-5 flex-wrap '>
                 {dataCard?.card?.map((card: any, index: number) => (
                     <div
                         key={index}
