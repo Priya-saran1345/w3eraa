@@ -34,19 +34,17 @@ const Index = ({show}:any) => {
               </Link>
               <li onClick={() => toggleDropdown('seo')} className='flex gap-1 items-center cursor-pointer'>
                 SEO {openDropdown === 'seo' ?  <Image 
-              src={'images/up-icon.svg'} 
+              src={'/images/up.svg'} 
               width={14} 
-             
               height={11} 
-              alt={basic_details?.basic_details[0]?.logo_alt} 
+              alt={"w3era digital marketing company"} 
               className="cursor-pointer "
             /> :
              <Image 
               src={'/images/down-icon.svg'} 
               width={14} 
-             
               height={11} 
-              alt={basic_details?.basic_details[0]?.logo_alt} 
+              alt={"w3era digital marketing company"} 
               className="cursor-pointer "
             /> } 
               </li>
@@ -147,11 +145,11 @@ const Index = ({show}:any) => {
               {/* Pay Per Click Dropdown */}
               <li onClick={() => toggleDropdown('ppc')} className='flex gap-1 items-center cursor-pointer'>
                 Pay Per Click {openDropdown === 'ppc' ? <Image 
-              src={'images/up-icon.svg'} 
+              src={'/images/up.svg'} 
               width={14} 
            
               height={11} 
-              alt={basic_details?.basic_details[0]?.logo_alt} 
+              alt={"w3era digital marketing company"} 
               className="cursor-pointer "
             /> :
              <Image 
@@ -159,7 +157,7 @@ const Index = ({show}:any) => {
               width={14} 
            
               height={11} 
-              alt={basic_details?.basic_details[0]?.logo_alt} 
+              alt={"w3era digital marketing company"} 
               className="cursor-pointer "
             />}
               </li>
@@ -248,11 +246,11 @@ const Index = ({show}:any) => {
               {/* SMM Dropdown */}
               <li onClick={() => toggleDropdown('smm')} className='flex gap-1 items-center cursor-pointer'>
                 SMM {openDropdown === 'smm' ? <Image 
-              src={'images/up-icon.svg'} 
+              src={'/images/up.svg'} 
               width={14} 
            
               height={11} 
-              alt={basic_details?.basic_details[0]?.logo_alt} 
+              alt={"w3era digital marketing company"} 
               className="cursor-pointer "
             /> :
              <Image 
@@ -260,7 +258,7 @@ const Index = ({show}:any) => {
               width={14} 
            
               height={11} 
-              alt={basic_details?.basic_details[0]?.logo_alt} 
+              alt={"w3era digital marketing company"} 
               className="cursor-pointer "
             />}
               </li>
@@ -349,17 +347,17 @@ const Index = ({show}:any) => {
               {/* Our Packages Dropdown */}
               <li onClick={() => toggleDropdown('packages')} className='flex gap-1 items-center cursor-pointer'>
                 Our Packages {openDropdown === 'packages' ? <Image 
-              src={'images/up-icon.svg'} 
+               src={'/images/up.svg'} 
               width={14} 
               height={11} 
-              alt={basic_details?.basic_details[0]?.logo_alt} 
+              alt={"w3era digital marketing company"} 
               className="cursor-pointer "
             /> :
              <Image 
               src={'/images/down-icon.svg'} 
               width={14} 
               height={11} 
-              alt={basic_details?.basic_details[0]?.logo_alt} 
+              alt={"w3era digital marketing company"} 
               className="cursor-pointer "
             />}
               </li>
@@ -462,17 +460,17 @@ const Index = ({show}:any) => {
               {/* Web Development Dropdown */}
               <li onClick={() => toggleDropdown('web-dev')} className='flex gap-1 items-center cursor-pointer'>
                 Web Development {openDropdown === 'web-dev' ? <Image 
-              src={'images/up-icon.svg'} 
+             src={'/images/up.svg'} 
               width={14} 
               height={11} 
-              alt={basic_details?.basic_details[0]?.logo_alt} 
+              alt={"w3era digital marketing company"} 
               className="cursor-pointer "
             /> :
              <Image 
               src={'/images/down-icon.svg'} 
               width={14} 
               height={11} 
-              alt={basic_details?.basic_details[0]?.logo_alt} 
+              alt={"w3era digital marketing company"} 
               className="cursor-pointer "
             />}
               </li>
