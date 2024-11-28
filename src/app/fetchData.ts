@@ -21,7 +21,7 @@ export default async function fetchMeta(slug: any) {
     // console.log('Response headers:', res.headers);
 
     if (!res.ok) {
-      throw new Error(`HTTP error! status: ${res.status}`);
+console.log(`HTTP error! status: ${res.status}`)
     }
 
     const contentType = res.headers.get("content-type");
@@ -29,7 +29,8 @@ export default async function fetchMeta(slug: any) {
       const data = await res.json();
       console.log('Response Data:', data);
       return data;
-    } else {
+    } 
+    else {
       throw new Error('Response is not JSON');
     }
   } catch (error) {

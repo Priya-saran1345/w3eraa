@@ -3,9 +3,6 @@ import Header from '@/components/header';
 import Navbar from '@/components/navbar';
 import React, { useEffect, useState } from 'react';
 import Footer from '@/components/footer';
-import { Useapi } from '@/helpers/apiContext';
-import axios from 'axios';
-import { BASE_URL } from '@/util/api';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
@@ -15,40 +12,11 @@ import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import DownNavbar from '@/components/DownNavbar'
 
-const Blogs = () => {
-    const [blogs, setblogs] = useState<any>()
-   
-    const [apidata, setapidata] = useState<any>(null);
+const Blogs = ({apidata ,blogs }:any) => {
     const pathname = usePathname();
     const path_name = window.location.href
     const segments = pathname.replace(/\/$/, '').split('/');
     const lastsegment = segments.pop();
-    const [recentblogs, setrecentblogs] = useState<any>([]);
-    // Fetch data when component mounts
-    useEffect(() => {
-        const fetch = async () => {
-            try {
-                const response = await axios.get(`${BASE_URL}blog-details/${lastsegment}/`);
-                setapidata(response.data);
-            } catch (error: any) {
-                console.log("Error fetching data:", error.message);
-            }
-            try {
-                const response = await axios.get(`${BASE_URL}blogs/?page=1`);
-                setblogs(response.data);
-              } catch (error: any) {
-                console.log("blogs error", error.message);
-              }
-        };
-
-        fetch();
-    }, []);
-
-    useEffect(() => {
-        if (blogs) {
-            setrecentblogs(blogs);
-        }
-    }, [blogs]);
     return (
         <div>
             {/* {!blogs && !apidata &&
@@ -69,7 +37,7 @@ const Blogs = () => {
                                 {/* <Link href={'/blog'}>Blog</Link>  &nbsp;/&nbsp;<span className='text-pink'>{lastSegment}</span> */}
                             </p>
                         </div>
-                        <div className='w-full flex gap-5  lg:flex-nowrap flex-wrap mx-auto xl:w-[95%] 2xl:w-[95%]  2xl:w-[75%] px-4 text-white mb-8 lg:mb-32 '>
+                        <div className='w-full flex gap-5  lg:flex-nowrap flex-wrap mx-auto xl:w-[95%]   2xl:w-[75%] px-4 text-white mb-8 lg:mb-32 '>
                             <aside>
                                 <div className='xl:min-w-[414px] w-[314px] sticky top-32 flex flex-col gap-6'>
                                     {/* <div className='bg-white w-full flex text-[18px] font-medium justify-between rounded-lg p-3'>
@@ -82,7 +50,7 @@ const Blogs = () => {
                                         </div>
                                         <ul className='flex flex-col gap-3 list-disc mx-4'>
                                             {
-                                                recentblogs?.results?.blogs?.slice(0, 5).map((elem: any) => (
+                                                blogs?.results?.blogs?.slice(0, 5).map((elem: any) => (
                                                     <Link href={`/blog/${elem?.slug_link}`} key={elem?.slug_link}>
                                                         <li>{elem?.title}</li>
                                                     </Link>
@@ -95,7 +63,7 @@ const Blogs = () => {
                                             <p className='text-[24px] font-medium mb-1'>Categories</p>
                                         </div>
                                         <ul className='flex flex-col leading-tight gap-3 list-disc mx-4'>
-                                            {recentblogs?.results?.category?.map((elem: any) => (
+                                            {blogs?.results?.category?.map((elem: any) => (
                                                 <Link href={`/blog/category/${elem?.category_slug}`} key={elem.name}>
                                                     <li className='hover:text-pink cursor-pointer'>{elem?.name}</li>
                                                 </Link>
@@ -184,11 +152,7 @@ const Blogs = () => {
                                                 </a>
                                             </div>
                                         </div>
-
-
-
                                     </div>
-
                                 </StyledWrapper>
                             </div>
                         </div>

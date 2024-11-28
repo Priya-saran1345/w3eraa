@@ -5,8 +5,7 @@ import Image from 'next/image'
 import Footer from '@/components/footer'
 import Revenue from '@/components/revenue'
 import { useEffect, useState } from 'react'
-import axios from 'axios'
-import { BASE_URL } from '@/util/api'
+
 import { usePathname, useRouter } from 'next/navigation';
 import Blogs from '@/components/blogs'
 import React from 'react'
@@ -26,7 +25,6 @@ import Cricial from '@/components/crucial'
 import Visiblity from '@/components/visiblity'
 import CommonBanner from '@/components/Common-Banner'
 import Loader from '@/components/loader'
-import { Useapi } from '@/helpers/apiContext';
 import { IoCheckmark } from 'react-icons/io5'
 import { motion, AnimatePresence } from 'framer-motion'
 import Packages from '@/components/Packages/index'
@@ -36,52 +34,20 @@ import CustomerChoose from '@/components/CustomerChoose';
 import SeoIndustryService from '@/components/SeoIndustryService'
 import {StyledWrapper} from '@/components/Styled'
 import DownNavbar from '@/components/DownNavbar'
-
 import Jsondata from '@/components/Json/Data.json'
-const Service_Pkackages = () => {
-    // const { cluth } = Useapi()
-    const [cluth, setcluth] = useState<any>()
+import fetchData from "@/app/fetchData"
+
+const Service_Pkackages = ({result, cluth ,quicklinks}:any) => {
     const [data, setdata] = useState<any>()
     const pathname = usePathname();
     const segments = pathname.replace(/\/$/, '').split('/');
     const lastsegment = segments.pop();
-    const [result, setresult] = useState<any>(null);
     const [packageCards, setPackageCards] = useState<any>([]);
     const [expanded, setExpanded] = useState<number | null>(0); // To track which card is expanded
     const [activePlan, setActivePlan] = useState<string | null>('Professional'); // Default to "Professional"
     const router = useRouter();
-    const [quicklinks, setquicklinks] = useState<any>()
     const [err, seterr] = useState<any>(false)
-    const fetchPackages = async () => {
-        try {
-            const response = await axios.get(`${BASE_URL}service-packages/${lastsegment}/`);
-            setresult(response.data);
-        } catch (error: any) {
-            console.log('service ,package error', error);
-            if (error?.response?.status === 404) {
-                // router.push('/not/found')
-                seterr(true)
-            }
-        }
-        try {
-            const response = await axios.get(`${BASE_URL}clutch/`);
-            setcluth(response.data);
-          } catch (error: any) {
-            console.log(error.message);
-          }
-        try {
-            const response = await axios.get(`${BASE_URL}quick-link/${lastsegment}/`);
-            // console.log('quick links', (response.data.link_category))
-            setquicklinks(response.data.link_category);
-        } catch (error: any) {
-            console.log('quicklinks error', error);
-        }
-    };
-    // Effect to fetch data
-    useEffect(() => {
-        fetchPackages();
-    }, []);
-    // Effect to filter and set package cards
+    
     useEffect(() => {
         setPackageCards(result?.data?.packagecategory?.filter((elem: any, index: number) => index > 0));
     }, [result]);
@@ -95,11 +61,11 @@ const Service_Pkackages = () => {
             setExpandedIndices([...expandedIndices, index]);
         }
     };
-
     // Function to handle the plan selection
     const handleSelectPlan = (plan: string) => {
         setActivePlan(plan);
     };
+    console.log('quick links are ',quicklinks)
 
     useEffect(() => {
         setdata(result?.data)
@@ -152,6 +118,9 @@ const Service_Pkackages = () => {
         </div>)
     }
     return (
+        
+
+            
         <div >
             {/* {
                 !result &&

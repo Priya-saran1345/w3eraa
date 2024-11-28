@@ -2,6 +2,8 @@ import React from 'react';
 import BlogDetailPage from '@/components/BlogDetailPage';
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
+import fetchData from "@/app/fetchData"
+import { BASE_URL } from '@/util/api';
 
 async function SchemaScript({ params}:any) {
   const  slug  = params?.id;
@@ -16,16 +18,27 @@ async function SchemaScript({ params}:any) {
   )
 }
 // Page Component (Default Export)
-const Page = ({ params }: any) => {
+const Page = async({ params }: any) => {
+  const apidata = await fetchData(`blog-details/${params?.id}`);
+const blogs=await getProfileData()
   return (
     <div>
           <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
-      <BlogDetailPage />
+      <BlogDetailPage apidata={apidata} blogs={blogs} />
     </div>
   );
 };
+
+async function getProfileData() {
+  // Replace this URL with your actual API endpoint
+  const res = await fetch(`${BASE_URL}blogs/?page=1`)
+  if (!res.ok) {
+    throw new Error('Failed to fetch profile data')
+  }
+  return res.json()
+}
 
 // Named Export for generateMetadata
 export async function generateMetadata({ params }: any) {

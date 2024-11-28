@@ -3,7 +3,6 @@ import React from 'react'
 import BlogCategory from '@/components/BlogCategoryPage'
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
-
 async function SchemaScript({ params}:any) {
   const  slug  = params?.id;
   const metaData = await fetchMeta(`blog/category/${slug}`);
@@ -26,12 +25,9 @@ const Page = ({ params }: any) => {
     </div>
   )
 }
-
 export default Page
-
 export async function generateMetadata({ params }: any) {
   const  slug  = params?.id;
-
   try {
     const metaData = await fetchMeta(`blog/category/${slug}`);
     return {

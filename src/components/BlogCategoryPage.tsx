@@ -25,7 +25,6 @@ const Category = () => {
   const [currentPage, setCurrentPage] = useState<number>(1); // Track current page
   const [expandedTitle, setExpandedTitle] = useState<number | null>(null)
   const [expandedSummary, setExpandedSummary] = useState<number | null>(null)
-
   // Fetch blog data
   const fetch = async (page: number = 1) => {
     try {

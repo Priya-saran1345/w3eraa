@@ -4,12 +4,11 @@ import React from 'react'
 import ServicePackage from '@/components/ServicePackagePage'
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
-
+import fetchData from "@/app/fetchData"
 async function SchemaScript({ params}:any) {
   const  slug  = params?.id;
   const metaData = await fetchMeta(`${slug}`);
   const schemaData = metaData?.scripts[0].content
-
   return (
     <script
       type="application/ld+json"
@@ -17,14 +16,18 @@ async function SchemaScript({ params}:any) {
     />
   )
 }
-
-const Page = ({params}: any) => {
+const Page = async({params}: any) => {
+    const data = await fetchData(`service-packages/${params?.id}`)
+    const cluth = await fetchData(`clutch`)
+    const quicklinks = await fetchData(`quick-link/${params?.id}`)
   return (
     <div>
         <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
-      <ServicePackage/>
+      <ServicePackage result={data} cluth={cluth} 
+       quicklinks={quicklinks.link_category && quicklinks.link_category}
+        />
     </div>
   )
 }
