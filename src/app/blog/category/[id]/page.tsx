@@ -7,7 +7,6 @@ async function SchemaScript({ params}:any) {
   const  slug  = params?.id;
   const metaData = await fetchMeta(`blog/category/${slug}`);
   const schemaData = metaData?.scripts[0].content
-
   return (
     <script
       type="application/ld+json"
@@ -21,7 +20,7 @@ const Page = ({ params }: any) => {
         <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
-      <BlogCategory/>
+      <BlogCategory  />
     </div>
   )
 }
@@ -34,7 +33,6 @@ export async function generateMetadata({ params }: any) {
       title: metaData?.title || '',
       description: metaData?.description ,
       keywords: metaData?.keywords ||'',
-
       openGraph: metaData?.openGraph
         ? {
             type: metaData.openGraph.type || '',

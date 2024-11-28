@@ -20,7 +20,7 @@ import FooterBanner from '@/components/footer-banner'
 import toast from "react-hot-toast";
 import axios from "axios";
 import { BASE_URL } from "@/util/api";
-
+import { motion } from 'framer-motion'
 const Footer = () => {
     const dropdownRef = useRef<HTMLDivElement | null>(null);
     const { basic_details } = Useapi();
@@ -38,7 +38,7 @@ const Footer = () => {
     const handleSubmit = async () => {
         try {
             const response = await axios.post(`${BASE_URL}subscription/`, message);
-          
+
             toast.success('Message send successfully')
 
             setMessage({
@@ -53,16 +53,16 @@ const Footer = () => {
     };
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
-          if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-            setOpenDropdown(null);
-          }
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setOpenDropdown(null);
+            }
         };
-    
+
         document.addEventListener("mousedown", handleClickOutside);
         return () => {
-          document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener("mousedown", handleClickOutside);
         };
-      }, [setOpenDropdown]);
+    }, [setOpenDropdown]);
     return (
         <>
             <FooterBanner />
@@ -112,33 +112,56 @@ const Footer = () => {
                                 <p className='text-[21px] flex  font-medium w-full  sm:border-b-2'>About Company <FaMinus className='mt-2 mx-2 sm:hidden' />
                                 </p></div>
                             <ul className='text-[14px] font-medium flex flex-col gap-2 py-3'>
-                               
-                                    <li>
-                                    <Link target="_blank" href={'/about-us'}>
-                                        About US
-                                </Link>
-                                        </li>
-                                <Link target="_blank" href={'/case-study'}>
-                                    <li>Case Study</li>
-                                </Link>
-                                <Link target="_blank" href={'/portfolio'}>
 
-                                    <li>Portfolio</li>
-                                </Link>
-                                <Link target="_blank" href={'/contact-us'}>
+                                <li className="group relative">
+                                    <Link target="_blank" href={'/about-us'} className="hover:no-underline">
+                                        About Us
+                                    </Link>
+                                    <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[60px]"></span>
+                                </li>
+                                <li className="group relative">
+                                    <Link target="_blank" href={'/case-study'} className="hover:no-underline">
+                                        Case Study
+                                    </Link>
+                                    <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[60px]"></span>
 
-                                    <li>Contact Us</li>
-                                </Link>
-                                <Link target="_blank" href={'/testimonials'}>
-                                    <li>Testimonials</li>
-                                </Link>
-                                <Link target="_blank" href={'/faq'}>
+                                </li>
+                                <li className="group relative">
+                                    <Link target="_blank" href={'/portfolio'} className="hover:no-underline">
+                                        Portfolio
+                                    </Link>
+                                    <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[60px]"></span>
 
-                                    <li>Frequently Asked Questions</li>
-                                </Link>
-                                <Link target="_blank" href={'/life-at-w3era'}>
-                                    <li>Life at W3era</li>
-                                </Link>
+                                </li>
+                                <li className="group relative">
+                                    <Link target="_blank" href={'/contact-us'} className="hover:no-underline">
+                                        Contact Us
+                                    </Link>
+                                    <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[60px]"></span>
+
+                                </li>
+                                <li className="group relative">
+                                    <Link target="_blank" href={'/testimonials'} className="hover:no-underline">
+                                        Testimonials
+                                    </Link>
+                                    <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[80px]"></span>
+
+                                </li>
+                                <li className="group relative">
+                                    <Link target="_blank" href={'/faq'} className="hover:no-underline">
+
+                                        Frequently Asked Questions
+                                    </Link>
+                                    <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[180px]"></span>
+
+                                </li>
+                                <li className="group relative">
+                                    <Link target="_blank" href={'/life-at-w3era'} className="hover:no-underline">
+                                        Life at W3era
+                                    </Link>
+                                    <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[80px]"></span>
+
+                                </li>
                             </ul>
                             <div className='flex gap-2 items-center'>
                                 <p className='text-[21px] flex  font-medium w-full  sm:border-b-2'>Connect with Social<FaMinus className=' mt-2 mx-2 sm:hidden' />
@@ -209,37 +232,73 @@ const Footer = () => {
                             <div className='flex gap-2 items-center'>
                                 <p className='text-[21px] flex  font-medium w-full  sm:border-b-2'>
                                     Resources <FaMinus className='mt-2 mx-2 sm:hidden' />
-                                </p>
+
+                                </p> 
                             </div>
                             <ul className='text-[14px] font-medium flex flex-col gap-2 py-3'>
-                                <Link target="_blank" href={'/blog'}>
-                                    <li>Blogs</li>
+                                    <li className="group relative" >
+                                <Link target="_blank" href={'/blog'} className="hover:no-underline">
+                                        Blogs
                                 </Link>
-                                <Link target="_blank" href={'/career'}>
-                                    <li>Career</li>
+                                <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[40px]"></span> 
+                                        </li>
+                                    <li className="group relative" >
+                                <Link target="_blank" href={'/career'} className="hover:no-underline">
+                                        Career
                                 </Link>
-                                <Link target="_blank" href={'/tool'}>
-                                    <li>SEO Tools</li>
-                                </Link>
-                                <Link target="_blank" href={'/website-seo-analyzer'}>
+                                <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[40px]"></span>
 
-                                    <li>Website Audit Tool</li>
+                                        </li>
+                                    <li  className="group relative" >
+                                <Link target="_blank" href={'/tool'} className="hover:no-underline">
+                                        SEO Tools
                                 </Link>
-                                <Link target="_blank" href={'/seo-by-industry'}>
-                                    <li>SEO By Industry</li>
+                                <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[60px]"></span>
+                                        </li>
+                                    <li  className="group relative">
+                                <Link target="_blank" href={'/website-seo-analyzer'} className="hover:no-underline">
+
+                                        Website Audit Tool
                                 </Link>
-                                <Link target="_blank" href={'/our-client-list'}>
-                                    <li>Our Clients</li>
+                                <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[110px]"></span>
+
+                                        </li>
+                                    <li  className="group relative">
+                                <Link target="_blank" href={'/seo-by-industry'} className="hover:no-underline">
+                                        SEO By Industry
                                 </Link>
-                                <Link target="_blank" href={'/refund-policy'}>
-                                    <li>Refund Policy</li>
+                                <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[80px]"></span>
+
+                                        </li>
+                                    <li className="group relative">
+                                <Link target="_blank" href={'/our-client-list'} className="hover:no-underline">
+                                        Our Clients
                                 </Link>
-                                <Link target="_blank" href={'/privacy-policy'}>
-                                    <li>Privacy Policy</li>
+                                <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[80px]"></span>
+
+                                        </li>
+                                    <li className="group relative">
+                                <Link target="_blank" href={'/refund-policy'} className="hover:no-underline">
+                                        Refund Policy
+                                        
                                 </Link>
-                                <Link target="_blank" href={'/terms-conditions'}>
-                                    <li>Terms & Conditions</li>
+                                <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[80px]"></span>
+
+                                    </li>
+                                    <li  className="group relative">
+                                <Link target="_blank" href={'/privacy-policy'} className="hover:no-underline">
+                                        Privacy Policy
                                 </Link>
+                                <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[80px]"></span>
+
+                                        </li>
+                                    <li className="group relative" >
+                                <Link target="_blank" href={'/terms-conditions'} className="hover:no-underline">
+                                        Terms & Conditions
+                                </Link>
+                                <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[120px]"></span>
+
+                                        </li>
                             </ul>
                             <Link target="_blank" href={'https://www.semrush.com/agencies/w3era-web-technology-pvt-ltd/'}>
                                 <Image
@@ -259,14 +318,21 @@ const Footer = () => {
                             </div>
                             <ul className='text-[14px] font-medium flex flex-col gap-2 py-3'>
                                 <div className="">
-                                    <Link target="_blank" href={'/search-engine-optimization-services'}>
-                                        <li className='flex gap-1 items-center cursor-pointer'
-                                            onMouseEnter={() => toggleDropdown(0)}
+                                        <li className=' cursor-pointer group relative'   onMouseEnter={() => toggleDropdown(0)}
                                         // onMouseLeave={() => setOpenDropdown(null)}
-                                        >Search Engine Optimization Services<IoMdArrowDropdown /></li>
+                                        >
+                                    <Link target="_blank" href={'/search-engine-optimization-services'} className="flex items-center gap-1 hover:no-underline">
+                                          
+                                       Search Engine Optimization Services<IoMdArrowDropdown />
                                     </Link>
+                                    <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[60px]"></span>
+
+                                        </li>
                                     {openDropdown === 0 && (
-                                        <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute" onMouseLeave={() => setOpenDropdown(null)}>
+                                        <motion.div
+                                        initial={{ opacity: 0}}
+                                        animate={{opacity: 1}}
+                                        className="mx-8 bg-white text-homeblack rounded-lg z-50 capitalize p-6  absolute" onMouseLeave={() => setOpenDropdown(null)}>
                                             <ul className="flex  flex-col gap-3">
                                                 <Link target="_blank" href={'/on-page-seo-services'}><li className="hover:text-pink cursor-pointer ">On Page SEO Services</li></Link>
                                                 <Link target="_blank" href={'/off-page-seo'}><li className="hover:text-pink cursor-pointer ">Off Page SEO Service</li></Link>
@@ -281,18 +347,23 @@ const Footer = () => {
                                                 <Link target="_blank" href={'/white-label-seo-services'}><li className="hover:text-pink cursor-pointer ">White Label SEO Service</li></Link>
                                                 <Link target="_blank" href={'/seo-reseller-services'}><li className="hover:text-pink cursor-pointer ">SEO Reseller Services</li></Link>
                                             </ul>
-                                        </div>
+                                        </motion.div>
                                     )}
                                 </div>
                                 <div>
-                                    <Link target="_blank" href={'/digital-marketing-packages'}>
-                                        <li className='flex gap-1 items-center cursor-pointer' onMouseEnter={() => toggleDropdown(1)}
+                                    <li className='flex gap-1 items-center cursor-pointer group relative' onMouseEnter={() => toggleDropdown(1)}
                                         //   onMouseLeave={() => setOpenDropdown(null)}
                                         >
-                                            Digital Marketing Packages<IoMdArrowDropdown /></li>
+                                    <Link target="_blank" href={'/digital-marketing-packages'} className='flex gap-1 items-center cursor-pointer hover:no-underline'>
+                                            Digital Marketing Packages<IoMdArrowDropdown />
                                     </Link>
+                                    <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[60px]"></span>
+                                            </li>
                                     {openDropdown === 1 && (
-                                        <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute overflow-y-auto h-1/2" onMouseLeave={() => setOpenDropdown(null)}>
+                                        <motion.div
+                                        initial={{ opacity: 0}}
+                                        animate={{opacity: 1}} 
+                                        className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 z-50 absolute overflow-y-auto h-1/2" onMouseLeave={() => setOpenDropdown(null)}>
                                             <ul className="flex  flex-col gap-3">
                                                 <Link target="_blank" href={'/seo-packages'}><li className="hover:text-pink cursor-pointer">SEO Packages</li></Link>
                                                 <Link target="_blank" href={'/app-store-aso-packages'}><li className="hover:text-pink cursor-pointer">App Store Packages</li></Link>
@@ -312,18 +383,24 @@ const Footer = () => {
                                                 <Link target="_blank" href={'/web-development-package'}><li className="hover:text-pink cursor-pointer">Web Development Packages</li></Link>
                                                 <Link target="_blank" href={'/small-business-seo-packages'}><li className="hover:text-pink cursor-pointer">Small Business SEO Packages</li></Link>
                                             </ul>
-                                        </div>
+                                        </motion.div>
                                     )}
                                 </div>
                                 <div>
-                                    <Link target="_blank" href={'/social-media-marketing-services'}>
-                                        <li className='flex gap-1 items-center cursor-pointer' onMouseEnter={() => toggleDropdown(2)}
+                                        <li className=' cursor-pointer group relative ' onMouseEnter={() => toggleDropdown(2)}
                                         //   onMouseLeave={() => setOpenDropdown(null)}
                                         >
-                                            Social Media Marketing <IoMdArrowDropdown /></li>
+                                    <Link target="_blank" href={'/social-media-marketing-services'} className="hover:no-underline flex gap-1 items-center">
+                                            Social Media Marketing <IoMdArrowDropdown />
                                     </Link>
+                                    <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[60px]"></span>
+
+                                            </li>
                                     {openDropdown === 2 && (
-                                        <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute" onMouseLeave={() => setOpenDropdown(null)}>
+                                      <motion.div
+                                      initial={{ opacity: 0}}
+                                      animate={{opacity: 1}}
+                                         className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 z-50 absolute" onMouseLeave={() => setOpenDropdown(null)}>
                                             <ul className="flex  flex-col gap-3">
                                                 <Link target="_blank" href={'/facebook-advertising-services'}><li className="hover:text-pink cursor-pointer">Facebook Advertising Services</li></Link>
                                                 <Link target="_blank" href={'/instagram-marketing-services'}><li className="hover:text-pink cursor-pointer">Instagram Marketing Services</li></Link>
@@ -334,18 +411,24 @@ const Footer = () => {
                                                 <Link target="_blank" href={'/twitter-marketing-services'}><li className="hover:text-pink cursor-pointer">Twitter Marketing Services</li></Link>
 
                                             </ul>
-                                        </div>
+                                        </motion.div>
                                     )}
                                 </div>
                                 <div>
-                                    <Link target="_blank" href={'/web-development-services'}>
-                                        <li className='flex gap-1 items-center cursor-pointer' onMouseEnter={() => toggleDropdown(3)}
+                                        <li className='flex gap-1 items-center cursor-pointer group relative' onMouseEnter={() => toggleDropdown(3)}
                                         //   onMouseLeave={() => setOpenDropdown(null)}
                                         >
-                                            Web Development Services <IoMdArrowDropdown /></li>
+                                    <Link target="_blank" href={'/web-development-services'} className="flex gap-1 hover:no-underline items-center ">
+                                            Web Development Services <IoMdArrowDropdown />
                                     </Link>
+                                    <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[60px]"></span>
+
+                                            </li>
                                     {openDropdown === 3 && (
-                                        <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute" onMouseLeave={() => setOpenDropdown(null)}>
+                                        <motion.div
+                                        initial={{ opacity: 0}}
+                                        animate={{opacity: 1}}
+                                        className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 z-50 absolute" onMouseLeave={() => setOpenDropdown(null)}>
                                             <ul className="flex  flex-col gap-3">
                                                 <Link target="_blank" href={'/wordpress-development-services'}><li className="hover:text-pink cursor-pointer">WordPress Development Services</li></Link>
                                                 <Link target="_blank" href={'/magento-web-development-services'}><li className="hover:text-pink cursor-pointer">Magneto Development Services</li></Link>
@@ -353,70 +436,101 @@ const Footer = () => {
                                                 <Link target="_blank" href={'/laravel-development-services'}><li className="hover:text-pink cursor-pointer">Laravel Development Services</li></Link>
 
                                             </ul>
-                                        </div>
+                                        </motion.div>
                                     )}
                                 </div>
                                 <div>
-                                    <Link target="_blank" href={'/online-reputation-management'}>
-                                        <li className='flex gap-1 items-center cursor-pointer' >Reputation Management</li>
+                                        <li className='flex gap-1 items-center cursor-pointer group relative' >
+                                    <Link target="_blank" href={'/online-reputation-management'} className="hover:no-underline">
+                                            Reputation Management
                                     </Link>
+                                    <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[160px]"></span>
+
+                                            </li>
                                 </div>
                                 <div>
-                                    <Link target="_blank" href={'/google-ads-services'}>
-                                        <li className='flex gap-1 items-center cursor-pointer'
+                                        <li className='flex gap-1 items-center group relative cursor-pointer'
                                             onMouseEnter={() => toggleDropdown(5)}
                                         // onMouseLeave={() => setOpenDropdown(null)}
-                                        >Pay Per Click (PPC)<IoMdArrowDropdown /></li>
+                                        >Pay Per Click (PPC)<IoMdArrowDropdown />
+                                    <Link target="_blank" href={'/google-ads-services'} className="flex gap-1 items-center hover:no-underline">
                                     </Link>
+                                    <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[60px]"></span>
+
+                                        </li>
                                     {openDropdown === 5 && (
-                                        <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute" onMouseLeave={() => setOpenDropdown(null)}>
+                                     <motion.div
+                                     initial={{ opacity: 0}}
+                                     animate={{opacity: 1}}
+                                         className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 z-50 absolute" onMouseLeave={() => setOpenDropdown(null)}>
                                             <ul className="flex  flex-col gap-3">
                                                 <Link target="_blank" href={'/google-my-business-ads'}><li className="hover:text-pink cursor-pointer">Google My Business Ads</li></Link>
                                                 <Link target="_blank" href={'/google-shopping-ads'}><li className="hover:text-pink cursor-pointer">Google Shopping Ads</li></Link>
                                                 <Link target="_blank" href={'/ppc-company-in-usa'}><li className="hover:text-pink cursor-pointer">PPC Company In USA</li></Link>
                                                 <Link target="_blank" href={'/ppc-company-in-florida'}><li className="hover:text-pink cursor-pointer">PPC Company In Florida</li></Link>
                                             </ul>
-                                        </div>
+                                        </motion.div>
                                     )}
                                 </div>
                                 <div>
-                                    <Link target="_blank" href={'/web-design-services'}>
-                                        <li className='flex gap-1 items-center cursor-pointer'
-
+                                        <li className='flex gap-1 items-center group relative cursor-pointer'
                                             onMouseEnter={() => toggleDropdown(6)}
-                                        >Web Design Services<IoMdArrowDropdown /></li>
+                                        >
+                                    <Link target="_blank" href={'/web-design-services'} className="flex gap-1 items-center hover:no-underline">
+                                            Web Design Services<IoMdArrowDropdown />
                                     </Link>
+                                    <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[60px]"></span>
+
+                                            </li>
                                     {openDropdown === 6 && (
-                                        <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute" onMouseLeave={() => setOpenDropdown(null)}>
+                                        <motion.div
+                                        initial={{ opacity: 0}}
+                                        animate={{opacity: 1}}
+                                         className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 z-50 absolute" onMouseLeave={() => setOpenDropdown(null)}>
                                             <ul className="flex  flex-col gap-3">
                                                 <Link target="_blank" href={'/logo-design-services'}><li className="hover:text-pink cursor-pointer">Logo Designing Services</li></Link>
                                                 <Link target="_blank" href={'/mobile-responsive-designing-services'}><li className="hover:text-pink cursor-pointer">Mobile Responsive Design</li></Link>
                                             </ul>
-                                        </div>
+                                        </motion.div>
                                     )}
                                 </div>
                                 <div>
-                                    <Link target="_blank" href={'/content-marketing-services'}>
-                                        <li className='flex gap-1 items-center cursor-pointer'
-                                            onMouseEnter={() => toggleDropdown(7)} >Content Marketing Services<IoMdArrowDropdown /></li>
+                                        <li className='flex gap-1 items-center group relative cursor-pointer'
+                                            onMouseEnter={() => toggleDropdown(7)} >
+                                    <Link target="_blank" href={'/content-marketing-services'}className="flex gap-1 items-center hover:no-underline">
+                                                Content Marketing Services<IoMdArrowDropdown />
                                     </Link>
+                                    <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[60px]"></span>
+                                            </li>
                                     {openDropdown === 7 && (
-                                        <div className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 absolute" onMouseLeave={() => setOpenDropdown(null)}   >
+                                        <motion.div
+                                        initial={{ opacity: 0}}
+                                        animate={{opacity: 1}}
+                                        className="mx-8 bg-white text-homeblack rounded-lg capitalize p-6 z-50 absolute" onMouseLeave={() => setOpenDropdown(null)}   >
                                             <ul className="flex  flex-col gap-3">
                                                 <Link target="_blank" href={'/content-marketing-services-india'}><li className="hover:text-pink cursor-pointer">Content Marketing Services India</li></Link>
                                             </ul>
-                                        </div>
+                                        </motion.div>
                                     )}
                                 </div>
-                                <Link target="_blank" href={'/digital-marketing-services'}>
-                                    <li>Digital Marketing Services</li>
+                                    <li className="group relative">
+                                <Link target="_blank" href={'/digital-marketing-services'} className="hover:no-underline">
+                                        Digital Marketing Services
                                 </Link>
-                                <Link target="_blank" href={'/social-media-optimization'}>
-                                    <li>Social Media Optimization</li>
+                                <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[170px]"></span>
+                                        </li>
+                                    <li className="group relative">
+                                <Link target="_blank" href={'/social-media-optimization'} className="hover:no-underline">
+                                        Social Media Optimization
                                 </Link>
-                                <Link target="_blank" href={'/google-business-profile-management-services'}>
-                                    <li>Google Business Profile</li>
+                                <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[170px]"></span>
+                                        </li>
+                                    <li className="group relative">
+                                <Link target="_blank" href={'/google-business-profile-management-services'} className="hover:no-underline">
+                                        Google Business Profile
                                 </Link>
+                                <span className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-current transition-all duration-300 group-hover:w-[140px]"></span>
+                                    </li>
                             </ul>
                         </div>
                         <div className=' w-full  sm:w-1/4'>
@@ -441,15 +555,13 @@ const Footer = () => {
                             </a>
                             <div className='w-[276px]'>
                                 <Link target="_blank" href={'https://www.google.com/maps/place/W3Era/@26.8427364,75.7465518,17z/data=!3m1!4b1!4m6!3m5!1s0x396db5e07f400001:0x2cbf92fc1b9cc85e!8m2!3d26.8427364!4d75.7465518!16s%2Fg%2F11dxh7mg8z?entry=ttu&g_ep=EgoyMDI0MTEwNS4wIKXMDSoASAFQAw%3D%3D'}>
-                                  <Image
+                                    <Image
                                         src={'/images/footer3.png'} // Ensure this path is correct
                                         alt={''}
                                         height={155}
                                         width={236}
                                         className='mt-7 rounded-xl'
                                     />
-                                   
-
                                 </Link>
                                 <div>
                                     <div className='flex mt-5 justify-center text-yellow-500 gap-2 text-[24px]'>

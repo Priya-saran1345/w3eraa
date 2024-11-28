@@ -355,8 +355,112 @@ const Index = ({show}:any) => {
                   </div>
                 </motion.div>
               )}
-              {/* Our Packages Dropdown */}
-              <li onMouseOver={() => toggleDropdown('packages')} className=' font-semibold flex  gap-1 items-center cursor-pointer'>
+            
+
+              {/* Web Development Dropdown */}
+              <li onMouseOver={() => toggleDropdown('web-dev')} className='flex  font-semibold  gap-1 items-center cursor-pointer'>
+                Web Development {openDropdown === 'web-dev' ? <Image 
+             src={'/images/up.svg'} 
+              width={14} 
+              height={11} 
+              alt={"w3era digital marketing company"} 
+              className="cursor-pointer 2xl:w-[14px] w-[12px]"
+            /> :
+             <Image 
+              src={'/images/down-icon.svg'} 
+              width={14} 
+              height={11} 
+              alt={"w3era digital marketing company"} 
+              className="cursor-pointer2xl:w-[14px] w-[12px]"
+            />}
+              </li>
+              {openDropdown === 'web-dev' && (
+                <motion.div 
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                className='shadow-md absolute text-homegrey text-[17px]  w-[85%] lg:w-[95%] lg:h-fit overflow-y-scroll lg:overflow-auto 
+               max-h-[70vh]  flex-wrap lg:flex-nowrap px-12 py-14 z-[99999] top-20 left-10 bg-white  justify-start lg:justify-around flex gap-5  p-7 rounded-xl' onMouseLeave={() => toggleDropdown('')}>
+                  <div>
+                    <div className='flex justify-start gap-2 items-center'>
+                      <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
+                        <Image
+                          src={'/images/h14.svg'}
+                          alt={''}
+                          height={54}
+                          width={41}
+                          className=""
+                        />
+                      </div>
+                      <p className='text-[22px] text-homeblack font-semibold'>Web Development Services</p>
+                    </div>
+                    <ul className=' flex flex-col mt-5 text-[15px]  gap-[5px]  '>
+                      <Link target='_blank' className='hover:text-pink' href='/web-development-services'><li>Web Development Services</li></Link>
+                      <Link target='_blank' className='hover:text-pink' href='/magento-web-development-services'><li>Magento Web Development</li></Link>
+                      <Link target='_blank' className='hover:text-pink' href='/laravel-development-services'><li>Laravel Development Services</li></Link>
+                      <Link target='_blank' className='hover:text-pink' href='/custom-php-development-services-company'><li>PHP Development Services</li></Link>
+                      <Link target='_blank' className='hover:text-pink' href='/asp-dot-net-development-services'><li>ASP Dot net Development Services</li></Link>
+
+                    </ul>
+                  </div>
+                  <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
+                  </div>
+                  <div>
+                    <div className='flex justify-start gap-2 items-center'>
+                      <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
+                        <Image
+                          src={'/images/h15.svg'}
+                          alt={''}
+                          height={54}
+                          width={41}
+                          className=""
+                        />
+                      </div>
+                      <p className='text-[22px] text-homeblack font-semibold'>Web Design Services</p>
+                    </div>
+                    <ul className=' mt-5 text-[15px]  gap-[5px]  flex flex-col  rounded-lg'>
+                      <Link target='_blank' className='hover:text-pink' href='/web-design-services'><li>Web Design Services</li></Link>
+                      <Link target='_blank' className='hover:text-pink' href='/wordpress-development-services'><li>WordPress Development</li></Link>
+                      <Link target='_blank' className='hover:text-pink' href='/logo-design-services'><li>Logo Design</li></Link>
+                      <Link target='_blank' className='hover:text-pink' href='/mobile-responsive-designing-services'><li>Mobile Responsive Website</li></Link>
+                      <Link target='_blank' className='hover:text-pink' href='/website-speed-optimization'><li>Website Speed Optimization</li></Link>
+                    </ul>
+                  </div>
+                  <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
+                  </div>
+                  <div>
+                    <div className='flex justify-start gap-2 items-center'>
+                      <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
+                        <Image
+                          src={'/images/h16.svg'}
+                          alt={''}
+                          height={54}
+                          width={41}
+                          className=""
+                        />
+                      </div>
+                      <p className='text-[22px] text-homeblack font-semibold'>Learn About Us</p>
+                    </div>
+                    <ul className='  flex flex-col mt-5 text-[15px]  gap-[5px] rounded-lg'>
+                      <Link target='_blank' className='hover:text-pink' href='/case-study'><li>SEO Case Studies</li></Link>
+                      <Link target='_blank' className='hover:text-pink' href='/testimonials'><li>Client Testimonials</li></Link>
+                      <Link target='_blank' className='hover:text-pink' href='/blog'><li>Read Our Super Blogs</li></Link>
+                    </ul>
+                  </div>
+                  <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
+                  </div>
+                  <div className='min-h-full lg:w-[20%] flex justify-center items-start   lg:items-center'>
+                    <div className='flex flex-col gap-3 justify-center items-center'>
+                      <p className='text-[20px] text-homeblack font-medium'>For More Information</p>
+                      <div className='w-fit' onClick={()=>Router.push('/contact-us')}>
+                      <Button content={'Contact Us'} />
+                      </div>
+                      <ClientsCount/>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+                {/* Our Packages Dropdown */}
+                <li onMouseOver={() => toggleDropdown('packages')} className=' font-semibold flex  gap-1 items-center cursor-pointer'>
                 Our Packages {openDropdown === 'packages' ? <Image 
                src={'/images/up.svg'} 
               width={14} 
@@ -467,109 +571,6 @@ const Index = ({show}:any) => {
                       <Link target='_blank' className='hover:text-pink' href='/content-marketing-packages'><li>Content Marketing Packages </li></Link>
 
                     </ul>
-                  </div>
-                </motion.div>
-              )}
-
-              {/* Web Development Dropdown */}
-              <li onMouseOver={() => toggleDropdown('web-dev')} className='flex  font-semibold  gap-1 items-center cursor-pointer'>
-                Web Development {openDropdown === 'web-dev' ? <Image 
-             src={'/images/up.svg'} 
-              width={14} 
-              height={11} 
-              alt={"w3era digital marketing company"} 
-              className="cursor-pointer 2xl:w-[14px] w-[12px]"
-            /> :
-             <Image 
-              src={'/images/down-icon.svg'} 
-              width={14} 
-              height={11} 
-              alt={"w3era digital marketing company"} 
-              className="cursor-pointer2xl:w-[14px] w-[12px]"
-            />}
-              </li>
-              {openDropdown === 'web-dev' && (
-                <motion.div 
-                initial={{opacity: 0}}
-                animate={{opacity: 1}}
-                className='shadow-md absolute text-homegrey text-[17px]  w-[85%] lg:w-[95%] lg:h-fit overflow-y-scroll lg:overflow-auto 
-               max-h-[70vh]  flex-wrap lg:flex-nowrap px-12 py-14 z-[99999] top-20 left-10 bg-white  justify-start lg:justify-around flex gap-5  p-7 rounded-xl' onMouseLeave={() => toggleDropdown('')}>
-                  <div>
-                    <div className='flex justify-start gap-2 items-center'>
-                      <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
-                        <Image
-                          src={'/images/h14.svg'}
-                          alt={''}
-                          height={54}
-                          width={41}
-                          className=""
-                        />
-                      </div>
-                      <p className='text-[22px] text-homeblack font-semibold'>Web Development Services</p>
-                    </div>
-                    <ul className=' flex flex-col mt-5 text-[15px]  gap-[5px]  '>
-                      <Link target='_blank' className='hover:text-pink' href='/web-development-services'><li>Web Development Services</li></Link>
-                      <Link target='_blank' className='hover:text-pink' href='/magento-web-development-services'><li>Magento Web Development</li></Link>
-                      <Link target='_blank' className='hover:text-pink' href='/laravel-development-services'><li>Laravel Development Services</li></Link>
-                      <Link target='_blank' className='hover:text-pink' href='/custom-php-development-services-company'><li>PHP Development Services</li></Link>
-                      <Link target='_blank' className='hover:text-pink' href='/asp-dot-net-development-services'><li>ASP Dot net Development Services</li></Link>
-
-                    </ul>
-                  </div>
-                  <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
-                  </div>
-                  <div>
-                    <div className='flex justify-start gap-2 items-center'>
-                      <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
-                        <Image
-                          src={'/images/h15.svg'}
-                          alt={''}
-                          height={54}
-                          width={41}
-                          className=""
-                        />
-                      </div>
-                      <p className='text-[22px] text-homeblack font-semibold'>Web Design Services</p>
-                    </div>
-                    <ul className=' mt-5 text-[15px]  gap-[5px]  flex flex-col  rounded-lg'>
-                      <Link target='_blank' className='hover:text-pink' href='/web-design-services'><li>Web Design Services</li></Link>
-                      <Link target='_blank' className='hover:text-pink' href='/wordpress-development-services'><li>WordPress Development</li></Link>
-                      <Link target='_blank' className='hover:text-pink' href='/logo-design-services'><li>Logo Design</li></Link>
-                      <Link target='_blank' className='hover:text-pink' href='/mobile-responsive-designing-services'><li>Mobile Responsive Website</li></Link>
-                      <Link target='_blank' className='hover:text-pink' href='/website-speed-optimization'><li>Website Speed Optimization</li></Link>
-                    </ul>
-                  </div>
-                  <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
-                  </div>
-                  <div>
-                    <div className='flex justify-start gap-2 items-center'>
-                      <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
-                        <Image
-                          src={'/images/h16.svg'}
-                          alt={''}
-                          height={54}
-                          width={41}
-                          className=""
-                        />
-                      </div>
-                      <p className='text-[22px] text-homeblack font-semibold'>Learn About Us</p>
-                    </div>
-                    <ul className='  flex flex-col mt-5 text-[15px]  gap-[5px] rounded-lg'>
-                      <Link target='_blank' className='hover:text-pink' href='/case-study'><li>SEO Case Studies</li></Link>
-                      <Link target='_blank' className='hover:text-pink' href='/testimonials'><li>Client Testimonials</li></Link>
-                      <Link target='_blank' className='hover:text-pink' href='/blog'><li>Read Our Super Blogs</li></Link>
-                    </ul>
-                  </div>
-                  <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
-                  </div>
-                  <div className='min-h-full lg:w-[20%] flex justify-center items-start   lg:items-center'>
-                    <div className='flex flex-col gap-3 justify-center items-center'>
-                      <p className='text-[20px] text-homeblack font-medium'>For More Information</p>
-                      <div className='w-fit' onClick={()=>Router.push('/contact-us')}>
-                      <Button content={'Contact Us'} />
-                      </div>
-                      <ClientsCount/>
-                    </div>
                   </div>
                 </motion.div>
               )}

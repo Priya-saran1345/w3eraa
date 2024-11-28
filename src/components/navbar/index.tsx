@@ -26,18 +26,17 @@ const Navbar = () => {
             />
           </Link>
           {/* Desktop Navbar */}
-          <div className="hidden lg:block">
-            <NavbarItems  show={0} />
+          <div className="hidden  lg:block">
+            <NavbarItems  show={0}/>
           </div>
           {/* Mobile Menu Icon */}
           <div className='text-[26px] lg:hidden cursor-pointer' onClick={() => setshowmenu((prev)=>!prev)}>
             {!showmenu&&
-              <IoMdMenu  />}
+              <IoMdMenu />}
               {
                showmenu&&
             <RxCross2 />
               }
-
           </div>
         </div>
       </div>
