@@ -3,6 +3,7 @@ import React from 'react'
 import SeoByIndustryDetail from '@/components/SeoByIndustryDetailPage'
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
+ import fetchData from "@/app/fetchData"
 
 async function SchemaScript({ params}:any) {
   const  slug  = params?.id;
@@ -16,18 +17,18 @@ async function SchemaScript({ params}:any) {
     />
   )
 }
-const Page = ({ params }: any) => {
+const Page = async({ params }: any) => {
+  const data = await fetchData(`industry-detail/${params?.nonId}`)
   return (
     <div>
         <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
-      <SeoByIndustryDetail/>
+      <SeoByIndustryDetail data={data[0]}/>
     </div>
   )
 }
 export default Page
-
 export async function generateMetadata({ params }: any) {
   const  slug  = params?.id;
 

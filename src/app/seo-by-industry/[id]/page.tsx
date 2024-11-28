@@ -3,6 +3,7 @@ import React from 'react'
 import SeoIndustryInner from '@/components/SeoIndustryInnerPage'
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
+import fetchData from "@/app/fetchData"
 
 async function SchemaScript({ params}:any) {
   const  slug  = params?.id;
@@ -16,13 +17,14 @@ async function SchemaScript({ params}:any) {
     />
   )
 }
-const Page = ({ params }: any) => {
+const Page = async({ params }: any) => {
+  const data = await fetchData(`seo-industry/${params?.id}`)
   return (
     <div>
         <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
-        <SeoIndustryInner/>
+        <SeoIndustryInner data={data[0]} />
     </div>
   )
 }

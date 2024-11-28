@@ -18,7 +18,6 @@ const Blogs = () => {
   const [pages, setPages] = useState<number>(0);
   const [currentPage, setCurrentPage] = useState<number>(1); // Track the current page
   const sectionRef = useRef<HTMLDivElement | null>(null);
-
   // Fetch blogs on page load
   const fetchBlogs = async (page: number = 1) => {
     try {
@@ -40,7 +39,6 @@ const Blogs = () => {
     elem?.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
     elem?.summary?.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
   // Handle page change for pagination with smooth scroll to top
   const handlePageChange = (page: number) => {
     setCurrentPage(page); // Update the current page on pagination change
@@ -66,7 +64,7 @@ const Blogs = () => {
             <h1 className="text-white text-[32px] font-bold lg:text-[48px]">W3era Blogs</h1>
           </div>
           <div className="bg-lightblue py-5">
-            <div className="w-full flex gap-5 relative h-full justify-between lg:flex-nowrap flex-wrap mx-auto xl:w-[95%] 2xl:w-[95%]  2xl:w-[75%] px-4 text-white mb-8 lg:mb-32">
+            <div className="w-full flex gap-5 relative h-full justify-between lg:flex-nowrap flex-wrap mx-auto lg:w-[95%]   2xl:w-[75%] px-4 text-white mb-8 lg:mb-32">
               <aside>
                 <div className="xl:min-w-[414px] w-[314px] sticky top-32 flex flex-col gap-6">
                   <div className="bg-white w-full flex text-[18px] font-medium justify-between rounded-lg p-3">

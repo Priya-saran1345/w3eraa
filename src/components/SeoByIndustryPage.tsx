@@ -23,34 +23,11 @@ import axios from 'axios';
 import Image from 'next/image';
 import {StyledWrapper} from '@/components/Styled'
 import DownNavbar from '@/components/DownNavbar'
+import CustomerChoose from "@/components/CustomerChoose";
 
-const Main = () => {
-    const { apidata } = Useapi();
+
+const Main = ({data , quicklinks}:any) => {
     const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(null);
-    const [quicklinks, setquicklinks] = useState<any>()
-
-const [data, setdata] = useState<any>()
-    const fetchTools = async () => {
-        try {
-            const response = await axios.get(`${BASE_URL}seo-industry/`);
-            setdata(response.data);
-        } catch (error: any) {
-            console.log("Service error", error.message);
-        }
-        try {
-            const response = await axios.get(`${BASE_URL}quick-link/seo-by-industry/`);
-            console.log('quick links',(response.data.link_category
-            ))
-            setquicklinks(response.data.link_category);
-        } catch (error: any) {
-            console.log('quicklinks error', error);
-           
-        }
-    };
-
-    useEffect(() => {
-        fetchTools();
-    }, []);
     useEffect(() => {
         AOS.init({
             duration: 1200, // Animation duration in ms
@@ -58,12 +35,6 @@ const [data, setdata] = useState<any>()
         });
         AOS.refresh(); // Refresh AOS after dynamic content is loaded
     }, []);
-
-    // Loading State
-    // if (!apidata) {
-    //     return <Loader />;
-    // }
-    console.log('industry data',data)
     return (
         <div>
             <Header />
@@ -111,7 +82,7 @@ const [data, setdata] = useState<any>()
                     ))}
                 </div>
             </div>
-            <ClientSays props={apidata?.clients_say[0]} />
+            {/* <ClientSays props={apidata?.clients_say[0]} /> */}
             <div className='w-full bg-blue py-10 text-white  lg:py-16'>
                 <div className=' md:w-[75%] mx-auto xl:w-[50%]'>
                     <p className=' text-[28px] font-bold text-center lg:leading-[46px] lg:text-[38px]'>Get A Top Rank on Google Search Results,
@@ -130,11 +101,11 @@ const [data, setdata] = useState<any>()
             {
                 <div  className='w-full mx-auto xl:w-[95%]  2xl:w-[75%] flex flex-col gap-4 px-6 xl:px-2 py-12'>
                     <StyledWrapper>
-                        <p
+                        <div
                             className="text-homegrey text-[18px]"
                         dangerouslySetInnerHTML={{ __html: data?.industry_content[0]?.description ||''}}
                         >
-                        </p>
+                        </div>
                     </StyledWrapper>
                 </div>
             }
@@ -149,13 +120,14 @@ const [data, setdata] = useState<any>()
             </div>
       
             <Revenue />
-            <Choose props={apidata?.why_choose[0]} />
-            <Packages props={apidata?.our_package} />
-            <Blogs props={apidata?.blog} />
+            <CustomerChoose />
+            {/* <Packages props={apidata?.our_package} /> */}
+            {/* <Blogs props={apidata?.blog} /> */}
             { quicklinks&&
-                                <Quicklinks props={quicklinks } />
+                                <Quicklinks props={quicklinks.
+                                  link_category } />
                             }    
-                                    <Footer />
+            <Footer />
         </div>
     );
 };

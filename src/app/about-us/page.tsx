@@ -3,6 +3,7 @@ import React from 'react'
  import About from '@/components/About'
  import { fetchMeta } from "@/app/action";
  import { Suspense } from 'react'
+import { BASE_URL } from '@/util/api';
 
 async function SchemaScript() {
   const metaData = await fetchMeta("about-us")
@@ -15,17 +16,32 @@ async function SchemaScript() {
     />
   )
 }
-const AboutUS = () => {
+async function fetchData() {
+  try {
+    const [caseStudyRes] = await Promise.all([
+      fetch(`${BASE_URL}about/`, { cache: 'no-store' }),
+     
+    ]);
+    if (!caseStudyRes.ok) throw new Error('Failed to fetch case study data');
+    const aboutData = await caseStudyRes.json();
+    return { aboutData };
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error; // Re-throw the error to be handled by Next.js error boundary
+  }
+}
+ export default async function AboutUS() {
+  const { aboutData } = await fetchData();
+
   return (
     <>
        <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
-    <About/>
+    <About about={aboutData}  />
     </>
   )
 }
-export default AboutUS
 export async function generateMetadata() {
   try {
     const metaData = await fetchMeta("about-us");

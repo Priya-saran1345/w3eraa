@@ -127,7 +127,7 @@ const Router=useRouter()
                             <p className='text-blue text-[20px]'>5k+</p>
                         </div>
                     </div> */}
-                    <div className='flex  mt-2'>
+                    <div className='flex justify-center sm:justify-start w-full mt-2'>
                        
                         <div onClick={()=>Router.push('/get-a-free-quote')} className='w-fit'>
                             <Button content={'Know More'} />

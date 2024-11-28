@@ -3,7 +3,8 @@ import React from 'react'
 import CaseStudyInnerPage from '@/components/CaseStudyInnerPage'
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
-
+import { BASE_URL } from '@/util/api';
+import fetchData from "@/app/fetchData"
 async function SchemaScript({ params}:any) {
   const  slug  = params?.id;
   const metaData = await fetchMeta(`blog/case-studies/${slug}`);
@@ -16,13 +17,14 @@ async function SchemaScript({ params}:any) {
     />
   )
 }
-const Page = ({ params }: any) => {
+const Page = async({ params }: any) => {
+  const data = await fetchData(`case-study/${params?.id}`)
   return (
     <div>
         <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
-      <CaseStudyInnerPage/>
+      <CaseStudyInnerPage data={data[0]}/>
     </div>
   )
 }
@@ -31,7 +33,6 @@ export default Page
 
 export async function generateMetadata({ params }: any) {
   const  slug  = params?.id;
-
   try {
     const metaData = await fetchMeta(`blog/case-studies/${slug}`);
     return {

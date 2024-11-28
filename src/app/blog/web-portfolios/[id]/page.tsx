@@ -3,7 +3,7 @@ import React from 'react'
 import WebPortfolio from '@/components/WebPortfolioInner'
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
-
+import fetchData from "@/app/fetchData"
 async function SchemaScript({ params}:any) {
   const  slug  = params?.id;
   const metaData = await fetchMeta(`blog/web-portfolios/${slug}`);
@@ -15,13 +15,15 @@ async function SchemaScript({ params}:any) {
     />
   )
 }
-const Page = ({ params }: any) => {
+const  Page = async ({ params }: any) => {
+  const data = await fetchData(`portfolio`)
+
   return (
     <div>
         <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
-      <WebPortfolio/>
+      <WebPortfolio data={data} />
     </div>
   )
 }
