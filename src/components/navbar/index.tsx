@@ -11,10 +11,12 @@ const Navbar = () => {
   const { basic_details } = Useapi();
   const [showmenu, setshowmenu] = useState(false);
   return (
-    <div className='text-homeblack py-3 lg:py-0 bg-white sticky shadow-md -top-2 z-20'>
+    <div className='text-homeblack py-3 lg:py-0 bg-white  sticky shadow-md -top-2 z-20'>
       <div className='w-full px-4 xl:w-[95%]  2xl:w-[75%] mx-auto'>
-        <div className='flex justify-between items-center '>
+        <div className='flex w-full  justify-start items-center '>
           {/* Logo */}
+          <div className='w-fit'>
+
           <Link href="/">
             <Image 
               src={'/images/logo.png'} 
@@ -23,10 +25,11 @@ const Navbar = () => {
               height={58} 
               alt={basic_details?.basic_details[0]?.logo_alt|| 'w3era'} 
               className="cursor-pointer"
-            />
+              />
           </Link>
+              </div>
           {/* Desktop Navbar */}
-          <div className="hidden  lg:block">
+          <div className="hidden w-full   lg:block">
             <NavbarItems  show={0}/>
           </div>
           {/* Mobile Menu Icon */}

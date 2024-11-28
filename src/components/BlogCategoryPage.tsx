@@ -75,7 +75,6 @@ const Category = () => {
         <div>
           <Header />
           <DownNavbar/>
-
           <Navbar />
           <div className="w-full xl:w-[95%]  2xl:w-[75%] mx-auto px-4 bg-white">
             <div className="mt-5 py-3 w-full border-b-[2px] border-lightblue">

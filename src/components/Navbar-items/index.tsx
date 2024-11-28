@@ -17,8 +17,8 @@ const Index = ({show}:any) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
   };
   return (
-    <div  className=' lg:flex gap-[10px] 2xl:gap-3 py-3 items-center text-[17px] lg:text-[15px]   xl:text-[17px] '>
-          <div className={`lg:items-center font-medium ${show ? "flex flex-col" : "flex"} gap-4`}>
+    <div  className=' lg:flex gap-[10px] w-full justify-around 2xl:gap-3 py-3 items-center text-[17px] lg:text-[15px] bg-blu  xl:text-[17px] '>
+          <div className={`lg:items-center font-medium ${show ? "flex flex-col" : "flex"}  gap-4`}>
               {/* SEO Dropdown */}
               <Link target='_blank' href={'/blog'}>
               <li  className='flex  lg:hidden gap-1 items-center mb-2 cursor-pointer'>
@@ -35,8 +35,8 @@ const Index = ({show}:any) => {
                web Story
               </li>
               </Link>
-              <li onMouseOver={() => toggleDropdown('seo')} className='flex font-semibold  gap-1 items-center cursor-pointer'>
-                SEO {openDropdown === 'seo' ?  <Image 
+              <li onMouseOver={() => toggleDropdown('seo')} className='flex  font-semibold  gap-1 items-center cursor-pointer'>
+               SEO {openDropdown === 'seo' ?  <Image 
               src={'/images/up.svg'} 
               width={14} 
               height={11} 

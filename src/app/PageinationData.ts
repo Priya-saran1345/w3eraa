@@ -1,10 +1,10 @@
 'use server';
 import { BASE_URL } from "@/util/api";
 
-export default async function fetchMeta(slug: any) {
+export default async function PaginationData({slug }: any) {
   try {
     // Encode the slug to handle special characters in the URL
-    const url = `${BASE_URL}${encodeURIComponent(slug)}/`;
+    const url = `${BASE_URL}${slug}/`;
     // console.log('Requesting URL:', url);
 
     // Fetch metadata using GET method
@@ -16,10 +16,12 @@ export default async function fetchMeta(slug: any) {
         'Content-Type': 'application/json',
       },
     });
+
     // console.log('Response status:', res.status);
     // console.log('Response headers:', res.headers);
+
     if (!res.ok) {
-      throw new Error(`HTTP error! status: ${res.status}`)
+console.log(`HTTP error! status: ${res.status}`)
     }
 
     const contentType = res.headers.get("content-type");

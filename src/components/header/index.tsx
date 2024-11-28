@@ -14,13 +14,13 @@ import { motion } from 'framer-motion'
 const Header = () => {
   const { basic_details } = Useapi();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const handleToggle = (menu: string) => {
+  const handleToggle = (menu: string) => {  
     setOpenDropdown(openDropdown === menu ? null : menu);
   };
    const Router= useRouter()
   return (
     <>
-      <div className='bg-purple text-white'>
+      <div className='bg-purple text-white' onMouseLeave={() => handleToggle('')}>
         <div className='w-full px-4 xl:w-[95%] 2xl:w-[75%] mx-auto'>
           <div className='flex justify-between  2xl:justify-between items-center '>
             <div className='block 2xl:block my-3'>
@@ -41,7 +41,6 @@ const Header = () => {
             </div>
             <div className='flex text-white gap-4 py-3 items-center text-[14px] xl:text-[16px]'>
               <div className='items-center 2xl:font-semibold hidden lg:flex gap-5 2xl:gap-5'>
-
                 {/* About Us Dropdown */}
                 <div className='relative'>
                   <div
