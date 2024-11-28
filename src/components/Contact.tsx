@@ -21,64 +21,64 @@ import Link from 'next/link'
 import HubspotForm from '@/components/HubspotForm'
 import DownNavbar from '@/components/DownNavbar'
 
-const Contact = () => {
-  const { basic_details } = Useapi();
-  const [data, setdata] = useState<any>()
-  const [message, setMessage] = useState({
-    first_name: "",
-    last_name: "",
-    email: "",
-    phone_number: "",
-    message: "",
-    our_service: "",
-    monthly_spent: ""
-  });
-  const [isChecked, setIsChecked] = useState(false); // Track checkbox state
-  const handleSubmit = async () => {
-    if (!isChecked || !validateFields()) return; // Ensure all fields are valid and checkbox is checked
+const Contact = ({data}:any) => {
+  const {basic_details } = Useapi();
+  // const [data, setdata] = useState<any>()
+  // const [message, setMessage] = useState({
+  //   first_name: "",
+  //   last_name: "",
+  //   email: "",
+  //   phone_number: "",
+  //   message: "",
+  //   our_service: "",
+  //   monthly_spent: ""
+  // });
+  // const [isChecked, setIsChecked] = useState(false); // Track checkbox state
+  // const handleSubmit = async () => {
+  //   if (!isChecked || !validateFields()) return; // Ensure all fields are valid and checkbox is checked
 
-    try {
-      const response = await axios.post(`${BASE_URL}contact-form/`, message);
-      toast.success('Message send successfully')
+  //   try {
+  //     const response = await axios.post(`${BASE_URL}contact-form/`, message);
+  //     toast.success('Message send successfully')
 
-      setMessage({
-        first_name: "",
-        last_name: "",
-        email: "",
-        phone_number: "",
-        message: "",
-        our_service: "",
-        monthly_spent: ""
-      });
-      setIsChecked(false);
-    } catch (error) {
-      console.error('Error submitting data:', error);
-      toast.error('Try again')
+  //     setMessage({
+  //       first_name: "",
+  //       last_name: "",
+  //       email: "",
+  //       phone_number: "",
+  //       message: "",
+  //       our_service: "",
+  //       monthly_spent: ""
+  //     });
+  //     setIsChecked(false);
+  //   } catch (error) {
+  //     console.error('Error submitting data:', error);
+  //     toast.error('Try again')
 
-    }
-  };
-  const handleChange = (e: any) => {
-    setMessage({ ...message, [e.target.name]: e.target.value });
-  };
+  //   }
+  // };
+  // const handleChange = (e: any) => {
+  //   setMessage({ ...message, [e.target.name]: e.target.value });
+  // };
 
-  const handleCheckboxChange = (e: any) => {
-    setIsChecked(e.target.checked); // Update the checkbox state
-  };
+  // const handleCheckboxChange = (e: any) => {
+  //   setIsChecked(e.target.checked); // Update the checkbox state
+  // };
 
-  const validateFields = () => {
-    // Check if all fields are filled
-    return (
-      message.first_name &&
-      message.last_name &&
-      message.email &&
-      message.phone_number &&
-      message.message &&
-      message.our_service &&
-      message.monthly_spent
-    );
-  };
+  // const validateFields = () => {
+  //   // Check if all fields are filled
+  //   return (
+  //     message.first_name &&
+  //     message.last_name &&
+  //     message.email &&
+  //     message.phone_number &&
+  //     message.message &&
+  //     message.our_service &&
+  //     message.monthly_spent
+  //   );
+  // };
 
-  const isFormValid = isChecked && validateFields();
+  // const isFormValid = isChecked && validateFields();
 
   const sliderRef = useRef<Slider | null>(null);
   const settings = {
@@ -103,17 +103,17 @@ const Contact = () => {
     }
   };
 
-  const fetchdata = async () => {
-    try {
-      const response = await axios.get(`${BASE_URL}contact-page/`);
-      setdata(response.data);
-    } catch (error: any) {
-      console.log("service error", error.message);
-    }
-  }
-  useEffect(() => {
-    fetchdata()
-  }, [])
+  // const fetchdata = async () => {
+  //   try {
+  //     const response = await axios.get(`${BASE_URL}contact-page/`);
+  //     setdata(response.data);
+  //   } catch (error: any) {
+  //     console.log("service error", error.message);
+  //   }
+  // }
+  // useEffect(() => {
+  //   fetchdata()
+  // }, [])
 
   return (
     <div>

@@ -3,6 +3,7 @@ import React from 'react'
 import SeoByIndustryPage from '@/components/SeoByIndustryPage'
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
+import { BASE_URL } from '@/util/api';
 async function SchemaScript() {
   const metaData = await fetchMeta("seo-by-industry")
   const schemaData =metaData?.scripts[0].content
@@ -14,18 +15,35 @@ async function SchemaScript() {
     />
   )
 }
-const Page = () => {
+async function fetchData() {
+  try {
+    const [caseStudyRes, otherRes] = await Promise.all([
+      fetch(`${BASE_URL}seo-industry/`, { cache: 'no-store' }),
+      fetch(`${BASE_URL}quick-link/seo-by-industry/`, { cache: 'no-store' }),
+    ]);
+    if (!caseStudyRes.ok) throw new Error('Failed to fetch case study data');
+    if (!otherRes.ok) throw new Error('Failed to fetch other case study data');
+    const seoData = await caseStudyRes.json();
+    const quicklinks = await otherRes.json();
+    return { seoData, quicklinks };
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error; // Re-throw the error to be handled by Next.js error boundary
+  }
+}
+ export default async function Page ()  {
+  const { seoData, quicklinks } = await fetchData();
   return (
     <div>
          <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
-        <SeoByIndustryPage/>
+        <SeoByIndustryPage data={seoData}  quicklinks={quicklinks}/>
     </div>
   )
 }
 
-export default Page
+// export default Page
   export async function generateMetadata() {
     try {
       const metaData = await fetchMeta("seo-by-industry");

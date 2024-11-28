@@ -14,24 +14,24 @@ import Loader from '@/components/loader'
 import {StyledWrapper} from '@/components/Styled'
 import DownNavbar from '@/components/DownNavbar'
 
-const Page = () => {
-  const [data, setdata] = useState<any>()
-  const pathname = usePathname();
-    const segments = pathname.replace(/\/$/, '').split('/');
-    const lastsegment= segments.pop(); 
-  const fetch = async () => {
-    try {
-        const response = await axios.get(`${BASE_URL}industry-detail/${lastsegment}/`);
-        setdata(response.data);
-    } catch (error: any) {
-        console.log("Service error", error.message);
-    }
+const Page = ({data}:any) => {
+  // const [data, setdata] = useState<any>()
+  // const pathname = usePathname();
+  //   const segments = pathname.replace(/\/$/, '').split('/');
+  //   const lastsegment= segments.pop(); 
+//   const fetch = async () => {
+//     try {
+//         const response = await axios.get(`${BASE_URL}industry-detail/${lastsegment}/`);
+//         setdata(response.data);
+//     } catch (error: any) {
+//         console.log("Service error", error.message);
+//     }
     
-};
+// };
 
-useEffect(() => {
-    fetch();
-}, []);
+// useEffect(() => {
+//     fetch();
+// }, []);
   return (
     <>
   {/* {
@@ -52,9 +52,9 @@ useEffect(() => {
         <StyledWrapper>
             <div className='text-homeblack leading-[30px]'
             >
-             {data?.map((elem:any, i:number)=>(
-              <div key={i} dangerouslySetInnerHTML={{ __html: elem?.body || '' }} className='h-fit'></div>
-             ))}
+             {/* {data?.map((elem:any, i:number)=>( */}
+              <div  dangerouslySetInnerHTML={{ __html: data?.body || '' }} className='h-fit'></div>
+             {/* ))} */}
             </div>
         </StyledWrapper>
       </div>

@@ -154,7 +154,8 @@ const Router =useRouter()
                                 <p className="mt-3 group-hover:text-homegrey">{service.description}</p>
                               </div>
                               <span className="flex justify-center items-center min-w-[45px] h-[45px] text-[28px] rounded-full border-[1px] border-white group-hover:bg-pink group-hover:text-white">
-                                <GoArrowUpRight className="group-hover:rotate-[45deg] duration-200" />
+                                {/* <GoArrowUpRight className="group-hover:rotate-[45deg] duration-200" /> */}
+                                <Image src={'/images/banner-arrow.svg'} alt="icon" width={16} height={14} className='group-hover:rotate-[45deg] duration-200'/>
                               </span>
                             </div>
                           </div>

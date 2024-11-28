@@ -11,24 +11,10 @@ import Loader from '@/components/loader'
 import {StyledWrapper} from '@/components/Styled'
 import DownNavbar from '@/components/DownNavbar'
 
-const Page = () => {
+const Page = ({data}:any) => {
   const pathname = usePathname();
   const segments = pathname.replace(/\/$/, '').split('/');
   const lastsegment= segments.pop(); 
-  const [data, setdata] = useState<any>()
-  const fetch=async()=>{
-          try {
-        const response = await axios.get(`${BASE_URL}case-study/${lastsegment}/`);
-        setdata(response.data[0]);
-      } catch (error: any) {
-        console.log("service error", error.message);
-      }
-  }
-  useEffect(()=>{
-  fetch()
-  },[])
-
-  console.log('case study inner data',data)
   return (
     <>
     {/* {
@@ -40,7 +26,6 @@ const Page = () => {
     <div>
     <Header/>
     <DownNavbar/>
-
     <Navbar/>
     <CommonBanner title={data?.title||''} image_alt={data?.image_alt} description={data?.description||''} image={data?.image||''} btnlink={''}btntext={''} />
 <div className='w-full '>
@@ -50,12 +35,10 @@ const Page = () => {
   dangerouslySetInnerHTML={{ __html: data?.body }}
 ></div>
 </StyledWrapper>
-
 </div>
 <Footer/>
 </div>
     }
-
 </>
 
   )
