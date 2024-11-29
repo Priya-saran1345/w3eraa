@@ -17,8 +17,8 @@ const Index = ({show}:any) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
   };
   return (
-    <div  className=' lg:flex gap-[10px] w-full justify-around 2xl:gap-3 py-3 items-center text-[17px] lg:text-[15px] bg-blu  xl:text-[17px] '>
-          <div className={`lg:items-center font-medium ${show ? "flex flex-col" : "flex"}  gap-4`}>
+    <div  className=' lg:flex gap-[10px] w-full justify-between 2xl:gap-3 py-3 items-center text-[17px] lg:text-[15px] bg-blu  xl:text-[15px] 2xl:text=[17px] '>
+          <div className={`lg:items-center font-medium ${show ? "flex flex-col" : "flex"}  gap-4 w-2/3 justify-evenly`}>
               {/* SEO Dropdown */}
               <Link target='_blank' href={'/blog'}>
               <li  className='flex  lg:hidden gap-1 items-center mb-2 cursor-pointer'>
@@ -26,16 +26,16 @@ const Index = ({show}:any) => {
               </li>
               </Link>
               <Link target='_blank' href={'/contact-us'}>
-              <li  className='flex  lg:hidden gap-1 items-center cursor-pointer'>
+              <li  className='flex  lg:hidden gap-1 items-center cursor-pointer hover:text-pink '>
                 Contact us 
               </li>
               </Link>
               <Link target='_blank' href={'/web-stories'}>
-              <li  className='flex  lg:hidden gap-1 items-center cursor-pointer'>
-               web Story
+              <li  className='flex  lg:hidden gap-1 items-center cursor-pointer hover:text-pink '>
+               Web Story
               </li>
               </Link>
-              <li onMouseOver={() => toggleDropdown('seo')} className='flex  font-semibold  gap-1 items-center cursor-pointer'>
+              <li onMouseOver={() => toggleDropdown('seo')} className={`flex  font-semibold  gap-1 items-center cursor-pointer hover:text-pink text-[16px ] ${openDropdown === 'seo' && "text-pink"}`}>
                SEO {openDropdown === 'seo' ?  <Image 
               src={'/images/up.svg'} 
               width={14} 
@@ -76,10 +76,8 @@ const Index = ({show}:any) => {
                       <Link target='_blank' className='hover:text-pink' href='/local-seo-services'><li>Local SEO</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/on-page-seo-services'><li>On Page SEO</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/off-page-seo'><li>Off Page SEO</li></Link>
-                      <Link target='_blank' className='hover:text-pink' href='/mobile-seo-services'><li>Mobile SEO</li></Link>
-                      <Link target='_blank' className='hover:text-pink' href='/small-business-seo-services'><li>Small Business SEO</li></Link>
+                      <Link target='_blank' className='hover:text-pink' href='/app-store-optimization'><li>App Store Optimization</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/ecommerce-seo-services'><li>Ecommerce SEO</li></Link>
-                      {/* <Link target='_blank' className='hover:text-pink' href='/app-store-optimization'><li>App Store Optimization</li></Link> */}
                       {/* <Link target='_blank' className='hover:text-pink' href='/google-business-profile-management-services'><li>GMB Services</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/online-reputation-management'><li>Improve your brand’s Online Reputation</li></Link> */}
                     </ul>
@@ -151,8 +149,8 @@ const Index = ({show}:any) => {
               )}
 
               {/* Pay Per Click Dropdown */}
-              <li onMouseOver={() => toggleDropdown('ppc')} className='flex font-semibold  gap-1 items-center cursor-pointer'>
-                Pay Per Click {openDropdown === 'ppc' ? <Image 
+              <li onMouseOver={() => toggleDropdown('ppc')} className={`flex  font-semibold  gap-1 items-center cursor-pointer hover:text-pink text-[16px ] ${openDropdown === 'ppc' && "text-pink"}`}>
+              Performance Marketing {openDropdown === 'ppc' ? <Image 
               src={'/images/up.svg'} 
               width={14} 
            
@@ -214,6 +212,7 @@ const Index = ({show}:any) => {
                     <ul className=' mt-5 text-[15px]  gap-[5px]  flex flex-col rounded-lg'>
                       <Link target='_blank' className='hover:text-pink' href='/conversion-rate-optimization'><li>Conversion Rate Optimization</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/performance-marketing'><li>Performance Marketing</li></Link>
+                      <Link target='_blank' className='hover:text-pink' href='/linkedin-marketing-services-usa'><li>LinkedIn Marketing</li></Link>
 
                     </ul>
                   </div>
@@ -235,6 +234,7 @@ const Index = ({show}:any) => {
                     <ul className='  flex flex-col  mt-5 text-[15px]  gap-[5px] rounded-lg'>
                       <Link target='_blank' className='hover:text-pink' href='/case-study'><li>Case study</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/our-client-list'><li>Our Clients</li></Link>
+                      <Link target='_blank' className='hover:text-pink' href='/blog/40-ppc-tools-for-any-task'><li>PPC Tools</li></Link>
                     </ul>
                   </div>
                   <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
@@ -253,7 +253,7 @@ const Index = ({show}:any) => {
               )}
 
               {/* SMM Dropdown */}
-              <li onMouseOver={() => toggleDropdown('smm')} className='flex  font-semibold  gap-1 items-center cursor-pointer'>
+              <li onMouseOver={() => toggleDropdown('smm')} className={`flex  font-semibold  gap-1 items-center cursor-pointer hover:text-pink text-[16px ] ${openDropdown === 'smm' && "text-pink"}`}>
                 SMM {openDropdown === 'smm' ? <Image 
               src={'/images/up.svg'} 
               width={14} 
@@ -294,6 +294,7 @@ const Index = ({show}:any) => {
                     <ul className=' flex flex-col mt-5 text-[15px]  gap-[5px]  '>
                       <Link target='_blank' className='hover:text-pink' href='/social-media-optimization'><li>Social Media Optimization</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/social-media-marketing-services'><li>Social Media Marketing</li></Link>
+                      <Link target='_blank' className='hover:text-pink' href='/email-marketing-services'><li>Email Marketing</li></Link>
                     </ul>
                   </div>
                   <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
@@ -316,8 +317,7 @@ const Index = ({show}:any) => {
                       <Link target='_blank' className='hover:text-pink' href='/instagram-marketing-services'><li>Instagram Marketing</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/pinterest-marketing-services-usa'><li>Pinterest Marketing Services</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/facebook-advertising-services'><li>Facebook Marketing</li></Link>
-                      <Link target='_blank' className='hover:text-pink' href='/linkedin-marketing-services-usa'><li>LinkedIn Marketing</li></Link>
-                      <Link target='_blank' className='hover:text-pink' href='/email-marketing-services'><li>Email Marketing</li></Link>
+
                     </ul>
                   </div>
                   <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
@@ -358,7 +358,7 @@ const Index = ({show}:any) => {
             
 
               {/* Web Development Dropdown */}
-              <li onMouseOver={() => toggleDropdown('web-dev')} className='flex  font-semibold  gap-1 items-center cursor-pointer'>
+              <li onMouseOver={() => toggleDropdown('web-dev')} className={`flex  font-semibold  gap-1 items-center cursor-pointer hover:text-pink text-[16px ] ${openDropdown === 'web-dev' && "text-pink"}`}>
                 Web Development {openDropdown === 'web-dev' ? <Image 
              src={'/images/up.svg'} 
               width={14} 
@@ -398,7 +398,7 @@ const Index = ({show}:any) => {
                       <Link target='_blank' className='hover:text-pink' href='/magento-web-development-services'><li>Magento Web Development</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/laravel-development-services'><li>Laravel Development Services</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/custom-php-development-services-company'><li>PHP Development Services</li></Link>
-                      <Link target='_blank' className='hover:text-pink' href='/asp-dot-net-development-services'><li>ASP Dot net Development Services</li></Link>
+                      <Link target='_blank' className='hover:text-pink' href='/asp-dot-net-development-services'><li>ASP Dot Net Development Services</li></Link>
 
                     </ul>
                   </div>
@@ -444,6 +444,8 @@ const Index = ({show}:any) => {
                       <Link target='_blank' className='hover:text-pink' href='/case-study'><li>SEO Case Studies</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/testimonials'><li>Client Testimonials</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/blog'><li>Read Our Super Blogs</li></Link>
+                      <Link target='_blank' className='hover:text-pink' href='/blog/website-migration-guide-boost-seo'><li>Website Migration Guide</li></Link>
+                      <Link target='_blank' className='hover:text-pink' href='/blog/free-wordpress-website-migration-plugins'><li>Website Migration Plugins</li></Link>
                     </ul>
                   </div>
                   <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
@@ -460,7 +462,7 @@ const Index = ({show}:any) => {
                 </motion.div>
               )}
                 {/* Our Packages Dropdown */}
-                <li onMouseOver={() => toggleDropdown('packages')} className=' font-semibold flex  gap-1 items-center cursor-pointer'>
+                <li onMouseOver={() => toggleDropdown('packages')} className={`flex  font-semibold  gap-1 items-center cursor-pointer hover:text-pink  ${openDropdown === 'packages' && "text-pink"}`}>
                 Our Packages {openDropdown === 'packages' ? <Image 
                src={'/images/up.svg'} 
               width={14} 
@@ -497,13 +499,11 @@ const Index = ({show}:any) => {
                     </div>
                     <ul className=' flex flex-col mt-5 text-[15px]  gap-[5px] '>
                       <Link target='_blank' className='hover:text-pink' href='/seo-packages'><li>SEO Packages</li></Link>
-                      <Link target='_blank' className='hover:text-pink' href='/blog-review-service'><li>Blog Review Service</li></Link>
-                      <Link target='_blank' className='hover:text-pink' href='/small-business-seo-packages'><li>Small Business SEO Packages</li></Link>
+                      <Link target='_blank' className='hover:text-pink' href='/ecommerce-seo-packages'><li>Ecommerce Seo Packages</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/local-seo-packages'><li>Local SEO Packages</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/guest-posting-service-packages'><li>Guest Posting Service Packages</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/app-store-aso-packages'><li>App Store ASO Packages</li></Link>
                       <Link target='_blank' className='hover:text-pink' href='/link-building-packages'><li>Link Building Packages</li></Link>
-                      <Link target='_blank' className='hover:text-pink' href='/ecommerce-seo-packages'><li>Ecommerce Seo Packages</li></Link>
 
                     </ul>
                   </div>
@@ -576,17 +576,17 @@ const Index = ({show}:any) => {
               )}
             </div>
             {/* Buttons */}
-            <div className='flex gap-2 lg:gap-1 mt-2 lg:mt-0 flex-col lg:flex-row'>
+            <div className='flex gap-2 lg:gap-1 mt-2 lg:mt-0 flex-col lg:flex-row w-1/3 justify-end'>
            <Link target='_blank' href={'https://meetings.hubspot.com/sakshi-jass?uuid=ae684c90-b22d-4aed-a972-4de20bef7f87'}>
-            <button className=' max-w-[180px]  py-[8px] 2xl:py-[10px]  border-2 px-4 border-pink rounded-full meeting-btn'>
-              <span className="meeting-text font-semibold">Book a Meeting</span>
+            <button className=' max-w-[180px]  py-[8px]   border-2 px-2 2xl:px-4 border-pink rounded-full meeting-btn'>
+              <span className="meeting-text font-semibold text-sm ">Book a Meeting</span>
             </button>
            </Link>
            {/* <Link target='_blank' href={'/get-a-free-quote'}> */}
            <div className='w-fit' onClick={()=>Router.push('/get-a-free-quote')}>
               <button
-                className='flex items-center justify-center px-3 2xl:w-[180px] text-white rounded-full py-[11px] 2xl:py-3 group bg-pink transition duration-300'>
-                <span className='transition-transform duration-300 group-hover:-translate-x-2 font-semibold'>
+                className='flex items-center justify-center px-2 2xl:w-[180px] text-white rounded-full h-full py-[11px] 2xl:py-3 group bg-pink transition duration-300'>
+                <span className='transition-transform duration-300 group-hover:-translate-x-2 font-semibold text-sm '>
                   Get a Proposal
                   </span>
                 <MdOutlineRocketLaunch className='text-[20px] hidden 2xl:block opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-x-2' />
