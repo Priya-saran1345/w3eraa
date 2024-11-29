@@ -71,14 +71,8 @@ const Router =useRouter()
       }
       {
         props &&
-        <video
-          autoPlay
-          loop
-          muted
-          className='h-[100vh] min-h-[700px] lg:h-screen hidden sm:block 2xl:h-[95vh] w-full object-cover  transition-opacity duration-500'
-        >
-          <source src="/images/bg-video.mp4" type="video/mp4" />
-        </video>
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('/images/home-video-poster.webp')` }}></div>
+
       }
       {
         // !loading && 
