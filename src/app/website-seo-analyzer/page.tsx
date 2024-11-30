@@ -15,12 +15,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import toast from 'react-hot-toast'
 
 const Audit = () => {
-
     const [url, setUrl] = useState('');
-    
     const [isAnalyzing, setIsAnalyzing] = useState(false);
     const [result, setResult] = useState<any>(null);
-
     const handleUrlChange = (e: any) => {
         setUrl(e.target.value);
     };

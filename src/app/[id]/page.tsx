@@ -17,25 +17,23 @@ async function SchemaScript({ params}:any) {
   )
 }
 const Page = async({params}: any) => {
-  // const data = await fetchData(`service-packages/${params?.id}`);
-  // // Initialize additional variables
-  // let cluth = null;
+  const data = await fetchData(`service-packages/${params?.id}`);
+  // Initialize additional variables
+  let cluth = null;
   // let quicklinks = null;
-  // // If pagetype is not 'other', fetch additional data
-  // if (data?.pagetype !== 'other') {
-  //   cluth = await fetchData('clutch');
-  //   quicklinks = await fetchData(`quick-link/${params?.id}`);
-  //   console.log('quicklinks----------------',quicklinks)
-  // }
+  // If pagetype is not 'other', fetch additional data
+  if (data?.pagetype !== 'other') {
+    cluth = await fetchData('clutch');
+   
+  }
   return (
     <div>
         <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
       <ServicePackage
-      //  result={data} 
-      //  cluth={cluth} 
-      //  quicklinks={quicklinks?.link_category&& quicklinks.link_category ||[]}
+       result={data} 
+       cluth={cluth} 
         />
     </div>
   )

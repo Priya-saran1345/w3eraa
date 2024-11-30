@@ -39,7 +39,7 @@ import fetchData from "@/app/fetchData"
 import axios from 'axios'
 import { BASE_URL } from '@/util/api'
 
-const Service_Pkackages = () => {
+const Service_Pkackages = ({result ,cluth }:any) => {
     const [data, setdata] = useState<any>()
     const pathname = usePathname();
     const segments = pathname.replace(/\/$/, '').split('/');
@@ -49,27 +49,27 @@ const Service_Pkackages = () => {
     const [activePlan, setActivePlan] = useState<string | null>('Professional'); // Default to "Professional"
     const router = useRouter();
     const [err, seterr] = useState<any>(false)
-    const [result, setresult] = useState<any>(null);
+    // const [result, setresult] = useState<any>(null);
     const [quicklinks, setquicklinks] = useState<any>()
-    const [cluth, setcluth] = useState<any>()
+    // const [cluth, setcluth] = useState<any>()
 
     const fetchPackages = async () => {
-        try {
-            const response = await axios.get(`${BASE_URL}service-packages/${lastsegment}/`);
-            setresult(response.data);
-        } catch (error: any) {
-            console.log('service ,package error', error);
-            if (error?.response?.status === 404) {
-                // router.push('/not/found')
-                seterr(true)
-            }
-        }
-        try {
-            const response = await axios.get(`${BASE_URL}clutch/`);
-            setcluth(response.data);
-          } catch (error: any) {
-            console.log(error.message);
-          }
+        // try {
+        //     const response = await axios.get(`${BASE_URL}service-packages/${lastsegment}/`);
+        //     setresult(response.data);
+        // } catch (error: any) {
+        //     console.log('service ,package error', error);
+        //     if (error?.response?.status === 404) {
+        //         // router.push('/not/found')
+        //         seterr(true)
+        //     }
+        // }
+        // try {
+        //     const response = await axios.get(`${BASE_URL}clutch/`);
+        //     setcluth(response.data);
+        //   } catch (error: any) {
+        //     console.log(error.message);
+        //   }
         try {
             const response = await axios.get(`${BASE_URL}quick-link/${lastsegment}/`);
             // console.log('quick links', (response.data.link_category))

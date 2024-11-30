@@ -17,7 +17,7 @@ async function SchemaScript() {
 const Page = () => {
   return (
     <div>
-         <Suspense fallback={null}>
+        <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
       <WorkPage/>
