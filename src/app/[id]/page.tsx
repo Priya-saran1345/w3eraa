@@ -4,7 +4,7 @@ import React from 'react'
 import ServicePackage from '@/components/ServicePackagePage'
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
-// import fetchData from "@/app/fetchData"
+import fetchData from "@/app/fetchData"
 async function SchemaScript({ params}:any) {
   const  slug  = params?.id;
   const metaData = await fetchMeta(`${slug}`);
@@ -17,22 +17,29 @@ async function SchemaScript({ params}:any) {
   )
 }
 const Page = async({params}: any) => {
-    // const data = await fetchData(`service-packages/${params?.id}`)
-    // const cluth = await fetchData(`clutch`)
-    // const quicklinks = await fetchData(`quick-link/${params?.id}`)
+  // const data = await fetchData(`service-packages/${params?.id}`);
+  // // Initialize additional variables
+  // let cluth = null;
+  // let quicklinks = null;
+  // // If pagetype is not 'other', fetch additional data
+  // if (data?.pagetype !== 'other') {
+  //   cluth = await fetchData('clutch');
+  //   quicklinks = await fetchData(`quick-link/${params?.id}`);
+  //   console.log('quicklinks----------------',quicklinks)
+  // }
   return (
     <div>
         <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
       <ServicePackage
-      //  result={data} cluth={cluth} 
-      //  quicklinks={quicklinks.link_category && quicklinks.link_category}
+      //  result={data} 
+      //  cluth={cluth} 
+      //  quicklinks={quicklinks?.link_category&& quicklinks.link_category ||[]}
         />
     </div>
   )
 }
-
 export default Page
   export async function generateMetadata({ params  }: any) {
     const  slug  = params?.id;

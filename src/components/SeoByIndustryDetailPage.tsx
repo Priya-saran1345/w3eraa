@@ -13,7 +13,6 @@ import { usePathname } from 'next/navigation';
 import Loader from '@/components/loader'
 import {StyledWrapper} from '@/components/Styled'
 import DownNavbar from '@/components/DownNavbar'
-
 const Page = ({data}:any) => {
   // const [data, setdata] = useState<any>()
   // const pathname = usePathname();
@@ -26,9 +25,7 @@ const Page = ({data}:any) => {
 //     } catch (error: any) {
 //         console.log("Service error", error.message);
 //     }
-    
 // };
-
 // useEffect(() => {
 //     fetch();
 // }, []);
@@ -45,9 +42,7 @@ const Page = ({data}:any) => {
     <div>
       <Header />
       <DownNavbar/>
-
       <Navbar />
-      
       <div className='py-12 xl:w-[95%]  2xl:w-[75%] px-6 mx-auto'>
         <StyledWrapper>
             <div className='text-homeblack leading-[30px]'

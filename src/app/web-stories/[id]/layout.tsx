@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+export const config = { amp: true }
 
 // export const config = { amp: true }
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ export default function RootLayout({
 }>)
  {
   return (
-    <html lang="en" amp=""> 
+    <html lang="en" amp=''> 
       <head>
       <Script src="https://cdn.ampproject.org/v0.js" strategy="lazyOnload" />
       <Script src="https://cdn.ampproject.org/v0/amp-story-1.0.js" strategy="lazyOnload" custom-element="amp-story" />

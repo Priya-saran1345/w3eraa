@@ -6,43 +6,42 @@ import React, { useEffect, useState } from 'react';
 import { IoIosSearch } from "react-icons/io";
 import Image from 'next/image';
 import { FaAngleLeft, FaAngleRight, FaArrowRightLong } from "react-icons/fa6";
-import axios from 'axios';
-import { BASE_URL } from '@/util/api';
+// import axios from 'axios';
+// import { BASE_URL } from '@/util/api';
 import Link from 'next/link';
 import { HiArrowTopRightOnSquare } from 'react-icons/hi2';
 import Loader from '@/components/loader';
 import { StyledWrapper } from '@/components/Styled'
 import HubspotForm from '@/components/HubspotForm'
 import DownNavbar from '@/components/DownNavbar'
-
 //  import {useRouter} from 'next/navigation';
-const Page = () => {
+const Page = ({body ,tools}:any) => {
     // const router=useRouter()
     // const itemsPerPage = 10;
-    const [tools, setTools] = useState<any>();
+    // const [tools, setTools] = useState<any>();
     // const [currentPage, setCurrentPage] = useState(1);
     const [searchedTool, setSearchedTool] = useState("");
-    const [body, setbody] = useState<any>()
+    // const [body, setbody] = useState<any>()
     // Function to fetch tools from the API
-    const fetchTools = async () => {
-        try {
-            const response = await axios.get(`${BASE_URL}tools/`);
-            setTools(response.data);
-        } catch (error: any) {
-            console.log("Service error", error.message);
-        }
-        try {
-            const response = await axios.get(`${BASE_URL}tools-body/`);
-            setbody(response.data.body);
-        } catch (error: any) {
-            console.log("Service error", error.message);
-        }
+    // const fetchTools = async () => {
+    //     try {
+    //         const response = await axios.get(`${BASE_URL}tools/`);
+    //         setTools(response.data);
+    //     } catch (error: any) {
+    //         console.log("Service error", error.message);
+    //     }
+    //     try {
+    //         const response = await axios.get(`${BASE_URL}tools-body/`);
+    //         setbody(response.data.body);
+    //     } catch (error: any) {
+    //         console.log("Service error", error.message);
+    //     }
 
-    };
+    // };
 
-    useEffect(() => {
-        fetchTools();
-    }, []);
+    // useEffect(() => {
+    //     fetchTools();
+    // }, []);
 
     // const totalPages = Math.ceil(tools?.length / itemsPerPage);
 

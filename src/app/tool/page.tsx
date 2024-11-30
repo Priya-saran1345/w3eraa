@@ -3,6 +3,8 @@ import React from 'react'
 import ToolPage from '@/components/ToolPage'
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
+import fetchData from "@/app/fetchData"
+
 async function SchemaScript() {
   const metaData = await fetchMeta("tool")
   const schemaData = metaData?.scripts[0].content
@@ -14,13 +16,17 @@ async function SchemaScript() {
     />
   )
 }
-const Page = () => {
+const Page = async() => {
+  const tools=await fetchData('tools')
+  const body=await fetchData('tools-body')
+
+
   return (
     <div>
          <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
-        <ToolPage/>
+        <ToolPage body={body.body} tools={tools} />
     </div>
   )
 }
