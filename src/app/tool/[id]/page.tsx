@@ -2,12 +2,30 @@ import React from 'react';
 import ToolInnerPage from '@/components/ToolInnerPage';
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
+import fetchData from "@/app/fetchData"
+import { BASE_URL } from '@/util/api';
+import { notFound } from "next/navigation";
+async function getHomeData(slug: string) { // Changed parameter to string
+  try{
 
+ 
+  const res = await fetch(`${BASE_URL}tools/${slug}`, { cache: 'no-store' });
+  if (!res.ok) {
+    throw new Error('Failed to fetch FAQ data');
+  }
+  return res.json();
+}
+  catch (error) {
+    console.error("Error fetching data:", error);
+    // Instead of redirecting here, we'll throw the notFound() error
+    notFound();
+  }
+ 
+}
 async function SchemaScript({ params}:any) {
   const  slug  = params?.id;
   const metaData = await fetchMeta(`tool/${slug}`);
   const schemaData = metaData?.scripts[0].content
-
   return (
     <script
       type="application/ld+json"
@@ -15,14 +33,15 @@ async function SchemaScript({ params}:any) {
     />
   )
 }
-const Page = ({ params }: any) => {
-
+const Page =async ({ params }: any) => {
+  const tools_body = await getHomeData(params.id);
+  const tools=await fetchData ('tools')
   return (
     <div>
         <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
-      <ToolInnerPage />
+      <ToolInnerPage  tools={tools} tools_body={tools_body} />
     </div>
   );
 };

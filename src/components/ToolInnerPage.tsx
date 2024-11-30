@@ -19,7 +19,7 @@ import Sites from '@/components/Sites.json'
 import HubspotForm from '@/components/HubspotForm'
 import DownNavbar from '@/components/DownNavbar'
 
-const Tool = () => {
+const Tool = ({tools,tools_body}:any) => {
     const [innerloading, setinnerloading] = useState<any>(false)
     const pathname = usePathname();
     const segments = pathname.replace(/\/$/, '').split('/');
@@ -28,7 +28,7 @@ const Tool = () => {
     const [loading, setLoading] = useState<boolean>(false); // Loading state
     const [error, setError] = useState<string | null>(null); // Error state
     const [result, setResult] = useState<any>(null); // Result state
-    const [tools, setTools] = useState<any>();
+    // const [tools, setTools] = useState<any>();
     const [currentTool, setCurrentTool] = useState<any[]>([]);
     const [showresult, setshowresult] = useState<any>(false)
     const [keywords, setkeywords] = useState<any>()
@@ -36,7 +36,7 @@ const Tool = () => {
     const [description, setdescription] = useState<any>()
     const [depth, setdepth] = useState<any>()
     const [pageno, setpageno] = useState<any>()
-    const [tools_body, settools_body] = useState<any>()
+    // const [tools_body, settools_body] = useState<any>()
     const [useragent, setuseragent] = useState<any>()
     const [allowpath, setallowpath] = useState<any>()
     const [disallowpath, setdisallowpath] = useState<any>()
@@ -44,20 +44,20 @@ const Tool = () => {
     const [sitemapUrl, setsitemapUrl] = useState<any>()
     const [displayedRows, setDisplayedRows] = useState<any[]>([]); // Initially empty
     // Function to fetch tools from the API
-    const fetchTools = async () => {
-        try {
-            const response = await axios.get(`${BASE_URL}tools/`);
-            setTools(response.data);
-        } catch (error: any) {
-            console.log("tools error", error.message);
-        }
-        try {
-            const response = await axios.get(`${BASE_URL}tools/${lastSegment}`);
-            settools_body(response.data);
-        } catch (error: any) {
-            console.log("tool body error", error.message);
-        }
-    };
+    // const fetchTools = async () => {
+    //     try {
+    //         const response = await axios.get(`${BASE_URL}tools/`);
+    //         setTools(response.data);
+    //     } catch (error: any) {
+    //         console.log("tools error", error.message);
+    //     }
+    //     try {
+    //         const response = await axios.get(`${BASE_URL}tools/${lastSegment}`);
+    //         settools_body(response.data);
+    //     } catch (error: any) {
+    //         console.log("tool body error", error.message);
+    //     }
+    // };
 
     const displayRowsOneByOne = (rows: any[]) => {
         let i = 0;
@@ -107,9 +107,9 @@ const Tool = () => {
         }, 1500); // 3 seconds delay
     };
 
-    useEffect(() => {
-        fetchTools();
-    }, []);
+    // useEffect(() => {
+    //     fetchTools();
+    // }, []);
     useEffect(() => {
         setCurrentTool(
             tools?.filter((elem: any) => elem?.slug_link === lastSegment)

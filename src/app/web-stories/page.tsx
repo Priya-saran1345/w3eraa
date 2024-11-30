@@ -3,6 +3,7 @@ import React from 'react'
 import WebstroyPage from '@/components/WebstroyPage'
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
+import fetchData from '@/app/fetchData'
 async function SchemaScript() {
   const metaData = await fetchMeta("web-stories")
   const schemaData = metaData?.scripts[0].content
@@ -14,13 +15,16 @@ async function SchemaScript() {
     />
   )
 }
-const Page = () => {
+const Page = async () => {
+  const data = await fetchData('web-story')
+  const data_others = await fetchData('other/web-stories')
+
   return (
     <div>
          <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
-      <WebstroyPage />
+      <WebstroyPage data={data} data_others={data_others} />
     </div>
   )
 }

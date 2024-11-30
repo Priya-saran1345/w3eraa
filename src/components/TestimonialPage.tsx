@@ -23,6 +23,7 @@ async function fetchData() {
     throw error;
   }
 }
+
 export default async function TestimonialPage() {
   const { testimonial, apidata } = await fetchData();
   return (
