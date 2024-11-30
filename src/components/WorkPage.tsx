@@ -12,12 +12,10 @@ const Work = () => {
 
     return (
         <div>
-        
         {
         <div>
             <Header />
             <DownNavbar/>
-
             <Navbar />
             <div className="w-full bg-no-repeat  lg:bg-[url('/images/work.png')]  pb-28 ">
                 <div className='text-white pt-8   bg-blue pb-7 lg:pt-32 lg:pb-0 lg:bg-inherit w-full xl:w-[95%]  2xl:w-[75%] px-4 mx-auto'>

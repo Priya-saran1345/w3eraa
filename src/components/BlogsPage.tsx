@@ -10,7 +10,6 @@ import { BASE_URL } from '@/util/api';
 import { Pagination } from 'antd';
 import Link from 'next/link';
 import DownNavbar from '@/components/DownNavbar'
-
 const Blogs = () => {
   const [blogs, setBlogs] = useState<any>(null);
   const [allBlogs, setAllBlogs] = useState<any>([]);

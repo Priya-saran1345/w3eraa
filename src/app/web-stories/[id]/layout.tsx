@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-export const config = { amp: true }
+// export const config = { amp: true }
 
 // export const config = { amp: true }
 export const metadata: Metadata = {
