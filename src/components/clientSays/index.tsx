@@ -57,7 +57,9 @@ export default function Data({ props }: any) {
                     controls
                     playing={true} // This will automatically start playing when the video is loaded
                     autoplay={true} // Ensures the video starts automatically
-                    className="w-full max-h-[317px]"
+                    className="w-full  max-h-[317px]"
+                   
+                   width="100%" // Ensures video width matches the parent div
                     onClick={() => setActive(null)}
                   />
                 </div>

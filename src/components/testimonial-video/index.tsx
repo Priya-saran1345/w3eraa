@@ -51,7 +51,7 @@ const Index = ({ props }: any) => {
       {currentItems?.map((cardData: any, index: number) => (
         <div
         key={index}
-        className="min-h-[535px] rounded-xl w-[350px] sm:w-[47%] md:w-[40%] lg:w-[27%]  bg-white overflow-hidden flex flex-col"
+        className="min-h-[605px] rounded-xl w-[350px] sm:w-[47%] md:w-[40%] lg:w-[27%]  bg-white overflow-hidden flex flex-col"
       >
         {/* Toggle YouTube Video or Image */}
         {active === index && cardData.video ? (
@@ -62,6 +62,7 @@ const Index = ({ props }: any) => {
               playing={true} // This will automatically start playing when the video is loaded
               autoplay={true} // Ensures the video starts automatically
               className="w-full max-h-[317px]"
+              width="100%" 
               onClick={() => setActive(null)}
             />
           </div>
@@ -82,7 +83,7 @@ const Index = ({ props }: any) => {
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black flex flex-col justify-between h-full p-4">
                 <div className="flex flex-col justify-center items-center py-20">
                   <div className="bg-pink w-[53px] h-[53px] flex justify-center items-center rounded-full">
-                    <CiPlay1 className="text-[28px] text-white" />
+                    <CiPlay1 className="text-[28px] text-white"  />
                   </div>
                 </div>
                 <div className="text-left border-l-2 border-pink px-4">

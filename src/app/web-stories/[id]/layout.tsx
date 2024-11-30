@@ -14,6 +14,8 @@ export default function RootLayout({
 }>)
  {
   return (
+    <>
+ 
     <html lang="en" amp=''> 
       <head>
       <Script src="https://cdn.ampproject.org/v0.js" strategy="lazyOnload" />
@@ -28,5 +30,7 @@ export default function RootLayout({
        
       </body>
     </html>
+    </>
+
   );
 }

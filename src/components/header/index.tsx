@@ -24,7 +24,7 @@ const Header = () => {
         <div className='w-full px-4 xl:w-[95%] 2xl:w-[75%] mx-auto'>
           <div className='flex justify-between  2xl:justify-between items-center '>
             <div className='block 2xl:block my-3'>
-              <div className='flex gap-[3px] sm:gap-2 text-[19px]'>
+            <div className='flex gap-[3px] sm:gap-2 text-[19px]'>
                 <Link target='_blank' href={`${basic_details?.basic_details[0].facebook_url}`}><FaFacebook /></Link>
                 <Link target='_blank' href={`${basic_details?.basic_details[0].instagram_url}`}><FaInstagram /></Link>
                 <Link target='_blank' href={`${basic_details?.basic_details[0].linkedin_url}`}><FaLinkedinIn /></Link>
