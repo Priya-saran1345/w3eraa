@@ -1,94 +1,147 @@
 import React from 'react';
 
+interface ResultTableProps {
+  result: Record<string, any>;
+  lastSegment: any;
+}
 
-const ResultTable: React.FC<any> = ({ result ,lastSegment }) => {
-  const renderValue = (value: any): React.ReactNode => {
-    if (Array.isArray(value)) {
-      return <NestedTable data={value} />;
-    } else if (typeof value === 'object' && value !== null) {
-      return (
-        <table className="border-collapse border mt-2 border-gray-300 w-full text-left">
-          <thead>
-            <tr className="bg-gray-200 text-homeblack">
-              {Object.keys(value).map((key) => (
-                <th key={key} className="border border-gray-300 px-4 py-2">{key}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              {Object.entries(value).map(([key, val]) => (
-                <td key={key} className="border text-homegrey border-gray-300 px-4 py-2">
-                  {String(val)}
+const ResultTable: React.FC<ResultTableProps> = ({ result, lastSegment }) => {
+  const renderTableForArray = (data: any[]) => {
+    // Check if all items are objects and get the unique keys
+    const headers = Array.from(
+      new Set(data.flatMap((item) => (typeof item === 'object' && item !== null ? Object.keys(item) : [])))
+    );
+    return (
+      <table className="border-collapse border mt-4 border-gray-300 w-full text-left">
+        <thead>
+          <tr className="bg-gray-200 text-homeblack">
+            {headers.map((header) => (
+              <th key={header} className="border border-gray-300 px-4 py-2">
+                {header}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((row, rowIndex) => (
+            <tr key={rowIndex}>
+              {headers.map((header) => (
+                <td key={`${rowIndex}-${header}`} className="border text-homegrey border-gray-300 px-4 py-2">
+                  {row[header] !== undefined ? String(row[header]) : '-'}
                 </td>
               ))}
             </tr>
-          </tbody>
-        </table>
+          ))}
+        </tbody>
+      </table>
+    );
+  };
+
+  const renderValue = (value: any): React.ReactNode => {
+    if (Array.isArray(value)) {
+      if (value.length === 0) {
+        return <p className="text-homegrey">0</p>;
+      }
+      if (value.every((item) => typeof item === 'object' && item !== null)) {
+        // If all items are objects, render a nested table
+        return renderTableForArray(value);
+      }
+      return value.map((item, index) => (
+        <p key={index} className="mb-1 text-homegrey">
+          {String(item)}
+        </p>
+      ));
+    } else if (typeof value === 'object' && value !== null) {
+      if (Object.keys(value).length === 0) {
+        return <p className="text-homegrey">0</p>;
+      }
+      return (
+        <div>
+          {Object.entries(value).map(([key, val], index) => (
+            <p key={index} className="mb-1 text-homegrey">
+              <span className="text-homeblack font-semibold">{key}</span>: 
+              <span className="ml-3">{String(val)}</span>
+            </p>
+          ))}
+        </div>
       );
     } else {
-      return String(value);
+      return <span>{String(value)}</span>;
     }
+  };
+
+  // The render function that renders the DNS records
+  const render = (value: any) => {
+    return  value.map((elem: any, key: any) => (
+      
+      <div key={key}>
+        {Object.entries(elem).map(([key, value]) => (
+          <div key={key} className=" text-homeblack flex items-start border-b-0 border-x-0 border-gray-300 px-4 py-2 ">
+            <span className='font-semibold'>{key}</span>: <span className='text-homegrey mx-4'>{String(value)}</span>
+          </div>
+        ))}
+      </div>
+    ));
   };
 
   return (
     <div className="w-full overflow-x-auto">
       <p className="text-homeblack text-[24px] font-medium">Results:</p>
+      {(lastSegment === 'find-dns-records' ) && (
+        <div>
+          {Object.entries(result).map(([key, value]) => (
+            <div key={key}>
+              <p className="text-[20px] my-3 p-4 rounded-lg bg-lightblue font-semibold text-homeblack">{key}</p>
+              <div className=" bg-grey p-3 rounded-lg text-homegrey border-gray-300 px-4 py-2">
+                {/* Render the value as string or nested structure */}
+                {render(value)}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+      {(lastSegment === 'server-status-checker') && (
+  <table className="border-collapse min-w-[500px] border mt-4 border-gray-300 w-full text-left">
+    <thead>
+      <tr className="bg-gray-200 text-homeblack">
+        {Object.keys(result[0]).map((header) => (
+          <th key={header} className="border border-gray-300 px-4 py-2">{header}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {result.map((row:any, rowIndex:any) => (
+        <tr key={rowIndex}>
+          {Object.values(row).map((value, cellIndex) => (
+            <td key={cellIndex} className="border text-homegrey border-gray-300 px-4 py-2">
+              {String(value)}
+            </td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+)}
+
+{
+  (lastSegment !== 'find-dns-records' && lastSegment !== 'server-status-checker') && (
+
       <table className="border-collapse min-w-[500px] border mt-4 border-gray-300 w-full text-left">
-        <thead>
-          <tr className="bg-grey text-homeblack">
-            <th className="border border-gray-300 px-4 py-2">Key</th>
-            <th className="border border-gray-300 px-4 py-2">Value</th>
-          </tr>
-        </thead>
         <tbody>
           {Object.entries(result).map(([key, value]) => (
             <tr key={key}>
-              <td className="border text-homeblack flex items-start border-gray-300 min-h-full px-4 py-2 font-medium">{key}</td>
+              <td className="border text-homeblack flex items-start border-b-0 border-x-0 border-gray-300 px-4 py-2 font-medium">
+                {key}
+              </td>
               <td className="border text-homegrey border-gray-300 px-4 py-2">
                 {renderValue(value)}
               </td>
             </tr>
           ))}
         </tbody>
-      </table>
+      </table>)
+      }
     </div>
-  );
-};
-// A nested table for rendering items in an array as rows with their keys as headers
-const NestedTable: React.FC<{ data: any[] }> = ({ data }) => {
-  // Check if all array items are objects
-  const allObjects = data.every((item) => typeof item === 'object' && item !== null);
-
-  return (
-    <table className="border-collapse border mt-2 border-gray-300 w-full text-left">
-      <thead>
-        <tr className="bg-gray-200 text-homeblack">
-          {allObjects && data.length > 0
-            ? Object.keys(data[0]).map((key) => (
-                <th key={key} className="border border-gray-300 px-4 py-2">{key}</th>
-              ))
-            : <th colSpan={data.length} className="border border-gray-300 px-4 py-2">0</th>
-          }
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((item, index) => (
-          <tr key={index}>
-            {allObjects
-              ? Object.entries(item).map(([key, value]) => (
-                  <td key={key} className="border text-homegrey border-gray-300 px-4 py-2">
-                    {String(value)}
-                  </td>
-                ))
-              : <td colSpan={1} className="border text-homegrey border-gray-300 px-4 py-2">
-                  {String(item)}
-                </td>
-            }
-          </tr>
-        ))}
-      </tbody>
-    </table>
   );
 };
 
