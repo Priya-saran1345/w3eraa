@@ -12,7 +12,7 @@ const ResultTable: React.FC<ResultTableProps> = ({ result }) => {
         <ul className="list-disc pl-5">
           {value.map((item, index) => (
             // <li key={index}>
-            <div>
+            <div key={index}>
               {typeof item === 'object' && item !== null ? (
                 // Render a nested table if item is an object
                 <NestedTable data={item} />
