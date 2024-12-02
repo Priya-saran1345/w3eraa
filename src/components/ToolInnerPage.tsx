@@ -18,8 +18,9 @@ import { StyledWrapper } from '@/components/Styled'
 import Sites from '@/components/Sites.json'
 import HubspotForm from '@/components/HubspotForm'
 import DownNavbar from '@/components/DownNavbar'
+import { div } from 'framer-motion/client';
 
-const Tool = ({tools,tools_body}:any) => {
+const Tool = ({ tools, tools_body }: any) => {
     const [innerloading, setinnerloading] = useState<any>(false)
     const pathname = usePathname();
     const segments = pathname.replace(/\/$/, '').split('/');
@@ -196,7 +197,7 @@ const Tool = ({tools,tools_body}:any) => {
                 tools && currentTool &&
                 <div>
                     <Header />
-                    <DownNavbar/>
+                    <DownNavbar />
 
                     <Navbar />
                     <div className='w-full'>
@@ -369,11 +370,14 @@ const Tool = ({tools,tools_body}:any) => {
                                             </div>
                                         }
                                         {
-                                            !(lastSegment == 'backlink-maker') &&
-                                            <div>
-                                                <p className='text-homeblack text-[24px] font-medium'>Results:</p>
-                                                <pre className="text-gray-700">{JSON.stringify(result, null, 2)}</pre>
-                                            </div>
+                                             !(lastSegment == 'backlink-maker') && 
+                                            <ResultsTable result={result}  />
+                                                                                    //    
+                                                                                    //    <div>{ result}</div>
+                                                                    
+                                                                                       
+
+
                                         }
                                     </div>
                                 )}
@@ -396,13 +400,9 @@ const Tool = ({tools,tools_body}:any) => {
                             </div>
                         </div>
                     </div>
-
                     <div className='bg-white flex justify-between gap-3 xl:w-[77%] mx-auto px-4 w-full my-10'>
-
                         <div className='w-full rounded-xl border-slate-100 border-[1px] h-full py-8 px-6 shadow-lg'>
-
                             <div>
-
                                 <div className='border-b-[2px] border-slate-200'>
                                     <p className='text-[24px] font-medium text-homeblack mb-3'>About SEO Tools</p>
                                 </div>
@@ -471,7 +471,6 @@ const Tool = ({tools,tools_body}:any) => {
                                 <button className='bg-pink text-white text-[14px] w-[133px] h-[44px] flex justify-center items-center rounded-lg'>SUBMIT NOW</button>
                             </form> */}
                             <HubspotForm portalId="20095080" formId={"2aeda8d3-d0a1-4624-87f7-39fea7a4d68d"} region={'na1'} />
-
                             <div className='border-b-[1px] border-slate-200 mt-5 mb-3'>
                                 <p className='text-[24px] font-medium text-homeblack mb-3'>Trendy SEO Tools</p>
                             </div>
@@ -497,3 +496,41 @@ const Tool = ({tools,tools_body}:any) => {
 }
 
 export default Tool;
+function ResultsTable({ result }: any) {
+    return (
+     
+      <div className='w-full overflow-x-auto'>
+        <p className="text-homeblack text-[24px] font-medium">Results:</p>
+        <table className="border-collapse min-w-[500px] border mt-4 border-gray-300 w-full text-left">
+          <thead>
+            <tr className="bg-grey text-homeblack">
+              <th className="border border-gray-300 px-4 py-2">Key</th>
+              <th className="border border-gray-300 px-4 py-2">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.entries(result).map(([key, value]) => (
+              <tr key={key}>
+                <td className="border text-homeblack border-gray-300 px-4 py-2 font-medium">{key}</td>
+                <td className="border text-homegrey border-gray-300 px-4 py-2">
+                  {Array.isArray(value) ? (
+                    <ul className="list-disc ml-4">
+                      {value.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  ) : typeof value === "object" && value !== null ? (
+                    <pre className="whitespace-pre-wrap">{JSON.stringify(value, null, 2)}</pre>
+                  ) : (
+                    <span>{JSON.stringify(value)}</span>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+ 
+    )
+  }
+  

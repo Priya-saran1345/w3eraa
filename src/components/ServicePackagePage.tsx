@@ -167,6 +167,7 @@ const Service_Pkackages = ({result ,cluth }:any) => {
                     {result?.pagetype == 'service' &&
                         <div className=''>
                             <Header />
+                            <DownNavbar/>
                             <Navbar />
                             <CommonBanner status={'true'} title={data?.title} description={data?.description} image={data?.image}
                                 btntext={data?.link_text} btnlink={data?.link_url} image_alt={data?.image_alt} />
@@ -527,6 +528,7 @@ const Service_Pkackages = ({result ,cluth }:any) => {
                         result?.pagetype == 'package' &&
                         <div className='w-full'>
                             <Header />
+                            <DownNavbar/>
                             <Navbar />
                             <CommonBanner title={data?.title}
                                 status={'true'}

@@ -95,7 +95,7 @@ const Index = ({show}:any) => {
                           className=""
                         />
                       </div>
-                      <p className='text-[22px] text-homeblack font-semibold'>Increase Authority of Your</p>
+                      <p className='text-[22px] text-homeblack font-semibold'>Increase Website Authority</p>
                     </div>
                     <ul className=' mt-5  text-[15px]  gap-[5px] flex flex-col '>
                       <Link target='_blank' className='hover:text-pink' href='/link-building-services'><li>Link Building Services</li></Link>
