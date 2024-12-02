@@ -19,8 +19,8 @@
       import Sites from '@/components/Sites.json'
       import HubspotForm from '@/components/HubspotForm'
       import DownNavbar from '@/components/DownNavbar'
-      import { div, form } from 'framer-motion/client';
-      
+      import { div, form, ul } from 'framer-motion/client';
+import ResultTable from '@/components/ResultTable';
       const Tool = ({ tools, tools_body }: any) => {
           const [innerloading, setinnerloading] = useState<any>(false)
           const pathname = usePathname();
@@ -38,7 +38,7 @@
           const [formData, setFormData] = useState({
               url: '',
               keywords: '',
-              MetaTitle: '',
+              metaTitle: '',
               description: '',
               depth: '',
               pageno: '',
@@ -64,6 +64,7 @@
           //     }
           // };
       
+         
           const displayRowsOneByOne = (rows: any[]) => {
               let i = 0;
               const appendRow = () => {
@@ -148,7 +149,7 @@
               setFormData({
                   url: '',
                   keywords: '',
-                  MetaTitle: '',
+                  metaTitle: '',
                   description: '',
                   depth: '',
                   pageno: '',
@@ -225,8 +226,8 @@
                                   {
                                       (currentTool[0]?.slug_link === 'meta-tag-generator') &&
                                       (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
-                                          <input type="text" placeholder='Enter Meta Title' className='w-full  border-none outline-none' name='Metatitle' onChange={handleChange} 
-                                          value={formData?.MetaTitle} />
+                                          <input type="text" placeholder='Enter Meta Title' className='w-full  border-none outline-none' name='metaTitle' onChange={handleChange} 
+                                          value={formData?.metaTitle} />
                                       </div>)
                                   }
                                   {
@@ -352,25 +353,18 @@
                                                   </div>
                                               }
                                               {
-                                                   !(lastSegment == 'backlink-maker') && 
-                                                  //  <div>{result}</div>
-                                                //   <div className="container mx-auto py-10">
-                                                //   <h1 className="text-2xl font-bold mb-5">Link Checker Results</h1>
-                                                //   {result && typeof result === "object" && Object.keys(result).length > 0 ? (
-                                                //     Object.entries(result).map(([category, links]) => renderLinkTable(category, links))
-                                                //   ) : (
-                                                //     <p className="text-red-500">No results available or invalid data format.</p>
-                                                //   )}
+   <div>
+   {lastSegment !== 'backlink-maker' && <ResultTable result={result} />}
+ </div>
+
+                                                //                                             <div>
+                                                //   <h1 className="text-[20px] font-semibold text-homeblack mb-5"> Result</h1>
+                                                //   <pre className="bg-gray-100 p-4 rounded border border-gray-300 text-sm overflow-x-auto">
+                                                //     {JSON.stringify(result, null, 2)}
+                                                //   </pre>
                                                 // </div>
-                                                //   <ResultsTable result={result}  />
-                                                <div>
-      <h1 className="text-[20px] font-semibold text-homeblack mb-5"> Result</h1>
-      <pre className="bg-gray-100 p-4 rounded border border-gray-300 text-sm overflow-x-auto">
-        {JSON.stringify(result, null, 2)}
-      </pre>
-    </div>
-                                                   
                                               }
+
                                           </div>
                                       )}
                                   </div>}
@@ -490,7 +484,7 @@
       export default Tool;
       
         
-    //   function ResultsTable({ result }: any) {
+    //   function renderLinkTable({ result }: any) {
     //     return (
          
     //       <div className='w-full overflow-x-auto'>
