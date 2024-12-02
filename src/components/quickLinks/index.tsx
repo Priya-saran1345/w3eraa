@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
 import Button from '@/components/button'
-
 const Quicklinks = ({ props }: any) => {
   return (
     <div className="w-full px-6 mx-auto pt-10 pb-8 lg:pt-20 xl:w-[95%]  2xl:w-[75%]">
@@ -28,5 +27,4 @@ const Quicklinks = ({ props }: any) => {
     </div>
   )
 }
-
 export default Quicklinks

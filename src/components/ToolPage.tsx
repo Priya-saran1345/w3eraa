@@ -184,7 +184,6 @@ const Page = ({body ,tools}:any) => {
                                 <div className='border-b-[1px] border-slate-200 mb-4'>
                                     <p className='text-[24px] font-medium text-homeblack mb-3'>Package</p>
                                 </div>
-
                                 {/* <form className='text-homegrey'>
                                     <input type="text" required placeholder='Please Enter Your Name*' className='my-2 w-full p-3 rounded-lg border-[2px] border-grey outline-none' />
                                     <input type="email" required placeholder='Email Address*' className='my-2 w-full p-3 rounded-lg border-[2px] border-grey outline-none' />
@@ -212,7 +211,6 @@ const Page = ({body ,tools}:any) => {
                             </div>
                         </div>
                         <Footer />
-
                     </div>
                 </div>
             }

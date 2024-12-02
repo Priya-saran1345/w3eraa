@@ -18,33 +18,36 @@ import { StyledWrapper } from '@/components/Styled'
 import Sites from '@/components/Sites.json'
 import HubspotForm from '@/components/HubspotForm'
 import DownNavbar from '@/components/DownNavbar'
-import { div } from 'framer-motion/client';
+import { div, form } from 'framer-motion/client';
 
 const Tool = ({ tools, tools_body }: any) => {
     const [innerloading, setinnerloading] = useState<any>(false)
     const pathname = usePathname();
     const segments = pathname.replace(/\/$/, '').split('/');
     const lastSegment = segments.pop();
-    const [url, setUrl] = useState<string>(''); // Specify type as string
     const [loading, setLoading] = useState<boolean>(false); // Loading state
     const [error, setError] = useState<string | null>(null); // Error state
     const [result, setResult] = useState<any>(null); // Result state
     // const [tools, setTools] = useState<any>();
     const [currentTool, setCurrentTool] = useState<any[]>([]);
     const [showresult, setshowresult] = useState<any>(false)
-    const [keywords, setkeywords] = useState<any>()
-    const [MetaTitle, setMetaTitle] = useState<any>()
-    const [description, setdescription] = useState<any>()
-    const [depth, setdepth] = useState<any>()
-    const [pageno, setpageno] = useState<any>()
     // const [tools_body, settools_body] = useState<any>()
-    const [useragent, setuseragent] = useState<any>()
-    const [allowpath, setallowpath] = useState<any>()
-    const [disallowpath, setdisallowpath] = useState<any>()
-    const [crawlDelay, setcrawlDelay] = useState<any>()
-    const [sitemapUrl, setsitemapUrl] = useState<any>()
     const [displayedRows, setDisplayedRows] = useState<any[]>([]); // Initially empty
-    // Function to fetch tools from the API
+
+    const [formData, setFormData] = useState({
+        url: '',
+        keywords: '',
+        MetaTitle: '',
+        description: '',
+        depth: '',
+        pageno: '',
+        useragent: '',
+        allowpath: '',
+        disallowpath: '',
+        crawlDelay: '',
+        sitemapUrl: '',
+    });
+    
     // const fetchTools = async () => {
     //     try {
     //         const response = await axios.get(`${BASE_URL}tools/`);
@@ -62,21 +65,17 @@ const Tool = ({ tools, tools_body }: any) => {
 
     const displayRowsOneByOne = (rows: any[]) => {
         let i = 0;
-
         const appendRow = () => {
             if (i < rows.length) {
                 setDisplayedRows((prevRows) => [...prevRows, rows[i]]);
                 i++;
-
                 // Generate a random delay between 5 and 20 seconds
                 const randomDelay = Math.floor(Math.random() * (20000 - 5000 + 1)) + 5000;
-
                 setTimeout(appendRow, randomDelay); // Schedule the next row with random delay
             }
         };
         appendRow(); // Start the recursive process
     };
-
     // Call this function after `setResult` is updated
     useEffect(() => {
         if (result?.length > 0) {
@@ -84,14 +83,10 @@ const Tool = ({ tools, tools_body }: any) => {
             displayRowsOneByOne(result);
         }
     }, [result]);
-
-
-
-
     const checkBacklink = () => {
-        if (!url) return; // Ensure the URL is valid before proceeding
+        if (!formData.url) return; // Ensure the URL is valid before proceeding
 
-        const formattedDomain = url.replace(/https?:\/\/|www\./g, ""); // Remove protocol and 'www.'
+        const formattedDomain = formData.url.replace(/https?:\/\/|www\./g, ""); // Remove protocol and 'www.'
         setshowresult(true); // Show the result section
 
         setLoading(true); // Set loading to true
@@ -107,7 +102,6 @@ const Tool = ({ tools, tools_body }: any) => {
             setResult(formattedResults || []); // Update the state with the formatted results
         }, 1500); // 3 seconds delay
     };
-
     // useEffect(() => {
     //     fetchTools();
     // }, []);
@@ -122,12 +116,12 @@ const Tool = ({ tools, tools_body }: any) => {
         setError(null); // Reset error state
 
         try {
-            const response = await axios.post(`${BASE_URL}tools/${lastSegment}`, {
-                url, keywords, MetaTitle, description, pageno, depth, useragent, disallowpath, allowpath, sitemapUrl, crawlDelay
+            const response = await axios.post(`${BASE_URL}tools/${lastSegment}`, { ...formData
+               
             }); // Send URL in payload
             setResult(response.data); // Save result in state
             setinnerloading(true)
-            console.log(response);
+            console.log('resposned data ----',response.data);
         } catch (error: any) {
             setError(error.message); // Set error message
             console.log("Service error", error.message);
@@ -142,48 +136,27 @@ const Tool = ({ tools, tools_body }: any) => {
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setUrl(e.target.value);
+        const { name, value } = e.target;
+        setFormData((prevState) => ({
+            ...prevState,
+            [name]: value,
+        }));
     };
-    const handleKeyword = (e: any) => {
-        setkeywords(e.target.value)
-    }
-    const handleuseragent = (e: any) => {
-        setuseragent(e.target.value)
-    }
-    const handleMetatitle = (e: any) => {
-        setMetaTitle(e.target.value)
-    }
-    const handleDescription = (e: any) => {
-        setdescription(e.target.value)
-    }
-    const handleDepth = (e: any) => {
-        setdepth(e.target.value)
-    }
-    const handlePageno = (e: any) => {
-        setpageno(e.target.value)
-    }
-    const handleDisallowpaths = (e: any) => {
-        setdisallowpath(e.target.value)
-    }
-    const handleallowpaths = (e: any) => {
-        setallowpath(e.target.value)
-    }
-    const handleCrawldelay = (e: any) => {
-        setcrawlDelay(e.target.value)
-    }
-    const handleSitemapurl = (e: any) => {
-        setsitemapUrl(e.target.value)
-    }
+  
     const handleClear = () => {
-        setUrl('');
-        setkeywords('');
-        setMetaTitle('');
-        setdescription('');
-        setdepth('');
-        setpageno('');
-        disallowpath('');
-        crawlDelay('');
-        setsitemapUrl('');
+        setFormData({
+            url: '',
+            keywords: '',
+            MetaTitle: '',
+            description: '',
+            depth: '',
+            pageno: '',
+            useragent: '',
+            allowpath: '',
+            disallowpath: '',
+            crawlDelay: '',
+            sitemapUrl: '',
+        });
         setResult(null);
         setshowresult(false);
     };
@@ -233,8 +206,9 @@ const Tool = ({ tools, tools_body }: any) => {
                                             type="text"
                                             className='text-textGrey w-full border-none outline-none text-[18px]'
                                             placeholder='Enter url'
+                                            name='url'
                                             onChange={handleChange}
-                                            value={url} // Control input value
+                                            value={formData.url} // Control input value
                                         />
                                     </div>
                                 )
@@ -244,63 +218,70 @@ const Tool = ({ tools, tools_body }: any) => {
                                     'meta-tag-generator') &&
                                 (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
                                     <input type="text" placeholder='Enter Keywords Seprated By Coma(,)'
-                                        className='w-full  border-none outline-none' onChange={handleKeyword} />
+                                        className='w-full  border-none outline-none' name='keywords' onChange={handleChange} value={formData?.keywords} />
                                 </div>)
                             }
                             {
                                 (currentTool[0]?.slug_link === 'meta-tag-generator') &&
                                 (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
-                                    <input type="text" placeholder='Enter Meta Title' className='w-full  border-none outline-none' onChange={handleMetatitle} />
+                                    <input type="text" placeholder='Enter Meta Title' className='w-full  border-none outline-none' name='Metatitle' onChange={handleChange} 
+                                    value={formData?.MetaTitle} />
                                 </div>)
                             }
                             {
                                 (currentTool[0]?.slug_link === 'meta-tag-generator') &&
                                 (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
-                                    <input type="text" placeholder='Enter Meta Description' className='w-full  border-none outline-none' onChange={handleDescription} />
+                                    <input type="text" placeholder='Enter Meta Description' className='w-full  border-none outline-none' name='description' onChange={handleChange}
+                                    value={formData?.description} />
                                 </div>)
                             }
                             {
                                 (currentTool[0]?.slug_link === 'spider-simulator') &&
                                 (<div className='mt-4 border-grey flex justify-between border-[2px] rounded-lg p-6 w-full '>
-                                    <input type="number" placeholder='Enter Crawler Depth' className='w-full  border-none outline-none' onChange={handleDepth} />
-
+                                    <input type="number" placeholder='Enter Crawler Depth' className='w-full  border-none outline-none'name='depth' onChange={handleChange} />
+                                 value={formData?.depth}
                                 </div>)
                             }
                             {
                                 (currentTool[0]?.slug_link === 'spider-simulator') &&
                                 (<div className='mt-4 border-grey flex justify-between border-[2px] rounded-lg p-6 w-full '>
-                                    <input type="number" placeholder='Enter Number of Pages' className='w-full  border-none outline-none' onChange={handlePageno} />
-
+                                    <input type="number" placeholder='Enter Number of Pages' className='w-full  border-none outline-none' name='pageno' onChange={handleChange} />
+                                 Value={formData?.pageno}
                                 </div>)
                             }
                             {
                                 (currentTool[0]?.slug_link === 'robots-txt-generator') &&
                                 (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
-                                    <input type="text" placeholder=' Enter user agents Seprated By Coma(,)' className='w-full  border-none outline-none' onChange={handleuseragent} />
+                                    <input type="text" placeholder=' Enter user agents Seprated By Coma(,)' className='w-full  border-none outline-none'
+                                     name='useragent' value={formData?.useragent} onChange={handleChange} />
                                 </div>)
                             }
                             {
                                 (currentTool[0]?.slug_link === 'robots-txt-generator') &&
                                 (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
-                                    <input type="text" placeholder='   Enter disallow paths Seprated By Coma(,)' className='w-full  border-none outline-none' onChange={handleDisallowpaths} />
+                                    <input type="text" placeholder='   Enter disallow paths Seprated By Coma(,)' className='w-full  border-none outline-none' name='disallowpath'
+                                    value={formData?.disallowpath} 
+                                     onChange={handleChange} />
                                 </div>)
                             }
                             {
                                 (currentTool[0]?.slug_link === 'robots-txt-generator') &&
                                 (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
-                                    <input type="text" placeholder='   Enter allow paths Seprated By Coma(,)' className='w-full  border-none outline-none' onChange={handleallowpaths} />
+                                    <input type="text" placeholder='   Enter allow paths Seprated By Coma(,)' name='allowpaths' value={formData?.allowpath}
+                                     className='w-full  border-none outline-none' onChange={handleChange} />
                                 </div>)
                             }
                             {
                                 (currentTool[0]?.slug_link === 'robots-txt-generator') &&
                                 (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
-                                    <input type="text" placeholder='   Enter Crawler Delay' className='w-full  border-none outline-none' onChange={handleCrawldelay} />
+                                    <input type="text" placeholder='   Enter Crawler Delay' className='w-full 
+                                     border-none outline-none' value={formData?.crawlDelay} name='crawlDelay' onChange={handleChange} />
                                 </div>)
                             }
                             {
                                 (currentTool[0]?.slug_link === 'robots-txt-generator') &&
                                 (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
-                                    <input type="text" placeholder='    Enter sitemap URL' className='w-full  border-none outline-none' onChange={handleSitemapurl} />
+                                    <input type="text" placeholder='Enter sitemap URL' className='w-full  border-none outline-none' name='sitemapUrl' value={formData?.sitemapUrl} onChange={handleChange} />
                                 </div>)
                             }
                             {showresult && <div className=' rounded-xl p-7  mt-5 border-slate-100 border-[1px]'>
@@ -371,13 +352,10 @@ const Tool = ({ tools, tools_body }: any) => {
                                         }
                                         {
                                              !(lastSegment == 'backlink-maker') && 
-                                            <ResultsTable result={result}  />
-                                                                                    //    
+                                             <div>{result}</div>
+                                            // <ResultsTable result={result}  />
                                                                                     //    <div>{ result}</div>
                                                                     
-                                                                                       
-
-
                                         }
                                     </div>
                                 )}
