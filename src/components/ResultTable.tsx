@@ -1,4 +1,3 @@
-import { div } from 'framer-motion/client';
 import React from 'react';
 
 interface ResultTableProps {
@@ -8,29 +7,27 @@ interface ResultTableProps {
 const ResultTable: React.FC<ResultTableProps> = ({ result }) => {
   const renderValue = (value: any): React.ReactNode => {
     if (Array.isArray(value)) {
-      return (
-        <ul className="list-disc pl-5">
-          {value.map((item, index) => (
-            // <li key={index}>
-            <div key={index}>
-              {typeof item === 'object' && item !== null ? (
-                // Render a nested table if item is an object
-                <NestedTable data={item} />
-              ) : (
-                // Render a normal value if it's not an object
-                renderValue(item)
-              )}
-            {/* </li> */}
-            </div>
-
-          ))}
-        </ul>
-      );
+      return <NestedTable data={value} />;
     } else if (typeof value === 'object' && value !== null) {
       return (
-        <pre className="whitespace-pre-wrap">
-          {JSON.stringify(value, null, 2)}
-        </pre>
+        <table className="border-collapse border mt-2 border-gray-300 w-full text-left">
+          <thead>
+            <tr className="bg-gray-200 text-homeblack">
+              {Object.keys(value).map((key) => (
+                <th key={key} className="border border-gray-300 px-4 py-2">{key}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              {Object.entries(value).map(([key, val]) => (
+                <td key={key} className="border text-homegrey border-gray-300 px-4 py-2">
+                  {String(val)}
+                </td>
+              ))}
+            </tr>
+          </tbody>
+        </table>
       );
     } else {
       return String(value);
@@ -62,27 +59,36 @@ const ResultTable: React.FC<ResultTableProps> = ({ result }) => {
   );
 };
 
-// A nested table for rendering dictionary items inside an array
-const NestedTable: React.FC<{ data: Record<string, any> }> = ({ data }) => {
+// A nested table for rendering items in an array as rows with their keys as headers
+const NestedTable: React.FC<{ data: any[] }> = ({ data }) => {
+  // Check if all array items are objects
+  const allObjects = data.every((item) => typeof item === 'object' && item !== null);
+
   return (
     <table className="border-collapse border mt-2 border-gray-300 w-full text-left">
       <thead>
         <tr className="bg-gray-200 text-homeblack">
-          <th className="border flex  items-start border-gray-300 px-4 py-2">Key</th>
-          <th className="border border-gray-300 px-4 py-2">Value</th>
+          {allObjects && data.length > 0
+            ? Object.keys(data[0]).map((key) => (
+                <th key={key} className="border border-gray-300 px-4 py-2">{key}</th>
+              ))
+            : <th colSpan={data.length} className="border border-gray-300 px-4 py-2">Array Values</th>
+          }
         </tr>
       </thead>
       <tbody>
-        {Object.entries(data).map(([key, value]) => (
-          <tr key={key}>
-            <td className="border  flex  items-start text-homeblack border-gray-300 px-4 py-2 font-medium">{key}</td>
-            <td className="border text-homegrey border-gray-300 px-4 py-2">
-              {typeof value === 'object' && value !== null ? (
-                <pre className="whitespace-pre-wrap">{JSON.stringify(value, null, 2)}</pre>
-              ) : (
-                String(value)
-              )}
-            </td>
+        {data.map((item, index) => (
+          <tr key={index}>
+            {allObjects
+              ? Object.entries(item).map(([key, value]) => (
+                  <td key={key} className="border text-homegrey border-gray-300 px-4 py-2">
+                    {String(value)}
+                  </td>
+                ))
+              : <td colSpan={1} className="border text-homegrey border-gray-300 px-4 py-2">
+                  {String(item)}
+                </td>
+            }
           </tr>
         ))}
       </tbody>

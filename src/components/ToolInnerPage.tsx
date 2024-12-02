@@ -240,15 +240,16 @@ import ResultTable from '@/components/ResultTable';
                                   {
                                       (currentTool[0]?.slug_link === 'spider-simulator') &&
                                       (<div className='mt-4 border-grey flex justify-between border-[2px] rounded-lg p-6 w-full '>
-                                          <input type="number" placeholder='Enter Crawler Depth' className='w-full  border-none outline-none'name='depth' onChange={handleChange} />
-                                       value={formData?.depth}
+                                          <input type="number" placeholder='Enter Crawler Depth' className='w-full  border-none outline-none'name='depth' onChange={handleChange}  value={formData?.depth} />
+                                      
                                       </div>)
                                   }
                                   {
                                       (currentTool[0]?.slug_link === 'spider-simulator') &&
                                       (<div className='mt-4 border-grey flex justify-between border-[2px] rounded-lg p-6 w-full '>
-                                          <input type="number" placeholder='Enter Number of Pages' className='w-full  border-none outline-none' name='pageno' onChange={handleChange} />
-                                       Value={formData?.pageno}
+                                          <input type="number" placeholder='Enter Number of Pages' className='w-full  border-none outline-none' name='pageno' 
+                                          value={formData?.pageno} onChange={handleChange} />
+                                     
                                       </div>)
                                   }
                                   {
