@@ -270,7 +270,7 @@ import ResultTable from '@/components/ResultTable';
                                   {
                                       (currentTool[0]?.slug_link === 'robots-txt-generator') &&
                                       (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
-                                          <input type="text" placeholder='   Enter allow paths Seprated By Coma(,)' name='allowpaths' value={formData?.allowpath}
+                                          <input type="text" placeholder='   Enter allow paths Seprated By Coma(,)' name='allowpath' value={formData?.allowpath}
                                            className='w-full  border-none outline-none' onChange={handleChange} />
                                       </div>)
                                   }
@@ -284,7 +284,8 @@ import ResultTable from '@/components/ResultTable';
                                   {
                                       (currentTool[0]?.slug_link === 'robots-txt-generator') &&
                                       (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
-                                          <input type="text" placeholder='Enter sitemap URL' className='w-full  border-none outline-none' name='sitemapUrl' value={formData?.sitemapUrl} onChange={handleChange} />
+                                          <input type="text" placeholder='Enter sitemap URL' className='w-full  border-none outline-none' name='sitemapUrl' 
+                                          value={formData?.sitemapUrl} onChange={handleChange} />
                                       </div>)
                                   }
                                   {showresult && <div className=' rounded-xl p-7  mt-5 border-slate-100 border-[1px]'>
@@ -303,7 +304,7 @@ import ResultTable from '@/components/ResultTable';
       
                                                           <thead>
                                                               <tr className='bg-gray-100 border-b'>
-                                                                  <th className='p-2 border-r'>#</th>
+                                                                  <th className='p-2 border-r'>S.no</th>
                                                                   <th className='p-2 border-r'>Pages contain backlink</th>
                                                                   <th className='p-2'>Status</th>
                                                               </tr>
@@ -352,19 +353,13 @@ import ResultTable from '@/components/ResultTable';
                                                           </tbody> */}
                                                       </table>
                                                   </div>
-                                              }
-                                              {
-   <div>
-   {lastSegment !== 'backlink-maker' && <ResultTable result={result} />}
- </div>
+                                                  }
+                                                  {
+                                                      <div>
+                                                          {lastSegment !== 'backlink-maker' && <ResultTable result={result} lastSegment={lastSegment} />}
+                                                      </div>
 
-                                                //                                             <div>
-                                                //   <h1 className="text-[20px] font-semibold text-homeblack mb-5"> Result</h1>
-                                                //   <pre className="bg-gray-100 p-4 rounded border border-gray-300 text-sm overflow-x-auto">
-                                                //     {JSON.stringify(result, null, 2)}
-                                                //   </pre>
-                                                // </div>
-                                              }
+                                                  }
 
                                           </div>
                                       )}
@@ -513,3 +508,13 @@ import ResultTable from '@/components/ResultTable';
     //     )
     //   }
       
+
+
+
+
+
+
+
+   
+    
+    

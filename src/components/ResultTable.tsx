@@ -1,10 +1,7 @@
 import React from 'react';
 
-interface ResultTableProps {
-  result: Record<string, any>;
-}
 
-const ResultTable: React.FC<ResultTableProps> = ({ result }) => {
+const ResultTable: React.FC<any> = ({ result ,lastSegment }) => {
   const renderValue = (value: any): React.ReactNode => {
     if (Array.isArray(value)) {
       return <NestedTable data={value} />;
@@ -58,7 +55,6 @@ const ResultTable: React.FC<ResultTableProps> = ({ result }) => {
     </div>
   );
 };
-
 // A nested table for rendering items in an array as rows with their keys as headers
 const NestedTable: React.FC<{ data: any[] }> = ({ data }) => {
   // Check if all array items are objects
@@ -72,7 +68,7 @@ const NestedTable: React.FC<{ data: any[] }> = ({ data }) => {
             ? Object.keys(data[0]).map((key) => (
                 <th key={key} className="border border-gray-300 px-4 py-2">{key}</th>
               ))
-            : <th colSpan={data.length} className="border border-gray-300 px-4 py-2">Array Values</th>
+            : <th colSpan={data.length} className="border border-gray-300 px-4 py-2">0</th>
           }
         </tr>
       </thead>
