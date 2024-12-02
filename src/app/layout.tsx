@@ -13,7 +13,6 @@ const inter = Inter({
   variable: '--font-inter',
 })
 // export const config = { amp: true }
-
 export const metadata: Metadata = {
   title: "W3era® | Performance Driven Digital Marketing Company",
   description: "A premier Digital Marketing Company, W3era® offer comprehensive services like SEO, PPC, and Web development. Schedule a free marketing consultation today.",
