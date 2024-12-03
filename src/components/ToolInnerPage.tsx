@@ -66,16 +66,21 @@ import ResultTable from '@/components/ResultTable';
       
          
           const displayRowsOneByOne = (rows: any[]) => {
+
               let i = 0;
               const appendRow = () => {
                   if (i < rows.length) {
+            setLoading(true);
                       setDisplayedRows((prevRows) => [...prevRows, rows[i]]);
                       i++;
                       // Generate a random delay between 5 and 20 seconds
-                      const randomDelay = Math.floor(Math.random() * (20000 - 5000 + 1)) + 5000;
+                      const randomDelay = Math.floor(Math.random() * (4000 - 2000 + 1)) + 2000
                       setTimeout(appendRow, randomDelay); // Schedule the next row with random delay
+                  }else{
+                     setLoading(false);
                   }
               };
+            //   setLoading(false);
               appendRow(); // Start the recursive process
           };
           // Call this function after `setResult` is updated
@@ -83,6 +88,8 @@ import ResultTable from '@/components/ResultTable';
               if (result?.length > 0) {
                   setDisplayedRows([]); // Reset displayed rows
                   displayRowsOneByOne(result);
+                  setLoading(false);
+
               }
           }, [result]);
           const checkBacklink = () => {
@@ -289,11 +296,7 @@ import ResultTable from '@/components/ResultTable';
                                       </div>)
                                   }
                                   {showresult && <div className=' rounded-xl p-7  mt-5 border-slate-100 border-[1px]'>
-                                      {loading && <div className=" flex justify-center items-center">
-      
-                                          <div className=" loader"></div>
-                                      </div>
-                                      }
+
                                       {error && <p className="text-center text-red-500">{error}</p>}
                                       {result && (
                                           <div className=" p-2 overflow-auto">
@@ -363,6 +366,11 @@ import ResultTable from '@/components/ResultTable';
 
                                           </div>
                                       )}
+                                                                            {loading && <div className=" flex justify-center items-center">
+      
+      <div className=" loader"></div>
+  </div>
+  }
                                   </div>}
                                   <div className='flex justify-start items-center gap-2'>
       
