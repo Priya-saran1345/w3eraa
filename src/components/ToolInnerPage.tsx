@@ -69,18 +69,17 @@ import ResultTable from '@/components/ResultTable';
 
               let i = 0;
               const appendRow = () => {
+setLoading(true)
                   if (i < rows.length) {
-            setLoading(true);
                       setDisplayedRows((prevRows) => [...prevRows, rows[i]]);
                       i++;
                       // Generate a random delay between 5 and 20 seconds
                       const randomDelay = Math.floor(Math.random() * (4000 - 2000 + 1)) + 2000
                       setTimeout(appendRow, randomDelay); // Schedule the next row with random delay
-                  }else{
-                     setLoading(false);
                   }
+              setLoading(false);
+
               };
-            //   setLoading(false);
               appendRow(); // Start the recursive process
           };
           // Call this function after `setResult` is updated
@@ -109,7 +108,7 @@ import ResultTable from '@/components/ResultTable';
                       Status: "Success", // Example status
                   }));
                   setResult(formattedResults || []); // Update the state with the formatted results
-              }, 1500); // 3 seconds delay
+              }, 2000); // 3 seconds delay
           };
           // useEffect(() => {
           //     fetchTools();
@@ -366,8 +365,7 @@ import ResultTable from '@/components/ResultTable';
 
                                           </div>
                                       )}
-                                                                            {loading && <div className=" flex justify-center items-center">
-      
+                                        {loading && <div className=" flex justify-center items-center">
       <div className=" loader"></div>
   </div>
   }
@@ -387,6 +385,7 @@ import ResultTable from '@/components/ResultTable';
                                       <button onClick={handleClear} className=' h-fit px-7 py-2 rounded-md bg-grey text-homeblack  font-medium hover:bg-pink hover:text-white duration-200'>Clear</button>
       
                                       {/* </div> */}
+                                      
                                   </div>
                               </div>
                           </div>
