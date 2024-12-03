@@ -5,7 +5,9 @@ interface ResultTableProps {
   lastSegment: any;
 }
 
-const ResultTable: React.FC<ResultTableProps> = ({ result, lastSegment }) => {
+const ResultTable: React.FC<ResultTableProps> = ({ result, lastSegment }:any) => {
+  console.log(result);
+  
   const renderTableForArray = (data: any[]) => {
     // Check if all items are objects and get the unique keys
     const headers = Array.from(
@@ -100,6 +102,34 @@ const ResultTable: React.FC<ResultTableProps> = ({ result, lastSegment }) => {
           ))}
         </div>
       )}
+            {lastSegment === 'keyword-density-checker' && (
+          <div>
+            <p className="text-homeblack text-[20px] font-medium mb-4">Total Words: <span className="text-homegrey">{result.total_words}</span></p>
+            <table className="border-collapse min-w-[500px] border mt-4 border-gray-300 w-full text-left">
+              <thead>
+                <tr className="bg-gray-200 text-homeblack">
+                  <th className="border border-gray-300 px-4 py-2">Keyword</th>
+                  <th className="border border-gray-300 px-4 py-2">Count</th>
+                  <th className="border border-gray-300 px-4 py-2">Density (%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Object.entries(result.keyword_density).map(([keyword, data]: [string, any]) => (
+                  <tr key={keyword}>
+                    <td className="border text-homeblack border-gray-300 px-4 py-2">{keyword}</td>
+                    <td className="border text-homegrey border-gray-300 px-4 py-2">{data.count}</td>
+                    <td className="border text-homegrey border-gray-300 px-4 py-2">{data.density.toFixed(2)}%</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+            {lastSegment === 'robots-txt-generator' && (
+   <div className="w-full overflow-x-auto">
+<pre> {result.slice(1, -1).replace(/\\n/g, '<br>').replace(/\\"/g, '"') }</pre>
+ </div>
+        )}
       {(lastSegment === 'server-status-checker') && (
   <table className="border-collapse min-w-[500px] border mt-4 border-gray-300 w-full text-left">
     <thead>
@@ -124,7 +154,7 @@ const ResultTable: React.FC<ResultTableProps> = ({ result, lastSegment }) => {
 )}
 
 {
-  (lastSegment !== 'find-dns-records' && lastSegment !== 'server-status-checker') && (
+  (lastSegment !== 'find-dns-records' && lastSegment !== 'server-status-checker' && lastSegment !== 'keyword-density-checker'  && lastSegment !== 'robots-txt-generator') && (
 
       <table className="border-collapse min-w-[500px] border mt-4 border-gray-300 w-full text-left">
         <tbody>

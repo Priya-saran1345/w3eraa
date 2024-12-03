@@ -197,7 +197,11 @@ const Index = ({ show }: any) => {
             className='shadow-md absolute text-homegrey text-[17px]
                 w-[85%] lg:w-[95%] overflow-y-scroll lg:overflow-auto max-h-[70vh] lg:h-fit flex-wrap lg:flex-nowrap 
                   px-12 py-14 z-[99999] top-20 left-10 bg-white  justify-start lg:justify-around flex gap-5  p-7 rounded-xl' onMouseLeave={() => toggleDropdown('')}>
-            <div>
+            <motion.div
+            initial={{ x: -50 , opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{delay:0.1, easings:["easeIn", "easeOut"]}}
+            >
               <div className='flex justify-start gap-2 items-center'>
                 <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                   <Image
@@ -221,10 +225,14 @@ const Index = ({ show }: any) => {
                 <Link target='_blank' className='hover:text-pink' href='/conversion-rate-optimization'><li>Conversion Rate Optimization</li></Link>
 
               </ul>
-            </div>
+            </motion.div>
             <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
             </div>
-            <div>
+            <motion.div
+                        initial={{ x: -50 , opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{delay:0.2, easings:["easeIn", "easeOut"]}}
+            >
               <div className='flex justify-start gap-2 items-center'>
                 <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                   <Image
@@ -247,10 +255,14 @@ const Index = ({ show }: any) => {
                 <Link target='_blank' className='hover:text-pink' href='/youtube-marketing-services'><li>YouTube Marketing Services</li></Link>
 
               </ul>
-            </div>
+            </motion.div>
             <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
             </div>
-            <div>
+            <motion.div
+                        initial={{ x: -50 , opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{delay:0.3, easings:["easeIn", "easeOut"]}}
+            >
               <div className='flex justify-start gap-2 items-center'>
                 <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                   <Image
@@ -267,14 +279,18 @@ const Index = ({ show }: any) => {
                 <Link target='_blank' className='hover:text-pink' href='/case-study'><li>Case study</li></Link>
                 <Link target='_blank' className='hover:text-pink' href='/our-client-list'><li>Our Clients</li></Link>
                 <Link target='_blank' className='hover:text-pink' href='/blog/40-ppc-tools-for-any-task'><li>PPC Tools</li></Link>
-                <Link target='_blank' className='hover:text-pink' href='/blog/40-ppc-tools-for-any-task'><li>PPC Case study</li></Link>
+                <Link target='_blank' className='hover:text-pink' href='/google-ads-services'><li>PPC Case study</li></Link>
                 <Link target='_blank' className='hover:text-pink' href='/blog/what-are-ppc-services/'><li>What are PPC Services?</li></Link>
                 <Link target='_blank' className='hover:text-pink' href='/blog/social-media-management-everything-you-need-to-know/'><li>Social Media Management</li></Link>
               </ul>
-            </div>
+            </motion.div>
             <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
             </div>
-            <div className='min-h-full lg:w-[20%] flex justify-center items-start  lg:items-center'>
+            <motion.div 
+                        initial={{ x: -50 , opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{delay:0.4, easings:["easeIn", "easeOut"]}}
+            className='min-h-full lg:w-[20%] flex justify-center items-start  lg:items-center'>
               <div className='flex flex-col gap-3 justify-center items-center'>
                 <p className='text-[20px] text-homeblack font-medium'>For More Information</p>
                 <div className='w-fit' onClick={() => Router.push('/contact-us')}>
@@ -283,7 +299,7 @@ const Index = ({ show }: any) => {
                 <ClientsCount />
 
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         )}
 
@@ -418,7 +434,11 @@ const Index = ({ show }: any) => {
             animate={{ opacity: 1 }}
             className='shadow-md absolute text-homegrey text-[17px]  w-[85%] lg:w-[95%] lg:h-fit overflow-y-scroll lg:overflow-auto 
                max-h-[70vh]  flex-wrap lg:flex-nowrap px-12 py-14 z-[99999] top-20 left-10 bg-white  justify-start lg:justify-around flex gap-5  p-7 rounded-xl' onMouseLeave={() => toggleDropdown('')}>
-            <div>
+            <motion.div
+                                    initial={{ x: -50 , opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    transition={{delay:0.1, easings:["easeIn", "easeOut"]}}
+            >
               <div className='flex justify-start gap-2 items-center'>
                 <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                   <Image
@@ -439,10 +459,14 @@ const Index = ({ show }: any) => {
                 <Link target='_blank' className='hover:text-pink' href='/asp-dot-net-development-services'><li>ASP Dot Net Development Services</li></Link>
 
               </ul>
-            </div>
+            </motion.div>
             <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
             </div>
-            <div>
+            <motion.div
+                                    initial={{ x: -50 , opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    transition={{delay:0.2, easings:["easeIn", "easeOut"]}}
+            >
               <div className='flex justify-start gap-2 items-center'>
                 <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                   <Image
@@ -462,10 +486,14 @@ const Index = ({ show }: any) => {
                 <Link target='_blank' className='hover:text-pink' href='/mobile-responsive-designing-services'><li>Mobile Responsive Website</li></Link>
                 <Link target='_blank' className='hover:text-pink' href='/website-speed-optimization'><li>Website Speed Optimization</li></Link>
               </ul>
-            </div>
+            </motion.div>
             <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
             </div>
-            <div>
+            <motion.div
+                                    initial={{ x: -50 , opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    transition={{delay:0.3, easings:["easeIn", "easeOut"]}}
+            >
               <div className='flex justify-start gap-2 items-center'>
                 <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                   <Image
@@ -485,10 +513,14 @@ const Index = ({ show }: any) => {
                 <Link target='_blank' className='hover:text-pink' href='/blog/website-migration-guide-boost-seo'><li>Website Migration Guide</li></Link>
                 <Link target='_blank' className='hover:text-pink' href='/blog/free-wordpress-website-migration-plugins'><li>Website Migration Plugins</li></Link>
               </ul>
-            </div>
+            </motion.div>
             <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
             </div>
-            <div className='min-h-full lg:w-[20%] flex justify-center items-start   lg:items-center'>
+            <motion.div
+                                    initial={{ x: -50 , opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    transition={{delay:0.4, easings:["easeIn", "easeOut"]}}
+            className='min-h-full lg:w-[20%] flex justify-center items-start   lg:items-center'>
               <div className='flex flex-col gap-3 justify-center items-center'>
                 <p className='text-[20px] text-homeblack font-medium'>For More Information</p>
                 <div className='w-fit' onClick={() => Router.push('/contact-us')}>
@@ -496,7 +528,7 @@ const Index = ({ show }: any) => {
                 </div>
                 <ClientsCount />
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         )}
         {/* Our Packages Dropdown */}
@@ -524,7 +556,10 @@ const Index = ({ show }: any) => {
             animate={{ opacity: 1 }}
             className='shadow-md absolute text-homegrey text-[17px]  w-[85%] lg:w-[95%] lg:h-fit overflow-y-scroll lg:overflow-auto max-h-[70vh]
                   flex-wrap lg:flex-nowrap px-12 py-14 z-[99999] top-20 left-10 bg-white  justify-start lg:justify-around flex gap-5  p-7 rounded-xl' onMouseLeave={() => toggleDropdown('')}>
-            <div>
+            <motion.div
+                                    initial={{ x: -50 , opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    transition={{delay:0.1, easings:["easeIn", "easeOut"]}}>
               <div className='flex justify-start gap-2 items-center'>
                 <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                   <Image
@@ -546,7 +581,7 @@ const Index = ({ show }: any) => {
                 <Link target='_blank' className='hover:text-pink' href='/link-building-packages'><li>Link Building Packages</li></Link>
 
               </ul>
-            </div>
+            </motion.div>
             <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
             </div>
             {/* <div>
@@ -568,7 +603,11 @@ const Index = ({ show }: any) => {
                   </div>
                   <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
                   </div> */}
-            <div>
+            <motion.div
+                                    initial={{ x: -50 , opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    transition={{delay:0.2, easings:["easeIn", "easeOut"]}}
+            >
               <div className='flex justify-start gap-2 items-center'>
                 <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                   <Image
@@ -589,10 +628,14 @@ const Index = ({ show }: any) => {
                 <Link target='_blank' className='hover:text-pink' href='/social-media-marketing-packages'><li>Social Media Marketing Packages</li></Link>
                 <Link target='_blank' className='hover:text-pink' href='/cro-packages'><li>Conversion Rate Optimization Packages</li></Link>
               </ul>
-            </div>
+            </motion.div>
             <div className='bg-[#DFF0F8] hidden lg:block  w-[2px] min-h-full'>
             </div>
-            <div>
+            <motion.div
+                                    initial={{ x: -50 , opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    transition={{delay:0.3, easings:["easeIn", "easeOut"]}}
+            >
               <div className='flex justify-start gap-2 items-center'>
                 <div className='bg-lightblue w-[80px] h-[80px] justify-center items-center flex rounded-lg'>
                   <Image
@@ -611,7 +654,7 @@ const Index = ({ show }: any) => {
                 <Link target='_blank' className='hover:text-pink' href='/content-marketing-packages'><li>Content Marketing Packages </li></Link>
 
               </ul>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </div>
