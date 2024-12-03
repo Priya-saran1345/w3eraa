@@ -39,20 +39,13 @@ const Index = ({ show }: any) => {
           <li onMouseOver={() => toggleDropdown('seo')} className={`flex  font-semibold  gap-1 items-center cursor-pointer hover:text-pink text-[16px ] ${openDropdown === 'seo' && "text-pink"}`}>
             SEO              </li>
 
-          {openDropdown === 'seo' ? <Image
-            src={'/images/up.svg'}
-            width={14}
-            height={11}
-            alt={"w3era digital marketing company"}
-            className="cursor-pointer 2xl:w-[14px] w-[12px] "
-          /> :
             <Image
-              src={'/images/down-icon.svg'}
-              width={14}
-              height={11}
-              alt={"w3era digital marketing company"}
-              className="cursor-pointer 2xl:w-[14px] w-[12px] "
-            />} </div>
+    src={'/images/down-icon.svg'}
+    width={14}
+    height={11}
+    alt={"w3era digital marketing company"}
+    className={`cursor-pointer 2xl:w-[14px] w-[12px] transition-transform duration-300 ease-in-out ${openDropdown === 'seo' ? 'rotate-180' : ''}`}
+  /> </div>
 
         {openDropdown === 'seo' && (
           <motion.div
@@ -173,22 +166,13 @@ const Index = ({ show }: any) => {
           <li onMouseOver={() => toggleDropdown('ppc')} className={`flex  font-semibold  gap-1 items-center cursor-pointer hover:text-pink text-[16px ] ${openDropdown === 'ppc' && "text-pink"}`}>
             Performance Marketing               </li>
 
-          {openDropdown === 'ppc' ? <Image
-            src={'/images/up.svg'}
-            width={14}
-
-            height={11}
-            alt={"w3era digital marketing company"}
-            className="cursor-pointer 2xl:w-[14px] w-[12px] "
-          /> :
             <Image
-              src={'/images/down-icon.svg'}
-              width={14}
-
-              height={11}
-              alt={"w3era digital marketing company"}
-              className="cursor-pointer 2xl:w-[14px] w-[12px] "
-            />}</div>
+    src={'/images/down-icon.svg'}
+    width={14}
+    height={11}
+    alt={"w3era digital marketing company"}
+    className={`cursor-pointer 2xl:w-[14px] w-[12px] transition-transform duration-300 ease-in-out ${openDropdown === 'ppc' ? 'rotate-180' : ''}`}
+  /></div>
 
         {openDropdown === 'ppc' && (
           <motion.div
@@ -413,20 +397,13 @@ const Index = ({ show }: any) => {
           <li onMouseOver={() => toggleDropdown('web-dev')} className={`flex  font-semibold  gap-1 items-center cursor-pointer hover:text-pink text-[16px ] ${openDropdown === 'web-dev' && "text-pink"}`}>
             Web Development & UI/UX
           </li>
-          {openDropdown === 'web-dev' ? <Image
-            src={'/images/up.svg'}
-            width={14}
-            height={11}
-            alt={"w3era digital marketing company"}
-            className="cursor-pointer 2xl:w-[14px] w-[12px]"
-          /> :
-            <Image
-              src={'/images/down-icon.svg'}
-              width={14}
-              height={11}
-              alt={"w3era digital marketing company"}
-              className="cursor-pointer2xl:w-[14px] w-[12px]"
-            />}</div>
+          <Image
+    src={'/images/down-icon.svg'}
+    width={14}
+    height={11}
+    alt={"w3era digital marketing company"}
+    className={`cursor-pointer 2xl:w-[14px] w-[12px] transition-transform duration-300 ease-in-out ${openDropdown === 'web-dev' ? 'rotate-180' : ''}`}
+  /></div>
 
         {openDropdown === 'web-dev' && (
           <motion.div
@@ -534,20 +511,15 @@ const Index = ({ show }: any) => {
         {/* Our Packages Dropdown */}
         <div className='flex gap-1 items-center'>
           <li onMouseOver={() => toggleDropdown('packages')} className={`flex  font-semibold  gap-1 items-center cursor-pointer hover:text-pink  ${openDropdown === 'packages' && "text-pink"}`}>
-            Our Packages               </li>{openDropdown === 'packages' ? <Image
-              src={'/images/up.svg'}
-              width={14}
-              height={11}
-              alt={"w3era digital marketing company"}
-              className="cursor-pointer 2xl:w-[14px] w-[12px] "
-            /> :
-              <Image
-                src={'/images/down-icon.svg'}
-                width={14}
-                height={11}
-                alt={"w3era digital marketing company"}
-                className="cursor-pointer 2xl:w-[14px] w-[12px]"
-              />}
+            Our Packages               </li>
+            
+            <Image
+    src={'/images/down-icon.svg'}
+    width={14}
+    height={11}
+    alt={"w3era digital marketing company"}
+    className={`cursor-pointer 2xl:w-[14px] w-[12px] transition-transform duration-300 ease-in-out ${openDropdown === 'packages' ? 'rotate-180' : ''}`}
+  />
         </div>
 
         {openDropdown === 'packages' && (
@@ -659,7 +631,7 @@ const Index = ({ show }: any) => {
         )}
       </div>
       {/* Buttons */}
-      <div className='flex gap-2 lg:gap-1 mt-2 lg:mt-0 flex-col lg:flex-row w-1/3 justify-end'>
+      <div className='flex gap-2 lg:gap-1 mt-2 lg:mt-0 flex-col lg:flex-row w-fullm md:w-1/3 justify-end'>
         <Link target='_blank' href={'https://meetings.hubspot.com/sakshi-jass?uuid=ae684c90-b22d-4aed-a972-4de20bef7f87'}>
           <button className=' max-w-[180px]  py-[8px]   border-2 px-2 2xl:px-4 border-pink rounded-full meeting-btn'>
             <span className="meeting-text font-semibold text-sm ">Book a Meeting</span>

@@ -290,3 +290,8 @@ color: white;
   display: block; /* Ensure it's treated as a block-level element for centering */
   margin: 0 auto; /* Center horizontally */
 }
+
+
+.smooth3{
+  transition: ease-in-out all 0.3s;
+}
