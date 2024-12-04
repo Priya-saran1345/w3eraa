@@ -128,7 +128,7 @@ const Page = () => {
               Our Courses: The Menu Of Digital Excellence
             </h2>
             <p className="text-gray-600 mb-8 text-center max-w-3xl mx-auto">
-            Dive into our specialised courses covering the basics and advanced touchpoints to make you a way in today's fast-paced corporate and business world. Tap into quality learning, now!
+            Dive into our specialised courses covering the basics and advanced touchpoints to make you a way in today &apos s fast-paced corporate and business world. Tap into quality learning, now!
 
 
 
