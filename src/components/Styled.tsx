@@ -13,7 +13,7 @@ import styled from 'styled-components'
   }
 h2{
   font-size: 26px  !important; /*
-    font-weight:700!important
+  font-weight:700!important
 
 }
   h3 {
@@ -21,18 +21,16 @@ h2{
     font-size: 22 !important; /* 24px */
     font-weight: 500; !important /* Semi-Bold */
   }
-
+  
   h4 {
     font-size: 18;    !important /* 20px */
     font-weight: 500; !important /* Semi-Bold */
   }
-
   h5 {
 
     font-size: 5rem;  !important /* 16px */
     font-weight: 500; !important /* Medium */
   }
-
   h6 {
 
     font-size: 0.875rem; /* 14px */

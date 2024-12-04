@@ -12,8 +12,34 @@
         "Electronic Health Record (EHR) systems."
            ]
     }
-
-
+    ,
+    {
+        "index":"01",
+        "title":"Healthcare",
+        "image":"/images/serve1.png",
+        "points":["Patient appointment and scheduling portals.",
+        "Telemedicine platforms with video consultations.",
+        "Electronic Health Record (EHR) systems."
+           ]
+    }
+    ,{
+        "index":"01",
+        "title":"Healthcare",
+        "image":"/images/serve1.png",
+        "points":["Patient appointment and scheduling portals.",
+        "Telemedicine platforms with video consultations.",
+        "Electronic Health Record (EHR) systems."
+           ]
+    },
+    {
+        "index":"01",
+        "title":"Healthcare",
+        "image":"/images/serve1.png",
+        "points":["Patient appointment and scheduling portals.",
+        "Telemedicine platforms with video consultations.",
+        "Electronic Health Record (EHR) systems."
+           ]
+    }
 
    ]
     }

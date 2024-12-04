@@ -2,7 +2,6 @@ import React from 'react'
 import Header from '@/components/header'
 import DownNavbar from '@/components/DownNavbar'
 import Navbar from '@/components/navbar'
-import Image from 'next/image'
 import Footer from '@/components/footer'
 import Blogs from '@/components/blogs'
 import QuickLinks from '@/components/quickLinks'
@@ -29,11 +28,7 @@ const WebDevelopmentService = ({ data, cluth, quickLinks }: any) => {
                <IndustriesServe />
 
 
-
-
-
-
-
+              
 
 
 
