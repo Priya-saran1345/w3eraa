@@ -185,7 +185,6 @@ const Page = () => {
     </div>
   )
 }
-
 export default Page
 const AudienceCard = ({ title, description, icon }: { title: string; description: string; icon: React.ReactNode }) => (
     <div className="bg-white p-6 rounded-lg hover:shadow-md lg:hover:scale-[1.1] duration-300 border-[2px] border-grey flex flex-col justify-center items-center">
