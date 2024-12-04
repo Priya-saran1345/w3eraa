@@ -12,32 +12,72 @@
         "Electronic Health Record (EHR) systems."
            ]
     }
-    ,
-    {
-        "index":"01",
-        "title":"Healthcare",
-        "image":"/images/serve1.png",
-        "points":["Patient appointment and scheduling portals.",
-        "Telemedicine platforms with video consultations.",
-        "Electronic Health Record (EHR) systems."
-           ]
-    }
+    
     ,{
-        "index":"01",
-        "title":"Healthcare",
-        "image":"/images/serve1.png",
-        "points":["Patient appointment and scheduling portals.",
-        "Telemedicine platforms with video consultations.",
-        "Electronic Health Record (EHR) systems."
+        "index":"02",
+        "title":"Retail",
+        "image":"/images/serve2.png",
+        "points":["Scalable e-commerce platforms.",
+        "Inventory and order management systems.",
+        "POS (Point of Sale) integrations."
            ]
     },
     {
-        "index":"01",
-        "title":"Healthcare",
-        "image":"/images/serve1.png",
-        "points":["Patient appointment and scheduling portals.",
-        "Telemedicine platforms with video consultations.",
-        "Electronic Health Record (EHR) systems."
+        "index":"03",
+        "title":"Real Estate",
+        "image":"/images/serve3.png",
+        "points":["Property listing websites with advanced search filters.",
+        "Virtual tour platforms for property exploration.",
+        "CRM systems for lead and client management."
+           ]
+    },
+
+    {
+        "index":"04",
+        "title":"Real Estate",
+        "image":"/images/serve4.png",
+        "points":["E-learning platforms with video lessons and quizzes.",
+        "Online examination and grading systems.",
+        "Student and faculty management tools."
+           ]
+    },
+
+    {
+        "index":"05",
+        "title":"Startups",
+        "image":"/images/serve5.png",
+        "points":["MVP (Minimum Viable Product) development.",
+        "Custom dashboards for tracking growth and analytics.",
+        "Scalable web applications for product launches."
+           ]
+    },
+
+    {
+        "index":"06",
+        "title":"Fintech",
+        "image":"/images/serve6.png",
+        "points":["Secure online banking and payment platforms.",
+        "Financial planning and portfolio management systems.",
+        "AI-driven analytics tools for risk assessment."
+           ]
+    },
+    {
+        "index":"07",
+        "title":"IT and Technology",
+        "image":"/images/serve7.png",
+        "points":["Custom enterprise portals for team collaboration.",
+        "IT service management platforms.",
+        "API and third-party software integrations."
+           ]
+    }
+    ,
+    {
+        "index":"08",
+        "title":"Hospitality",
+        "image":"/images/serve8.png",
+        "points":["Hotel booking and reservation platforms.",
+        "Food delivery and menu management systems.",
+        "Loyalty program management."
            ]
     }
 

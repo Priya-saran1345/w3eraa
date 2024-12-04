@@ -357,6 +357,45 @@
   ]
 
 }
+,
+"academyFaq":[
+  {
+    "title":"      What types of courses are offered at W3era?               ",
+    "description":"W3era offers trending digital marketing courses in SEO, Google Ads, Social Media Marketing, and CMS (WordPress and Shopify). The duration of this course is between 4-5 months."
+
+  },
+  {
+    "title":"What sets W3era’s certification apart from others?",
+    "description":"W3era’s certification stands out due to its expert-crafted curriculum, practical training, live project work, and internships. Apart from this, the whole academy operates with the strong support of experienced marketers, adding even more credibility to the platform."
+  }
+  ,
+  {
+    "title":" What will I gain from taking W3era’s digital marketing courses?",
+    "description":"You’ll gain valuable skills in digital marketing that can level up your resume, boost your career prospects, and increase job opportunities. You will also get a 6-month paid internship at W3era along with a certificate."
+  }
+,
+{
+  "title":"  Does W3era provide practical experience in their courses?   ",
+  "description":"Yes, the courses include practical experiences such as live project work and a 6-month paid internship. We run our high-tech physical classrooms in Jaipur, enhancing the excitement and interaction among students."
+},
+{
+  "title":" How are the courses delivered?",
+  "description":"Courses are delivered through a combination of high-tech classroom sessions and online learning modules bringing time and place utility to your doorsteps."
+
+},
+{
+  "title":" Are the courses suitable for beginners? ",
+  "description":"Yes, W3era offers both basic and advanced courses, making them suitable for beginners and experienced professionals alike."
+},
+{
+  "title":" How do W3era’s courses differ from other digital marketing programs?",
+  "description":"W3era’s courses combine in-depth theoretical knowledge with practical, hands-on experience through live projects and internships. We continuously update our content to reflect the latest industry trends, ensuring relevance and effectiveness. This approach provides students with both the skills and real-world applications needed to excel in digital marketing."
+},
+{
+  "title":"Is job placement assistance available after completing a course? ",
+  "description":"Yes, W3era offers 100% placement assistance to help graduates find their first job in digital marketing."
+}
+]
 
   }
   

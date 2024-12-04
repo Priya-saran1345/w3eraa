@@ -3,6 +3,8 @@ import React from 'react'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import CommonBanner from '@/components/Common-Banner'
+import Jsondata from '@/components/Json/Data.json'
+import Faq1 from "@/components/faqComp";
 
 const Page = () => {
     const audiences = [
@@ -170,6 +172,7 @@ const Page = () => {
             </div>
           </div>
         </section>
+        <Faq1 props={Jsondata?.academyFaq} title={"Frequently Asked Questions"} />
          <Footer/>
     </div>
   )
