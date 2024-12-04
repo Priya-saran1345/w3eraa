@@ -121,7 +121,7 @@ const ResultTable: React.FC<ResultTableProps> = ({ result, lastSegment }:any) =>
         )}
             {lastSegment === 'robots-txt-generator' && (
    <div className="w-full overflow-x-auto">
-<pre> {result}</pre>
+<pre> {result.slice(1, -1).replace(/\\n/g, '<br>').replace(/\\"/g, '"') }</pre>
  </div>
         )}
       {(lastSegment === 'server-status-checker') && (
