@@ -55,7 +55,7 @@ const Blogs = () => {
       // !blogs ? <Loader /> : 
       (
         <div className="w-full">
-          <Header />
+          {/* <Header /> */}
           <DownNavbar/>
 
           <Navbar />
@@ -179,7 +179,7 @@ const Blogs = () => {
               </div>
             </div>
           </div>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       )}
     </div>

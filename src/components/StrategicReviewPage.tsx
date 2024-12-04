@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 import Footer from '@/components/footer'
 import Header from '@/components/header'
 import Navbar from '@/components/navbar'
@@ -16,105 +16,104 @@ import HubspotForm from '@/components/HubspotForm'
 import DownNavbar from '@/components/DownNavbar'
 
 const Contact = () => {
-  const { basic_details } = Useapi();
-  const [data, setdata] = useState<any>()
-  const [message, setMessage] = useState({
-    first_name: "",
-    last_name: "",
-    email: "",
-    phone_number: "",
-    message: "",
-    our_service: "",
-    monthly_budget: "",
-    profile: "",
-    url: "",
-  });
-  const [isChecked, setIsChecked] = useState(false); // Track checkbox state
-  const handleSubmit = async () => {
-    if (!isChecked || !validateFields()) return; // Ensure all fields are valid and checkbox is checked
+  // const { basic_details } = Useapi();
+  // const [data, setdata] = useState<any>()
+  // const [message, setMessage] = useState({
+  //   first_name: "",
+  //   last_name: "",
+  //   email: "",
+  //   phone_number: "",
+  //   message: "",
+  //   our_service: "",
+  //   monthly_budget: "",
+  //   profile: "",
+  //   url: "",
+  // });
+  // const [isChecked, setIsChecked] = useState(false); // Track checkbox state
+  // const handleSubmit = async () => {
+  //   if (!isChecked || !validateFields()) return; // Ensure all fields are valid and checkbox is checked
+  //   try {
+  //     const response = await axios.post(`${BASE_URL}review-form/`, message);
+  //     toast.success('Message send successfully')
 
-    try {
-      const response = await axios.post(`${BASE_URL}review-form/`, message);
-      toast.success('Message send successfully')
-
-      setMessage({
-        first_name: "",
-        last_name: "",
-        email: "",
-        phone_number: "",
-        message: "",
-        our_service: "",
-        monthly_budget: "",
-        profile: "",
-        url: "",
-      });
-      setIsChecked(false);
-    } catch (error) {
-      console.error('Error submitting data:', error);
-      toast.error('Try again')
+  //     setMessage({
+  //       first_name: "",
+  //       last_name: "",
+  //       email: "",
+  //       phone_number: "",
+  //       message: "",
+  //       our_service: "",
+  //       monthly_budget: "",
+  //       profile: "",
+  //       url: "",
+  //     });
+  //     setIsChecked(false);
+  //   } catch (error) {
+  //     console.error('Error submitting data:', error);
+  //     toast.error('Try again')
 
 
-    }
-  };
-  const handleChange = (e: any) => {
-    setMessage({ ...message, [e.target.name]: e.target.value });
-  };
+  //   }
+  // };
+  // const handleChange = (e: any) => {
+  //   setMessage({ ...message, [e.target.name]: e.target.value });
+  // };
 
-  const handleCheckboxChange = (e: any) => {
-    setIsChecked(e.target.checked); // Update the checkbox state
-  };
+  // const handleCheckboxChange = (e: any) => {
+  //   setIsChecked(e.target.checked); // Update the checkbox state
+  // };
 
-  const validateFields = () => {
-    // Check if all fields are filled
-    return (
-      message.first_name &&
-      message.last_name &&
-      message.email &&
-      message.phone_number &&
-      message.message &&
-      message.our_service &&
-      message.monthly_budget &&
-      message.url &&
-      message.profile
-    );
-  };
+  // const validateFields = () => {
+  //   // Check if all fields are filled
+  //   return (
+  //     message.first_name &&
+  //     message.last_name &&
+  //     message.email &&
+  //     message.phone_number &&
+  //     message.message &&
+  //     message.our_service &&
+  //     message.monthly_budget &&
+  //     message.url &&
+  //     message.profile
+  //   );
+  // };
 
-  const isFormValid = isChecked && validateFields();
+  // const isFormValid = isChecked && validateFields();
 
-  const sliderRef = useRef<Slider | null>(null);
-  const settings = {
-    // dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+  // const sliderRef = useRef<Slider | null>(null);
+  // const settings = {
+  //   // dots: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
 
-    autoplay: true,
-    autoplaySpeed: 3000,
-  };
-  const handleNext = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickNext();
-    }
-  };
+  //   autoplay: true,
+  //   autoplaySpeed: 3000,
+  // };
+  // const handleNext = () => {
+  //   if (sliderRef.current) {
+  //     sliderRef.current.slickNext();
+  //   }
+  // };
 
-  const handlePrev = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickPrev();
-    }
-  };
+  // const handlePrev = () => {
+  //   if (sliderRef.current) {
+  //     sliderRef.current.slickPrev();
+  //   }
+  // };
 
-  const fetchdata = async () => {
-    try {
-      const response = await axios.get(`${BASE_URL}contact-page/`);
-      setdata(response.data);
-    } catch (error: any) {
-      console.log("service error", error.message);
-    }
-  }
-  useEffect(() => {
-    fetchdata()
-  }, [])
+  // const fetchdata = async () => {
+  //   try {
+  //     const response = await axios.get(`${BASE_URL}contact-page/`);
+  //     setdata(response.data);
+  //   } catch (error: any) {
+  //     console.log("service error", error.message);
+  //   }
+  // }
+  // useEffect(() => {
+  //   fetchdata()
+  // }, [])
 
   return (
     <div>

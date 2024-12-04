@@ -124,7 +124,7 @@ const Contact = ({data}:any) => {
       {
         // data && basic_details &&
         <div>
-          <Header />
+          {/* <Header /> */}
           <DownNavbar/>
 
           <Navbar />
@@ -384,7 +384,7 @@ const Contact = ({data}:any) => {
             </div>
           </div>
 
-          <Footer />
+          {/* <Footer /> */}
         </div>
       }
 

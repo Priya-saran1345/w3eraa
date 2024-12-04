@@ -61,7 +61,7 @@ const Main = ({ data }: any) => {
   // }
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <DownNavbar />
 
       <Navbar />
@@ -171,7 +171,7 @@ const Main = ({ data }: any) => {
       {/* { quicklinks&&
                                 <Quicklinks props={quicklinks } />
                             }   */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

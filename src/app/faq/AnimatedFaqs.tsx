@@ -4,8 +4,8 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaArrowUpLong, FaArrowDownLong } from "react-icons/fa6"
 import Header from '@/components/header'
-import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
+import Navbar from '@/components/navbar'
 import DownNavbar from '@/components/DownNavbar'
 
 interface FaqItem {
@@ -26,7 +26,7 @@ export default function AnimatedFaqs({ faqData }: AnimatedFaqsProps) {
   
   return (
     <div className='w-full'>
-      <Header />
+      {/* <Header /> */}
       <DownNavbar/>
       <Navbar />
       <div className='flex h-[45vh] w-full items-center justify-center bg-[url("/images/blog-bg.png")] px-4'>
@@ -86,7 +86,7 @@ export default function AnimatedFaqs({ faqData }: AnimatedFaqsProps) {
           </motion.div>
         ))}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

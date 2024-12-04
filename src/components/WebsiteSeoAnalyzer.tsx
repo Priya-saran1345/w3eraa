@@ -17,7 +17,6 @@ import { usePathname } from 'next/navigation'
 import { BASE_URL } from '@/util/api'
 import { notFound } from "next/navigation";
 
-
 const Audit = () => {
     const [tools_body, settools_body] = useState<any>()
     const [url, setUrl] = useState('');
@@ -120,9 +119,9 @@ const Audit = () => {
       
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <DownNavbar />
-            <Navbar />
+            {/* <Navbar /> */}
             <div className=" ">
                 <div className='w-full'>
                     <div className='w-full bg-no-repeat bg-center min-h-[40vh] bg-[url("/images/tool-bg.png")] py-9 flex flex-col justify-center items-center'>
@@ -130,7 +129,6 @@ const Audit = () => {
                     </div>
                 </div>
                 <div className='mt-4 w-full px-4 xl:px-0 xl:w-[95%]  2xl:w-[75%] mx-auto'>
-
                     <div className='rounded-xl p-7 shadow-xl border-slate-100 border-[1px] bg-white'>
                         <div className='bg-grey px-4 py-2 rounded-lg w-full flex items-center gap-3'>
                             <div className='w-[93px] h-[93px] bg-white rounded-full flex justify-center items-center'>
@@ -331,7 +329,7 @@ const Audit = () => {
                 </div>
             </div>
 
-            <Footer />
+            {/* <Footer /> */}
         </>
     )
 }

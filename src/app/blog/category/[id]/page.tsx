@@ -3,6 +3,9 @@ import React from 'react'
 import BlogCategory from '@/components/BlogCategoryPage'
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
+import Footer from '@/components/footer'
+import Header from '@/components/header'
+
 async function SchemaScript({ params}:any) {
   const  slug  = params?.id;
   const metaData = await fetchMeta(`blog/category/${slug}`);
@@ -20,7 +23,10 @@ const Page = ({ params }: any) => {
         <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
+      <Header />
       <BlogCategory  />
+      <Footer />
+
     </div>
   )
 }

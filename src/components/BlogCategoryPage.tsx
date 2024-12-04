@@ -73,7 +73,7 @@ const Category = () => {
       // blog &&
        (
         <div>
-          <Header />
+          {/* <Header /> */}
           <DownNavbar/>
           <Navbar />
           <div className="w-full xl:w-[95%]  2xl:w-[75%] mx-auto px-4 bg-white">
@@ -151,7 +151,7 @@ const Category = () => {
               />
             </div>
           </div>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       )}
     </div>

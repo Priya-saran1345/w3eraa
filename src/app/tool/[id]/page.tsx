@@ -5,6 +5,8 @@ import { Suspense } from 'react'
 import fetchData from "@/app/fetchData"
 import { BASE_URL } from '@/util/api';
 import { notFound } from "next/navigation";
+import Header from '@/components/header'
+import Footer from '@/components/footer'
 async function getHomeData(slug: string) { // Changed parameter to string
   try{
 
@@ -41,7 +43,10 @@ const Page =async ({ params }: any) => {
         <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
+      <Header/>
       <ToolInnerPage  tools={tools} tools_body={tools_body} />
+      <Footer />
+
     </div>
   );
 };

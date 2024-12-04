@@ -3,6 +3,10 @@ import React from 'react'
 import WebsiteSeoAnalyzer from '@/components/WebsiteSeoAnalyzer'
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
+import Header from '@/components/header'
+import Navbar from '@/components/navbar'
+import Footer from '@/components/footer'
+
 async function SchemaScript() {
   const metaData = await fetchMeta("website-seo-analyzer")
   const schemaData = metaData?.scripts[0].content
@@ -20,12 +24,16 @@ const Page = () => {
         <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
+      <Header />
+      {/* <DownNavbar /> */}
+      <Navbar />
       <WebsiteSeoAnalyzer/>
+      <Footer />
+
     </div>
   )
 }
 export default Page
-
   export async function generateMetadata() {
     try {
       const metaData = await fetchMeta("website-seo-analyzer");

@@ -37,7 +37,7 @@ const Main = ({data , quicklinks}:any) => {
     }, []);
     return (
         <div>
-            <Header />
+            {/* <Header /> */}
             <DownNavbar/>
             <Navbar />
            <CommonBanner title={data?.seo_industry[0].title||''} description={data?.seo_industry[0].description|| ''} 
@@ -127,7 +127,7 @@ const Main = ({data , quicklinks}:any) => {
                                 <Quicklinks props={quicklinks.
                                   link_category } />
                             }    
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };

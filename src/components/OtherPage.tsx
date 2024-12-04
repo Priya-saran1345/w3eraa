@@ -25,9 +25,8 @@ const Page = ({props}:any) => {
     {
 // other&&
     <div>
-        <Header/>
+        {/* <Header/> */}
         <DownNavbar/>
-
         <Navbar/>
         {
           other?.title &&
@@ -48,9 +47,8 @@ const Page = ({props}:any) => {
       </div>
 {
 
-     
 }
-        <Footer/>
+        {/* <Footer/> */}
     </div>
        }
     </>

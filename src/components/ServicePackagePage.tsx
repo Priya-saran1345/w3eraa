@@ -101,7 +101,6 @@ const Service_Pkackages = ({result ,cluth }:any) => {
         setActivePlan(plan);
     };
     console.log('quick links are ',quicklinks)
-
     useEffect(() => {
         setdata(result?.data)
     }, [result])
@@ -124,7 +123,7 @@ const Service_Pkackages = ({result ,cluth }:any) => {
     };
     if (err) {
         return (<div className='w-full'>
-            <Header />
+            {/* <Header /> */}
             <DownNavbar/>
 
             <Navbar />
@@ -149,7 +148,7 @@ const Service_Pkackages = ({result ,cluth }:any) => {
                     </div>
                 </div>
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </div>)
     }
     return (
@@ -166,7 +165,7 @@ const Service_Pkackages = ({result ,cluth }:any) => {
                 <div>
                     {result?.pagetype == 'service' &&
                         <div className=''>
-                            <Header />
+                            {/* <Header /> */}
                             <DownNavbar/>
                             <Navbar />
                             <CommonBanner status={'true'} title={data?.title} description={data?.description} image={data?.image}
@@ -521,13 +520,13 @@ const Service_Pkackages = ({result ,cluth }:any) => {
                                 <MarketingServices props={data?.service_card3[0]} />
                             }
                             <Blogs props={data?.blog} />
-                            <Footer />
+                            {/* <Footer /> */}
                         </div>
                     }
                     {
                         result?.pagetype == 'package' &&
                         <div className='w-full'>
-                            <Header />
+                            {/* <Header /> */}
                             <DownNavbar/>
                             <Navbar />
                             <CommonBanner title={data?.title}
@@ -728,7 +727,7 @@ const Service_Pkackages = ({result ,cluth }:any) => {
                             }
                             <Blogs props={data?.blog} />
 
-                            <Footer />
+                            {/* <Footer /> */}
                         </div>
                     }
                     {

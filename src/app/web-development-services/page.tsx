@@ -5,11 +5,9 @@ import ServicePackage from '@/components/ServicePackagePage'
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
 import fetchData from "@/app/fetchData"
-import Header from '@/components/header'
-import Footer from '@/components/footer'
-async function SchemaScript({ params}:any) {
-  const  slug  = params?.id;
-  const metaData = await fetchMeta(`${slug}`);
+import WebDevelopmentService from '@/components/WebDevelopmentService';
+async function SchemaScript() {
+  const metaData = await fetchMeta(`web-development-services`);
   const schemaData = metaData?.scripts[0].content
   return (
     <script
@@ -18,36 +16,25 @@ async function SchemaScript({ params}:any) {
     />
   )
 }
-const Page = async({params}: any) => {
-  const data = await fetchData(`service-packages/${params?.id}`);
-  // Initialize additional variables
-  let cluth = null;
-  // let quicklinks = null;
-  // If pagetype is not 'other', fetch additional data
-  if (data?.pagetype !== 'other') {
-    cluth = await fetchData('clutch');
-  }
+const Page = async() => {
+  const data = await fetchData(`service-packages/web-development-services`);
+  const cluth = await fetchData('clutch')
+ const quickLinks = await fetchData(`quick-link/web-development-services`)
   return (
     <div>
         <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
-      <Header />
-
-      <ServicePackage
-       result={data} 
-       cluth={cluth} 
-        />
-              <Footer />
+     
+        <WebDevelopmentService data={data.data} cluth={cluth} quickLinks={quickLinks.link_category}  />
 
     </div>
   )
 }
 export default Page
-  export async function generateMetadata({ params  }: any) {
-    const  slug  = params?.id;
+  export async function generateMetadata() {
     try {
-      const metaData = await fetchMeta(`${slug}`);
+      const metaData = await fetchMeta(`web-development-services`);
       return {
         title: metaData?.title || '',
         description: metaData?.description || '',

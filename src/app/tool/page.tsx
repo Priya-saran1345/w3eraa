@@ -4,7 +4,8 @@ import ToolPage from '@/components/ToolPage'
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
 import fetchData from "@/app/fetchData"
-
+import Header from '@/components/header'
+import Footer from '@/components/footer'
 async function SchemaScript() {
   const metaData = await fetchMeta("tool")
   const schemaData = metaData?.scripts[0].content
@@ -26,7 +27,11 @@ const Page = async() => {
          <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
+      <Header />
+
         <ToolPage body={body.body} tools={tools} />
+        <Footer />
+
     </div>
   )
 }

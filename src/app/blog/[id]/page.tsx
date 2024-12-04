@@ -4,6 +4,8 @@ import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
 import fetchData from "@/app/fetchData"
 import { BASE_URL } from '@/util/api';
+import Header from '@/components/header'
+import Footer from '@/components/footer'
 
 async function SchemaScript({ params}:any) {
   const  slug  = params?.id;
@@ -26,7 +28,11 @@ const blogs=await getProfileData()
           <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
+      <Header />
+
       <BlogDetailPage apidata={apidata} blogs={blogs} />
+      <Footer />
+
     </div>
   );
 };

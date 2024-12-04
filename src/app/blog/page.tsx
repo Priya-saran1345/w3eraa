@@ -3,6 +3,8 @@ import React from 'react'
 import BlogPage from '@/components/BlogsPage'
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
+import Header from '@/components/header'
+import Footer from '@/components/footer'
 
 async function SchemaScript() {
   const metaData = await fetchMeta("blog")
@@ -20,7 +22,10 @@ const Page = () => {
       <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
+      <Header />
       <BlogPage/>
+      <Footer />
+
     </div>
   )
 }

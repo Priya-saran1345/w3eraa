@@ -26,7 +26,7 @@ const Blogs = ({apidata ,blogs }:any) => {
             {
                 // blogs && apidata &&
                 <div className='w-full'>
-                    <Header />
+                    {/* <Header /> */}
                     <DownNavbar />
 
                     <Navbar />
@@ -157,7 +157,7 @@ const Blogs = ({apidata ,blogs }:any) => {
                             </div>
                         </div>
                     </div>
-                    <Footer />
+                    {/* <Footer /> */}
                 </div>
             }
         </div>

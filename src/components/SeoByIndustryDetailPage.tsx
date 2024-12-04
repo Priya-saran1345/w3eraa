@@ -40,7 +40,7 @@ const Page = ({data}:any) => {
 
 // data&&
     <div>
-      <Header />
+      {/* <Header /> */}
       <DownNavbar/>
       <Navbar />
       <div className='py-12 xl:w-[95%]  2xl:w-[75%] px-6 mx-auto'>
@@ -53,7 +53,7 @@ const Page = ({data}:any) => {
             </div>
         </StyledWrapper>
       </div>
-      <Footer />
+      {/* <Footer /> */}
 
     </div>
      }

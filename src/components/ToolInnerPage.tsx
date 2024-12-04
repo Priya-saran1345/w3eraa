@@ -21,7 +21,7 @@
       import DownNavbar from '@/components/DownNavbar'
       import { div, form, ul } from 'framer-motion/client';
 import ResultTable from '@/components/ResultTable';
-      const Tool = ({ tools, tools_body }: any) => {
+      const     Tool = ({ tools, tools_body }: any) => {
           const [innerloading, setinnerloading] = useState<any>(false)
           const pathname = usePathname();
           const segments = pathname.replace(/\/$/, '').split('/');
@@ -47,6 +47,7 @@ import ResultTable from '@/components/ResultTable';
               disallowpath: '',
               crawlDelay: '',
               sitemapUrl: '',
+              strategy_input: ''
           });
           
           // const fetchTools = async () => {
@@ -164,6 +165,7 @@ setLoading(true)
                   disallowpath: '',
                   crawlDelay: '',
                   sitemapUrl: '',
+                  strategy_input:""
               });
               setResult(null);
               setshowresult(false);
@@ -177,7 +179,7 @@ setLoading(true)
                   {
                       tools && currentTool &&
                       <div>
-                          <Header />
+                          {/* <Header /> */}
                           <DownNavbar />
       
                           <Navbar />
@@ -208,7 +210,8 @@ setLoading(true)
                                       </div>
                                   </div>
                                   {
-                                      !(currentTool[0]?.slug_link === 'keywords-suggestion-tool' || currentTool[0]?.slug_link === 'robots-txt-generator') && (
+                                      !(currentTool[0]?.slug_link === 'keywords-suggestion-tool' || currentTool[0]?.slug_link === 'robots-txt-generator' || 
+                                        currentTool[0]?.slug_link === 'what-is-my-browser' || currentTool[0]?.slug_link === 'my-ip-address') && (
                                           <div className='rounded-lg w-full border-grey border-[2px] flex justify-between items-center p-3 px-6 mt-4 dark:bg-white bg-white'>
                                               <input
                                                   type="text"
@@ -277,6 +280,13 @@ setLoading(true)
                                       (currentTool[0]?.slug_link === 'robots-txt-generator') &&
                                       (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
                                           <input type="text" placeholder='   Enter allow paths Seprated By Coma(,)' name='allowpath' value={formData?.allowpath}
+                                           className='w-full  border-none outline-none' onChange={handleChange} />
+                                      </div>)
+                                  }
+                                    {
+                                      (currentTool[0]?.slug_link === 'page-speed-checker' || currentTool[0]?.slug_link==='pagespeed-insights-checker') &&
+                                      (<div className='mt-4 border-grey border-[2px] rounded-lg p-6 w-full '>
+                                          <input type="text" placeholder='   Enter the strategy (mobile/desktop)' name='strategy_input' value={formData?.strategy_input}
                                            className='w-full  border-none outline-none' onChange={handleChange} />
                                       </div>)
                                   }
@@ -365,10 +375,10 @@ setLoading(true)
 
                                           </div>
                                       )}
-                                        {loading && <div className=" flex justify-center items-center">
-      <div className=" loader"></div>
-  </div>
-  }
+                                          {loading && <div className=" flex justify-center items-center">
+                                              <div className=" loader"></div>
+                                          </div>
+                                          }
                                   </div>}
                                   <div className='flex justify-start items-center gap-2'>
       
@@ -477,43 +487,15 @@ setLoading(true)
                                   </div>
                               </div>
                           </div>
-                          <Footer />
+                          {/* <Footer /> */}
                       </div>
                   }
               </>
           );
       }
-      
       export default Tool;
       
-        
-    //   function renderLinkTable({ result }: any) {
-    //     return (
-         
-    //       <div className='w-full overflow-x-auto'>
-    //         <p className="text-homeblack text-[24px] font-medium">Results:</p>
-    //         <table className="border-collapse min-w-[500px] border mt-4 border-gray-300 w-full text-left">
-    //           <thead>
-    //             <tr className="bg-grey text-homeblack">
-    //               <th className="border border-gray-300 px-4 py-2">Key</th>
-    //               <th className="border border-gray-300 px-4 py-2">Value</th>
-    //             </tr>
-    //           </thead>
-    //           <tbody>
-    //             {Object.entries(result).map(([key, value]) => (
-    //               <tr key={key}>
-    //                 <td className="border text-homeblack border-gray-300 px-4 py-2 font-medium">{key}</td>
-    //                 <td className="border text-homegrey border-gray-300 px-4 py-2">
-    //                  {value}
-    //                 </td>
-    //               </tr>
-    //             ))}
-    //           </tbody>
-    //         </table>
-    //       </div>
-     
-    //     )
-    //   }
+   
       
 
 

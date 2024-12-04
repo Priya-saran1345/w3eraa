@@ -1,13 +1,10 @@
 import React from 'react';
-
 interface ResultTableProps {
   result: Record<string, any>;
   lastSegment: any;
 }
-
 const ResultTable: React.FC<ResultTableProps> = ({ result, lastSegment }:any) => {
   console.log(result);
-  
   const renderTableForArray = (data: any[]) => {
     // Check if all items are objects and get the unique keys
     const headers = Array.from(
@@ -38,7 +35,6 @@ const ResultTable: React.FC<ResultTableProps> = ({ result, lastSegment }:any) =>
       </table>
     );
   };
-
   const renderValue = (value: any): React.ReactNode => {
     if (Array.isArray(value)) {
       if (value.length === 0) {
@@ -71,7 +67,6 @@ const ResultTable: React.FC<ResultTableProps> = ({ result, lastSegment }:any) =>
       return <span>{String(value)}</span>;
     }
   };
-
   // The render function that renders the DNS records
   const render = (value: any) => {
     return  value.map((elem: any, key: any) => (
@@ -85,7 +80,6 @@ const ResultTable: React.FC<ResultTableProps> = ({ result, lastSegment }:any) =>
       </div>
     ));
   };
-
   return (
     <div className="w-full overflow-x-auto">
       <p className="text-homeblack text-[24px] font-medium">Results:</p>
@@ -152,7 +146,6 @@ const ResultTable: React.FC<ResultTableProps> = ({ result, lastSegment }:any) =>
     </tbody>
   </table>
 )}
-
 {
   (lastSegment !== 'find-dns-records' && lastSegment !== 'server-status-checker' && lastSegment !== 'keyword-density-checker'  && lastSegment !== 'robots-txt-generator') && (
 

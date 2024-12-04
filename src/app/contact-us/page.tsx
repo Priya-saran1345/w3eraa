@@ -4,6 +4,9 @@ import Contact from '@/components/Contact'
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
 import { BASE_URL } from '@/util/api';
+import Header from '@/components/header'
+import Footer from '@/components/footer'
+
 async function SchemaScript() {
   const metaData = await fetchMeta("contact-us")
   const schemaData = metaData?.scripts[0].content
@@ -37,7 +40,11 @@ export default async function Page () {
       <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
+      <Header />
+
    <Contact data={aboutData} />
+   <Footer />
+
    </>
   )
 }

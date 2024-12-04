@@ -37,7 +37,7 @@ const life= await getlifedata()
                     <div className='w-full px-4 bg-[url("/images/lifeBanner.png")] bg-center bg-no-repeat b h-[40vh] flex justify-center items-center'>
                         <h1 className='text-white  font-bold '>Life at W3era</h1>
                     </div>
-                    <div className='w-full mx-auto 2xl:w-[95%]  2xl:w-[75%] px-6 items-center bg-white flex flex-col-reverse  md:flex-row justify-between gap-10  py-12 lg:py-28'>
+                    <div className='w-full mx-auto 2xl:w-[75%] px-6 items-center bg-white flex flex-col-reverse  md:flex-row justify-between gap-10  py-12 lg:py-28'>
                         <div className=' md:w-[70%] lg:w-[40%] text-center md:text-left'>
                             <h2 className='  text-[28px] lg:text-[38px] 2xl:text-[48px] leading-[] text-homeblack xl:leading-[58px] font-bold'>
                                 {life?.Revolutionize[0].title}</h2>
@@ -77,7 +77,7 @@ const life= await getlifedata()
                         </div>
                     </div>
                     <div className='w-full bg-grey'>
-                        <div className='2xl:w-[95%]  2xl:w-[75%] px-3 w-full  py-12 lg:py-24 mx-auto'>
+                        <div className='  2xl:w-[75%] px-3 w-full  py-12 lg:py-24 mx-auto'>
                             <div className='md:w-[60%] mx-auto  text-center '>
                                 <h2 className=' text-homeblack font-semibold mb-4'>{life?.event[0].title}</h2>
                                 <div className=' text-[16px] lg:text-[19px] text-homegrey  leading-[21px]' dangerouslySetInnerHTML={{ __html: life?.event[0].description }} >
@@ -101,7 +101,7 @@ const life= await getlifedata()
                         </div>
                     </div>
                     <div className='w-full bg-blue py-12 lg:py-16'>
-                        <div className='w-full 2xl:w-[95%]  2xl:w-[75%] mx-auto flex flex-wrap xl:flex-nowrap justify-center gap-10 px-4'>
+                        <div className='w-full   2xl:w-[75%] mx-auto flex flex-wrap xl:flex-nowrap justify-center gap-10 px-4'>
                             <div className='text-white md:w-[60%] text-center mx-auto '>
                                 <h2 className='  text-[28px] lg:text-[38px] 2xl:text-[48px] font-semibold leading-[58px]'>{life?.fly_high[0].title}</h2>
                                 <p className=' text-[16px] lg:text-[18px] mt-2' dangerouslySetInnerHTML={{ __html: life?.fly_high[0].description }} >

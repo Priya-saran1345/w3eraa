@@ -3,6 +3,10 @@ import React from 'react'
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
 import DigitalMarketing from '@/components/DigitalMarketingConsultationPage'
+import Header from '@/components/header'
+import Navbar from '@/components/navbar'
+import Footer from '@/components/footer'
+
 async function SchemaScript() {
   const metaData = await fetchMeta("digital-marketing-free-consultation")
   const schemaData = metaData?.scripts[0].content
@@ -19,7 +23,11 @@ const Page = () => {
       <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
+      <Header />
+      <Navbar />
       <DigitalMarketing/>
+      <Footer />
+
    </>
   )
 }

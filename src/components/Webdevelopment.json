@@ -1,0 +1,20 @@
+{
+    "industries":{
+        "title":"Industries We Serve",
+        "description":"At W3era, we deliver tailored web development solutions for a variety of industries, helping businesses enhance their online presence, streamline operations, and achieve their goals. From healthcare to fintech, retail to IT, we create platforms that deliver exceptional performance and user experiences.",
+   "cards":[
+    {
+        "index":"01",
+        "title":"Healthcare",
+        "image":"/images/serve1.png",
+        "points":["Patient appointment and scheduling portals.",
+        "Telemedicine platforms with video consultations.",
+        "Electronic Health Record (EHR) systems."
+           ]
+    }
+
+
+
+   ]
+    }
+}

@@ -82,7 +82,7 @@ const Page = ({body ,tools}:any) => {
             {
                 // tools &&
                 <div>
-                    <Header />
+                    {/* <Header /> */}
                     <DownNavbar />
 
                     <Navbar />
@@ -210,7 +210,7 @@ const Page = ({body ,tools}:any) => {
                                 </div>
                             </div>
                         </div>
-                        <Footer />
+                        {/* <Footer /> */}
                     </div>
                 </div>
             }

@@ -106,7 +106,7 @@ const AboutUS = ({about}:any) => {
 // basic_details && about&&
 
         <div>
-            <Header />
+            {/* <Header /> */}
             <DownNavbar/>
 
             <Navbar />
@@ -284,7 +284,7 @@ const AboutUS = ({about}:any) => {
             </div>
 
             
-            <Footer />
+            {/* <Footer /> */}
         </div>
         }
         </div>

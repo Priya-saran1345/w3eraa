@@ -4,6 +4,9 @@ import React from 'react'
  import { fetchMeta } from "@/app/action";
  import { Suspense } from 'react'
 import { BASE_URL } from '@/util/api';
+import Footer from '@/components/footer'
+import Header from '@/components/header'
+
 
 async function SchemaScript() {
   const metaData = await fetchMeta("about-us")
@@ -38,7 +41,11 @@ async function fetchData() {
        <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
+      <Header />
+
     <About about={aboutData}  />
+    <Footer />
+
     </>
   )
 }

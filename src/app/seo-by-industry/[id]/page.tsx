@@ -4,7 +4,8 @@ import SeoIndustryInner from '@/components/SeoIndustryInnerPage'
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
 import fetchData from "@/app/fetchData"
-
+import Header from '@/components/header'
+import Footer from '@/components/footer'
 async function SchemaScript({ params}:any) {
   const  slug  = params?.id;
   const metaData = await fetchMeta(`seo-by-industry/${slug}`);
@@ -24,7 +25,11 @@ const Page = async({ params }: any) => {
         <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
+      <Header />
+
         <SeoIndustryInner data={data[0]} />
+        <Footer />
+
     </div>
   )
 }

@@ -4,6 +4,8 @@ import SeoByIndustryPage from '@/components/SeoByIndustryPage'
 import { fetchMeta } from "@/app/action";
 import { Suspense } from 'react'
 import { BASE_URL } from '@/util/api';
+import Header from '@/components/header'
+import Footer from '@/components/footer'
 async function SchemaScript() {
   const metaData = await fetchMeta("seo-by-industry")
   const schemaData =metaData?.scripts[0].content
@@ -38,7 +40,11 @@ async function fetchData() {
          <Suspense fallback={null}>
         <SchemaScript />
       </Suspense>
+      <Header />
+
         <SeoByIndustryPage data={seoData}  quicklinks={quicklinks}/>
+        <Footer />
+
     </div>
   )
 }
