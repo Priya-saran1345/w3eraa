@@ -7,6 +7,7 @@ import Jsondata from '@/components/Json/Data.json'
 import Faq1 from "@/components/faqComp";
 
 const Page = () => {
+ 
     const audiences = [
         {
           title: "Job Seeker",
@@ -50,30 +51,42 @@ const Page = () => {
         {
           title: "Search Engine Optimization",
           duration: "45 days",
+          rating: 4.5,
+          reviews: "31k",
           description: "Skills you’ll gain: Keyword Research, On-Page SEO, Technical SEO, Content Creation, Link Building, Analytics and Reporting, Local SEO, Competitor Analysis, SEO Auditing, User Experience (UX) Optimization, Conversion Rate Optimization (CRO)"
         },
         {
           title: "Google Ads",
           duration: "45 days",
+          rating: 4.8,
+          reviews: "23k",
           description: 'Skills you’ll gain: Campaign Structure and Setup, Ad Copywriting and Design, Budget Management, Audience Targeting and Segmentation, Performance Tracking and Analytics, Conversion Tracking, A/B Testing and Experimentation and much more'
         },
         {
           title: "CMS: WordPress & Shopify",
           duration: "45 days",
+          rating: 4.6,
+          reviews: "20k",
           description: "Skills you’ll gain: Theme Customization, Plugin Management, Content Creation, SEO, Performance Optimization, E-commerce Setup and Management, User Role and Permissions Management, Analytics Integration, Backup and Recovery and much more"
         },
         {
           title: "Front End Design (UI/UX)",
           duration: "45 days",
+          rating: 4.4,
+          reviews: "21k",
           description: "Skills you’ll gain: HTML Structure and Semantics, CSS Styling and Layout, Responsive Design, JavaScript Functionality, Bootstrap Framework, UI/UX Principles, Performance Optimization, Accessibility Best Practices, Prototyping, Wireframing and much more"
         },
         {
           title: "Social Media Marketing",
           duration: "45 days",
+          rating: 4.7,
+          reviews: "10k",
           description: "Skills you’ll gain: Content Creation and Curation, Audience Engagement, Platform-Specific Strategies, Paid Ad Campaigns, Analytics and Insights, Influencer Collaboration, Social Media Scheduling, Community Management, Performance Tracking and much more"
         },
         {
           title: "Digital Marketing Course",
+          rating: 4.8,
+          reviews: "12k",
           duration: "45 days",
           description: "Skills you’ll gain: Search Engine Optimization, Pay-Per-Click Advertising, Content Marketing, Social Media Marketing, Email Marketing, Analytics and Data Interpretation, Conversion Rate Optimization, Affiliate Marketing, Automation and much more"
         }
@@ -112,8 +125,6 @@ const Page = () => {
             <p className="text-white text-[20px] mb-8 max-w-3xl mx-auto">
             Discover how to create powerful ad campaigns that drive results.
 
-
-
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {audiences.map((item, index) => (
@@ -131,9 +142,6 @@ const Page = () => {
             </h2>
             <p className="text-gray-600 mb-8 text-center max-w-3xl mx-auto">
             Dive into our specialised courses covering the basics and advanced touchpoints to make you a way in today &apos s fast-paced corporate and business world. Tap into quality learning, now!
-
-
-
 
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -187,10 +195,24 @@ const AudienceCard = ({ title, description, icon }: { title: string; description
     </div>
   )
   
-  const CourseCard = ({ title, duration, description }: { title: string; duration: string; description: string }) => (
+  const CourseCard = ({ title, duration, description ,rating ,reviews}: any) => (
     <div className="bg-white p-6  hover:bg-lightblue rounded-lg hover:shadow-md  duration-300 border-[2px] border-grey">
       <h3 className="!text-[22px] text-homeblack font-semibold mb-2">{title}</h3>
+
       <p className="text-[18px] text-gray-600 mb-4">{description}</p>
+      <div className="flex items-center gap-2 mb-4">
+        <div className="flex"> <svg
+      
+          className={`w-5 h-5 text-yellow-400`}
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg></div>
+        <span className="text-[16px] text-blue font-medium">{rating}</span>
+        <span className="text-[14px] text-gray-500">({reviews} reviews)</span>
+      </div>
       <div className="flex items-center justify-between">
         <span className="text-[16px] text-blue">Duration: {duration}</span>
         {/* <button className="text-[16px] text-blue htransition-colors duration-200">
