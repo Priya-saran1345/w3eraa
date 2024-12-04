@@ -104,10 +104,10 @@ const Page = () => {
          btntext={"Course Query"} btnlink={'contact-us'} />
          <section className="bg-blue py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
               Join our Free Google Ads Webinar
             </h2>
-            <p className="text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-white text-[20px] mb-8 max-w-3xl mx-auto">
             Discover how to create powerful ad campaigns that drive results.
 
 
@@ -124,10 +124,10 @@ const Page = () => {
         {/* Courses Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl text-homeblack md:text-3xl font-bold text-center mb-12">
+            <h2 className="text-2xl text-homeblack md:text-3xl font-bold text-center mb-4">
               Our Courses: The Menu Of Digital Excellence
             </h2>
-            <p className="text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-gray-600 mb-8 text-center max-w-3xl mx-auto">
             Dive into our specialised courses covering the basics and advanced touchpoints to make you a way in today's fast-paced corporate and business world. Tap into quality learning, now!
 
 
