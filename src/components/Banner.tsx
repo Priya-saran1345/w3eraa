@@ -102,7 +102,7 @@ const Router =useRouter()
                         <button className="flex items-center h-[55px] justify-center px-4 md:px-8 bg-white text-pink font-medium hover:text-white text-[18px] rounded-md group hover:bg-pink transition duration-300">
                       <a href={`tel:${basic_details?.basic_details[0].phonenumber}`}>
                           <span className="transition-transform duration-300 group-hover:-translate-x-2 text-[20px]">
-                            Call For Sales
+                          Talk To Expert
                           </span>
                       </a>
                           <GoArrowRight className="text-[20px] opacity-0 group-hover:opacity-100 transition duration-300 group-hover:translate-x-2" />
