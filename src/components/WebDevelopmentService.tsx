@@ -12,6 +12,10 @@ import Revenue from '@/components/revenue'
 import CommonBanner from '@/components/Common-Banner'
 import IndustriesServe from '@/components/IndustriesServe'
 import data from '@/components/Webdevelopment.json'
+import Quickfascts from '@/components/Quickfascts'
+import OurProcess from '@/components/OurProcess'
+import Service from '@/components/Service'
+import ServiceWork from '@/components/ServiceWork'
 const WebDevelopmentService = ({ data, cluth, quickLinks }: any) => {
     return (
         <div>
@@ -20,20 +24,25 @@ const WebDevelopmentService = ({ data, cluth, quickLinks }: any) => {
             <Navbar />
             <CommonBanner status={'true'} title={data?.title} description={data?.description} image={data?.image}
             btntext={data?.link_text} btnlink={data?.link_url} image_alt={data?.image_alt} />
-               
+               <Service/>
+               <IndustriesServe />
+               <Quickfascts/>
+               <OurProcess/>
+
+
+
+
+
+
+            
+
+
             
 
 
 
-               <IndustriesServe />
 
-
-              
-
-
-
-
-
+               <ServiceWork/>
             <Revenue />
             <CustomerChoose />
             {
@@ -42,7 +51,6 @@ const WebDevelopmentService = ({ data, cluth, quickLinks }: any) => {
             }
             <CluthRating props={cluth} />
             {quickLinks.length > 0 && <QuickLinks props={quickLinks} />}
-
             <Blogs props={data?.blog} />
             <Footer />
         </div>

@@ -83,4 +83,223 @@
 
    ]
     }
+    ,
+
+    "quickfacts":[
+        {
+            "counting":"18+",
+            "text":"Years of Experience"
+        },
+        {
+            "counting":"2k+",
+            "text":"Projects Delivered"
+        },
+        {
+            "counting":"3k+",
+            "text":"Happy Clients"
+        },
+        {
+            "counting":"50+",
+            "text":"Technologies Mastered"
+        }
+    ]
+    ,
+    "ourprocess": [
+        {
+            "title": "Planning",
+            "description": "We analyze your requirements and set clear objectives to create a roadmap for success."
+        },
+        {
+            "title": "Designing",
+            "description": "Crafting intuitive and visually appealing designs tailored to your brand identity."
+        },
+        {
+            "title": "Defining",
+            "description": "Finalizing features, functionality, and technology stack to ensure seamless development."
+        },
+        {
+            "title": "Building",
+            "description": "Developing your website with clean, efficient code using the latest technologies."
+        },
+        {
+            "title": "Testing",
+            "description": "Conducting rigorous quality checks to ensure flawless performance across all devices."
+        },
+        {
+            "title": "Deployment",
+            "description": "Launching your website with optimal configuration for speed, security, and scalability."
+        },
+        {
+            "title": "Maintenance",
+            "description": "Providing ongoing support to keep your website updated, secure, and running smoothly."
+        }
+    ],
+    "service":
+    {
+        "title": "Our Services",
+        "description":"At W3era, we deliver tailored solutions designed to meet your unique business needs. Whether you want to extend your IT team, outsource your entire infrastructure for 24/7 managed and secure operations, or rely on our experts for custom development, we’ve got you covered. With W3era, your IT capabilities are always ready when you need them most."
+       ,
+       "services": [
+    
+        {
+            "icon":"/images/icon1.svg",
+            "icon_title":"Custom website Development ",
+            "image":"/images/image1.png",
+            "title":"Custom Development ",
+            "description":"At W3era, we specialize in creating fully customized websites tailored to meet your unique business needs.",
+            "subtitle":"Why Choose Custom Website Development?",
+            "pionts":[
+                {"title":"Tailored Designs:",
+                "descritpion":"Websites built specifically for your brand and goals."
+                },
+                {
+                    "title":"Scalability:",
+                    "desctiption":"Easily adapt to future growth and requirements."
+                },
+                {
+                    "title":"Unique Features:",
+                    "descritpion":"Stand out with custom functionalities and interactive designs."
+                },
+                {
+                    "title":"Optimized Performance:",
+                   "descritpion":"Fast-loading websites with seamless user experiences."
+                },
+                {
+                    "title":"Enhanced Security:",
+                    "descritpion":"Advanced security measures to protect your data."
+                }
+            ]
+
+        },
+        {
+            "icon":"/images/icon2.svg",
+            "icon_title":"Platform-Based Development",
+            "image":"/images/image1.png",
+            "title":"Custom Development ",
+            "description":"At W3era, we specialize in creating fully customized websites tailored to meet your unique business needs.",
+            "subtitle":"Why Choose Custom Website Development?",
+            "pionts":[
+                {"title":"Tailored Designs:",
+                "descritpion":"Websites built specifically for your brand and goals."
+                }
+            ]
+
+        },
+        {
+            "icon":"/images/icon3.svg",
+            "icon_title":"Server management",
+            "image":"/images/image1.png",
+            "title":"Custom Development ",
+            "description":"At W3era, we specialize in creating fully customized websites tailored to meet your unique business needs.",
+            "subtitle":"Why Choose Custom Website Development?",
+            "pionts":[
+                {"title":"Tailored Designs:",
+                "descritpion":"Websites built specifically for your brand and goals."
+                }
+            ]
+
+        },
+        {
+            "icon":"/images/icon4.svg",
+            "icon_title":"Software mangment",
+            "image":"/images/image1.png",
+            "title":"Custom Development ",
+            "description":"At W3era, we specialize in creating fully customized websites tailored to meet your unique business needs.",
+            "subtitle":"Why Choose Custom Website Development?",
+            "pionts":[
+                {"title":"Tailored Designs:",
+                "descritpion":"Websites built specifically for your brand and goals."
+                }
+            ]
+
+        },
+        {
+            "icon":"/images/icon5.svg",
+            "icon_title":"Cloud services",
+            "image":"/images/image1.png",
+            "title":"Custom Development ",
+            "description":"At W3era, we specialize in creating fully customized websites tailored to meet your unique business needs.",
+            "subtitle":"Why Choose Custom Website Development?",
+            "pionts":[
+                {"title":"Tailored Designs:",
+                "descritpion":"Websites built specifically for your brand and goals."
+                }
+            ]
+
+        },
+        {
+            "icon":"/images/icon6.svg",
+            "icon_title":"Web scraping",
+            "image":"/images/image1.png",
+            "title":"Custom Development ",
+            "description":"At W3era, we specialize in creating fully customized websites tailored to meet your unique business needs.",
+            "subtitle":"Why Choose Custom Website Development?",
+            "pionts":[
+                {"title":"Tailored Designs:",
+                "descritpion":"Websites built specifically for your brand and goals."
+                }
+            ]
+
+        },
+        {
+            "icon":"/images/icon7.svg",
+            "icon_title":"Automation",
+            "image":"/images/image1.png",
+            "title":"Custom Development ",
+            "description":"At W3era, we specialize in creating fully customized websites tailored to meet your unique business needs.",
+            "subtitle":"Why Choose Custom Website Development?",
+            "pionts":[
+                {"title":"Tailored Designs:",
+                "descritpion":"Websites built specifically for your brand and goals."
+                }
+            ]
+
+        },
+        {
+            "icon":"/images/icon8.svg",
+            "icon_title":"Custom scripts",
+            "image":"/images/image1.png",
+            "title":"Custom Development ",
+            "description":"At W3era, we specialize in creating fully customized websites tailored to meet your unique business needs.",
+            "subtitle":"Why Choose Custom Website Development?",
+            "pionts":[
+                {"title":"Tailored Designs:",
+                "descritpion":"Websites built specifically for your brand and goals."
+                }
+            ]
+
+        },
+        {
+            "icon":"/images/icon9.svg",
+            "icon_title":"API Intigrations",
+            "image":"/images/image1.png",
+            "title":"Custom Development ",
+            "description":"At W3era, we specialize in creating fully customized websites tailored to meet your unique business needs.",
+            "subtitle":"Why Choose Custom Website Development?",
+            "pionts":[
+                {"title":"Tailored Designs:",
+                "descritpion":"Websites built specifically for your brand and goals."
+                }
+            ]
+
+        },
+        {
+            "icon":"/images/icon10.svg",
+            "icon_title":"Chrome Extension",
+            "image":"/images/image1.png",
+            "title":"Custom Development ",
+            "description":"At W3era, we specialize in creating fully customized websites tailored to meet your unique business needs.",
+            "subtitle":"Why Choose Custom Website Development?",
+            "pionts":[
+                {"title":"Tailored Designs:",
+                "descritpion":"Websites built specifically for your brand and goals."
+                }
+            ]
+
+        }
+        
+    ]
+}
+
+    
 }
