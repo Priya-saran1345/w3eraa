@@ -22,12 +22,12 @@ const ServiceWork = () => {
 
   return (
     <div className='bg-lightblue'>
-      <div className='2xl:w-[75%] mx-auto lg:w-[90%] w-full lg:px-6 py-12'>
+      <div className='2xl:w-[75%] mx-auto px-4 lg:w-[90%] w-full lg:px-6 py-12'>
 
-        <h2 className="text-3xl lg:text-4xl font-bold text-homeblack mb-8">
+        <h2 className="text-3xl lg:text-4xl font-bold text-center md:text-left text-homeblack mb-8">
           Our Work
         </h2>
-        <p className="text-homegrey text-[16px] lg:text-[18px] w-[90%] mb-8">
+        <p className="text-homegrey text-[16px] lg:text-[18px] text-center md:text-left sm:w-[90%] mb-8">
           At W3era, we specialize in creating innovative and scalable websites, whether through custom development or platform-based solutions. Below are some of the websites we &apos;ve developed using custom code and popular platforms, showcasing our
           versatility and expertise in building both unique, tailored experiences and efficient, user-friendly solutions.
         </p>
@@ -35,7 +35,7 @@ const ServiceWork = () => {
         <div className='border-[10px] border-white rounded-3xl'>
           <Slider {...settings}>
             {[1, 2, 3, 4, 5, 6, 7, 8]?.map((elem, index) => (
-              <div key={index} className='relative w-full rounded-3xl h-[511px] lg:h-[650px]'>
+              <div key={index} className=' w-full rounded-3xl flex justify-center items-center'>
                 <Image
                   width={1423}
                   height={411}

@@ -25,24 +25,28 @@ const Service = () => {
     };
 
     // Function to go to a specific slide
-    const goToSlide = (index: number) => {
-        sliderRef.current?.slickGoTo(index);
-    };
-
+    // const goToSlide = (index: number) => {
+    //     sliderRef.current?.slickGoTo(index);
+    // };
     // Function for next/previous buttons
     const nextSlide = () => sliderRef.current?.slickNext();
     const prevSlide = () => sliderRef.current?.slickPrev();
 
+    const goToSlide = (index: number) => {
+        sliderRef.current?.slickGoTo(index);
+        const sliderElement = document.querySelector(".slidehere");
+        sliderElement?.scrollIntoView({ behavior: "smooth" });
+    };
     return (
         <>
-            <div className="2xl:w-[75%] mx-auto lg:w-[90%] py-12">
+            <div className="2xl:w-[75%] px-4 mx-auto lg:w-[90%] py-12">
                 <h2 className="text-center text-3xl lg:text-4xl font-bold text-homeblack mb-8">
                     {data.service.title}
                 </h2>
-                <p className="text-center text-homegrey text-[16px] lg:text-[18px] w-[80%] mx-auto mb-12">
+                <p className="text-center text-homegrey text-[16px] lg:text-[18px] md:w-[80%] mx-auto mb-12">
                     {data.service.description}
                 </p>
-                <div className="w-full gap-5 justify-start my-8 flex flex-wrap">
+                <div className="w-full gap-5 justify-center my-8 flex flex-wrap">
                     {data.service.services.map((service, index) => (
                         <div
                             key={index}
@@ -59,7 +63,7 @@ const Service = () => {
                             <p className="text-center text-[18px] font-medium">{service.icon_title}</p>
                         </div>
                     ))}
-                    <div className="flex w-[31%] flex-col mt-8 justify-center items-center gap-2">
+                    <div className="flex xl:w-[31%] slidehere flex-col mt-8 justify-center items-center gap-2">
                         <div>
                             <Link href="/contact-us">
                                 <Button content={`Let's Discuss Your Project`} />
@@ -69,14 +73,13 @@ const Service = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-lightblue py-8">
-                <div className="2xl:w-[75%] mx-auto lg:w-[90%]">
+            <div className="bg-lightblue  py-8">
+                <div className="2xl:w-[75%] mx-auto px-4 lg:w-[90%]">
                     <Slider ref={sliderRef} {...settings}>
                         {data.service.services.map((service, index) => (
                             <div key={index}>
                                 <div>
                                     <div className='flex border-b-[2px] pb-5 border-blue justify-between w-full'>
-
                                         <p className="text-[38px] text-homeblack font-bold">{service.title}</p>
                                         <div className="flex justify-center gap-3">
                                             <button
@@ -120,18 +123,21 @@ const Service = () => {
                                                 <ClientsCount />
                                             </div>
                                         </div>
+                                        <div   className='hidden lg:flex '
+                                        >
+
                                         <Image
                                             src={service.image}
                                             height={407}
                                             width={557}
                                             alt="web development process"
-                                        />
+                                            />
+                                            </div>
                                     </div>
                                 </div>
                             </div>
                         ))}
                     </Slider>
-                    {/* Custom navigation buttons */}
 
                 </div>
             </div>

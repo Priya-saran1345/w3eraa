@@ -16,6 +16,8 @@ import Quickfascts from '@/components/Quickfascts'
 import OurProcess from '@/components/OurProcess'
 import Service from '@/components/Service'
 import ServiceWork from '@/components/ServiceWork'
+import Technology from '@/components/Technology'
+import Organization from '@/components/Organization'
 const WebDevelopmentService = ({ data, cluth, quickLinks }: any) => {
     return (
         <div>
@@ -24,25 +26,13 @@ const WebDevelopmentService = ({ data, cluth, quickLinks }: any) => {
             <Navbar />
             <CommonBanner status={'true'} title={data?.title} description={data?.description} image={data?.image}
             btntext={data?.link_text} btnlink={data?.link_url} image_alt={data?.image_alt} />
-               <Service/>
+              <Service/>
                <IndustriesServe />
                <Quickfascts/>
-               <OurProcess/>
-
-
-
-
-
-
-            
-
-
-            
-
-
-
-
-               <ServiceWork/>
+               <Organization/>
+               <Technology/>
+               {/* <OurProcess/> */}
+               <ServiceWork/> 
             <Revenue />
             <CustomerChoose />
             {

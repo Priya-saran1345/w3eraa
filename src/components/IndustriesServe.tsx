@@ -26,17 +26,11 @@ const IndustriesSection = () => {
         setExpandedIndex(expandedIndex === index ? null : index);
     };
 
-    useEffect(() => {
-        const handleMouseLeave = () => {
-            setMousePosition({ x: 0, y: 0 });
-        };
-
-        document.addEventListener('mouseleave', handleMouseLeave);
-
-        return () => {
-            document.removeEventListener('mouseleave', handleMouseLeave);
-        };
-    }, []);
+    const handleMouseLeave = () => {
+        // Collapse the card and reset the image position
+        setExpandedIndex(null);
+        // setMousePosition({ x: 0, y: 0 });
+    };
 
     return (
         <div className="w-full" >
@@ -51,12 +45,14 @@ const IndustriesSection = () => {
                         className="w-full  border-b-2 border-grey"
                         onMouseEnter={() => toggleCard(index)}
                         onMouseMove={handleMouseMove}
+                        onMouseLeave={handleMouseLeave}
+
                     >
-                        <div className="2xl:w-[75%] relative lg:w-[95%] mx-auto">
+                        <div className="2xl:w-[75%] relative px-5 lg:w-[90%] mx-auto">
                             {/* Header Section */}
                             <div className="w-full flex justify-between items-center mx-auto">
                                 <div className="flex justify-start gap-10 items-center">
-                                    <p className="text-[70px] font-bold text-blue">{card.index}</p>
+                                    <p className=" text-[48px] xl:text-[70px] font-bold text-blue">{card.index}</p>
                                     <p className="text-homeblack text-[20px] font-semibold lg:text-[24px]">
                                         {card.title}
                                     </p>

@@ -19,7 +19,7 @@ const OurProcess = () => {
             <p className="text-center text-homegrey text-lg lg:text-xl max-w-2xl mx-auto mb-12">
                 At W3era, we follow a streamlined process to deliver exceptional web development solutions.
             </p>
-            <div className=" xl:w-[95%] w-full mx-auto flex flex-wrap lg:flex-nowrap justify-center lg:justify-between  2xl:w-[75%]  gap-8">
+            <div className=" lg:w-[90%] w-full mx-auto flex flex-wrap lg:flex-nowrap justify-center lg:justify-between  2xl:w-[75%]  gap-8">
                 {/* Left Accordion Section */}
                 <div className=" lg:w-[40%]">
                     {data.ourprocess.map((step, index) => (

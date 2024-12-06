@@ -300,6 +300,104 @@
         
     ]
 }
+,
 
+    "technologies": {
+      "title": "Technologies, We are Master of",
+      "description": "At W3era, we leverage cutting-edge technologies to deliver innovative and tailored solutions for our clients. Our expertise spans a wide range of platforms, frameworks, and tools that ensure high performance, scalability, and security for every project.",
+      "fields": [
+        {
+          "icon": "/service-img/icon1.svg",
+          "title": "Custom Development",
+          "technology": [
+          { "name": "HTML", "image": "/service-img/image1.svg" },
+          { "name": "CSS", "image": "/service-img/image2.svg" },
+          { "name": "JavaScript", "image": "/service-img/image3.svg" },
+          { "name": "Php", "image": "/service-img/image4.svg" },
+          { "name": "Angular", "image": "/service-img/image5.svg" },
+          { "name": "Next.Js", "image": "/service-img/image6.svg" },
+          { "name": "Bootstrap", "image": "/service-img/image7.svg" },
+          { "name": "Python", "image": "/service-img/image8.svg" },
+          { "name": "React.js", "image": "/service-img/image9.svg" },
+          { "name": "Node.js", "image": "/service-img/image10.svg" },
+          { "name": "Django", "image": "/service-img/image11.svg" },
+          { "name": "Express.js", "image": "/service-img/image12.svg" },
+          { "name": "Vue.js", "image": "/service-img/image13.svg" }
+        ]
+        },
+        {
+          "icon": "/service-img/icon2.svg",
+          "title": "Platform-Based Development",
+          "technology": [
+            { "name": "WordPress", "image": "/service-img/image21.svg" },
+            { "name": "Shopify", "image": "/service-img/image22.svg" },
+            { "name": "Webflow", "image": "/service-img/image23.svg" },
+            { "name": "Wix", "image": "/service-img/image24.svg" },
+            { "name": "Magento", "image": "/service-img/image25.svg" }
+          ]
+        },
+        {
+          "icon": "/service-img/icon3.svg",
+          "title": "Core Tech",
+          "technology": [
+            { "name": "C++", "image": "/service-img/image31.svg" },
+            { "name": "Ruby", "image": "/service-img/image32.svg" },
+            { "name": "Kotlin", "image": "/service-img/image33.svg" },
+            { "name": "Java", "image": "/service-img/image34.svg" },
+            { "name": "Perl", "image": "/service-img/image35.svg" }
+          ]
+        }
+      ]
+    },
+    
+        "organization": {
+          "title": "How Top Organizations Stay Ahead with Cutting-Edge Technologies",
+          "description": "Explore how industry leaders leverage the power of modern web technologies to deliver world-class online experiences, seamless functionality, and robust security.",
+          "cards": [
+            {
+              "company": "Airbnb",
+              "logo": "/service-img/logo1.svg",
+              "technologies": [
+                { "name": "React.js", "image": "/service-img/image9.svg" },
+                { "name": "Bootstrap", "image": "/service-img/image7.svg" },
+                { "name": "Node.js", "image": "/service-img/image6.svg" }
+              ],
+              "impact": "Provides seamless property searches and a visually engaging booking experience for users worldwide."
+            },
+            {
+              "company": "LinkedIn",
+              "logo": "/service-img/logo2.svg",
+              "technologies": [
+                { "name": "Angular", "image": "/service-img/image5.svg" },
+                { "name": "Express.js", "image": "/service-img/image12.svg" },
+                { "name": "Node.js", "image": "/service-img/image6.svg" }
+              ],
+              "impact": "Powers seamless professional networking with responsive interfaces and real-time communication."
+            },
+            {
+              "company": "Spotify",
+              "logo": "/service-img/logo3.svg",
+              "technologies": [
+                { "name": "Angular", "image": "/service-img/image5.svg" },
+                { "name": "Vue.js", "image": "/service-img/image13.svg" },
+                { "name": "Django", "image": "/service-img/image11.svg" }
+              ],
+              "impact": "Enhances music discovery with dynamic interfaces and personalized user experiences."
+            },
+            {
+              "company": "Netflix",
+              "logo": "/service-img/logo4.svg",
+              "technologies": [
+                { "name": "React.js", "image": "/service-img/image9.svg" },
+                { "name": "Python", "image": "/service-img/image10.svg" },
+                { "name": "Django", "image": "/service-img/image11.svg" }
+              ],
+              "impact": "Delivers uninterrupted streaming with optimized quality and personalized recommendations."
+            }
+          ]
+        }
+      
+      
+  
     
 }
