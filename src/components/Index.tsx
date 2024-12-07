@@ -63,7 +63,7 @@ async function getBasicData() {
           <ClientSays props={apidata?.clients_say[0]} />
           <Choose props={apidata?.why_choose[0]} />
           <ChooseAgency />
-          <Faq1 props={apidata?.marketing_agency} title={"Frequently Asked Questionss"} />
+          <Faq1 props={apidata?.marketing_agency} title={"Frequently Asked Questions"} />
           <Revenue />
           <Certificate />
           <CustomerChoose />
