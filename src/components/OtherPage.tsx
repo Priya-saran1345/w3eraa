@@ -27,11 +27,12 @@ const Page = ({props}:any) => {
     <div>
         {/* <Header/> */}
         <DownNavbar/>
+        
         <Navbar/>
         {
           other?.title &&
           <div className='w-full px-4 bg-[url("/images/blog-bg.png")] h-[45vh] flex justify-center items-center'>
-        <h1 className='text-[32px] lg:text-[44px] font-bold text-white'> {other?.title || ''}</h1>
+        <h1 className='text-[32px] lg:text-[44px] text-center font-bold text-white'> {other?.title || ''}</h1>
         </div>
         }
         { other?.banner_title&& other?.banner_desc&&
