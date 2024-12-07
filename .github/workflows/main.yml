@@ -52,7 +52,7 @@ jobs:
           source: "./.next ./public ./package.json ./package-lock.json"
           target: ${{ secrets.SERVER_PATH }}
           debug: true
-        continue-on-error: false
+        
 
 
       - name: Restart PM2
