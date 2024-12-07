@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
     const xmlContent = xmlHeader + urlSetOpen + urlEntries + urlSetClose;
 
     // Define the file path where the sitemap will be saved
-    const filePath = path.join(process.cwd(), 'public', 'site_map.xml');
+    const filePath = path.join(process.cwd(), 'public', 'sitemap.xml');
 
     // Write the XML content to the sitemap.xml file
     fs.writeFileSync(filePath, xmlContent);
