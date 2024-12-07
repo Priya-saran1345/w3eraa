@@ -1,9 +1,9 @@
-name: Deploy Next.js to Ubuntu Server 
+name: Deploy Next.js to Ubuntu Server
 
 on:
   push:
     branches:
-      - main # Change this to your main branch name
+      - main # Change this to your branch name if needed
 
 jobs:
   deploy:
@@ -12,29 +12,49 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+        continue-on-error: false
 
-      - name: Install Node.js and npm
+      - name: Use Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "18.19.1" # Adjust this to match your Node.js version
+          node-version: "18.19.1" # Adjust to match your Node.js version
+          cache: "npm"
+        continue-on-error: false
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install Dependencies (if required)
+        run: |
+          if [ ! -d "node_modules" ] || [ package-lock.json -nt node_modules ]; then
+            echo "Installing dependencies..."
+            npm install
+          else
+            echo "Dependencies are up to date. Skipping installation."
+          fi
+        continue-on-error: false
 
-      - name: Build Next.js app
-        run: npm run build
+      - name: Build Next.js app (if needed)
+        run: |
+          if [ -n "$(git diff --name-only HEAD^ HEAD | grep -E '\.(js|jsx|ts|tsx|json)$')" ]; then
+            echo "Changes detected. Building the app..."
+            npm run build
+          else
+            echo "No relevant changes detected. Skipping build."
+          fi
+        continue-on-error: false
 
-      - name: Copy Files to Server
-        uses: appleboy/scp-action@master
+      - name: Sync Files to Server
+        uses: appleboy/scp-action@master          #scp (Secure Copy Protocol)
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_SSH }}
           passphrase: ${{ secrets.PASSPHRASE }}
           source: "./*"
+          # source: "./.next ./public ./package.json ./package-lock.json"
           target: ${{ secrets.SERVER_PATH }}
           debug: true
-          
+        
+
+
       - name: Restart PM2
         uses: appleboy/ssh-action@master
         with:
@@ -46,3 +66,4 @@ jobs:
             cd ${{ secrets.SERVER_PATH }}
             source ~/.nvm/nvm.sh
             pm2 restart next_w3era
+        continue-on-error: false
