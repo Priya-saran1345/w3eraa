@@ -49,7 +49,7 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_SSH }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          source: ".next/** public/** package.json package-lock.json"
+          source: "./*"
           # source: "./.next ./public ./package.json ./package-lock.json"
           target: ${{ secrets.SERVER_PATH }}
           debug: true
